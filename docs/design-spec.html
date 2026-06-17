@@ -1,4 +1,4 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Design-Spec — Mathe-Abi-Lernbuch — Mathe-Abi</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><span class="brand">Mathe&#8209;Abi · <b>Léona</b></span><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink active" href="design-spec.html">Design-Spec</a><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#0-warum--didaktischer-charter">0. Warum — didaktischer Charter</a></li>
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>design-spec — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink active" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#0-warum--didaktischer-charter">0. Warum — didaktischer Charter</a></li>
 <li><a href="#1-zielbild--erfolgskriterien">1. Zielbild &amp;amp; Erfolgskriterien</a></li>
 <li><a href="#3-inhalts-scope-analysis-kanon">3. Inhalts-Scope (Analysis-Kanon)</a></li>
 <li><a href="#4-lernbuch-architektur-repository--rendering">4. Lernbuch-Architektur (Repository &amp;amp; Rendering)</a></li>
@@ -10,25 +10,23 @@
 <li><a href="#10-testing--deployment-verifikation-neu-b62">10. Testing &amp;amp; Deployment-Verifikation (neu, B62)</a></li>
 <li><a href="#11-provenance--governance-k7">11. Provenance &amp;amp; Governance (K7)</a></li>
 <li><a href="#12-skills-q5--risikobewertung-erledigt">12. Skills (Q5 — Risikobewertung erledigt)</a></li>
-<li><a href="#14-repo-struktur-public-mathe-abi">14. Repo-Struktur (public mathe-abi)</a></li>
+<li><a href="#14-repo-struktur-public-zzmathphzz40zzendzz">14. Repo-Struktur (public `mathe-abi`)</a></li>
 <li><a href="#15-tool-auswahl--exit-pläne-open-source-first-konformität">15. Tool-Auswahl &amp;amp; Exit-Pläne
 (Open-Source-first-Konformität)</a></li>
 <li><a href="#16-annahmen--offene-punkte">16. Annahmen &amp;amp; offene Punkte</a></li>
-<li><a href="#17-bau-reihenfolge-grobschnitt--details-über-writing-plans">17. Bau-Reihenfolge (Grobschnitt — Details über
-writing-plans)</a></li>
 <li><a href="#18-selbst-review-vor-abnahme">18. Selbst-Review (vor Abnahme)</a></li></ul></aside><main><div class="content"><blockquote>
-<p><strong>Strang:</strong> <code>mathe-abi</code> ·
-<strong>Datum:</strong> 2026-06-18 · <strong>Status:</strong> Entwurf
-zur Abnahme <strong>Provenance:</strong> DLG-2026-06-17-B61 ·
-DLG-2026-06-18-B62 · DLG-2026-06-18-B63 <strong>Datenklasse:</strong>
-public (keine Verschlüsselung) · <strong>Deploy-Ziel:</strong>
-<code>mathe.senecheau.com</code> <strong>HARD GATE:</strong> Vor YANNs
-Abnahme dieses Specs entsteht kein HTML/Code.</p>
+<p><strong>Strang:</strong> `mathe-abi` · <strong>Datum:</strong>
+2026-06-18 · <strong>Status:</strong> Entwurf zur Abnahme
+<strong>Provenance:</strong> DLG-2026-06-17-B61 · DLG-2026-06-18-B62 ·
+DLG-2026-06-18-B63 <strong>Datenklasse:</strong> public (keine
+Verschlüsselung) · <strong>Deploy-Ziel:</strong> `mathe.senecheau.com`
+<strong>HARD GATE:</strong> Vor YANNs Abnahme dieses Specs entsteht kein
+HTML/Code.</p>
 </blockquote>
 <p>Dieser Spec beschreibt <strong>das gesamte System</strong> — das
 Lernbuch, die unterstützenden Werkzeuge und den Mechanismus, mit dem das
 System selbst weiterentwickelt wird. Konkrete Bau-Schritte folgen nach
-Abnahme über <code>writing-plans</code>.</p>
+Abnahme über `writing-plans`.</p>
 <hr />
 <section id="0-warum--didaktischer-charter" class="level2">
 <h2>0. Warum — didaktischer Charter</h2>
@@ -73,11 +71,11 @@ Vorab-Rendern aller Audios.</p>
 </section>
 <section id="1-zielbild--erfolgskriterien" class="level2">
 <h2>1. Zielbild &amp; Erfolgskriterien</h2>
-<p><strong>Zielbild:</strong> Léona ruft
-<code>mathe.senecheau.com</code> auf (Desktop oder Smartphone), arbeitet
-Kapitel und Aufgaben durch, lässt sich Abschnitte vorlesen, hört
-unterwegs thematische Podcasts und bekommt auf ihren Lernstand
-zugeschnittene nächste Schritte (nummerierte Vorschläge).</p>
+<p><strong>Zielbild:</strong> Léona ruft `mathe.senecheau.com` auf (Desktop
+oder Smartphone), arbeitet Kapitel und Aufgaben durch, lässt sich
+Abschnitte vorlesen, hört unterwegs thematische Podcasts und bekommt auf
+ihren Lernstand zugeschnittene nächste Schritte (nummerierte
+Vorschläge).</p>
 <p><strong>Erfolgskriterien (überprüfbar):</strong></p>
 <ul>
 <li>Alle Analysis-Kernthemen des Lehrer-Kanons sind als Kapitel mit
@@ -163,7 +161,7 @@ Wendestellen + Krümmung → Ziel „Graph zeichnen".</li>
 Ableitungsregeln (Potenz-, Summen-, Faktor-,
 <strong>Produktregel</strong>, <strong>lineare Kettenregel</strong>) ·
 Grundfunktionen (ganzrational, e-Funktion, trigonometrisch sin/cos,
-Wurzelfunktion*, <code>f(x)=1/x</code>*).</li>
+Wurzelfunktion*, `f(x)=1/x`*).</li>
 <li><strong>Integralrechnung:</strong> orientierter Flächeninhalt
 (graphisch) · Flächenberechnung mit Integralen · Integral in
 Sachzusammenhängen (Textaufgaben) · Aussagen zu
@@ -175,7 +173,7 @@ Zusammenhang der Graphen F/f/f′/f″.</li>
 <p><strong>* Widerspruch zum offiziellen Basisfach-Plan (mit Konfidenz
 markieren, Lehrkraft verifizieren):</strong></p>
 <ul>
-<li><code>f(x)=1/x</code> / gebrochenrationale Funktionen sind offiziell
+<li>`f(x)=1/x` / gebrochenrationale Funktionen sind offiziell
 <strong>Leistungsfach-only</strong> [97 %].</li>
 <li>Wurzelfunktion ist im Basisfach <strong>nicht eigenständig</strong>
 ausgewiesen [80 %, Negativbefund].</li>
@@ -228,8 +226,7 @@ der deutschen Mathedidaktik etabliert; Open Source. Kein Mermaid.</td>
 </tr>
 <tr>
 <td>Detailkästen</td>
-<td>native verschachtelte
-<code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code></td>
+<td>native verschachtelte `<details>`/`<summary>`</td>
 <td>kaskadierte Tiefe (Schritt → Begründung → Axiom/Herleitung) ohne
 Framework, barrierearm, druckbar.</td>
 </tr>
@@ -245,10 +242,10 @@ Vorlese-Button). Single-Source, keine Doppelpflege.</td>
 <p><strong>Inhaltsmodell (Redundanzfreiheit +
 Querverweise):</strong></p>
 <ul>
-<li><strong>Konzept-Register</strong>
-(<code>content/concepts/*.md</code> mit eindeutiger ID + Metadaten:
-Titel, AB-Tags, Prüfungsrelevanz+Konfidenz+Quelle,
-<code>provenance: [DLG-…]</code>, Voraussetzungen, verwandte IDs).</li>
+<li><strong>Konzept-Register</strong> (`content/concepts/*.md` mit
+eindeutiger ID + Metadaten: Titel, AB-Tags,
+Prüfungsrelevanz+Konfidenz+Quelle, `provenance: [DLG-…]`, Voraussetzungen,
+verwandte IDs).</li>
 <li>Seiten <strong>binden</strong> Konzepte per ID ein (Transklusion);
 eine Definition steht genau einmal.</li>
 <li><strong>Querverweis „an deutlichen Schnitten":</strong> Verweise
@@ -265,8 +262,8 @@ Lernstands-Ampel), (d) <strong>Prüfungssimulation</strong>.</p>
 <section id="5-beispielaufgaben-modell-prüfungsrealistisch"
 class="level2">
 <h2>5. Beispielaufgaben-Modell (prüfungsrealistisch)</h2>
-<p>Vorlage ist Bild 3 („Analysis Teil 1 – Aufgabe",
-<code>f(x)=¼x⁴−2x²</code>, Teilaufgaben a–e mit Graph).</p>
+<p>Vorlage ist Bild 3 („Analysis Teil 1 – Aufgabe", `f(x)=¼x⁴−2x²`,
+Teilaufgaben a–e mit Graph).</p>
 <p><strong>Jede Aufgabe enthält:</strong></p>
 <ul>
 <li><strong>Aufgabenstellung</strong> im echten Stil, inkl.
@@ -292,15 +289,16 @@ der Prüfenden + knappe Musterantworten.</li>
 versioniert, agent-gepflegt) — bleibt <strong>privat in mywiki</strong>
 (Léonas Lernstand ist nicht public), das Lernbuch liest daraus nur
 abgeleitete Hinweise.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># context/registers/leona-lernstand.yaml (in mywiki, privat)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">themen</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> extremstellen</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">teilkompetenzen</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> notwendiges-kriterium</span><span class="co">      # f&#39;(x)=0</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">status</span><span class="kw">:</span><span class="at"> wackelig</span><span class="co">               # sicher | wackelig | luecke | unbekannt</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">datum</span><span class="kw">:</span><span class="at"> 2026-06-18</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">beleg</span><span class="kw">:</span><span class="at"> DLG-…/Aufgabe-…</span><span class="co">         # woher das Signal stammt</span></span></code></pre></div>
+<p>```yaml
+# context/registers/leona-lernstand.yaml (in mywiki, privat)
+themen:
+  - id: extremstellen
+    teilkompetenzen:
+      - id: notwendiges-kriterium      # f'(x)=0
+        status: wackelig               # sicher | wackelig | luecke | unbekannt
+        datum: 2026-06-18
+        beleg: DLG-…/Aufgabe-…         # woher das Signal stammt
+```</p>
 <p><strong>Diagnose:</strong> Startannahme „alles wackelig/unbekannt";
 Gerüst breit-flach bauen. Aus Bild 3 ein erstes Referenz-Diagnoseset
 ableiten; sobald Léona greifbar ist, ein ~15-Aufgaben-Set im echten
@@ -315,8 +313,7 @@ Vorschlag (neue Lektion, Übungsserie, Vertiefung) bekommt eine
 fortlaufende <strong>Nummer</strong>. YANN/Léona sagen „Vorschlag 117
 umsetzen". Angenommene Vorschläge werden über Léonas Transkripte
 zurückverfolgt (was bezog sie sich worauf, was wurde umgesetzt).
-Register: <code>context/registers/leona-vorschlaege.yaml</code>
-(privat):
+Register: `context/registers/leona-vorschlaege.yaml` (privat):
 <code>{nr, datum, thema, beschreibung, status: offen|angenommen|umgesetzt, provenance}</code>.</p>
 <hr />
 </section>
@@ -348,9 +345,9 @@ Skript → TTS → mp3-Episode.</li>
 <li><strong>Aufgeschoben</strong>, bis YANN mehr mit Léona gesprochen
 hat (welche Themen als Podcast nützen) — kein „ins Blaue".</li>
 <li><strong>Auslieferung aufs iPhone:</strong> RSS-Feed auf
-<code>mathe.senecheau.com</code>; <strong>QR-Code</strong> auf der Seite
-→ <code>podcast://…/feed.xml</code> (Apple Podcasts abonniert nativ);
-zusätzlich Web-Player-Fallback. Kein Spotify/Upload.</li>
+`mathe.senecheau.com`; <strong>QR-Code</strong> auf der Seite →
+`podcast://…/feed.xml` (Apple Podcasts abonniert nativ); zusätzlich
+Web-Player-Fallback. Kein Spotify/Upload.</li>
 </ul>
 <hr />
 </section>
@@ -382,39 +379,35 @@ festlegen.</li>
 </ul>
 <p><strong>Slash-Kommandos (Werkzeuge, B63):</strong></p>
 <ul>
-<li><code>/leona-input</code> — Drag-and-Drop-Audio → transkribieren →
+<li>`/leona-input` — Drag-and-Drop-Audio → transkribieren →
 Lernstand aktualisieren → neue nummerierte Vorschläge.</li>
-<li><code>/leona-vorschlag &lt;n&gt;</code> — nummerierten Vorschlag
-umsetzen.</li>
-<li><code>/leona-stand</code> — aktuellen Kompetenz-Graph anzeigen.</li>
+<li>`/leona-vorschlag <n>` — nummerierten Vorschlag umsetzen.</li>
+<li>`/leona-stand` — aktuellen Kompetenz-Graph anzeigen.</li>
 </ul>
 <hr />
 </section>
 <section id="9-deployment--serverseitige-versionierung-k5k6"
 class="level2">
 <h2>9. Deployment &amp; serverseitige Versionierung (K5/K6)</h2>
-<p><strong>Ziel:</strong> <code>mathe.senecheau.com</code> über das
-bestehende <strong>Caddy/Hetzner-Infra</strong>-Muster (Caddy auf
-Hetzner, Route53-DNS, TLS automatisch).</p>
+<p><strong>Ziel:</strong> `mathe.senecheau.com` über das bestehende
+<strong>Caddy/Hetzner-Infra</strong>-Muster (Caddy auf Hetzner,
+Route53-DNS, TLS automatisch).</p>
 <p><strong>Subdomain anlegen (4 Schritte, einmalig):</strong> Subdomain
-ins <code>DOMAINS</code>-Array
-(<code>das DNS-Setup-Skript der Server-Infra</code>) → Caddyfile-Block
-<code>mathe.senecheau.com { root * /srv/mathe … }</code> → Bind-Mount
-<code>- /srv/mathe:/srv/mathe:ro</code> in
-<code>docker-compose.prod.yml</code> → rsync + Caddy-Recreate.</p>
+ins `DOMAINS`-Array (`das DNS-Setup-Skript der Server-Infra`) → Caddyfile-Block
+`mathe.senecheau.com { root * /srv/mathe … }` → Bind-Mount `- /srv/mathe:/srv/mathe:ro` in
+`docker-compose.prod.yml` → rsync + Caddy-Recreate.</p>
 <p><strong>„Deploy das neueste Repository" = Codex-delegiertes
 Update/Redeploy</strong> (einfacherer Agent), komplettes Redeployment
 ist ok.</p>
 <p><strong>Serverseitige Versionierung (neu — existiert für statische
 Sites noch nicht):</strong></p>
 <ul>
-<li>Atomare Releases:
-<code>/srv/mathe/releases/&lt;UTC-Zeitstempel&gt;/</code>, Umschaltung
-per <code>current</code>-Symlink.</li>
+<li>Atomare Releases: `/srv/mathe/releases/<UTC-Zeitstempel>/`, Umschaltung per
+`current`-Symlink.</li>
 <li>Jede Vorversion bleibt erreichbar unter eigener Route
-<code>/v/&lt;zeitstempel&gt;/</code> (Caddy).</li>
-<li>Zusätzlich Git-Deploy-Tag <code>deploy/JJJJ-MM-TT-HHMM</code> (wie
-im bestehenden Deploy-Muster) als Rollback-Anker.</li>
+`/v/<zeitstempel>/` (Caddy).</li>
+<li>Zusätzlich Git-Deploy-Tag `deploy/JJJJ-MM-TT-HHMM` (wie im bestehenden
+Deploy-Muster) als Rollback-Anker.</li>
 <li>Rollback = Symlink-Switch.</li>
 </ul>
 <hr />
@@ -430,9 +423,8 @@ KaTeX/JSXGraph rendern; Links/Konzept-IDs auflösbar (kein toter
 Querverweis); keine Redundanz-Duplikate (Konzept genau einmal
 definiert).</li>
 <li><strong>Deployment-Verifikation (Tool):</strong> Build schreibt
-<code>version.json</code> (Git-Kurz-SHA + UTC-Zeit + Inhalts-Hash) in
-die Site. Nach dem Deploy lädt ein Tool
-<code>https://mathe.senecheau.com/version.json</code> und prüft
+`version.json` (Git-Kurz-SHA + UTC-Zeit + Inhalts-Hash) in die
+Site. Nach dem Deploy lädt ein Tool `https://mathe.senecheau.com/version.json` und prüft
 Gleichheit mit dem gebauten Stand. <strong>„Deploy" schlägt laut
 fehl</strong>, wenn die live Version nicht die erwartete ist.</li>
 <li><strong>Playwright-Smoke:</strong> Schlüsselseiten laden,
@@ -446,10 +438,10 @@ automatisierten grünen Lauf mit verbatim-Output.</li>
 <h2>11. Provenance &amp; Governance (K7)</h2>
 <ul>
 <li><strong>Privat in mywiki:</strong> alle Dialoge
-(<code>dialog/</code>), der Verlauf-Export, Handoff, Lernstand- und
+(`dialog/`), der Verlauf-Export, Handoff, Lernstand- und
 Vorschlags-Register, Ledger.</li>
 <li><strong>Public im mathe-abi-Repo/Site:</strong> nur das Lernbuch +
-je Kapitel/Konzept ein <code>provenance: [DLG-…]</code>
+je Kapitel/Konzept ein `provenance: [DLG-…]`
 <ul>
 <li>Deploy-Hash. Sichtbar „kam von X", nie der private Klartext.</li>
 </ul></li>
@@ -468,17 +460,16 @@ auf begrenzte Verlässlichkeit.</li>
 <h2>12. Skills (Q5 — Risikobewertung erledigt)</h2>
 <ul>
 <li><strong>Übernehmen, nur als Lesereferenz:</strong>
-<code>education-agent-skills</code> (reines Markdown, studienzitiert:
-Retrieval Practice, Worked-Example-Fading, Cognitive Load). MCP-Server
+`education-agent-skills` (reines Markdown, studienzitiert: Retrieval
+Practice, Worked-Example-Fading, Cognitive Load). MCP-Server
 <strong>nicht</strong> installieren; CC-BY-SA-Attribution mitführen.
 Niedriges Risiko nach Review.</li>
 <li><strong>Selbst bauen (kein seriöses Fertigprodukt am
-Markt):</strong> <code>mathe-pruefungsdidaktik</code> (mit KMK-/BW-
-Operatorenkatalog, AB-Logik, mündlichem Format) und
-<code>audio-erklaer-skript</code> (audio-first formulieren). Beide
-reines Markdown, kein Fremd-Code im Harness.</li>
+Markt):</strong> `mathe-pruefungsdidaktik` (mit KMK-/BW- Operatorenkatalog,
+AB-Logik, mündlichem Format) und `audio-erklaer-skript` (audio-first
+formulieren). Beide reines Markdown, kein Fremd-Code im Harness.</li>
 <li><strong>Meiden:</strong> alle externen Audio-/TTS-Skills mit
-<code>install.sh</code>/Git-Hooks/<code>curl|bash</code>/Cloud-Upload/eigenem
+`install.sh`/Git-Hooks/`curl|bash`/Cloud-Upload/eigenem
 Server (Datenexfiltration, Persistenz, beliebige Codeausführung) — siehe
 Risikobefund im Verlauf.</li>
 </ul>
@@ -493,12 +484,11 @@ Mechanismus")</h2>
 sobald Léona es nutzt:</p>
 <ul>
 <li><strong>Erweiterungs-Loop:</strong> Agent erzeugt Inhalt →
-nummerierte Vorschläge → YANN/Léona nehmen an
-(<code>/leona-vorschlag &lt;n&gt;</code>) → Agent baut → Deploy inkl.
-Verifikation → Lernstand-Update.</li>
+nummerierte Vorschläge → YANN/Léona nehmen an (`/leona-vorschlag <n>`) →
+Agent baut → Deploy inkl. Verifikation → Lernstand-Update.</li>
 <li><strong>Feedback-Loop:</strong> Léonas Sprachnachricht →
-<code>/leona-input</code> → Lernstand-Antizipation → maßgeschneiderte
-nächste Sequenzen/Remedial-Lektionen.</li>
+`/leona-input` → Lernstand-Antizipation → maßgeschneiderte nächste
+Sequenzen/Remedial-Lektionen.</li>
 <li><strong>Selbst-Änderung:</strong> Dieser Spec und der Charter (§0)
 sind versioniert; Änderungen an Leitplanken laufen über einen neuen
 Dialogblock (DLG-…) + Spec-Update + Eintrag im Handoff. Die
@@ -509,9 +499,11 @@ spätere Anbindung möglich ist, ohne sie jetzt vorauszusetzen.</li>
 </ul>
 <hr />
 </section>
-<section id="14-repo-struktur-public-mathe-abi" class="level2">
-<h2>14. Repo-Struktur (public <code>mathe-abi</code>)</h2>
-<pre><code>mathe-abi/
+<section id="14-repo-struktur-public-zzmathphzz40zzendzz"
+class="level2">
+<h2>14. Repo-Struktur (public `mathe-abi`)</h2>
+<p>```
+mathe-abi/
   .eleventy.js                 # Build-Konfiguration
   src/
     content/
@@ -525,9 +517,10 @@ spätere Anbindung möglich ist, ohne sie jetzt vorauszusetzen.</li>
   tools/
     build.js · deploy.sh · verify_deploy.py · version.json (generiert)
   tests/                       # Build-/Link-/Smoke-Tests (Playwright)
-  README.md                    # inkl. Provenance-Hinweis (DLG-IDs) + Exit-Plan</code></pre>
-<p>GitHub-gesichert (public), keine Verschlüsselung. TTS-Proxy lebt in
-<code>die Server-Infra</code> (nicht im public Repo, wegen Key).</p>
+  README.md                    # inkl. Provenance-Hinweis (DLG-IDs) + Exit-Plan
+``` GitHub-gesichert (public), keine Verschlüsselung.
+TTS-Proxy lebt in `die Server-Infra` (nicht im public Repo, wegen
+Key).</p>
 <hr />
 </section>
 <section id="15-tool-auswahl--exit-pläne-open-source-first-konformität"
@@ -584,27 +577,26 @@ Parakeet.</li>
 </ul>
 <hr />
 </section>
-<section id="17-bau-reihenfolge-grobschnitt--details-über-writing-plans"
+<section
+id="17-bau-reihenfolge-grobschnitt--details-über-zzmathphzz42zzendzz"
 class="level2">
 <h2>17. Bau-Reihenfolge (Grobschnitt — Details über
-<code>writing-plans</code>)</h2>
+`writing-plans`)</h2>
 <ol type="1">
 <li>Gerüst: Repo + Eleventy + Stack + zwei Layout-Modi + schulisches
-Design; <code>version.json</code> + Deploy-/Verify- Skripte; Subdomain
-<code>mathe.senecheau.com</code> live; Deployment-Verifikation
-grün.</li>
+Design; `version.json` + Deploy-/Verify- Skripte; Subdomain
+`mathe.senecheau.com` live; Deployment-Verifikation grün.</li>
 <li>Inhalt Welle 1: Funktionsuntersuchung (Kanon Bild 1/2) +
 Beispielaufgabe (Bild 3) als Format-Referenz, inkl. kaskadierter
 Detailkästen + JSXGraph.</li>
 <li>Lernstand-Graph + nummerierte Vorschläge +
-<code>/leona-*</code>-Kommandos + Voice-Ingestion (Parakeet,
+`/leona-*`-Kommandos + Voice-Ingestion (Parakeet,
 gehärtet).</li>
 <li>Realtime-TTS-Proxy (ElevenLabs, gecacht) + Vorlese-Button.</li>
 <li>Inhalt Welle 2: Integralrechnung + restliche Themen; zwei
 Prüfungssimulationen.</li>
 <li>Podcasts (sobald Themen mit Léona geklärt) + RSS/QR.</li>
-<li>Skills <code>mathe-pruefungsdidaktik</code> +
-<code>audio-erklaer-skript</code>.</li>
+<li>Skills `mathe-pruefungsdidaktik` + `audio-erklaer-skript`.</li>
 </ol>
 <hr />
 </section>
@@ -621,4 +613,4 @@ Lernstand-Daten bewusst privat.</li>
 Codebasis festgelegt (nicht zwei Repos).</li>
 </ul>
 </section>
-<footer class="site">Build d2b9df1 · 2026-06-17T23:27:51Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>
+<footer class="site">Build 6126289 · 2026-06-17T23:46:39Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

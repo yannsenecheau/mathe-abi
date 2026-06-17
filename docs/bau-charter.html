@@ -1,4 +1,4 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Bau-Charter — wie wir dieses Lernbuch bauen und weiterentwickeln — Mathe-Abi</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><span class="brand">Mathe&#8209;Abi · <b>Léona</b></span><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink active" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#zweck-dieses-dokuments">Zweck dieses Dokuments</a></li>
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>bau-charter — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink active" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#zweck-dieses-dokuments">Zweck dieses Dokuments</a></li>
 <li><a href="#leitprinzipien-didaktischer-charter">Leitprinzipien (didaktischer Charter)</a></li>
 <li><a href="#wie-inhalte-entstehen">Wie Inhalte entstehen</a></li>
 <li><a href="#wie-feedback-einfließt">Wie Feedback einfließt</a></li>
@@ -7,7 +7,7 @@
 <li><a href="#design-entscheidungen-mit-begründung">Design-Entscheidungen (mit Begründung)</a></li>
 <li><a href="#tech-entscheidungen--exit-pläne">Tech-Entscheidungen &amp;amp; Exit-Pläne</a></li>
 <li><a href="#provenance-modell">Provenance-Modell</a></li></ul></aside><main><div class="content"><blockquote>
-<p><strong>Meta-Spezifikation</strong> · Strang <code>mathe-abi</code> ·
+<p><strong>Meta-Spezifikation</strong> · Strang `mathe-abi` ·
 Datenklasse <strong>public</strong> · Stand 2026-06-18 Dies ist die
 Spezifikation <em>zu dem, wie wir die Spezifikation und das Repository
 bauen</em>. Sie gilt gemeinsam mit der <a
@@ -65,8 +65,8 @@ Lernstand.</p>
 gehärtet; Cloud-Fallback Deepgram nur bei Bedarf) → der Lernstand wird
 antizipiert → daraus entstehen maßgeschneiderte nächste Sequenzen und,
 bei Verständnisproblemen in bestimmten Rechen-/Herleitungsarten,
-dedizierte Remedial-Lektionen. Werkzeuge: <code>/leona-input</code>,
-<code>/leona-vorschlag &lt;n&gt;</code>, <code>/leona-stand</code>.</p>
+dedizierte Remedial-Lektionen. Werkzeuge: `/leona-input`,
+`/leona-vorschlag <n>`, `/leona-stand`.</p>
 </section>
 <section id="wie-wir-versionen-bauen-deployen-und-prüfen"
 class="level2">
@@ -83,7 +83,7 @@ aktualisiert die Live-Seite; jede Vorversion bleibt erhalten
 (Versionierung + Git-Tags).</li>
 <li><strong>Verifizieren</strong> — nach jedem Deploy prüft ein Tool,
 dass die live ausgelieferte Version die erwartete ist
-(<code>version.json</code>-Abgleich); schlägt sonst laut fehl. Gefundene
+(`version.json`-Abgleich); schlägt sonst laut fehl. Gefundene
 Probleme werden behoben, dann erneut deployt und geprüft.</li>
 </ol>
 </section>
@@ -160,7 +160,7 @@ portabel</td>
 </tr>
 <tr>
 <td>Hosting</td>
-<td>GitHub Pages → <code>mathe.senecheau.com</code></td>
+<td>GitHub Pages → `mathe.senecheau.com`</td>
 <td>statisch, überall hostbar</td>
 </tr>
 </tbody>
@@ -172,4 +172,4 @@ portabel</td>
 mywiki; dieses public Repo trägt nur rückverweisende DLG-IDs. So bleibt
 der Audit-Pfad vollständig, ohne private Inhalte zu zeigen.</p>
 </section>
-<footer class="site">Build d2b9df1 · 2026-06-17T23:27:51Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>
+<footer class="site">Build 6126289 · 2026-06-17T23:46:39Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

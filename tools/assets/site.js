@@ -83,4 +83,23 @@
   var backdrop = document.querySelector(".backdrop");
   if (menuToggle) menuToggle.addEventListener("click", function () { document.body.classList.toggle("nav-open"); });
   if (backdrop) backdrop.addEventListener("click", function () { document.body.classList.remove("nav-open"); });
+
+  // Vorlesen-Stub: zeigt vorerst nur einen Hinweis (keine echte TTS, kein API-Key).
+  var readBtn = document.querySelector(".topbar .readaloud");
+  if (readBtn) {
+    readBtn.addEventListener("click", function () {
+      var n = document.createElement("div");
+      n.className = "toast";
+      n.textContent = "Vorlesen wird in Kürze aktiviert.";
+      n.setAttribute("role", "status");
+      document.body.appendChild(n);
+      // Reflow erzwingen, dann einblenden
+      void n.offsetWidth;
+      n.classList.add("show");
+      setTimeout(function () {
+        n.classList.remove("show");
+        setTimeout(function () { if (n.parentNode) n.parentNode.removeChild(n); }, 300);
+      }, 2600);
+    });
+  }
 })();

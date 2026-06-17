@@ -146,6 +146,51 @@ footer.site { font-family: var(--sans); font-size: .82rem; color: var(--ink-soft
 .katex-display { overflow-x: auto; overflow-y: hidden; padding: .3rem 0; }
 .katex-display > .katex { white-space: nowrap; }
 
+/* ---------- JSXGraph-Diagramme ---------- */
+.jxgbox { margin: 1.4rem 0; border: 1px solid var(--line); border-radius: var(--radius);
+  background: #fff; box-shadow: var(--shadow); touch-action: pan-y; }
+
+/* ---------- Topbar: Vorlesen-Stub ---------- */
+.topbar .readaloud { color: var(--accent); border-color: var(--accent); }
+.topbar .readaloud:hover { background: var(--accent); color: #fff; }
+.toast { position: fixed; left: 50%; bottom: 1.6rem; transform: translate(-50%, 1rem);
+  z-index: 80; background: var(--indigo); color: #fff; font-family: var(--sans); font-size: .9rem;
+  padding: .7rem 1.1rem; border-radius: 999px; box-shadow: var(--shadow);
+  opacity: 0; transition: opacity .25s ease, transform .25s ease; pointer-events: none; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Sidebar: Kapitelbaum (Inhaltsseiten) ---------- */
+.tree-home { display: block; font-family: var(--sans); font-weight: 600; font-size: .92rem;
+  color: var(--indigo); text-decoration: none; padding: .35rem .6rem; border-radius: 8px; margin-bottom: .4rem; }
+.tree-home:hover { background: var(--paper-2); }
+ul.tree { list-style: none; margin: 0 0 .6rem; padding: 0; }
+ul.tree li { margin: .1rem 0; }
+ul.tree a.tree-link { display: block; padding: .32rem .6rem; border-radius: 8px; color: var(--ink-soft);
+  text-decoration: none; font-size: .9rem; line-height: 1.35; border-left: 2px solid transparent; }
+ul.tree a.tree-link:hover { background: var(--paper-2); color: var(--indigo); }
+ul.tree a.tree-link.active { background: var(--accent-soft); color: var(--indigo);
+  border-left-color: var(--accent); font-weight: 600; }
+.tree-test { font-family: var(--sans); font-size: .62rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--warn); background: #f7ecd6; border-radius: 999px; padding: .1rem .35rem; }
+
+/* ---------- Startseite: Feedback-Loop, Lernpfade, Kapitel-Übersicht ---------- */
+ol.loop { padding-left: 1.2rem; }
+ol.loop > li { margin: .5rem 0; }
+.btn-primary { display: inline-block; font-family: var(--sans); font-weight: 700; font-size: .95rem;
+  background: var(--accent); color: #fff; text-decoration: none; padding: .6rem 1.1rem; border-radius: 999px;
+  box-shadow: var(--shadow); transition: transform .15s, background .15s; }
+.btn-primary:hover { transform: translateY(-1px); background: #c2740f; }
+.card.path-pruefung { border-top: 3px solid var(--accent); }
+.card.path-verstehen { border-top: 3px solid var(--indigo-2); }
+.muted { color: var(--ink-soft); font-size: .95rem; }
+.tree-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+.tree-group { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+.tree-group h3 { margin: 0 0 .5rem; font-family: var(--sans); color: var(--indigo); font-size: 1rem; }
+.tree-group ul { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: .92rem; }
+.tree-group li { margin: .25rem 0; }
+.tree-group a { color: var(--indigo-2); text-decoration: none; }
+.tree-group a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+
 /* ---------- Mobile ---------- */
 .backdrop { display: none; }
 @media (max-width: 56rem) {
