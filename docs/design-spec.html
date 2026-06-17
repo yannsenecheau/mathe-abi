@@ -10,7 +10,7 @@
 <li><a href="#10-testing--deployment-verifikation-neu-b62">10. Testing &amp;amp; Deployment-Verifikation (neu, B62)</a></li>
 <li><a href="#11-provenance--governance-k7">11. Provenance &amp;amp; Governance (K7)</a></li>
 <li><a href="#12-skills-q5--risikobewertung-erledigt">12. Skills (Q5 — Risikobewertung erledigt)</a></li>
-<li><a href="#14-repo-struktur-public-projectsmathe-abi">14. Repo-Struktur (public ~/projects/mathe-abi)</a></li>
+<li><a href="#14-repo-struktur-public-mathe-abi">14. Repo-Struktur (public mathe-abi)</a></li>
 <li><a href="#15-tool-auswahl--exit-pläne-open-source-first-konformität">15. Tool-Auswahl &amp;amp; Exit-Pläne
 (Open-Source-first-Konformität)</a></li>
 <li><a href="#16-annahmen--offene-punkte">16. Annahmen &amp;amp; offene Punkte</a></li>
@@ -394,11 +394,11 @@ umsetzen.</li>
 class="level2">
 <h2>9. Deployment &amp; serverseitige Versionierung (K5/K6)</h2>
 <p><strong>Ziel:</strong> <code>mathe.senecheau.com</code> über das
-bestehende <strong>x-root/chacha-infra</strong>-Muster (Caddy auf
+bestehende <strong>Caddy/Hetzner-Infra</strong>-Muster (Caddy auf
 Hetzner, Route53-DNS, TLS automatisch).</p>
 <p><strong>Subdomain anlegen (4 Schritte, einmalig):</strong> Subdomain
 ins <code>DOMAINS</code>-Array
-(<code>chacha/infra/scripts/setup-dns.sh</code>) → Caddyfile-Block
+(<code>das DNS-Setup-Skript der Server-Infra</code>) → Caddyfile-Block
 <code>mathe.senecheau.com { root * /srv/mathe … }</code> → Bind-Mount
 <code>- /srv/mathe:/srv/mathe:ro</code> in
 <code>docker-compose.prod.yml</code> → rsync + Caddy-Recreate.</p>
@@ -414,7 +414,7 @@ per <code>current</code>-Symlink.</li>
 <li>Jede Vorversion bleibt erreichbar unter eigener Route
 <code>/v/&lt;zeitstempel&gt;/</code> (Caddy).</li>
 <li>Zusätzlich Git-Deploy-Tag <code>deploy/JJJJ-MM-TT-HHMM</code> (wie
-im chacha-Muster) als Rollback-Anker.</li>
+im bestehenden Deploy-Muster) als Rollback-Anker.</li>
 <li>Rollback = Symlink-Switch.</li>
 </ul>
 <hr />
@@ -509,8 +509,8 @@ spätere Anbindung möglich ist, ohne sie jetzt vorauszusetzen.</li>
 </ul>
 <hr />
 </section>
-<section id="14-repo-struktur-public-projectsmathe-abi" class="level2">
-<h2>14. Repo-Struktur (public <code>~/projects/mathe-abi</code>)</h2>
+<section id="14-repo-struktur-public-mathe-abi" class="level2">
+<h2>14. Repo-Struktur (public <code>mathe-abi</code>)</h2>
 <pre><code>mathe-abi/
   .eleventy.js                 # Build-Konfiguration
   src/
@@ -527,7 +527,7 @@ spätere Anbindung möglich ist, ohne sie jetzt vorauszusetzen.</li>
   tests/                       # Build-/Link-/Smoke-Tests (Playwright)
   README.md                    # inkl. Provenance-Hinweis (DLG-IDs) + Exit-Plan</code></pre>
 <p>GitHub-gesichert (public), keine Verschlüsselung. TTS-Proxy lebt in
-<code>chacha/infra</code> (nicht im public Repo, wegen Key).</p>
+<code>die Server-Infra</code> (nicht im public Repo, wegen Key).</p>
 <hr />
 </section>
 <section id="15-tool-auswahl--exit-pläne-open-source-first-konformität"
@@ -564,8 +564,8 @@ Audio gecacht (portabel als mp3).</td>
 <tr>
 <td>Caddy/Route53/Hetzner</td>
 <td>bestehende Infra</td>
-<td>gleiches Muster wie x-root; Site ist statisch und überall
-hostbar.</td>
+<td>gleiches Muster wie bestehende Server-Infra; Site ist statisch und
+überall hostbar.</td>
 </tr>
 </tbody>
 </table></div>
@@ -621,4 +621,4 @@ Lernstand-Daten bewusst privat.</li>
 Codebasis festgelegt (nicht zwei Repos).</li>
 </ul>
 </section>
-<footer class="site">Build afe07a4 · 2026-06-17T23:26:36Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>
+<footer class="site">Build d2b9df1 · 2026-06-17T23:27:51Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>

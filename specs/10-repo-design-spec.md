@@ -225,10 +225,10 @@ Audio-Datei an einen Agent → Transkription → Lernstand-Update + neue nummeri
 
 ## 9. Deployment & serverseitige Versionierung (K5/K6)
 
-**Ziel:** `mathe.senecheau.com` über das bestehende **x-root/chacha-infra**-Muster (Caddy auf Hetzner,
+**Ziel:** `mathe.senecheau.com` über das bestehende **Caddy/Hetzner-Infra**-Muster (Caddy auf Hetzner,
 Route53-DNS, TLS automatisch).
 
-**Subdomain anlegen (4 Schritte, einmalig):** Subdomain ins `DOMAINS`-Array (`chacha/infra/scripts/setup-dns.sh`)
+**Subdomain anlegen (4 Schritte, einmalig):** Subdomain ins `DOMAINS`-Array (`das DNS-Setup-Skript der Server-Infra`)
 → Caddyfile-Block `mathe.senecheau.com { root * /srv/mathe … }` → Bind-Mount `- /srv/mathe:/srv/mathe:ro` in
 `docker-compose.prod.yml` → rsync + Caddy-Recreate.
 
@@ -238,7 +238,7 @@ Redeployment ist ok.
 **Serverseitige Versionierung (neu — existiert für statische Sites noch nicht):**
 - Atomare Releases: `/srv/mathe/releases/<UTC-Zeitstempel>/`, Umschaltung per `current`-Symlink.
 - Jede Vorversion bleibt erreichbar unter eigener Route `/v/<zeitstempel>/` (Caddy).
-- Zusätzlich Git-Deploy-Tag `deploy/JJJJ-MM-TT-HHMM` (wie im chacha-Muster) als Rollback-Anker.
+- Zusätzlich Git-Deploy-Tag `deploy/JJJJ-MM-TT-HHMM` (wie im bestehenden Deploy-Muster) als Rollback-Anker.
 - Rollback = Symlink-Switch.
 
 ---
@@ -297,7 +297,7 @@ Das System ist so vorgebaut, dass es ohne Zeitverlust mitwächst, sobald Léona 
 
 ---
 
-## 14. Repo-Struktur (public `~/projects/mathe-abi`)
+## 14. Repo-Struktur (public `mathe-abi`)
 
 ```
 mathe-abi/
@@ -316,7 +316,7 @@ mathe-abi/
   tests/                       # Build-/Link-/Smoke-Tests (Playwright)
   README.md                    # inkl. Provenance-Hinweis (DLG-IDs) + Exit-Plan
 ```
-GitHub-gesichert (public), keine Verschlüsselung. TTS-Proxy lebt in `chacha/infra` (nicht im public Repo,
+GitHub-gesichert (public), keine Verschlüsselung. TTS-Proxy lebt in `die Server-Infra` (nicht im public Repo,
 wegen Key).
 
 ---
@@ -328,7 +328,7 @@ wegen Key).
 | Eleventy, KaTeX, JSXGraph | Open Source | Standardformate (Markdown/HTML/SVG); ersetzbar, Inhalt bleibt portabel. |
 | ElevenLabs (TTS) | **Premium (bewusste Ausnahme, mit YANN abgestimmt)** | hinter dünner Schnittstelle gekapselt; lokaler Stub vorbereitet; Audio gecacht (portabel als mp3). |
 | Parakeet (STT) | Open Source, lokal | YANN-Standard; Deepgram nur als optionaler Fallback. |
-| Caddy/Route53/Hetzner | bestehende Infra | gleiches Muster wie x-root; Site ist statisch und überall hostbar. |
+| Caddy/Route53/Hetzner | bestehende Infra | gleiches Muster wie bestehende Server-Infra; Site ist statisch und überall hostbar. |
 
 ---
 
