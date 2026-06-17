@@ -1,0 +1,175 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Bau-Charter — wie wir dieses Lernbuch bauen und weiterentwickeln — Mathe-Abi</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><span class="brand">Mathe&#8209;Abi · <b>Léona</b></span><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink active" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#zweck-dieses-dokuments">Zweck dieses Dokuments</a></li>
+<li><a href="#leitprinzipien-didaktischer-charter">Leitprinzipien (didaktischer Charter)</a></li>
+<li><a href="#wie-inhalte-entstehen">Wie Inhalte entstehen</a></li>
+<li><a href="#wie-feedback-einfließt">Wie Feedback einfließt</a></li>
+<li><a href="#wie-wir-versionen-bauen-deployen-und-prüfen">Wie wir Versionen bauen, deployen und prüfen</a></li>
+<li><a href="#wie-wir-dieses-system-ändern-andockpunkte--folgen">Wie wir dieses System ändern (Andockpunkte + Folgen)</a></li>
+<li><a href="#design-entscheidungen-mit-begründung">Design-Entscheidungen (mit Begründung)</a></li>
+<li><a href="#tech-entscheidungen--exit-pläne">Tech-Entscheidungen &amp;amp; Exit-Pläne</a></li>
+<li><a href="#provenance-modell">Provenance-Modell</a></li></ul></aside><main><div class="content"><blockquote>
+<p><strong>Meta-Spezifikation</strong> · Strang <code>mathe-abi</code> ·
+Datenklasse <strong>public</strong> · Stand 2026-06-18 Dies ist die
+Spezifikation <em>zu dem, wie wir die Spezifikation und das Repository
+bauen</em>. Sie gilt gemeinsam mit der <a
+href="design-spec.html">Repo-Design-Spec</a>. Provenance:
+DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01.</p>
+</blockquote>
+<section id="zweck-dieses-dokuments" class="level2">
+<h2>Zweck dieses Dokuments</h2>
+<p>Léona bereitet sich auf die mündliche Mathe-Abiturprüfung vor
+(Baden-Württemberg, Basisfach, Analysis). Dieses Lernbuch ist ihr
+persönliches, mitwachsendes Arbeitsmittel. Damit es ohne Zeitverlust
+weiterwachsen kann, ist nicht nur das Ergebnis spezifiziert, sondern
+auch der Mechanismus, mit dem wir es bauen und ändern — und die
+Begründungen dahinter, damit jede künftige Variante an der richtigen
+Stelle andocken kann.</p>
+</section>
+<section id="leitprinzipien-didaktischer-charter" class="level2">
+<h2>Leitprinzipien (didaktischer Charter)</h2>
+<ul>
+<li><strong>Prüfungsrealismus.</strong> Aufgaben spiegeln das echte
+mündliche Format (Vortrag + Prüfungsgespräch) und die
+Anforderungsbereiche AB I/II/III.</li>
+<li><strong>Rechnerfrei.</strong> Die mündliche Prüfung ist in beiden
+Teilen hilfsmittelfrei (Konfidenz 99 %); Training und Beispiele kommen
+ohne Taschenrechner aus.</li>
+<li><strong>Verstehen vor Auswendiglernen.</strong> Jeder Schritt nennt
+die Haltung dahinter — über klappbare Detailkästen, die kaskadiert in
+die Tiefe gehen (Schritt → Begründung → Annahme/Axiom →
+Herleitung).</li>
+<li><strong>Aktives Erinnern + ausgearbeitete Beispiele.</strong>
+Gestützt auf belegte Lernprinzipien (Retrieval Practice,
+Worked-Example-Effekt, Cognitive-Load-Theorie).</li>
+<li><strong>Keine Redundanz.</strong> Jeder Inhalt existiert genau
+einmal; an deutlichen Schnitten Querverweis statt Wiederholung.</li>
+<li><strong>Konfidenz-Ehrlichkeit.</strong> Prüfungsrelevanz-Aussagen
+tragen sichtbar Konfidenz + Quelle. Agentischer Output ist nicht zu 100
+% verlässlich — das bleibt sichtbar.</li>
+<li><strong>Anpassbar.</strong> Startannahmen sind bewusst gesetzt und
+werden korrigiert, sobald Léona mit dem Buch arbeitet.</li>
+</ul>
+</section>
+<section id="wie-inhalte-entstehen" class="level2">
+<h2>Wie Inhalte entstehen</h2>
+<p>Agents erzeugen Kapitel, Beispielaufgaben und Erläuterungen aus dem
+Lehrer-Kanon (Screenshots) und dem lokalen Buchkontext. Jeder erzeugte
+<strong>Vorschlag</strong> (neue Lektion, Übungsserie, Vertiefung)
+bekommt eine <strong>fortlaufende Nummer</strong>. YANN oder Léona sagen
+„Vorschlag 117 umsetzen", der Agent baut, deployt und aktualisiert den
+Lernstand.</p>
+</section>
+<section id="wie-feedback-einfließt" class="level2">
+<h2>Wie Feedback einfließt</h2>
+<p>Léona schickt eine WhatsApp-Sprachnachricht → YANN lädt sie herunter
+→ Drag-and-Drop an einen Agent → Transkription (Parakeet lokal,
+gehärtet; Cloud-Fallback Deepgram nur bei Bedarf) → der Lernstand wird
+antizipiert → daraus entstehen maßgeschneiderte nächste Sequenzen und,
+bei Verständnisproblemen in bestimmten Rechen-/Herleitungsarten,
+dedizierte Remedial-Lektionen. Werkzeuge: <code>/leona-input</code>,
+<code>/leona-vorschlag &lt;n&gt;</code>, <code>/leona-stand</code>.</p>
+</section>
+<section id="wie-wir-versionen-bauen-deployen-und-prüfen"
+class="level2">
+<h2>Wie wir Versionen bauen, deployen und prüfen</h2>
+<ol type="1">
+<li><strong>Bauen</strong> — statisches HTML (Eleventy, Single-Source),
+KaTeX für Formeln, JSXGraph für Diagramme.</li>
+<li><strong>Testen</strong> — Build fehlerfrei; Links/Konzept-IDs
+auflösbar; <strong>Formel-Skalierung</strong> automatisch geprüft (kein
+Overflow, Schriftgröße im Soll, unverzerrtes Seitenverhältnis);
+Playwright-Smoke.</li>
+<li><strong>Deployen</strong> — „Deploy das neueste Repository"
+aktualisiert die Live-Seite; jede Vorversion bleibt erhalten
+(Versionierung + Git-Tags).</li>
+<li><strong>Verifizieren</strong> — nach jedem Deploy prüft ein Tool,
+dass die live ausgelieferte Version die erwartete ist
+(<code>version.json</code>-Abgleich); schlägt sonst laut fehl. Gefundene
+Probleme werden behoben, dann erneut deployt und geprüft.</li>
+</ol>
+</section>
+<section id="wie-wir-dieses-system-ändern-andockpunkte--folgen"
+class="level2">
+<h2>Wie wir dieses System ändern (Andockpunkte + Folgen)</h2>
+<p>Diese Charter und die Design-Entscheidungen sind versioniert. Eine
+Änderung läuft über: neuer Dialogblock (DLG-…) → Update dieser
+Spec/Charter → Eintrag im Handoff → Bau → Deploy + Verifikation. So
+bleibt der volle Trace erhalten: was kam woher, wann, mit welcher
+Wirkung. Die <strong>Companion</strong>-Anbindung ist bewusst noch nicht
+aktiv; die Schnittstellen bleiben schlank genug für eine spätere
+Anbindung.</p>
+</section>
+<section id="design-entscheidungen-mit-begründung" class="level2">
+<h2>Design-Entscheidungen (mit Begründung)</h2>
+<ul>
+<li><strong>Look „modernes Schulbuch":</strong> warmes Papier-Off-White,
+Indigo primär, warmer Amber-Akzent für interaktive Elemente.
+Vertraut-schulisch, hoher Kontrast, nicht templated.</li>
+<li><strong>Typografie:</strong> lesefreundliche Serife im Fließtext,
+System-Sans in der Navigation, KaTeX-Font für Mathe.</li>
+<li><strong>Responsiv ohne UA-Sniffing:</strong> Geräte-Erkennung per
+CSS (Media-/Container-Queries). Desktop: Kapitelbaum + Inhalt +
+Querverweise. Mobil: einspaltiger Lesemodus, klappbare Abschnitte, große
+Touch-Ziele.</li>
+<li><strong>Navigation &amp; Lernpfade:</strong> persistenter
+Kapitelbaum, Breadcrumb, Voraussetzungs-/Nächster-Schritt-Links,
+Fortschritts-Ampel; zwei Pfade — <strong>Prüfungspfad</strong> (kürzeste
+Strecke zur Prüfungsreife) und <strong>Verstehenspfad</strong> (von
+Grund auf, mehr Tiefe) — plus Einstieg „Diagnose starten".</li>
+<li><strong>Klappbare Kaskaden:</strong> Tiefe sichtbar durch Einrückung
++ Farbverlauf der linken Kante; jede Ebene aufklappbar; tastatur- und
+screenreader-freundlich.</li>
+<li><strong>Kein Passwortschutz.</strong> Offen erreichbar.</li>
+</ul>
+</section>
+<section id="tech-entscheidungen--exit-pläne" class="level2">
+<h2>Tech-Entscheidungen &amp; Exit-Pläne</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Baustein</th>
+<th>Wahl</th>
+<th>Exit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generator</td>
+<td>Eleventy (Open Source)</td>
+<td>Standard-Markdown/HTML, portabel</td>
+</tr>
+<tr>
+<td>Formeln</td>
+<td>KaTeX, build-time</td>
+<td>reine HTML/CSS-Ausgabe, ersetzbar</td>
+</tr>
+<tr>
+<td>Diagramme</td>
+<td>JSXGraph (Open Source)</td>
+<td>SVG-Fallback, ersetzbar</td>
+</tr>
+<tr>
+<td>TTS (Vorlesen)</td>
+<td>ElevenLabs (bewusste Premium-Ausnahme)</td>
+<td>dünne Schnittstelle, lokaler Stub vorbereitet, Audio als mp3
+portabel</td>
+</tr>
+<tr>
+<td>STT (Voice-Input)</td>
+<td>Parakeet lokal</td>
+<td>YANN-Standard; Deepgram nur optionaler Fallback</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>GitHub Pages → <code>mathe.senecheau.com</code></td>
+<td>statisch, überall hostbar</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="provenance-modell" class="level2">
+<h2>Provenance-Modell</h2>
+<p>Dialoge, Lernstand und Ledger bleiben <strong>privat</strong> in
+mywiki; dieses public Repo trägt nur rückverweisende DLG-IDs. So bleibt
+der Audit-Pfad vollständig, ohne private Inhalte zu zeigen.</p>
+</section>
+<footer class="site">Build 9b3f6b8 · 2026-06-17T23:26:36Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>

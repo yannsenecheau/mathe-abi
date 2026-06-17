@@ -1,0 +1,624 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Design-Spec — Mathe-Abi-Lernbuch — Mathe-Abi</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><span class="brand">Mathe&#8209;Abi · <b>Léona</b></span><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink active" href="design-spec.html">Design-Spec</a><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#0-warum--didaktischer-charter">0. Warum — didaktischer Charter</a></li>
+<li><a href="#1-zielbild--erfolgskriterien">1. Zielbild &amp;amp; Erfolgskriterien</a></li>
+<li><a href="#3-inhalts-scope-analysis-kanon">3. Inhalts-Scope (Analysis-Kanon)</a></li>
+<li><a href="#4-lernbuch-architektur-repository--rendering">4. Lernbuch-Architektur (Repository &amp;amp; Rendering)</a></li>
+<li><a href="#5-beispielaufgaben-modell-prüfungsrealistisch">5. Beispielaufgaben-Modell (prüfungsrealistisch)</a></li>
+<li><a href="#6-lernstand-modell-k3">6. Lernstand-Modell (K3)</a></li>
+<li><a href="#7-audio--vorlesen--podcasts-k4">7. Audio — Vorlesen + Podcasts (K4)</a></li>
+<li><a href="#8-voice-ingestion-von-léonas-sprachnachrichten-neu-b62">8. Voice-Ingestion von Léonas Sprachnachrichten (neu, B62)</a></li>
+<li><a href="#9-deployment--serverseitige-versionierung-k5k6">9. Deployment &amp;amp; serverseitige Versionierung (K5/K6)</a></li>
+<li><a href="#10-testing--deployment-verifikation-neu-b62">10. Testing &amp;amp; Deployment-Verifikation (neu, B62)</a></li>
+<li><a href="#11-provenance--governance-k7">11. Provenance &amp;amp; Governance (K7)</a></li>
+<li><a href="#12-skills-q5--risikobewertung-erledigt">12. Skills (Q5 — Risikobewertung erledigt)</a></li>
+<li><a href="#14-repo-struktur-public-projectsmathe-abi">14. Repo-Struktur (public ~/projects/mathe-abi)</a></li>
+<li><a href="#15-tool-auswahl--exit-pläne-open-source-first-konformität">15. Tool-Auswahl &amp;amp; Exit-Pläne
+(Open-Source-first-Konformität)</a></li>
+<li><a href="#16-annahmen--offene-punkte">16. Annahmen &amp;amp; offene Punkte</a></li>
+<li><a href="#17-bau-reihenfolge-grobschnitt--details-über-writing-plans">17. Bau-Reihenfolge (Grobschnitt — Details über
+writing-plans)</a></li>
+<li><a href="#18-selbst-review-vor-abnahme">18. Selbst-Review (vor Abnahme)</a></li></ul></aside><main><div class="content"><blockquote>
+<p><strong>Strang:</strong> <code>mathe-abi</code> ·
+<strong>Datum:</strong> 2026-06-18 · <strong>Status:</strong> Entwurf
+zur Abnahme <strong>Provenance:</strong> DLG-2026-06-17-B61 ·
+DLG-2026-06-18-B62 · DLG-2026-06-18-B63 <strong>Datenklasse:</strong>
+public (keine Verschlüsselung) · <strong>Deploy-Ziel:</strong>
+<code>mathe.senecheau.com</code> <strong>HARD GATE:</strong> Vor YANNs
+Abnahme dieses Specs entsteht kein HTML/Code.</p>
+</blockquote>
+<p>Dieser Spec beschreibt <strong>das gesamte System</strong> — das
+Lernbuch, die unterstützenden Werkzeuge und den Mechanismus, mit dem das
+System selbst weiterentwickelt wird. Konkrete Bau-Schritte folgen nach
+Abnahme über <code>writing-plans</code>.</p>
+<hr />
+<section id="0-warum--didaktischer-charter" class="level2">
+<h2>0. Warum — didaktischer Charter</h2>
+<p><strong>Zweck:</strong> Léona soll in der verbleibenden Zeit ihre
+Verständnislücken in der Analysis effizient schließen und in der
+mündlichen Prüfung sicher auftreten. Das Lernbuch ist ihr persönliches,
+mitwachsendes Arbeitsmittel; Agents erweitern es laufend auf Basis ihres
+tatsächlichen Lernstands.</p>
+<p><strong>Leitplanken (evidenzbasiert, knapp begründet):</strong></p>
+<ol type="1">
+<li><strong>Prüfungsrealismus.</strong> Aufgaben spiegeln das echte
+mündliche Format (Vortrag + Prüfungsgespräch) und die tatsächlichen
+Anforderungsbereiche. Léona übt, wie sie geprüft wird.</li>
+<li><strong>Rechnerfrei.</strong> Die mündliche Prüfung ist in beiden
+Teilen hilfsmittelfrei [99 %]. Training und Beispielrechnungen kommen
+ohne GTR/Formelsammlung aus; Kopf- und Handrechnung stehen im
+Vordergrund.</li>
+<li><strong>Verstehen vor Auswendiglernen.</strong> Jeder Schritt nennt
+die <strong>Haltung</strong> dahinter (warum dieser Schritt, welches
+Prinzip) — über aufklappbare Detailkästen, die kaskadiert in die Tiefe
+gehen (Schritt → Begründung → Annahme/Axiom → Herleitung).</li>
+<li><strong>Aktives Erinnern + ausgearbeitete Beispiele.</strong>
+Gestützt auf belegte Lernprinzipien (Retrieval Practice,
+Worked-Example-Effekt, Cognitive-Load-Theorie). Erst geführte
+Musterlösung, dann zunehmend selbst lösen.</li>
+<li><strong>Keine Redundanz.</strong> Jeder Inhalt existiert genau
+einmal (Konzept-Register) und wird je Kontext in der passenden Form
+gezeigt; an deutlichen Schnitten Querverweis statt Wiederholung.</li>
+<li><strong>Konfidenz-Ehrlichkeit.</strong> Prüfungsrelevanz-Aussagen
+tragen sichtbar Konfidenz + Quelle; was unsicher ist, ist als unsicher
+markiert. Ein dezenter Hinweis macht klar, dass agentischer Output nicht
+zu 100 % verlässlich ist.</li>
+<li><strong>Anpassbar an Léonas Feedback.</strong> Startannahmen sind
+bewusst gesetzt und werden korrigiert, sobald sie mit dem Buch arbeitet.
+Schnelles Feedback fließt schnell zurück (Evolutions-Mechanismus,
+§13).</li>
+</ol>
+<p><strong>Nicht-Ziele (YAGNI):</strong> keine native App; keine fertig
+implementierte lokale TTS (nur Stub); keine Companion-Anbindung; kein
+Vorab-Rendern aller Audios.</p>
+<hr />
+</section>
+<section id="1-zielbild--erfolgskriterien" class="level2">
+<h2>1. Zielbild &amp; Erfolgskriterien</h2>
+<p><strong>Zielbild:</strong> Léona ruft
+<code>mathe.senecheau.com</code> auf (Desktop oder Smartphone), arbeitet
+Kapitel und Aufgaben durch, lässt sich Abschnitte vorlesen, hört
+unterwegs thematische Podcasts und bekommt auf ihren Lernstand
+zugeschnittene nächste Schritte (nummerierte Vorschläge).</p>
+<p><strong>Erfolgskriterien (überprüfbar):</strong></p>
+<ul>
+<li>Alle Analysis-Kernthemen des Lehrer-Kanons sind als Kapitel mit
+Beispielaufgaben + kaskadierten Erläuterungen vorhanden, rechnerfrei
+lösbar dargestellt.</li>
+<li>Mindestens <strong>zwei vollständige Prüfungssimulationen</strong>
+im echten Format (Vortragsaufgabe + Gesprächsimpuls).</li>
+<li>Lernstand-Graph ist befüllt und steuert die Vorschläge.</li>
+<li>Seite ist auf Smartphone und Desktop mit hoher Usability
+bedienbar.</li>
+<li>Deployment ist versioniert, historisiert und nach jedem Deploy
+automatisiert verifiziert.</li>
+</ul>
+<hr />
+</section>
+<section
+id="2-prüfungsrahmen-gegroundet-konfidenzgetaggt--die-randbedingungen-für-inhalt"
+class="level2">
+<h2>2. Prüfungsrahmen (gegroundet, konfidenzgetaggt) — die
+Randbedingungen für Inhalt</h2>
+<p>Quellen: KM-Facherlass 2026 (§25.2.3, im PDF-Volltext gegengeprüft),
+KMK-Bildungsstandards 2012, Bildungsplan-2016-Leitidee Basisfach,
+Pfeiffer/Uhl-Abgrenzungstabelle, RP-Tübingen-Basisfach-Konvolut.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rahmen</th>
+<th>Aussage</th>
+<th>Konf.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ablauf</td>
+<td>~20 Min Vorbereitung → ~10 Min Vortrag → ~10 Min
+Prüfungsgespräch</td>
+<td>99 %</td>
+</tr>
+<tr>
+<td>Struktur</td>
+<td>2 Sachgebiete; <strong>Analysis Pflicht</strong> + (Analyt.
+Geometrie <strong>oder</strong> Stochastik); Vortrag/Gespräch in
+verschiedenen Sachgebieten</td>
+<td>99 %</td>
+</tr>
+<tr>
+<td>Hilfsmittel</td>
+<td><strong>In beiden Teilen hilfsmittelfrei</strong>
+(Rechner/Formelsammlung nur evtl. in der Vorbereitung)</td>
+<td>99 %</td>
+</tr>
+<tr>
+<td>Anforderungsbereiche</td>
+<td>Schwerpunkt AB II; Basisfach akzentuiert AB I stärker als AB III;
+„gut" = alle drei AB, „ausreichend" = AB I + ein weiterer</td>
+<td>98 %</td>
+</tr>
+<tr>
+<td>Schwerpunktthemen</td>
+<td>keine thematische Eingrenzung in Mathe; ganzer Bildungsplan 2016
+gilt</td>
+<td>98 %</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Konsequenz für das Lernbuch:</strong> rechnerfrei trainieren;
+Aufgaben nach AB I/II/III taggen und so mischen, dass Léona AB I sicher
+beherrscht und AB II routiniert wird; das mündliche Zwei-Phasen-Format
+abbilden.</p>
+<hr />
+</section>
+<section id="3-inhalts-scope-analysis-kanon" class="level2">
+<h2>3. Inhalts-Scope (Analysis-Kanon)</h2>
+<p><strong>Kanon = Lehrer-Handout (Bilder 1–2).</strong> Es definiert,
+was an ihrer Schule drankommt, und ist damit operativ verbindlich — auch
+wo es vom allgemeinen Basisfach-Plan abweicht.</p>
+<p><strong>Themenbaum (aus dem Handout):</strong></p>
+<ul>
+<li><strong>Funktionsuntersuchung:</strong> Nullstellen/Schnittpunkt
+y-Achse · Grundsymmetrie · Randverhalten · Extremstellen + Monotonie ·
+Wendestellen + Krümmung → Ziel „Graph zeichnen".</li>
+<li><strong>Handwerksmittel Analysis:</strong> Gleichungen lösen ·
+Ableitungsregeln (Potenz-, Summen-, Faktor-,
+<strong>Produktregel</strong>, <strong>lineare Kettenregel</strong>) ·
+Grundfunktionen (ganzrational, e-Funktion, trigonometrisch sin/cos,
+Wurzelfunktion*, <code>f(x)=1/x</code>*).</li>
+<li><strong>Integralrechnung:</strong> orientierter Flächeninhalt
+(graphisch) · Flächenberechnung mit Integralen · Integral in
+Sachzusammenhängen (Textaufgaben) · Aussagen zu
+Stammfunktion/Ableitungsfunktion beurteilen.</li>
+<li><strong>Handwerksmittel Integral:</strong> Hauptsatz (anwenden) ·
+Stammfunktionsregeln (Faktor, Summe, Potenz, lineare Substitution) ·
+Zusammenhang der Graphen F/f/f′/f″.</li>
+</ul>
+<p><strong>* Widerspruch zum offiziellen Basisfach-Plan (mit Konfidenz
+markieren, Lehrkraft verifizieren):</strong></p>
+<ul>
+<li><code>f(x)=1/x</code> / gebrochenrationale Funktionen sind offiziell
+<strong>Leistungsfach-only</strong> [97 %].</li>
+<li>Wurzelfunktion ist im Basisfach <strong>nicht eigenständig</strong>
+ausgewiesen [80 %, Negativbefund].</li>
+<li>Produkt-/lineare Kettenregel, e/sin/cos/ganzrational und alle
+Integral-Inhalte = sauber Basisfach [95–99 %].</li>
+</ul>
+<p>→ <strong>Umgang:</strong> beide Funktionen aufnehmen (Kanon), aber
+im Kapitel mit Relevanz-Tag „offiziell LF, Basisfach unsicher [97 %] —
+mit Lehrkraft prüfen". Lieber leicht überdecken als eine evtl. geprüfte
+Funktion auslassen.</p>
+<p><strong>Quelle des Inhalts:</strong> Das Schulbuch (vermutl.
+Lambacher Schweizer) dient <strong>nur lokal</strong> als Agent-Kontext;
+im public Repo erscheinen ausschließlich <strong>eigene</strong>
+Formulierungen, eigene Aufgaben und <strong>Seitenverweise</strong> (z.
+B. „vgl. Lehrbuch S. 142") — keine verbatim-Scans/Abbildungen
+(Urheberrecht).</p>
+<hr />
+</section>
+<section id="4-lernbuch-architektur-repository--rendering"
+class="level2">
+<h2>4. Lernbuch-Architektur (Repository &amp; Rendering)</h2>
+<p><strong>Statische Website, Pages-/Caddy-tauglich, kein
+Anwendungsserver für die Inhalte.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Baustein</th>
+<th>Wahl</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generator</td>
+<td><strong>Eleventy (11ty)</strong></td>
+<td>Single-Source: gemeinsame Konzept-Fragmente werden
+<strong>transkludiert</strong>, nicht kopiert → Redundanzfreiheit
+strukturell erzwungen. Open Source, schlanker Build.</td>
+</tr>
+<tr>
+<td>Formeln</td>
+<td><strong>KaTeX</strong> (Build-Zeit-Rendering)</td>
+<td>schnell, serverlos, deterministisch.</td>
+</tr>
+<tr>
+<td>Diagramme</td>
+<td><strong>JSXGraph</strong></td>
+<td>interaktive Funktionsgraphen (Schieberegler, Tangenten, Flächen); in
+der deutschen Mathedidaktik etabliert; Open Source. Kein Mermaid.</td>
+</tr>
+<tr>
+<td>Detailkästen</td>
+<td>native verschachtelte
+<code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code></td>
+<td>kaskadierte Tiefe (Schritt → Begründung → Axiom/Herleitung) ohne
+Framework, barrierearm, druckbar.</td>
+</tr>
+<tr>
+<td>Layout-Modi</td>
+<td><strong>eine</strong> Codebasis, zwei adaptive Modi</td>
+<td>Desktop: mehrspaltig mit Querverweis-Seitenleiste. Mobil:
+einspaltiger Lesemodus (große Schrift, Kästen default zugeklappt, fester
+Vorlese-Button). Single-Source, keine Doppelpflege.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Inhaltsmodell (Redundanzfreiheit +
+Querverweise):</strong></p>
+<ul>
+<li><strong>Konzept-Register</strong>
+(<code>content/concepts/*.md</code> mit eindeutiger ID + Metadaten:
+Titel, AB-Tags, Prüfungsrelevanz+Konfidenz+Quelle,
+<code>provenance: [DLG-…]</code>, Voraussetzungen, verwandte IDs).</li>
+<li>Seiten <strong>binden</strong> Konzepte per ID ein (Transklusion);
+eine Definition steht genau einmal.</li>
+<li><strong>Querverweis „an deutlichen Schnitten":</strong> Verweise
+laufen über die Konzept-ID; das Register ist die Landkarte (welches
+Konzept setzt welches voraus, was kommt als Nächstes).</li>
+</ul>
+<p><strong>Seitentypen:</strong> (a) <strong>Themenseite</strong>
+(Konzept + Haltung + kaskadierte Detailkästen + interaktiver Graph), (b)
+<strong>Aufgabenseite</strong> (Beispielaufgabe im Prüfungsformat, §5),
+(c) <strong>Übersicht/Lernpfad</strong> (Kapitelkarte +
+Lernstands-Ampel), (d) <strong>Prüfungssimulation</strong>.</p>
+<hr />
+</section>
+<section id="5-beispielaufgaben-modell-prüfungsrealistisch"
+class="level2">
+<h2>5. Beispielaufgaben-Modell (prüfungsrealistisch)</h2>
+<p>Vorlage ist Bild 3 („Analysis Teil 1 – Aufgabe",
+<code>f(x)=¼x⁴−2x²</code>, Teilaufgaben a–e mit Graph).</p>
+<p><strong>Jede Aufgabe enthält:</strong></p>
+<ul>
+<li><strong>Aufgabenstellung</strong> im echten Stil, inkl.
+JSXGraph-Abbildung, Teilaufgaben nach AB I/II/III getaggt.</li>
+<li><strong>Zwei-Phasen-Bezug:</strong> kennzeichnet, was Vortragsteil
+(vorbereitet, zusammenhängend) und was Gesprächsimpuls (spontan,
+vertiefend) wäre.</li>
+<li><strong>Lösungsweg</strong> Schritt für Schritt,
+<strong>rechnerfrei</strong>.</li>
+<li><strong>Haltung dahinter</strong> je Schritt (warum so, welches
+Prinzip, typische Fallen) — als Detailkasten.</li>
+<li><strong>Kaskadierte Erläuterungen:</strong> Schritt → Begründung →
+Annahme/Axiom → Herleitung, beliebig tief, jeweils als aufklappbarer
+Unterkasten.</li>
+<li><strong>Prüfungsgespräch-Antizipation:</strong> mögliche Rückfragen
+der Prüfenden + knappe Musterantworten.</li>
+</ul>
+<hr />
+</section>
+<section id="6-lernstand-modell-k3" class="level2">
+<h2>6. Lernstand-Modell (K3)</h2>
+<p><strong>Maschinenlesbarer Kompetenz-Graph</strong> (YAML,
+versioniert, agent-gepflegt) — bleibt <strong>privat in mywiki</strong>
+(Léonas Lernstand ist nicht public), das Lernbuch liest daraus nur
+abgeleitete Hinweise.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># context/registers/leona-lernstand.yaml (in mywiki, privat)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">themen</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> extremstellen</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">teilkompetenzen</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> notwendiges-kriterium</span><span class="co">      # f&#39;(x)=0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">status</span><span class="kw">:</span><span class="at"> wackelig</span><span class="co">               # sicher | wackelig | luecke | unbekannt</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">datum</span><span class="kw">:</span><span class="at"> 2026-06-18</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">beleg</span><span class="kw">:</span><span class="at"> DLG-…/Aufgabe-…</span><span class="co">         # woher das Signal stammt</span></span></code></pre></div>
+<p><strong>Diagnose:</strong> Startannahme „alles wackelig/unbekannt";
+Gerüst breit-flach bauen. Aus Bild 3 ein erstes Referenz-Diagnoseset
+ableiten; sobald Léona greifbar ist, ein ~15-Aufgaben-Set im echten
+Format zur Verfeinerung.</p>
+<p><strong>Lernstand aus Dialogen (B62):</strong> Aus transkribierten
+Antworten Léonas wird ihr Stand antizipiert — wo sie in bestimmten
+<strong>Rechen-/Herleitungsarten</strong> Verständnisprobleme zeigt,
+wird gezielt eine <strong>dedizierte Remedial-Lektion</strong>
+vorgeschlagen.</p>
+<p><strong>Nummerierte Vorschläge:</strong> Jeder vom Agenten erzeugte
+Vorschlag (neue Lektion, Übungsserie, Vertiefung) bekommt eine
+fortlaufende <strong>Nummer</strong>. YANN/Léona sagen „Vorschlag 117
+umsetzen". Angenommene Vorschläge werden über Léonas Transkripte
+zurückverfolgt (was bezog sie sich worauf, was wurde umgesetzt).
+Register: <code>context/registers/leona-vorschlaege.yaml</code>
+(privat):
+<code>{nr, datum, thema, beschreibung, status: offen|angenommen|umgesetzt, provenance}</code>.</p>
+<hr />
+</section>
+<section id="7-audio--vorlesen--podcasts-k4" class="level2">
+<h2>7. Audio — Vorlesen + Podcasts (K4)</h2>
+<p><strong>Zwei verschiedene Funktionen, bewusst getrennt:</strong></p>
+<p><strong>(a) Realtime-Vorlesen (on-demand, sporadisch).</strong></p>
+<ul>
+<li>Léona klickt an einem Abschnitt „Vorlesen" →
+<strong>ElevenLabs</strong> streamt in Echtzeit.</li>
+<li><strong>TTS-Proxy</strong> als kleiner Dienst auf dem Hetzner-Server
+(hinter Caddy) hält den ElevenLabs-Key (darf nicht ins public Frontend)
+und <strong>cacht</strong> das erzeugte mp3 → jeder Abschnitt verursacht
+höchstens <strong>einmal</strong> Kosten (deckelt YANNs Kostenbedenken
+aus B62).</li>
+<li><strong>Dünne Schnittstelle</strong> über TTS-Anbieter
+(austauschbar); <strong>lokale Variante nur Stub</strong> — nicht
+implementiert/getestet/lauffähig, keine automatisierten Tests dafür
+(B62).</li>
+</ul>
+<p><strong>(b) Thematische Podcasts (on-demand, vorab
+generiert).</strong></p>
+<ul>
+<li><strong>Kein</strong> Vorab-Rendern aller Inhalte. YANN nennt
+Bereich + Kontextelemente, der Agent leitet ab, was in die Episode
+kommt, und formuliert <strong>audio-first</strong> (alles im Geiste
+vorstellbar; keine visuellen Bezüge wie „siehe Diagramm oben"). Erzeugt
+Skript → TTS → mp3-Episode.</li>
+<li><strong>Aufgeschoben</strong>, bis YANN mehr mit Léona gesprochen
+hat (welche Themen als Podcast nützen) — kein „ins Blaue".</li>
+<li><strong>Auslieferung aufs iPhone:</strong> RSS-Feed auf
+<code>mathe.senecheau.com</code>; <strong>QR-Code</strong> auf der Seite
+→ <code>podcast://…/feed.xml</code> (Apple Podcasts abonniert nativ);
+zusätzlich Web-Player-Fallback. Kein Spotify/Upload.</li>
+</ul>
+<hr />
+</section>
+<section id="8-voice-ingestion-von-léonas-sprachnachrichten-neu-b62"
+class="level2">
+<h2>8. Voice-Ingestion von Léonas Sprachnachrichten (neu, B62)</h2>
+<p><strong>Ablauf:</strong> Léona schickt YANN eine
+WhatsApp-Sprachnachricht → YANN lädt sie herunter →
+<strong>Drag-and-Drop</strong> der Audio-Datei an einen Agent →
+Transkription → Lernstand-Update + neue nummerierte Vorschläge.</p>
+<p><strong>STT-Verdikt (Q4-Recherche):</strong> <strong>Parakeet TDT
+0.6B V3 lokal</strong> als Standard (M5 Max),
+<strong>gehärtet</strong>:</p>
+<ul>
+<li><strong>NeMo-Word-Boosting</strong> mit Mathe-Hotword-Liste
+(Stammfunktion, Wendestelle, Ableitung, Hauptsatz, …) gegen das
+OOV-Problem (Fachvokabular).</li>
+<li><strong>langid-Nachprüfung</strong> des Transkripts (≠ de →
+markieren/neu) gegen Sprach-Drift ins Englische bei kurzen, spontanen
+Clips (Parakeet hat kein Deutsch-Locking — belegt).</li>
+<li>Audio nicht künstlich kürzen; <strong>Anglizismen nativ
+behalten</strong> (nicht filtern).</li>
+<li><strong>Benannter Cloud-Fallback: Deepgram Nova-3</strong> (einziges
+mit für Deutsch bestätigtem Keyterm-Boosting) — nur falls echte Samples
+gehäuft OOV/Drift zeigen. Daten sind public → Cloud datenschutzrechtlich
+unkritisch.</li>
+<li><strong>Verifikation am ersten echten Sample</strong>, bevor wir uns
+festlegen.</li>
+</ul>
+<p><strong>Slash-Kommandos (Werkzeuge, B63):</strong></p>
+<ul>
+<li><code>/leona-input</code> — Drag-and-Drop-Audio → transkribieren →
+Lernstand aktualisieren → neue nummerierte Vorschläge.</li>
+<li><code>/leona-vorschlag &lt;n&gt;</code> — nummerierten Vorschlag
+umsetzen.</li>
+<li><code>/leona-stand</code> — aktuellen Kompetenz-Graph anzeigen.</li>
+</ul>
+<hr />
+</section>
+<section id="9-deployment--serverseitige-versionierung-k5k6"
+class="level2">
+<h2>9. Deployment &amp; serverseitige Versionierung (K5/K6)</h2>
+<p><strong>Ziel:</strong> <code>mathe.senecheau.com</code> über das
+bestehende <strong>x-root/chacha-infra</strong>-Muster (Caddy auf
+Hetzner, Route53-DNS, TLS automatisch).</p>
+<p><strong>Subdomain anlegen (4 Schritte, einmalig):</strong> Subdomain
+ins <code>DOMAINS</code>-Array
+(<code>chacha/infra/scripts/setup-dns.sh</code>) → Caddyfile-Block
+<code>mathe.senecheau.com { root * /srv/mathe … }</code> → Bind-Mount
+<code>- /srv/mathe:/srv/mathe:ro</code> in
+<code>docker-compose.prod.yml</code> → rsync + Caddy-Recreate.</p>
+<p><strong>„Deploy das neueste Repository" = Codex-delegiertes
+Update/Redeploy</strong> (einfacherer Agent), komplettes Redeployment
+ist ok.</p>
+<p><strong>Serverseitige Versionierung (neu — existiert für statische
+Sites noch nicht):</strong></p>
+<ul>
+<li>Atomare Releases:
+<code>/srv/mathe/releases/&lt;UTC-Zeitstempel&gt;/</code>, Umschaltung
+per <code>current</code>-Symlink.</li>
+<li>Jede Vorversion bleibt erreichbar unter eigener Route
+<code>/v/&lt;zeitstempel&gt;/</code> (Caddy).</li>
+<li>Zusätzlich Git-Deploy-Tag <code>deploy/JJJJ-MM-TT-HHMM</code> (wie
+im chacha-Muster) als Rollback-Anker.</li>
+<li>Rollback = Symlink-Switch.</li>
+</ul>
+<hr />
+</section>
+<section id="10-testing--deployment-verifikation-neu-b62"
+class="level2">
+<h2>10. Testing &amp; Deployment-Verifikation (neu, B62)</h2>
+<p><strong>Gesamtlösung automatisiert testen</strong> (YANN testet nicht
+manuell durch):</p>
+<ul>
+<li><strong>Inhalt/Build:</strong> Eleventy baut fehlerfrei;
+KaTeX/JSXGraph rendern; Links/Konzept-IDs auflösbar (kein toter
+Querverweis); keine Redundanz-Duplikate (Konzept genau einmal
+definiert).</li>
+<li><strong>Deployment-Verifikation (Tool):</strong> Build schreibt
+<code>version.json</code> (Git-Kurz-SHA + UTC-Zeit + Inhalts-Hash) in
+die Site. Nach dem Deploy lädt ein Tool
+<code>https://mathe.senecheau.com/version.json</code> und prüft
+Gleichheit mit dem gebauten Stand. <strong>„Deploy" schlägt laut
+fehl</strong>, wenn die live Version nicht die erwartete ist.</li>
+<li><strong>Playwright-Smoke:</strong> Schlüsselseiten laden,
+Formeln/Graphen sichtbar, keine Konsolenfehler.</li>
+<li>Beweis-vor-Übergabe: kein Baustein gilt als fertig ohne
+automatisierten grünen Lauf mit verbatim-Output.</li>
+</ul>
+<hr />
+</section>
+<section id="11-provenance--governance-k7" class="level2">
+<h2>11. Provenance &amp; Governance (K7)</h2>
+<ul>
+<li><strong>Privat in mywiki:</strong> alle Dialoge
+(<code>dialog/</code>), der Verlauf-Export, Handoff, Lernstand- und
+Vorschlags-Register, Ledger.</li>
+<li><strong>Public im mathe-abi-Repo/Site:</strong> nur das Lernbuch +
+je Kapitel/Konzept ein <code>provenance: [DLG-…]</code>
+<ul>
+<li>Deploy-Hash. Sichtbar „kam von X", nie der private Klartext.</li>
+</ul></li>
+<li><strong>Provenance-Inhalt:</strong> was kam woher, wann, mit welcher
+Wirkung — inkl. der gesamten Dialoge (bereits als B61–B63 + Verlauf
+gesichert). Anknüpfung an das mywiki-Hub-Modell (ADR-0009
+[Datenklassen-Routing]).</li>
+<li><strong>Konfidenz-Disziplin</strong> (Bauprinzip):
+Prüfungsrelevanz-Aussagen tragen „Relevanz: X % (Quelle)"; Nicht-
+Relevantes wird knapp begründet + prozentual markiert; globaler Hinweis
+auf begrenzte Verlässlichkeit.</li>
+</ul>
+<hr />
+</section>
+<section id="12-skills-q5--risikobewertung-erledigt" class="level2">
+<h2>12. Skills (Q5 — Risikobewertung erledigt)</h2>
+<ul>
+<li><strong>Übernehmen, nur als Lesereferenz:</strong>
+<code>education-agent-skills</code> (reines Markdown, studienzitiert:
+Retrieval Practice, Worked-Example-Fading, Cognitive Load). MCP-Server
+<strong>nicht</strong> installieren; CC-BY-SA-Attribution mitführen.
+Niedriges Risiko nach Review.</li>
+<li><strong>Selbst bauen (kein seriöses Fertigprodukt am
+Markt):</strong> <code>mathe-pruefungsdidaktik</code> (mit KMK-/BW-
+Operatorenkatalog, AB-Logik, mündlichem Format) und
+<code>audio-erklaer-skript</code> (audio-first formulieren). Beide
+reines Markdown, kein Fremd-Code im Harness.</li>
+<li><strong>Meiden:</strong> alle externen Audio-/TTS-Skills mit
+<code>install.sh</code>/Git-Hooks/<code>curl|bash</code>/Cloud-Upload/eigenem
+Server (Datenexfiltration, Persistenz, beliebige Codeausführung) — siehe
+Risikobefund im Verlauf.</li>
+</ul>
+<hr />
+</section>
+<section
+id="13-evolutions-mechanismus-mechanismus-zum-ändern-des-mechanismus"
+class="level2">
+<h2>13. Evolutions-Mechanismus („Mechanismus zum Ändern des
+Mechanismus")</h2>
+<p>Das System ist so vorgebaut, dass es ohne Zeitverlust mitwächst,
+sobald Léona es nutzt:</p>
+<ul>
+<li><strong>Erweiterungs-Loop:</strong> Agent erzeugt Inhalt →
+nummerierte Vorschläge → YANN/Léona nehmen an
+(<code>/leona-vorschlag &lt;n&gt;</code>) → Agent baut → Deploy inkl.
+Verifikation → Lernstand-Update.</li>
+<li><strong>Feedback-Loop:</strong> Léonas Sprachnachricht →
+<code>/leona-input</code> → Lernstand-Antizipation → maßgeschneiderte
+nächste Sequenzen/Remedial-Lektionen.</li>
+<li><strong>Selbst-Änderung:</strong> Dieser Spec und der Charter (§0)
+sind versioniert; Änderungen an Leitplanken laufen über einen neuen
+Dialogblock (DLG-…) + Spec-Update + Eintrag im Handoff. Die
+Bau-/Deploy-/Test-Mechanik ist dokumentiert und reproduzierbar.</li>
+<li><strong>Companion:</strong> bewusst <strong>nicht</strong>
+angeschlossen (B62). Schnittstellen bleiben so schlank, dass eine
+spätere Anbindung möglich ist, ohne sie jetzt vorauszusetzen.</li>
+</ul>
+<hr />
+</section>
+<section id="14-repo-struktur-public-projectsmathe-abi" class="level2">
+<h2>14. Repo-Struktur (public <code>~/projects/mathe-abi</code>)</h2>
+<pre><code>mathe-abi/
+  .eleventy.js                 # Build-Konfiguration
+  src/
+    content/
+      concepts/                # Konzept-Register (eine Definition je ID)
+      kapitel/                 # Themenseiten
+      aufgaben/                # Beispielaufgaben (Prüfungsformat)
+      simulationen/            # Prüfungssimulationen
+    _includes/                 # Layouts (Desktop/Mobil), Detailkasten-Komponente
+    assets/                    # KaTeX/JSXGraph (vendored), CSS (schulisches Design), Audio-Cache-Verweise
+    podcast/feed.xml           # RSS (wenn Podcasts existieren)
+  tools/
+    build.js · deploy.sh · verify_deploy.py · version.json (generiert)
+  tests/                       # Build-/Link-/Smoke-Tests (Playwright)
+  README.md                    # inkl. Provenance-Hinweis (DLG-IDs) + Exit-Plan</code></pre>
+<p>GitHub-gesichert (public), keine Verschlüsselung. TTS-Proxy lebt in
+<code>chacha/infra</code> (nicht im public Repo, wegen Key).</p>
+<hr />
+</section>
+<section id="15-tool-auswahl--exit-pläne-open-source-first-konformität"
+class="level2">
+<h2>15. Tool-Auswahl &amp; Exit-Pläne
+(Open-Source-first-Konformität)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Klasse</th>
+<th>Exit-Plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eleventy, KaTeX, JSXGraph</td>
+<td>Open Source</td>
+<td>Standardformate (Markdown/HTML/SVG); ersetzbar, Inhalt bleibt
+portabel.</td>
+</tr>
+<tr>
+<td>ElevenLabs (TTS)</td>
+<td><strong>Premium (bewusste Ausnahme, mit YANN
+abgestimmt)</strong></td>
+<td>hinter dünner Schnittstelle gekapselt; lokaler Stub vorbereitet;
+Audio gecacht (portabel als mp3).</td>
+</tr>
+<tr>
+<td>Parakeet (STT)</td>
+<td>Open Source, lokal</td>
+<td>YANN-Standard; Deepgram nur als optionaler Fallback.</td>
+</tr>
+<tr>
+<td>Caddy/Route53/Hetzner</td>
+<td>bestehende Infra</td>
+<td>gleiches Muster wie x-root; Site ist statisch und überall
+hostbar.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+</section>
+<section id="16-annahmen--offene-punkte" class="level2">
+<h2>16. Annahmen &amp; offene Punkte</h2>
+<ul>
+<li><strong>Annahme:</strong> „Grundstufe" = Basisfach/grundlegendes
+Niveau (Gymnasium). Falls Leistungsfach: Scope ändert sich (1∕x,
+allgemeine Kettenregel etc. dazu).</li>
+<li><strong>Offen:</strong> genauer Prüfungstermin (29.6.–9.7.); zweites
+Sachgebiet; 1∕x-/Wurzelfunktion-Relevanz mit Lehrkraft verifizieren;
+Podcast-Themenbereiche (nach mehr Léona-Input); erstes Voice-Sample für
+Parakeet.</li>
+</ul>
+<hr />
+</section>
+<section id="17-bau-reihenfolge-grobschnitt--details-über-writing-plans"
+class="level2">
+<h2>17. Bau-Reihenfolge (Grobschnitt — Details über
+<code>writing-plans</code>)</h2>
+<ol type="1">
+<li>Gerüst: Repo + Eleventy + Stack + zwei Layout-Modi + schulisches
+Design; <code>version.json</code> + Deploy-/Verify- Skripte; Subdomain
+<code>mathe.senecheau.com</code> live; Deployment-Verifikation
+grün.</li>
+<li>Inhalt Welle 1: Funktionsuntersuchung (Kanon Bild 1/2) +
+Beispielaufgabe (Bild 3) als Format-Referenz, inkl. kaskadierter
+Detailkästen + JSXGraph.</li>
+<li>Lernstand-Graph + nummerierte Vorschläge +
+<code>/leona-*</code>-Kommandos + Voice-Ingestion (Parakeet,
+gehärtet).</li>
+<li>Realtime-TTS-Proxy (ElevenLabs, gecacht) + Vorlese-Button.</li>
+<li>Inhalt Welle 2: Integralrechnung + restliche Themen; zwei
+Prüfungssimulationen.</li>
+<li>Podcasts (sobald Themen mit Léona geklärt) + RSS/QR.</li>
+<li>Skills <code>mathe-pruefungsdidaktik</code> +
+<code>audio-erklaer-skript</code>.</li>
+</ol>
+<hr />
+</section>
+<section id="18-selbst-review-vor-abnahme" class="level2">
+<h2>18. Selbst-Review (vor Abnahme)</h2>
+<ul>
+<li>Platzhalter/TODO: keine offenen.</li>
+<li>Konsistenz: Architektur (§4) deckt alle Funktionsanforderungen
+(§5–§10) ab; Provenance (§11) konsistent mit Datenklasse public + privat
+in mywiki.</li>
+<li>Scope: fokussiert auf ein implementierbares System; Léonas
+Lernstand-Daten bewusst privat.</li>
+<li>Mehrdeutigkeit: „zwei Versionen" als zwei Layout-Modi einer
+Codebasis festgelegt (nicht zwei Repos).</li>
+</ul>
+</section>
+<footer class="site">Build 9b3f6b8 · 2026-06-17T23:26:36Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/site.js" defer></script></body></html>
