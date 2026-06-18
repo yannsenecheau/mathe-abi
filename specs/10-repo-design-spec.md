@@ -13,14 +13,14 @@ Mechanismus, mit dem das System selbst weiterentwickelt wird. Konkrete Bau-Schri
 
 ## 0. Warum — didaktischer Charter
 
-**Zweck:** Léona soll in der verbleibenden Zeit ihre Verständnislücken in der Analysis effizient schließen
+**Zweck:** Die Lernende soll in der verbleibenden Zeit ihre Verständnislücken in der Analysis effizient schließen
 und in der mündlichen Prüfung sicher auftreten. Das Lernbuch ist ihr persönliches, mitwachsendes
 Arbeitsmittel; Agents erweitern es laufend auf Basis ihres tatsächlichen Lernstands.
 
 **Leitplanken (evidenzbasiert, knapp begründet):**
 
 1. **Prüfungsrealismus.** Aufgaben spiegeln das echte mündliche Format (Vortrag + Prüfungsgespräch) und die
-   tatsächlichen Anforderungsbereiche. Léona übt, wie sie geprüft wird.
+   tatsächlichen Anforderungsbereiche. Die Lernende übt, wie sie geprüft wird.
 2. **Rechnerfrei.** Die mündliche Prüfung ist in beiden Teilen hilfsmittelfrei [99 %]. Training und
    Beispielrechnungen kommen ohne GTR/Formelsammlung aus; Kopf- und Handrechnung stehen im Vordergrund.
 3. **Verstehen vor Auswendiglernen.** Jeder Schritt nennt die **Haltung** dahinter (warum dieser Schritt,
@@ -33,7 +33,7 @@ Arbeitsmittel; Agents erweitern es laufend auf Basis ihres tatsächlichen Lernst
 6. **Konfidenz-Transparenz.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle; was unsicher ist,
    ist als unsicher markiert. Ein dezenter Hinweis macht klar, dass agentischer Output nicht zu 100 %
    verlässlich ist.
-7. **Anpassbar an Léonas Feedback.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald sie mit
+7. **Anpassbar an das Feedback der Lernenden.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald sie mit
    dem Buch arbeitet. Schnelles Feedback fließt schnell zurück (Evolutions-Mechanismus, §13).
 
 **Nicht-Ziele (YAGNI):** keine native App; keine fertig implementierte lokale TTS (nur Stub); keine
@@ -43,7 +43,7 @@ Companion-Anbindung; kein Vorab-Rendern aller Audios.
 
 ## 1. Zielbild & Erfolgskriterien
 
-**Zielbild:** Léona ruft `mathe.senecheau.com` auf (Desktop oder Smartphone), arbeitet Kapitel und Aufgaben
+**Zielbild:** Die Lernende ruft `mathe.senecheau.com` auf (Desktop oder Smartphone), arbeitet Kapitel und Aufgaben
 durch, lässt sich Abschnitte vorlesen, hört unterwegs thematische Podcasts und bekommt auf ihren Lernstand
 zugeschnittene nächste Schritte (nummerierte Vorschläge).
 
@@ -71,7 +71,7 @@ Bildungsplan-2016-Leitidee Basisfach, Pfeiffer/Uhl-Abgrenzungstabelle, RP-Tübin
 | Schwerpunktthemen | keine thematische Eingrenzung in Mathe; ganzer Bildungsplan 2016 gilt | 98 % |
 
 **Konsequenz für das Lernbuch:** rechnerfrei trainieren; Aufgaben nach AB I/II/III taggen und so mischen, dass
-Léona AB I sicher beherrscht und AB II routiniert wird; das mündliche Zwei-Phasen-Format abbilden.
+die Lernende AB I sicher beherrscht und AB II routiniert wird; das mündliche Zwei-Phasen-Format abbilden.
 
 ---
 
@@ -149,10 +149,10 @@ Vorlage ist Bild 3 („Analysis Teil 1 – Aufgabe", `f(x)=¼x⁴−2x²`, Teila
 ## 6. Lernstand-Modell (K3)
 
 **Maschinenlesbarer Kompetenz-Graph** (YAML, versioniert, agent-gepflegt) — bleibt **privat in mywiki**
-(Léonas Lernstand ist nicht public), das Lernbuch liest daraus nur abgeleitete Hinweise.
+(der Lernstand ist nicht public), das Lernbuch liest daraus nur abgeleitete Hinweise.
 
 ```yaml
-# context/registers/leona-lernstand.yaml (in mywiki, privat)
+# context/registers/lernstand.yaml (in mywiki, privat)
 themen:
   - id: extremstellen
     teilkompetenzen:
@@ -163,17 +163,17 @@ themen:
 ```
 
 **Diagnose:** Startannahme „alles wackelig/unbekannt"; Gerüst breit-flach bauen. Aus Bild 3 ein erstes
-Referenz-Diagnoseset ableiten; sobald Léona greifbar ist, ein ~15-Aufgaben-Set im echten Format zur
+Referenz-Diagnoseset ableiten; sobald die Lernende greifbar ist, ein ~15-Aufgaben-Set im echten Format zur
 Verfeinerung.
 
-**Lernstand aus Dialogen (B62):** Aus transkribierten Antworten Léonas wird ihr Stand antizipiert — wo sie in
+**Lernstand aus Dialogen (B62):** Aus transkribierten Antworten der Lernenden wird ihr Stand antizipiert — wo sie in
 bestimmten **Rechen-/Herleitungsarten** Verständnisprobleme zeigt, wird gezielt eine **dedizierte
 Remedial-Lektion** vorgeschlagen.
 
 **Nummerierte Vorschläge:** Jeder vom Agenten erzeugte Vorschlag (neue Lektion, Übungsserie,
-Vertiefung) bekommt eine fortlaufende **Nummer**. YANN/Léona sagen „Vorschlag 117 umsetzen". Angenommene
-Vorschläge werden über Léonas Transkripte zurückverfolgt (was bezog sie sich worauf, was wurde umgesetzt).
-Register: `context/registers/leona-vorschlaege.yaml` (privat): `{nr, datum, thema, beschreibung, status:
+Vertiefung) bekommt eine fortlaufende **Nummer**. YANN/die Lernende sagen „Vorschlag 117 umsetzen". Angenommene
+Vorschläge werden über die Transkripte der Lernenden zurückverfolgt (worauf bezog sie sich, was wurde umgesetzt).
+Register: `context/registers/vorschlaege.yaml` (privat): `{nr, datum, thema, beschreibung, status:
 offen|angenommen|umgesetzt, provenance}`.
 
 ---
@@ -183,7 +183,7 @@ offen|angenommen|umgesetzt, provenance}`.
 **Zwei verschiedene Funktionen, bewusst getrennt:**
 
 **(a) Realtime-Vorlesen (on-demand, sporadisch).**
-- Léona klickt an einem Abschnitt „Vorlesen" → **ElevenLabs** streamt in Echtzeit.
+- Die Lernende klickt an einem Abschnitt „Vorlesen" → **ElevenLabs** streamt in Echtzeit.
 - **TTS-Proxy** als kleiner Dienst auf dem Hetzner-Server (hinter Caddy) hält den ElevenLabs-Key (darf nicht
   ins public Frontend) und **cacht** das erzeugte mp3 → jeder Abschnitt verursacht höchstens **einmal**
   Kosten (deckelt YANNs Kostenbedenken aus B62).
@@ -194,16 +194,16 @@ offen|angenommen|umgesetzt, provenance}`.
 - **Kein** Vorab-Rendern aller Inhalte. YANN nennt Bereich + Kontextelemente, der Agent leitet ab, was in die
   Episode kommt, und formuliert **audio-first** (alles im Geiste vorstellbar; keine visuellen Bezüge wie
   „siehe Diagramm oben"). Erzeugt Skript → TTS → mp3-Episode.
-- **Aufgeschoben**, bis YANN mehr mit Léona gesprochen hat (welche Themen als Podcast nützen) — kein „ins
+- **Aufgeschoben**, bis YANN mehr mit der Lernenden gesprochen hat (welche Themen als Podcast nützen) — kein „ins
   Blaue".
 - **Auslieferung aufs iPhone:** RSS-Feed auf `mathe.senecheau.com`; **QR-Code** auf der Seite →
   `podcast://…/feed.xml` (Apple Podcasts abonniert nativ); zusätzlich Web-Player-Fallback. Kein Spotify/Upload.
 
 ---
 
-## 8. Voice-Ingestion von Léonas Sprachnachrichten (neu, B62)
+## 8. Voice-Ingestion der Sprachnachrichten der Lernenden (neu, B62)
 
-**Ablauf:** Léona schickt YANN eine WhatsApp-Sprachnachricht → YANN lädt sie herunter → **Drag-and-Drop** der
+**Ablauf:** Die Lernende schickt YANN eine WhatsApp-Sprachnachricht → YANN lädt sie herunter → **Drag-and-Drop** der
 Audio-Datei an einen Agent → Transkription → Lernstand-Update + neue nummerierte Vorschläge.
 
 **STT-Verdikt (Q4-Recherche):** **Parakeet TDT 0.6B V3 lokal** als Standard (M5 Max), **gehärtet**:
@@ -217,9 +217,9 @@ Audio-Datei an einen Agent → Transkription → Lernstand-Update + neue nummeri
 - **Verifikation am ersten echten Sample**, bevor wir uns festlegen.
 
 **Slash-Kommandos (Werkzeuge, B63):**
-- `/leona-input` — Drag-and-Drop-Audio → transkribieren → Lernstand aktualisieren → neue nummerierte Vorschläge.
-- `/leona-vorschlag <n>` — nummerierten Vorschlag umsetzen.
-- `/leona-stand` — aktuellen Kompetenz-Graph anzeigen.
+- `/voice-input` — Drag-and-Drop-Audio → transkribieren → Lernstand aktualisieren → neue nummerierte Vorschläge.
+- `/vorschlag <n>` — nummerierten Vorschlag umsetzen.
+- `/lernstand` — aktuellen Kompetenz-Graph anzeigen.
 
 ---
 
@@ -284,10 +284,10 @@ Redeployment ist ok.
 
 ## 13. Evolutions-Mechanismus („Mechanismus zum Ändern des Mechanismus")
 
-Das System ist so vorgebaut, dass es ohne Zeitverlust mitwächst, sobald Léona es nutzt:
-- **Erweiterungs-Loop:** Agent erzeugt Inhalt → nummerierte Vorschläge → YANN/Léona nehmen an
-  (`/leona-vorschlag <n>`) → Agent baut → Deploy inkl. Verifikation → Lernstand-Update.
-- **Feedback-Loop:** Léonas Sprachnachricht → `/leona-input` → Lernstand-Antizipation → maßgeschneiderte
+Das System ist so vorgebaut, dass es ohne Zeitverlust mitwächst, sobald die Lernende es nutzt:
+- **Erweiterungs-Loop:** Agent erzeugt Inhalt → nummerierte Vorschläge → YANN/die Lernende nehmen an
+  (`/vorschlag <n>`) → Agent baut → Deploy inkl. Verifikation → Lernstand-Update.
+- **Feedback-Loop:** Sprachnachricht der Lernenden → `/voice-input` → Lernstand-Antizipation → maßgeschneiderte
   nächste Sequenzen/Remedial-Lektionen.
 - **Selbst-Änderung:** Dieser Spec und der Charter (§0) sind versioniert; Änderungen an Leitplanken laufen
   über einen neuen Dialogblock (DLG-…) + Spec-Update + Eintrag im Handoff. Die Bau-/Deploy-/Test-Mechanik
@@ -337,7 +337,7 @@ wegen Key).
 - **Annahme:** „Grundstufe" = Basisfach/grundlegendes Niveau (Gymnasium). Falls Leistungsfach: Scope ändert
   sich (1∕x, allgemeine Kettenregel etc. dazu).
 - **Offen:** genauer Prüfungstermin (29.6.–9.7.); zweites Sachgebiet; 1∕x-/Wurzelfunktion-Relevanz mit
-  Lehrkraft verifizieren; Podcast-Themenbereiche (nach mehr Léona-Input); erstes Voice-Sample für Parakeet.
+  Lehrkraft verifizieren; Podcast-Themenbereiche (nach mehr Input der Lernenden); erstes Voice-Sample für Parakeet.
 
 ---
 
@@ -347,10 +347,10 @@ wegen Key).
    Skripte; Subdomain `mathe.senecheau.com` live; Deployment-Verifikation grün.
 2. Inhalt Welle 1: Funktionsuntersuchung (Kanon Bild 1/2) + Beispielaufgabe (Bild 3) als Format-Referenz,
    inkl. kaskadierter Detailkästen + JSXGraph.
-3. Lernstand-Graph + nummerierte Vorschläge + `/leona-*`-Kommandos + Voice-Ingestion (Parakeet, gehärtet).
+3. Lernstand-Graph + nummerierte Vorschläge + `/voice-input`/`/vorschlag`/`/lernstand`-Kommandos + Voice-Ingestion (Parakeet, gehärtet).
 4. Realtime-TTS-Proxy (ElevenLabs, gecacht) + Vorlese-Button.
 5. Inhalt Welle 2: Integralrechnung + restliche Themen; zwei Prüfungssimulationen.
-6. Podcasts (sobald Themen mit Léona geklärt) + RSS/QR.
+6. Podcasts (sobald Themen mit der Lernenden geklärt) + RSS/QR.
 7. Skills `mathe-pruefungsdidaktik` + `audio-erklaer-skript`.
 
 ---
@@ -360,5 +360,5 @@ wegen Key).
 - Platzhalter/TODO: keine offenen.
 - Konsistenz: Architektur (§4) deckt alle Funktionsanforderungen (§5–§10) ab; Provenance (§11) konsistent mit
   Datenklasse public + privat in mywiki.
-- Scope: fokussiert auf ein implementierbares System; Léonas Lernstand-Daten bewusst privat.
+- Scope: fokussiert auf ein implementierbares System; die Lernstand-Daten der Lernenden bewusst privat.
 - Mehrdeutigkeit: „zwei Versionen" als zwei Layout-Modi einer Codebasis festgelegt (nicht zwei Repos).

@@ -1,11 +1,10 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>design-spec — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink active" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#0-warum--didaktischer-charter">0. Warum — didaktischer Charter</a></li>
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>design-spec — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink active" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><h3>Auf dieser Seite</h3><ul class="toc"><li><a href="#0-warum--didaktischer-charter">0. Warum — didaktischer Charter</a></li>
 <li><a href="#1-zielbild--erfolgskriterien">1. Zielbild &amp;amp; Erfolgskriterien</a></li>
 <li><a href="#3-inhalts-scope-analysis-kanon">3. Inhalts-Scope (Analysis-Kanon)</a></li>
 <li><a href="#4-lernbuch-architektur-repository--rendering">4. Lernbuch-Architektur (Repository &amp;amp; Rendering)</a></li>
 <li><a href="#5-beispielaufgaben-modell-prüfungsrealistisch">5. Beispielaufgaben-Modell (prüfungsrealistisch)</a></li>
 <li><a href="#6-lernstand-modell-k3">6. Lernstand-Modell (K3)</a></li>
 <li><a href="#7-audio--vorlesen--podcasts-k4">7. Audio — Vorlesen + Podcasts (K4)</a></li>
-<li><a href="#8-voice-ingestion-von-léonas-sprachnachrichten-neu-b62">8. Voice-Ingestion von Léonas Sprachnachrichten (neu, B62)</a></li>
 <li><a href="#9-deployment--serverseitige-versionierung-k5k6">9. Deployment &amp;amp; serverseitige Versionierung (K5/K6)</a></li>
 <li><a href="#10-testing--deployment-verifikation-neu-b62">10. Testing &amp;amp; Deployment-Verifikation (neu, B62)</a></li>
 <li><a href="#11-provenance--governance-k7">11. Provenance &amp;amp; Governance (K7)</a></li>
@@ -30,8 +29,8 @@ Abnahme über `writing-plans`.</p>
 <hr />
 <section id="0-warum--didaktischer-charter" class="level2">
 <h2>0. Warum — didaktischer Charter</h2>
-<p><strong>Zweck:</strong> Léona soll in der verbleibenden Zeit ihre
-Verständnislücken in der Analysis effizient schließen und in der
+<p><strong>Zweck:</strong> Die Lernende soll in der verbleibenden Zeit
+ihre Verständnislücken in der Analysis effizient schließen und in der
 mündlichen Prüfung sicher auftreten. Das Lernbuch ist ihr persönliches,
 mitwachsendes Arbeitsmittel; Agents erweitern es laufend auf Basis ihres
 tatsächlichen Lernstands.</p>
@@ -39,7 +38,7 @@ tatsächlichen Lernstands.</p>
 <ol type="1">
 <li><strong>Prüfungsrealismus.</strong> Aufgaben spiegeln das echte
 mündliche Format (Vortrag + Prüfungsgespräch) und die tatsächlichen
-Anforderungsbereiche. Léona übt, wie sie geprüft wird.</li>
+Anforderungsbereiche. Die Lernende übt, wie sie geprüft wird.</li>
 <li><strong>Rechnerfrei.</strong> Die mündliche Prüfung ist in beiden
 Teilen hilfsmittelfrei [99 %]. Training und Beispielrechnungen kommen
 ohne GTR/Formelsammlung aus; Kopf- und Handrechnung stehen im
@@ -59,10 +58,10 @@ gezeigt; an deutlichen Schnitten Querverweis statt Wiederholung.</li>
 tragen sichtbar Konfidenz + Quelle; was unsicher ist, ist als unsicher
 markiert. Ein dezenter Hinweis macht klar, dass agentischer Output nicht
 zu 100 % verlässlich ist.</li>
-<li><strong>Anpassbar an Léonas Feedback.</strong> Startannahmen sind
-bewusst gesetzt und werden korrigiert, sobald sie mit dem Buch arbeitet.
-Schnelles Feedback fließt schnell zurück (Evolutions-Mechanismus,
-§13).</li>
+<li><strong>Anpassbar an das Feedback der Lernenden.</strong>
+Startannahmen sind bewusst gesetzt und werden korrigiert, sobald sie mit
+dem Buch arbeitet. Schnelles Feedback fließt schnell zurück
+(Evolutions-Mechanismus, §13).</li>
 </ol>
 <p><strong>Nicht-Ziele (YAGNI):</strong> keine native App; keine fertig
 implementierte lokale TTS (nur Stub); keine Companion-Anbindung; kein
@@ -71,10 +70,10 @@ Vorab-Rendern aller Audios.</p>
 </section>
 <section id="1-zielbild--erfolgskriterien" class="level2">
 <h2>1. Zielbild &amp; Erfolgskriterien</h2>
-<p><strong>Zielbild:</strong> Léona ruft `mathe.senecheau.com` auf (Desktop
-oder Smartphone), arbeitet Kapitel und Aufgaben durch, lässt sich
-Abschnitte vorlesen, hört unterwegs thematische Podcasts und bekommt auf
-ihren Lernstand zugeschnittene nächste Schritte (nummerierte
+<p><strong>Zielbild:</strong> Die Lernende ruft `mathe.senecheau.com` auf
+(Desktop oder Smartphone), arbeitet Kapitel und Aufgaben durch, lässt
+sich Abschnitte vorlesen, hört unterwegs thematische Podcasts und
+bekommt auf ihren Lernstand zugeschnittene nächste Schritte (nummerierte
 Vorschläge).</p>
 <p><strong>Erfolgskriterien (überprüfbar):</strong></p>
 <ul>
@@ -142,9 +141,9 @@ gilt</td>
 </tbody>
 </table></div>
 <p><strong>Konsequenz für das Lernbuch:</strong> rechnerfrei trainieren;
-Aufgaben nach AB I/II/III taggen und so mischen, dass Léona AB I sicher
-beherrscht und AB II routiniert wird; das mündliche Zwei-Phasen-Format
-abbilden.</p>
+Aufgaben nach AB I/II/III taggen und so mischen, dass die Lernende AB I
+sicher beherrscht und AB II routiniert wird; das mündliche
+Zwei-Phasen-Format abbilden.</p>
 <hr />
 </section>
 <section id="3-inhalts-scope-analysis-kanon" class="level2">
@@ -287,10 +286,10 @@ der Prüfenden + knappe Musterantworten.</li>
 <h2>6. Lernstand-Modell (K3)</h2>
 <p><strong>Maschinenlesbarer Kompetenz-Graph</strong> (YAML,
 versioniert, agent-gepflegt) — bleibt <strong>privat in mywiki</strong>
-(Léonas Lernstand ist nicht public), das Lernbuch liest daraus nur
+(der Lernstand ist nicht public), das Lernbuch liest daraus nur
 abgeleitete Hinweise.</p>
 <p>```yaml
-# context/registers/leona-lernstand.yaml (in mywiki, privat)
+# context/registers/lernstand.yaml (in mywiki, privat)
 themen:
   - id: extremstellen
     teilkompetenzen:
@@ -301,19 +300,19 @@ themen:
 ```</p>
 <p><strong>Diagnose:</strong> Startannahme „alles wackelig/unbekannt";
 Gerüst breit-flach bauen. Aus Bild 3 ein erstes Referenz-Diagnoseset
-ableiten; sobald Léona greifbar ist, ein ~15-Aufgaben-Set im echten
-Format zur Verfeinerung.</p>
+ableiten; sobald die Lernende greifbar ist, ein ~15-Aufgaben-Set im
+echten Format zur Verfeinerung.</p>
 <p><strong>Lernstand aus Dialogen (B62):</strong> Aus transkribierten
-Antworten Léonas wird ihr Stand antizipiert — wo sie in bestimmten
-<strong>Rechen-/Herleitungsarten</strong> Verständnisprobleme zeigt,
-wird gezielt eine <strong>dedizierte Remedial-Lektion</strong>
+Antworten der Lernenden wird ihr Stand antizipiert — wo sie in
+bestimmten <strong>Rechen-/Herleitungsarten</strong> Verständnisprobleme
+zeigt, wird gezielt eine <strong>dedizierte Remedial-Lektion</strong>
 vorgeschlagen.</p>
 <p><strong>Nummerierte Vorschläge:</strong> Jeder vom Agenten erzeugte
 Vorschlag (neue Lektion, Übungsserie, Vertiefung) bekommt eine
-fortlaufende <strong>Nummer</strong>. YANN/Léona sagen „Vorschlag 117
-umsetzen". Angenommene Vorschläge werden über Léonas Transkripte
-zurückverfolgt (was bezog sie sich worauf, was wurde umgesetzt).
-Register: `context/registers/leona-vorschlaege.yaml` (privat):
+fortlaufende <strong>Nummer</strong>. YANN/die Lernende sagen „Vorschlag
+117 umsetzen". Angenommene Vorschläge werden über die Transkripte der
+Lernenden zurückverfolgt (worauf bezog sie sich, was wurde umgesetzt).
+Register: `context/registers/vorschlaege.yaml` (privat):
 <code>{nr, datum, thema, beschreibung, status: offen|angenommen|umgesetzt, provenance}</code>.</p>
 <hr />
 </section>
@@ -322,7 +321,7 @@ Register: `context/registers/leona-vorschlaege.yaml` (privat):
 <p><strong>Zwei verschiedene Funktionen, bewusst getrennt:</strong></p>
 <p><strong>(a) Realtime-Vorlesen (on-demand, sporadisch).</strong></p>
 <ul>
-<li>Léona klickt an einem Abschnitt „Vorlesen" →
+<li>Die Lernende klickt an einem Abschnitt „Vorlesen" →
 <strong>ElevenLabs</strong> streamt in Echtzeit.</li>
 <li><strong>TTS-Proxy</strong> als kleiner Dienst auf dem Hetzner-Server
 (hinter Caddy) hält den ElevenLabs-Key (darf nicht ins public Frontend)
@@ -342,8 +341,9 @@ Bereich + Kontextelemente, der Agent leitet ab, was in die Episode
 kommt, und formuliert <strong>audio-first</strong> (alles im Geiste
 vorstellbar; keine visuellen Bezüge wie „siehe Diagramm oben"). Erzeugt
 Skript → TTS → mp3-Episode.</li>
-<li><strong>Aufgeschoben</strong>, bis YANN mehr mit Léona gesprochen
-hat (welche Themen als Podcast nützen) — kein „ins Blaue".</li>
+<li><strong>Aufgeschoben</strong>, bis YANN mehr mit der Lernenden
+gesprochen hat (welche Themen als Podcast nützen) — kein „ins
+Blaue".</li>
 <li><strong>Auslieferung aufs iPhone:</strong> RSS-Feed auf
 `mathe.senecheau.com`; <strong>QR-Code</strong> auf der Seite →
 `podcast://…/feed.xml` (Apple Podcasts abonniert nativ); zusätzlich
@@ -351,10 +351,12 @@ Web-Player-Fallback. Kein Spotify/Upload.</li>
 </ul>
 <hr />
 </section>
-<section id="8-voice-ingestion-von-léonas-sprachnachrichten-neu-b62"
+<section
+id="8-voice-ingestion-der-sprachnachrichten-der-lernenden-neu-b62"
 class="level2">
-<h2>8. Voice-Ingestion von Léonas Sprachnachrichten (neu, B62)</h2>
-<p><strong>Ablauf:</strong> Léona schickt YANN eine
+<h2>8. Voice-Ingestion der Sprachnachrichten der Lernenden (neu,
+B62)</h2>
+<p><strong>Ablauf:</strong> Die Lernende schickt YANN eine
 WhatsApp-Sprachnachricht → YANN lädt sie herunter →
 <strong>Drag-and-Drop</strong> der Audio-Datei an einen Agent →
 Transkription → Lernstand-Update + neue nummerierte Vorschläge.</p>
@@ -379,10 +381,10 @@ festlegen.</li>
 </ul>
 <p><strong>Slash-Kommandos (Werkzeuge, B63):</strong></p>
 <ul>
-<li>`/leona-input` — Drag-and-Drop-Audio → transkribieren →
+<li>`/voice-input` — Drag-and-Drop-Audio → transkribieren →
 Lernstand aktualisieren → neue nummerierte Vorschläge.</li>
-<li>`/leona-vorschlag <n>` — nummerierten Vorschlag umsetzen.</li>
-<li>`/leona-stand` — aktuellen Kompetenz-Graph anzeigen.</li>
+<li>`/vorschlag <n>` — nummerierten Vorschlag umsetzen.</li>
+<li>`/lernstand` — aktuellen Kompetenz-Graph anzeigen.</li>
 </ul>
 <hr />
 </section>
@@ -481,13 +483,14 @@ class="level2">
 <h2>13. Evolutions-Mechanismus („Mechanismus zum Ändern des
 Mechanismus")</h2>
 <p>Das System ist so vorgebaut, dass es ohne Zeitverlust mitwächst,
-sobald Léona es nutzt:</p>
+sobald die Lernende es nutzt:</p>
 <ul>
 <li><strong>Erweiterungs-Loop:</strong> Agent erzeugt Inhalt →
-nummerierte Vorschläge → YANN/Léona nehmen an (`/leona-vorschlag <n>`) →
-Agent baut → Deploy inkl. Verifikation → Lernstand-Update.</li>
-<li><strong>Feedback-Loop:</strong> Léonas Sprachnachricht →
-`/leona-input` → Lernstand-Antizipation → maßgeschneiderte nächste
+nummerierte Vorschläge → YANN/die Lernende nehmen an
+(`/vorschlag <n>`) → Agent baut → Deploy inkl. Verifikation →
+Lernstand-Update.</li>
+<li><strong>Feedback-Loop:</strong> Sprachnachricht der Lernenden →
+`/voice-input` → Lernstand-Antizipation → maßgeschneiderte nächste
 Sequenzen/Remedial-Lektionen.</li>
 <li><strong>Selbst-Änderung:</strong> Dieser Spec und der Charter (§0)
 sind versioniert; Änderungen an Leitplanken laufen über einen neuen
@@ -572,8 +575,8 @@ Niveau (Gymnasium). Falls Leistungsfach: Scope ändert sich (1∕x,
 allgemeine Kettenregel etc. dazu).</li>
 <li><strong>Offen:</strong> genauer Prüfungstermin (29.6.–9.7.); zweites
 Sachgebiet; 1∕x-/Wurzelfunktion-Relevanz mit Lehrkraft verifizieren;
-Podcast-Themenbereiche (nach mehr Léona-Input); erstes Voice-Sample für
-Parakeet.</li>
+Podcast-Themenbereiche (nach mehr Input der Lernenden); erstes
+Voice-Sample für Parakeet.</li>
 </ul>
 <hr />
 </section>
@@ -590,12 +593,12 @@ Design; `version.json` + Deploy-/Verify- Skripte; Subdomain
 Beispielaufgabe (Bild 3) als Format-Referenz, inkl. kaskadierter
 Detailkästen + JSXGraph.</li>
 <li>Lernstand-Graph + nummerierte Vorschläge +
-`/leona-*`-Kommandos + Voice-Ingestion (Parakeet,
-gehärtet).</li>
+`/voice-input`/`/vorschlag`/`/lernstand`-Kommandos +
+Voice-Ingestion (Parakeet, gehärtet).</li>
 <li>Realtime-TTS-Proxy (ElevenLabs, gecacht) + Vorlese-Button.</li>
 <li>Inhalt Welle 2: Integralrechnung + restliche Themen; zwei
 Prüfungssimulationen.</li>
-<li>Podcasts (sobald Themen mit Léona geklärt) + RSS/QR.</li>
+<li>Podcasts (sobald Themen mit der Lernenden geklärt) + RSS/QR.</li>
 <li>Skills `mathe-pruefungsdidaktik` + `audio-erklaer-skript`.</li>
 </ol>
 <hr />
@@ -607,10 +610,10 @@ Prüfungssimulationen.</li>
 <li>Konsistenz: Architektur (§4) deckt alle Funktionsanforderungen
 (§5–§10) ab; Provenance (§11) konsistent mit Datenklasse public + privat
 in mywiki.</li>
-<li>Scope: fokussiert auf ein implementierbares System; Léonas
-Lernstand-Daten bewusst privat.</li>
+<li>Scope: fokussiert auf ein implementierbares System; die
+Lernstand-Daten der Lernenden bewusst privat.</li>
 <li>Mehrdeutigkeit: „zwei Versionen" als zwei Layout-Modi einer
 Codebasis festgelegt (nicht zwei Repos).</li>
 </ul>
 </section>
-<footer class="site">Build 037e5e3 · 2026-06-18T00:25:43Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>
+<footer class="site">Build 605b665 · 2026-06-18T06:43:55Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

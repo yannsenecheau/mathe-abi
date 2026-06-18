@@ -2,7 +2,7 @@
 """Baut die Mathe-Abi-Site aus Markdown nach docs/.
 
 Zwei Seitenfamilien teilen sich dieselbe Shell (Topbar + Sidebar + klappbare Level-2-Abschnitte):
-  - Spec-Seiten:    index (Léona-Startseite), bau-charter, design-spec.
+  - Spec-Seiten:    index (Startseite), bau-charter, design-spec.
   - Inhaltsseiten:  content/{kapitel,aufgaben,simulationen,reflexion}/*.md.
 
 Markdown -> HTML via pandoc (-f gfm -t html5 --section-divs --mathjax). Mathe wird clientseitig von
@@ -198,7 +198,7 @@ def topbar(active_slug, is_content):
     return (
         '<header class="topbar">'
         '<button class="menu-toggle" aria-label="Menü">&#9776;</button>'
-        '<a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a>'
+        '<a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a>'
         '<span class="spacer"></span>'
         + links +
         '<button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button>'
@@ -283,7 +283,7 @@ def footer(sha, stamp):
 
 
 def landing(groups):
-    """Léona-Startseite: persönliche Begrüßung, Nutzung, Feedback-Loop, zwei Lernpfade, Kapitelbaum, Specs."""
+    """Startseite: Lede, zwei Lernpfade, Feedback-Hinweis, Kapitelbaum, Specs."""
     # Kapitel-Karten für den Kapitelbaum-Block auf der Startseite
     tree_cards = []
     for spec in CONTENT_DIRS:
@@ -302,11 +302,10 @@ def landing(groups):
         '<p class="muted">Die Kapitel werden hier in Kürze ergänzt. Schau bald wieder vorbei.</p>')
 
     return """
-<h1>Hallo Léona &#128075;</h1>
-<p class="lede">Willkommen in deinem persönlichen Lernbuch für die mündliche Mathe-Abiturprüfung
-(Baden-Württemberg, Basisfach, Schwerpunkt Analysis). Es ist für <b>dich</b> gemacht und wächst mit dir
-mit. Alles hier rechnet sich von Hand &mdash; genau wie in deiner Prüfung, die in beiden Teilen
-hilfsmittelfrei ist. Du schaffst das, ein Schritt nach dem anderen.</p>
+<h1>Mathe-Abi &mdash; Analysis fürs mündliche Abi</h1>
+<p class="lede">Lernbuch für die mündliche Mathe-Abiturprüfung (Baden-Württemberg, Basisfach,
+Schwerpunkt Analysis). Alles wird von Hand gerechnet &mdash; hilfsmittelfrei, genau wie in der Prüfung.
+Das Buch wächst mit deinem Lernstand mit.</p>
 
 <div class="meta-row">
   <span>Mündlich · hilfsmittelfrei</span>
@@ -316,27 +315,17 @@ hilfsmittelfrei ist. Du schaffst das, ein Schritt nach dem anderen.</p>
 </div>
 
 <h2 style="border:none">So nutzt du das Lernbuch</h2>
-<p>Jedes Kapitel erklärt nicht nur <em>wie</em> etwas gerechnet wird, sondern auch die <b>Haltung
-dahinter</b> &mdash; warum dieser Schritt, welches Prinzip steckt darin, welche Falle lauert. Geht ein
-Gedanke tiefer, steckt er in einem <b>aufklappbaren Kasten</b> (das kleine Dreieck &#9658; antippen).
-So bleibst du an der Oberfläche, wenn es reicht, und gehst in die Tiefe, wenn du willst.</p>
 <ul>
   <li><b>Lies aktiv.</b> Rechne jeden Beispielschritt selbst mit, bevor du die Lösung aufklappst.</li>
+  <li><b>Geh in die Tiefe, wenn du willst.</b> Aufklappbare Kästen (Dreieck &#9658;) zeigen die Haltung hinter jedem Schritt &mdash; warum, welches Prinzip, welche Falle.</li>
   <li><b>Nutze die Graphen.</b> Die Diagramme sind interaktiv &mdash; bewege Punkte, schau, was passiert.</li>
-  <li><b>Wiederhole laut.</b> Erkläre dir einen Schritt so, als würdest du ihn der Prüferin vortragen.</li>
-  <li><b>Vorlesen.</b> Oben rechts findest du einen <b>Vorlesen</b>-Knopf (kommt in Kürze).</li>
+  <li><b>Wiederhole laut.</b> Erkläre dir einen Schritt so, als würdest du ihn im Prüfungsgespräch vortragen.</li>
 </ul>
 
-<h2>Der Feedback-Loop &mdash; so wird das Buch deins</h2>
-<p>Das Buch passt sich an, je mehr du damit arbeitest. Der Weg ist bewusst einfach:</p>
-<ol class="loop">
-  <li><b>Reflexionsfragen mündlich beantworten.</b> Auf der
-    <a href="refl-reflexion.html">Reflexionsseite</a> findest du Fragen. Beantworte sie <em>laut</em>,
-    als Sprachnachricht &mdash; so, wie du im Prüfungsgespräch reden würdest.</li>
-  <li><b>An Papa schicken.</b> Schick die Sprachnachricht per WhatsApp an Papa.</li>
-  <li><b>Personalisierung.</b> Daraus wird abgeleitet, wo es schon sicher sitzt und wo noch nicht &mdash;
-    und es entstehen passgenaue nächste Kapitel und Extra-Übungen genau für deine Lücken.</li>
-</ol>
+<h2>Feedback</h2>
+<p>Beantworte die <a href="refl-reflexion.html">Reflexionsfragen</a> laut als Sprachnachricht &mdash;
+daraus passen wir die Inhalte für dich an: Wo es sicher sitzt, geht es schneller; wo noch nicht,
+entstehen passgenaue Kapitel und Extra-Übungen für deine Lücken.</p>
 <p><a class="btn-primary" href="refl-reflexion.html">&#127908; Zu den Reflexionsfragen</a></p>
 
 <h2>Zwei Wege durch den Stoff</h2>
@@ -354,7 +343,7 @@ Die genaue Kapitel-Reihenfolge je Pfad wird ergänzt, sobald die ersten Kapitel 
 <h2 id="kapitelbaum">Alle Kapitel, Aufgaben und Simulationen</h2>
 <div class="tree-overview">%s</div>
 
-<h2>Hintergrund (für Papa)</h2>
+<h2>Hintergrund &amp; Spezifikationen</h2>
 <p>Wie dieses Lernbuch gebaut und weiterentwickelt wird, steht in den beiden Spezifikationen:</p>
 <div class="cards">
   <a class="card" href="bau-charter.html"><h3>Bau-Charter <span class="arrow">→</span></h3>

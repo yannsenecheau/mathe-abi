@@ -7,7 +7,7 @@
 
 ## Zweck dieses Dokuments
 
-Léona bereitet sich auf die mündliche Mathe-Abiturprüfung vor (Baden-Württemberg, Basisfach, Analysis).
+Die Lernende bereitet sich auf die mündliche Mathe-Abiturprüfung vor (Baden-Württemberg, Basisfach, Analysis).
 Dieses Lernbuch ist ihr persönliches, mitwachsendes Arbeitsmittel. Damit es ohne Zeitverlust weiterwachsen
 kann, ist nicht nur das Ergebnis spezifiziert, sondern auch der Mechanismus, mit dem wir es bauen und
 ändern — und die Begründungen dahinter, damit jede künftige Variante an der richtigen Stelle andocken kann.
@@ -26,22 +26,22 @@ kann, ist nicht nur das Ergebnis spezifiziert, sondern auch der Mechanismus, mit
   Wiederholung.
 - **Konfidenz-Transparenz.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle. Agentischer Output
   ist nicht zu 100 % verlässlich — das bleibt sichtbar.
-- **Anpassbar.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald Léona mit dem Buch arbeitet.
+- **Anpassbar.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald die Lernende mit dem Buch arbeitet.
 
 ## Wie Inhalte entstehen
 
 Agents erzeugen Kapitel, Beispielaufgaben und Erläuterungen aus dem Lehrer-Kanon (Screenshots) und dem
 lokalen Buchkontext. Jeder erzeugte **Vorschlag** (neue Lektion, Übungsserie, Vertiefung) bekommt eine
-**fortlaufende Nummer**. YANN oder Léona sagen „Vorschlag 117 umsetzen", der Agent baut, deployt und
+**fortlaufende Nummer**. YANN oder die Lernende sagen „Vorschlag 117 umsetzen", der Agent baut, deployt und
 aktualisiert den Lernstand.
 
 ## Wie Feedback einfließt
 
-Léona schickt eine WhatsApp-Sprachnachricht → YANN lädt sie herunter → Drag-and-Drop an einen Agent →
+Die Lernende schickt eine WhatsApp-Sprachnachricht → YANN lädt sie herunter → Drag-and-Drop an einen Agent →
 Transkription (Parakeet lokal, gehärtet; Cloud-Fallback Deepgram nur bei Bedarf) → der Lernstand wird
 antizipiert → daraus entstehen maßgeschneiderte nächste Sequenzen und, bei Verständnisproblemen in
-bestimmten Rechen-/Herleitungsarten, dedizierte Remedial-Lektionen. Werkzeuge: `/leona-input`,
-`/leona-vorschlag <n>`, `/leona-stand`.
+bestimmten Rechen-/Herleitungsarten, dedizierte Remedial-Lektionen. Werkzeuge: `/voice-input`,
+`/vorschlag <n>`, `/lernstand`.
 
 ## Wie wir Versionen bauen, deployen und prüfen
 

@@ -7,8 +7,8 @@ Live: **https://mathe.senecheau.com** (GitHub Pages, Quelle `main` / `docs`).
 
 ## Stand
 
-Aufbauphase. Veröffentlicht sind die **Léona-Startseite** (`index.html`) mit Lernpfaden und
-Feedback-Loop, die beiden **Spezifikationen** sowie die ersten **Inhaltsseiten**:
+Aufbauphase. Veröffentlicht sind die **Startseite** (`index.html`) mit Lernpfaden und
+Feedback-Hinweis, die beiden **Spezifikationen** sowie die ersten **Inhaltsseiten**:
 - `specs/00-bau-charter.md` — wie wir das Lernbuch bauen und weiterentwickeln (Meta-Spec).
 - `specs/10-repo-design-spec.md` — was wir bauen (Design-Spec).
 - `content/{kapitel,aufgaben,simulationen,reflexion}/*.md` — das eigentliche Lernbuch (laufend ergänzt).

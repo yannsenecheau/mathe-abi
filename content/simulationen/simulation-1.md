@@ -1,12 +1,12 @@
 # Prüfungssimulation 1 (Analysis)
 
-Diese Simulation läuft im echten Format deiner mündlichen Prüfung, Léona: erst eine zusammenhängende
+Diese Simulation läuft im echten Format deiner mündlichen Prüfung: erst eine zusammenhängende
 **Vortragsaufgabe** (etwa 10 Minuten, die du in der Vorbereitungszeit durcharbeitest und dann frei
 präsentierst), danach ein **Prüfungsgespräch** mit Impulsfragen. Alles ist **rechnerfrei** zu lösen —
 genau wie in beiden Teilen deiner Prüfung. Arbeite zuerst selbst, bevor du die Lösungswege aufklappst.
 
 > So nutzt du die Seite: Decke die Lösungen zu, sprich deinen Vortrag **laut** durch (am besten als
-> Sprachnachricht an Papa), und vergleiche erst danach mit dem Erwartungshorizont. Lautes Sprechen ist
+> Sprachnachricht), und vergleiche erst danach mit dem Erwartungshorizont. Lautes Sprechen ist
 > die halbe Prüfung.
 
 ## Vortragsaufgabe (~10 Min, zusammenhängend)

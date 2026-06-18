@@ -1,6 +1,6 @@
 # Grundfunktionen & ihre Ableitungen
 
-Léona, dieses Kapitel ist dein Werkzeugkasten. Fast jede Aufgabe der Analysis besteht aus diesen
+Dieses Kapitel ist dein Werkzeugkasten. Fast jede Aufgabe der Analysis besteht aus diesen
 wenigen Bausteinen — ganzrationale Funktionen, die e-Funktion, Sinus und Cosinus, dazu zwei
 Spezialfälle. Wenn du von jeder Funktion das **Aussehen**, das **Verhalten im Unendlichen** und die
 **Ableitung** im Kopf hast, kannst du im Prüfungsgespräch ruhig und sicher argumentieren. Alles hier

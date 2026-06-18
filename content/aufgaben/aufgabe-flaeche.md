@@ -1,6 +1,6 @@
 # Aufgabe: Fläche & Bestand
 
-Diese Aufgabe ist nah an dem, was dich in der mündlichen Prüfung erwartet, Léona. Sie hat drei Teile,
+Diese Aufgabe ist nah an dem, was dich in der mündlichen Prüfung erwartet. Sie hat drei Teile,
 die aufeinander aufbauen: erst die Fläche zwischen einem Graphen und der \( x \)-Achse, dann die Fläche
 <b>zwischen zwei Graphen</b>, und am Ende eine <b>Bestands-Rekonstruktion</b> aus einer Änderungsrate.
 Alles rechnerfrei — also alles per Hand, ohne Taschenrechner.
@@ -246,5 +246,5 @@ Das mündliche Prüfungsgespräch dreht sich oft weniger um das Endergebnis als 
 
 > Selbsttest: Klappe alle Lösungen zu und rechne die drei Teile auf einem leeren Blatt komplett durch.
 > Wenn du an einer Stelle hängst, schau <b>nur</b> in den passenden Haltung-Kasten und versuche es
-> erneut. Sprich danach eine kurze Sprachnachricht an Papa: Welcher Teil ging flüssig, wo hast du
+> erneut. Sprich danach eine kurze Sprachnachricht: Welcher Teil ging flüssig, wo hast du
 > nachgeschaut?

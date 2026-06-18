@@ -1,6 +1,6 @@
 # Aufgabe: e-Funktion untersuchen
 
-Diese Aufgabe ist im Stil einer mündlichen Prüfung aufgebaut, Léona. Du bekommst eine Funktion und
+Diese Aufgabe ist im Stil einer mündlichen Prüfung aufgebaut. Du bekommst eine Funktion und
 untersuchst sie rechnerfrei, also komplett per Hand und ohne Taschenrechner — genau so wie in der
 Prüfung. Arbeite jede Teilaufgabe erst selbst durch und klappe die Lösung danach auf. Wichtig ist
 nicht nur das Ergebnis, sondern dass du laut sagen kannst, **warum** du jeden Schritt gehst.

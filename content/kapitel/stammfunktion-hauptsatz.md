@@ -1,6 +1,6 @@
 # Stammfunktion & Hauptsatz
 
-Léona, dieses Kapitel dreht das Ableiten um: Statt von einer Funktion zur Steigung zu gehen, suchst du
+Dieses Kapitel dreht das Ableiten um: Statt von einer Funktion zur Steigung zu gehen, suchst du
 jetzt die Funktion, deren Steigung du schon kennst. Das ist die <b>Stammfunktion</b>. Daraus folgt der
 <b>Hauptsatz</b> — das Werkzeug, mit dem aus einer Änderungsrate ein Bestand und aus einer Funktion eine
 Fläche wird. Alles hier rechnest du von Hand. Geh es ruhig durch, ein Schritt nach dem anderen.

@@ -5,7 +5,7 @@ machst — die in jedem Punkt sagt, wie steil der Graph dort ist. In der mündli
 **von Hand** ab, ohne Taschenrechner. Das ist gut so, denn die fünf Regeln auf dieser Seite sind so
 gebaut, dass du sie sicher im Kopf anwenden kannst, wenn du das Prinzip dahinter einmal verstanden hast.
 
-Léona, geh die Regeln der Reihe nach durch. Jede hat dieselbe Struktur: **Aussage**, ein **Merksatz**
+Geh die Regeln der Reihe nach durch. Jede hat dieselbe Struktur: **Aussage**, ein **Merksatz**
 zum Behalten, und zwei bis drei Beispiele, die du am besten selbst mitrechnest, bevor du die Lösung
 aufklappst.
 

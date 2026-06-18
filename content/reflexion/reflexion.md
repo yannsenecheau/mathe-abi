@@ -1,6 +1,6 @@
 # Reflexionsfragen — wie denkst du darüber?
 
-Hallo Léona! Diese Seite ist <b>kein Test</b> und es gibt hier <b>keine Noten</b> — niemand zählt
+Diese Seite ist <b>kein Test</b> und es gibt hier <b>keine Noten</b> — niemand zählt
 Fehler. Es geht nur um eine Frage: Wie denkst <i>du</i> über die Analysis-Themen? Wenn du etwas in
 eigenen Worten erklären kannst, hast du es wirklich verstanden — und genau das übst du hier.
 
@@ -10,8 +10,8 @@ ist. Es gibt kein „richtig getippt" — es gibt nur „in deinen Worten erklä
 
 ## So läuft der Feedback-Loop
 
-Beantworte die Fragen <b>laut und mündlich</b> — am besten als <b>Sprachnachricht an deinen Papa</b>
-(z. B. über WhatsApp). Das hat zwei Vorteile auf einmal:
+Beantworte die Fragen <b>laut und mündlich</b> — am besten als <b>Sprachnachricht</b>
+(z. B. über WhatsApp). Daraus passen wir die Inhalte für dich an. Das hat zwei Vorteile auf einmal:
 
 - Du übst dabei genau das, was in der mündlichen Prüfung zählt: <b>frei sprechen</b>, einen Gedanken
   ordnen und laut erklären. Lautes Erklären ist die verlässlichste Probe dafür, ob du ein Thema wirklich
@@ -20,13 +20,13 @@ Beantworte die Fragen <b>laut und mündlich</b> — am besten als <b>Sprachnachr
   klingst, gehen wir schneller drüber; wo du zögerst, bekommst du gezielt mehr Beispiele, Übungen und
   Erklärungen. So entsteht Schritt für Schritt ein Lernbuch, das genau zu <i>dir</i> passt.
 
-> <b>Der Kreislauf in drei Schritten:</b> Fragen laut beantworten &rarr; Sprachnachricht an Papa
+> <b>Der Kreislauf in drei Schritten:</b> Fragen laut beantworten &rarr; Sprachnachricht aufnehmen
 > &rarr; daraus entstehen passgenaue nächste Kapitel und Extra-Übungen für genau deine Lücken. Dann
 > von vorn. Das nennt man einen <b>asynchronen Feedback-Loop</b> — du und das Lernbuch müsst nicht
 > gleichzeitig „online" sein, ihr reicht euch die Bälle hin und her, wann es dir passt.
 
 <b>Wichtig zum Datenschutz:</b> Diese Seite sammelt <b>nichts</b>. Es gibt hier <b>kein Login</b>,
-keine Eingabefelder, kein Mitschneiden. Deine Antwort lebt allein in deiner Sprachnachricht an Papa —
+keine Eingabefelder, kein Mitschneiden. Deine Antwort lebt allein in deiner Sprachnachricht —
 du entscheidest, was du sagst und was du teilst.
 
 <details><summary>Wie soll eine gute mündliche Antwort klingen? (kurzer Tipp)</summary>
@@ -194,6 +194,6 @@ das laut nacherzählen kannst, hast du den Zusammenhang von \( f \) und \( f' \)
 
 ## Zum Schluss
 
-Mach dir keinen Stress, Léona — hier kann man nichts „falsch" machen. Jede Sprachnachricht, die du
+Mach dir keinen Stress — hier kann man nichts „falsch" machen. Jede Sprachnachricht, die du
 aufnimmst, macht dich beim freien Erklären sicherer und macht dieses Lernbuch ein Stück persönlicher
 für dich. Leg einfach los, sprich drauflos, und schick sie ab. Du schaffst das.

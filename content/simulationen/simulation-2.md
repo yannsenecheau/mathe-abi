@@ -1,6 +1,6 @@
 # Prüfungssimulation 2 (Analysis) — Integral & Bestand
 
-So läuft deine mündliche Prüfung ab, Léona: Du bekommst eine Aufgabe, hast eine kurze
+So läuft deine mündliche Prüfung ab: Du bekommst eine Aufgabe, hast eine kurze
 Vorbereitungszeit, und hältst dann einen kleinen <b>Vortrag</b> (Prüfungsteil 1). Danach stellt die
 Lehrkraft dir <b>Rückfragen</b> und schaut, ob du auch über den Tellerrand denkst (Prüfungsteil 2,
 das <b>Gespräch</b>). Diese zweite Simulation hat denselben Aufbau wie die erste, aber den
@@ -301,7 +301,7 @@ Hak nach dem Üben ungeschönt ab, was du frei sprechen konntest.
 </div>
 
 <blockquote>
-<b>Léonas Selbstcheck:</b> Konntest du bei <b>(c)</b> klar sagen, <em>warum</em> du integrierst (Rate →
+<b>Dein Selbstcheck:</b> Konntest du bei <b>(c)</b> klar sagen, <em>warum</em> du integrierst (Rate →
 Menge) und bei <b>(f)</b> den Unterschied in <em>Einheiten</em> benennen? Wenn ja, sitzt der Kern der
 Integralrechnung fürs mündliche Basisfach. Wo es noch hakt: nimm es laut auf einer Sprachnachricht auf
 — daraus baut das Lernbuch dir die passende Übung.

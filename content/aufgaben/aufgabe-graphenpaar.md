@@ -1,6 +1,6 @@
 # Aufgabe: Graphenpaar f und g
 
-Léona, das ist eine typische mündliche Prüfungsaufgabe zur <b>Analysis</b>. Sie testet, ob du einen
+Das ist eine typische mündliche Prüfungsaufgabe zur <b>Analysis</b>. Sie testet, ob du einen
 Graphen <b>lesen</b>, sicher <b>per Hand ableiten</b> und über <b>Verschiebung und Symmetrie</b>
 argumentieren kannst — und das alles <b>rechnerfrei</b>. Genau das brauchst du im Gespräch.
 

@@ -1,7 +1,7 @@
 # Funktionsuntersuchung
 
-Eine **Funktionsuntersuchung** (auch „Kurvendiskussion") ist das Herzstück der Analysis-Prüfung,
-Léona. Du bekommst eine Funktion und sollst ihren Graphen vollständig verstehen, ohne ihn vorher zu
+Eine **Funktionsuntersuchung** (auch „Kurvendiskussion") ist das Herzstück der Analysis-Prüfung.
+Du bekommst eine Funktion und sollst ihren Graphen vollständig verstehen, ohne ihn vorher zu
 sehen: Wo schneidet er die Achsen? Ist er symmetrisch? Wo steigt und fällt er? Wo sind seine Spitzen?
 Wo ändert sich seine Krümmung? Wenn du das beantwortest, kannst du den Graphen am Ende von Hand
 skizzieren.
@@ -349,7 +349,7 @@ ganzrationale Funktion füllen kannst, beherrschst du die Kurvendiskussion.
 
 <details><summary>Mündlich erklärt: Wie würdest du der Prüferin den Graphen in drei Sätzen beschreiben?</summary>
 
-Übe diese Zusammenfassung laut, Léona — genau so etwas wird im Prüfungsgespräch verlangt:
+Übe diese Zusammenfassung laut — genau so etwas wird im Prüfungsgespräch verlangt:
 
 „Der Graph von \( f(x) = x^3 - 3x \) ist punktsymmetrisch zum Ursprung. Er kommt von links unten,
 steigt zum Hochpunkt \( H(-1\mid 2) \), fällt durch den Ursprung — der zugleich Wendepunkt ist — hinab

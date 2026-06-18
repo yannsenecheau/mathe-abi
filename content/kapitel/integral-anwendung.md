@@ -1,6 +1,6 @@
 # Integral in Sachzusammenhängen
 
-Léona, in diesem Kapitel geht es um die wohl wichtigste Anwendung des Integrals in der mündlichen
+In diesem Kapitel geht es um die wohl wichtigste Anwendung des Integrals in der mündlichen
 Prüfung: Du hast eine **Änderungsrate** gegeben (wie schnell sich etwas ändert) und sollst daraus den
 **Bestand** oder die **Gesamtänderung** rekonstruieren. Das klingt abstrakt, ist aber im Kern eine
 einzige Idee, die du sicher beherrschen solltest. Wir bauen sie Schritt für Schritt auf — und du

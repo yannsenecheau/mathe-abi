@@ -5,7 +5,7 @@ Du lernst zuerst, was der Wert eines Integrals *geometrisch* bedeutet (mit Vorze
 wie du daraus echte Flächeninhalte rechnerfrei bestimmst — auch dann, wenn der Graph mitten im
 Intervall die x-Achse kreuzt oder du die Fläche zwischen zwei Kurven brauchst.
 
-Eine Sache vorweg, Léona: In deiner Prüfung rechnest du das alles **von Hand**, ohne Taschenrechner.
+Eine Sache vorweg: In deiner Prüfung rechnest du das alles **von Hand**, ohne Taschenrechner.
 Genau darauf ist dieses Kapitel ausgelegt — alle Zahlen sind so gewählt, dass du sie im Kopf bzw. mit
 Bruchrechnung sicher erreichst.
 
