@@ -307,6 +307,12 @@ def landing(groups):
 Schwerpunkt Analysis). Alles wird von Hand gerechnet &mdash; hilfsmittelfrei, genau wie in der Prüfung.
 Das Buch wächst mit deinem Lernstand mit.</p>
 
+<div class="cards"><a class="card path-verstehen" href="kap-grenzwerte-randverhalten.html">
+  <h3>Vertiefung: Grenzwerte (Limes) &amp; Randverhalten <span class="arrow">→</span></h3>
+  <p>Wie der Grenzwertbegriff und das „Verhalten an den Rändern" zusammenhängen — ausführlich erklärt mit
+  Beispielen, einseitigen Grenzwerten, Asymptoten und der Dominanz der e-Funktion. Eine Ebene tiefer als
+  die übrigen Kapitel.</p></a></div>
+
 <div class="meta-row">
   <span>Mündlich · hilfsmittelfrei</span>
   <span>Schwerpunkt Analysis</span>
