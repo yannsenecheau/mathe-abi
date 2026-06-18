@@ -313,6 +313,8 @@ Das Buch wächst mit deinem Lernstand mit.</p>
   Beispielen, einseitigen Grenzwerten, Asymptoten und der Dominanz der e-Funktion. Eine Ebene tiefer als
   die übrigen Kapitel.</p></a></div>
 
+<p class="podcast-link">&#127911; <b>Zum Anhören unterwegs:</b> <a href="audio/podcast-grenzwerte-ln.mp3">Podcast – Grenzwerte &amp; natürlicher Logarithmus (MP3)</a></p>
+
 <div class="meta-row">
   <span>Mündlich · hilfsmittelfrei</span>
   <span>Schwerpunkt Analysis</span>
