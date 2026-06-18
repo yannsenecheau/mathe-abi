@@ -1,0 +1,323 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Integral in Sachzusammenhängen — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link active" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Léona, in diesem Kapitel geht es um die wohl wichtigste Anwendung des
+Integrals in der mündlichen Prüfung: Du hast eine
+<strong>Änderungsrate</strong> gegeben (wie schnell sich etwas ändert)
+und sollst daraus den <strong>Bestand</strong> oder die
+<strong>Gesamtänderung</strong> rekonstruieren. Das klingt abstrakt, ist
+aber im Kern eine einzige Idee, die du sicher beherrschen solltest. Wir
+bauen sie Schritt für Schritt auf — und du rechnest alles <strong>per
+Hand</strong>, denn die Prüfung ist hilfsmittelfrei.</p>
+<p><span class="tag tag-ok">Kern-Thema Analysis · Anforderungsbereich AB
+II</span></p>
+<section id="die-grundidee-vom-tempo-zur-menge" class="level2">
+<h2>Die Grundidee: vom Tempo zur Menge</h2>
+<p>Stell dir vor, jemand sagt dir nur, <strong>wie schnell</strong> sich
+etwas verändert — wie schnell Wasser in ein Becken fließt, wie schnell
+ein Auto fährt, wie schnell sich eine Population vermehrt. Diese „Wie
+schnell"-Größe heißt <strong>Änderungsrate</strong>. Die Frage lautet
+dann: Wie viel hat sich <strong>insgesamt</strong> angesammelt oder
+verändert?</p>
+<p>Die Antwort gibt das Integral. Ist \( r(t) \) die
+Änderungsrate einer Größe \( B \) (also
+\( r(t) = B'(t) \)), dann ist</p>
+<p>\[ \int_{a}^{b} r(t)\,dt \;=\; B(b) - B(a) \;=\; \text{Gesamtänderung von } B \text{ zwischen } a \text{ und } b. \]</p>
+<p>Das ist die <strong>Bedeutung des Integrals als rekonstruierte
+Gesamtänderung</strong>: Du summierst lauter winzige Änderungen
+\( r(t)\,dt \) auf und bekommst, wie viel sich von
+\( a \) bis \( b \) zusammengenommen getan
+hat.</p>
+<details><summary>Haltung dahinter: warum überhaupt funktioniert das?</summary>
+
+<p>Das <strong>Prinzip</strong>: Über ein winziges Zeitstückchen
+\( dt \) ändert sich die Größe näherungsweise um „Rate mal
+Zeit", also \( r(t)\,dt \). Beispiel: Fließt Wasser gerade mit
+\( 5\,\tfrac{\text{m}^3}{\text{h}} \) und betrachtest du \( dt = 0{,}1\,\text{h} \), kommen
+\( 5 \cdot 0{,}1 = 0{,}5\,\text{m}^3 \) dazu. Das Integral summiert all diese Stückchen über
+das ganze Intervall — daraus wird die Gesamtmenge.</p>
+<details><summary>Begründung: der Zusammenhang zum Hauptsatz</summary>
+
+<p>Wenn \( r = B' \), dann ist \( B \) eine
+<strong>Stammfunktion</strong> von \( r \). Der
+<strong>Hauptsatz der Differential- und Integralrechnung</strong> sagt:
+\( \int_a^b r(t)\,dt = \big[B(t)\big]_a^b = B(b) - B(a) \). Genau das ist die Differenz der Bestände — also die
+Gesamtänderung. Das Integral „macht das Ableiten rückgängig".</p>
+<details><summary>Annahme/Axiom: was setzen wir voraus?</summary>
+
+<p>Damit der Hauptsatz greift, muss \( r \) auf
+\( [a,b] \) <strong>stetig</strong> sein (keine Sprünge), und
+\( B \) muss eine differenzierbare Funktion mit
+\( B' = r \) sein. In allen Schulaufgaben des Basisfachs ist das
+erfüllt; die Ratenfunktionen sind dort durchweg „brave" Funktionen
+(Polynome, einfache Brüche). Diese Voraussetzung musst du in der Prüfung
+nicht beweisen, aber du solltest wissen, <strong>dass</strong> es eine
+gibt.</p>
+</details>
+</details>
+</details>
+
+<p>Eine häufige <strong>Falle</strong>: Verwechsle nicht die Rate mit
+dem Bestand. \( r(2) = 5 \) heißt „im Moment \( t = 2 \)
+fließt es mit Tempo 5" — es heißt <strong>nicht</strong>, dass schon 5
+da sind. Wie viel da ist, verrät erst das Integral.</p>
+</section>
+<section id="vom-bestand-zur-absoluten-menge-die-konstante"
+class="level2">
+<h2>Vom Bestand zur absoluten Menge: die Konstante</h2>
+<p>Mit dem Integral bekommst du die <strong>Änderung</strong> des
+Bestands. Willst du den <strong>absoluten Bestand</strong> zu einem
+Zeitpunkt wissen, brauchst du noch einen <strong>Startwert</strong>
+(Anfangsbestand). Dann gilt</p>
+<p>\[ B(t) \;=\; B(0) \;+\; \int_{0}^{t} r(s)\,ds. \]</p>
+<p>In Worten: aktueller Bestand = Anfangsbestand + alles, was seit dem
+Start dazugekommen (oder abgeflossen) ist.</p>
+<details><summary>Haltung dahinter: warum die Integrationsvariable umbenannt ist</summary>
+
+<p>Ich habe im Integral \( s \) statt \( t \)
+geschrieben, weil \( t \) schon die <strong>obere
+Grenze</strong> ist. Dieselbe Buchstabe für Grenze und Laufvariable zu
+nehmen ist mathematisch unsauber. In der Prüfung darfst du es meist
+locker sehen, aber wenn du sauber \( \int_0^t r(s)\,ds \) schreibst, zeigt
+das Verständnis. Inhaltlich ist \( s \) nur die „Laufzeit"
+innerhalb des Integrals.</p>
+</details>
+
+</section>
+<section id="einheiten-der-heimliche-punktelieferant" class="level2">
+<h2>Einheiten: der heimliche Punktelieferant</h2>
+<p>Einheiten werden in der mündlichen Prüfung gern abgefragt — sie sind
+leicht und zeigen, ob du die Sachsituation <strong>verstanden</strong>
+hast. Die Regel ist mechanisch:</p>
+<p>\[ [\,\text{Integralwert}\,] \;=\; [\,\text{Rate}\,] \cdot [\,\text{Variable}\,]. \]</p>
+<p>Die Einheit des Integrals ist also <strong>Rate-Einheit mal Einheit
+der Integrationsvariablen</strong>, weil du im Integral „Rate mal
+\( dt \)" aufsummierst.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rate \( r(t) \)</th>
+<th>Variable</th>
+<th>Integral \( \int r\,dt \)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\( \tfrac{\text{m}^3}{\text{h}} \) (Zufluss)</td>
+<td>\( \text{h} \) (Zeit)</td>
+<td>\( \text{m}^3 \) (Volumen)</td>
+</tr>
+<tr>
+<td>\( \tfrac{\text{m}}{\text{s}} \) (Geschwindigkeit)</td>
+<td>\( \text{s} \) (Zeit)</td>
+<td>\( \text{m} \) (Weg)</td>
+</tr>
+<tr>
+<td>\( \tfrac{\text{Stück}}{\text{Tag}} \) (Produktionsrate)</td>
+<td>\( \text{Tag} \)</td>
+<td>\( \text{Stück} \)</td>
+</tr>
+</tbody>
+</table></div>
+<details><summary>Haltung dahinter: die Einheiten „kürzen" wie Zahlen</summary>
+
+<p>Schreib die Einheit als Bruch und kürze. Beispiel Geschwindigkeit:
+\( \tfrac{\text{m}}{\text{s}} \cdot \text{s} = \text{m} \) — die Sekunden heben sich weg, übrig bleibt Meter,
+also ein <strong>Weg</strong>. Das ist kein Zufall, sondern spiegelt die
+Bedeutung: Tempo (Meter pro Sekunde) über eine Zeitspanne (Sekunden)
+ergibt eine zurückgelegte Strecke (Meter). Wenn du die Einheit nicht
+„auskürzen" kannst, stimmt meist deine Deutung der Aufgabe nicht.</p>
+</details>
+
+</section>
+<section id="sachaufgabe-1-wasserbecken-mit-wechselndem-zufluss"
+class="level2">
+<h2>Sachaufgabe 1: Wasserbecken mit wechselndem Zufluss</h2>
+<p><span class="tag tag-ok">Anforderungsbereich AB II</span></p>
+<p>In ein Becken fließt Wasser, dann sickert es wieder heraus. Die
+<strong>Zuflussrate</strong> wird modelliert durch</p>
+<p>\[ r(t) = 6 - 2t \quad \left(\text{in } \tfrac{\text{m}^3}{\text{h}}, \; 0 \le t \le 4\right). \]</p>
+<p>Positives \( r \) bedeutet Zufluss, negatives
+\( r \) bedeutet Abfluss. Zu Beginn sind \( 5\,\text{m}^3 \)
+im Becken.</p>
+<p><strong>Aufgabe (a):</strong> Wie viel Wasser ist nach 3 Stunden
+<strong>insgesamt zugeflossen</strong>? <strong>Aufgabe (b):</strong>
+Wie groß ist die <strong>Gesamtänderung</strong> des Wasserstands über
+die volle Zeit \( [0,4] \), und wie viel Wasser ist dann im
+Becken?</p>
+<section id="lösung-teil-a--reiner-zufluss-bis-t--3" class="level3">
+<h3>Lösung Teil (a) — reiner Zufluss bis t = 3</h3>
+<p><span class="tag tag-ok">AB II</span></p>
+<p>Bis \( t = 3 \) ist \( r(t) = 6 - 2t \ge 0 \) (denn
+\( 6 - 2t = 0 \) erst bei \( t = 3 \)). Also fließt hier nur
+zu, und die zugeflossene Menge ist das Integral der Rate:</p>
+<p>\[ \int_{0}^{3} (6 - 2t)\,dt = \Big[\,6t - t^2\,\Big]_{0}^{3} = (18 - 9) - (0 - 0) = 9 \;\text{m}^3. \]</p>
+<p>Es sind also <strong>9 m³ zugeflossen</strong>.</p>
+<details><summary>Schritt für Schritt: wie ich die Stammfunktion bilde</summary>
+
+<p>Ich brauche eine Funktion \( R \) mit
+\( R'(t) = 6 - 2t \). Term für Term mit der <strong>Potenzregel für
+Stammfunktionen</strong> (\( t^n \to \tfrac{1}{n+1}t^{n+1} \)):</p>
+<ul>
+<li>aus \( 6 \) wird \( 6t \) (denn
+\( (6t)' = 6 \)),</li>
+<li>aus \( -2t \) wird \( -2 \cdot \tfrac{1}{2}t^2 = -t^2 \) (denn
+\( (-t^2)' = -2t \)).</li>
+</ul>
+<p>Also \( R(t) = 6t - t^2 \). Eine additive Konstante darf ich weglassen,
+weil sie sich beim Einsetzen der Grenzen ohnehin weghebt.</p>
+<details><summary>Haltung dahinter: warum darf die Konstante weg?</summary>
+
+<p>Beim bestimmten Integral rechne ich \( R(b) - R(a) \). Hätte ich
+\( R(t) + C \) genommen, stünde da \( (R(b)+C) - (R(a)+C) = R(b) - R(a) \) — das
+\( C \) fällt raus. Bei der <strong>Rekonstruktion des
+absoluten Bestands</strong> (Teil b) ist es anders: dort ist der
+„Startwert" \( B(0) = 5 \) genau diese Information, die ich
+<strong>nicht</strong> weglassen darf.</p>
+</details>
+</details>
+
+<details><summary>Falle: was ist hier mit „Fläche" gemeint?</summary>
+
+<p>Weil \( r \) auf \( [0,3] \) nicht negativ ist,
+stimmt das Integral hier mit dem <strong>Flächeninhalt</strong> zwischen
+Kurve und \( t \)-Achse überein. Das ist nur deshalb so,
+weil nichts unter die Achse geht. Sobald die Rate negativ wird (Teil b),
+darfst du Integral und Flächeninhalt <strong>nicht</strong> mehr
+gleichsetzen — dazu gleich mehr.</p>
+</details>
+
+</section>
+<section id="lösung-teil-b--gesamtänderung-über-das-ganze-intervall"
+class="level3">
+<h3>Lösung Teil (b) — Gesamtänderung über das ganze Intervall</h3>
+<p><span class="tag tag-ok">AB II</span></p>
+<p>Die <strong>Gesamtänderung</strong> des Bestands ist das Integral der
+Rate über das volle Intervall — egal welches Vorzeichen die Rate
+hat:</p>
+<p>\[ \int_{0}^{4} (6 - 2t)\,dt = \Big[\,6t - t^2\,\Big]_{0}^{4} = (24 - 16) - 0 = 8 \;\text{m}^3. \]</p>
+<p>Der Wasserstand hat sich über \( [0,4] \) also <strong>um
+\( +8\,\text{m}^3 \)</strong> geändert. Mit dem Anfangsbestand
+\( B(0) = 5 \) sind nach 4 Stunden im Becken:</p>
+<p>\[ B(4) = B(0) + \int_{0}^{4} r(t)\,dt = 5 + 8 = 13 \;\text{m}^3. \]</p>
+<details><summary>Haltung dahinter: warum das Integral hier kleiner ist als in Teil (a)</summary>
+
+<p>In Teil (a) kamen über \( [0,3] \) ganze \( 9\,\text{m}^3 \)
+zusammen. Über das ganze Intervall sind es aber nur \( 8\,\text{m}^3 \).
+Der Grund: Ab \( t = 3 \) wird \( r(t) = 6 - 2t \)
+<strong>negativ</strong> — es fließt wieder ab. Auf \( [3,4] \)
+gilt</p>
+<p>\[ \int_{3}^{4} (6 - 2t)\,dt = \Big[\,6t - t^2\,\Big]_{3}^{4} = (24 - 16) - (18 - 9) = 8 - 9 = -1 \;\text{m}^3, \]</p>
+<p>es geht also \( 1\,\text{m}^3 \) wieder verloren. Das Integral über
+\( [0,4] \) verrechnet Zufluss und Abfluss automatisch:
+\( 9 + (-1) = 8 \). Genau das ist die Stärke der Rekonstruktion über
+das Integral — <strong>Vorzeichen erledigen die Bilanz für
+dich</strong>.</p>
+<details><summary>Begründung: Gesamtänderung vs. „insgesamt geflossenes Wasser"</summary>
+
+<p>Würde dich jemand fragen, wie viel Wasser <strong>physisch insgesamt
+durch das Becken bewegt</strong> wurde (Zufluss-Betrag plus
+Abfluss-Betrag), müsstest du die Beträge addieren: \( 9 + 1 = 10\,\text{m}^3 \).
+Das wäre der <strong>Flächeninhalt</strong> \( \int_0^4 |6-2t|\,dt \). Die
+<strong>Gesamtänderung des Bestands</strong> ist dagegen die Bilanz
+\( 8\,\text{m}^3 \). In der Prüfung ist die Frage „Gesamtänderung" /
+„wie viel ist am Ende da" fast immer die
+<strong>vorzeichenbehaftete</strong> — das normale Integral. Lies die
+Frage genau.</p>
+</details>
+</details>
+
+<p>Der Graph zeigt die Rate \( r(t) = 6 - 2t \). Die Fläche
+<strong>über</strong> der Achse (grün, bis \( t = 3 \)) ist der
+Zufluss, die Fläche <strong>unter</strong> der Achse (rot, ab
+\( t = 3 \)) der Abfluss. Die Bilanz beider ist die
+Gesamtänderung.</p>
+<div class="jxgbox" id="jxg-zufluss" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-zufluss',{boundingbox:[-0.6,7,4.6,-3],axis:true,showCopyright:false,showNavigation:false});var r=function(t){return 6-2*t;};var cPos=b.create('functiongraph',[r,0,3],{strokeColor:'#2e7d4f',strokeWidth:2.5});var cNeg=b.create('functiongraph',[r,3,4],{strokeColor:'#c0392b',strokeWidth:2.5});b.create('integral',[[0,3],cPos],{fillColor:'#2e7d4f',fillOpacity:0.18,withLabel:false,curveLeft:{visible:false},curveRight:{visible:false},baseLeft:{visible:false},baseRight:{visible:false}});b.create('integral',[[3,4],cNeg],{fillColor:'#c0392b',fillOpacity:0.2,withLabel:false,curveLeft:{visible:false},curveRight:{visible:false},baseLeft:{visible:false},baseRight:{visible:false}});b.create('point',[3,0],{name:'t=3',size:2,fixed:true,color:'#d98324',label:{offset:[6,-12]}});})();});</script>
+
+</section>
+</section>
+<section id="sachaufgabe-2-vom-tempo-zum-weg" class="level2">
+<h2>Sachaufgabe 2: vom Tempo zum Weg</h2>
+<p><span class="tag tag-ok">Anforderungsbereich AB I–II</span></p>
+<p>Ein Modellfahrzeug startet bei \( t = 0 \) aus dem Stand.
+Seine Geschwindigkeit wird beschrieben durch</p>
+<p>\[ v(t) = 3t^2 \quad \left(\text{in } \tfrac{\text{m}}{\text{s}}, \; t \ge 0\right). \]</p>
+<p><strong>Aufgabe:</strong> Welche Strecke legt das Fahrzeug in den
+ersten <strong>2 Sekunden</strong> zurück? Gib auch die
+<strong>Einheit</strong> an und begründe sie.</p>
+<section id="lösung" class="level3">
+<h3>Lösung</h3>
+<p><span class="tag tag-ok">AB I (Rechnung) · AB II
+(Deutung/Einheit)</span></p>
+<p>Die Geschwindigkeit ist die Änderungsrate des Weges
+(\( v = s' \)). Der <strong>zurückgelegte Weg</strong> von
+\( 0 \) bis \( 2 \) ist daher das Integral der
+Geschwindigkeit:</p>
+<p>\[ s = \int_{0}^{2} 3t^2 \,dt = \Big[\,t^3\,\Big]_{0}^{2} = 2^3 - 0^3 = 8 \;\text{m}. \]</p>
+<p>Das Fahrzeug legt in 2 Sekunden <strong>8 Meter</strong> zurück.</p>
+<details><summary>Schritt für Schritt: Stammfunktion und Einheit</summary>
+
+<p><strong>Stammfunktion:</strong> Ich suche \( S \) mit
+\( S'(t) = 3t^2 \). Mit der Potenzregel wird aus \( t^2 \)
+der Term \( \tfrac{1}{3}t^3 \); der Faktor 3 hebt den Bruch auf:
+\( 3 \cdot \tfrac{1}{3}t^3 = t^3 \). Also \( S(t) = t^3 \). Probe durch Ableiten:
+\( (t^3)' = 3t^2 = v(t) \) ✓.</p>
+<p><strong>Einheit:</strong> Die Rate ist in \( \tfrac{\text{m}}{\text{s}} \),
+integriert wird über die Zeit in \( \text{s} \). Also
+\( \tfrac{\text{m}}{\text{s}} \cdot \text{s} = \text{m} \) — das Ergebnis ist ein <strong>Weg in
+Metern</strong>. Genau deshalb passt „8 m" und nicht etwa „8 m/s".</p>
+<details><summary>Haltung dahinter: warum ist der Weg nicht einfach „Tempo mal Zeit"?</summary>
+
+<p>Bei <strong>konstantem</strong> Tempo wäre Weg = Tempo · Zeit. Hier
+ist das Tempo aber nicht konstant — es wächst mit \( t^2 \).
+Anfangs ist das Fahrzeug langsam, später schnell. „Tempo mal Zeit" mit
+einem festen Wert würde danebenliegen. Das Integral macht genau das
+Richtige: Es summiert die ständig wechselnden Tempo-Werte über alle
+Zeitpunkte auf. Bei veränderlicher Rate <strong>ist das Integral der
+einzige korrekte Weg</strong>, den Gesamteffekt zu bestimmen.</p>
+<details><summary>Probe mit gesundem Menschenverstand</summary>
+
+<p>Das Durchschnittstempo zwischen \( t=0 \)
+(\( v=0 \)) und \( t=2 \) (\( v=3\cdot 4 = 12\,\tfrac{\text{m}}{\text{s}} \))
+liegt grob bei einigen \( \tfrac{\text{m}}{\text{s}} \). Über 2 Sekunden ergibt das
+eine Strecke in der Größenordnung weniger Meter — \( 8\,\text{m} \)
+ist plausibel. Solche <strong>Plausibilitätsprüfungen</strong> sind in
+der mündlichen Prüfung Gold wert: Sie fangen Rechenfehler ab und zeigen,
+dass du das Ergebnis einordnen kannst.</p>
+</details>
+</details>
+</details>
+
+</section>
+</section>
+<section id="mini-rezept-für-die-prüfung" class="level2">
+<h2>Mini-Rezept für die Prüfung</h2>
+<p>Wenn eine Aufgabe nach Bestand oder Gesamtänderung aus einer Rate
+fragt, gehst du immer gleich vor:</p>
+<ol type="1">
+<li><strong>Erkennen:</strong> Ist die gegebene Funktion eine
+<strong>Rate</strong> (Tempo, Zufluss, „pro …")? Dann ist die gesuchte
+Gesamtgröße ein <strong>Integral</strong>.</li>
+<li><strong>Grenzen festlegen:</strong> von wann bis wann? Das sind
+\( a \) und \( b \).</li>
+<li><strong>Stammfunktion</strong> per Hand bilden (Potenzregel) und
+Probe durch Ableiten.</li>
+<li><strong>Einsetzen:</strong> \( \big[F(t)\big]_a^b = F(b) - F(a) \).</li>
+<li><strong>Startwert?</strong> Wird der <strong>absolute
+Bestand</strong> gefragt, addiere den Anfangswert
+\( B(0) \).</li>
+<li><strong>Einheit</strong> angeben (Rate-Einheit · Variablen-Einheit)
+und <strong>Ergebnis im Sachkontext deuten</strong>.</li>
+<li><strong>Vorzeichen prüfen:</strong> „Gesamtänderung/wie viel am
+Ende" → normales Integral (mit Vorzeichen); „insgesamt bewegte Menge /
+Gesamtfläche" → Beträge bzw. \( \int |r| \).</li>
+</ol>
+<details><summary>Der eine Satz, den du in der Prüfung sagen können solltest</summary>
+
+<p>„Das Integral der Änderungsrate über ein Intervall ist die
+Gesamtänderung des Bestands in diesem Intervall; den absoluten Bestand
+bekomme ich, indem ich den Anfangsbestand addiere." Wenn du diesen Satz
+frei und mit einem Beispiel sagen kannst, hast du den Kern dieses
+Kapitels sicher.</p>
+</details>
+
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

@@ -1,0 +1,510 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Funktionsuntersuchung — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link active" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Eine <strong>Funktionsuntersuchung</strong> (auch „Kurvendiskussion")
+ist das Herzstück der Analysis-Prüfung, Léona. Du bekommst eine Funktion
+und sollst ihren Graphen vollständig verstehen, ohne ihn vorher zu
+sehen: Wo schneidet er die Achsen? Ist er symmetrisch? Wo steigt und
+fällt er? Wo sind seine Spitzen? Wo ändert sich seine Krümmung? Wenn du
+das beantwortest, kannst du den Graphen am Ende von Hand skizzieren.</p>
+<p>Die <strong>Haltung dahinter:</strong> Du gehst immer dieselbe
+Checkliste durch — von der gröbsten Information (Achsenschnitte,
+Symmetrie, Randverhalten) zur feinsten (Extrem- und Wendestellen). Jeder
+Schritt schränkt das mögliche Aussehen des Graphen weiter ein, bis am
+Ende nur noch eine Form übrig bleibt.</p>
+<p>Wir untersuchen das <strong>ganze Kapitel über dieselbe
+Funktion</strong>, damit du den roten Faden behältst:</p>
+<p>\[ f(x) = x^3 - 3x \]</p>
+<p>Das ist eine <strong>ganzrationale Funktion</strong> dritten Grades
+(ein Polynom). Halte dir schon die drei Ableitungen bereit — fast jeder
+Schritt braucht eine davon:</p>
+<p>\[ f'(x) = 3x^2 - 3, \qquad f''(x) = 6x, \qquad f'''(x) = 6 \]</p>
+<details><summary>Wie komme ich rechnerfrei auf diese Ableitungen?</summary>
+
+<p>Du brauchst nur die <strong>Potenzregel</strong>: Der Exponent
+wandert als Faktor nach vorn, dann wird der Exponent um
+\( 1 \) kleiner. Aus \( x^n \) wird
+\( n\,x^{n-1} \).</p>
+<ul>
+<li>\( x^3 \) wird zu \( 3x^2 \).</li>
+<li>\( -3x = -3x^1 \) wird zu \( -3 \cdot 1 \cdot x^0 = -3 \) (denn
+\( x^0 = 1 \)).</li>
+</ul>
+<p>Zusammen: \( f'(x) = 3x^2 - 3 \). Genauso noch einmal abgeleitet: aus
+\( 3x^2 \) wird \( 6x \), aus \( -3 \)
+(eine Konstante) wird \( 0 \). Also \( f''(x) = 6x \). Und
+einmal mehr: \( f'''(x) = 6 \).</p>
+<details><summary>Haltung dahinter: Warum verschwinden Konstanten beim Ableiten?</summary>
+
+<p>Die Ableitung misst die <strong>Steigung</strong>, also wie stark
+sich der Funktionswert ändert. Eine Konstante ändert sich nie — ihr
+Graph ist eine waagerechte Linie mit Steigung \( 0 \). Darum
+fällt jede additive Konstante beim Ableiten weg. Das ist auch der Grund,
+warum \( f(x) = x^3 - 3x \) und \( x^3 - 3x + 5 \) dieselbe Ableitung
+haben: Der Summand \( +5 \) verschiebt den Graphen nur nach
+oben, ändert aber an keiner Stelle die Steigung.</p>
+</details>
+</details>
+
+<section id="nullstellen--y-achsenabschnitt" class="level2">
+<h2>Nullstellen &amp; y-Achsenabschnitt</h2>
+<p>Die ersten beiden Fragen sind die einfachsten und liefern dir sofort
+konkrete Punkte des Graphen.</p>
+<p><strong>Der y-Achsenabschnitt</strong> ist der Schnittpunkt mit der
+senkrechten Achse. Dort ist \( x = 0 \), also setzt du einfach
+\( 0 \) ein: \( f(0) = 0^3 - 3 \cdot 0 = 0 \). Der Graph geht durch den
+Ursprung \( (0 \mid 0) \). <span class="tag tag-ok">AB I</span></p>
+<p><strong>Die Nullstellen</strong> sind die Schnittpunkte mit der
+waagerechten Achse. Dort ist \( f(x) = 0 \). Du löst also die
+Gleichung \( x^3 - 3x = 0 \). <span class="tag tag-ok">AB II</span></p>
+<details><summary>Wie löse ich \( x^3 - 3x = 0 \) rechnerfrei?</summary>
+
+<p>Der <strong>erste Reflex bei jeder Gleichung „etwas
+\( = 0 \)" ist: ausklammern</strong>. Hier steckt in beiden
+Summanden ein \( x \):</p>
+<p>\[ x^3 - 3x = x \,(x^2 - 3) = 0 \]</p>
+<p>Jetzt greift der <strong>Satz vom Nullprodukt</strong>: Ein Produkt
+ist genau dann null, wenn einer der Faktoren null ist. Also untersuchst
+du die Faktoren einzeln:</p>
+<ul>
+<li>\( x = 0 \) — das ist schon eine Nullstelle.</li>
+<li>\( x^2 - 3 = 0 \;\Leftrightarrow\; x^2 = 3 \;\Leftrightarrow\; x = \pm\sqrt{3} \approx \pm 1{,}73 \).</li>
+</ul>
+<p>Die drei Nullstellen sind also \( x_1 = -\sqrt{3} \),
+\( x_2 = 0 \), \( x_3 = +\sqrt{3} \).</p>
+<details><summary>Haltung dahinter: Warum ausklammern und nicht „durch x teilen"?</summary>
+
+<p>Verlockend wäre, beide Seiten durch \( x \) zu teilen.
+<strong>Das ist eine klassische Falle:</strong> Damit würdest du die
+Nullstelle \( x = 0 \) verlieren, denn durch \( 0 \)
+darf man nicht teilen. Ausklammern behält alle Lösungen. Merke: Beim
+Lösen von Gleichungen wird <strong>faktorisiert, nicht
+dividiert</strong> — Division durch einen Term, der null sein könnte,
+löscht Lösungen aus.</p>
+</details>
+
+<details><summary>Warum hat ein Polynom dritten Grades höchstens drei Nullstellen?</summary>
+
+<p>Eine ganzrationale Funktion vom Grad \( n \) hat
+höchstens \( n \) Nullstellen. Anschaulich: Jede Nullstelle
+entspricht einem Linearfaktor \( (x - x_0) \), und mehr als
+\( n \) solche Faktoren passen nicht in ein Polynom vom Grad
+\( n \), ohne den Grad zu sprengen. Hier ist
+\( n = 3 \), und wir haben genau drei gefunden — also alle.</p>
+</details>
+</details>
+
+</section>
+<section id="symmetrie" class="level2">
+<h2>Symmetrie</h2>
+<p>Bevor du dich in Rechnungen stürzt, lohnt ein Blick auf die
+<strong>Symmetrie</strong>: Sie halbiert oft die Arbeit, weil du dann
+nur eine Hälfte des Graphen untersuchen musst und die andere
+spiegelst.</p>
+<p>Es gibt zwei Standardfälle, die du im Abitur prüfst:</p>
+<ul>
+<li><strong>Achsensymmetrie zur y-Achse</strong>, wenn
+\( f(-x) = f(x) \) gilt.</li>
+<li><strong>Punktsymmetrie zum Ursprung</strong>, wenn
+\( f(-x) = -f(x) \) gilt.</li>
+</ul>
+<p>Für unsere Funktion prüfst du \( f(-x) \):
+<span class="tag tag-ok">AB II</span></p>
+<p>\[ f(-x) = (-x)^3 - 3(-x) = -x^3 + 3x = -\bigl(x^3 - 3x\bigr) = -f(x) \]</p>
+<p>Es kommt \( -f(x) \) heraus — also ist \( f \)
+<strong>punktsymmetrisch zum Ursprung</strong>. Das passt zu dem, was du
+oben schon gesehen hast: Die Nullstellen liegen spiegelbildlich bei
+\( -\sqrt{3} \) und \( +\sqrt{3} \), und der Graph geht durch
+den Ursprung.</p>
+<details><summary>Die schnelle Abkürzung bei Polynomen (Exponenten-Trick)</summary>
+
+<p>Bei <strong>ganzrationalen Funktionen</strong> musst du nicht jedes
+Mal \( f(-x) \) ausrechnen. Du schaust nur auf die
+<strong>Exponenten</strong>:</p>
+<ul>
+<li>Kommen <strong>nur gerade</strong> Exponenten vor (inkl. der
+konstanten \( x^0 \))? → achsensymmetrisch zur y-Achse.
+Beispiel: \( x^4 - 2x^2 + 1 \).</li>
+<li>Kommen <strong>nur ungerade</strong> Exponenten vor? →
+punktsymmetrisch zum Ursprung. Genau unser Fall: \( x^3 - 3x \) hat
+die Exponenten \( 3 \) und \( 1 \), beide
+ungerade.</li>
+<li><strong>Gemischt</strong> (gerade <em>und</em> ungerade)? → keine
+der beiden Standardsymmetrien.</li>
+</ul>
+<details><summary>Haltung dahinter: Warum funktioniert der Exponenten-Trick?</summary>
+
+<p>Setzt du \( -x \) ein, dreht ein Term genau dann sein
+Vorzeichen um, wenn sein Exponent ungerade ist (z. B.
+\( (-x)^3 = -x^3 \)); bei geradem Exponenten bleibt das Vorzeichen (z.
+B. \( (-x)^2 = x^2 \)). Sind <strong>alle</strong> Exponenten ungerade,
+dreht <strong>jeder</strong> Term sein Vorzeichen — der ganze Term wird
+zu \( -f(x) \). Sind alle gerade, bleibt alles gleich, also
+\( f(-x) = f(x) \). Der Trick ist nur die abgekürzte Version der
+ausführlichen Rechnung oben.</p>
+</details>
+</details>
+
+</section>
+<section id="randverhalten-verhalten-im-unendlichen" class="level2">
+<h2>Randverhalten (Verhalten im Unendlichen)</h2>
+<p>Das <strong>Randverhalten</strong> beantwortet die Frage: Wohin läuft
+der Graph ganz weit links und ganz weit rechts? Es legt die grobe
+„Flugbahn" der Kurve fest. <span class="tag tag-ok">AB II</span></p>
+<p>Bei ganzrationalen Funktionen entscheidet allein der <strong>Term mit
+dem höchsten Exponenten</strong> — hier \( x^3 \). Für sehr
+große \( |x| \) wächst \( x^3 \) so schnell, dass
+der Summand \( -3x \) daneben keine Rolle mehr spielt. Also
+verhält sich \( f \) für die Ränder wie
+\( x^3 \):</p>
+<p>\[ \lim_{x \to +\infty} f(x) = +\infty, \qquad \lim_{x \to -\infty} f(x) = -\infty \]</p>
+<p>In Worten: Der Graph kommt links unten herein und läuft rechts oben
+hinaus.</p>
+<details><summary>Warum darf ich die kleineren Terme ignorieren?</summary>
+
+<p>Klammere den höchsten Term aus:</p>
+<p>\[ f(x) = x^3 - 3x = x^3\left(1 - \frac{3}{x^2}\right) \]</p>
+<p>Für \( x \to \pm\infty \) wird \( \frac{3}{x^2} \) beliebig klein, geht
+also gegen \( 0 \). Die Klammer strebt damit gegen
+\( 1 \), und übrig bleibt das Verhalten von
+\( x^3 \). Das ist die <strong>Haltung dahinter</strong>: Im
+Unendlichen dominiert immer der höchste Term, weil er alle anderen
+überwächst.</p>
+<details><summary>Die Merkregel für ganzrationale Funktionen</summary>
+
+<p>Du musst nur auf zwei Dinge schauen: den <strong>Grad</strong>
+(gerade oder ungerade) und das <strong>Vorzeichen des
+Leitkoeffizienten</strong> (Zahl vor dem höchsten Term).</p>
+<ul>
+<li><strong>Ungerader Grad</strong> (wie hier, Grad \( 3 \),
+Leitkoeffizient \( +1 \)): Die beiden Enden laufen in
+<strong>entgegengesetzte</strong> Richtungen — links nach
+\( -\infty \), rechts nach \( +\infty \). Bei negativem
+Leitkoeffizienten genau andersherum.</li>
+<li><strong>Gerader Grad</strong> (z. B. eine Parabel
+\( x^2 \)): Beide Enden laufen in <strong>dieselbe</strong>
+Richtung — bei positivem Leitkoeffizienten beide nach
+\( +\infty \).</li>
+</ul>
+<p>Das passt zur Punktsymmetrie: Ein punktsymmetrischer Graph
+<em>muss</em> an den Enden gegenläufig sein.</p>
+</details>
+</details>
+
+</section>
+<section id="extremstellen--monotonie" class="level2">
+<h2>Extremstellen &amp; Monotonie</h2>
+<p>Jetzt zur Feinform. <strong>Monotonie</strong> beschreibt, wo der
+Graph steigt und wo er fällt; <strong>Extremstellen</strong> sind die
+Hoch- und Tiefpunkte, an denen er von Steigen auf Fallen umschlägt (oder
+umgekehrt). Beides hängt am Vorzeichen der <strong>ersten
+Ableitung</strong> \( f' \), denn \( f'(x) \) ist die
+Steigung des Graphen an der Stelle \( x \):</p>
+<ul>
+<li>\( f'(x) > 0 \): Graph steigt (streng monoton steigend).</li>
+<li>\( f'(x) < 0 \): Graph fällt (streng monoton fallend).</li>
+<li>\( f'(x) = 0 \): waagerechte Tangente — ein Kandidat für eine
+Extremstelle.</li>
+</ul>
+<p><strong>Schritt 1 — notwendige Bedingung
+\( f'(x) = 0 \):</strong> <span class="tag tag-ok">AB II</span></p>
+<p>\[ 3x^2 - 3 = 0 \;\Leftrightarrow\; x^2 = 1 \;\Leftrightarrow\; x = \pm 1 \]</p>
+<p>Die Kandidaten sind \( x = -1 \) und \( x = +1 \).</p>
+<p><strong>Schritt 2 — hinreichende Bedingung über
+\( f'' \):</strong> Ist \( f''(x_0) \neq 0 \) an einer Stelle
+mit \( f'(x_0) = 0 \), liegt dort wirklich ein Extrempunkt. Dabei
+gilt: <span class="tag tag-ok">AB II</span></p>
+<ul>
+<li>\( f''(x_0) > 0 \) → <strong>Tiefpunkt</strong> (Graph ist dort
+nach oben gekrümmt, „Tal").</li>
+<li>\( f''(x_0) < 0 \) → <strong>Hochpunkt</strong> (Graph ist dort
+nach unten gekrümmt, „Berg").</li>
+</ul>
+<p>Du setzt die Kandidaten in \( f''(x) = 6x \) ein:</p>
+<ul>
+<li>\( f''(-1) = 6 \cdot (-1) = -6 < 0 \) → <strong>Hochpunkt</strong> bei
+\( x = -1 \).</li>
+<li>\( f''(+1) = 6 \cdot 1 = +6 > 0 \) → <strong>Tiefpunkt</strong> bei
+\( x = +1 \).</li>
+</ul>
+<p><strong>Schritt 3 — y-Werte (die vollständigen Punkte):</strong> Du
+setzt die Stellen in das <em>ursprüngliche</em> \( f \)
+ein, nicht in eine Ableitung:</p>
+<p>\[ f(-1) = (-1)^3 - 3(-1) = -1 + 3 = 2, \qquad f(1) = 1^3 - 3 \cdot 1 = 1 - 3 = -2 \]</p>
+<p>Ergebnis: <strong>Hochpunkt</strong> \( H(-1 \mid 2) \) und
+<strong>Tiefpunkt</strong> \( T(1 \mid -2) \). Auch hier siehst du die
+Punktsymmetrie: Die beiden Punkte liegen spiegelbildlich zum
+Ursprung.</p>
+<details><summary>Warum reicht \( f'(x)=0 \) allein nicht — und warum hilft \( f'' \)?</summary>
+
+<p>\( f'(x) = 0 \) bedeutet nur „die Tangente ist waagerecht". Das
+ist bei jedem Hoch- und Tiefpunkt so, <strong>aber auch</strong> an
+einem sogenannten Sattelpunkt (waagerechte Tangente ohne Extremum, der
+Graph steigt davor und danach weiter). Darum heißt \( f'(x) = 0 \)
+<strong>notwendig</strong>: Jede Extremstelle erfüllt es, aber nicht
+jede Stelle, die es erfüllt, ist eine Extremstelle.</p>
+<p>Die <strong>hinreichende</strong> Bedingung \( f''(x_0) \neq 0 \)
+schließt die Lücke. \( f''(x_0) > 0 \) heißt: Der Graph ist dort nach
+oben gekrümmt — eine waagerechte Tangente in einem nach oben gekrümmten
+Bogen kann nur am tiefsten Punkt liegen, also Tiefpunkt. Umgekehrt bei
+\( f''(x_0) < 0 \): Hochpunkt.</p>
+<details><summary>Die Eselsbrücke für Hoch-/Tiefpunkt</summary>
+
+<p>\( f'' \) <strong>positiv = Tiefpunkt</strong>,
+\( f'' \) <strong>negativ = Hochpunkt</strong> — das fühlt
+sich oft „verkehrt" an. Merke es dir über die Form: Ein positives
+\( f'' \) bedeutet eine nach oben geöffnete Kurve (wie ein
+lachender Mund \( \smile \), ein Tal → Tiefpunkt), ein negatives
+\( f'' \) eine nach unten geöffnete Kurve (wie ein trauriger
+Mund \( \frown \), ein Berg → Hochpunkt).</p>
+</details>
+
+<details><summary>Was tun, wenn auch \( f''(x_0) = 0 \) ist?</summary>
+
+<p>Dann versagt das \( f'' \)-Kriterium, und du weichst auf
+das <strong>Vorzeichenwechsel-Kriterium von
+\( f' \)</strong> aus: Du prüfst, ob \( f' \)
+links und rechts von \( x_0 \) das Vorzeichen wechselt.
+Wechsel von \( + \) nach \( - \) → Hochpunkt;
+von \( - \) nach \( + \) → Tiefpunkt;
+<strong>kein</strong> Wechsel → Sattel- bzw. Terrassenpunkt. In unserem
+Beispiel tritt dieser Fall nicht auf, weil \( f''(\pm 1) \neq 0 \) ist.</p>
+</details>
+</details>
+
+<p><strong>Monotonie-Tabelle.</strong> Mit den beiden Extremstellen ist
+die Zahlengerade in drei Bereiche geteilt. In jedem Bereich behält
+\( f' \) sein Vorzeichen; du musst nur einen Probewert je
+Bereich einsetzen. <span class="tag tag-ok">AB II</span></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Probewert</th>
+<th>\( f'(\text{Probe}) = 3x^2 - 3 \)</th>
+<th>Vorzeichen</th>
+<th>Verhalten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\( x < -1 \)</td>
+<td>\( x = -2 \)</td>
+<td>\( 3 \cdot 4 - 3 = 9 \)</td>
+<td>\( + \)</td>
+<td>steigt</td>
+</tr>
+<tr>
+<td>\( -1 < x < 1 \)</td>
+<td>\( x = 0 \)</td>
+<td>\( 0 - 3 = -3 \)</td>
+<td>\( - \)</td>
+<td>fällt</td>
+</tr>
+<tr>
+<td>\( x > 1 \)</td>
+<td>\( x = 2 \)</td>
+<td>\( 3 \cdot 4 - 3 = 9 \)</td>
+<td>\( + \)</td>
+<td>steigt</td>
+</tr>
+</tbody>
+</table></div>
+<p>Der Graph steigt also bis zum Hochpunkt \( H(-1\mid 2) \), fällt
+dann hinab zum Tiefpunkt \( T(1\mid -2) \) und steigt danach wieder —
+genau das typische Auf-und-Ab einer Funktion dritten Grades.</p>
+<details><summary>Haltung dahinter: Warum genügt ein einziger Probewert pro Bereich?</summary>
+
+<p>Zwischen zwei benachbarten Nullstellen von \( f' \) kann
+\( f' \) das Vorzeichen nicht wechseln — ein
+Vorzeichenwechsel bräuchte ja eine Nullstelle dazwischen, und die gibt
+es per Annahme nicht. Also ist \( f' \) im ganzen Bereich
+gleich gepolt, und ein einziger Testwert verrät das Vorzeichen für den
+gesamten Abschnitt. Das spart dir viel Rechnerei.</p>
+</details>
+
+</section>
+<section id="wendestellen--krümmung" class="level2">
+<h2>Wendestellen &amp; Krümmung</h2>
+<p>Zuletzt die <strong>Krümmung</strong>: Sie sagt, ob sich der Graph
+nach oben oder nach unten wölbt. Eine <strong>Wendestelle</strong> ist
+der Punkt, an dem die Krümmung umschlägt — der Graph wechselt von einer
+Linkskurve in eine Rechtskurve oder umgekehrt. Das hängt am Vorzeichen
+der <strong>zweiten Ableitung</strong> \( f'' \):</p>
+<ul>
+<li>\( f''(x) > 0 \): <strong>konvex</strong> (linksgekrümmt, nach
+oben gewölbt \( \smile \)).</li>
+<li>\( f''(x) < 0 \): <strong>konkav</strong> (rechtsgekrümmt, nach
+unten gewölbt \( \frown \)).</li>
+<li>\( f''(x) = 0 \): möglicher Wechsel — Kandidat für eine
+Wendestelle.</li>
+</ul>
+<p><strong>Schritt 1 — notwendige Bedingung
+\( f''(x) = 0 \):</strong> <span class="tag tag-ok">AB II</span></p>
+<p>\[ 6x = 0 \;\Leftrightarrow\; x = 0 \]</p>
+<p><strong>Schritt 2 — hinreichende Bedingung über
+\( f''' \):</strong> Ist \( f'''(x_0) \neq 0 \), liegt dort
+tatsächlich eine Wendestelle. Hier ist \( f'''(x) = 6 \), also
+konstant: \( f'''(0) = 6 \neq 0 \) — \( x = 0 \) ist
+<strong>gesichert</strong> eine Wendestelle. <span class="tag tag-ok">AB
+II</span></p>
+<p><strong>Schritt 3 — y-Wert:</strong> \( f(0) = 0^3 - 3 \cdot 0 = 0 \). Der
+<strong>Wendepunkt</strong> ist \( W(0 \mid 0) \) — er liegt genau im
+Ursprung, dem Symmetriezentrum.</p>
+<details><summary>Warum \( f''=0 \) notwendig, \( f''' \neq 0 \) hinreichend — die Parallele zu den Extremstellen</summary>
+
+<p>Das Muster ist dasselbe wie eine Stufe tiefer bei den Extremstellen,
+nur um eine Ableitung verschoben. Ein <strong>Wendepunkt von
+\( f \)</strong> ist eine <strong>Extremstelle der Steigung
+\( f' \)</strong>: An der Wendestelle ist die Steigung am
+steilsten (oder am flachsten) und kehrt ihre Änderungsrichtung um.</p>
+<ul>
+<li>Eine Extremstelle von \( f' \) verlangt
+\( (f')'(x) = f''(x) = 0 \) — das ist die notwendige Bedingung.</li>
+<li>Dass es wirklich ein Extremum von \( f' \) ist, sichert
+\( (f')''(x_0) = f'''(x_0) \neq 0 \).</li>
+</ul>
+<p>Darum „erbt" die Wendestellen-Rechnung die Logik der
+Extremstellen-Rechnung — du gehst einfach mit \( f'' \) und
+\( f''' \) genauso vor wie vorher mit \( f' \) und
+\( f'' \).</p>
+<details><summary>Haltung dahinter: die typische Falle bei \( f''=0 \)</summary>
+
+<p>\( f''(x_0) = 0 \) allein genügt <strong>nicht</strong> für eine
+Wendestelle — es ist nur notwendig. Es könnte auch eine Stelle sein, an
+der \( f'' \) die Achse nur berührt, ohne das Vorzeichen zu
+wechseln (dann keine Wende). Erst der Nachweis \( f'''(x_0) \neq 0 \)
+(oder ein Vorzeichenwechsel von \( f'' \)) macht die
+Wendestelle sicher. Behaupte nie eine Wendestelle, ohne die hinreichende
+Bedingung gezeigt zu haben.</p>
+</details>
+</details>
+
+<p><strong>Krümmungsverhalten.</strong> Da \( f''(x) = 6x \) nur bei
+\( x = 0 \) das Vorzeichen wechselt, gibt es zwei
+Krümmungsbereiche: <span class="tag tag-ok">AB II</span></p>
+<ul>
+<li>Für \( x < 0 \): \( f''(x) = 6x < 0 \) →
+<strong>konkav</strong> (rechtsgekrümmt). Dazu passt der Hochpunkt bei
+\( x = -1 \), der in einem nach unten gewölbten Bogen
+liegt.</li>
+<li>Für \( x > 0 \): \( f''(x) = 6x > 0 \) →
+<strong>konvex</strong> (linksgekrümmt). Dazu passt der Tiefpunkt bei
+\( x = +1 \) im nach oben gewölbten Bogen.</li>
+</ul>
+</section>
+<section id="synthese--den-graphen-zeichnen" class="level2">
+<h2>Synthese — den Graphen zeichnen</h2>
+<p>Jetzt setzt du alle Puzzleteile zu einem Bild zusammen. Die
+<strong>Haltung dahinter:</strong> Du brauchst den Graphen nicht zu
+„erraten" — wenn du die markanten Punkte einträgst und das Randverhalten
+beachtest, ergibt sich die Form fast von selbst.</p>
+<p>So gehst du in der Prüfung beim Skizzieren vor:</p>
+<ol type="1">
+<li><strong>Koordinatensystem</strong> mit passender Skalierung zeichnen
+(hier reicht \( x \) von etwa \( -3 \) bis
+\( 3 \), \( y \) von \( -4 \) bis
+\( 4 \)).</li>
+<li><strong>Markante Punkte eintragen:</strong> Nullstellen
+\( (-\sqrt{3}\mid 0) \), \( (0\mid 0) \), \( (\sqrt{3}\mid 0) \);
+Hochpunkt \( H(-1\mid 2) \); Tiefpunkt \( T(1\mid -2) \);
+Wendepunkt \( W(0\mid 0) \).</li>
+<li><strong>Randverhalten andeuten:</strong> links unten herein
+(\( \to -\infty \)), rechts oben hinaus (\( \to +\infty \)).</li>
+<li><strong>Verbinden, passend zur Monotonie und Krümmung:</strong>
+steigend bis \( H \), fallend bis \( T \),
+dann wieder steigend; links vom Wendepunkt rechtsgekrümmt, rechts davon
+linksgekrümmt.</li>
+</ol>
+<p>So sieht das Ergebnis aus (die markanten Punkte sind
+eingezeichnet):</p>
+<div class="jxgbox" id="jxg-funktionsuntersuchung" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-funktionsuntersuchung',{boundingbox:[-3,4,3,-4],axis:true,showCopyright:false,showNavigation:false,keepaspectratio:false});b.create('functiongraph',[function(x){return x*x*x-3*x;},-2.6,2.6],{strokeColor:'#3a5a9c',strokeWidth:2.5,name:'f',withLabel:false});b.create('point',[-1,2],{name:'H(-1|2)',size:3,fixed:true,color:'#d98324',label:{offset:[8,8]}});b.create('point',[1,-2],{name:'T(1|-2)',size:3,fixed:true,color:'#d98324',label:{offset:[8,-16]}});b.create('point',[0,0],{name:'W(0|0)',size:3,fixed:true,color:'#2f7d4f',label:{offset:[8,10]}});b.create('point',[Math.sqrt(3),0],{name:'',size:2,fixed:true,color:'#29335c',fillOpacity:0.6});b.create('point',[-Math.sqrt(3),0],{name:'',size:2,fixed:true,color:'#29335c',fillOpacity:0.6});})();});</script>
+
+<details><summary>Die vollständige Steckbrief-Tabelle (zum Abhaken in der Prüfung)</summary>
+
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Untersuchung</th>
+<th>Ergebnis für \( f(x) = x^3 - 3x \)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y-Achsenabschnitt</td>
+<td>\( f(0) = 0 \), Punkt \( (0\mid 0) \)</td>
+</tr>
+<tr>
+<td>Nullstellen</td>
+<td>\( x = -\sqrt{3},\; 0,\; +\sqrt{3} \)</td>
+</tr>
+<tr>
+<td>Symmetrie</td>
+<td>punktsymmetrisch zum Ursprung (nur ungerade Exponenten)</td>
+</tr>
+<tr>
+<td>Randverhalten</td>
+<td>\( x\to-\infty:\, f\to-\infty \); \( x\to+\infty:\, f\to+\infty \)</td>
+</tr>
+<tr>
+<td>Extremstellen</td>
+<td>Hochpunkt \( H(-1\mid 2) \), Tiefpunkt \( T(1\mid -2) \)</td>
+</tr>
+<tr>
+<td>Monotonie</td>
+<td>steigt für \( x<-1 \), fällt für \( -1<x<1 \),
+steigt für \( x>1 \)</td>
+</tr>
+<tr>
+<td>Wendestelle</td>
+<td>Wendepunkt \( W(0\mid 0) \)</td>
+</tr>
+<tr>
+<td>Krümmung</td>
+<td>konkav für \( x<0 \), konvex für
+\( x>0 \)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Diese acht Zeilen sind die komplette Funktionsuntersuchung. Wenn du
+sie für eine beliebige ganzrationale Funktion füllen kannst, beherrschst
+du die Kurvendiskussion.</p>
+</details>
+
+<details><summary>Mündlich erklärt: Wie würdest du der Prüferin den Graphen in drei Sätzen beschreiben?</summary>
+
+<p>Übe diese Zusammenfassung laut, Léona — genau so etwas wird im
+Prüfungsgespräch verlangt:</p>
+<p>„Der Graph von \( f(x) = x^3 - 3x \) ist punktsymmetrisch zum
+Ursprung. Er kommt von links unten, steigt zum Hochpunkt
+\( H(-1\mid 2) \), fällt durch den Ursprung — der zugleich Wendepunkt
+ist — hinab zum Tiefpunkt \( T(1\mid -2) \) und steigt dann nach
+rechts oben weg. Die Nullstellen liegen bei \( -\sqrt{3} \),
+\( 0 \) und \( +\sqrt{3} \)."</p>
+<p>Wenn du das frei und sicher sagen kannst, ohne abzulesen, hast du das
+Kapitel verstanden.</p>
+</details>
+
+</section>
+<section id="zur-prüfungsrelevanz" class="level2">
+<h2>Zur Prüfungsrelevanz</h2>
+<p>Die Funktionsuntersuchung an <strong>ganzrationalen
+Funktionen</strong> (Polynomen) ist Kernstoff des Basisfachs und mit
+hoher Wahrscheinlichkeit prüfungsrelevant.
+<span class="tag tag-ok">Kernstoff Basisfach</span></p>
+<p>Dieselbe Schrittfolge wendest du später auch auf andere
+Funktionstypen an. Achtung bei zwei davon:</p>
+<ul>
+<li>Die Funktion \( f(x) = \tfrac{1}{x} \) (gebrochenrationale Funktion) ist
+<span class="tag tag-warn">offiziell Leistungsfach, Basisfach unsicher
+[97 %] — mit Lehrkraft prüfen</span></li>
+<li>Die <strong>Wurzelfunktion</strong> \( f(x) = \sqrt{x} \) ist im
+Basisfach <span class="tag tag-warn">nicht eigenständig ausgewiesen,
+Basisfach unsicher [80 %] — mit Lehrkraft prüfen</span></li>
+</ul>
+<p>Für beide gilt: Falls sie in deiner Prüfung vorkommen, läuft die
+Untersuchung nach demselben Schema — nur dass du zusätzlich auf den
+<strong>Definitionsbereich</strong> achten musst (bei
+\( \tfrac{1}{x} \) ist \( x = 0 \) verboten, bei
+\( \sqrt{x} \) sind negative \( x \) verboten). Kläre
+den genauen Umfang sicherheitshalber mit deiner Lehrkraft.</p>
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

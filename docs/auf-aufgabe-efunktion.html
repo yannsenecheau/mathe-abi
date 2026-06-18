@@ -1,0 +1,268 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe: e-Funktion untersuchen — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link active" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Diese Aufgabe ist im Stil einer mündlichen Prüfung aufgebaut, Léona.
+Du bekommst eine Funktion und untersuchst sie rechnerfrei, also komplett
+per Hand und ohne Taschenrechner — genau so wie in der Prüfung. Arbeite
+jede Teilaufgabe erst selbst durch und klappe die Lösung danach auf.
+Wichtig ist nicht nur das Ergebnis, sondern dass du laut sagen kannst,
+<strong>warum</strong> du jeden Schritt gehst.</p>
+<p>Gegeben ist die Funktion</p>
+<p>\[ f(x) = (x-1)\,e^{x}. \]</p>
+<p><span class="tag tag-ok">Relevanz: e-Funktion, Kernthema Analysis im
+Basisfach</span></p>
+<blockquote>
+<p><strong>So gehst du an eine Funktionsuntersuchung heran.</strong> Es
+gibt eine feste Reihenfolge, die fast jede mündliche Aufgabe trägt: erst
+der Definitionsbereich, dann Nullstellen, dann das Verhalten im
+Unendlichen, danach die Ableitung für Extrem- und Wendepunkte. Wenn du
+diese Reihenfolge im Kopf hast, gerätst du nie ins Stocken, weil du
+immer weißt, was als Nächstes dran ist.</p>
+</blockquote>
+<section id="teilaufgabe-a-nullstellen-bestimmen" class="level2">
+<h2>Teilaufgabe a) Nullstellen bestimmen</h2>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<p>Bestimme alle Nullstellen von \( f \).</p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Wir setzen \( f(x) = 0 \):</p>
+<p>\[ (x-1)\,e^{x} = 0. \]</p>
+<p>Ein Produkt ist genau dann null, wenn einer der Faktoren null ist.
+Der Faktor \( e^{x} \) wird <strong>niemals</strong> null. Also
+bleibt nur \( x - 1 = 0 \), und das ergibt</p>
+<p>\[ x = 1. \]</p>
+<p>Die einzige Nullstelle liegt bei \( x = 1 \), der Punkt ist
+\( N(1 \mid 0) \).</p>
+<details><summary>Haltung dahinter: Warum ist \( e^{x} \) nie null?</summary>
+
+<p>Die Exponentialfunktion \( e^{x} \) ist für
+<strong>jedes</strong> \( x \) echt positiv, ihr
+Wertebereich ist \( (0; \infty) \). Sie nähert sich für sehr kleine
+\( x \) der Null nur an, erreicht sie aber nie. Das ist ein
+Werkzeug, das du dir merken solltest: In jedem Produkt aus einem Polynom
+und \( e^{x} \) liefern <strong>nur die Nullstellen des
+Polynomteils</strong> die Nullstellen der ganzen Funktion.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Verleite dich nicht dazu, „\( e^{x} = 0 \)" zu schreiben und
+daraus \( x \) berechnen zu wollen — die Gleichung hat keine
+Lösung. Wer das übersieht, „findet" oft eine zweite Nullstelle, die es
+gar nicht gibt.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-b-verhalten-für-zzmathphzz31zzendzz"
+class="level2">
+<h2>Teilaufgabe b) Verhalten für \( x \to \pm\infty \)</h2>
+<p><span class="tag tag-ok">AB II — Standardanforderung</span></p>
+<p>Untersuche, wie sich \( f(x) \) für \( x \to +\infty \) und
+für \( x \to -\infty \) verhält.</p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Für \( x \to +\infty \):</strong> Beide Faktoren wachsen über
+alle Grenzen. \( (x-1) \to +\infty \) und \( e^{x} \to +\infty \). Das Produkt
+strebt also gegen</p>
+<p>\[ \lim_{x \to +\infty} (x-1)\,e^{x} = +\infty. \]</p>
+<p><strong>Für \( x \to -\infty \):</strong> Hier kämpfen zwei Effekte
+gegeneinander. Der Faktor \( (x-1) \) wird sehr stark negativ,
+der Faktor \( e^{x} \) wird sehr klein positiv und strebt gegen
+\( 0 \). Entscheidend ist: \( e^{x} \) geht
+<strong>schneller</strong> gegen null, als \( (x-1) \) gegen
+\(-\infty\) geht. Die e-Funktion „gewinnt". Damit</p>
+<p>\[ \lim_{x \to -\infty} (x-1)\,e^{x} = 0. \]</p>
+<p>Weil \( (x-1) \) für sehr kleine \( x \) negativ
+ist, nähert sich der Graph der Null <strong>von unten</strong> an. Die
+\( x \)-Achse ist also eine waagerechte Asymptote auf der
+linken Seite.</p>
+<details><summary>Haltung dahinter: Wer gewinnt, Polynom oder e-Funktion?</summary>
+
+<p>Die Merkregel lautet: <strong>Die Exponentialfunktion schlägt jede
+Potenz von \( x \).</strong> Für \( x \to -\infty \) heißt
+das, \( e^{x} \) drückt das ganze Produkt gegen null, egal wie
+groß der Polynomfaktor dem Betrag nach wird. Für \( x \to +\infty \)
+heißt dieselbe Regel umgekehrt: \( e^{x} \) lässt das Produkt
+explodieren. Du musst das in der Prüfung nicht beweisen — es genügt, die
+Regel zu nennen und richtig anzuwenden.</p>
+<details><summary>Wie sage ich das mündlich sauber?</summary>
+
+<p>Ein guter Satz für die Prüfung: „Für \( x \to -\infty \) geht die
+e-Funktion schneller gegen null als der lineare Faktor betragsmäßig
+wächst, deshalb geht das Produkt gegen null, und zwar von unten, weil
+\( x-1 \) dort negativ ist." Damit zeigst du, dass du den
+Mechanismus verstanden hast und nicht nur ein Ergebnis auswendig
+kannst.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-c-erste-ableitung-mit-der-produktregel"
+class="level2">
+<h2>Teilaufgabe c) Erste Ableitung mit der Produktregel</h2>
+<p><span class="tag tag-ok">AB II — Standardanforderung</span></p>
+<p>Bilde \( f'(x) \) rechnerfrei und vereinfache so weit wie
+möglich.</p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Die Funktion ist ein Produkt zweier Faktoren, also nutzen wir die
+<strong>Produktregel</strong> \( (u\cdot v)' = u'\,v + u\,v' \). Wir wählen</p>
+<p>\[ u(x) = x-1, \quad v(x) = e^{x}, \qquad u'(x) = 1, \quad v'(x) = e^{x}. \]</p>
+<p>Eingesetzt:</p>
+<p>\[ f'(x) = 1 \cdot e^{x} + (x-1)\cdot e^{x}. \]</p>
+<p>Jetzt klammern wir den gemeinsamen Faktor \( e^{x} \)
+aus:</p>
+<p>\[ f'(x) = e^{x}\big(1 + x - 1\big) = e^{x}\cdot x = x\,e^{x}. \]</p>
+<p>Die Ableitung ist also</p>
+<p>\[ f'(x) = x\,e^{x}. \]</p>
+<details><summary>Haltung dahinter: immer ausklammern, bevor du weiterrechnest</summary>
+
+<p>Das Ausklammern von \( e^{x} \) ist kein Schönheitsschritt,
+sondern macht die nächste Teilaufgabe erst einfach: Wir brauchen gleich
+\( f'(x) = 0 \), und ein ausgeklammertes Produkt liest man sofort.
+Wer die Summe \( e^{x} + (x-1)e^{x} \) stehen lässt, tut sich beim Nullsetzen
+unnötig schwer.</p>
+<details><summary>Warum ist die Ableitung von \( e^{x} \) wieder \( e^{x} \)?</summary>
+
+<p>Das ist die definierende Eigenschaft der e-Funktion: Sie ist die
+einzige Funktion, die mit ihrer eigenen Ableitung übereinstimmt,
+\( (e^{x})' = e^{x} \). Genau dafür wurde die Zahl \( e \)
+gewählt. Diese Eigenschaft ist der Grund, warum sich \( e^{x} \)
+in jeder Produkt- und Kettenregel so bequem verhält.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-d-extrempunkt-bestimmen-und-einordnen"
+class="level2">
+<h2>Teilaufgabe d) Extrempunkt bestimmen und einordnen</h2>
+<p><span class="tag tag-ok">AB II — Standardanforderung</span></p>
+<p>Bestimme die Extremstelle von \( f \) und entscheide
+rechnerfrei, ob es sich um einen Hoch- oder Tiefpunkt handelt.</p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Notwendige Bedingung</strong> \( f'(x) = 0 \):</p>
+<p>\[ x\,e^{x} = 0. \]</p>
+<p>Wieder ist \( e^{x} \neq 0 \), also bleibt \( x = 0 \) als
+einziger Kandidat.</p>
+<p><strong>Funktionswert</strong> an der Stelle:</p>
+<p>\[ f(0) = (0-1)\cdot e^{0} = (-1)\cdot 1 = -1. \]</p>
+<p><strong>Hinreichende Bedingung</strong> über die zweite Ableitung.
+Wir leiten \( f'(x) = x\,e^{x} \) noch einmal mit der Produktregel ab
+(\( u=x,\ v=e^{x},\ u'=1,\ v'=e^{x} \)):</p>
+<p>\[ f''(x) = 1\cdot e^{x} + x\cdot e^{x} = e^{x}(1+x). \]</p>
+<p>Einsetzen von \( x = 0 \):</p>
+<p>\[ f''(0) = e^{0}\,(1+0) = 1 \cdot 1 = 1 > 0. \]</p>
+<p>Weil \( f''(0) > 0 \) ist, ist die Funktion an dieser Stelle
+linksgekrümmt — es liegt ein <strong>Tiefpunkt</strong> vor:</p>
+<p>\[ T(0 \mid -1). \]</p>
+<details><summary>Haltung dahinter: Warum reicht \( f'(x)=0 \) allein nicht?</summary>
+
+<p>\( f'(x) = 0 \) ist nur das <strong>notwendige</strong>
+Kriterium: An einem Extrempunkt ist die Tangente waagerecht, aber eine
+waagerechte Tangente kann auch ein Sattelpunkt sein. Erst die
+<strong>hinreichende</strong> Bedingung entscheidet, was wirklich
+vorliegt. Das Vorzeichen von \( f''(x_0) \) verrät die Krümmung:
+\( f'' > 0 \) bedeutet Linkskrümmung und damit Tiefpunkt,
+\( f'' < 0 \) bedeutet Rechtskrümmung und damit Hochpunkt.</p>
+<details><summary>Alternative ohne zweite Ableitung: Vorzeichenwechsel von \( f' \)</summary>
+
+<p>Du kannst auch ohne \( f'' \) argumentieren. In
+\( f'(x) = x\,e^{x} \) ist \( e^{x} \) immer positiv, das
+Vorzeichen kommt also allein vom Faktor \( x \). Für
+\( x < 0 \) ist \( f'(x) < 0 \) (Funktion fällt), für
+\( x > 0 \) ist \( f'(x) > 0 \) (Funktion steigt). Aus
+„fällt, dann steigt" folgt ein Tiefpunkt bei \( x = 0 \). Beide
+Wege sind in der Prüfung gleichwertig — wähle den, der dir sicherer von
+der Hand geht.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-e-tangente-an-der-nullstelle" class="level2">
+<h2>Teilaufgabe e) Tangente an der Nullstelle</h2>
+<p><span class="tag tag-ok">AB II — Standardanforderung</span></p>
+<p>Bestimme die Gleichung der Tangente an den Graphen von
+\( f \) im Punkt \( x_{0} = 1 \).</p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Eine Tangente ist die Gerade, die den Graphen an einer Stelle berührt
+und dort dieselbe Steigung hat. Wir brauchen also zwei Dinge: den
+<strong>Berührpunkt</strong> und die <strong>Steigung</strong> dort.</p>
+<p><strong>Funktionswert</strong> (Berührpunkt): wir kennen ihn schon
+aus Teilaufgabe a),</p>
+<p>\[ f(1) = (1-1)\,e^{1} = 0. \]</p>
+<p>Der Berührpunkt ist \( (1 \mid 0) \), also genau die
+Nullstelle.</p>
+<p><strong>Steigung</strong> über die Ableitung \( f'(x) = x\,e^{x} \):</p>
+<p>\[ f'(1) = 1\cdot e^{1} = e. \]</p>
+<p><strong>Tangentengleichung</strong> über die Punkt-Steigungs-Form
+\( t(x) = f(x_0) + f'(x_0)\,(x - x_0) \):</p>
+<p>\[ t(x) = 0 + e\,(x - 1) = e\,(x-1) = e\,x - e. \]</p>
+<p>Die Tangente hat die Steigung \( e \approx 2{,}72 \) und schneidet die
+\( x \)-Achse genau bei der Nullstelle
+\( x = 1 \).</p>
+<details><summary>Haltung dahinter: Woher kommt die Tangentenformel?</summary>
+
+<p>Die Punkt-Steigungs-Form einer Geraden ist \( y = m\,(x - x_0) + y_0 \). Für
+eine Tangente an einen Funktionsgraphen ist die Steigung
+\( m = f'(x_0) \) (Ableitung = lokale Steigung) und der Punkt
+\( (x_0 \mid f(x_0)) \) liegt auf dem Graphen. Mehr steckt nicht dahinter —
+du musst dir nur merken, <strong>welche</strong> zwei Werte du einsetzt:
+\( f'(x_0) \) als Steigung, \( f(x_0) \) als Höhe.</p>
+<details><summary>Typische Falle bei der Tangente</summary>
+
+<p>Vertausche nicht \( f(x_0) \) und \( f'(x_0) \). Als
+Steigung kommt <strong>immer</strong> die Ableitung \( f'(x_0) \)
+hinein, der Funktionswert \( f(x_0) \) liefert nur die Höhe des
+Berührpunkts. Und lass den Term \( x_0 \) nicht weg: Es heißt
+\( (x - x_0) \), hier \( (x-1) \), nicht einfach
+\( x \).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="der-graph-zur-kontrolle" class="level2">
+<h2>Der Graph zur Kontrolle</h2>
+<p>Hier siehst du \( f \) (blau), den Tiefpunkt
+\( T(0\mid -1) \), die Nullstelle \( N(1\mid 0) \) und die
+Tangente \( t(x)=e(x-1) \) (orange). Prüfe, ob deine Ergebnisse zum
+Bild passen: Der Graph kommt von links von unten an die
+\( x \)-Achse heran, sinkt bis zum Tiefpunkt und steigt
+dann steil an. Die orange Gerade berührt den Graphen genau im Punkt
+\( (1\mid 0) \).</p>
+<div class="jxgbox" id="jxg-efunktion" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-efunktion',{boundingbox:[-3,5.5,2,-2.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return (x-1)*Math.exp(x);},-3,1.8],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return Math.E*(x-1);},-3,2],{strokeColor:'#d98324',strokeWidth:2,dash:2});b.create('point',[0,-1],{name:'T',size:2,fixed:true,color:'#3a5a9c',label:{offset:[8,-12]}});b.create('point',[1,0],{name:'N',size:2,fixed:true,color:'#3a5a9c',label:{offset:[6,10]}});})();});</script>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Versuche, die Aufgabe einmal <strong>frei und laut</strong>
+durchzusprechen, ohne auf die Lösungen zu schauen — genau das wird in
+der Prüfung von dir verlangt.</p>
+<ul>
+<li>In welcher Reihenfolge untersuchst du die Funktion, und warum gerade
+so?</li>
+<li>Warum hat \( f \) trotz des Faktors
+\( (x-1) \) nur <strong>eine</strong> Nullstelle?</li>
+<li>Wie begründest du das Verhalten für \( x \to -\infty \) in einem
+Satz?</li>
+<li>Welche zwei Werte setzt du in die Tangentenformel ein, und welcher
+ist die Steigung?</li>
+</ul>
+<details><summary>Kurz-Spickzettel der Ergebnisse (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>Nullstelle: \( N(1 \mid 0) \)</li>
+<li>Grenzverhalten: \( x \to +\infty:\ f \to +\infty \); \quad
+\( x \to -\infty:\ f \to 0^{-} \)</li>
+<li>Ableitung: \( f'(x) = x\,e^{x} \)</li>
+<li>Extrempunkt: Tiefpunkt \( T(0 \mid -1) \) (wegen
+\( f''(0) = 1 > 0 \))</li>
+<li>Tangente in \( x_0 = 1 \): \( t(x) = e\,(x-1) = e\,x - e \)</li>
+</ul>
+</details>
+
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

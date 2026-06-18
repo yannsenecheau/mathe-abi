@@ -1,0 +1,366 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Integralrechnung — Grundlagen — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link active" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>In diesem Kapitel geht es um eine einzige große Idee: <strong>Flächen
+unter und zwischen Graphen messen</strong>. Du lernst zuerst, was der
+Wert eines Integrals <em>geometrisch</em> bedeutet (mit Vorzeichen!),
+und danach, wie du daraus echte Flächeninhalte rechnerfrei bestimmst —
+auch dann, wenn der Graph mitten im Intervall die x-Achse kreuzt oder du
+die Fläche zwischen zwei Kurven brauchst.</p>
+<p>Eine Sache vorweg, Léona: In deiner Prüfung rechnest du das alles
+<strong>von Hand</strong>, ohne Taschenrechner. Genau darauf ist dieses
+Kapitel ausgelegt — alle Zahlen sind so gewählt, dass du sie im Kopf
+bzw. mit Bruchrechnung sicher erreichst.</p>
+<p><span class="tag tag-ok">Relevanz: Kernthema mündliche Prüfung
+Basisfach, AB I–II</span></p>
+<section id="worauf-wir-aufbauen-der-hauptsatz-ganz-kurz"
+class="level2">
+<h2>Worauf wir aufbauen (der Hauptsatz, ganz kurz)</h2>
+<p>Das Werkzeug, mit dem wir jedes Integral ausrechnen, ist der
+<strong>Hauptsatz der Differential- und Integralrechnung</strong>. Er
+sagt: Wenn \( F \) eine <strong>Stammfunktion</strong> von
+\( f \) ist (also \( F'(x)=f(x) \)), dann gilt</p>
+<p>\[ \int_a^b f(x)\,dx = \big[\,F(x)\,\big]_a^b = F(b) - F(a). \]</p>
+<p>Mehr brauchst du fürs Rechnen nicht. Wie man Stammfunktionen findet,
+ist ein eigenes Thema — hier nutzen wir nur die <strong>Potenzregel für
+Stammfunktionen</strong>: \( x^n \) wird zu
+\( \tfrac{1}{n+1}x^{n+1} \).</p>
+<details><summary>Potenzregel für Stammfunktionen — kurz nachgewiesen</summary>
+
+<p>Behauptung: Eine Stammfunktion von \( f(x)=x^n \) (mit
+\( n\neq -1 \)) ist \( F(x)=\tfrac{1}{n+1}x^{n+1} \).</p>
+<p><strong>Probe durch Ableiten</strong> (das ist die Haltung: eine
+Stammfunktion prüft man immer, indem man sie <em>zurück</em>ableitet und
+schaut, ob \( f \) herauskommt): \[ F'(x) = \tfrac{1}{n+1}\cdot (n+1)\, x^{n} = x^{n} = f(x). \quad\checkmark \]</p>
+<details><summary>Warum \( n\neq -1 \)?</summary>
+
+<p>Für \( n=-1 \) wäre der Nenner \( n+1 = 0 \) —
+Division durch null, verboten. Der Fall \( f(x)=\tfrac1x \) braucht
+deshalb eine andere Stammfunktion (den Logarithmus) und gehört nicht zum
+Basisfach-Kern.</p>
+<p><span class="tag tag-warn">Relevanz: \( f(x)=\tfrac1x \) und ihre
+Stammfunktion offiziell Leistungsfach [97 %] — mit Lehrkraft
+prüfen</span></p>
+</details>
+</details>
+
+</section>
+<section id="der-orientierte-flächeninhalt--was-das-vorzeichen-bedeutet"
+class="level2">
+<h2>Der orientierte Flächeninhalt — was das Vorzeichen bedeutet</h2>
+<p>Der Wert eines Integrals \( \int_a^b f(x)\,dx \) ist ein
+<strong>orientierter</strong> (vorzeichenbehafteter) Flächeninhalt. Das
+ist der wichtigste Begriff dieses Kapitels:</p>
+<ul>
+<li>Wo der Graph <strong>oberhalb</strong> der x-Achse liegt
+(\( f(x)>0 \)), zählt die Fläche <strong>positiv</strong>
+(\( + \)).</li>
+<li>Wo der Graph <strong>unterhalb</strong> der x-Achse liegt
+(\( f(x)<0 \)), zählt die Fläche <strong>negativ</strong>
+(\( - \)).</li>
+</ul>
+<p>Das Integral addiert diese vorzeichenbehafteten Stücke. Liegt also
+gleich viel Fläche ober- wie unterhalb, kann das Integral sogar
+\( 0 \) werden, obwohl „Fläche da ist". Genau hier passiert
+der häufigste Fehler — merke dir den Unterschied:</p>
+<blockquote>
+<p><strong>Integralwert</strong> = orientierte (vorzeichenbehaftete)
+Bilanz.  <strong>Flächeninhalt</strong> = immer \( \geq 0 \).</p>
+</blockquote>
+<details><summary>Haltung: Warum überhaupt mit Vorzeichen? Wozu ist das gut?</summary>
+
+<p>Das Vorzeichen ist kein Schönheitsfehler, sondern die eigentliche
+Stärke des Integrals. Es erlaubt, mit Flächen zu <em>rechnen</em> wie
+mit Zahlen — Stücke addieren, abziehen, verschieben. Eine reine „Fläche
+\(\geq 0\)" könnte man nicht so flexibel kombinieren. Deshalb
+ist die Grundgröße der <strong>orientierte</strong> Flächeninhalt, und
+den echten Flächeninhalt holen wir uns daraus, indem wir die Vorzeichen
+bewusst behandeln (s. u.).</p>
+<details><summary>Woher kommt das Vorzeichen — Annahme dahinter</summary>
+
+<p>Man stellt sich das Integral als Summe vieler schmaler Rechtecke der
+Breite \( \Delta x \) und der Höhe \( f(x) \) vor. Ist
+\( f(x)<0 \), ist die „Höhe" negativ, das Rechteck zählt also
+negativ. Beim Grenzübergang \( \Delta x\to 0 \) bleibt dieses Vorzeichen
+erhalten. (Diese Summen-Idee ist die Definition des Integrals; wir
+verwenden sie hier nur als anschauliche Begründung, nicht zum
+Rechnen.)</p>
+</details>
+</details>
+
+<section
+id="beispiel-zum-orientieren-zzmathphzz41zzendzz-über-zzmathphzz42zzendzz-ab-i"
+class="level3">
+<h3>Beispiel zum Orientieren: \( f(x)=x \) über
+\( [-1,\,2] \) <span class="tag tag-ok">AB I</span></h3>
+<p>Schau dir den Graphen an: Die Gerade liegt links von
+\( 0 \) <strong>unter</strong> der Achse (negativer
+Beitrag), rechts von \( 0 \) <strong>über</strong> der Achse
+(positiver Beitrag).</p>
+<div class="jxgbox" id="jxg-orient" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-orient',{boundingbox:[-2.2,2.6,2.8,-1.8],axis:true,showCopyright:false,showNavigation:false});
+var f=function(x){return x;};
+// Fläche unter der Achse (links, negativ): von (-1,0) entlang Graph bis (0,0)
+var xs=[],ys=[]; xs.push(-1);ys.push(0); for(var t=-1;t<=0.0001;t+=0.05){xs.push(t);ys.push(f(t));} xs.push(0);ys.push(0);
+b.create('curve',[xs,ys],{fillColor:'#d98324',fillOpacity:0.28,strokeWidth:0,withLabel:false});
+// Fläche über der Achse (rechts, positiv): von (0,0) entlang Graph bis (2,0)
+var xs2=[],ys2=[]; xs2.push(0);ys2.push(0); for(var u=0;u<=2.0001;u+=0.05){xs2.push(u);ys2.push(f(u));} xs2.push(2);ys2.push(0);
+b.create('curve',[xs2,ys2],{fillColor:'#3a5a9c',fillOpacity:0.28,strokeWidth:0,withLabel:false});
+b.create('functiongraph',[f,-1.8,2.4],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('text',[-0.95,-0.75,'− (negativ)'],{fontSize:13,color:'#a8651a'});
+b.create('text',[1.05,0.55,'+ (positiv)'],{fontSize:13,color:'#27406e'});
+})();});</script>
+
+<p>Wir rechnen den <strong>orientierten</strong> Wert mit der
+Stammfunktion \( F(x)=\tfrac12 x^2 \):</p>
+<p>\[ \int_{-1}^{2} x\,dx = \Big[\tfrac12 x^2\Big]_{-1}^{2} = \tfrac12\cdot 4 - \tfrac12\cdot 1 = 2 - \tfrac12 = \tfrac32. \]</p>
+<p>Das ist die <strong>Bilanz</strong>: Der positive Teil rechts
+überwiegt den negativen Teil links um \( \tfrac32 \).</p>
+<details><summary>Und der echte Flächeninhalt? (hier schon mal als Vorschau)</summary>
+
+<p>Den echten Flächeninhalt bekommen wir, indem wir an der Nullstelle
+\( x=0 \) <strong>trennen</strong> und die Beträge addieren:
+\[ \int_{-1}^{0} x\,dx = \Big[\tfrac12 x^2\Big]_{-1}^{0} = 0 - \tfrac12 = -\tfrac12, \qquad
+   \int_{0}^{2} x\,dx = 2. \] \[ A = \big|{-\tfrac12}\big| + |2| = \tfrac12 + 2 = \tfrac52. \]</p>
+<p>Sieh den Unterschied: orientierte Bilanz \( \tfrac32 \), echte
+Fläche \( \tfrac52 \). Genau dieses Trennen üben wir gleich
+systematisch.</p>
+</details>
+
+</section>
+</section>
+<section id="fläche-zwischen-graph-und-x-achse--der-standardfall"
+class="level2">
+<h2>Fläche zwischen Graph und x-Achse — der Standardfall</h2>
+<p>Liegt der Graph im ganzen Intervall <strong>auf einer Seite</strong>
+der x-Achse, ist es einfach:</p>
+<ul>
+<li>Graph komplett <strong>oberhalb</strong>: Fläche \( = \displaystyle\int_a^b f(x)\,dx \)
+(Wert ist schon positiv).</li>
+<li>Graph komplett <strong>unterhalb</strong>: Fläche
+\( = \displaystyle\left|\int_a^b f(x)\,dx\right| = -\int_a^b f(x)\,dx \).</li>
+</ul>
+<p>Der entscheidende Schritt — und die typische Falle — kommt,
+<strong>wenn der Graph die x-Achse im Intervall kreuzt</strong>. Dann
+hat das Integral teils positive, teils negative Beiträge, die sich
+gegenseitig wegkürzen. Das darf bei einer Flächenaufgabe nicht
+passieren.</p>
+<blockquote>
+<p><strong>Rezept bei Vorzeichenwechsel:</strong> Nullstellen im
+Intervall bestimmen → an jeder Nullstelle das Integral
+<strong>trennen</strong> → von jedem Teilintegral den
+<strong>Betrag</strong> nehmen → die Beträge
+<strong>addieren</strong>.</p>
+</blockquote>
+<details><summary>Haltung: Warum nicht einfach „ein Integral über alles"?</summary>
+
+<p>Weil das Integral die Stücke mit ihrem Vorzeichen
+<em>verrechnet</em>. Ein Teil unter der Achse (negativ) würde einen Teil
+über der Achse (positiv) auffressen — du bekämest die <em>Bilanz</em>,
+nicht die <em>Fläche</em>. Die Fläche will aber jedes Stück positiv
+zählen. Deshalb: erst trennen, dann jedes Stück positiv machen, dann
+addieren. Das ist die wichtigste Routine dieses Kapitels.</p>
+</details>
+
+<section
+id="beispiel-mit-vorzeichenwechsel-zzmathphzz52zzendzz-über-zzmathphzz53zzendzz-ab-ii"
+class="level3">
+<h3>Beispiel mit Vorzeichenwechsel: \( f(x)=x^2-1 \) über
+\( [0,\,2] \) <span class="tag tag-ok">AB II</span></h3>
+<p>Der Graph (eine nach oben geöffnete Parabel, um \( 1 \)
+nach unten verschoben) hat im Intervall die Nullstelle
+\( x=1 \): links davon liegt er <strong>unter</strong> der
+Achse, rechts davon <strong>über</strong> der Achse.</p>
+<div class="jxgbox" id="jxg-vzw" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-vzw',{boundingbox:[-0.6,3.4,2.6,-1.6],axis:true,showCopyright:false,showNavigation:false});
+var f=function(x){return x*x-1;};
+// Stück 1: [0,1] unter der Achse (negativ -> orange)
+var a1=[],o1=[]; a1.push(0);o1.push(0); for(var t=0;t<=1.0001;t+=0.04){a1.push(t);o1.push(f(t));} a1.push(1);o1.push(0);
+b.create('curve',[a1,o1],{fillColor:'#d98324',fillOpacity:0.3,strokeWidth:0});
+// Stück 2: [1,2] über der Achse (positiv -> blau)
+var a2=[],o2=[]; a2.push(1);o2.push(0); for(var u=1;u<=2.0001;u+=0.04){a2.push(u);o2.push(f(u));} a2.push(2);o2.push(0);
+b.create('curve',[a2,o2],{fillColor:'#3a5a9c',fillOpacity:0.3,strokeWidth:0});
+b.create('functiongraph',[f,-0.4,2.4],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('point',[1,0],{name:'N(1|0)',size:2,fixed:true,color:'#27406e',label:{offset:[6,-14]}});
+b.create('text',[0.35,-0.7,'A₁'],{fontSize:15,color:'#a8651a'});
+b.create('text',[1.55,0.7,'A₂'],{fontSize:15,color:'#27406e'});
+})();});</script>
+
+<p><strong>Schritt 1 — Nullstellen im Intervall finden.</strong>
+<span class="tag tag-ok">AB I</span></p>
+<p>\[ x^2 - 1 = 0 \;\Longleftrightarrow\; x^2 = 1 \;\Longleftrightarrow\; x = \pm 1. \] Im Intervall \( [0,2] \) liegt nur
+\( x=1 \). Dort trennen wir.</p>
+<details><summary>Haltung: Warum zuerst die Nullstellen?</summary>
+
+<p>Die Nullstellen sind genau die Stellen, an denen der Graph die Seite
+wechselt — wo also aus „\(+\)" ein „\(-\)"
+wird (oder umgekehrt). Nur dort muss getrennt werden. Findest du sie
+nicht, übersiehst du den Vorzeichenwechsel und rechnest die falsche (zu
+kleine) Fläche. Erst die Nullstellen, dann alles andere — das ist die
+feste Reihenfolge.</p>
+</details>
+
+<p><strong>Schritt 2 — Stammfunktion und Teilintegrale.</strong>
+<span class="tag tag-ok">AB II</span></p>
+<p>Stammfunktion: \( F(x) = \tfrac{1}{3}x^3 - x \) (Potenzregel;
+\( \int 1\,dx = x \)).</p>
+<p>Teilintegral links (\( [0,1] \), erwartet
+<strong>negativ</strong>, weil unter der Achse): \[ \int_0^1 (x^2-1)\,dx = \Big[\tfrac{1}{3}x^3 - x\Big]_0^1 = \big(\tfrac13 - 1\big) - 0 = -\tfrac{2}{3}. \]</p>
+<p>Teilintegral rechts (\( [1,2] \), erwartet
+<strong>positiv</strong>): \[ \int_1^2 (x^2-1)\,dx = \Big[\tfrac{1}{3}x^3 - x\Big]_1^2 = \big(\tfrac{8}{3} - 2\big) - \big(\tfrac13 - 1\big) = \tfrac{2}{3} - \big(-\tfrac{2}{3}\big) = \tfrac{4}{3}. \]</p>
+<details><summary>Die Bruchrechnung der rechten Grenze Schritt für Schritt</summary>
+
+<p>Oben \( F(2) = \tfrac{1}{3}\cdot 8 - 2 = \tfrac{8}{3} - \tfrac{6}{3} = \tfrac{2}{3} \). Unten \( F(1) = \tfrac{1}{3} - 1 = \tfrac{1}{3} - \tfrac{3}{3} = -\tfrac{2}{3} \). Differenz
+\( F(2)-F(1) = \tfrac{2}{3} - \big(-\tfrac{2}{3}\big) = \tfrac{2}{3} + \tfrac{2}{3} = \tfrac{4}{3} \). Vorzeichen positiv — passt zur Lage über der Achse.
+Das ist der Plausibilitäts-Check: Stimmt das Vorzeichen des
+Teilintegrals mit der Lage im Bild überein?</p>
+</details>
+
+<p><strong>Schritt 3 — Beträge nehmen und addieren.</strong>
+<span class="tag tag-ok">AB II</span></p>
+<p>\[ A = \Big|{-\tfrac{2}{3}}\Big| + \Big|\tfrac{4}{3}\Big| = \tfrac{2}{3} + \tfrac{4}{3} = \tfrac{6}{3} = 2. \]</p>
+<p>Der gesuchte Flächeninhalt ist \( A = 2 \).</p>
+<details><summary>Gegenprobe: Was hätte „ein Integral über alles" geliefert — und warum ist das falsch?</summary>
+
+<p>\[ \int_0^2 (x^2-1)\,dx = \Big[\tfrac{1}{3}x^3 - x\Big]_0^2 = \tfrac{8}{3} - 2 = \tfrac{2}{3}. \] Das ist die <strong>orientierte Bilanz</strong>
+\( \tfrac23 \) — viel kleiner als die echte Fläche
+\( 2 \), weil sich der negative Teil \( -\tfrac23 \) und
+ein Teil des positiven \( \tfrac43 \) gegenseitig aufgehoben haben
+(\( -\tfrac23 + \tfrac43 = \tfrac23 \)). Genau diesen Fehler vermeidest du, indem du an
+der Nullstelle trennst und Beträge addierst.</p>
+</details>
+
+</section>
+</section>
+<section id="fläche-zwischen-zwei-graphen" class="level2">
+<h2>Fläche zwischen zwei Graphen</h2>
+<p>Oft ist nicht die Fläche zur x-Achse gesucht, sondern die
+<strong>eingeschlossene Fläche zwischen zwei Kurven</strong>. Die Idee
+ist dieselbe wie eben — nur misst du die Höhe der Fläche jetzt nicht von
+der Achse zur Kurve, sondern <strong>von der unteren zur oberen
+Kurve</strong>:</p>
+<p>\[ A = \int_a^b \big(\,\text{obere Funktion} - \text{untere Funktion}\,\big)\,dx. \]</p>
+<p>Dabei sind \( a \) und \( b \) die
+<strong>Schnittstellen</strong> der beiden Graphen.</p>
+<details><summary>Haltung: Warum „oben minus unten" — und warum darf man die Achse dabei vergessen?</summary>
+
+<p>Stell dir an jeder Stelle \( x \) einen senkrechten
+Strich von der unteren bis zur oberen Kurve vor. Seine Länge ist
+\( \text{oben}(x) - \text{unten}(x) \) — und das ist <strong>immer
+\( \geq 0 \)</strong>, solange „oben" wirklich oben liegt.
+Aufsummiert über alle \( x \) ergibt das die Fläche. Ob
+beide Kurven über, unter oder quer zur x-Achse liegen, spielt dabei
+<strong>keine Rolle</strong>: Eine gemeinsame Verschiebung nach
+oben/unten verändert beide gleich und fällt in der Differenz heraus.</p>
+<details><summary>Das Wegfallen der Verschiebung — gezeigt</summary>
+
+<p>Verschiebt man beide um denselben Wert \( c \) nach oben,
+wird aus der Differenz \[ (\text{oben}+c) - (\text{unten}+c) = \text{oben} - \text{unten}. \] Das \( +c \) kürzt
+sich weg. Deshalb darfst du die Achsenlage ignorieren — <em>solange</em>
+sich die Kurven im Intervall nicht überholen. Tun sie das (zusätzliche
+Schnittstellen dazwischen), trennst du dort genauso wie bei den
+Nullstellen oben.</p>
+</details>
+</details>
+
+<section
+id="beispiel-fläche-zwischen-zzmathphzz81zzendzz-und-zzmathphzz82zzendzz-ab-ii"
+class="level3">
+<h3>Beispiel: Fläche zwischen \( g(x)=x \) und
+\( f(x)=x^2 \) <span class="tag tag-ok">AB II</span></h3>
+<div class="jxgbox" id="jxg-zwei" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-zwei',{boundingbox:[-0.4,1.5,1.5,-0.4],axis:true,showCopyright:false,showNavigation:false});
+var g=function(x){return x;};        // obere Funktion auf [0,1]
+var f=function(x){return x*x;};      // untere Funktion auf [0,1]
+// Eingeschlossene Fläche: hin entlang g (oben), zurück entlang f (unten)
+var xs=[],ys=[];
+for(var t=0;t<=1.0001;t+=0.02){xs.push(t);ys.push(g(t));}
+for(var u=1;u>=-0.0001;u-=0.02){xs.push(u);ys.push(f(u));}
+b.create('curve',[xs,ys],{fillColor:'#3a5a9c',fillOpacity:0.22,strokeWidth:0});
+b.create('functiongraph',[g,-0.3,1.4],{strokeColor:'#27406e',strokeWidth:2.5,name:'g(x)=x',withLabel:true,label:{offset:[-30,8]}});
+b.create('functiongraph',[f,-0.3,1.4],{strokeColor:'#d98324',strokeWidth:2.5,name:'f(x)=x²',withLabel:true,label:{offset:[6,-6]}});
+b.create('point',[0,0],{name:'',size:1.5,fixed:true,color:'#444'});
+b.create('point',[1,1],{name:'S',size:2,fixed:true,color:'#444',label:{offset:[6,-12]}});
+})();});</script>
+
+<p><strong>Schritt 1 — Schnittstellen bestimmen.</strong>
+<span class="tag tag-ok">AB I</span></p>
+<p>Gleichsetzen: \[ x = x^2 \;\Longleftrightarrow\; x^2 - x = 0 \;\Longleftrightarrow\; x(x-1)=0 \;\Longrightarrow\; x=0 \ \text{oder}\ x=1. \] Die Integrationsgrenzen sind also
+\( a=0 \) und \( b=1 \).</p>
+<details><summary>Haltung: Warum durch Ausklammern statt mit der p-q-Formel?</summary>
+
+<p>Steht bei einer quadratischen Gleichung kein konstantes Glied (hier
+\( x^2 - x = 0 \)), ist \( x \) in jedem Term enthalten —
+dann <strong>ausklammern</strong>: \( x(x-1)=0 \). Ein Produkt ist
+null, wenn ein Faktor null ist (Satz vom Nullprodukt). Das ist
+rechnerfrei schneller und sicherer als die p-q-Formel. Faustregel: fehlt
+das absolute Glied, immer erst ausklammern.</p>
+</details>
+
+<p><strong>Schritt 2 — Wer ist oben?</strong>
+<span class="tag tag-ok">AB II</span></p>
+<p>Auf \( (0,1) \), z. B. bei \( x=\tfrac12 \):
+\( g(\tfrac12)=\tfrac12 \) und \( f(\tfrac12)=\tfrac14 \). Wegen \( \tfrac12 > \tfrac14 \)
+liegt \( g \) <strong>oben</strong>, \( f \)
+<strong>unten</strong>. Also rechnen wir \( g - f \).</p>
+<details><summary>Haltung: die Testeinsetzung — eine Zahl genügt</summary>
+
+<p>Zwischen zwei aufeinanderfolgenden Schnittstellen kann sich die
+Reihenfolge „oben/unten" nicht ändern (sonst gäbe es dazwischen eine
+weitere Schnittstelle). Deshalb reicht <strong>ein</strong> Testpunkt im
+Inneren, um zu entscheiden, wer oben liegt. Verlässt du dich nur aufs
+Bild, ist die Testeinsetzung die saubere Absicherung — und sie schützt
+dich vor dem Vorzeichenfehler, falls du „oben" und „unten"
+vertauschst.</p>
+</details>
+
+<p><strong>Schritt 3 — Integrieren.</strong> <span class="tag tag-ok">AB
+II</span></p>
+<p>\[ A = \int_0^1 \big(x - x^2\big)\,dx = \Big[\tfrac{1}{2}x^2 - \tfrac{1}{3}x^3\Big]_0^1
+     = \Big(\tfrac{1}{2} - \tfrac{1}{3}\Big) - 0. \]</p>
+<p>\[ \tfrac{1}{2} - \tfrac{1}{3} = \tfrac{3}{6} - \tfrac{2}{6} = \tfrac{1}{6}. \qquad\Longrightarrow\qquad A = \tfrac{1}{6}. \]</p>
+<p>Die eingeschlossene Fläche beträgt \( \tfrac{1}{6} \).</p>
+<details><summary>Plausibilitäts-Check: Kann das stimmen?</summary>
+
+<p>Die Fläche liegt im Einheitsquadrat \( [0,1]\times[0,1] \)
+(Flächeninhalt \( 1 \)) und ist nur die schmale Sichel
+zwischen Gerade und Parabel. Ein Ergebnis von \( \tfrac16 \approx 0{,}17 \), also
+rund ein Sechstel des Quadrats, ist von der Größenordnung her stimmig.
+So einen schnellen „passt die Größenordnung?"-Blick solltest du dir am
+Ende jeder Flächenaufgabe angewöhnen.</p>
+</details>
+
+</section>
+</section>
+<section id="die-schritt-für-schritt-routine-zum-auswendig-vortragen"
+class="level2">
+<h2>Die Schritt-für-Schritt-Routine (zum Auswendig-Vortragen)</h2>
+<p>Wenn dich die Prüferin nach einer Fläche fragt, hast du immer
+denselben Fahrplan — sag ihn ruhig laut mit:</p>
+<ol type="1">
+<li><strong>Skizze/Lage klären:</strong> Liegt der Graph über oder unter
+der Achse? (Bzw. bei zwei Graphen: wer ist oben?)</li>
+<li><strong>Grenzen finden:</strong> Nullstellen (Fläche zur Achse) bzw.
+Schnittstellen (zwei Graphen) berechnen.</li>
+<li><strong>Trennen, wo es nötig ist:</strong> an jeder
+Nullstelle/Schnittstelle im Inneren das Integral aufteilen.</li>
+<li><strong>Stammfunktion bilden</strong> und die Teilintegrale mit
+\( F(b)-F(a) \) ausrechnen.</li>
+<li><strong>Beträge nehmen</strong> (Fläche zur Achse) bzw. <strong>oben
+− unten</strong> (zwei Graphen) und <strong>addieren</strong>.</li>
+<li><strong>Plausibilität prüfen:</strong> Vorzeichen passt zur Lage,
+Größenordnung passt zur Skizze.</li>
+</ol>
+<details><summary>Die zwei Fallen, die am meisten Punkte kosten</summary>
+
+<ul>
+<li><strong>Vorzeichenwechsel übersehen.</strong> „Ein Integral über
+alles" bei einem Graphen, der die Achse kreuzt, liefert die Bilanz,
+nicht die Fläche. Immer an den Nullstellen trennen und Beträge
+addieren.</li>
+<li><strong>„oben − unten" vertauscht.</strong> Bei zwei Graphen führt
+die falsche Reihenfolge zu einem negativen Ergebnis. Eine Fläche ist nie
+negativ — ein negatives Resultat ist dein Signal, oben/unten zu tauschen
+(oder den Betrag zu nehmen).</li>
+</ul>
+</details>
+
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

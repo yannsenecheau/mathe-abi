@@ -1,0 +1,360 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Handwerk: Ableiten — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link active" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Ableiten ist das Werkzeug, mit dem du aus einer Funktion
+\( f \) ihre Steigungsfunktion \( f' \) machst —
+die in jedem Punkt sagt, wie steil der Graph dort ist. In der mündlichen
+Prüfung leitest du <strong>von Hand</strong> ab, ohne Taschenrechner.
+Das ist gut so, denn die fünf Regeln auf dieser Seite sind so gebaut,
+dass du sie sicher im Kopf anwenden kannst, wenn du das Prinzip dahinter
+einmal verstanden hast.</p>
+<p>Léona, geh die Regeln der Reihe nach durch. Jede hat dieselbe
+Struktur: <strong>Aussage</strong>, ein <strong>Merksatz</strong> zum
+Behalten, und zwei bis drei Beispiele, die du am besten selbst
+mitrechnest, bevor du die Lösung aufklappst.</p>
+<blockquote>
+<p><strong>Was du am Ende können sollst:</strong> Ein Polynom wie
+\( f(x) = 2x^3 - 4x + 7 \) im Kopf ableiten, ein Produkt wie
+\( (2x-1)(x^2+3) \) mit der Produktregel angehen, und eine geklammerte
+Potenz wie \( (3x+1)^2 \) mit der linearen Kettenregel — alles ohne
+Rechner.</p>
+</blockquote>
+<section id="potenzregel--das-fundament" class="level2">
+<h2>Potenzregel — das Fundament</h2>
+<p><strong>Aussage.</strong> Für eine Potenz \( f(x) = x^n \)
+gilt</p>
+<p>\[ f'(x) = n \cdot x^{\,n-1}. \]</p>
+<p>Du ziehst den Exponenten als Faktor nach vorn und senkst ihn um eins
+ab.</p>
+<p><strong>Merksatz:</strong> <em>Exponent vor, Exponent minus
+eins.</em></p>
+<details><summary>Haltung dahinter: Warum gerade „vor und minus eins"?</summary>
+
+<p>Die Ableitung misst, wie schnell sich \( f \) ändert. Bei
+\( x^n \) wächst der Funktionswert umso schneller, je größer
+\( n \) ist — deshalb taucht \( n \) als Faktor
+auf. Und weil die Steigung selbst wieder eine (um einen Grad niedrigere)
+Potenz ist, sinkt der Exponent auf \( n-1 \).</p>
+<details><summary>Herleitung am Beispiel \( x^2 \) (Differenzenquotient)</summary>
+
+<p>Die Steigung im Punkt \( x \) ist der Grenzwert des
+Differenzenquotienten:</p>
+<p>\[ f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h}. \]</p>
+<p>Der Zähler ist \( (x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2 \). Geteilt durch \( h \)
+bleibt \( 2x + h \). Lässt man \( h \) gegen
+\( 0 \) gehen, fällt das \( h \) weg:</p>
+<p>\[ f'(x) = 2x. \]</p>
+<p>Das passt zur Regel: \( n = 2 \) ergibt \( 2 \cdot x^{1} = 2x \).
+Genau diese Idee — „Differenzenquotient, dann \( h \to 0 \)" —
+steckt hinter jeder Potenz.</p>
+</details>
+</details>
+
+<p><strong>Beispiele.</strong></p>
+<details><summary>① \( f(x) = x^4 \) <span class="tag tag-ok">AB I</span></summary>
+
+<p>Exponent \( 4 \) vor, Exponent um eins kleiner:</p>
+<p>\[ f'(x) = 4 \cdot x^{4-1} = 4x^3. \]</p>
+</details>
+
+<details><summary>② \( f(x) = x \) — der Spezialfall <span class="tag tag-ok">AB I</span></summary>
+
+<p>Schreibe \( x = x^1 \). Dann ist \( f'(x) = 1 \cdot x^{0} = 1 \), denn
+\( x^0 = 1 \).</p>
+<p><strong>Falle:</strong> Die Ableitung einer reinen Variablen ist
+\( 1 \), nicht \( 0 \). Und die Ableitung einer
+Konstanten wie \( f(x) = 7 \) ist \( 0 \) — eine
+waagrechte Linie hat überall Steigung null.</p>
+</details>
+
+<details><summary>③ Negative und gebrochene Exponenten <span class="tag tag-warn">offiziell Leistungsfach, Basisfach unsicher [80–97 %] — mit Lehrkraft prüfen</span></summary>
+
+<p>Die Regel gilt für <strong>jeden</strong> Exponenten, auch negative
+und gebrochene. Im Basisfach sind diese Fälle aber nicht eigenständig im
+Kanon ausgewiesen — kläre mit deiner Lehrkraft, ob du sie brauchst.</p>
+<p>Negativer Exponent (entspricht \( \tfrac{1}{x^2} \), eine
+Leistungsfach-Funktion, Konfidenz 97 %):</p>
+<p>\[ f(x) = x^{-2} \quad\Rightarrow\quad f'(x) = -2 \cdot x^{-3}. \]</p>
+<p>Gebrochener Exponent (das ist die Wurzelfunktion \( \sqrt{x} = x^{1/2} \),
+Basisfach-Status unsicher, Konfidenz 80 %):</p>
+<p>\[ f(x) = x^{1/2} \quad\Rightarrow\quad f'(x) = \tfrac{1}{2} \cdot x^{-1/2}. \]</p>
+<p>Das Schema ist immer dasselbe: Exponent vor, Exponent minus eins —
+egal welcher Art die Zahl ist.</p>
+</details>
+
+</section>
+<section id="faktorregel--konstante-faktoren-bleiben-stehen"
+class="level2">
+<h2>Faktorregel — konstante Faktoren bleiben stehen</h2>
+<p><strong>Aussage.</strong> Ein konstanter Faktor \( c \)
+vor der Funktion bleibt beim Ableiten unverändert stehen:</p>
+<p>\[ \big( c \cdot f(x) \big)' = c \cdot f'(x). \]</p>
+<p><strong>Merksatz:</strong> <em>Zahl davor? Lass sie stehen, leite nur
+den Rest ab.</em></p>
+<details><summary>Haltung dahinter: Warum darf der Faktor stehen bleiben?</summary>
+
+<p>Ein konstanter Faktor staucht oder streckt den Graphen nur in der
+Höhe. Wird die Funktion an jeder Stelle dreimal so hoch, dann ist sie
+auch überall dreimal so steil — die Steigung skaliert mit demselben
+Faktor. Die <em>Form</em> der Steigungskurve ändert sich nicht, nur ihre
+Höhe.</p>
+</details>
+
+<p><strong>Beispiele.</strong></p>
+<details><summary>① \( f(x) = 5x^3 \) <span class="tag tag-ok">AB I</span></summary>
+
+<p>Den Faktor \( 5 \) stehen lassen, \( x^3 \)
+nach der Potenzregel ableiten (\( \to 3x^2 \)):</p>
+<p>\[ f'(x) = 5 \cdot 3x^2 = 15x^2. \]</p>
+</details>
+
+<details><summary>② \( f(x) = \tfrac{1}{2}x^4 \) <span class="tag tag-ok">AB I</span></summary>
+
+<p>Faktor \( \tfrac{1}{2} \) bleibt, \( x^4 \to 4x^3 \):</p>
+<p>\[ f'(x) = \tfrac{1}{2} \cdot 4x^3 = 2x^3. \]</p>
+<p>Die \( 4 \) aus der Potenzregel kürzt sich schön mit dem
+\( \tfrac{1}{2} \) — solche Brüche, die sich glatt rechnen, sind in der
+hilfsmittelfreien Prüfung typisch.</p>
+</details>
+
+</section>
+<section id="summenregel--term-für-term" class="level2">
+<h2>Summenregel — Term für Term</h2>
+<p><strong>Aussage.</strong> Eine Summe (oder Differenz) wird gliedweise
+abgeleitet:</p>
+<p>\[ \big( f(x) + g(x) \big)' = f'(x) + g'(x). \]</p>
+<p><strong>Merksatz:</strong> <em>Jeden Summanden einzeln ableiten, dann
+wieder zusammensetzen.</em></p>
+<details><summary>Haltung dahinter: Steigungen addieren sich</summary>
+
+<p>Wenn zwei Bewegungen sich überlagern, addieren sich ihre
+Geschwindigkeiten. Genauso bei Funktionen: Die Steigung einer Summe ist
+die Summe der Steigungen. Deshalb darfst du ein Polynom Glied für Glied
+ableiten — Faktor- und Summenregel zusammen erledigen jedes Polynom.</p>
+</details>
+
+<p><strong>Beispiele.</strong></p>
+<details><summary>① \( f(x) = x^3 + x^2 \) <span class="tag tag-ok">AB I</span></summary>
+
+<p>Jeden Summanden einzeln: \( x^3 \to 3x^2 \) und \( x^2 \to 2x \).
+Zusammen:</p>
+<p>\[ f'(x) = 3x^2 + 2x. \]</p>
+</details>
+
+<details><summary>② Ein vollständiges Polynom: \( f(x) = 2x^3 - 4x + 7 \) <span class="tag tag-ok">AB I–II</span></summary>
+
+<p>Hier wirken alle drei bisherigen Regeln zusammen. Geh von links nach
+rechts:</p>
+<ul>
+<li>\( 2x^3 \): Faktor \( 2 \) bleibt,
+\( x^3 \to 3x^2 \), ergibt \( 6x^2 \).</li>
+<li>\( -4x \): Faktor \( -4 \) bleibt,
+\( x \to 1 \), ergibt \( -4 \).</li>
+<li>\( +7 \): konstanter Summand, Ableitung
+\( 0 \).</li>
+</ul>
+<p>\[ f'(x) = 6x^2 - 4. \]</p>
+<details><summary>Falle: Die Konstante verschwindet</summary>
+
+<p>Der Summand \( +7 \) hat keine Steigung (waagrechte
+Verschiebung des ganzen Graphen) und fällt beim Ableiten ersatzlos weg.
+Ein häufiger Flüchtigkeitsfehler ist, die \( 7 \)
+versehentlich mitzuschleppen.</p>
+</details>
+</details>
+
+</section>
+<section id="produktregel--wenn-zwei-funktionen-multipliziert-werden"
+class="level2">
+<h2>Produktregel — wenn zwei Funktionen multipliziert werden</h2>
+<p><strong>Aussage.</strong> Steht ein Produkt \( f(x) = u(x) \cdot v(x) \) da,
+gilt</p>
+<p>\[ f'(x) = u'(x)\,v(x) + u(x)\,v'(x). \]</p>
+<p><strong>Merksatz:</strong> <em>Erstes abgeleitet mal zweites, plus
+erstes mal zweites abgeleitet.</em></p>
+<details><summary>Haltung dahinter: Warum nicht einfach \( u' \cdot v' \)?</summary>
+
+<p>Ein verbreiteter Fehler ist, ein Produkt faktorweise abzuleiten — das
+ist <strong>falsch</strong>. Anschaulich: Eine Rechteckfläche
+\( u \cdot v \) wächst, wenn die Breite \( u \) wächst
+(Beitrag \( u' \cdot v \)) <strong>und</strong> wenn die Höhe
+\( v \) wächst (Beitrag \( u \cdot v' \)). Beide Beiträge
+zusammen ergeben die Änderungsrate — daher die Summe der beiden
+„Kreuzprodukte".</p>
+<p><strong>Erste-Hilfe-Schema:</strong> Schreib dir vor jeder
+Produktregel kurz die vier Bausteine hin — \( u \),
+\( u' \), \( v \), \( v' \) — dann
+setzt du nur noch ein. Das verhindert Fehler unter Prüfungsdruck.</p>
+</details>
+
+<p><strong>Beispiele.</strong></p>
+<details><summary>① \( f(x) = x^2 \cdot (x+1) \) <span class="tag tag-ok">AB II</span></summary>
+
+<p>Bausteine bestimmen:</p>
+<p>\[ u = x^2,\quad u' = 2x,\qquad v = x+1,\quad v' = 1. \]</p>
+<p>In die Regel einsetzen:</p>
+<p>\[ f'(x) = u'v + uv' = 2x\,(x+1) + x^2 \cdot 1 = 2x^2 + 2x + x^2 = 3x^2 + 2x. \]</p>
+<details><summary>Gegenprobe durch Ausmultiplizieren</summary>
+
+<p>Multiplizierst du zuerst aus, ist \( f(x) = x^3 + x^2 \). Mit Summen-
+und Potenzregel: \( f'(x) = 3x^2 + 2x \). Gleiches Ergebnis — die
+Produktregel ist verlässlich, und das Ausmultiplizieren ist hier die
+einfache Gegenprobe. <strong>Haltung:</strong> Bei einem einfachen
+Produkt, das sich leicht ausmultiplizieren lässt, ist das oft der
+schnellere Weg. Die Produktregel brauchst du, wenn das Ausmultiplizieren
+mühsam oder unmöglich ist.</p>
+</details>
+</details>
+
+<details><summary>② \( f(x) = (2x-1)(x^2+3) \) <span class="tag tag-ok">AB II</span></summary>
+
+<p>Bausteine:</p>
+<p>\[ u = 2x-1,\quad u' = 2,\qquad v = x^2+3,\quad v' = 2x. \]</p>
+<p>Einsetzen und zusammenfassen:</p>
+<p>\[ f'(x) = 2\,(x^2+3) + (2x-1)\,2x = 2x^2 + 6 + 4x^2 - 2x = 6x^2 - 2x + 6. \]</p>
+<details><summary>Gegenprobe</summary>
+
+<p>Ausmultipliziert ist \( f(x) = 2x^3 + 6x - x^2 - 3 \), also \( f(x) = 2x^3 - x^2 + 6x - 3 \).
+Gliedweise abgeleitet: \( f'(x) = 6x^2 - 2x + 6 \). Stimmt überein.</p>
+</details>
+</details>
+
+</section>
+<section
+id="lineare-kettenregel--die-innere-funktion-ist-zzmathphzz100zzendzz"
+class="level2">
+<h2>Lineare Kettenregel — die innere Funktion ist
+\( ax + b \)</h2>
+<p><strong>Aussage.</strong> Ist die innere Funktion
+<strong>linear</strong>, also von der Form \( ax + b \), und
+\( f(x) = g(ax+b) \), dann gilt</p>
+<p>\[ f'(x) = a \cdot g'(ax+b). \]</p>
+<p>Du leitest die äußere Funktion ganz normal ab, lässt den inneren
+Klammerausdruck \( ax+b \) dabei unangetastet stehen, und
+multiplizierst am Ende mit der inneren Steigung
+\( a \).</p>
+<p><strong>Merksatz:</strong> <em>Außen ableiten, Klammer abschreiben,
+mal die Zahl vor dem \( x \).</em></p>
+<details><summary>Haltung dahinter: Was bedeutet „mal \( a \)"?</summary>
+
+<p>Die innere Funktion \( ax+b \) läuft
+\( a \)-mal so schnell wie \( x \) selbst.
+Wenn der Eingang \( a \)-mal schneller voranschreitet,
+ändert sich auch der Ausgang \( a \)-mal schneller —
+deshalb der Faktor \( a \). Das ist der einfache,
+prüfungsrelevante Spezialfall der Kettenregel, weil die innere Steigung
+\( a \) konstant ist.</p>
+<details><summary>Warum nur der lineare Fall im Basisfach?</summary>
+
+<p>Die <strong>allgemeine</strong> Kettenregel \( f'(x) = g'(h(x)) \cdot h'(x) \)
+erlaubt jede innere Funktion \( h(x) \) (etwa
+\( h(x) = x^2 \)). Sie gehört zum Leistungsfach. Im Basisfach
+beschränkt man sich auf die innere Funktion \( ax+b \), deren
+Ableitung einfach die Konstante \( a \) ist — daraus wird
+die handliche Regel „mal \( a \)".</p>
+</details>
+</details>
+
+<p><strong>Beispiele.</strong></p>
+<details><summary>① \( f(x) = (3x+1)^2 \) <span class="tag tag-ok">AB II</span></summary>
+
+<p>Äußere Funktion ist „Quadrat", innere ist \( 3x+1 \) mit
+\( a = 3 \). Äußere ableiten (\( (\,\cdot\,)^2 \to 2(\,\cdot\,) \)), Klammer
+stehen lassen, mal \( a = 3 \):</p>
+<p>\[ f'(x) = 3 \cdot 2\,(3x+1) = 6\,(3x+1) = 18x + 6. \]</p>
+<details><summary>Gegenprobe durch Ausmultiplizieren</summary>
+
+<p>\( f(x) = (3x+1)^2 = 9x^2 + 6x + 1 \), gliedweise abgeleitet \( f'(x) = 18x + 6 \).
+Passt.</p>
+</details>
+</details>
+
+<details><summary>② \( f(x) = (2x-5)^3 \) <span class="tag tag-ok">AB II</span></summary>
+
+<p>Äußere Funktion „hoch drei" (\( (\,\cdot\,)^3 \to 3(\,\cdot\,)^2 \)), innere
+\( 2x-5 \) mit \( a = 2 \):</p>
+<p>\[ f'(x) = 2 \cdot 3\,(2x-5)^2 = 6\,(2x-5)^2. \]</p>
+<p><strong>Haltung:</strong> Du musst die Klammer <strong>nicht</strong>
+ausmultiplizieren. Bei höheren Potenzen ist die Klammerschreibweise oft
+die gewünschte, kompakte Endform.</p>
+</details>
+
+<details><summary>③ Achtung beim Vorzeichen: \( f(x) = (1-x)^4 \) <span class="tag tag-warn">AB II–III</span></summary>
+
+<p>Hier ist die innere Funktion \( 1 - x \), also
+\( a = -1 \) (der Faktor vor dem \( x \) ist
+negativ!). Äußere „hoch vier" (\( \to 4(\,\cdot\,)^3 \)), mal
+\( a = -1 \):</p>
+<p>\[ f'(x) = (-1) \cdot 4\,(1-x)^3 = -4\,(1-x)^3. \]</p>
+<p><strong>Falle:</strong> Das Minuszeichen der inneren Funktion wird
+leicht übersehen. Schau immer genau hin, welche Zahl vor dem
+\( x \) steht — und mit welchem Vorzeichen.</p>
+</details>
+
+</section>
+<section id="abgrenzung--was-leistungsfach-ist" class="level2">
+<h2>Abgrenzung — was Leistungsfach ist</h2>
+<p>Damit du nicht Energie in den falschen Stoff steckst: Zwei verwandte
+Regeln gehören <strong>nicht</strong> ins Basisfach-Repertoire.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Regel</th>
+<th>Form</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allgemeine Kettenregel</td>
+<td>\( f'(x) = g'(h(x)) \cdot h'(x) \) mit beliebigem inneren
+\( h(x) \)</td>
+<td><span class="tag tag-warn">Leistungsfach — mit Lehrkraft
+prüfen</span></td>
+</tr>
+<tr>
+<td>Quotientenregel</td>
+<td>\( \left( \dfrac{u}{v} \right)' = \dfrac{u'v - uv'}{v^2} \)</td>
+<td><span class="tag tag-warn">Leistungsfach — mit Lehrkraft
+prüfen</span></td>
+</tr>
+</tbody>
+</table></div>
+<details><summary>Was du im Basisfach stattdessen brauchst</summary>
+
+<p>Für das Basisfach reichen die fünf Regeln dieser Seite:
+<strong>Potenz-, Faktor-, Summen-, Produkt-</strong> und die
+<strong>lineare Kettenregel</strong>. Damit leitest du jedes Polynom und
+jedes einfache Produkt ab, ebenso geklammerte Potenzen mit linearer
+Klammer. Triff im Zweifel die Absprache mit deiner Lehrkraft, welche
+dieser Grenzfälle in deiner Prüfung vorkommen können.</p>
+</details>
+
+</section>
+<section id="bild-funktion-und-ihre-steigungsfunktion" class="level2">
+<h2>Bild: Funktion und ihre Steigungsfunktion</h2>
+<p>Das ganze Handwerk hat ein Ziel: aus \( f \) die
+Steigungsfunktion \( f' \) zu gewinnen. Hier siehst du das
+an \( f(x) = x^3 - 3x \). Mit Faktor- und Summenregel ergibt sich</p>
+<p>\[ f'(x) = 3x^2 - 3. \]</p>
+<p>Wo \( f' = 0 \) ist (bei \( x = -1 \) und
+\( x = 1 \)), ist der Graph von \( f \) waagrecht
+— das sind genau die Hoch- und Tiefpunkte. Wo \( f' \)
+negativ ist (zwischen \( -1 \) und \( 1 \)),
+fällt \( f \); wo \( f' \) positiv ist, steigt
+\( f \).</p>
+<div class="jxgbox" id="jxg-ableiten-fstrich" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-ableiten-fstrich',{boundingbox:[-2.6,9.5,2.6,-9.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return x*x*x-3*x;},-2.4,2.4],{strokeColor:'#3a5a9c',strokeWidth:2.5,name:'f',withLabel:false});b.create('functiongraph',[function(x){return 3*x*x-3;},-2.4,2.4],{strokeColor:'#d98324',strokeWidth:2,dash:2,name:'f′',withLabel:false});b.create('point',[-1,2],{name:'Hochpunkt von f',size:2,fixed:true,color:'#29335c',label:{offset:[6,8]}});b.create('point',[1,-2],{name:'Tiefpunkt von f',size:2,fixed:true,color:'#29335c',label:{offset:[6,-14]}});})();});</script>
+
+<p>Die blaue Kurve ist \( f \), die gestrichelte orange
+Kurve ist die Steigungsfunktion \( f' \). Beachte: An den
+Nullstellen von \( f' \) liegen die Extrempunkte von
+\( f \).</p>
+<details><summary>Selbsttest: Kannst du das nachvollziehen?</summary>
+
+<p>Decke die Lösung ab und leite \( f(x) = x^3 - 3x \) selbst ab.
+\( x^3 \to 3x^2 \), \( -3x \to -3 \), also \( f'(x) = 3x^2 - 3 \).
+Setze \( f'(x) = 0 \): \( 3x^2 - 3 = 0 \Rightarrow x^2 = 1 \Rightarrow x = \pm 1 \). Genau dort hat
+\( f \) die waagrechten Tangenten — vergleiche mit dem
+Bild.</p>
+</details>
+
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

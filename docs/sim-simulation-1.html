@@ -1,0 +1,361 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Prüfungssimulation 1 (Analysis) — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html">Mathe&#8209;Abi · <b>Léona</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link active" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Diese Simulation läuft im echten Format deiner mündlichen Prüfung,
+Léona: erst eine zusammenhängende <strong>Vortragsaufgabe</strong> (etwa
+10 Minuten, die du in der Vorbereitungszeit durcharbeitest und dann frei
+präsentierst), danach ein <strong>Prüfungsgespräch</strong> mit
+Impulsfragen. Alles ist <strong>rechnerfrei</strong> zu lösen — genau
+wie in beiden Teilen deiner Prüfung. Arbeite zuerst selbst, bevor du die
+Lösungswege aufklappst.</p>
+<blockquote>
+<p>So nutzt du die Seite: Decke die Lösungen zu, sprich deinen Vortrag
+<strong>laut</strong> durch (am besten als Sprachnachricht an Papa), und
+vergleiche erst danach mit dem Erwartungshorizont. Lautes Sprechen ist
+die halbe Prüfung.</p>
+</blockquote>
+<section id="vortragsaufgabe-10-min-zusammenhängend" class="level2">
+<h2>Vortragsaufgabe (~10 Min, zusammenhängend)</h2>
+<p>Gegeben ist die Funktion</p>
+<p>\[ f(x) = \tfrac{1}{4}x^3 - \tfrac{3}{4}x. \]</p>
+<p>Bearbeite die folgenden Teilaufgaben <strong>zusammenhängend</strong>
+und erkläre dabei laut, <em>was</em> du tust und <em>warum</em>. Das
+laute Begründen ist in der mündlichen Prüfung genauso wichtig wie das
+Ergebnis.</p>
+<p><strong>a)</strong> <span class="tag tag-ok">AB I</span> Untersuche
+\( f \) auf Symmetrie und bestimme die Nullstellen.</p>
+<p><strong>b)</strong> <span class="tag tag-ok">AB I</span> Bestimme die
+erste und zweite Ableitung von \( f \).</p>
+<p><strong>c)</strong> <span class="tag tag-warn">AB II</span> Bestimme
+die Hoch- und Tiefpunkte des Graphen und weise ihre Art nach.</p>
+<p><strong>d)</strong> <span class="tag tag-warn">AB II</span> Bestimme
+den Wendepunkt und begründe, warum dort wirklich eine Wendestelle
+vorliegt.</p>
+<p><strong>e)</strong> <span class="tag tag-warn">AB II</span> Berechne
+den Wert \( \displaystyle\int_0^2 f(x)\,dx \) und deute das Vorzeichen des Ergebnisses
+geometrisch.</p>
+<section id="erwartungshorizont-a--symmetrie-und-nullstellen"
+class="level3">
+<h3>Erwartungshorizont a) — Symmetrie und Nullstellen</h3>
+<details><summary>Lösungsweg a) aufklappen</summary>
+
+<p><strong>Symmetrie.</strong> In \( f(x) = \tfrac14 x^3 - \tfrac34 x \) kommen nur
+<strong>ungerade</strong> Potenzen von \( x \) vor. Damit
+gilt \( f(-x) = -f(x) \), der Graph ist <strong>punktsymmetrisch zum
+Ursprung</strong>.</p>
+<details><summary>Haltung dahinter: warum reicht der Blick auf die Potenzen?</summary>
+
+<p>Ich prüfe Symmetrie zuerst, weil sie mir Arbeit spart: Eine
+Punktsymmetrie zum Ursprung halbiert die Untersuchung — was ich rechts
+von der \( y \)-Achse finde (z. B. einen Tiefpunkt), hat
+links sein gespiegeltes Gegenstück (einen Hochpunkt). Die
+<strong>typische Falle</strong> ist, Symmetrie zu „raten". Sauber ist
+das Argument über die Definition: Ersetze ich \( x \) durch
+\( -x \), wird \( (-x)^3 = -x^3 \) und \( (-x) = -x \),
+also \( f(-x) = -\tfrac14 x^3 + \tfrac34 x = -f(x) \) — das <strong>ist</strong> Punktsymmetrie zum
+Ursprung. Nur ungerade Exponenten \( \Rightarrow \) punktsymmetrisch;
+nur gerade \( \Rightarrow \) achsensymmetrisch zur
+\( y \)-Achse.</p>
+</details>
+
+<p><strong>Nullstellen.</strong> Setze \( f(x) = 0 \):</p>
+<p>\[ \tfrac14 x^3 - \tfrac34 x = \tfrac14 x\,(x^2 - 3) = 0. \]</p>
+<p>Ein Produkt ist null, wenn ein Faktor null ist: \( x = 0 \)
+oder \( x^2 = 3 \), also \( x = 0,\ x = \sqrt{3},\ x = -\sqrt{3} \).</p>
+<details><summary>Haltung dahinter: erst ausklammern, dann Satz vom Nullprodukt</summary>
+
+<p>Bevor ich „irgendeine" Lösungsformel ansetze, klammere ich den
+gemeinsamen Faktor \( x \) aus. Das ist der rechnerfreie
+Standardweg bei ganzrationalen Funktionen ohne konstantes Glied: Eine
+Nullstelle ist sofort \( x = 0 \), der Rest ist nur noch eine
+<strong>quadratische</strong> (hier sogar reine) Gleichung. Die
+<strong>typische Falle</strong> ist, durch \( x \) zu teilen
+— dann verliert man die Nullstelle \( x = 0 \). Deshalb nie
+dividieren, sondern ausklammern und den <strong>Satz vom
+Nullprodukt</strong> anwenden.</p>
+</details>
+</details>
+
+</section>
+<section id="erwartungshorizont-b--ableitungen" class="level3">
+<h3>Erwartungshorizont b) — Ableitungen</h3>
+<details><summary>Lösungsweg b) aufklappen</summary>
+
+<p>Mit der <strong>Potenzregel</strong> \( (x^n)' = n\,x^{n-1} \), Faktor- und
+Summenregel:</p>
+<p>\[ f'(x) = \tfrac14 \cdot 3x^2 - \tfrac34 = \tfrac34 x^2 - \tfrac34 = \tfrac34\,(x^2 - 1), \] \[ f''(x) = \tfrac34 \cdot 2x = \tfrac32 x. \]</p>
+<details><summary>Haltung dahinter: gleich ausklammern lohnt sich</summary>
+
+<p>Ich schreibe \( f'(x) = \tfrac34(x^2-1) \) bewusst in der ausgeklammerten Form.
+Der Vorfaktor \( \tfrac34 \) ist nie null, also entscheidet allein
+\( x^2 - 1 = 0 \) über die Nullstellen von \( f' \) — das
+macht die nächste Teilaufgabe rechnerfrei. Wer den Vorfaktor
+mitschleppt, rechnet unnötig kompliziert.</p>
+</details>
+</details>
+
+</section>
+<section id="erwartungshorizont-c--hoch--und-tiefpunkte" class="level3">
+<h3>Erwartungshorizont c) — Hoch- und Tiefpunkte</h3>
+<details><summary>Lösungsweg c) aufklappen</summary>
+
+<p><strong>Schritt 1 — notwendige Bedingung
+\( f'(x) = 0 \).</strong> Aus \( \tfrac34(x^2-1) = 0 \) folgt
+\( x^2 = 1 \), also \( x = -1 \) oder \( x = 1 \).
+Das sind die <strong>Kandidaten</strong> für Extremstellen.</p>
+<p><strong>Schritt 2 — hinreichende Bedingung über
+\( f'' \).</strong> Setze die Kandidaten in
+\( f''(x) = \tfrac32 x \) ein:</p>
+<p>\[ f''(-1) = -\tfrac32 < 0 \;\Rightarrow\; \text{Hochpunkt}, \qquad
+   f''(1) = \tfrac32 > 0 \;\Rightarrow\; \text{Tiefpunkt}. \]</p>
+<p><strong>Schritt 3 — \( y \)-Werte über
+\( f \).</strong></p>
+<p>\[ f(-1) = \tfrac14(-1) - \tfrac34(-1) = -\tfrac14 + \tfrac34 = \tfrac12, \qquad
+   f(1) = \tfrac14 - \tfrac34 = -\tfrac12. \]</p>
+<p>Ergebnis: <strong>Hochpunkt</strong> \( H\!\left(-1 \,\middle|\, \tfrac12\right) \),
+<strong>Tiefpunkt</strong> \( T\!\left(1 \,\middle|\, -\tfrac12\right) \). Das passt zur
+Punktsymmetrie aus a): \( T \) ist die Spiegelung von
+\( H \) am Ursprung.</p>
+<details><summary>Haltung dahinter: notwendig vs. hinreichend — warum zwei Schritte?</summary>
+
+<p>\( f'(x) = 0 \) ist nur <strong>notwendig</strong>: An einer
+Extremstelle ist die Tangente waagerecht, aber eine waagerechte Tangente
+allein garantiert kein Extremum (siehe den Sattelpunkt-Einwand im
+Prüfungsgespräch). Erst die <strong>hinreichende</strong> Bedingung
+sichert die Art ab. Ich nehme hier das \( f'' \)-Kriterium,
+weil \( f''(x) = \tfrac32 x \) so einfach ist, dass das Einsetzen rechnerfrei
+gelingt: Vorzeichen von \( f'' \) negativ \( \Rightarrow \)
+Linkskrümmung von oben, also Maximum; positiv \( \Rightarrow \)
+Minimum.</p>
+<details><summary>Alternative: Vorzeichenwechsel von \( f' \) (falls \( f''=0 \) wäre)</summary>
+
+<p>Wäre an einem Kandidaten \( f'' = 0 \), liefert das
+\( f'' \)-Kriterium keine Aussage. Dann prüfe ich den
+<strong>Vorzeichenwechsel</strong> von \( f' \):
+\( + \to - \) bedeutet Hochpunkt, \( - \to + \) Tiefpunkt,
+<strong>kein</strong> Wechsel bedeutet Sattelpunkt. Dieses Kriterium
+funktioniert immer und ist die sichere Rückfallebene.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="erwartungshorizont-d--wendepunkt" class="level3">
+<h3>Erwartungshorizont d) — Wendepunkt</h3>
+<details><summary>Lösungsweg d) aufklappen</summary>
+
+<p><strong>Notwendige Bedingung \( f''(x) = 0 \):</strong>
+\( \tfrac32 x = 0 \Rightarrow x = 0 \).</p>
+<p><strong>Hinreichende Bedingung — Krümmungswechsel.</strong> Ich prüfe
+\( f''' \): aus \( f''(x) = \tfrac32 x \) folgt \( f'''(x) = \tfrac32 \neq 0 \).
+Da die dritte Ableitung an der Stelle \( x=0 \) ungleich null
+ist, <strong>wechselt</strong> die Krümmung dort tatsächlich — es liegt
+eine Wendestelle vor.</p>
+<p><strong>\( y \)-Wert:</strong> \( f(0) = 0 \). Also
+<strong>Wendepunkt</strong> \( W(0 \mid 0) \) — wegen der
+Punktsymmetrie genau das Symmetriezentrum.</p>
+<details><summary>Haltung dahinter: was ist ein Wendepunkt anschaulich?</summary>
+
+<p>Ein Wendepunkt ist die Stelle, an der der Graph von einer
+<strong>Rechts-</strong> in eine <strong>Linkskrümmung</strong> (oder
+umgekehrt) wechselt — anschaulich der Punkt, an dem du beim Autofahren
+das Lenkrad von „nach rechts eingeschlagen" auf „nach links
+eingeschlagen" drehst. Mathematisch ist das ein Vorzeichenwechsel von
+\( f'' \). Die <strong>typische Falle</strong> ist, bei
+\( f''(x_0) = 0 \) sofort „Wendepunkt" zu sagen — das ist nur
+notwendig. Den Wechsel muss man nachweisen, hier über
+\( f'''(0) \neq 0 \).</p>
+</details>
+</details>
+
+</section>
+<section id="erwartungshorizont-e--integral-und-geometrische-deutung"
+class="level3">
+<h3>Erwartungshorizont e) — Integral und geometrische Deutung</h3>
+<details><summary>Lösungsweg e) aufklappen</summary>
+
+<p><strong>Stammfunktion</strong> über die Potenzregel
+\( \int x^n\,dx = \tfrac{1}{n+1}x^{n+1} \):</p>
+<p>\[ F(x) = \tfrac14 \cdot \tfrac14 x^4 - \tfrac34 \cdot \tfrac12 x^2 = \tfrac{1}{16}x^4 - \tfrac38 x^2. \]</p>
+<p><strong>Hauptsatz</strong> \( \int_a^b f = F(b) - F(a) \):</p>
+<p>\[ \int_0^2 f(x)\,dx = F(2) - F(0) = \left(\tfrac{1}{16}\cdot 16 - \tfrac38 \cdot 4\right) - 0
+   = 1 - \tfrac{3}{2} = -\tfrac12. \]</p>
+<p><strong>Geometrische Deutung.</strong> Das Ergebnis
+\( -\tfrac12 \) ist negativ, weil der Graph auf dem größten Teil des
+Intervalls \( [0,\,2] \) <strong>unterhalb</strong> der
+\( x \)-Achse liegt (zwischen \( x=0 \) und
+\( x=\sqrt3
+\approx 1{,}73 \)). Das Integral misst den
+<strong>orientierten</strong> Flächeninhalt: Flächen unter der Achse
+zählen negativ. Über \( [\sqrt3,\,2] \) liegt der Graph wieder oberhalb
+und liefert einen kleinen positiven Beitrag, der den negativen aber
+nicht ausgleicht — in der Summe bleibt es negativ.</p>
+<details><summary>Haltung dahinter: orientierter Flächeninhalt vs. „echte" Fläche</summary>
+
+<p>Die <strong>typische Falle</strong> ist, das Integral mit dem
+Flächeninhalt gleichzusetzen. Das Integral ist der
+<strong>orientierte</strong> Flächeninhalt: Was unter der
+\( x \)-Achse liegt, geht negativ ein. Wäre nach dem
+<em>tatsächlichen</em> Flächeninhalt zwischen Graph und Achse gefragt,
+müsste ich an den Nullstellen <strong>aufteilen</strong> und die Beträge
+addieren: \( A = \left|\int_0^{\sqrt3} f\right| + \int_{\sqrt3}^{2} f \). Genau diesen Unterschied fragen Prüfende
+gern als Rückfrage ab.</p>
+<details><summary>Annahme/Voraussetzung: warum darf ich den Hauptsatz anwenden?</summary>
+
+<p>Der Hauptsatz der Differential- und Integralrechnung setzt voraus,
+dass \( f \) auf \( [0,2] \) <strong>stetig</strong>
+ist. Ganzrationale Funktionen (Polynome) sind auf ganz
+\( \mathbb{R} \) stetig und sogar beliebig oft differenzierbar — die
+Voraussetzung ist also automatisch erfüllt, und ich darf das Integral
+über die Differenz der Stammfunktion an den Rändern berechnen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="der-graph-zu-zzmathphzz87zzendzz" class="level3">
+<h3>Der Graph zu \( f \)</h3>
+<p>So sieht der Graph aus — mit Hochpunkt, Tiefpunkt, Wendepunkt und den
+drei Nullstellen. Vergleiche ihn mit deinen Ergebnissen.</p>
+<div class="jxgbox" id="jxg-sim1-f" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-sim1-f',{boundingbox:[-2.6,1.4,2.6,-1.4],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 0.25*x*x*x-0.75*x;},-2.4,2.4],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[-1,0.5],{name:'H',size:2,fixed:true,color:'#d98324'});b.create('point',[1,-0.5],{name:'T',size:2,fixed:true,color:'#d98324'});b.create('point',[0,0],{name:'W',size:2,fixed:true,color:'#3a8a5a'});})();});</script>
+
+</section>
+</section>
+<section id="prüfungsgespräch-impulsfragen-musterantworten-rückfragen"
+class="level2">
+<h2>Prüfungsgespräch (Impulsfragen, Musterantworten, Rückfragen)</h2>
+<p>Im zweiten Teil stellt die Lehrkraft kurze Impulse. Erwartet wird
+<strong>freies, begründetes Sprechen</strong> — keine langen Rechnungen.
+Übe, jede Antwort in zwei, drei Sätzen klar auf den Punkt zu
+bringen.</p>
+<section id="impuls-1-ab-i" class="level3">
+<h3>Impuls 1 <span class="tag tag-ok">AB I</span></h3>
+<blockquote>
+<p>„Sie haben \( f'(x) = 0 \) gesetzt, um die Extremstellen zu
+finden. Warum reicht das allein nicht?"</p>
+</blockquote>
+<details><summary>Musterantwort</summary>
+
+<p>„\( f'(x) = 0 \) ist nur die <strong>notwendige</strong>
+Bedingung — sie sagt, dass die Tangente waagerecht ist. Das gilt aber
+auch an einem <strong>Sattelpunkt</strong>, an dem gar kein Extremum
+vorliegt. Deshalb brauche ich zusätzlich eine
+<strong>hinreichende</strong> Bedingung, etwa das Vorzeichen von
+\( f'' \) oder den Vorzeichenwechsel von \( f' \),
+um die Art des Punktes wirklich abzusichern."</p>
+<details><summary>Mögliche Rückfrage der Prüfenden</summary>
+
+<blockquote>
+<p>„Nennen Sie ein konkretes Beispiel für eine waagerechte Tangente ohne
+Extremum."</p>
+</blockquote>
+<p>Antwort: \( g(x) = x^3 \) bei \( x = 0 \). Dort ist
+\( g'(0) = 0 \), aber die Funktion ist streng steigend — es liegt
+ein <strong>Sattelpunkt</strong> vor, kein Hoch- oder Tiefpunkt.</p>
+</details>
+</details>
+
+</section>
+<section id="impuls-2-ab-i" class="level3">
+<h3>Impuls 2 <span class="tag tag-ok">AB I</span></h3>
+<blockquote>
+<p>„Was sagt Ihnen die Punktsymmetrie über Hoch- und Tiefpunkt, ohne
+dass Sie beide einzeln ausrechnen?"</p>
+</blockquote>
+<details><summary>Musterantwort</summary>
+
+<p>„Bei Punktsymmetrie zum Ursprung wird jeder Punkt \( (x \mid y) \)
+auf \( (-x \mid -y) \) gespiegelt. Ein Hochpunkt links der
+\( y \)-Achse hat also zwingend einen gespiegelten
+<strong>Tiefpunkt</strong> rechts davon — mit entgegengesetzten
+Koordinaten. Hätte ich nur \( T(1 \mid -\tfrac12) \) berechnet, wüsste ich
+sofort, dass der Hochpunkt bei \( (-1 \mid \tfrac12) \) liegt."</p>
+</details>
+
+</section>
+<section id="impuls-3-ab-ii" class="level3">
+<h3>Impuls 3 <span class="tag tag-warn">AB II</span></h3>
+<blockquote>
+<p>„Sie haben \( \int_0^2 f\,dx = -\tfrac12 \) erhalten. Ein Flächeninhalt kann doch
+nicht negativ sein — wie passt das zusammen?"</p>
+</blockquote>
+<details><summary>Musterantwort</summary>
+
+<p>„Das Integral ist nicht der Flächeninhalt, sondern der
+<strong>orientierte</strong> Flächeninhalt. Flächenstücke
+<strong>unterhalb</strong> der \( x \)-Achse gehen negativ
+ein. Zwischen \( 0 \) und \( \sqrt{3} \) verläuft der
+Graph unter der Achse, deshalb überwiegt der negative Anteil, und das
+Integral wird negativ. Den <em>tatsächlichen</em> Flächeninhalt bekäme
+ich, indem ich an der Nullstelle \( \sqrt{3} \) aufteile und die
+<strong>Beträge</strong> der Teilintegrale addiere."</p>
+<details><summary>Mögliche Rückfrage der Prüfenden</summary>
+
+<blockquote>
+<p>„Wie würden Sie diesen tatsächlichen Flächeninhalt ansetzen — nur den
+Ansatz, nicht ausrechnen?"</p>
+</blockquote>
+<p>Antwort: \( \displaystyle A = \left| \int_0^{\sqrt3} f(x)\,dx \right| + \int_{\sqrt3}^{2} f(x)\,dx \) — also die Beträge der Teilstücke
+addieren, mit der Nullstelle \( \sqrt{3} \) als Trennstelle.</p>
+</details>
+</details>
+
+</section>
+<section id="impuls-4-ab-iii" class="level3">
+<h3>Impuls 4 <span class="tag tag-warn">AB III</span></h3>
+<blockquote>
+<p>„Begründen Sie ohne Rechnung, warum \( f \) genau
+<strong>drei</strong> Nullstellen hat und nicht mehr."</p>
+</blockquote>
+<details><summary>Musterantwort</summary>
+
+<p>„\( f \) ist ein Polynom <strong>dritten
+Grades</strong>, hat also <strong>höchstens drei</strong> Nullstellen.
+Aus der Faktorisierung \( \tfrac14 x(x^2-3) \) lese ich drei verschiedene
+reelle Nullstellen ab: \( 0,\ \sqrt3,\ -\sqrt3 \). Anschaulich passt das zur
+Form: Der Graph kommt von unten links, steigt zum Hochpunkt, fällt durch
+den Wendepunkt zum Tiefpunkt und steigt wieder — er kreuzt die
+\( x \)-Achse genau dreimal."</p>
+<details><summary>Haltung dahinter: Grad begrenzt die Nullstellenzahl</summary>
+
+<p>Der <strong>Fundamentalsatz der Algebra</strong> liefert die obere
+Schranke: Ein Polynom vom Grad \( n \) hat höchstens
+\( n \) reelle Nullstellen. Diese Schranke mit der
+konkreten Faktorisierung und der Kurvenform zu verbinden, ist typisch AB
+III — es verlangt das <strong>Vernetzen</strong> mehrerer Konzepte statt
+eines Rechenschritts.</p>
+</details>
+</details>
+
+</section>
+<section id="impuls-5-ab-ii" class="level3">
+<h3>Impuls 5 <span class="tag tag-warn">AB II</span></h3>
+<blockquote>
+<p>„Bestimmen Sie die Steigung des Graphen im Wendepunkt und sagen Sie,
+was sie bedeutet."</p>
+</blockquote>
+<details><summary>Musterantwort</summary>
+
+<p>„Die Steigung im Wendepunkt ist \( f'(0) = \tfrac34(0^2 - 1) = -\tfrac34 \). Sie ist
+negativ, der Graph <strong>fällt</strong> dort. Der Wendepunkt ist
+außerdem die Stelle mit der <strong>stärksten Steigungsänderung</strong>
+in diesem Bereich — die Tangente dort heißt
+<strong>Wendetangente</strong> und ist die am steilsten fallende
+Tangente zwischen Hoch- und Tiefpunkt."</p>
+</details>
+
+</section>
+</section>
+<section id="relevanz-dieser-simulation" class="level2">
+<h2>Relevanz dieser Simulation</h2>
+<p><span class="tag tag-ok">AB I/II klar im Kanon</span> Die
+Vortragsaufgabe deckt den Kern des Basisfachs ab: Symmetrie,
+Nullstellen, Ableitungen, Extrem- und Wendepunkte, bestimmtes Integral
+mit geometrischer Deutung. Das ist Standardstoff der Analysis und
+prüfungsrelevant.</p>
+<p><span class="tag tag-warn">AB III nur als Bonus</span> Impuls 4
+(Anzahl der Nullstellen über den Grad) ist bewusst AB III. Im
+<strong>Basisfach</strong> liegt der Schwerpunkt auf AB I/II;
+AB-III-Fragen kommen seltener und eher als vertiefende Rückfrage. Nimm
+sie als Übung mit, aber lass dich davon nicht verunsichern — der sichere
+Umgang mit AB I/II trägt die Prüfung.</p>
+</section>
+<footer class="site">Build ef9115e · 2026-06-18T00:15:03Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>
