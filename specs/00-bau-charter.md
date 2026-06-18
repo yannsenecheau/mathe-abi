@@ -24,7 +24,7 @@ kann, ist nicht nur das Ergebnis spezifiziert, sondern auch der Mechanismus, mit
   Worked-Example-Effekt, Cognitive-Load-Theorie).
 - **Keine Redundanz.** Jeder Inhalt existiert genau einmal; an deutlichen Schnitten Querverweis statt
   Wiederholung.
-- **Konfidenz-Ehrlichkeit.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle. Agentischer Output
+- **Konfidenz-Transparenz.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle. Agentischer Output
   ist nicht zu 100 % verlässlich — das bleibt sichtbar.
 - **Anpassbar.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald Léona mit dem Buch arbeitet.
 

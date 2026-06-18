@@ -30,7 +30,7 @@ Arbeitsmittel; Agents erweitern es laufend auf Basis ihres tatsächlichen Lernst
    Worked-Example-Effekt, Cognitive-Load-Theorie). Erst geführte Musterlösung, dann zunehmend selbst lösen.
 5. **Keine Redundanz.** Jeder Inhalt existiert genau einmal (Konzept-Register) und wird je Kontext in der
    passenden Form gezeigt; an deutlichen Schnitten Querverweis statt Wiederholung.
-6. **Konfidenz-Ehrlichkeit.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle; was unsicher ist,
+6. **Konfidenz-Transparenz.** Prüfungsrelevanz-Aussagen tragen sichtbar Konfidenz + Quelle; was unsicher ist,
    ist als unsicher markiert. Ein dezenter Hinweis macht klar, dass agentischer Output nicht zu 100 %
    verlässlich ist.
 7. **Anpassbar an Léonas Feedback.** Startannahmen sind bewusst gesetzt und werden korrigiert, sobald sie mit

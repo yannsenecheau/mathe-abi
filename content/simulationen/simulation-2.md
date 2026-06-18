@@ -285,7 +285,7 @@ Teil zählt.
 ## Erwartungshorizont (so bewertet die Lehrkraft)
 
 Diese Übersicht zeigt dir, <b>worauf es ankommt</b> — nicht nur das Ergebnis, sondern die Begründung.
-Hak nach dem Üben ehrlich ab, was du frei sprechen konntest.
+Hak nach dem Üben ungeschönt ab, was du frei sprechen konntest.
 
 <div class="table-wrap">
 

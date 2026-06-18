@@ -14,7 +14,7 @@ Beantworte die Fragen <b>laut und mündlich</b> — am besten als <b>Sprachnachr
 (z. B. über WhatsApp). Das hat zwei Vorteile auf einmal:
 
 - Du übst dabei genau das, was in der mündlichen Prüfung zählt: <b>frei sprechen</b>, einen Gedanken
-  ordnen und laut erklären. Lautes Erklären ist die ehrlichste Probe dafür, ob du ein Thema wirklich
+  ordnen und laut erklären. Lautes Erklären ist die verlässlichste Probe dafür, ob du ein Thema wirklich
   durchdrungen hast.
 - Aus deinen Antworten <b>personalisieren wir dieses Lernbuch automatisch weiter</b>: Wo du sicher
   klingst, gehen wir schneller drüber; wo du zögerst, bekommst du gezielt mehr Beispiele, Übungen und
