@@ -1,0 +1,135 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Werkzeugkasten Geometrie — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link active" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Kompakte Nachschlage-Sammlung der <strong>Vektor- und
+Raumgeometrie-Werkzeuge</strong>, die in den Konvolut-Aufgaben immer
+wiederkehren. Jeder Eintrag sagt in zwei Sätzen, <em>was</em> das
+Werkzeug ist, <em>wann</em> man es nimmt, und zeigt die Formel an einem
+winzigen Beispiel. Gedacht zum Verlinken aus den Aufgaben — und zum
+schnellen Auffrischen, wenn ein Begriff im Lösungsweg auftaucht.</p>
+<p><span class="tag tag-ok">Nachschlagewerk — kein Prüfungsstoff „am
+Stück", sondern Bausteine</span></p>
+<section id="punkt-und-vektor" class="level2">
+<h2>Punkt und Vektor</h2>
+<p>Ein <strong>Punkt</strong> ist ein Ort im Raum mit drei Koordinaten
+\( P(x_1\mid x_2\mid x_3) \). Ein <strong>Vektor</strong> ist ein
+<strong>Pfeil</strong> (eine Bewegung mit Richtung und Länge),
+geschrieben als Spalte. Den Verbindungspfeil von \( A \) nach
+\( B \) rechnet man als <strong>„Ziel minus
+Start"</strong>:</p>
+<p>\[ \overrightarrow{AB} = B - A. \]</p>
+<p><em>Beispiel.</em> \( A(1\mid0\mid2),\ B(4\mid2\mid2) \Rightarrow \overrightarrow{AB} = \begin{pmatrix}3\\2\\0\end{pmatrix} \) („3 nach \( x_1 \), 2
+nach \( x_2 \), 0 nach \( x_3 \)").</p>
+</section>
+<section id="länge-betrag-eines-vektors" class="level2">
+<h2>Länge (Betrag) eines Vektors</h2>
+<p>Die <strong>Länge</strong> eines Pfeils ist der Abstand zwischen
+Start und Ziel. Man quadriert die drei Zahlen, addiert sie und zieht die
+Wurzel — der <strong>Satz des Pythagoras in 3D</strong>:</p>
+<p>\[ \left|\begin{pmatrix}a\\b\\c\end{pmatrix}\right| = \sqrt{a^2+b^2+c^2}. \]</p>
+<p><em>Wozu?</em> Seitenlängen, Abstände, Nachweis „gleich lang" (z. B.
+gleichschenklig). <em>Beispiel.</em> \( \left|(2,\,-1,\,2)\right| = \sqrt{4+1+4} = \sqrt{9} = 3 \). (Minus wird
+beim Quadrieren zu Plus.)</p>
+</section>
+<section id="mittelpunkt-einer-strecke" class="level2">
+<h2>Mittelpunkt einer Strecke</h2>
+<p>Der Mittelpunkt liegt genau zwischen zwei Punkten — man
+<strong>mittelt</strong> ihre Koordinaten:</p>
+<p>\[ M = \tfrac12\,(A + B). \]</p>
+<p><em>Wozu?</em> Mitte einer Kante, Mittelpunkt eines Quadrats (über
+zwei <strong>gegenüberliegende</strong> Ecken), Symmetrie.
+<em>Beispiel.</em> Mitte von \( A(0\mid0\mid0) \) und \( C(3\mid3\mid0) \)
+ist \( M(1{,}5\mid1{,}5\mid0) \).</p>
+</section>
+<section id="skalarprodukt" class="level2">
+<h2>Skalarprodukt</h2>
+<p>Das <strong>Skalarprodukt</strong> zweier Vektoren ist eine
+<strong>Zahl</strong> (kein Pfeil): zugehörige Zahlen multiplizieren und
+addieren.</p>
+<p>\[ \vec a \cdot \vec b = a_1b_1 + a_2b_2 + a_3b_3. \]</p>
+<p>Zwei Anwendungen:</p>
+<ul>
+<li><strong>Senkrecht-Test:</strong> \( \vec a \cdot \vec b = 0 \) bedeutet, die
+beiden Pfeile stehen <strong>rechtwinklig</strong> aufeinander
+(orthogonal).</li>
+<li><strong>Winkel</strong> zwischen Vektoren: \( \displaystyle \cos\varphi = \frac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}. \)</li>
+</ul>
+<p><em>Beispiel.</em> \( (1,2,1)\cdot(1,1,-3) = 1+2-3 = 0 \) → die beiden stehen senkrecht
+zueinander.</p>
+</section>
+<section id="kreuzprodukt" class="level2">
+<h2>Kreuzprodukt</h2>
+<p>Das <strong>Kreuzprodukt</strong> zweier Vektoren liefert einen
+<strong>neuen Pfeil</strong>, der auf <strong>beiden</strong>
+Ausgangspfeilen senkrecht steht. Genau so findet man einen
+<strong>Normalenvektor</strong> einer Ebene (zwei Pfeile in der Ebene
+nehmen, Kreuzprodukt bilden). Rechenschema (jede Zeile: „über Kreuz" der
+beiden anderen Zeilen):</p>
+<p>\[ \begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}\times\begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}
+   = \begin{pmatrix}a_2b_3 - a_3b_2\\ a_3b_1 - a_1b_3\\ a_1b_2 - a_2b_1\end{pmatrix}. \]</p>
+<p><em>Tipp.</em> Das Ergebnis darf man <strong>kürzen</strong> (z. B.
+\( (12,0,4{,}5)\parallel(8,0,3) \)) — das ändert nur die Länge, nicht die Richtung, und
+nur die Richtung zählt für die Ebene. <em>Beispiel.</em>
+\( (0,3,0)\times(-1{,}5,\,1{,}5,\,4) = (12,\,0,\,4{,}5) \).</p>
+</section>
+<section id="geradengleichung-parameterform" class="level2">
+<h2>Geradengleichung (Parameterform)</h2>
+<p>Eine <strong>Gerade</strong> beschreibt man durch einen
+<strong>Stützpunkt</strong> \( \vec p \) (ein Punkt auf der
+Geraden) und einen <strong>Richtungsvektor</strong> \( \vec u \)
+(in welche Richtung sie läuft):</p>
+<p>\[ g:\ \vec x = \vec p + t\cdot \vec u, \quad t\in\mathbb{R}. \]</p>
+<p>Jeder Wert von \( t \) liefert einen Punkt der Geraden.
+<em>Wozu?</em> Kanten, Sichtlinien, Lichtstrahlen (Schattenwurf),
+Schnittpunkt-Rechnungen.</p>
+</section>
+<section id="ebenengleichung-koordinaten--und-normalenform"
+class="level2">
+<h2>Ebenengleichung: Koordinaten- und Normalenform</h2>
+<p>Eine <strong>Ebene</strong> ist eine unendlich ausgedehnte flache
+Fläche. Zwei gängige Schreibweisen:</p>
+<ul>
+<li><strong>Normalenform:</strong> \( \vec n \cdot (\vec x - \vec p) = 0 \) — „der Pfeil von
+einem Ebenenpunkt \( \vec p \) zu jedem anderen Ebenenpunkt steht
+senkrecht auf dem Normalenvektor \( \vec n \)".</li>
+<li><strong>Koordinatenform:</strong> \( n_1x_1 + n_2x_2 + n_3x_3 = d \) — die
+Koeffizienten sind die Komponenten des <strong>Normalenvektors</strong>
+\( \vec n \); die Zahl \( d \) erhält man durch
+Einsetzen eines bekannten Ebenenpunkts.</li>
+</ul>
+<p><em>Vorgehen.</em> Normalenvektor (oft per <a
+href="#kreuzprodukt">Kreuzprodukt</a>) bestimmen → einen Punkt einsetzen
+→ \( d \) ablesen. <em>Beispiel.</em> \( \vec n=(8,0,3) \),
+Punkt \( B(3\mid0\mid0) \): \( 8\cdot3+3\cdot0=24 \), also
+\( 8x_1+3x_3=24 \).</p>
+</section>
+<section id="punktprobe" class="level2">
+<h2>Punktprobe</h2>
+<p>So prüft man, ob ein Punkt <strong>auf</strong> einer Geraden/Ebene
+liegt: seine Koordinaten <strong>einsetzen</strong> und schauen, ob die
+Gleichung <strong>aufgeht</strong>.</p>
+<p><em>Beispiel.</em> Liegt \( S(1{,}5\mid1{,}5\mid4) \) auf \( 8x_1+3x_3=24 \)?
+\( 8\cdot1{,}5+3\cdot4 = 12+12 =
+24 \) ✓ — ja. Bei einer Ebene durch drei Punkte ist die
+Punktprobe <strong>mit allen dreien</strong> die schnelle
+Selbstkontrolle.</p>
+</section>
+<section id="volumen-und-oberfläche-der-pyramide" class="level2">
+<h2>Volumen und Oberfläche der Pyramide</h2>
+<ul>
+<li><strong>Volumen:</strong> \( V = \tfrac13\cdot G\cdot h \) — eine Pyramide füllt
+ein <strong>Drittel</strong> des Quaders mit gleicher Grundfläche
+\( G \) und Höhe \( h \).</li>
+<li><strong>Oberfläche:</strong> \( O = G + (\text{Summe der Seitenflächen}) \). Bei quadratischer
+Grundfläche und senkrechter Spitze: \( O = G + 4\cdot\tfrac12\cdot(\text{Grundkante})\cdot h_s \), wobei
+\( h_s \) die <strong>Dreieckshöhe</strong> von der Spitze zur
+Mitte einer Grundkante ist (nicht die Pyramidenhöhe!).</li>
+</ul>
+</section>
+<section id="winkel-zwischen-zwei-flächen" class="level2">
+<h2>Winkel zwischen zwei Flächen</h2>
+<p>Anschaulich über ein <strong>rechtwinkliges Dreieck</strong> an der
+gemeinsamen Kante; dann \( \tan\varphi = \dfrac{\text{Gegenkathete}}{\text{Ankathete}} \). Rechnerisch über die
+<strong>Normalenvektoren</strong> beider Ebenen mit dem <a
+href="#skalarprodukt">Skalarprodukt</a>: \( \cos\varphi = \dfrac{|\vec n_1\cdot \vec n_2|}{|\vec n_1|\,|\vec n_2|} \). Beide Wege
+sind gültig — das anschauliche Dreieck ist mündlich oft
+überzeugender.</p>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

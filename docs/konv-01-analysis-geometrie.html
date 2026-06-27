@@ -1,0 +1,968 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 1 — Analysis &amp; Geometrie — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link active" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Analysis</strong>, <strong>Teil 2 (Gespräch) aus der Geometrie</strong>.
+Alles ist <strong>rechnerfrei</strong> zu lösen. Arbeitet die Aufgabe
+wie eine echte Simulation durch — eine Person trägt vor, die andere
+prüft mit dem Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Vektor- und Geometrie-Werkzeuge (Punkte, Vektoren, Länge, Skalarprodukt,
+Kreuzprodukt, Ebenengleichung, Pyramidenvolumen) stehen kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>. Die Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<hr />
+<section
+id="teil-1--vortrag-analysis-funktionen-zuordnen-terme-und-flächen"
+class="level2">
+<h2>Teil 1 — Vortrag (Analysis): Funktionen zuordnen, Terme und
+Flächen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Die Abbildungen zeigen die Graphen einer ganzrationalen
+Funktion \( f \), einer trigonometrischen Funktion
+\( g \) und einer Exponentialfunktion
+\( h \).</strong></p>
+<p><strong>a)</strong> Ordne die Funktionen \( f \),
+\( g \) und \( h \) den abgebildeten Graphen zu
+und begründe die Zuordnung.</p>
+<p><strong>b)</strong> Gib für einen der abgebildeten Graphen einen
+möglichen Funktionsterm an. Erkläre, wie du dabei vorgegangen bist.</p>
+<p><strong>c)</strong> Der Graph der ganzrationalen Funktion (Abbildung
+II) schließt mit der \( x \)-Achse eine Fläche ein.
+Beschreibe ein Verfahren, mit dem man den Inhalt dieser Fläche berechnen
+kann, und gib einen entsprechenden Rechenausdruck an.</p>
+<p><strong>d)</strong> Gegeben ist die Funktion \( i \) mit
+\( i(x) = -e^{-x} \). Berechne \( a \) so, dass
+\( \displaystyle\int_a^0 i(x)\,dx = -2 \) gilt. Bestimme außerdem eine nichtkonstante
+ganzrationale Funktion \( j \) und Werte für
+\( b \) und \( c \), sodass \( \displaystyle\int_b^c j(x)\,dx = -8 \)
+gilt.</p>
+</div>
+
+<p>Hier sind die drei Graphen. Spiele mit den Bildern und ordne sie zu,
+bevor du die Lösung aufklappst.</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k1-abb1" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung I</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k1-abb2" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung II</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k1-abb3" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung III</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k1-abb1',{boundingbox:[-3,5.5,5,-1.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 2*Math.exp(-x);},-3,5],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k1-abb2',{boundingbox:[-5,4.5,5,-7],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -(1/6)*(x-2)*(x-3)*(x+4);},-5,4.2],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k1-abb3',{boundingbox:[-3.5,4,7,-2],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -2*Math.sin(x)+1;},-3.5,7],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<section id="teilaufgabe-a--zuordnung" class="level3">
+<h3>Teilaufgabe a) — Zuordnung</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Man ordnet <strong>über die typische Gestalt</strong> jeder
+Funktionsklasse zu:</p>
+<ul>
+<li><strong>\( h \) (Exponentialfunktion) → Abbildung
+I.</strong> Der Graph ist überall positiv, fällt von links nach rechts
+und nähert sich der \( x \)-Achse, ohne sie je zu
+erreichen.</li>
+<li><strong>\( f \) (ganzrationale Funktion) → Abbildung
+II.</strong> Der Graph hat mehrere Nullstellen, einen „Bauch" nach unten
+und einen nach oben und läuft an beiden Rändern ins Unendliche.</li>
+<li><strong>\( g \) (trigonometrische Funktion) → Abbildung
+III.</strong> Der Graph schwingt <strong>periodisch</strong> auf und ab,
+immer zwischen einem festen Größt- und Kleinstwert.</li>
+</ul>
+<details><summary>Haltung dahinter: Was ist überhaupt eine „Funktionsklasse", und woran erkenne ich sie?</summary>
+
+<p>Zuerst ganz langsam, was hier gefragt ist. Eine
+<strong>Funktion</strong> ist eine Rechenvorschrift: Man steckt eine
+Zahl \( x \) hinein und bekommt eine Zahl
+\( y \) heraus. Trägt man alle Paare \( (x \mid y) \) in
+ein Koordinatensystem ein, entsteht eine Linie — der
+<strong>Graph</strong>. Es gibt verschiedene „Sorten" von
+Rechenvorschriften, und jede Sorte erzeugt eine <strong>typische
+Form</strong> von Linie. Genau diese Formen soll man hier
+wiedererkennen. Die drei Sorten:</p>
+<ul>
+<li><p><strong>Ganzrationale Funktion (Polynom).</strong> Hier wird
+\( x \) nur <strong>mit sich selbst multipliziert</strong>
+und mit Zahlen verrechnet, z. B. \( x^2 \),
+\( x^3 \), \( 5x - 4 \). Die höchste Potenz heißt
+<strong>Grad</strong>. Solche Graphen sind „weiche" Kurven mit ein paar
+Hügeln und Tälern, die an den Rändern (ganz links und ganz rechts) immer
+<strong>steil nach oben oder unten weglaufen</strong> — sie
+„explodieren" nach außen. Ein \( x^3 \) hat bis zu drei
+Stellen, an denen er die \( x \)-Achse kreuzt
+(<strong>Nullstellen</strong>). Abbildung II hat genau diese Gestalt:
+mehrere Kreuzungen, ein Tal, ein Hügel, an den Rändern weg ins
+Unendliche.</p></li>
+<li><p><strong>Exponentialfunktion.</strong> Hier steht
+\( x \) <strong>oben im Exponenten</strong>, z. B.
+\( 2^x \) oder \( e^{x} \). Die Variable sitzt also
+„hochgestellt". Das Besondere: So eine Funktion ist (bei positivem
+Vorfaktor) <strong>immer positiv</strong> — der Graph bleibt komplett
+<strong>oberhalb</strong> der \( x \)-Achse und berührt sie
+nie. Auf der einen Seite schmiegt er sich ganz flach an die Achse an
+(kommt ihr beliebig nah, erreicht sie aber nie), auf der anderen Seite
+schießt er steil hoch. Abbildung I macht genau das: bleibt über der
+Achse, fällt nach rechts immer flacher, schießt nach links
+hoch.</p></li>
+<li><p><strong>Trigonometrische Funktion (Sinus/Kosinus).</strong> Diese
+Funktionen kommen vom Kreis und beschreiben
+<strong>Schwingungen</strong>. Ihr Kennzeichen: Der Graph
+<strong>wiederholt sich</strong> in immer gleichen Abständen — rauf,
+runter, rauf, runter, endlos, immer zwischen einem festen oberen und
+unteren Wert. Abbildung III ist diese Wellenlinie.</p></li>
+</ul>
+<details><summary>Drei Begriffe, die hier ständig vorkommen — kurz erklärt</summary>
+
+<ul>
+<li><strong>Nullstelle:</strong> eine Stelle, an der der Graph die
+\( x \)-Achse <strong>kreuzt oder berührt</strong>, also wo
+der Funktionswert \( y = 0 \) ist. Anschaulich: „Wo schneidet
+die Linie die waagerechte Achse?"</li>
+<li><strong>Asymptote:</strong> eine Linie, der sich der Graph
+<strong>immer mehr annähert, ohne sie zu erreichen</strong>. Bei der
+e-Funktion ist die \( x \)-Achse so eine
+Annäherungslinie.</li>
+<li><strong>Periodisch:</strong> „sich in gleichen Abständen
+wiederholend". Wie die Wellen am Strand oder die Zeiger einer Uhr — nach
+einer festen Strecke sieht alles wieder genau gleich aus.</li>
+</ul>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-b--funktionsterm-angeben" class="level3">
+<h3>Teilaufgabe b) — Funktionsterm angeben</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Es genügt <strong>ein</strong> Graph. Am rundesten lässt sich die
+<strong>ganzrationale Funktion</strong> \( f \) (Abb. II)
+herleiten, weil man ihre Nullstellen ablesen kann.</p>
+<p><strong>Schritt 1 — Nullstellen ablesen.</strong> Der Graph schneidet
+die \( x \)-Achse bei \( x=-4 \),
+\( x=2 \) und \( x=3 \). Aus jeder Nullstelle wird
+ein <strong>Linearfaktor</strong>:</p>
+<p>\[ k(x) = (x-2)(x-3)(x+4). \]</p>
+<p><strong>Schritt 2 — Streckung/Spiegelung bestimmen.</strong> Diese
+„nackte" Funktion \( k \) hat noch die falsche Höhe. Wir
+vergleichen an einer bequemen Stelle, etwa \( x=0 \): Aus dem
+Graphen liest man \( f(0) = -4 \) ab, und</p>
+<p>\[ k(0) = (-2)\cdot(-3)\cdot 4 = 24. \]</p>
+<p>Aus \( 24 \) soll \( -4 \) werden. Der Faktor
+dafür ist \( \dfrac{-4}{24} = -\dfrac16 \). Das Minus <strong>spiegelt</strong> an
+der \( x \)-Achse, der Betrag \( \tfrac16 \)
+<strong>staucht</strong>. Also</p>
+<p>\[ f(x) = -\frac16\,(x-2)(x-3)(x+4). \]</p>
+<details><summary>Haltung dahinter: Warum macht eine Nullstelle einen „Faktor"? (ganz von vorn)</summary>
+
+<p>Das ist der Kern dieser Aufgabe, deshalb wirklich langsam.</p>
+<p><strong>Was ist ein Faktor?</strong> Wenn man Dinge
+<strong>multipliziert</strong>, heißt jedes der multiplizierten Stücke
+ein <em>Faktor</em>. In \( 3 \cdot 5 \) sind \( 3 \) und
+\( 5 \) die Faktoren. In \( (x-2)\cdot(x-3)\cdot(x+4) \) sind die drei
+Klammern die Faktoren.</p>
+<p><strong>Die eine Regel, auf der alles beruht — der „Satz vom
+Nullprodukt":</strong> Ein Produkt (eine Multiplikation) ist
+<strong>genau dann null, wenn mindestens einer der Faktoren null
+ist</strong>. Beispiel: \( 7 \cdot 0 \cdot 4 = 0 \) — sobald <em>irgendwo</em>
+eine Null mitmultipliziert wird, ist das ganze Ergebnis null. Umgekehrt:
+Wenn keiner der Faktoren null ist, kann das Produkt nicht null sein.</p>
+<p><strong>Wie hilft das beim Funktionsterm?</strong> Wir wissen aus dem
+Bild: Bei \( x = 2 \) ist der Funktionswert null (dort kreuzt
+der Graph die Achse). Damit unsere Formel an dieser Stelle wirklich null
+wird, bauen wir den Faktor \( (x-2) \) ein — denn setzt man
+\( x = 2 \) ein, wird \( (2-2) = 0 \), und nach der Regel
+oben ist dann das ganze Produkt null. Genauso:</p>
+<ul>
+<li>Nullstelle bei \( x = 3 \) → Faktor \( (x-3) \),
+denn bei \( x=3 \) ist \( (3-3)=0 \).</li>
+<li>Nullstelle bei \( x = -4 \) → Faktor \( (x+4) \),
+denn bei \( x=-4 \) ist \( (-4+4)=0 \).</li>
+</ul>
+<p>Merkregel: <strong>Nullstelle bei \( x_0 \) → Faktor
+\( (x - x_0) \).</strong> Aufpassen beim Vorzeichen: Die Nullstelle
+\( -4 \) liefert \( (x-(-4)) = (x+4) \) — aus „minus minus vier"
+wird „plus vier".</p>
+<p>Drei Nullstellen ergeben also drei Klammern, multipliziert. Weil man
+drei \( x \)-Klammern multipliziert, ist die höchste Potenz
+\( x^3 \) — ein Polynom <strong>dritten Grades</strong>, genau
+passend zur Form im Bild.</p>
+<details><summary>Schritt 2 ganz langsam: warum noch der Faktor \( -\tfrac16 \)?</summary>
+
+<p>Die drei Klammern sorgen für die richtigen
+<strong>Nullstellen</strong> — aber nicht automatisch für die richtige
+<strong>Höhe</strong> und nicht für die richtige
+<strong>Richtung</strong> (Bauch oben oder unten). Man stelle sich vor,
+der Graph wäre an einer Stelle „zu hoch" oder „auf dem Kopf". Das
+repariert ein einziger Vorfaktor vor der Klammer.</p>
+<p>Den Vorfaktor findet man mit <strong>einem</strong> weiteren
+bekannten Punkt. Am bequemsten ist die Stelle \( x = 0 \), weil
+man dort sofort den Schnittpunkt mit der senkrechten
+\( y \)-Achse abliest: im Bild \( f(0) = -4 \).</p>
+<p>Jetzt rechnet man aus, was die nackte Klammer-Funktion an
+\( x=0 \) liefert:</p>
+<p>\[ k(0) = (0-2)\cdot(0-3)\cdot(0+4) = (-2)\cdot(-3)\cdot 4. \]</p>
+<p>Minus mal minus ist plus: \( (-2)\cdot(-3) = 6 \), dann
+\( 6 \cdot 4 = 24 \). Die nackte Funktion ist an der Stelle also
+\( 24 \), wir brauchen aber \( -4 \). Welche
+Zahl macht aus \( 24 \) die \( -4 \)? Man teilt:
+\( \dfrac{-4}{24} = -\dfrac16 \). Dieser Faktor leistet zweierlei auf einmal:</p>
+<ul>
+<li>Das <strong>Minuszeichen</strong> dreht den Graphen an der
+\( x \)-Achse um (aus „Bauch oben" wird „Bauch
+unten").</li>
+<li>Der <strong>Bruch \( \tfrac16 \)</strong> drückt den Graphen
+flacher (staucht ihn in der Höhe).</li>
+</ul>
+<p>Ergebnis: \( f(x) = -\tfrac16 (x-2)(x-3)(x+4) \). <strong>Probe:</strong>
+\( f(0) = -\tfrac16 \cdot 24 = -4 \) — passt zum Bild.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Den Vorfaktor wegzulassen ist der häufigste Fehler.
+\( (x-2)(x-3)(x+4) \) allein hat zwar die richtigen Nullstellen, aber die
+falsche Höhe <strong>und</strong> die falsche Orientierung (Bauch oben
+statt unten). Ohne den Abgleich an einem Punkt ist die Lösung
+unvollständig — in der mündlichen Prüfung würde man hier
+nachgefragt.</p>
+</details>
+</details>
+
+<p>Zur Vollständigkeit die Terme der beiden anderen Graphen (jeweils aus
+einer Grundfunktion erzeugt):</p>
+<ul>
+<li><strong>\( g(x) = -2\sin(x) + 1 \)</strong> — \( \sin(x) \) an der
+\( x \)-Achse gespiegelt (Minus), um den Faktor
+\( 2 \) in \( y \)-Richtung gestreckt, um
+\( 1 \) nach oben verschoben.</li>
+<li><strong>\( h(x) = 2\,e^{-x} \)</strong> — \( e^{x} \) an der
+\( y \)-Achse gespiegelt (\( -x \) im
+Exponenten), um den Faktor \( 2 \) in
+\( y \)-Richtung gestreckt.</li>
+</ul>
+<details><summary>Haltung dahinter: Was bedeuten „spiegeln", „strecken", „verschieben" am Graphen?</summary>
+
+<p>Man muss diese Terme nicht herleiten — aber es hilft zu wissen, wie
+aus einer einfachen Grundfunktion durch kleine Eingriffe eine neue wird.
+Es gibt vier typische Eingriffe:</p>
+<ul>
+<li><strong>Vor die Funktion ein Minus</strong> (z. B.
+\( -\sin x \)): <strong>Spiegelung an der
+\( x \)-Achse</strong> — der Graph wird nach unten
+geklappt, jeder Punkt oben wird gleich weit nach unten gesetzt.</li>
+<li><strong>Ein Faktor vor der Funktion</strong> (z. B.
+\( 2\sin x \)): <strong>Streckung in die Höhe</strong> — alle
+Werte werden verdoppelt, die Wellen werden doppelt so hoch.</li>
+<li><strong>Eine Zahl dazuaddiert</strong> (z. B. \( \sin x + 1 \)):
+<strong>Verschiebung nach oben</strong> — der ganze Graph rutscht um
+\( 1 \) hoch.</li>
+<li><strong>Ein Minus beim \( x \) im Inneren</strong> (z.
+B. \( e^{-x} \)): <strong>Spiegelung an der senkrechten
+\( y \)-Achse</strong> — links und rechts werden
+vertauscht. Deshalb fällt \( e^{-x} \) nach rechts, während
+\( e^{x} \) nach rechts steigt.</li>
+</ul>
+<p>So liest man \( g(x) = -2\sin(x)+1 \): nimm die Sinuswelle, klapp sie
+nach unten (Minus), mach sie doppelt so hoch (Faktor 2), schieb sie um 1
+nach oben (+1).</p>
+</details>
+
+</details>
+
+</section>
+<section id="teilaufgabe-c--flächeninhalt-verfahren-und-rechenausdruck"
+class="level3">
+<h3>Teilaufgabe c) — Flächeninhalt: Verfahren und Rechenausdruck</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Der Graph von \( f \) schließt mit der
+\( x \)-Achse <strong>zwei</strong> Teilflächen ein — eine
+<strong>unterhalb</strong> der Achse (zwischen \( x=-4 \) und
+\( x=2 \)) und eine <strong>oberhalb</strong> (zwischen
+\( x=2 \) und \( x=3 \)). Das Verfahren in drei
+Schritten:</p>
+<ol type="1">
+<li><strong>Nullstellen bestimmen</strong> — sie sind die Grenzen der
+Teilflächen: \( x=-4,\ 2,\ 3 \).</li>
+<li><strong>Teilflächen einzeln über Integrale berechnen.</strong> Ein
+Integral liefert den <em>orientierten</em> Flächeninhalt; was unterhalb
+der Achse liegt, kommt negativ heraus. Damit beide Beiträge
+<strong>positiv</strong> in die Fläche eingehen, dreht man das
+Vorzeichen des unteren Stücks um.</li>
+<li><strong>Beträge addieren.</strong></li>
+</ol>
+<p>Als Rechenausdruck:</p>
+<p>\[ A = -\int_{-4}^{2} f(x)\,dx \;+\; \int_{2}^{3} f(x)\,dx. \]</p>
+<details><summary>Haltung dahinter: Was ist ein Integral, und warum kann eine Fläche „negativ" werden?</summary>
+
+<p>Langsam von vorn. Ein <strong>Integral</strong> \( \int_a^b f(x)\,dx \)
+ist eine Maschine, die die <strong>Fläche zwischen dem Graphen und der
+\( x \)-Achse</strong> zwischen zwei senkrechten Grenzen
+\( a \) (links) und \( b \) (rechts)
+zusammenrechnet. Man kann es sich als „unendlich viele hauchdünne
+senkrechte Streifen unter der Kurve, alle aufaddiert" vorstellen.</p>
+<p>Der Haken: Das Integral zählt Fläche <strong>mit Vorzeichen</strong>
+— man nennt das <em>orientierten</em> Flächeninhalt.</p>
+<ul>
+<li>Liegt der Graph <strong>über</strong> der
+\( x \)-Achse, sind die Streifen „positiv hoch" → das
+Integral wird <strong>positiv</strong>.</li>
+<li>Liegt der Graph <strong>unter</strong> der
+\( x \)-Achse, zeigen die Streifen nach unten → sie zählen
+<strong>negativ</strong>.</li>
+</ul>
+<p>Ein gutes Bild ist ein <strong>Bankkonto</strong>: Fläche über der
+Achse = Einzahlungen (+), Fläche unter der Achse = Abhebungen (−). Das
+Integral nennt am Ende nur den <strong>Kontostand</strong>, also die
+Differenz — nicht die Summe der bewegten Beträge.</p>
+<p>Für einen echten <strong>Flächeninhalt</strong> (ein Stück Papier,
+das man ausschneiden und wiegen könnte) will man aber, dass
+<em>jedes</em> Stück positiv zählt. Deshalb:</p>
+<ol type="1">
+<li>An jeder Nullstelle <strong>trennen</strong> (dort wechselt der
+Graph die Seite).</li>
+<li>Jedes Teilstück einzeln integrieren.</li>
+<li>Von jedem Teilstück den <strong>Betrag</strong> nehmen (das
+Minuszeichen vor dem unteren Stück macht genau das) und alles
+addieren.</li>
+</ol>
+<p>Hier liegt der Graph zwischen \( -4 \) und
+\( 2 \) <strong>unter</strong> der Achse — deshalb das
+Minus vor diesem Integral, das den negativen Wert ins Positive dreht.
+Zwischen \( 2 \) und \( 3 \) liegt er
+<strong>über</strong> der Achse — dieses Integral ist schon positiv und
+bleibt, wie es ist.</p>
+<details><summary>Typische Falle: alles in einem Integral</summary>
+
+<p>Wer einfach \( \int_{-4}^{3} f(x)\,dx \) bildet (ohne zu trennen), bekommt
+nur den „Kontostand": Der negative Teil unter der Achse frisst den
+positiven Teil teilweise auf. Das ist <strong>nicht</strong> der
+Flächeninhalt. Man <strong>muss</strong> an jeder Nullstelle trennen und
+mit Beträgen arbeiten — das ist die häufigste Fehlerquelle bei
+Flächenaufgaben.</p>
+</details>
+
+<details><summary>Woher weiß ich, welches Stück unter der Achse liegt?</summary>
+
+<p>Man setzt einen einzigen Probe-\( x \)-Wert aus dem
+Inneren des Stücks in \( f \) ein und schaut auf das
+Vorzeichen. Zwischen \( -4 \) und \( 2 \) z. B.
+\( x=0 \): \( f(0) = -4 \) (negativ) → Stück liegt
+<strong>unter</strong> der Achse → Minus davor. Zwischen
+\( 2 \) und \( 3 \) z. B.
+\( x=2{,}5 \): \( f(2{,}5)  \gt  0 \) → <strong>über</strong> der
+Achse → bleibt positiv. Ein einziger Testwert pro Stück genügt.</p>
+</details>
+</details>
+
+<p>In der mündlichen Prüfung ist hier ausdrücklich nur das
+<strong>Verfahren + der Ausdruck</strong> verlangt — das mühsame
+Ausrechnen der Stammfunktion entfällt.</p>
+</details>
+
+</section>
+<section id="teilaufgabe-d--integralgleichungen-lösen" class="level3">
+<h3>Teilaufgabe d) — Integralgleichungen lösen</h3>
+<p><span class="tag tag-warn">AB II / AB III</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Teil 1: \( a \) bestimmen mit
+\( \displaystyle\int_a^0 -e^{-x}\,dx = -2 \).</strong></p>
+<p>Zuerst eine <strong>Stammfunktion</strong> von \( i(x) = -e^{-x} \).
+Wegen \( \dfrac{d}{dx}\,e^{-x} = -e^{-x} \) ist</p>
+<p>\[ I(x) = e^{-x} \quad\text{eine Stammfunktion von } -e^{-x}. \]</p>
+<p>Mit dem Hauptsatz:</p>
+<p>\[ \int_a^0 -e^{-x}\,dx = \big[\,e^{-x}\,\big]_a^0 = e^{0} - e^{-a} = 1 - e^{-a}. \]</p>
+<p>Das setzen wir gleich \( -2 \) und lösen nach
+\( a \):</p>
+<p>\[ 1 - e^{-a} = -2 \;\;\Longrightarrow\;\; e^{-a} = 3 \;\;\Longrightarrow\;\; -a = \ln 3
+   \;\;\Longrightarrow\;\; a = -\ln 3. \]</p>
+<details><summary>Haltung dahinter: Was ist eine „Stammfunktion", und wie kommt man auf sie? (ganz von vorn)</summary>
+
+<p>Drei Begriffe der Reihe nach.</p>
+<p><strong>Ableiten</strong> misst die <strong>Steigung</strong> eines
+Graphen — wie stark er an einer Stelle steigt oder fällt. Aus einer
+Funktion \( f \) macht man ihre Ableitung
+\( f' \).</p>
+<p><strong>Eine Stammfunktion ist das Ableiten rückwärts.</strong>
+Gesucht ist eine Funktion \( I \), deren Ableitung wieder
+unser \( i \) ergibt: \( I' = i \). Man „un-leitet"
+also ab. Das braucht man, weil Integrale (Flächen) über Stammfunktionen
+berechnet werden.</p>
+<p><strong>Warum ist \( e^{-x} \) eine Stammfunktion von
+\( -e^{-x} \)?</strong> Wir prüfen es, indem wir
+\( e^{-x} \) <strong>ableiten</strong> und schauen, ob
+\( -e^{-x} \) herauskommt. Dafür braucht man die
+<strong>Kettenregel</strong> (siehe nächster Kasten). Sie liefert
+\( (e^{-x})' = -e^{-x} \). Genau unser \( i \) — also stimmt es.
+Probe durch Ableiten ist hier der sicherste Weg: Wenn das
+Rückwärts-Ergebnis vorwärts wieder zum Start führt, war es richtig.</p>
+<details><summary>Die Kettenregel — wozu, und wie hier?</summary>
+
+<p>Die <strong>Kettenregel</strong> braucht man, wenn eine Funktion „in
+einer anderen steckt" — hier steckt das \( -x \)
+<strong>im</strong> Exponenten der e-Funktion. Bild: eine
+<strong>äußere</strong> Funktion (das \( e^{(\text{Kasten})} \)) und eine
+<strong>innere</strong> Funktion (der Kasten \( = -x \)). Die
+Regel sagt: Leite außen ab und multipliziere mit der Ableitung des
+Inneren.</p>
+<ul>
+<li>Äußere Ableitung: \( e^{(\text{Kasten})} \) bleibt beim Ableiten
+\( e^{(\text{Kasten})} \) — das ist die berühmte Besonderheit der
+e-Funktion.</li>
+<li>Innere Ableitung: der Kasten ist \( -x \); seine
+Ableitung ist \( -1 \).</li>
+<li>Multipliziert: \( e^{-x}\cdot(-1) = -e^{-x} \).</li>
+</ul>
+<p>Deshalb \( (e^{-x})' = -e^{-x} \). (Ausführlich: <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>.)</p>
+</details>
+
+<details><summary>Warum darf man am Ende den \( \ln \) nehmen?</summary>
+
+<p>In der Gleichung \( e^{-a} = 3 \) steht das gesuchte
+\( a \) <strong>oben im Exponenten</strong>. Um es
+herunterzuholen, braucht man die <strong>Umkehrung</strong> der
+e-Funktion — und das ist der <strong>natürliche Logarithmus</strong>
+\( \ln \). „Umkehrung" heißt: \( \ln \) macht
+genau das rückgängig, was \( e^{(\cdot)} \) tut, so wie Minus das
+Plus rückgängig macht. Wendet man auf beiden Seiten \( \ln \)
+an, wird aus \( e^{-a} = 3 \) die Gleichung \( -a = \ln 3 \),
+also \( a = -\ln 3 \). (Mehr dazu: <a
+href="kap-grundfunktionen.html">Grundfunktionen</a>.)</p>
+</details>
+</details>
+
+<p><strong>Teil 2: ganzrationale Funktion \( j \) mit
+\( \displaystyle\int_b^c j(x)\,dx = -8 \).</strong></p>
+<p>Hier ist <strong>ein passendes Beispiel</strong> gesucht, nicht
+<em>die</em> Lösung. Am einfachsten wählt man \( j(x) = -x \) und
+integriert von \( 0 \) bis \( 4 \):</p>
+<p>\[ \int_0^4 -x\,dx = \Big[\,-\tfrac12 x^2\,\Big]_0^4 = -\tfrac12\cdot 16 - 0 = -8. \quad\checkmark \]</p>
+<p>Also etwa \( j(x) = -x,\ b=0,\ c=4 \).</p>
+<details><summary>Haltung dahinter: „bestimme eine Funktion, sodass…" — wie geht man an so eine offene Aufgabe?</summary>
+
+<p>Bei einer <strong>offenen</strong> Aufgabe ist nicht <em>eine</em>
+Lösung gemeint, sondern <em>irgendeine</em>, die die Bedingung erfüllt.
+Das ist eine Erleichterung: Man darf sich die
+<strong>einfachste</strong> Funktion bauen, die passt.</p>
+<p>Überlegung: Wir brauchen eine <strong>negative</strong> Fläche
+(\( -8 \)). Eine Gerade, die durch den Ursprung geht und
+nach rechts fällt — also \( j(x) = -x \) — liegt rechts von
+\( 0 \) komplett <strong>unter</strong> der Achse und
+erzeugt dort eine negative Fläche. Jetzt muss man nur noch die rechte
+Grenze \( c \) so wählen, dass genau \( -8 \)
+herauskommt; \( c=4 \) trifft es exakt.</p>
+<p><strong>Sicherer Reflex: durch Einsetzen gegenprüfen</strong> (das
+\( \checkmark \) oben). Man rechnet das Integral mit den gewählten
+Werten aus und schaut, ob wirklich \( -8 \) herauskommt.
+Andere Lösungen sind genauso richtig — z. B. \( j(x)=-2x,\ b=0,\ c=\sqrt{8} \).
+Wichtig nur: \( j \) darf <strong>nicht konstant</strong>
+sein (eine waagerechte Gerade), denn das war ausdrücklich gefordert;
+deshalb ist \( j(x)=-x \) die saubere Wahl.
+(Stammfunktion-Regeln: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.)</p>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( f\to \)II (ganzrational), \( g\to \)III
+(trigonometrisch), \( h\to \)I (exponentiell)</li>
+<li>b) \( f(x) = -\tfrac16(x-2)(x-3)(x+4) \); \( g(x)=-2\sin x+1 \);
+\( h(x)=2e^{-x} \)</li>
+<li>c) \( A = -\int_{-4}^{2} f\,dx + \int_{2}^{3} f\,dx \) (an Nullstellen trennen, Beträge
+addieren)</li>
+<li>d) \( a=-\ln 3 \); Beispiel \( j(x)=-x,\ b=0,\ c=4 \)</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="teil-2--gespräch-geometrie-pyramide-mit-lichtquelle"
+class="level2">
+<h2>Teil 2 — Gespräch (Geometrie): Pyramide mit Lichtquelle</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Eine senkrechte Pyramide mit quadratischer
+Grundfläche hat die Höhe \( 4 \). Die Eckpunkte der
+Grundfläche sind \( A(0\,|\,0\,|\,0) \), \( B(3\,|\,0\,|\,0) \),
+\( C(3\,|\,3\,|\,0) \), \( D(0\,|\,3\,|\,0) \); die Spitze heißt
+\( S \). Im Punkt \( L \) befindet sich eine
+punktförmige Lichtquelle.</p>
+<p>Im Gespräch denkbare Aspekte: <strong>(AB I)</strong> Koordinaten von
+\( S \), Pyramidenvolumen, Koordinatengleichung einer
+Seitenfläche. <strong>(AB II)</strong> Gleichschenkligkeit eines
+Seitendreiecks, Verfahren für die Oberfläche, Formel für den Winkel
+zwischen Grund- und Seitenfläche. <strong>(AB III)</strong> Ebenen, die
+die Pyramide in zwei volumengleiche Teile zerlegen; Prüfung, ob ein
+Punkt im Inneren liegt; Untersuchung eines Schattenwurfs.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was ein Koordinatensystem im Raum
+ist:</strong> Statt nur „rechts/links" und „oben/unten" (zwei Zahlen)
+braucht man im Raum <strong>drei</strong> Zahlen pro Punkt —
+\( (x_1 \mid x_2 \mid x_3) \) —, weil es zusätzlich „vorne/hinten" gibt. Ein
+Punkt wie \( B(3\,|\,0\,|\,0) \) heißt: 3 Schritte in
+\( x_1 \)-Richtung, 0 in \( x_2 \), 0 in
+\( x_3 \). Alle Vektor-Werkzeuge stehen kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>.</p>
+</blockquote>
+<p>So liegt die Pyramide im Koordinatensystem (schematische
+Darstellung):</p>
+<figure>
+<svg viewBox="0 0 470 340" role="img" aria-label="Schrägbild der quadratischen Pyramide ABCD mit Spitze S und Lichtquelle L" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker>
+  </defs>
+  <line x1="180" y1="230" x2="180" y2="60"  stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="180" y1="230" x2="420" y2="230" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="180" y1="230" x2="70"  y2="320" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="166" y="58"  font-size="13" fill="#7a7163">x₃</text>
+  <text x="424" y="234" font-size="13" fill="#7a7163">x₂</text>
+  <text x="58"  y="326" font-size="13" fill="#7a7163">x₁</text>
+  <polygon points="180,230 114,290 228,290 294,230" fill="#3a5a9c" fill-opacity="0.08" stroke="#3a5a9c" stroke-width="1.6"/>
+  <line x1="114" y1="290" x2="204" y2="100" stroke="#3a5a9c" stroke-width="1.6"/>
+  <line x1="228" y1="290" x2="204" y2="100" stroke="#3a5a9c" stroke-width="1.6"/>
+  <line x1="294" y1="230" x2="204" y2="100" stroke="#3a5a9c" stroke-width="1.6"/>
+  <line x1="180" y1="230" x2="204" y2="100" stroke="#3a5a9c" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7"/>
+  <line x1="204" y1="260" x2="204" y2="100" stroke="#d98324" stroke-width="1.3" stroke-dasharray="3 3"/>
+  <circle cx="204" cy="260" r="2.5" fill="#d98324"/>
+  <text x="210" y="250" font-size="12" fill="#d98324">M (Mitte), Höhe 4</text>
+  <circle cx="180" cy="230" r="3" fill="#3a5a9c"/><text x="158" y="224" font-size="12" fill="#26324a">A(0|0|0)</text>
+  <circle cx="114" cy="290" r="3" fill="#3a5a9c"/><text x="60"  y="305" font-size="12" fill="#26324a">B(3|0|0)</text>
+  <circle cx="228" cy="290" r="3" fill="#3a5a9c"/><text x="212" y="308" font-size="12" fill="#26324a">C(3|3|0)</text>
+  <circle cx="294" cy="230" r="3" fill="#3a5a9c"/><text x="300" y="224" font-size="12" fill="#26324a">D(0|3|0)</text>
+  <circle cx="204" cy="100" r="3.5" fill="#3a5a9c"/><text x="212" y="98" font-size="13" fill="#26324a" font-weight="bold">S(1,5|1,5|4)</text>
+  <text x="406" y="82" font-size="15" fill="#b03a2e">✦</text><text x="400" y="81" font-size="12" fill="#b03a2e" text-anchor="end">L (Lichtquelle)</text>
+</svg>
+<figcaption>Schematisches Schrägbild — die Spitze \( S \) liegt senkrecht über der Mitte \( M \) der Grundfläche.</figcaption>
+</figure>
+
+<section
+id="ab-i--koordinaten-von-zzmathphzz238zzendzz-volumen-seitenfläche"
+class="level3">
+<h3>AB I — Koordinaten von \( S \), Volumen,
+Seitenfläche</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Koordinaten der Spitze \( S \).</strong>
+„Senkrechte Pyramide" heißt: Die Spitze liegt <strong>lotrecht über dem
+Mittelpunkt</strong> der Grundfläche. Der Mittelpunkt
+\( M \) des Quadrats ist der Durchschnitt der
+gegenüberliegenden Ecken:</p>
+<p>\[ M = \tfrac12\big(A + C\big) = \tfrac12\big((0,0,0)+(3,3,0)\big) = (1{,}5\,|\,1{,}5\,|\,0). \]</p>
+<p>Die Höhe \( 4 \) wird in \( x_3 \)-Richtung
+aufgesetzt:</p>
+<p>\[ S = (1{,}5\,|\,1{,}5\,|\,4). \]</p>
+<p><strong>Pyramidenvolumen</strong> mit \( V = \tfrac13\cdot G\cdot h \). Die
+Grundfläche ist ein Quadrat mit Seitenlänge \( 3 \), also
+\( G = 3\cdot 3 = 9 \), und \( h=4 \):</p>
+<p>\[ V = \tfrac13\cdot 9\cdot 4 = 12. \]</p>
+<p><strong>Koordinatengleichung einer Seitenfläche</strong> (Beispiel:
+die Fläche durch \( B,\,C,\,S \)). Man braucht einen
+<strong>Normalenvektor</strong> \( \vec n \), der auf zwei
+Kantenvektoren der Fläche senkrecht steht:</p>
+<p>\[ \overrightarrow{BC} = \begin{pmatrix}0\\3\\0\end{pmatrix},\qquad
+   \overrightarrow{BS} = \begin{pmatrix}-1{,}5\\1{,}5\\4\end{pmatrix}. \]</p>
+<p>Das <strong>Kreuzprodukt</strong> liefert \( \vec n \):</p>
+<p>\[ \vec n = \overrightarrow{BC}\times\overrightarrow{BS}
+   = \begin{pmatrix}3\cdot4 - 0\cdot1{,}5\\ 0\cdot(-1{,}5)-0\cdot4\\ 0\cdot1{,}5-3\cdot(-1{,}5)\end{pmatrix}
+   = \begin{pmatrix}12\\0\\4{,}5\end{pmatrix}
+   \;\parallel\; \begin{pmatrix}8\\0\\3\end{pmatrix}. \]</p>
+<p>Einsetzen des Punktes \( B(3|0|0) \) bestimmt die rechte Seite:
+\( 8\cdot3 + 3\cdot0 = 24 \). Also</p>
+<p>\[ E_{BCS}:\quad 8x_1 + 3x_3 = 24. \]</p>
+<details><summary>Haltung dahinter: Was sind Vektor, Ebene und Normalenvektor? (ganz von vorn)</summary>
+
+<p>Schritt für Schritt, ohne Vorwissen.</p>
+<p><strong>Punkt und Vektor.</strong> Ein <strong>Punkt</strong> ist ein
+Ort im Raum, angegeben durch drei Zahlen \( (x_1\mid x_2\mid x_3) \). Ein
+<strong>Vektor</strong> ist ein <strong>Pfeil</strong> — eine Bewegung
+von einem Punkt zu einem anderen, mit Richtung und Länge. Den Pfeil vom
+Punkt \( B \) zum Punkt \( C \) schreibt man
+\( \overrightarrow{BC} \) und rechnet ihn als „Ziel minus Start" aus:
+\( C - B \). Beispiel: \( \overrightarrow{BC} = (3,3,0) - (3,0,0) = (0,3,0) \) — also „3 Schritte
+in \( x_2 \)-Richtung".</p>
+<p><strong>Ebene.</strong> Eine <strong>Ebene</strong> ist eine
+vollkommen flache, unendlich ausgedehnte Fläche (wie eine unendliche
+Tischplatte). Eine Seitenfläche der Pyramide liegt in so einer Ebene.
+Eine <strong>Koordinatengleichung</strong> der Ebene ist eine Regel der
+Form \( n_1 x_1 + n_2 x_2 + n_3 x_3 = d \), die <strong>genau die Punkte beschreibt, die
+auf der Ebene liegen</strong> — setzt man einen Ebenenpunkt ein, stimmt
+die Gleichung; setzt man einen Punkt daneben ein, stimmt sie nicht.</p>
+<p><strong>Normalenvektor.</strong> Das ist ein Pfeil, der
+<strong>senkrecht auf der Ebene steht</strong> — wie ein Fahnenmast, der
+gerade aus dem Boden ragt. Sein Nutzen: Die drei Zahlen des
+Normalenvektors sind <strong>genau</strong> die Koeffizienten
+\( n_1, n_2, n_3 \) in der Ebenengleichung. Kennt man den
+Normalenvektor und einen Punkt der Ebene, hat man die ganze
+Gleichung.</p>
+<details><summary>Wieso liefert das „Kreuzprodukt" einen senkrechten Pfeil?</summary>
+
+<p>Das <strong>Kreuzprodukt</strong> zweier Vektoren ist eine feste
+Rechenvorschrift, die als Ergebnis einen <strong>neuen Pfeil</strong>
+liefert, der auf <strong>beiden</strong> Ausgangspfeilen senkrecht
+steht. Genau das brauchen wir: Wir nehmen zwei Pfeile, die
+<strong>in</strong> der Seitenfläche liegen (\( \overrightarrow{BC} \) und
+\( \overrightarrow{BS} \)), und das Kreuzprodukt gibt uns automatisch einen
+Pfeil senkrecht zur Fläche — den Normalenvektor. Das Rechenschema
+(welche Zahlen man wie multipliziert und subtrahiert) steht im <a
+href="konv-90-werkzeugkasten-geometrie.html#kreuzprodukt">Werkzeugkasten
+Geometrie</a>.</p>
+<p>Dass man am Ende \( (12,0,4{,}5) \) auf \( (8,0,3) \)
+<strong>kürzt</strong>, ändert nur die <em>Länge</em> des Pfeils, nicht
+seine <em>Richtung</em> — und nur die Richtung zählt für die Ebene.
+Kürzen macht die Zahlen handlicher.</p>
+</details>
+
+<details><summary>Probe: so prüfst du eine Ebenengleichung sofort</summary>
+
+<p>Eine Ebenengleichung ist richtig, wenn <strong>alle drei</strong>
+definierenden Punkte sie erfüllen. Einsetzen: \( C(3|3|0): 8\cdot3+3\cdot0 = 24 \) ✓;
+\( S(1{,}5|1{,}5|4): 8\cdot1{,}5 + 3\cdot4 = 12+12 = 24 \) ✓. Dass \( x_2 \) in der Gleichung
+<strong>fehlt</strong>, ist kein Fehler: Die Fläche \( BCS \)
+ist parallel zur \( x_2 \)-Achse, deshalb taucht
+\( x_2 \) nicht auf. Diese Punktprobe ist deine schnelle
+Selbstkontrolle.</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Warum liegt \( S \) über dem Mittelpunkt, und woher die Volumenformel?</summary>
+
+<p><strong>„Senkrechte" Pyramide.</strong> Stell dir einen Zeltmast vor,
+der genau in der Mitte des quadratischen Zeltbodens <strong>gerade nach
+oben</strong> steht. Die Zeltspitze ist dann lotrecht über der
+Bodenmitte. Genau das meint „senkrechte Pyramide". Deshalb hat
+\( S \) dieselben \( x_1 \)- und
+\( x_2 \)-Werte wie die Mitte \( M \) (nämlich
+\( 1{,}5 \) und \( 1{,}5 \)) und obendrauf die Höhe
+\( 4 \) in \( x_3 \)-Richtung.</p>
+<p><strong>Mittelpunkt als Durchschnitt.</strong> Den Mittelpunkt einer
+Strecke findet man, indem man die beiden Endpunkte addiert und halbiert
+(der „Durchschnitt" zweier Orte liegt genau dazwischen). Beim Quadrat
+nimmt man zwei <strong>gegenüberliegende</strong> Ecken, hier
+\( A \) und \( C \): \( \tfrac12(A+C) \).</p>
+<p><strong>Volumenformel \( V=\tfrac13\,G\,h \).</strong> Eine Pyramide
+füllt genau <strong>ein Drittel</strong> des Quaders (der „Schachtel")
+aus, der dieselbe Grundfläche \( G \) und dieselbe Höhe
+\( h \) hat. Daher das \( \tfrac13 \). Hier:
+Grundfläche \( G = 3\cdot 3 = 9 \) (Quadrat mit Seite 3), Höhe
+\( h=4 \), also \( V = \tfrac13 \cdot 9 \cdot 4 = 12 \).</p>
+</details>
+</details>
+
+</section>
+<section id="ab-ii--gleichschenkligkeit-oberfläche-neigungswinkel"
+class="level3">
+<h3>AB II — Gleichschenkligkeit, Oberfläche, Neigungswinkel</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Gleichschenkligkeit eines Seitendreiecks</strong> (z. B.
+\( BCS \)). Wir vergleichen die beiden Schenkellängen
+\( |\overline{SB}| \) und \( |\overline{SC}| \):</p>
+<p>\[ \overrightarrow{SB} = \begin{pmatrix}1{,}5\\-1{,}5\\-4\end{pmatrix},\quad
+   |\overline{SB}| = \sqrt{1{,}5^2+1{,}5^2+4^2} = \sqrt{20{,}5}; \] \[ \overrightarrow{SC} = \begin{pmatrix}1{,}5\\1{,}5\\-4\end{pmatrix},\quad
+   |\overline{SC}| = \sqrt{1{,}5^2+1{,}5^2+4^2} = \sqrt{20{,}5}. \]</p>
+<p>Beide sind gleich lang, also ist das Dreieck \( BCS \)
+<strong>gleichschenklig</strong> (Spitze \( S \)).</p>
+<details><summary>Haltung dahinter: Was heißt „gleichschenklig", und wie misst man eine Länge im Raum?</summary>
+
+<p><strong>Gleichschenklig</strong> heißt: Ein Dreieck hat <strong>zwei
+gleich lange Seiten</strong> (die „Schenkel"). Es genügt also zu zeigen,
+dass zwei Seiten dieselbe Länge haben.</p>
+<p><strong>Länge eines Pfeils im Raum.</strong> Die Länge
+\( |\overrightarrow{SB}| \) eines Vektors ist der <strong>Abstand</strong>
+zwischen Start und Ziel. Man bekommt sie mit dem <strong>Satz des
+Pythagoras</strong>, nur in drei Dimensionen: Man <strong>quadriert jede
+der drei Zahlen, addiert sie und zieht die Wurzel</strong>:</p>
+<p>\[ |\;(a,b,c)\;| = \sqrt{a^2+b^2+c^2}. \]</p>
+<p>Für \( \overrightarrow{SB} = (1{,}5,\,-1{,}5,\,-4) \): \( 1{,}5^2 = 2{,}25 \), \( (-1{,}5)^2 = 2{,}25 \)
+(Minus mal Minus wird Plus!), \( (-4)^2 = 16 \). Summe
+\( 2{,}25+2{,}25+16 = 20{,}5 \), also Länge \( \sqrt{20{,}5} \). Für
+\( \overrightarrow{SC} \) kommt durch das gleiche Rechnen exakt dasselbe
+heraus — die beiden Seiten sind gleich lang.</p>
+<details><summary>Warum sind sogar alle vier Seitenkanten gleich lang?</summary>
+
+<p>Weil die Spitze <strong>senkrecht über dem Mittelpunkt</strong>
+sitzt, ist sie von allen vier Eckpunkten gleich weit entfernt — wie der
+Mittelpunkt eines Kreises von allen Randpunkten. Die vier Seitenkanten
+\( SA, SB, SC, SD \) sind deshalb alle gleich lang. Damit ist
+<strong>jedes</strong> der vier Seitendreiecke gleichschenklig, und die
+ganze Pyramide ist gleichmäßig um ihre Höhe gebaut. Das darf man im
+Gespräch so begründen — oft schneller als das Nachrechnen.</p>
+</details>
+</details>
+
+<p><strong>Verfahren für die Oberfläche.</strong> Die Oberfläche besteht
+aus der <strong>quadratischen Grundfläche</strong> und <strong>vier
+kongruenten</strong> (deckungsgleichen) Seitendreiecken:</p>
+<p>\[ O = G + 4\cdot A_{\triangle}. \]</p>
+<p>Für ein Seitendreieck braucht man die <strong>Höhe des
+Dreiecks</strong> \( h_s \) (von \( S \) auf die
+Mitte einer Grundkante). Mitte von \( BC \) ist
+\( M_{BC}(3\,|\,1{,}5\,|\,0) \), und</p>
+<p>\[ h_s = |\overline{S\,M_{BC}}| = \sqrt{(3-1{,}5)^2 + 0^2 + 4^2} = \sqrt{1{,}5^2+4^2} = \sqrt{18{,}25}. \]</p>
+<p>Damit \( A_{\triangle} = \tfrac12\cdot 3\cdot \sqrt{18{,}25} \) und</p>
+<p>\[ O = 9 + 4\cdot\tfrac12\cdot 3\cdot \sqrt{18{,}25} = 9 + 6\sqrt{18{,}25}. \]</p>
+<details><summary>Haltung dahinter: Warum diese Bausteine für die Oberfläche?</summary>
+
+<p>Die <strong>Oberfläche</strong> ist die Summe aller Flächen, die den
+Körper „außen" begrenzen — wie viel Papier man bräuchte, um die Pyramide
+einzupacken. Eine quadratische Pyramide hat <strong>fünf</strong>
+Außenflächen: unten das <strong>Quadrat</strong> (Grundfläche
+\( G \)) und ringsum <strong>vier gleiche
+Dreiecke</strong>.</p>
+<p>Die Fläche eines Dreiecks ist \( \tfrac12 \cdot \text{Grundseite} \cdot \text{Höhe} \). Die Grundseite
+ist eine Quadratkante (\( =3 \)). Die <strong>Höhe des
+Dreiecks</strong> \( h_s \) ist <em>nicht</em> die
+Pyramidenhöhe, sondern die Strecke von der Spitze \( S \)
+<strong>senkrecht hinunter zur Mitte der Grundkante</strong>. Diese
+misst man wieder als Pfeillänge (Pythagoras): von \( S(1{,}5|1{,}5|4) \)
+zur Kantenmitte \( M_{BC}(3|1{,}5|0) \) ergibt \( \sqrt{18{,}25} \). Vier
+solche Dreiecke plus das Quadrat ergeben \( O = 9 + 6\sqrt{18{,}25} \).</p>
+</details>
+
+<p><strong>Winkel zwischen Grund- und Seitenfläche.</strong> Anschaulich
+über das <strong>rechtwinklige Dreieck</strong> aus Pyramidenhöhe
+\( h=4 \) (senkrecht) und dem halben Grundkanten-Abstand vom
+Mittelpunkt \( \tfrac{3}{2}=1{,}5 \) (waagerecht). Der Neigungswinkel
+\( \varphi \) erfüllt</p>
+<p>\[ \tan\varphi = \frac{h}{1{,}5} = \frac{4}{1{,}5} = \frac{8}{3}\;\;\Longrightarrow\;\;
+   \varphi = \arctan\!\frac{8}{3} \approx 69{,}4^\circ. \]</p>
+<details><summary>Haltung dahinter: Was ist der „Tangens", und woher kommt das rechtwinklige Dreieck?</summary>
+
+<p><strong>Winkel zwischen zwei Flächen</strong> misst man dort, wo sie
+zusammenstoßen — wie weit man die eine Fläche „aufklappen" muss, um zur
+anderen zu kommen (wie der Öffnungswinkel eines Buchdeckels gegen den
+Tisch).</p>
+<p>Man baut sich ein passendes <strong>rechtwinkliges Dreieck</strong>:
+Lote von der Spitze \( S \) senkrecht hinunter zum
+Grundflächen-Mittelpunkt \( M \) (das ist die Pyramidenhöhe
+\( h=4 \)) und von \( M \) waagerecht zur Mitte
+einer Grundkante (Strecke \( 1{,}5 \)). Diese beiden stehen
+senkrecht aufeinander; die schräge Seitenfläche schließt mit dem Boden
+genau den Winkel \( \varphi \) an dieser Ecke ein.</p>
+<p><strong>Tangens.</strong> In einem rechtwinkligen Dreieck verbindet
+der Tangens den Winkel mit zwei Seiten: \( \tan(\text{Winkel}) = \dfrac{\text{Gegenkathete}}{\text{Ankathete}} \) — also
+„gegenüberliegende Seite geteilt durch anliegende Seite". Hier ist die
+Höhe \( 4 \) gegenüber dem Winkel, die Strecke
+\( 1{,}5 \) liegt am Winkel an: \( \tan\varphi = \tfrac{4}{1{,}5} = \tfrac{8}{3} \). Den
+Winkel selbst holt man mit der Umkehrung \( \arctan \) (auf dem
+Rechner „\( \tan^{-1} \)") zurück: \( \varphi \approx 69{,}4^\circ \). (In der
+hilfsmittelfreien Prüfung genügt es,
+<strong>\( \tan\varphi = \tfrac{8}{3} \)</strong> anzugeben und zu erklären — der
+Zahlenwert ist Nebensache.)</p>
+</details>
+</details>
+
+</section>
+<section id="ab-iii--halbierung-innen-test-schattenwurf" class="level3">
+<h3>AB III — Halbierung, Innen-Test, Schattenwurf</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p>Diese Aspekte verlangen vor allem <strong>beschreiben und
+begründen</strong>, nicht langes Rechnen.</p>
+<p><strong>Ebenen, die das Volumen halbieren.</strong> Jede Ebene, die
+durch die <strong>Spitze \( S \)</strong> und durch den
+<strong>Mittelpunkt \( M \)</strong> der Grundfläche geht
+(also die Höhe enthält) und die Grundfläche in zwei flächengleiche
+Hälften schneidet, zerlegt die Pyramide in zwei volumengleiche Teile —
+z. B. die Ebene durch \( S \) und die Mitten zweier
+gegenüberliegender Grundkanten oder die Ebene durch \( S \)
+und eine Diagonale der Grundfläche.</p>
+<p><strong>Liegt ein Punkt \( P \) im Inneren?</strong> Man
+beschreibt die Pyramide durch ihre <strong>begrenzenden Ebenen</strong>
+(Grundfläche + vier Seitenflächen). \( P \) liegt im
+Inneren, wenn er bei <strong>jeder</strong> dieser Ebenen auf derselben
+Seite liegt wie das Pyramideninnere. Das prüft man, indem man
+\( P \) in jede Ebenengleichung einsetzt und das
+<strong>Vorzeichen</strong> mit dem eines bekannten Innenpunkts (etwa
+\( M \)) vergleicht.</p>
+<p><strong>Schattenwurf.</strong> Die punktförmige Lichtquelle
+\( L \) wirft den Schatten als
+<strong>Zentralprojektion</strong> auf die Grundebene
+(\( x_3=0 \)): Für die Spitze \( S \) bildet man
+die <strong>Gerade durch \( L \) und
+\( S \)</strong> und bestimmt deren
+<strong>Durchstoßpunkt</strong> mit der Ebene \( x_3=0 \).
+Dieser Durchstoßpunkt ist der Schatten von \( S \).</p>
+<details><summary>Haltung dahinter: die drei Ideen in Alltagssprache</summary>
+
+<ul>
+<li><strong>Halbieren.</strong> Eine Ebene, die durch die Spitze
+<strong>und</strong> die Bodenmitte geht, schneidet die Pyramide
+symmetrisch durch — beide Hälften haben dieselbe Höhe und gleich große
+Grundstücke, also nach \( V=\tfrac13 G h \) dasselbe Volumen. Bild:
+einen quadratischen Pudding mittig senkrecht durchschneiden — beide
+Stücke gleich groß.</li>
+<li><strong>Innen oder außen?</strong> Eine Fläche teilt den Raum in
+zwei Seiten. Setzt man einen Punkt in die Ebenengleichung ein, verrät
+das <strong>Vorzeichen</strong> (plus oder minus, größer oder kleiner
+als \( d \)), auf welcher Seite er liegt. Ein Punkt ist im
+Inneren, wenn er bei <strong>allen fünf</strong> Begrenzungsflächen auf
+derselben Seite liegt wie ein sicher innen liegender
+Vergleichspunkt.</li>
+<li><strong>Schatten.</strong> Licht von einem Punkt strahlt geradlinig.
+Der Schatten eines Eckpunkts liegt dort, wo der Lichtstrahl von
+\( L \) durch diesen Eckpunkt auf den Boden trifft.
+Mathematisch: Gerade durch \( L \) und den Punkt, dann
+Schnittpunkt mit dem Boden \( x_3=0 \).</li>
+</ul>
+<details><summary>Hinweis: ohne konkrete Koordinaten von \( L \) bleibt es beim Verfahren</summary>
+
+<p>Das Aufgabenbeispiel gibt \( L \) nur als Lage im Bild
+an, <strong>ohne</strong> Zahlenwerte. Deshalb ist hier nur das
+<strong>Vorgehen</strong> zu beschreiben. Sobald \( L \)
+mit Koordinaten gegeben wäre, etwa \( L(l_1|l_2|l_3) \), setzt man
+\( \vec x = L + t\,(S-L) \), löst die dritte Zeile \( l_3 + t\,(4-l_3) = 0 \) nach
+\( t \) auf und setzt \( t \) in die ersten
+beiden Zeilen ein — das liefert den Schattenpunkt von
+\( S \).</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>a) Zuordnung.</strong> Gut ist jede Antwort, die die
+<strong>Klassen an ihrer Gestalt</strong> festmacht: e-Funktion =
+„bleibt positiv, nähert sich der Achse"; Polynom = „Nullstellen, läuft
+ins Unendliche"; trig = „schwingt periodisch". <em>Rückfrage, falls nur
+zugeordnet ohne Begründung:</em> „Woran genau erkennen Sie die
+Exponentialfunktion?"</li>
+<li><strong>b) Funktionsterm.</strong> Erwartet: <strong>Nullstellen
+ablesen → Linearfaktoren</strong>, dann <strong>ein Punkt</strong>
+(meist \( f(0) \)) für den Vorfaktor; Ergebnis
+\( f(x)=-\tfrac16(x-2)(x-3)(x+4) \). <em>Rückfrage:</em> „Warum brauchen Sie überhaupt
+noch den Faktor \( -\tfrac16 \)?" (Antwort: richtige Höhe
+<strong>und</strong> Spiegelung.)</li>
+<li><strong>c) Fläche.</strong> Erwartet: <strong>an den Nullstellen
+trennen</strong>, Beträge addieren, Minus vor dem Stück unter der Achse.
+<em>Rote Flagge:</em> ein einziges Integral \( \int_{-4}^{3} \) ohne
+Trennen. <em>Rückfrage:</em> „Was misst ein Integral, wenn der Graph
+unter der Achse liegt?"</li>
+<li><strong>d) Integralgleichungen.</strong> Erwartet: Stammfunktion
+\( e^{-x} \), sauberes Auflösen mit \( \ln \) →
+\( a=-\ln 3 \); beim zweiten Teil <strong>irgendein</strong>
+passendes Beispiel mit Probe. <em>Rückfrage:</em> „Können Sie Ihr
+\( j \) durch Einsetzen bestätigen?"</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Geometrie) aufklappen</summary>
+
+<ul>
+<li><strong>\( S \), Volumen, Seitenfläche.</strong>
+Erwartet: \( S \) über <strong>Mittelpunkt + Höhe</strong>
+\( (1{,}5|1{,}5|4) \); \( V=\tfrac13\cdot9\cdot4=12 \); Ebene über
+<strong>Normalenvektor</strong> (Kreuzprodukt)
+<ul>
+<li>Punktprobe. <em>Rückfrage:</em> „Warum liegt \( S \)
+genau über dem Mittelpunkt?" (Antwort: „senkrechte" Pyramide.)</li>
+</ul></li>
+<li><strong>Gleichschenkligkeit / Oberfläche / Winkel.</strong>
+Erwartet: zwei Kantenlängen gleich (\( \sqrt{20{,}5} \)); Oberfläche =
+Quadrat + 4 Dreiecke; Winkel über das <strong>rechtwinklige
+Dreieck</strong> Höhe/\( 1{,}5 \), \( \tan\varphi=\tfrac{8}{3} \).
+<em>Rückfrage:</em> „Welches kleine Dreieck benutzen Sie für den
+Neigungswinkel?"</li>
+<li><strong>AB III.</strong> Hier zählt <strong>sauberes
+Erklären</strong>: Halbierung durch eine Ebene <strong>durch die
+Höhe</strong>; Innen-Test über <strong>Vorzeichen in allen
+Begrenzungsebenen</strong>; Schatten als <strong>Gerade
+\( LS \) ∩ Grundebene</strong>. <em>Hinweis für dich:</em>
+Für den Schatten fehlen Zahlen zu \( L \) — ein
+<strong>beschriebenes Verfahren</strong> ist hier die volle
+Antwort.</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Woran erkennst du in einem Satz, ob ein Graph exponentiell,
+ganzrational oder trigonometrisch ist?</li>
+<li>Wie kommst du von den Nullstellen eines Graphen zu seinem
+Funktionsterm — und was fehlt dann noch?</li>
+<li>Warum musst du bei der Fläche an den Nullstellen trennen?</li>
+<li>Wie bestimmst du die Spitze \( S \) einer senkrechten
+Pyramide, und warum?</li>
+<li>Welches rechtwinklige Dreieck liefert den Winkel zwischen Grund- und
+Seitenfläche?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

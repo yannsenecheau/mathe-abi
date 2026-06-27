@@ -1,0 +1,1233 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 4 — Analysis &amp; Stochastik — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link active" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Analysis</strong>, <strong>Teil 2 (Gespräch) aus der
+Stochastik</strong>. Alles ist <strong>rechnerfrei</strong> zu lösen
+(Teil 1 ausdrücklich „ohne WTR", also ohne Taschenrechner). Arbeitet die
+Aufgabe wie eine echte Simulation durch — eine Person trägt vor, die
+andere prüft mit dem Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+<li>Besonderheit bei dieser Aufgabe: <strong>Teil 1</strong> hat im
+Original einen amtlichen Lösungsschlüssel (Erwartungshorizont) — die
+Ergebnisse stehen also fest. <strong>Teil 2</strong> gibt im Original
+nur Gesprächs­themen vor; die ausgerechneten Lösungen hier sind selbst
+erarbeitet und vollständig nachgerechnet.</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die Analysis-Werkzeuge
+stehen in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-grundfunktionen.html">Grundfunktionen</a> und <a
+href="kap-grenzwerte-randverhalten.html">Grenzwerte &amp;
+Randverhalten</a>. Die Stochastik-Werkzeuge (Erwartungswert, Normal- und
+Binomialverteilung) findest du kompakt im <a
+href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a> (Anker u. a. <a
+href="konv-91-werkzeugkasten-stochastik.html#normalverteilung">`#normalverteilung`</a>,
+<a
+href="konv-91-werkzeugkasten-stochastik.html#binomialverteilung">`#binomialverteilung`</a>,
+<a
+href="konv-91-werkzeugkasten-stochastik.html#erwartungswert">`#erwartungswert`</a>).</p>
+</blockquote>
+<hr />
+<section
+id="teil-1--vortrag-analysis-graph-lesen-stammfunktion-deuten-term-zuordnen"
+class="level2">
+<h2>Teil 1 — Vortrag (Analysis): Graph lesen, Stammfunktion deuten, Term
+zuordnen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Teil 1: Analysis (ohne WTR).</strong> Die Abbildung zeigt den
+Graphen einer Funktion \( f \).</p>
+<p><strong>a)</strong> Bestimme \( f'(0) \).</p>
+<p><strong>b)</strong> Ermittle \( \displaystyle\int_0^2 f(x)\,dx \).</p>
+<p><strong>c)</strong> \( F \) ist eine Stammfunktion von
+\( f \). Untersuche mit Hilfe des Graphen von
+\( f \), ob der Graph von \( F \) im
+abgebildeten Bereich Hoch-, Tief- bzw. Wendepunkte besitzt. Gib
+gegebenenfalls die entsprechenden Stellen an.</p>
+<p><strong>d)</strong> Entscheide, welche der folgenden
+Funktionsgleichungen zu \( f \) gehört, und begründe deine
+Entscheidung: \( f_1(x) = (x-2)\,e^{-x} \) ; \( f_2(x) = (x-2)\,e^{x} \) ;
+\( f_3(x) = x\,e^{x} - 2 \).</p>
+<p><strong>e)</strong> Der Graph der Funktion \( g \) mit
+\( g(x) = (x-2)^2\,e^{x} \) besitzt den Hochpunkt \( H(0\,|\,4) \). Skizziere
+den Graphen von \( g \) und erläutere dein Vorgehen.</p>
+</div>
+
+<p>Hier ist der Graph von \( f \), wie ihn das Original
+zeigt — reproduziert aus dem Funktionsterm, den du in Teilaufgabe d)
+selbst findest. Lies erst selbst ab, bevor du die Lösungen
+aufklappst.</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k4-fa" style="width:100%;max-width:340px;aspect-ratio:1/1"></div>
+<figcaption>Graph von \( f \) mit Tangente in \( P(0\,|\,-2) \) — für a)</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k4-fb" style="width:100%;max-width:340px;aspect-ratio:1/1"></div>
+<figcaption>Fläche zwischen Graph und \( x \)-Achse von \( 0 \) bis \( 2 \) — für b)</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-fa',{boundingbox:[-2.6,3.8,3,-3.6],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return (x-2)*Math.exp(x);},-2.6,2.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return -x-2;},-1.3,1.3],{strokeColor:'#d98324',strokeWidth:2,dash:2});b.create('point',[0,-2],{name:'P',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[8,-4]}});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-fb',{boundingbox:[-2.6,3.8,3,-3.6],axis:true,showCopyright:false,showNavigation:false});var g=b.create('functiongraph',[function(x){return (x-2)*Math.exp(x);},-2.6,2.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[0,2],g],{fillColor:'#3a5a9c',fillOpacity:0.18,label:{visible:false},curveLeft:{visible:false},curveRight:{visible:false},baseLeft:{visible:false},baseRight:{visible:false}});})();});</script>
+
+<section id="teilaufgabe-a--zzmathphzz41zzendzz-aus-dem-graphen-ablesen"
+class="level3">
+<h3>Teilaufgabe a) — \( f'(0) \) aus dem Graphen ablesen</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — Tangente einzeichnen.</strong> Lege im Punkt
+\( P(0\,|\,f(0)) = P(0\,|\,-2) \) das Lineal so an, dass es sich an die Kurve
+<strong>anschmiegt</strong> (die Tangente). Das ist die orange
+gestrichelte Gerade im Bild.</p>
+<p><strong>Schritt 2 — Steigung der Tangente ablesen.</strong> Geh vom
+Berührpunkt aus <strong>\( 1 \) nach rechts</strong> und
+schau, wie weit die Tangente dabei hoch- oder runtergeht: Sie geht
+<strong>\( 1 \) nach unten</strong>. Steigung also</p>
+<p>\[ f'(0) = \frac{\text{Höhenänderung}}{\text{Schrittweite}} = \frac{-1}{1} = -1. \]</p>
+<p><strong>Ergebnis: \( f'(0) \approx -1 \).</strong></p>
+<details><summary>Haltung dahinter: Was ist \( f'(0) \) überhaupt? (ganz von vorn)</summary>
+
+<p>Langsam von vorn. Die <strong>Ableitung</strong> \( f' \)
+einer Funktion misst an jeder Stelle die <strong>Steigung</strong> des
+Graphen — also wie steil er gerade bergauf oder bergab läuft.
+\( f'(0) \) ist daher einfach die <strong>Steigung des Graphen
+genau an der Stelle \( x = 0 \)</strong>.</p>
+<p><strong>Steigung anschaulich.</strong> Steigung heißt: „Wenn ich
+einen Schritt nach rechts gehe, wie viel geht es dabei hoch oder
+runter?" Eine Steigung von \( +2 \) bedeutet
+„\( 1 \) nach rechts, \( 2 \) nach oben", eine
+Steigung von \( -1 \) bedeutet „\( 1 \) nach
+rechts, \( 1 \) nach unten". Wie bei einer Straße: Gefälle =
+negative Steigung.</p>
+<p><strong>Warum die Tangente?</strong> Der Graph ist gekrümmt, an einer
+Kurve kann man Steigung nicht direkt ablesen. Trick: Man legt an der
+gewünschten Stelle eine <strong>Gerade</strong> an, die den Graphen dort
+gerade berührt und in dieselbe Richtung zeigt — die
+<strong>Tangente</strong> (von lateinisch <em>tangere</em> = berühren).
+Diese Gerade hat an der Berührstelle <strong>genau dieselbe
+Steigung</strong> wie der Graph. Und die Steigung einer Geraden kann man
+bequem mit dem „rechts/hoch"-Dreieck ablesen.</p>
+<details><summary>Ganz langsam (mit Zahlen): die Steigung aus zwei Punkten der Tangente</summary>
+
+<p>Steigung einer Geraden \( = \dfrac{\Delta y}{\Delta x} \) („Delta" heißt
+„Unterschied"): Höhen­unterschied geteilt durch Rechts-Unterschied. Nimm
+zwei bequeme Punkte <strong>auf der Tangente</strong>:</p>
+<ul>
+<li>Berührpunkt \( P(0\,|\,-2) \),</li>
+<li>einen Schritt weiter rechts liegt die Tangente bei
+\( (1\,|\,-3) \).</li>
+</ul>
+<p>Damit:</p>
+<p>\[ f'(0) = \frac{\Delta y}{\Delta x} = \frac{-3 - (-2)}{1 - 0} = \frac{-3+2}{1} = \frac{-1}{1} = -1. \]</p>
+<p>Beachte \( -3 - (-2) = -3 + 2 = -1 \): „minus minus zwei" wird „plus zwei".
+Ergebnis: Steigung \( -1 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Hier ist nicht der <strong>Funktionswert</strong> \( f(0) = -2 \)
+gefragt (das ist die Höhe des Graphen), sondern die
+<strong>Steigung</strong> \( f'(0) = -1 \) (wie schräg er dort
+liegt). Zweite Falle: die Steigung der Kurve selbst schätzen zu wollen —
+immer erst die Tangente einzeichnen und an ihr ablesen. Mehr dazu: <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-b--integral-durch-kästchenzählen"
+class="level3">
+<h3>Teilaufgabe b) — Integral durch Kästchenzählen</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Zwischen \( x=0 \) und \( x=2 \) liegt der Graph
+<strong>unter</strong> der \( x \)-Achse (siehe blaue Fläche
+im rechten Bild). Ohne Funktionsterm liest man das Integral durch
+<strong>Kästchenzählen</strong> ab.</p>
+<p><strong>Schritt 1 — Größe eines Kästchens.</strong> Im
+Original-Koordinatensystem ist jedes kleine Gitterquadrat
+\( 0{,}5 \) breit und \( 0{,}5 \) hoch, hat also den
+Flächeninhalt \( 0{,}5 \cdot 0{,}5 = 0{,}25 \).</p>
+<p><strong>Schritt 2 — Kästchen zählen.</strong> Die eingeschlossene
+Fläche umfasst rund <strong>\( 17 \) Kästchen</strong> (ganze
+und zu ganzen ergänzte Teilkästchen). Flächeninhalt also</p>
+<p>\[ A \approx 17 \cdot 0{,}25 = \frac{17}{4} = 4{,}25. \]</p>
+<p><strong>Schritt 3 — Vorzeichen.</strong> Die Fläche liegt
+<strong>unter</strong> der Achse, das Integral zählt sie deshalb
+<strong>negativ</strong>:</p>
+<p>\[ \int_0^2 f(x)\,dx \approx -\frac{17}{4} = -4{,}25. \]</p>
+<p><strong>Ergebnis: \( \displaystyle\int_0^2 f(x)\,dx \approx -4{,}25 \).</strong></p>
+<details><summary>Haltung dahinter: Was ist ein Integral, und warum kann es negativ sein?</summary>
+
+<p>Ein <strong>Integral</strong> \( \int_a^b f(x)\,dx \) ist eine Maschine,
+die die <strong>Fläche zwischen dem Graphen und der
+\( x \)-Achse</strong> von der linken Grenze
+\( a \) bis zur rechten Grenze \( b \)
+zusammenrechnet. Man kann sich unendlich viele hauchdünne senkrechte
+Streifen unter der Kurve vorstellen, alle aufaddiert.</p>
+<p>Der Haken: Das Integral zählt Fläche <strong>mit Vorzeichen</strong>
+(man sagt <em>orientierter</em> Flächeninhalt). Ein gutes Bild ist ein
+<strong>Bankkonto</strong>:</p>
+<ul>
+<li>Graph <strong>über</strong> der Achse → Streifen zeigen nach oben →
+zählen <strong>positiv</strong> (Einzahlung).</li>
+<li>Graph <strong>unter</strong> der Achse → Streifen zeigen nach unten
+→ zählen <strong>negativ</strong> (Abhebung).</li>
+</ul>
+<p>Zwischen \( 0 \) und \( 2 \) liegt der Graph
+komplett <strong>unter</strong> der Achse, deshalb kommt ein
+<strong>negativer</strong> Wert heraus.</p>
+<p><strong>Kästchenzählen</strong> ist die rechnerfreie Variante: Statt
+eine Stammfunktion zu suchen, schätzt man die Fläche, indem man die
+Gitterquadrate abzählt — volle Kästchen ganz, angeschnittene zu vollen
+ergänzt (zwei halbe = eins). Das ergibt hier etwa \( 17 \)
+Kästchen.</p>
+<details><summary>Ganz langsam (mit Zahlen): von 17 Kästchen zu −4,25</summary>
+
+<p>Ein Kästchen ist \( 0{,}5 \times 0{,}5 \). Achtung: \( 0{,}5 \cdot 0{,}5 = 0{,}25 \),
+nicht \( 0{,}5 \) — ein Viertelquadrat. Also:</p>
+<p>\[ 17 \text{ Kästchen} \cdot 0{,}25 \tfrac{\text{Fläche}}{\text{Kästchen}} = 4{,}25. \]</p>
+<p>Dasselbe als Bruch: \( 17 \cdot \tfrac14 = \tfrac{17}{4} = 4{,}25 \). Weil die Fläche unter der
+Achse liegt, ein Minus davor: \( -\tfrac{17}{4} = -4{,}25 \).</p>
+</details>
+
+<details><summary>Kontrolle mit dem exakten Term (aus Teilaufgabe d)</summary>
+
+<p>Sobald man aus d) weiß, dass \( f(x) = (x-2)e^x \) ist, kann man das
+Integral exakt nachrechnen. Eine Stammfunktion ist \( F(x) = (x-3)e^x \)
+(Probe durch Ableiten: \( F'(x) = e^x + (x-3)e^x = (x-2)e^x \) ✓). Mit dem Hauptsatz:</p>
+<p>\[ \int_0^2 (x-2)e^x\,dx = \big[(x-3)e^x\big]_0^2 = (2-3)e^2 - (0-3)e^0 = -e^2 + 3 \approx -4{,}39. \]</p>
+<p>Der abgelesene Wert \( -4{,}25 \) liegt nah dran — die kleine
+Abweichung kommt vom Schätzen beim Kästchenzählen. In der Prüfung ist
+hier <strong>ohne</strong> Taschenrechner gefragt, also ist
+\( -\tfrac{17}{4} \) die erwartete Antwort. Mehr zum Hauptsatz: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Das <strong>Minuszeichen vergessen</strong> ist der häufigste Fehler:
+Die Fläche selbst ist positiv (\( \approx 4{,}25 \)), aber das
+<strong>Integral</strong> ist negativ, weil die Fläche unter der Achse
+liegt. Zweite Falle: die Kästchengröße falsch ansetzen
+(\( 1 \times 1 \) statt \( 0{,}5 \times 0{,}5 \)) — dann vervierfacht sich
+das Ergebnis fälschlich.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-c--hoch--tief--und-wendepunkte-der-stammfunktion-zzmathphzz91zzendzz"
+class="level3">
+<h3>Teilaufgabe c) — Hoch-, Tief- und Wendepunkte der Stammfunktion
+\( F \)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Wichtig ist die Beziehung <strong>\( F' = f \)</strong>: Die
+Steigung von \( F \) <strong>ist</strong> die Funktion
+\( f \), die wir im Bild sehen. Daraus lesen wir alles
+ab.</p>
+<p><strong>Tiefpunkt von \( F \).</strong> Ein Tief- oder
+Hochpunkt von \( F \) liegt dort, wo seine Steigung
+\( F' = f \) <strong>null wird und das Vorzeichen
+wechselt</strong>. Der Graph von \( f \) hat nur
+<strong>eine</strong> Nullstelle, bei \( x = 2 \), und dort
+wechselt \( f \) von <strong>minus nach plus</strong>
+(links der Achse, rechts darüber). Damit hört \( F \) auf
+zu fallen und beginnt zu steigen → <strong>Tiefpunkt von
+\( F \) bei \( x_1 = 2 \)</strong>.</p>
+<p><strong>Kein Hochpunkt.</strong> Für einen Hochpunkt von
+\( F \) bräuchte man eine Nullstelle von
+\( f \) mit Vorzeichenwechsel <strong>von plus nach
+minus</strong>. Eine solche gibt es im abgebildeten Bereich nicht →
+<strong>\( F \) hat dort keinen Hochpunkt</strong>.</p>
+<p><strong>Wendepunkt von \( F \).</strong> Ein Wendepunkt
+von \( F \) liegt dort, wo seine Steigung
+\( f \) selbst einen <strong>Hoch- oder Tiefpunkt</strong>
+hat (wo \( f \) also am steilsten/flachsten ist). Der Graph
+von \( f \) hat einen <strong>Tiefpunkt bei
+\( x = 1 \)</strong> → <strong>Wendepunkt von
+\( F \) bei \( x_2 = 1 \)</strong>.</p>
+<p><strong>Ergebnis:</strong> \( F \) hat einen
+<strong>Tiefpunkt bei \( x = 2 \)</strong>, einen
+<strong>Wendepunkt bei \( x = 1 \)</strong> und <strong>keinen
+Hochpunkt</strong> im abgebildeten Bereich.</p>
+<details><summary>Haltung dahinter: Warum verrät der Graph von \( f \) alles über \( F \)?</summary>
+
+<p>Drei Begriffe der Reihe nach.</p>
+<p><strong>Stammfunktion.</strong> \( F \) ist eine
+Stammfunktion von \( f \), wenn das Ableiten von
+\( F \) wieder \( f \) ergibt:
+\( F' = f \). „Ableiten" liefert die Steigung — also ist
+\( f \) genau die <strong>Steigung von
+\( F \)</strong>. Diesen einen Satz braucht man für die
+ganze Aufgabe.</p>
+<p><strong>Hoch-/Tiefpunkt.</strong> Ein Hoch- oder Tiefpunkt ist eine
+Stelle, an der ein Graph aufhört zu steigen und zu fallen beginnt (oder
+umgekehrt). Genau dort ist die <strong>Steigung null</strong>. Die
+Steigung von \( F \) ist \( f \). Also:
+Hoch-/Tiefpunkte von \( F \) sitzen bei den
+<strong>Nullstellen von \( f \)</strong>.</p>
+<ul>
+<li>Wechselt \( f \) dort von <strong>minus nach
+plus</strong>, fiel \( F \) erst und steigt dann →
+<strong>Tiefpunkt</strong> (Tal).</li>
+<li>Wechselt \( f \) dort von <strong>plus nach
+minus</strong>, stieg \( F \) erst und fällt dann →
+<strong>Hochpunkt</strong> (Gipfel).</li>
+</ul>
+<p>„VZW" ist die Abkürzung für <strong>Vorzeichenwechsel</strong>: Der
+Funktionswert von \( f \) geht beim Durchlaufen der Stelle
+von einem Vorzeichen ins andere über.</p>
+<p><strong>Wendepunkt.</strong> Ein Wendepunkt ist eine Stelle, an der
+sich die <strong>Krümmung</strong> eines Graphen ändert (von Linkskurve
+zu Rechtskurve oder umgekehrt) — die Stelle, an der \( F \)
+am steilsten oder am flachsten läuft. „Am steilsten" heißt: Die Steigung
+\( f \) erreicht dort selbst einen
+<strong>Extremwert</strong> (Hoch- oder Tiefpunkt von
+\( f \)). Deshalb: Wendepunkte von \( F \)
+sitzen bei den <strong>Extremstellen von
+\( f \)</strong>.</p>
+<details><summary>Ganz langsam (mit Zahlen): was am Graphen von \( f \) abgelesen wird</summary>
+
+<p>Drei Beobachtungen direkt aus dem Bild:</p>
+<ol type="1">
+<li>\( f \) ist links von \( x=2 \) durchweg
+<strong>negativ</strong> (Graph unter der Achse), bei
+\( x=2 \) <strong>null</strong>, rechts davon
+<strong>positiv</strong>. → einzige Nullstelle bei \( x=2 \),
+VZW <strong>\( - \to + \)</strong> → <strong>Tiefpunkt von
+\( F \) bei \( x=2 \)</strong>.</li>
+<li>Nirgends im Bild wechselt \( f \) von
+<strong>\( + \to - \)</strong> → <strong>kein Hochpunkt von
+\( F \)</strong>.</li>
+<li>\( f \) selbst hat seinen tiefsten Punkt bei
+\( x=1 \) (dort liegt die Kurve am weitesten unten). Eine
+Extremstelle von \( f \) → <strong>Wendepunkt von
+\( F \) bei \( x=1 \)</strong>.</li>
+</ol>
+<p>Eselsbrücke für die Kette: <strong>\( F \) → ableiten →
+\( f \) → ableiten → \( f' \).</strong>
+Nullstellen von \( f \) steuern die
+<strong>Extrempunkte</strong> von \( F \); Extremstellen
+von \( f \) steuern die <strong>Wendepunkte</strong> von
+\( F \). (Mehr: <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>.)</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Die Rollen vertauschen: Für die <strong>Extrempunkte</strong> von
+\( F \) braucht man die <strong>Nullstellen</strong> von
+\( f \) (nicht dessen Extremstellen). Für die
+<strong>Wendepunkte</strong> von \( F \) braucht man die
+<strong>Extremstellen</strong> von \( f \). Wer das
+verwechselt, gibt \( x=1 \) als Tiefpunkt an — falsch. Zweite
+Falle: einen Tiefpunkt ohne Vorzeichenwechsel behaupten; ohne VZW liegt
+nur ein Sattel, kein Extrempunkt vor.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-d--funktionsterm-zuordnen" class="level3">
+<h3>Teilaufgabe d) — Funktionsterm zuordnen</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Es gehört <strong>\( f_2(x) = (x-2)\,e^{x} \)</strong> zu
+\( f \). Man zeigt das, indem man die beiden anderen
+Kandidaten über <strong>je ein passendes Merkmal des Graphen</strong>
+ausschließt.</p>
+<p><strong>\( f_3 \) scheidet aus.</strong> Der Graph hat bei
+\( x=2 \) eine Nullstelle (er schneidet dort die Achse).
+Aber</p>
+<p>\[ f_3(2) = 2\,e^{2} - 2 \approx 12{,}78 \neq 0. \]</p>
+<p>\( f_3 \) ist bei \( x=2 \) nicht null → passt
+nicht.</p>
+<p><strong>\( f_1 \) scheidet aus.</strong> Am Graphen liegt
+der tiefste Punkt bei \( x=1 \) deutlich <strong>unter
+\( -1 \)</strong> (etwa bei \( -2{,}7 \)). Aber</p>
+<p>\[ f_1(1) = (1-2)\,e^{-1} = -\frac{1}{e} \approx -0{,}37 \; \gt \; -1. \]</p>
+<p>\( f_1 \) liegt bei \( x=1 \) viel zu hoch →
+passt nicht. (Zusätzlich: \( f_1 \) hätte für große
+\( x \) den Grenzwert \( 0 \), der Graph
+schießt aber nach oben weg.)</p>
+<p><strong>\( f_2 \) bleibt und passt.</strong> Probe an den
+Merkmalen des Graphen:</p>
+<p>\[ f_2(0) = (0-2)e^0 = -2 \;\checkmark, \qquad f_2(2) = (2-2)e^2 = 0 \;\checkmark, \]</p>
+<p>für \( x \to -\infty \) geht \( f_2 \to 0 \) von unten
+(Annäherung an die Achse) \( \checkmark \), für \( x \to +\infty \)
+geht \( f_2 \to +\infty \) (steiler Anstieg) \( \checkmark \).</p>
+<p><strong>Ergebnis: \( f(x) = f_2(x) = (x-2)\,e^{x} \).</strong></p>
+<details><summary>Haltung dahinter: Wie schließt man Funktionsterme systematisch aus?</summary>
+
+<p>Bei „welcher Term gehört zum Graphen?" sucht man
+<strong>Unterscheidungsmerkmale</strong>: Eigenschaften, die der Graph
+zeigt und die manche Kandidaten erfüllen, andere aber verletzen. Drei
+besonders nützliche:</p>
+<ul>
+<li><strong>Nullstellen</strong> (wo schneidet der Graph die
+\( x \)-Achse?),</li>
+<li><strong>markante Funktionswerte</strong> (z. B.
+\( f(0) \), Tiefpunkt-Höhe),</li>
+<li><strong>Randverhalten</strong> (was passiert für sehr große oder
+sehr kleine \( x \)?).</li>
+</ul>
+<p>Pro Kandidat genügt <strong>ein</strong> verletztes Merkmal zum
+Ausschluss. Der Übriggebliebene wird zur Sicherheit an mehreren
+Merkmalen positiv bestätigt.</p>
+<p><strong>Warum entscheidet das Randverhalten zwischen
+\( e^{x} \) und \( e^{-x} \)?</strong> Bei
+\( e^{x} \) wächst der Exponent mit \( x \) → die
+Funktion <strong>explodiert</strong> für große \( x \). Bei
+\( e^{-x} \) wird der Exponent für große \( x \)
+stark negativ → die Funktion <strong>geht gegen null</strong>. Der Graph
+schießt rechts nach oben, also muss \( e^{x} \) im Term stehen,
+nicht \( e^{-x} \). (Mehr: <a
+href="kap-grenzwerte-randverhalten.html">Grenzwerte &amp;
+Randverhalten</a>.)</p>
+<details><summary>Ganz langsam (mit Zahlen): die beiden Ausschluss-Rechnungen</summary>
+
+<p><strong>\( f_3(2) \):</strong> \( f_3(x) = x\,e^x - 2 \).
+Einsetzen von \( x=2 \): \( 2 \cdot e^2 - 2 \). Mit
+\( e^2 \approx 7{,}39 \): \( 2 \cdot 7{,}39 = 14{,}78 \), dann \( 14{,}78 - 2 = 12{,}78 \).
+Das ist klar <strong>nicht</strong> null, der Graph hat dort aber eine
+Nullstelle → \( f_3 \) raus.</p>
+<p><strong>\( f_1(1) \):</strong> \( f_1(x) = (x-2)e^{-x} \).
+Einsetzen von \( x=1 \): \( (1-2)e^{-1} = (-1)\cdot e^{-1} \).
+\( e^{-1} = \tfrac{1}{e} \approx 0{,}37 \), also \( (-1)\cdot 0{,}37 = -0{,}37 \). Der Graph liegt bei
+\( x=1 \) aber bei etwa \( -2{,}7 \), also viel
+tiefer → \( f_1 \) raus.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p><strong>Nur \( f(0) \) prüfen reicht nicht.</strong> Es
+gilt \( f_1(0) = f_2(0) = f_3(0) = -2 \) — alle drei laufen durch \( (0\,|\,-2) \)!
+Der \( y \)-Achsenschnittpunkt unterscheidet sie also gar
+nicht. Man <strong>muss</strong> ein trennendes Merkmal nehmen: die
+Nullstelle bei \( x=2 \) oder das Randverhalten für große
+\( x \).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-e--graph-von-zzmathphzz227zzendzz-skizzieren"
+class="level3">
+<h3>Teilaufgabe e) — Graph von \( g(x) = (x-2)^2 e^{x} \) skizzieren</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Man skizziert über <strong>markante Punkte</strong> und das
+<strong>Randverhalten</strong>, ohne eine vollständige Kurvendiskussion
+zu rechnen.</p>
+<p><strong>Schritt 1 — Nullstelle.</strong> \( g(x) = 0 \) nur
+wenn \( (x-2)^2 = 0 \), also bei \( x=2 \). Weil der
+Faktor <strong>quadriert</strong> ist (doppelte Nullstelle),
+<strong>berührt</strong> der Graph die \( x \)-Achse bei
+\( x=2 \) nur und durchschneidet sie nicht — dort liegt ein
+<strong>Tiefpunkt \( T(2\,|\,0) \)</strong>.</p>
+<p><strong>Schritt 2 — Wertebereich.</strong> \( (x-2)^2 \ge 0 \) und
+\( e^{x}  \gt  0 \), also ist \( g(x) \ge 0 \)
+<strong>überall</strong>. Der ganze Graph liegt auf oder über der
+\( x \)-Achse.</p>
+<p><strong>Schritt 3 — Randverhalten.</strong> Für \( x \to -\infty \)
+drückt \( e^{x} \to 0 \) die Funktion gegen \( 0 \) (von
+oben). Für \( x \to +\infty \) wächst \( g \to +\infty \) (steiler
+Anstieg).</p>
+<p><strong>Schritt 4 — gegebener Hochpunkt.</strong> Laut Aufgabe ist
+\( H(0\,|\,4) \) ein Hochpunkt; Probe: \( g(0) = (0-2)^2 e^0 = 4 \cdot 1 = 4 \)
+\( \checkmark \).</p>
+<p><strong>Skizze (Form):</strong> von links flach aus
+\( 0^{+} \) heraus, hoch zum <strong>Hochpunkt
+\( H(0\,|\,4) \)</strong>, hinunter bis zur Berührung im
+<strong>Tiefpunkt \( T(2\,|\,0) \)</strong>, danach <strong>steil
+nach oben</strong>.</p>
+<figure>
+<div class="jxgbox" id="jxg-k4-g" style="width:100%;max-width:460px;aspect-ratio:1.4/1"></div>
+<figcaption>Graph von \( g(x)=(x-2)^2 e^{x} \): Hochpunkt \( H(0\,|\,4) \), Berührung der Achse im Tiefpunkt \( T(2\,|\,0) \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-g',{boundingbox:[-4.6,5.2,4,-1.2],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return (x-2)*(x-2)*Math.exp(x);},-4.6,2.62],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[0,4],{name:'H(0|4)',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[8,6]}});b.create('point',[2,0],{name:'T(2|0)',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[6,-14]}});})();});</script>
+
+<details><summary>Haltung dahinter: Wie skizziert man einen Graphen aus wenigen Merkmalen?</summary>
+
+<p>„Skizzieren" heißt nicht „jeden Punkt ausrechnen", sondern ein
+<strong>Gerüst aus wenigen Schlüssel­merkmalen</strong> aufbauen und
+sauber verbinden. Vier Merkmale tragen fast jede Skizze:</p>
+<ul>
+<li><strong>Nullstellen</strong> — wo trifft der Graph die
+\( x \)-Achse?</li>
+<li><strong>Wertebereich / Vorzeichen</strong> — bleibt der Graph oben,
+unten, oder beides?</li>
+<li><strong>markante Punkte</strong> — hier der vorgegebene
+Hochpunkt.</li>
+<li><strong>Randverhalten</strong> — wohin läuft der Graph ganz links
+und ganz rechts?</li>
+</ul>
+<p><strong>Doppelte Nullstelle = Berührung.</strong> Steht ein Faktor
+<strong>quadriert</strong> da, wie \( (x-2)^2 \), so wird er an
+der Stelle null, ohne das Vorzeichen zu wechseln (ein Quadrat ist nie
+negativ). Der Graph <strong>tippt</strong> die Achse nur an und kehrt
+auf derselben Seite zurück — eine Berührung, kein Durchschneiden. Bei
+einer einfachen Nullstelle dagegen kreuzt der Graph die Achse.</p>
+<p><strong>Warum gewinnt \( e^{x} \) das
+Randverhalten?</strong> Für \( x \to -\infty \) wird
+\( (x-2)^2 \) zwar groß, aber \( e^{x} \) geht
+<strong>schneller</strong> gegen null — das Produkt geht gegen
+\( 0 \). Die e-Funktion „überstimmt" das Polynom. Für
+\( x \to +\infty \) ziehen beide Faktoren nach oben → steiler
+Anstieg.</p>
+<details><summary>Ganz langsam (mit Zahlen): eine kleine Wertetabelle</summary>
+
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>\( x \)</th>
+<th>\( -2 \)</th>
+<th>\( 0 \)</th>
+<th>\( 1 \)</th>
+<th>\( 2 \)</th>
+<th>\( 3 \)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\( g(x) \)</td>
+<td>\( 16\,e^{-2}\approx 2{,}2 \)</td>
+<td>\( 4 \)</td>
+<td>\( e\approx 2{,}7 \)</td>
+<td>\( 0 \)</td>
+<td>\( e^{3}\approx 20 \)</td>
+</tr>
+</tbody>
+</table></div>
+<p>So liest man die Werte: \( g(0)=(-2)^2\cdot 1 = 4 \); \( g(2)=0^2\cdot e^2 = 0 \);
+\( g(3)=1^2\cdot e^3
+\approx 20 \) (schon weit oben → steiler Anstieg). Die Tabelle
+bestätigt die Form: hoch bei \( 0 \), runter bis zur
+Berührung bei \( 2 \), dann steil hoch.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Bei \( x=2 \) die Achse <strong>durchschneiden</strong>
+statt nur <strong>berühren</strong> — falsch, weil \( (x-2)^2 \)
+eine doppelte Nullstelle ist. Zweite Falle: den Graphen links unter die
+Achse zeichnen; wegen \( g(x)\ge 0 \) bleibt er immer auf oder über
+der Achse.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li><strong>a)</strong> \( f'(0) \approx -1 \) (Tangente in
+\( P(0\,|\,-2) \), Steigung „1 rechts, 1 runter").</li>
+<li><strong>b)</strong> \( \int_0^2 f\,dx \approx -\tfrac{17}{4} = -4{,}25 \) (≈ 17 Kästchen à 0,25;
+Minus, da unter der Achse).</li>
+<li><strong>c)</strong> \( F \): <strong>Tiefpunkt bei
+\( x=2 \)</strong> (Nullstelle von \( f \), VZW
+\( -\to+ \)), <strong>Wendepunkt bei
+\( x=1 \)</strong> (Tiefpunkt von \( f \)),
+<strong>kein Hochpunkt</strong>.</li>
+<li><strong>d)</strong> \( f(x) = f_2(x) = (x-2)e^{x} \) (\( f_3(2)\neq 0 \),
+\( f_1(1)=-\tfrac1e \gt -1 \)).</li>
+<li><strong>e)</strong> \( g \): \( H(0\,|\,4) \),
+Berührung/Tiefpunkt \( T(2\,|\,0) \), \( g\ge 0 \), links
+\( \to 0^+ \), rechts \( \to +\infty \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-stochastik-normalverteilung-mit-zzmathphzz298zzendzz"
+class="level2">
+<h2>Teil 2 — Gespräch (Stochastik): Normalverteilung mit
+\( \mu = 20,\ \sigma = 4 \)</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben ist eine normalverteilte Zufallsgröße
+\( X \) mit \( \mu = 20 \) und \( \sigma = 4 \).
+(Das Original zeigt ein leeres Koordinatensystem mit
+\( x \)-Achse von \( 0 \) bis
+\( 40 \).)</p>
+<p>Im Gespräch denkbare Aspekte: <strong>(AB I)</strong> Kurve zu
+\( X \) skizzieren; erläutern, wie \( P(X\le 21) \),
+\( P(X=21) \) und \( P(X \gt 21) \) bestimmt werden; einen
+Sachkontext angeben; beschreiben, wie sich die Kurve bei Änderung von
+\( \mu \) ändert. <strong>(AB II)</strong> Beschreiben, wie
+sich die Kurve bei Änderung von \( \sigma \) ändert;
+Gemeinsamkeiten und Unterschiede von Binomial- und Normalverteilung
+nennen und erläutern. <strong>(AB III)</strong> Eine diskret verteilte
+Zufallsgröße ermitteln, deren Histogramm eine ähnliche Form wie die
+Kurve hat.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was eine „normalverteilte Zufallsgröße"
+ist:</strong> \( X \) ist eine Größe, deren Wert vom Zufall
+abhängt (z. B. ein Messwert), und deren Werte sich
+<strong>glockenförmig</strong> um einen Mittelwert verteilen — die
+meisten nah am Mittel, wenige weit weg, symmetrisch nach beiden Seiten.
+Alle Werkzeuge dazu stehen im <a
+href="konv-91-werkzeugkasten-stochastik.html#normalverteilung">Werkzeugkasten
+Stochastik</a>. <strong>Hinweis:</strong> Für Teil 2 gibt das Original
+nur Gesprächsthemen vor; die folgenden Lösungen sind selbst erarbeitet
+und durchgerechnet.</p>
+</blockquote>
+<p>So sieht die Kurve zu \( X \) aus (das ist zugleich die
+Lösung des ersten Aspekts):</p>
+<figure>
+<div class="jxgbox" id="jxg-k4-normal" style="width:100%;max-width:520px;aspect-ratio:1.7/1"></div>
+<figcaption>Dichtekurve (Gaußsche Glockenkurve) von \( X \) mit \( \mu=20 \), \( \sigma=4 \): Maximum bei \( 20 \), Wendepunkte bei \( 16 \) und \( 24 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-normal',{boundingbox:[4,0.115,36,-0.018],axis:true,showCopyright:false,showNavigation:false});function dn(x){return (1/(4*Math.sqrt(2*Math.PI)))*Math.exp(-(x-20)*(x-20)/32);}b.create('functiongraph',[dn,5,35],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[20,0],[20,dn(20)]],{straightFirst:false,straightLast:false,dash:2,strokeColor:'#d98324',strokeWidth:1.5});b.create('point',[16,dn(16)],{name:'',size:1.5,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',withLabel:false});b.create('point',[24,dn(24)],{name:'',size:1.5,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',withLabel:false});b.create('text',[20.4,-0.01,'μ=20'],{fontSize:12,color:'#d98324'});b.create('text',[12.2,-0.01,'16'],{fontSize:11,color:'#3a8a5a'});b.create('text',[24.3,-0.01,'24'],{fontSize:11,color:'#3a8a5a'});})();});</script>
+
+<section id="aspekt-1-ab-i--kurve-skizzieren" class="level3">
+<h3>Aspekt 1 (AB I) — Kurve skizzieren</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Die Kurve (oben gezeichnet) ist die <strong>Gaußsche
+Glockenkurve</strong>. Man skizziert sie über fünf Merkmale:</p>
+<ol type="1">
+<li><strong>Symmetrisch</strong> um die senkrechte Achse bei
+\( x = \mu = 20 \) (linke und rechte Hälfte sind Spiegelbilder).</li>
+<li><strong>Maximum (höchster Punkt) bei \( x = 20 \)</strong>,
+mit Höhe \( \tfrac{1}{\sigma\sqrt{2\pi}} =
+   \tfrac{1}{4\sqrt{2\pi}} \approx 0{,}10 \).</li>
+<li><strong>Wendepunkte bei \( x = \mu \pm \sigma \)</strong>, also bei
+\( 16 \) und \( 24 \) — dort wechselt die
+Krümmung, die Kurve geht von „nach unten gewölbt" in „nach oben gewölbt"
+über.</li>
+<li><strong>Asymptotisch</strong> zur \( x \)-Achse: Nach
+beiden Seiten kommt die Kurve der Achse beliebig nah, ohne sie zu
+erreichen.</li>
+<li><strong>Gesamtfläche unter der Kurve \( = 1 \)</strong>
+(entspricht \( 100\,\% \) Wahrscheinlichkeit).</li>
+</ol>
+<p>Als grobe Orientierung dient die
+<strong>\( 68\text{–}95\text{–}99{,}7\,\% \)-Regel</strong> (Sigma-Regel): rund
+\( 68\,\% \) der Werte liegen in \( [\,16;\,24\,] \), rund
+\( 95\,\% \) in \( [\,12;\,28\,] \), rund \( 99{,}7\,\% \)
+in \( [\,8;\,32\,] \).</p>
+<details><summary>Haltung dahinter: Was zeigt diese Kurve eigentlich? (ganz von vorn)</summary>
+
+<p><strong>Zufallsgröße.</strong> Eine <strong>Zufallsgröße</strong>
+\( X \) ist eine Zahl, deren Wert vom Zufall abhängt — etwa
+das Gewicht einer zufällig herausgegriffenen Packung. „Normalverteilt"
+beschreibt, <strong>wie wahrscheinlich</strong> welche Werte sind.</p>
+<p><strong>Dichtekurve statt Balken.</strong> \( X \) kann
+hier <strong>jeden</strong> Zwischenwert annehmen (z. B.
+\( 20{,}3 \) oder \( 17{,}81 \)), nicht nur ganze Zahlen.
+Man kann deshalb keine einzelnen Wahrscheinlichkeits-Balken zeichnen,
+sondern eine durchgehende Kurve — die <strong>Dichte</strong>. Bei ihr
+steckt die Wahrscheinlichkeit in der <strong>Fläche</strong>: Die Fläche
+unter der Kurve über einem Bereich ist die Wahrscheinlichkeit, dass
+\( X \) in diesem Bereich landet. Weil \( X \)
+<strong>irgendeinen</strong> Wert annimmt, ist die <strong>Gesamtfläche
+\( = 1 \)</strong>.</p>
+<p><strong>\( \mu \) und \( \sigma \).</strong>
+\( \mu \) (mü) ist der <strong>Erwartungswert</strong> — der
+Mittelwert, um den alles streut; hier \( 20 \), genau unter
+dem höchsten Punkt. \( \sigma \) (sigma) ist die
+<strong>Standardabweichung</strong> — ein Maß für die
+<strong>Breite</strong> der Streuung; hier \( 4 \).
+Praktisch: Bei \( \mu \pm
+\sigma \) (also \( 16 \) und
+\( 24 \)) sitzen die Wendepunkte, und dazwischen liegen rund
+zwei Drittel aller Werte. (Mehr: <a
+href="konv-91-werkzeugkasten-stochastik.html#erwartungswert">Werkzeugkasten
+Stochastik</a>.)</p>
+<details><summary>Ganz langsam (mit Zahlen): die Höhe des Gipfels</summary>
+
+<p>Die Formel für die Gipfelhöhe ist \( \tfrac{1}{\sigma\sqrt{2\pi}} \). Mit
+\( \sigma=4 \) und \( \sqrt{2\pi}\approx 2{,}51 \):</p>
+<p>\[ \frac{1}{4 \cdot 2{,}51} = \frac{1}{10{,}03} \approx 0{,}0997 \approx 0{,}10. \]</p>
+<p>Deshalb reicht die \( y \)-Achse im Bild nur bis etwa
+\( 0{,}1 \) — eine Glockenkurve ist flach. Die Werte
+\( 16 \) und \( 24 \) für die Wendepunkte sind
+einfach \( 20-4 \) und \( 20+4 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Die Höhe der Kurve mit einer Wahrscheinlichkeit verwechseln. Der
+Gipfelwert \( \approx 0{,}10 \) ist <strong>keine</strong>
+Wahrscheinlichkeit, sondern eine <strong>Dichte</strong>;
+Wahrscheinlichkeiten sind immer <strong>Flächen</strong> unter der
+Kurve, nie einzelne Höhen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="aspekt-2-ab-i--zzmathphzz361zzendzz-zzmathphzz362zzendzz-zzmathphzz363zzendzz"
+class="level3">
+<h3>Aspekt 2 (AB I) — \( P(X\le 21) \), \( P(X=21) \),
+\( P(X \gt 21) \)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>\( P(X=21) = 0 \).</strong> Bei einer stetigen
+(kontinuierlichen) Zufallsgröße hat ein <strong>einzelner Wert</strong>
+keine Fläche (ein Strich ist unendlich dünn) → die Wahrscheinlichkeit
+für genau \( 21 \) ist <strong>null</strong>.</p>
+<p><strong>\( P(X\le 21) \) — Fläche links von
+\( 21 \).</strong> Das ist die Fläche unter der Glockenkurve
+<strong>links</strong> von \( x=21 \) (im Bild blau). Man
+berechnet sie, indem man <strong>standardisiert</strong> und die Tabelle
+der Standardnormalverteilung \( \Phi \) (bzw. den GTR-Befehl)
+nutzt:</p>
+<p>\[ z = \frac{21 - \mu}{\sigma} = \frac{21-20}{4} = 0{,}25, \qquad
+   P(X\le 21) = \Phi(0{,}25) \approx 0{,}599. \]</p>
+<p><strong>\( P(X \gt 21) \) — Gegenwahrscheinlichkeit.</strong> Was
+nicht links liegt, liegt rechts:</p>
+<p>\[ P(X \gt 21) = 1 - P(X\le 21) \approx 1 - 0{,}599 = 0{,}401. \]</p>
+<p><strong>Ergebnisse:</strong> \( P(X=21)=0 \);
+\( P(X\le 21)\approx 0{,}599 \) (rund \( 59{,}9\,\% \)); \( P(X \gt 21)\approx 0{,}401 \)
+(rund \( 40{,}1\,\% \)).</p>
+<figure>
+<div class="jxgbox" id="jxg-k4-normal-p" style="width:100%;max-width:520px;aspect-ratio:1.7/1"></div>
+<figcaption>\( P(X\le 21) \) ist die Fläche links von \( x=21 \) (blau). Wegen der leichten Rechtslage von \( 21 \) gegenüber \( \mu=20 \) etwas mehr als die Hälfte.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-normal-p',{boundingbox:[4,0.115,36,-0.018],axis:true,showCopyright:false,showNavigation:false});function dn(x){return (1/(4*Math.sqrt(2*Math.PI)))*Math.exp(-(x-20)*(x-20)/32);}var g=b.create('functiongraph',[dn,5,35],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[5,21],g],{fillColor:'#3a5a9c',fillOpacity:0.18,label:{visible:false},curveLeft:{visible:false},curveRight:{visible:false},baseLeft:{visible:false},baseRight:{visible:false}});b.create('line',[[21,0],[21,dn(21)]],{straightFirst:false,straightLast:false,dash:2,strokeColor:'#d98324',strokeWidth:1.5});b.create('text',[21.3,-0.01,'21'],{fontSize:11,color:'#d98324'});})();});</script>
+
+<details><summary>Haltung dahinter: Warum ist \( P(X=21)=0 \), und was heißt „standardisieren"?</summary>
+
+<p><strong>Warum genau \( 21 \) die Wahrscheinlichkeit
+\( 0 \) hat.</strong> Wahrscheinlichkeit ist hier
+<strong>Fläche</strong> unter der Kurve. Über einem einzelnen Punkt
+(\( x=21 \), Breite \( 0 \)) gibt es keine Fläche
+— ein Rechteck mit Breite null hat Flächeninhalt null. Also
+\( P(X=21)=0 \). Das klingt seltsam („der Wert 21 kommt doch
+vor!"), gilt aber für <strong>jede</strong> stetige Größe: Sinnvoll
+fragt man immer nach einem <strong>Bereich</strong> („zwischen
+\( 20{,}5 \) und \( 21{,}5 \)"), nie nach einem exakten
+Wert. Nebeneffekt: \( P(X \lt 21)=P(X\le 21) \), das einzelne
+\( 21 \) ändert nichts.</p>
+<p><strong>Standardisieren.</strong> Für jedes \( \mu \) und
+\( \sigma \) eine eigene Tabelle wäre unpraktisch. Trick: Man
+rechnet jeden Wert um in „<strong>wie viele Standardabweichungen vom
+Mittel</strong> ist er entfernt?":</p>
+<p>\[ z = \frac{x-\mu}{\sigma}. \]</p>
+<p>Hier ist \( 21 \) um \( 1 \) über dem Mittel
+\( 20 \), und \( 1 \) ist ein Viertel von
+\( \sigma=4 \), also \( z=0{,}25 \). Diese
+\( z \)-Welt hat immer \( \mu=0 \) und
+\( \sigma=1 \) (die <strong>Standardnormalverteilung</strong>),
+und für sie gibt es <strong>eine</strong> feste Tabelle der Funktion
+\( \Phi \) („Phi"). \( \Phi(z) \) liefert direkt die
+Fläche links von \( z \). Mit GTR genügt der Befehl
+`normalcdf(untere Grenze, 21, 20, 4)`.</p>
+<details><summary>Ganz langsam (mit Zahlen): von z zur Wahrscheinlichkeit</summary>
+
+<p>\( z = \dfrac{21-20}{4} = \dfrac{1}{4} = 0{,}25 \). Tabelle: \( \Phi(0{,}25) \approx 0{,}5987 \), gerundet
+\( 0{,}599 \). Weil \( 21 \) <strong>rechts</strong>
+vom Mittel \( 20 \) liegt, ist die linke Fläche etwas
+<strong>mehr</strong> als die Hälfte — \( 0{,}599 \) passt (knapp
+über \( 0{,}5 \)). Gegenwahrscheinlichkeit:
+\( 1 - 0{,}599 = 0{,}401 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>\( P(X=21) \) für eine positive Zahl halten (etwa für den
+Dichtewert \( \approx 0{,}10 \)) — bei stetigen Größen ist es
+<strong>immer \( 0 \)</strong>. Zweite Falle: beim
+\( z \)-Wert durch \( \sigma^2=16 \) statt durch
+\( \sigma=4 \) teilen; standardisiert wird mit
+\( \sigma \), nicht mit der Varianz.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="aspekt-3-ab-i--sachkontext-angeben" class="level3">
+<h3>Aspekt 3 (AB I) — Sachkontext angeben</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Beispiel-Sachkontext.</strong> Eine Abfüllanlage füllt
+Gewürzdosen. Das <strong>Füllgewicht \( X \)</strong> (in
+Gramm) schwankt um den Sollwert; im Mittel sind es \( \mu = 20 \)
+g, mit einer Standardabweichung von \( \sigma = 4 \) g. Dann ist
+\( P(X\le 21) \) die Wahrscheinlichkeit, eine Dose mit höchstens
+\( 21 \) g zu erwischen.</p>
+<p><strong>Warum passt hier die Normalverteilung?</strong> Das
+Füllgewicht ist ein <strong>stetiger Messwert</strong> (beliebige
+Zwischenwerte möglich), die Abweichungen sind
+<strong>symmetrisch</strong> um den Sollwert (zu viel und zu wenig etwa
+gleich häufig), und sie entstehen aus <strong>vielen kleinen
+unabhängigen Einflüssen</strong> (Maschinenvibration, Temperatur,
+Materialschwankung). Genau dann ergibt sich erfahrungsgemäß eine
+Glockenkurve.</p>
+<p>Weitere passende Kontexte: Körpergrößen einer Personengruppe,
+Messfehler beim Wiegen, Punktzahlen in einer großen Klausur, Längen
+gefertigter Werkstücke.</p>
+<details><summary>Haltung dahinter: Woran erkennt man, dass „normalverteilt" ein gutes Modell ist?</summary>
+
+<p>Die Normalverteilung ist ein gutes Modell, wenn drei Dinge
+zusammenkommen:</p>
+<ul>
+<li><strong>stetige Größe</strong> — man misst (Gewicht, Länge, Zeit),
+zählt nicht ab.</li>
+<li><strong>symmetrische Streuung</strong> — Abweichungen nach oben und
+unten sind etwa gleich häufig; ein einzelner typischer Mittelwert, um
+den sich alles drängt.</li>
+<li><strong>viele kleine, unabhängige Ursachen</strong> — keine einzelne
+dominiert. Der <strong>Zentrale Grenzwertsatz</strong> sagt: Summieren
+sich viele kleine zufällige Einflüsse, entsteht näherungsweise eine
+Glockenkurve. Das ist der tiefere Grund, warum die Normalverteilung in
+Natur und Technik so oft auftaucht.</li>
+</ul>
+<p>Werte <strong>nahe am Mittel</strong> sind am wahrscheinlichsten
+(hoher Kurventeil), <strong>extreme</strong> Abweichungen selten (flache
+Ränder) — genau das Bild der Glockenkurve.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Einen <strong>diskreten Zählkontext</strong> als Beispiel nennen,
+etwa „Anzahl der Treffer bei 10 Würfen". Das ist ein Fall für die
+<strong>Binomialverteilung</strong>, nicht für die Normalverteilung. Für
+die Normalverteilung eine <strong>Messgröße</strong> wählen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="aspekt-4-ab-i--kurve-bei-änderung-von-zzmathphzz424zzendzz"
+class="level3">
+<h3>Aspekt 4 (AB I) — Kurve bei Änderung von \( \mu \)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>\( \mu \) bestimmt die <strong>Lage</strong> der Kurve.
+Ändert man \( \mu \), <strong>verschiebt</strong> sich die
+ganze Kurve <strong>waagerecht</strong>, ohne ihre Form zu ändern:</p>
+<ul>
+<li><strong>größeres \( \mu \)</strong> → Kurve wandert nach
+<strong>rechts</strong>,</li>
+<li><strong>kleineres \( \mu \)</strong> → Kurve wandert nach
+<strong>links</strong>.</li>
+</ul>
+<p>Höhe und Breite bleiben gleich; nur die Symmetrieachse sitzt nun bei
+der neuen Stelle \( x=\mu \).</p>
+<figure>
+<div class="jxgbox" id="jxg-k4-normal-mu" style="width:100%;max-width:520px;aspect-ratio:1.9/1"></div>
+<figcaption>Ändern von \( \mu \) verschiebt die Kurve seitlich (hier \( \mu=14 \), \( 20 \), \( 26 \), jeweils \( \sigma=4 \)) — gleiche Form, andere Lage.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-normal-mu',{boundingbox:[2,0.115,40,-0.018],axis:true,showCopyright:false,showNavigation:false});function dn(x,m){return (1/(4*Math.sqrt(2*Math.PI)))*Math.exp(-(x-m)*(x-m)/32);}b.create('functiongraph',[function(x){return dn(x,14);},2,38],{strokeColor:'#3a8a5a',strokeWidth:2,dash:2});b.create('functiongraph',[function(x){return dn(x,20);},2,38],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return dn(x,26);},2,38],{strokeColor:'#d98324',strokeWidth:2,dash:2});})();});</script>
+
+<details><summary>Haltung dahinter: Warum nur verschieben?</summary>
+
+<p>\( \mu \) ist der <strong>Mittelwert</strong> — der Ort,
+um den die Werte streuen. Verschiebt man den Mittelwert, zieht man den
+ganzen „Schwerpunkt" der Verteilung mit; die <strong>Streuung</strong>
+(Breite) bleibt davon unberührt, denn die regelt \( \sigma \).
+Bild: Du nimmst dieselbe Glocke und stellst sie an eine andere Stelle
+des Tisches — Form unverändert, nur der Standort wechselt. In der Formel
+steckt \( \mu \) nur im Teil \( (x-\mu) \), der die
+Kurve seitlich positioniert.</p>
+</details>
+</details>
+
+</section>
+<section
+id="aspekt-5-ab-ii--kurve-bei-änderung-von-zzmathphzz439zzendzz"
+class="level3">
+<h3>Aspekt 5 (AB II) — Kurve bei Änderung von \( \sigma \)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>\( \sigma \) bestimmt die <strong>Breite</strong> der Kurve.
+Ändert man \( \sigma \), wird die Glocke breiter oder schmaler —
+bei festem Mittelpunkt \( \mu \):</p>
+<ul>
+<li><strong>größeres \( \sigma \)</strong> → Kurve wird
+<strong>breiter und flacher</strong> (Werte streuen weiter),</li>
+<li><strong>kleineres \( \sigma \)</strong> → Kurve wird
+<strong>schmaler und höher</strong> (Werte drängen sich enger um
+\( \mu \)).</li>
+</ul>
+<p>Der Mittelpunkt bei \( x=\mu \) und die <strong>Gesamtfläche
+\( =1 \)</strong> bleiben immer gleich. Die Wendepunkte
+sitzen weiterhin bei \( \mu\pm\sigma \), wandern mit
+\( \sigma \) nach außen oder innen.</p>
+<figure>
+<div class="jxgbox" id="jxg-k4-normal-sigma" style="width:100%;max-width:520px;aspect-ratio:1.7/1"></div>
+<figcaption>Ändern von \( \sigma \) verändert Breite und Höhe (hier \( \sigma=2 \), \( 4 \), \( 8 \), jeweils \( \mu=20 \)) — die Fläche bleibt stets \( 1 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-normal-sigma',{boundingbox:[4,0.225,36,-0.03],axis:true,showCopyright:false,showNavigation:false});function dn(x,s){return (1/(s*Math.sqrt(2*Math.PI)))*Math.exp(-(x-20)*(x-20)/(2*s*s));}b.create('functiongraph',[function(x){return dn(x,2);},5,35],{strokeColor:'#3a8a5a',strokeWidth:2,dash:2});b.create('functiongraph',[function(x){return dn(x,4);},5,35],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return dn(x,8);},5,35],{strokeColor:'#d98324',strokeWidth:2,dash:2});})();});</script>
+
+<details><summary>Haltung dahinter: Warum wird die Kurve flacher, wenn sie breiter wird?</summary>
+
+<p>\( \sigma \) ist die <strong>Standardabweichung</strong> —
+wie weit die Werte typischerweise vom Mittel abweichen. Ein großes
+\( \sigma \) heißt „viel Streuung", die Werte verteilen sich
+über einen weiten Bereich.</p>
+<p>Der entscheidende Zwang ist die <strong>konstante Gesamtfläche
+\( = 1 \)</strong>: Es muss ja \( 100\,\% \) aller
+Werte geben, egal wie breit die Glocke ist. Verteilt sich dieselbe
+Fläche über einen <strong>breiteren</strong> Bereich, muss die Kurve
+zwangsläufig <strong>niedriger</strong> werden — wie ein Stück Teig, das
+beim Breitwalzen dünner wird. Umgekehrt: schmaler → höher. Deshalb
+ändern sich Breite und Höhe immer <strong>gegenläufig</strong>.</p>
+<details><summary>Ganz langsam (mit Zahlen): die Gipfelhöhe \( \tfrac{1}{\sigma\sqrt{2\pi}} \)</summary>
+
+<p>Die Gipfelhöhe ist umgekehrt proportional zu
+\( \sigma \):</p>
+<ul>
+<li>\( \sigma=2 \): \( \dfrac{1}{2\sqrt{2\pi}} \approx 0{,}20 \) (hoch, schmal),</li>
+<li>\( \sigma=4 \): \( \dfrac{1}{4\sqrt{2\pi}} \approx 0{,}10 \) (mittel),</li>
+<li>\( \sigma=8 \): \( \dfrac{1}{8\sqrt{2\pi}} \approx 0{,}05 \) (flach, breit).</li>
+</ul>
+<p>Doppeltes \( \sigma \) → halbe Höhe. Die Wendepunkte liegen
+bei \( 20\pm 2 \), \( 20\pm 4 \), \( 20\pm 8 \) —
+sie rücken mit \( \sigma \) nach außen.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Glauben, ein größeres \( \sigma \) hebe die Kurve an. Es ist
+umgekehrt: größeres \( \sigma \) macht sie <strong>breiter und
+niedriger</strong>. Höhe und Breite bewegen sich gegenläufig, damit die
+Fläche \( 1 \) bleibt.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="aspekt-6-ab-ii--binomial--und-normalverteilung-vergleichen"
+class="level3">
+<h3>Aspekt 6 (AB II) — Binomial- und Normalverteilung vergleichen</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Gemeinsamkeiten.</strong></p>
+<ul>
+<li>Beide sind <strong>Wahrscheinlichkeitsverteilungen</strong>; die
+Gesamtwahrscheinlichkeit ist \( 1 \) (Summe aller Balken
+\( = 1 \) bzw. Gesamtfläche \( = 1 \)).</li>
+<li>Beide haben einen <strong>Erwartungswert
+\( \mu \)</strong> und eine <strong>Standardabweichung
+\( \sigma \)</strong>.</li>
+<li>Beide sind <strong>glockenähnlich</strong>: Die Binomialverteilung
+ist für \( p=0{,}5 \) symmetrisch, für große \( n \)
+allgemein glockenförmig.</li>
+<li>Für große \( n \) lässt sich die Binomialverteilung
+<strong>durch die Normalverteilung annähern</strong> (Satz von de
+Moivre–Laplace); Faustregel <strong>Laplace-Bedingung</strong>
+\( \sigma = \sqrt{n\,p\,(1-p)}  \gt  3 \).</li>
+</ul>
+<p><strong>Unterschiede.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Binomialverteilung</th>
+<th>Normalverteilung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Art</td>
+<td><strong>diskret</strong> (nur \( 0,1,2,\dots,n \))</td>
+<td><strong>stetig</strong> (jeder reelle Wert)</td>
+</tr>
+<tr>
+<td>Darstellung</td>
+<td><strong>Balken</strong> (Histogramm)</td>
+<td><strong>Dichtekurve</strong> (Glocke)</td>
+</tr>
+<tr>
+<td>\( P(X=k) \)</td>
+<td><strong>positiv</strong>, \( \binom{n}{k}p^k(1-p)^{n-k} \)</td>
+<td>\( P(X=x) = 0 \), Wahrscheinlichkeit \( = \)
+Fläche</td>
+</tr>
+<tr>
+<td>Wertebereich</td>
+<td>endlich, \( 0 \) bis \( n \)</td>
+<td>unendlich, \( -\infty \) bis \( +\infty \)</td>
+</tr>
+<tr>
+<td>Parameter</td>
+<td>\( n \) und \( p \)</td>
+<td>\( \mu \) und \( \sigma \)</td>
+</tr>
+</tbody>
+</table></div>
+<details><summary>Haltung dahinter: diskret gegen stetig — der Kernunterschied</summary>
+
+<p><strong>Diskret</strong> heißt: \( X \) kann nur
+<strong>abzählbare</strong> Werte annehmen, hier ganze Zahlen — „Anzahl
+der Treffer bei \( n \) Versuchen". Jeder einzelne Wert hat
+eine <strong>eigene, positive</strong> Wahrscheinlichkeit, man zeichnet
+sie als <strong>Balken</strong>. \( P(X=k) \) ist sinnvoll und
+ausrechenbar.</p>
+<p><strong>Stetig</strong> heißt: \( X \) kann
+<strong>jeden</strong> Zwischenwert annehmen — „gemessenes Gewicht".
+Einzelwerte haben Wahrscheinlichkeit \( 0 \), die
+Wahrscheinlichkeit steckt in <strong>Flächen</strong> unter einer
+Kurve.</p>
+<p><strong>Die Brücke.</strong> Erhöht man bei der Binomialverteilung
+\( n \), werden die Balken zahlreicher und schmaler; ihre
+Umrisslinie nähert sich immer mehr einer <strong>Glocke</strong>. Ist
+\( \sigma=\sqrt{np(1-p)} \gt 3 \), passt die Normalverteilung schon gut. So wird die
+stetige Normalverteilung zum <strong>Grenzfall</strong> der diskreten
+Binomialverteilung — der Grund, warum man eine umständliche
+Binomialrechnung oft durch die einfachere Normalverteilung ersetzt.
+(Mehr: <a
+href="konv-91-werkzeugkasten-stochastik.html#binomialverteilung">Werkzeugkasten
+Stochastik</a>.)</p>
+</details>
+</details>
+
+</section>
+<section
+id="aspekt-7-ab-iii--diskrete-verteilung-mit-ähnlichem-histogramm"
+class="level3">
+<h3>Aspekt 7 (AB III) — Diskrete Verteilung mit ähnlichem
+Histogramm</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Gesucht ist eine <strong>diskrete</strong> Verteilung, deren
+Histogramm der Glocke \( N(20;4) \) gleicht. Die natürliche Wahl
+ist eine <strong>Binomialverteilung</strong>, deren Erwartungswert und
+Standardabweichung mit der Normalverteilung übereinstimmen.</p>
+<p><strong>Schritt 1 — Bedingungen aufstellen.</strong> Für
+\( X\sim B(n;p) \) gilt \( \mu = n\,p \) und \( \sigma = \sqrt{n\,p\,(1-p)} \).
+Wir fordern \( \mu=20 \) und \( \sigma=4 \), also</p>
+<p>\[ n\,p = 20, \qquad n\,p\,(1-p) = \sigma^2 = 16. \]</p>
+<p><strong>Schritt 2 — auflösen.</strong> Teilt man die zweite durch die
+erste Gleichung, kürzt sich \( np \):</p>
+<p>\[ \frac{n\,p\,(1-p)}{n\,p} = \frac{16}{20} \;\Longrightarrow\; 1-p = 0{,}8 \;\Longrightarrow\; p = 0{,}2. \]</p>
+<p>Dann \( n = \dfrac{20}{p} = \dfrac{20}{0{,}2} = 100. \)</p>
+<p><strong>Schritt 3 — Ergebnis und Probe.</strong>
+\( X\sim B(100;\,0{,}2) \). Probe: \( \mu = 100\cdot 0{,}2 = 20 \) \( \checkmark \);
+\( \sigma=\sqrt{100\cdot 0{,}2\cdot 0{,}8}=\sqrt{16}=4 \) \( \checkmark \). Wegen \( \sigma=4 \gt 3 \)
+(Laplace-Bedingung erfüllt) hat das Histogramm tatsächlich eine
+glockenähnliche Form, zentriert bei \( 20 \) mit derselben
+Streuung.</p>
+<p><strong>Ergebnis: \( X\sim B(100;\,0{,}2) \).</strong></p>
+<figure>
+<div class="jxgbox" id="jxg-k4-hist" style="width:100%;max-width:520px;aspect-ratio:1.7/1"></div>
+<figcaption>Histogramm der Binomialverteilung \( B(100;\,0{,}2) \) (blaue Balken) mit überlagerter Glockenkurve \( N(20;4) \) (orange) — gleiche Lage, gleiche Breite.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k4-hist',{boundingbox:[6,0.115,34,-0.014],axis:true,showCopyright:false,showNavigation:false});var P=Math.pow(0.8,100);var pr=[P];for(var k=1;k<=100;k++){P=P*((100-k+1)/k)*0.25;pr[k]=P;}for(var j=9;j<=31;j++){var h=pr[j];b.create('polygon',[[j-0.5,0],[j+0.5,0],[j+0.5,h],[j-0.5,h]],{fillColor:'#3a5a9c',fillOpacity:0.22,vertices:{visible:false},borders:{strokeColor:'#3a5a9c',strokeWidth:0.8},withLabel:false,fixed:true,highlight:false});}b.create('functiongraph',[function(x){return (1/(4*Math.sqrt(2*Math.PI)))*Math.exp(-(x-20)*(x-20)/32);},6,34],{strokeColor:'#d98324',strokeWidth:2.5});})();});</script>
+
+<details><summary>Haltung dahinter: Warum gerade die Binomialverteilung, und warum diese Werte?</summary>
+
+<p>Eine Verteilung wird in ihrer <strong>groben Form</strong> von zwei
+Kennzahlen bestimmt: <strong>wo</strong> sie sitzt (Erwartungswert
+\( \mu \)) und <strong>wie breit</strong> sie streut
+(Standardabweichung \( \sigma \)). Wenn eine diskrete Verteilung
+dieselbe Mitte und dieselbe Breite wie die Glocke haben soll, passt man
+genau diese beiden Größen an.</p>
+<p>Die <strong>Binomialverteilung</strong> \( B(n;p) \) (Modell
+für „\( k \) Treffer bei \( n \) unabhängigen
+Versuchen mit Trefferchance \( p \)") ist dafür ideal, weil
+ihre Kennzahlen einfache Formeln haben: \( \mu=np \) und
+\( \sigma=\sqrt{np(1-p)} \). Zwei Gleichungen, zwei Unbekannte
+\( n \) und \( p \) — eindeutig lösbar.</p>
+<p>Dass am Ende ein <strong>großes</strong> \( n=100 \)
+herauskommt, ist der eigentliche Grund für die Ähnlichkeit: Bei vielen
+Versuchen werden die Balken zahlreich und schmal, ihre Hüllkurve nähert
+sich der Glocke. Die <strong>Laplace-Bedingung
+\( \sigma \gt 3 \)</strong> ist genau die Daumenregel dafür, dass die
+Annäherung gut ist — hier mit \( \sigma=4 \) erfüllt.</p>
+<details><summary>Ganz langsam (mit Zahlen): die Auflösung des Gleichungssystems</summary>
+
+<p>Aus \( np=20 \) und \( np(1-p)=16 \): Die zweite
+Gleichung ist die erste, <strong>mal \( (1-p) \)</strong>. Also
+muss \( (1-p) \) gerade der Faktor sein, der
+\( 20 \) auf \( 16 \) bringt:</p>
+<p>\[ 1-p = \frac{16}{20} = 0{,}8 \;\Longrightarrow\; p = 1 - 0{,}8 = 0{,}2. \]</p>
+<p>Dann aus \( np=20 \): \( n = \dfrac{20}{0{,}2} = 100 \). Kontrolle der
+Streuung: \( np(1-p) = 100\cdot 0{,}2\cdot 0{,}8 = 16 \), Wurzel \( \sqrt{16}=4=\sigma \)
+\( \checkmark \).</p>
+</details>
+
+<details><summary>Hinweis: andere Lösungen sind denkbar</summary>
+
+<p>Verlangt ist „<strong>eine</strong> diskrete Verteilung", nicht
+<em>die</em> einzige. \( B(100;\,0{,}2) \) ist die sauberste und
+naheliegendste Antwort, weil ihre beiden Kennzahlen exakt passen. Im
+Prinzip taugt jede diskrete Verteilung mit \( \mu\approx 20 \) und
+\( \sigma\approx 4 \) und einem glockenförmigen Histogramm; die
+Binomialverteilung ist hier der erwartete Standardweg.</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>a) \( f'(0) \).</strong> Erwartet:
+<strong>Tangente</strong> in \( P(0\,|\,-2) \) einzeichnen, Steigung
+ablesen („1 nach rechts, 1 nach unten") → \( f'(0)\approx -1 \).
+<em>Rückfrage:</em> „Was misst \( f'(0) \) — die Höhe oder die
+Steigung des Graphen?" <em>Rote Flagge:</em> die Antwort
+\( -2 \) (das ist \( f(0) \), nicht
+\( f'(0) \)).</li>
+<li><strong>b) Integral.</strong> Erwartet: <strong>Kästchen
+zählen</strong> (≈ 17 à 0,25), Ergebnis \( -\tfrac{17}{4}=-4{,}25 \),
+<strong>mit Minus</strong>, weil die Fläche unter der Achse liegt.
+<em>Rückfrage:</em> „Warum kommt ein negativer Wert heraus?" <em>Rote
+Flagge:</em> positives Ergebnis \( +4{,}25 \) ohne
+Vorzeichen-Begründung.</li>
+<li><strong>c) Graph von \( F \).</strong> Erwartet:
+\( F'=f \); <strong>Tiefpunkt bei
+\( x=2 \)</strong> (Nullstelle von \( f \) mit
+Wechsel \( -\to+ \)), <strong>Wendepunkt bei
+\( x=1 \)</strong> (Tiefpunkt von \( f \)),
+<strong>kein Hochpunkt</strong>. <em>Rückfrage:</em> „Wo am Graphen von
+\( f \) erkennt man einen Tiefpunkt von
+\( F \)?" <em>Rote Flagge:</em> Hoch- und Tiefpunkte von
+\( f \) mit denen von \( F \)
+verwechseln.</li>
+<li><strong>d) Zuordnung.</strong> Erwartet: \( f_2(x)=(x-2)e^x \);
+Begründung über <strong>Nullstelle bei \( x=2 \)</strong>
+(\( f_3(2)\neq 0 \)) und <strong>Tiefpunktlage/Randverhalten</strong>
+(\( f_1 \) liegt zu hoch bzw. fällt für große
+\( x \) auf 0). <em>Rückfrage:</em> „Reicht es,
+\( f(0) \) zu prüfen?" (Antwort: nein, alle drei geben
+\( -2 \).)</li>
+<li><strong>e) Graph von \( g \).</strong> Erwartet:
+<strong>Nullstelle/Berührung bei \( x=2 \)</strong>
+(doppelt), \( g\ge 0 \), links \( \to 0 \), rechts
+\( \to +\infty \), Hochpunkt \( H(0\,|\,4) \).
+<em>Rückfrage:</em> „Schneidet oder berührt der Graph bei
+\( x=2 \) die Achse, und warum?"</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Stochastik) aufklappen</summary>
+
+<ul>
+<li><strong>Kurve skizzieren.</strong> Erwartet:
+<strong>Glocke</strong>, symmetrisch um \( 20 \), Maximum
+bei \( 20 \), Wendepunkte bei \( 16 \) und
+\( 24 \), Fläche \( =1 \). <em>Rückfrage:</em>
+„Wofür steht die Fläche unter der Kurve?"</li>
+<li><strong>\( P(X\le 21) \), \( P(X=21) \),
+\( P(X \gt 21) \).</strong> Erwartet: \( P(X=21)=0 \) (stetig!),
+\( P(X\le 21) \) als <strong>Fläche links von 21</strong>
+(\( \approx 0{,}599 \)), \( P(X \gt 21)=1-P(X\le 21)
+  \approx 0{,}401 \). <em>Rückfrage:</em> „Warum
+ist die Wahrscheinlichkeit für genau 21 gleich null?"</li>
+<li><strong>Sachkontext.</strong> Erwartet: eine
+<strong>Messgröße</strong> (Füllgewicht, Körpergröße, Messfehler) mit
+\( \mu=20 \), \( \sigma=4 \). <em>Rote Flagge:</em> ein
+Zählkontext (Trefferzahl) — das wäre binomial.</li>
+<li><strong>\( \mu \) ändern.</strong> Erwartet: Kurve
+<strong>verschiebt sich seitlich</strong>, Form bleibt.
+<em>Rückfrage:</em> „Ändert sich dabei die Breite?"</li>
+<li><strong>\( \sigma \) ändern.</strong> Erwartet: größeres
+\( \sigma \) → <strong>breiter und flacher</strong>, kleineres →
+schmaler und höher, Fläche bleibt \( 1 \).
+<em>Rückfrage:</em> „Warum wird die Kurve flacher, wenn sie breiter
+wird?"</li>
+<li><strong>Binomial gegen Normal.</strong> Erwartet: <strong>diskret
+gegen stetig</strong>, Balken gegen Fläche, \( P(X=k) \gt 0 \) gegen
+\( P(X=x)=0 \); Normalverteilung als <strong>Näherung</strong> der
+Binomialverteilung für große \( n \).</li>
+<li><strong>AB III — diskrete Verteilung.</strong> Erwartet:
+<strong>\( B(100;\,0{,}2) \)</strong> über \( np=20 \) und
+\( np(1-p)=16 \); Probe \( \mu=20 \), \( \sigma=4 \).
+<em>Hinweis für dich:</em> Andere passende Verteilungen sind erlaubt;
+die Binomialverteilung ist der Standardweg.</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Wie liest du \( f'(0) \) aus einem Graphen ab, und was
+bedeutet dieser Wert anschaulich?</li>
+<li>Warum ist \( \int_0^2 f(x)\,dx \) hier negativ, und wie kommst du ohne
+Rechner an den Zahlenwert?</li>
+<li>Welche Stelle am Graphen von \( f \) liefert einen
+Tiefpunkt von \( F \), und welche einen Wendepunkt?</li>
+<li>Warum genügt es nicht, \( f(0) \) zu prüfen, um den
+richtigen Funktionsterm zu finden?</li>
+<li>Wie verändert sich die Glockenkurve, wenn du \( \mu \)
+änderst — und wie, wenn du \( \sigma \) änderst?</li>
+<li>Warum ist \( P(X=21)=0 \), und wie bestimmst du
+\( P(X\le 21) \)?</li>
+<li>Wie findest du eine Binomialverteilung, deren Histogramm der Glocke
+\( N(20;4) \) gleicht?</li>
+</ul>
+</content>
+</invoke>
+
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

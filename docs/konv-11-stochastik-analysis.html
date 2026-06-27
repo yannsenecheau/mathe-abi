@@ -1,0 +1,1132 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 11 — Stochastik &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link active" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Stochastik</strong>, <strong>Teil 2 (Gespräch) aus der
+Analysis</strong>. Alles ist <strong>rechnerfrei</strong> zu lösen.
+Arbeitet die Aufgabe wie eine echte Simulation durch — eine Person trägt
+vor, die andere prüft mit dem Lösungsweg und dem <a
+href="#prüfer-leitfaden-für-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Stochastik-Werkzeuge (Normalverteilung, Vierfeldertafel, bedingte
+Wahrscheinlichkeit, Unabhängigkeit, Baumdiagramm) stehen kompakt im <a
+href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a> (Anker u. a. `#normalverteilung`, `#erwartungswert`,
+`#vierfeldertafel`, `#binomialverteilung`, `#bernoulli-kette`). Die
+Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a> und <a
+href="kap-grundfunktionen.html">Grundfunktionen</a>.</p>
+</blockquote>
+<hr />
+<section
+id="teil-1--vortrag-stochastik-normalverteilung-und-vierfeldertafel"
+class="level2">
+<h2>Teil 1 — Vortrag (Stochastik): Normalverteilung und
+Vierfeldertafel</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Die Körpergröße der erwachsenen Männer in einer Stadt ist
+normalverteilt.</strong></p>
+<p><strong>a)</strong> Beschreibe die Eigenschaften einer
+normalverteilten Zufallsgröße. Gehe dabei auch auf die Begriffe
+<strong>Erwartungswert</strong> und <strong>Standardabweichung</strong>
+ein.</p>
+<p>Ein Mitarbeiter einer Fotoagentur geht durch eine Fußgängerzone und
+spricht Männer an, ob sie an einem Fotoshooting interessiert sind. Die
+ideale Körpergröße hierfür liegt zwischen \( 1{,}80\,\text{m} \) und
+\( 1{,}90\,\text{m} \). Die folgende Vierfeldertafel zeigt das Ergebnis
+seiner Befragung:</p>
+<table class="vft">
+<thead><tr><th></th><th>Ideale Körpergröße</th><th>Keine ideale Körpergröße</th><th>Summe</th></tr></thead>
+<tbody>
+<tr><th>Interesse am Fotoshooting</th><td>22&nbsp;%</td><td>19&nbsp;%</td><td></td></tr>
+<tr><th>Kein Interesse am Fotoshooting</th><td></td><td></td><td></td></tr>
+<tr><th>Summe</th><td>37&nbsp;%</td><td></td><td></td></tr>
+</tbody>
+</table></div>
+
+<p><strong>b)</strong> Erläutere die direkt aus dieser Vierfeldertafel
+ablesbaren Aussagen. Bestimme die Wahrscheinlichkeit, dass ein Mann
+Interesse am Fotoshooting hat. Aus einer Gruppe mit Männern der idealen
+Körpergröße wird zufällig ein Mann ausgewählt. Berechne die
+Wahrscheinlichkeit dafür, dass dieser Mann kein Interesse am
+Fotoshooting hat.</p>
+<p><strong>c)</strong> Untersuche, ob die Ereignisse
+\( A \): „Interesse am Fotoshooting" und
+\( B \): „Ideale Körpergröße" stochastisch unabhängig
+sind.</p>
+<p>In einer Gruppe von zehn Männern haben vier Männer ideale
+Körpergröße. Aus dieser Gruppe werden drei Männer zufällig
+ausgewählt.</p>
+<p><strong>d)</strong> Begründe, dass die Binomialverteilung für
+Überlegungen zur Anzahl der ausgewählten Männer mit idealer Körpergröße
+nicht geeignet ist. Bestimme die Wahrscheinlichkeit dafür, dass genau
+zwei der drei ausgewählten Männer ideale Körpergröße haben.</p>
+</div>
+
+<section
+id="teilaufgabe-a--eigenschaften-einer-normalverteilten-zufallsgröße"
+class="level3">
+<h3>Teilaufgabe a) — Eigenschaften einer normalverteilten
+Zufallsgröße</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Eine <strong>normalverteilte Zufallsgröße</strong> hat diese
+Eigenschaften:</p>
+<ul>
+<li>Sie ist eine <strong>stetige</strong> Zufallsgröße: Sie kann
+<strong>alle reellen Werte in einem Intervall</strong> annehmen (jede
+Körpergröße, auch \( 1{,}8237\ldots\,\text{m} \)), nicht nur einzelne abgezählte
+Werte.</li>
+<li>Die zugehörigen Wahrscheinlichkeiten lassen sich über
+<strong>Flächenbetrachtungen an einer Glockenkurve</strong> beschreiben:
+Die Wahrscheinlichkeit, dass der Wert in einem Bereich liegt, ist die
+<strong>Fläche unter der Glockenkurve</strong> über diesem Bereich.</li>
+<li>Diese <strong>Glockenkurve hat ihren Hochpunkt an der Stelle des
+Erwartungswerts \( \mu \)</strong> und ist
+<strong>achsensymmetrisch zur senkrechten Geraden
+\( x = \mu \)</strong>.</li>
+<li>Die <strong>Wendepunkte</strong> liegen genau bei
+\( x_1 = \mu - \sigma \) und \( x_2 = \mu + \sigma \) (also „eine
+Standardabweichung links und rechts vom Mittelwert").</li>
+<li><strong>Je größer die Standardabweichung \( \sigma \) ist,
+umso flacher und breiter wird die Glockenkurve</strong> (umso stärker
+streuen die Werte); je kleiner \( \sigma \), umso schmaler und
+höher.</li>
+</ul>
+<figure>
+<div class="jxgbox" id="jxg-k11-glocke" style="width:100%;max-width:520px;aspect-ratio:2/1"></div>
+<figcaption>Glockenkurve (Normalverteilung): Hochpunkt und Symmetrieachse bei \( x=\mu \), Wendepunkte (grün) bei \( \mu-\sigma \) und \( \mu+\sigma \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k11-glocke',{boundingbox:[-4.2,1.2,4.2,-0.35],axis:false,showCopyright:false,showNavigation:false});b.create('axis',[[0,0],[1,0]],{ticks:{visible:false},lastArrow:{size:6}});b.create('functiongraph',[function(x){return Math.exp(-x*x/2);},-4,4],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('segment',[[0,0],[0,1]],{dash:2,strokeColor:'#d98324',strokeWidth:1.5});b.create('text',[0.15,1.08,'Symmetrieachse x = μ'],{fontSize:12,color:'#d98324'});b.create('point',[0,0],{name:'μ',size:1,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[4,-14],fontSize:13}});var hw=Math.exp(-0.5);b.create('point',[-1,hw],{name:'μ−σ',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[-48,2],fontSize:12}});b.create('point',[1,hw],{name:'μ+σ',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[8,2],fontSize:12}});})();});</script>
+
+<details><summary>Haltung dahinter: Was ist eine „normalverteilte Zufallsgröße"? (ganz von vorn)</summary>
+
+<p>Wir bauen das Wort von hinten auf.</p>
+<p><strong>Zufallsgröße.</strong> Eine <strong>Zufallsgröße</strong>
+(oder Zufallsvariable) ist eine Zahl, deren Wert vom Zufall abhängt —
+hier: „die Körpergröße eines zufällig herausgegriffenen Mannes". Vor dem
+Messen weiß man den Wert nicht, aber man kann sagen, wie
+<strong>wahrscheinlich</strong> welche Werte sind.</p>
+<p><strong>Stetig gegenüber diskret.</strong> Manche Größen springen in
+festen Stufen — ein Würfel zeigt nur \( 1,2,3,4,5,6 \), nie
+\( 3{,}7 \). So etwas heißt <strong>diskret</strong>
+(abzählbar). Eine Körpergröße dagegen kann <strong>jeden</strong>
+Zwischenwert annehmen: \( 1{,}80\,\text{m} \), \( 1{,}803\,\text{m} \),
+\( 1{,}8031\,\text{m} \) … Eine Größe, die so ein ganzes Intervall lückenlos
+füllt, heißt <strong>stetig</strong>. Genau das ist die Körpergröße.</p>
+<p><strong>Glockenkurve.</strong> Trägt man auf, wie häufig welche Werte
+vorkommen, ergibt sich bei sehr vielen natürlichen Größen (Körpergröße,
+Schuhgröße, Messfehler) eine <strong>symmetrische Glockenform</strong>:
+In der Mitte (beim Durchschnitt) ist der Berg am höchsten, nach beiden
+Seiten fällt er gleichmäßig ab. Diese Kurve heißt
+<strong>Glockenkurve</strong> oder <strong>Gauß-Kurve</strong>.
+Anschaulich: Die allermeisten Männer sind ungefähr durchschnittlich
+groß, sehr kleine und sehr große sind selten — deshalb der Berg in der
+Mitte und die dünnen „Schwänze" außen.</p>
+<p><strong>Fläche = Wahrscheinlichkeit.</strong> Bei einer stetigen
+Größe liest man Wahrscheinlichkeiten als <strong>Fläche unter der
+Kurve</strong> ab. „Wie wahrscheinlich ist eine Größe zwischen
+\( 1{,}80 \) und \( 1{,}90\,\text{m} \)?" = „Wie groß ist die Fläche
+unter der Glocke über diesem Streifen?" Die <strong>gesamte</strong>
+Fläche unter der Glocke ist immer \( 1 \)
+(\( =100\,\% \)), denn irgendeinen Wert hat jeder Mann.</p>
+<details><summary>Erwartungswert \( \mu \) und Standardabweichung \( \sigma \) — die zwei Stellschrauben</summary>
+
+<p>Eine Normalverteilung wird durch genau <strong>zwei</strong> Zahlen
+vollständig festgelegt:</p>
+<ul>
+<li><p><strong>Erwartungswert \( \mu \)</strong> (sprich
+„mü"): der <strong>Mittelwert/Durchschnitt</strong> — der Wert, um den
+herum alles zentriert ist. Er sagt, <strong>wo</strong> der Berg steht.
+Anschaulich der „Schwerpunkt" der Verteilung: Würde man die
+Glockenfläche aus Pappe ausschneiden, balancierte sie genau bei
+\( x=\mu \). Deshalb liegt dort der <strong>Hochpunkt</strong>,
+und deshalb ist die Kurve <strong>spiegelsymmetrisch</strong> zur
+senkrechten Geraden \( x=\mu \) (links wie rechts gleich
+viel).</p></li>
+<li><p><strong>Standardabweichung \( \sigma \)</strong> (sprich
+„sigma"): die <strong>typische Streuung</strong> — wie weit die Werte im
+Schnitt vom Mittelwert abweichen. Sie sagt, <strong>wie breit</strong>
+der Berg ist. Kleines \( \sigma \) = alle dicht beieinander =
+<strong>schmale, hohe</strong> Glocke; großes \( \sigma \) =
+stark streuend = <strong>breite, flache</strong> Glocke. (Die Höhe muss
+mitsinken, weil die Gesamtfläche immer \( 1 \) bleibt — wird
+die Glocke breiter, muss sie flacher werden.)</p></li>
+</ul>
+<p><strong>Die Wendepunkte verraten \( \sigma \).</strong> Ein
+<strong>Wendepunkt</strong> ist die Stelle, an der die Kurve von einer
+Rechtskurve in eine Linkskurve übergeht — wo das Gefälle aufhört,
+steiler zu werden, und anfängt, flacher zu werden. Bei der Glocke liegen
+diese beiden Stellen exakt eine Standardabweichung neben dem Gipfel: bei
+\( \mu-\sigma \) und \( \mu+\sigma \). Man kann
+\( \sigma \) also direkt an der Kurve ablesen: Abstand vom Gipfel
+bis zum Wendepunkt.</p>
+</details>
+
+<details><summary>Typische Falle: bei stetigen Größen ist „genau ein Wert" unmöglich</summary>
+
+<p>Bei einer stetigen Zufallsgröße ist die Wahrscheinlichkeit für
+<strong>einen einzelnen, exakten</strong> Wert immer
+\( 0 \): \( P(X = 1{,}80\,\text{m}) = 0 \). Grund: Ein einzelner Punkt hat
+keine Fläche, und Wahrscheinlichkeit ist hier Fläche. Sinnvoll fragt man
+immer nach einem <strong>Bereich</strong> („zwischen \( 1{,}80 \)
+und \( 1{,}90\,\text{m} \)"). Deshalb ist es auch egal, ob man „kleiner"
+oder „kleiner gleich" schreibt — die Grenze selbst trägt nichts bei.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--ablesbare-aussagen-zzmathphzz65zzendzz-und-bedingte-wahrscheinlichkeit"
+class="level3">
+<h3>Teilaufgabe b) — Ablesbare Aussagen, \( P(A) \) und
+bedingte Wahrscheinlichkeit</h3>
+<p><span class="tag tag-ok">AB I / AB II</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Direkt aus der Tafel ablesbare Aussagen</strong> (jede Zelle
+ist eine Prozentangabe der <strong>gesamten</strong> Befragten):</p>
+<ul>
+<li><strong>\( 37\,\% \)</strong> der angesprochenen Männer haben
+die <strong>ideale Körpergröße</strong> (untere Spaltensumme).</li>
+<li><strong>\( 22\,\% \)</strong> haben die ideale Körpergröße
+<strong>und</strong> sind am Fotoshooting interessiert.</li>
+<li><strong>\( 19\,\% \)</strong> haben <strong>keine</strong>
+ideale Körpergröße <strong>und</strong> sind am Fotoshooting
+interessiert.</li>
+</ul>
+<p><strong>Wahrscheinlichkeit für Interesse,
+\( P(A) \).</strong> Man addiert die ganze Zeile
+„Interesse":</p>
+<p>\[ P(A) = 22\,\% + 19\,\% = 41\,\%. \]</p>
+<p><strong>Aus den idealgroßen Männern einen ziehen — Wahrscheinlichkeit
+„kein Interesse".</strong> Gesucht ist die <strong>bedingte</strong>
+Wahrscheinlichkeit \( P_B(\overline A) \): „kein Interesse
+\( (\overline A) \), <strong>unter der Bedingung</strong> ideale Größe
+\( (B) \)". Man bleibt in der Spalte \( B \) und
+teilt den passenden Anteil durch die Spaltensumme:</p>
+<p>\[ P_B(\overline A) = \frac{P(\overline A \cap B)}{P(B)} = \frac{37\,\% - 22\,\%}{37\,\%}
+   = \frac{15}{37} \approx 40{,}5\,\%. \]</p>
+<p>Dabei ist \( P(\overline A \cap B) = 37\,\% - 22\,\% = 15\,\% \) (Spalte \( B \) ergibt
+\( 37\,\% \), davon entfallen \( 22\,\% \) auf
+„Interesse", der Rest auf „kein Interesse"). Die vollständig ausgefüllte
+Tafel:</p>
+<table class="vft">
+<thead><tr><th></th><th>Ideale Größe \( B \)</th><th>Keine ideale Größe \( \overline B \)</th><th>Summe</th></tr></thead>
+<tbody>
+<tr><th>Interesse \( A \)</th><td>22&nbsp;%</td><td>19&nbsp;%</td><td><b>41&nbsp;%</b></td></tr>
+<tr><th>Kein Interesse \( \overline A \)</th><td><b>15&nbsp;%</b></td><td><b>44&nbsp;%</b></td><td><b>59&nbsp;%</b></td></tr>
+<tr><th>Summe</th><td>37&nbsp;%</td><td><b>63&nbsp;%</b></td><td><b>100&nbsp;%</b></td></tr>
+</tbody>
+</table></div>
+
+<details><summary>Haltung dahinter: Wie liest man eine Vierfeldertafel? (ganz von vorn)</summary>
+
+<p>Eine <strong>Vierfeldertafel</strong> sortiert eine Gruppe nach
+<strong>zwei</strong> Ja/Nein-Merkmalen gleichzeitig — hier „Interesse:
+ja/nein" und „ideale Größe: ja/nein". Daraus entstehen vier Kästchen
+(Felder), eines für jede Kombination:</p>
+<ul>
+<li>oben links: <strong>beides ja</strong> — ideal <strong>und</strong>
+interessiert,</li>
+<li>oben rechts: nicht ideal, aber interessiert,</li>
+<li>unten links: ideal, aber nicht interessiert,</li>
+<li>unten rechts: weder noch.</li>
+</ul>
+<p><strong>Die Zahlen sind Anteile an allen Befragten.</strong>
+„\( 22\,\% \)" heißt: \( 22 \) von je
+\( 100 \) Angesprochenen sind ideal <strong>und</strong>
+interessiert. Dieses „und" ist mathematisch der <strong>Schnitt</strong>
+\( A \cap B \) — beide Bedingungen treffen zusammen zu.</p>
+<p><strong>Ränder = Summen.</strong> Addiert man eine ganze
+<strong>Zeile</strong>, bekommt man die Wahrscheinlichkeit nur für das
+Zeilenmerkmal (z. B. „Interesse insgesamt" \( =41\,\% \), egal
+welche Größe). Addiert man eine <strong>Spalte</strong>, bekommt man das
+Spaltenmerkmal („ideale Größe insgesamt" \( =37\,\% \)). Diese
+Randwerte heißen <strong>Randwahrscheinlichkeiten</strong>. Und alle
+vier Felder zusammen ergeben \( 100\,\% \) — jeder Befragte sitzt
+in genau einem Feld. Daraus füllt man fehlende Felder per Subtraktion
+auf (Zeile/Spalte muss aufgehen).</p>
+<details><summary>Bedingte Wahrscheinlichkeit ganz langsam: „nur unter den Idealen schauen"</summary>
+
+<p>„<strong>Aus einer Gruppe mit Männern der idealen
+Körpergröße</strong> wird zufällig einer ausgewählt" — dieser Halbsatz
+schaltet den Blick um: Es zählen <strong>nicht mehr alle</strong>
+Befragten, sondern <strong>nur noch die idealgroßen</strong>. Diese
+Teilgruppe ist der neue \( 100\,\% \)-Bezug. Das ist eine
+<strong>bedingte Wahrscheinlichkeit</strong>, geschrieben
+\( P_B(\overline A) \): „Wahrscheinlichkeit für \( \overline A \),
+<strong>gegeben</strong> \( B \)".</p>
+<p>Bild: Du legst auf die Tafel eine Schablone, die alles außer der
+Spalte \( B \) (ideale Größe) abdeckt. Übrig bleiben
+\( 37\,\% \) — und <strong>das</strong> sind jetzt deine
+\( 100\,\% \). Davon haben \( 15\,\% \) kein Interesse. Der
+Anteil ist also</p>
+<p>\[ \frac{15\,\%}{37\,\%} = \frac{15}{37} = 0{,}4054\ldots \approx 40{,}5\,\%. \]</p>
+<p>Ziffernweise: \( 15 \) geteilt durch \( 37 \).
+\( 37 \) passt nicht in \( 15 \) →
+\( 0,\ldots \). \( 150 : 37 = 4 \) Rest \( 2 \)
+(denn \( 4\cdot 37 = 148 \)). \( 20 \to 200 : 37 = 5 \) Rest
+\( 15 \) (\( 5\cdot 37 = 185 \)). Also
+\( 0{,}405\ldots \approx 40{,}5\,\% \).</p>
+</details>
+
+<details><summary>Typische Falle: durch die Teilgesamtheit teilen, nicht durch 100&nbsp;%</summary>
+
+<p>Der häufigste Fehler: \( P_B(\overline A) \) mit \( P(\overline A \cap B) = 15\,\% \)
+zu verwechseln. Die \( 15\,\% \) sind der Anteil an
+<strong>allen</strong> Befragten — die Frage will aber den Anteil
+<strong>innerhalb der Idealgroßen</strong>. Deshalb muss man durch
+\( 37\,\% \) (die Teilgesamtheit) teilen, nicht durch
+\( 100\,\% \). Faustregel: „Aus der Gruppe X wird gezogen" →
+durch \( P(X) \) teilen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-c--stochastische-unabhängigkeit"
+class="level3">
+<h3>Teilaufgabe c) — Stochastische Unabhängigkeit</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Zwei Ereignisse \( A \) und \( B \) heißen
+<strong>stochastisch unabhängig</strong>, wenn</p>
+<p>\[ P(A \cap B) = P(A) \cdot P(B). \]</p>
+<p>Man prüft, ob die Gleichung mit den Zahlen der Tafel
+<strong>aufgeht</strong>:</p>
+<p>\[ P(A) = 41\,\%, \qquad P(B) = 37\,\%, \qquad P(A \cap B) = 22\,\%. \] \[ P(A)\cdot P(B) = 41\,\% \cdot 37\,\% = 15{,}17\,\% \;\neq\; 22\,\% = P(A\cap B). \]</p>
+<p>Die beiden Seiten sind <strong>verschieden</strong>, also sind die
+Ereignisse <strong>nicht</strong> stochastisch unabhängig.</p>
+<details><summary>Haltung dahinter: Was heißt „unabhängig", und warum dieser Test?</summary>
+
+<p><strong>Unabhängig</strong> bedeutet anschaulich: Das eine Merkmal
+verrät <strong>nichts</strong> über das andere. Wüsste man, dass ein
+Mann ideal groß ist, und änderte das <strong>nichts</strong> an der
+Wahrscheinlichkeit, dass er interessiert ist, wären die Merkmale
+unabhängig. Sobald das Wissen über das eine die Chance fürs andere
+verschiebt, sind sie <strong>abhängig</strong>.</p>
+<p><strong>Warum gerade \( P(A)\cdot P(B) \)?</strong> Wenn zwei Dinge
+völlig nichts miteinander zu tun haben, multiplizieren sich ihre
+Anteile. Stell dir \( 41\,\% \) Interessierte und
+\( 37\,\% \) Idealgroße vor, <strong>zufällig gemischt</strong>
+ohne Zusammenhang: Dann wären unter den Interessierten genauso oft
+Idealgroße wie in der Gesamtheit, nämlich \( 37\,\% \) — und der
+gemeinsame Anteil wäre \( 41\,\% \cdot 37\,\% = 15{,}17\,\% \). Die Tafel zeigt aber
+<strong>\( 22\,\% \)</strong> ideal-und-interessiert, deutlich
+mehr als die \( 15{,}17\,\% \) eines reinen Zufallsmischens.
+Idealgröße und Interesse treten also <strong>häufiger zusammen</strong>
+auf, als der Zufall allein erklären würde → es gibt einen Zusammenhang →
+abhängig.</p>
+<details><summary>… ganz langsam (mit Zahlen): \( 41\,\% \cdot 37\,\% \)</summary>
+
+<p>Prozent in Dezimalzahlen: \( 41\,\% = 0{,}41 \), \( 37\,\% = 0{,}37 \).
+Multiplizieren wie ohne Komma: \( 41 \cdot 37 \). Rechne
+\( 41 \cdot 37 = 41\cdot 30 + 41\cdot 7 = 1230 + 287 = 1517 \). Jetzt die Kommas: zwei Nachkommastellen plus zwei
+Nachkommastellen = <strong>vier</strong> Nachkommastellen, also
+\( 0{,}41 \cdot 0{,}37 = 0{,}1517 = 15{,}17\,\% \). Und \( 15{,}17\,\% \neq 22\,\% \).</p>
+</details>
+
+<details><summary>Typische Falle: „unabhängig" mit „schließt sich aus" verwechseln</summary>
+
+<p><strong>Unabhängig</strong> (das eine sagt nichts über das andere)
+ist etwas völlig anderes als <strong>unvereinbar / disjunkt</strong>
+(beides kann nicht zugleich eintreten, \( P(A\cap B)=0 \)). Hier gilt
+\( P(A\cap B)=22\,\% \neq 0 \) — die Ereignisse treten sehr wohl zusammen auf,
+sind also nicht disjunkt; getestet wird trotzdem die
+<strong>Produktgleichung</strong>, nicht „ist der Schnitt null".</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--warum-keine-binomialverteilung-und-zzmathphzz133zzendzz"
+class="level3">
+<h3>Teilaufgabe d) — Warum keine Binomialverteilung, und
+\( P(\text{genau }2) \)</h3>
+<p><span class="tag tag-warn">AB II / AB III</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Warum die Binomialverteilung hier nicht passt.</strong> Eine
+Binomialverteilung verlangt eine <strong>Bernoulli-Kette</strong>:
+gleich viele unabhängige Versuche mit <strong>konstanter</strong>
+Trefferwahrscheinlichkeit \( p \) — das ist <strong>Ziehen
+mit Zurücklegen</strong>. Hier wird aus nur <strong>zehn</strong>
+Männern (vier davon ideal) <strong>ohne Zurücklegen</strong> gezogen.
+Mit jedem gezogenen Mann ändert sich die Zusammensetzung der Restgruppe,
+also auch die Wahrscheinlichkeit für „ideal" beim nächsten Zug
+(\( \tfrac{4}{10}, \tfrac{3}{9}, \ldots \)). Weil \( p \) <strong>nicht
+konstant</strong> ist und die Grundmenge klein ist, ist die
+Binomialverteilung <strong>nicht geeignet</strong>.</p>
+<p><strong>Wahrscheinlichkeit, dass genau zwei der drei Gezogenen ideal
+sind.</strong> Man arbeitet mit dem <strong>Baumdiagramm / der
+Pfadregel</strong> (Ziehen ohne Zurücklegen). Ein passender Pfad ist z.
+B. „ideal, ideal, nicht ideal":</p>
+<p>\[ \frac{4}{10}\cdot\frac{3}{9}\cdot\frac{6}{8}. \]</p>
+<p>Die zwei „ideal" und das eine „nicht ideal" können in
+<strong>drei</strong> Reihenfolgen auftreten (das „nicht ideal" kann der
+1., 2. oder 3. Zug sein). Alle drei Pfade haben dasselbe Produkt,
+also:</p>
+<p>\[ P(\text{genau }2\text{ ideal}) = 3\cdot\frac{6}{10}\cdot\frac{4}{9}\cdot\frac{3}{8}
+   = 3\cdot\frac{72}{720} = 3\cdot 0{,}1 = 0{,}3 = 30\,\%. \]</p>
+<figure>
+<svg viewBox="0 0 520 250" role="img" aria-label="Die drei günstigen Pfade für genau zwei ideale Männer unter drei Gezogenen" style="width:100%;max-width:540px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs><marker id="k11ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker></defs>
+  <text x="70"  y="22" font-size="12" fill="#7a7163" text-anchor="middle">1. Zug</text>
+  <text x="220" y="22" font-size="12" fill="#7a7163" text-anchor="middle">2. Zug</text>
+  <text x="370" y="22" font-size="12" fill="#7a7163" text-anchor="middle">3. Zug</text>
+  <text x="470" y="22" font-size="12" fill="#7a7163" text-anchor="middle">Pfad</text>
+  <!-- Reihe 1: I, I, N -->
+  <line x1="86"  y1="60" x2="204" y2="60" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <line x1="236" y1="60" x2="354" y2="60" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <text x="145" y="52" font-size="12" fill="#26324a" text-anchor="middle">3/9</text>
+  <text x="295" y="52" font-size="12" fill="#26324a" text-anchor="middle">6/8</text>
+  <circle cx="70"  cy="60" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="70"  y="65" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <circle cx="220" cy="60" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="220" y="65" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <circle cx="370" cy="60" r="15" fill="#fff" stroke="#d98324" stroke-width="2"/><text x="370" y="65" font-size="14" fill="#d98324" text-anchor="middle">N</text>
+  <text x="36" y="52" font-size="11" fill="#7a7163" text-anchor="middle">4/10</text>
+  <text x="470" y="65" font-size="12" fill="#26324a" text-anchor="middle">0,1</text>
+  <!-- Reihe 2: I, N, I -->
+  <line x1="86"  y1="125" x2="204" y2="125" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <line x1="236" y1="125" x2="354" y2="125" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <text x="145" y="117" font-size="12" fill="#26324a" text-anchor="middle">6/9</text>
+  <text x="295" y="117" font-size="12" fill="#26324a" text-anchor="middle">3/8</text>
+  <circle cx="70"  cy="125" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="70"  y="130" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <circle cx="220" cy="125" r="15" fill="#fff" stroke="#d98324" stroke-width="2"/><text x="220" y="130" font-size="14" fill="#d98324" text-anchor="middle">N</text>
+  <circle cx="370" cy="125" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="370" y="130" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <text x="36" y="117" font-size="11" fill="#7a7163" text-anchor="middle">4/10</text>
+  <text x="470" y="130" font-size="12" fill="#26324a" text-anchor="middle">0,1</text>
+  <!-- Reihe 3: N, I, I -->
+  <line x1="86"  y1="190" x2="204" y2="190" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <line x1="236" y1="190" x2="354" y2="190" stroke="#7a7163" stroke-width="1.3" marker-end="url(#k11ar)"/>
+  <text x="145" y="182" font-size="12" fill="#26324a" text-anchor="middle">4/9</text>
+  <text x="295" y="182" font-size="12" fill="#26324a" text-anchor="middle">3/8</text>
+  <circle cx="70"  cy="190" r="15" fill="#fff" stroke="#d98324" stroke-width="2"/><text x="70"  y="195" font-size="14" fill="#d98324" text-anchor="middle">N</text>
+  <circle cx="220" cy="190" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="220" y="195" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <circle cx="370" cy="190" r="15" fill="#fff" stroke="#3a5a9c" stroke-width="2"/><text x="370" y="195" font-size="14" fill="#3a5a9c" text-anchor="middle">I</text>
+  <text x="36" y="182" font-size="11" fill="#7a7163" text-anchor="middle">6/10</text>
+  <text x="470" y="195" font-size="12" fill="#26324a" text-anchor="middle">0,1</text>
+  <line x1="430" y1="225" x2="510" y2="225" stroke="#7a7163" stroke-width="1"/>
+  <text x="470" y="242" font-size="13" fill="#26324a" text-anchor="middle" font-weight="bold">0,3</text>
+  <text x="70" y="232" font-size="11" fill="#7a7163">I = ideale Größe (4 von 10)</text>
+  <text x="250" y="232" font-size="11" fill="#7a7163">N = keine ideale Größe (6 von 10)</text>
+</svg>
+<figcaption>Die drei günstigen Pfade für „genau zwei ideal". Jeder Pfad hat die Wahrscheinlichkeit \( \tfrac{4}{10}\cdot\tfrac{3}{9}\cdot\tfrac{6}{8}=0{,}1 \); zusammen \( 3\cdot 0{,}1 = 0{,}3 \).</figcaption>
+</figure>
+
+<details><summary>Haltung dahinter: Bernoulli-Kette, Pfadregel und das „mal 3"</summary>
+
+<p><strong>Wann ist es eine Binomialverteilung?</strong> Die
+Binomialverteilung beschreibt eine <strong>Bernoulli-Kette</strong>: ein
+Versuch wird <strong>\( n \)-mal unter exakt gleichen
+Bedingungen wiederholt</strong>, jeder Versuch hat nur „Treffer/kein
+Treffer", und die Trefferwahrscheinlichkeit \( p \) bleibt
+<strong>bei jedem Versuch gleich</strong>. Das passt zum <strong>Ziehen
+mit Zurücklegen</strong> (man legt den gezogenen wieder rein, alles
+bleibt wie vorher) oder zu sehr großen Mengen, bei denen ein einzelner
+Zug kaum etwas ändert.</p>
+<p><strong>Warum hier nicht?</strong> Aus zehn Männern (vier ideal) wird
+<strong>ohne</strong> Zurücklegen gezogen. Vor dem ersten Zug ist die
+Idealquote \( \tfrac{4}{10} \). Hat man einen Idealen gezogen, sind nur
+noch drei von neun ideal: \( \tfrac{3}{9} \). Die
+Trefferwahrscheinlichkeit <strong>wandert von Zug zu Zug</strong> — die
+Bedingung „konstantes \( p \)" ist verletzt, und außerdem
+hängen die Züge voneinander ab. Also keine Binomialverteilung. (Die
+richtige Verteilung beim Ziehen ohne Zurücklegen heißt
+<strong>hypergeometrische Verteilung</strong>; man muss den Namen hier
+nicht nennen, aber wissen, dass man mit dem Baum rechnet.)</p>
+<p><strong>Pfadregel — entlang multiplizieren.</strong> Ein
+<strong>Baumdiagramm</strong> zeichnet die Züge nacheinander als Äste.
+<strong>Erste Pfadregel:</strong> Entlang eines Pfades
+<strong>multipliziert</strong> man die Wahrscheinlichkeiten. Für „ideal,
+ideal, nicht ideal":</p>
+<ul>
+<li><ol type="1">
+<li>Zug ideal: \( \tfrac{4}{10} \) (vier Ideale unter zehn).</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Zug ideal: \( \tfrac{3}{9} \) (nur noch drei Ideale unter neun
+Übrigen).</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Zug nicht ideal: \( \tfrac{6}{8} \) (alle sechs Nicht-Idealen sind
+noch da, acht Übrige).</li>
+</ol></li>
+</ul>
+<p>Produkt: \( \tfrac{4}{10}\cdot\tfrac{3}{9}\cdot\tfrac{6}{8} = \tfrac{72}{720} = \tfrac{1}{10} = 0{,}1 \).</p>
+<p><strong>Zweite Pfadregel — verschiedene Pfade addieren.</strong>
+„Genau zwei ideal" passiert nicht nur in der Reihenfolge (ideal, ideal,
+nicht), sondern auch (ideal, nicht, ideal) und (nicht, ideal, ideal).
+Das sind <strong>drei</strong> günstige Pfade. Jeder hat — egal in
+welcher Reihenfolge man dieselben Brüche multipliziert — dasselbe
+Produkt \( 0{,}1 \). Die drei Pfade <strong>addiert</strong>
+ergeben</p>
+<p>\[ 3\cdot 0{,}1 = 0{,}3 = 30\,\%. \]</p>
+<details><summary>… ganz langsam (mit Zahlen): \( \tfrac{4}{10}\cdot\tfrac{3}{9}\cdot\tfrac{6}{8} \)</summary>
+
+<p>Brüche multipliziert man <strong>Zähler mal Zähler, Nenner mal
+Nenner</strong>:</p>
+<ul>
+<li>Zähler: \( 4\cdot 3\cdot 6 = 12\cdot 6 = 72 \).</li>
+<li>Nenner: \( 10\cdot 9\cdot 8 = 90\cdot 8 = 720 \).</li>
+</ul>
+<p>Also \( \tfrac{72}{720} \). Kürzen mit \( 72 \):
+\( 72:72 = 1 \), \( 720:72 = 10 \), also \( \tfrac{1}{10} = 0{,}1 \).
+Mal drei Pfade: \( 3\cdot 0{,}1 = 0{,}3 \). Gegenprobe mit Abzählen
+(Kombinationen): „2 aus 4 Idealen" \( \cdot \) „1 aus 6
+Nicht-Idealen", geteilt durch „3 aus 10": \( \dfrac{\binom{4}{2}\binom{6}{1}}{\binom{10}{3}} = \dfrac{6\cdot 6}{120} = \dfrac{36}{120} = 0{,}3 \). Gleiches
+Ergebnis.</p>
+</details>
+
+<details><summary>Typische Falle: trotzdem mit der Binomialformel rechnen</summary>
+
+<p>Wer hier blind die Binomialformel \( \binom{3}{2}p^2(1-p) \) mit
+\( p=\tfrac{4}{10}=0{,}4 \) ansetzt, bekommt \( 3\cdot 0{,}4^2\cdot 0{,}6 = 3\cdot 0{,}16\cdot 0{,}6 = 0{,}288 = 28{,}8\,\% \) — ein
+<strong>falsches</strong> Ergebnis. Es weicht von den korrekten
+\( 30\,\% \) ab, gerade weil sich \( p \) ohne
+Zurücklegen verändert. Genau deshalb war in der vorigen Teilaufgabe zu
+begründen, dass die Binomialverteilung nicht taugt.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) Stetig (alle Werte im Intervall); Wahrscheinlichkeit = Fläche
+unter der <strong>Glockenkurve</strong>; Hochpunkt und Symmetrieachse
+bei \( x=\mu \) (<strong>Erwartungswert</strong> = Mittelwert);
+<strong>Wendepunkte</strong> bei \( \mu\pm\sigma \)
+(<strong>Standardabweichung</strong> = Streuung/Breite); größeres
+\( \sigma \) → flacher/breiter.</li>
+<li>b) Ablesbar: \( 37\,\% \) ideal, \( 22\,\% \)
+ideal+interessiert, \( 19\,\% \) nicht ideal+interessiert.
+\( P(A) = 22\,\%+19\,\% = 41\,\% \). \( P_B(\overline A) = \tfrac{37\,\%-22\,\%}{37\,\%} = \tfrac{15}{37} \approx 40{,}5\,\% \).</li>
+<li>c) \( P(A)\cdot P(B) = 41\,\%\cdot 37\,\% = 15{,}17\,\% \neq 22\,\% = P(A\cap B) \) → <strong>nicht</strong> unabhängig.</li>
+<li>d) Ziehen <strong>ohne</strong> Zurücklegen, kleine Menge →
+\( p \) nicht konstant → keine Binomialverteilung.
+\( P(\text{genau }2) = 3\cdot\tfrac{6}{10}\cdot\tfrac{4}{9}\cdot\tfrac{3}{8} = 30\,\% \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-analysis-kosten-und-einnahmen-beim-impfstoff"
+class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Kosten und Einnahmen beim
+Impfstoff</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben sind der Graph der Funktion
+\( K \) mit \( K(x) = (x-2)^3 + 10 \) und der Graph einer
+zweiten Funktion \( E \). Die <strong>Kosten</strong> (in
+\( 1000\ \)Euro) bei der Produktion von \( x \)
+Gramm eines Impfstoffs werden durch \( K \) beschrieben.
+Die <strong>Einnahmen</strong> (in \( 1000\ \)Euro) beim
+Verkauf von \( x \) Gramm werden durch \( E \)
+beschrieben. Im Schaubild ist \( E \) eine Gerade durch den
+Ursprung; die von den beiden Graphen eingeschlossene Fläche ist
+gefärbt.</p>
+<p>Im Gespräch denkbare Aspekte: <strong>(AB I)</strong> einen der zwei
+Graphen \( K \) zuordnen · Funktionsgleichung von
+\( E \) · Graph von \( f(x)=x^3 \) skizzieren ·
+Bedeutung eines Wendepunkts an \( K \) erläutern ·
+Wendepunkt von \( K \) bestimmen · Produktionsmenge bei
+\( 15\,000\,€ \) Kosten. <strong>(AB II)</strong> Zusammenhang von
+\( K \) und \( f(x)=x^3 \) · Rechenweg für die
+Tangente an \( K \) parallel zu \( E \) ·
+Rechenweg für den Inhalt der gefärbten Fläche · Verlauf von
+\( K \) und \( E \) im Sachzusammenhang ·
+Bedeutung von \( K(0) \) und \( E(0) \) · grafisch
+die Gewinnzone · Gleichung der Gewinnfunktion. <strong>(AB III)</strong>
+grafisch die Menge mit dem größten Gewinn · \( K \) auf
+Monotonie untersuchen · zwei Aussagen über die Kostenzunahme
+beurteilen.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, worum es geht:</strong>
+\( x \) zählt <strong>Gramm</strong> produzierten
+Impfstoff, \( K(x) \) und \( E(x) \) messen
+<strong>Geld in Tausend Euro</strong>. Wo die Einnahmen-Gerade
+\( E \) über der Kosten-Kurve \( K \) liegt,
+macht man <strong>Gewinn</strong>, sonst <strong>Verlust</strong>. Die
+Werkzeuge zum Ableiten, Untersuchen und Integrieren stehen in <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<p>So liegen die beiden Graphen im Koordinatensystem (Reproduktion des
+Schaubilds):</p>
+<figure>
+<div class="jxgbox" id="jxg-k11-ke" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Kostenkurve \( K(x)=(x-2)^3+10 \) (blau) und Einnahmen-Gerade \( E(x)=5x \) (orange). Schnittpunkte bei \( x=2 \) und \( x=2+\sqrt5\approx 4{,}24 \). Die grüne gestrichelte Gerade ist die Tangente an \( K \) parallel zu \( E \) (Stelle des größten Gewinns, grüner Punkt).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k11-ke',{boundingbox:[-0.7,27,5.3,-5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return Math.pow(x-2,3)+10;},-0.6,5],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return 5*x;},0,5],{strokeColor:'#d98324',strokeWidth:2.5});b.create('functiongraph',[function(x){return 5*x-4.303;},1.7,5],{strokeColor:'#3a8a5a',strokeWidth:1.5,dash:2});b.create('point',[2,10],{name:'',size:2,fixed:true,fillColor:'#26324a',strokeColor:'#26324a'});var r=2+Math.sqrt(5);b.create('point',[r,5*r],{name:'',size:2,fixed:true,fillColor:'#26324a',strokeColor:'#26324a'});var xv=2+Math.sqrt(5/3);b.create('point',[xv,Math.pow(xv-2,3)+10],{name:'',size:3,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a'});})();});</script>
+
+<section
+id="ab-i--zuordnung-gleichung-von-zzmathphzz212zzendzz-zzmathphzz213zzendzz-wendepunkt-produktionsmenge"
+class="level3">
+<h3>AB I — Zuordnung, Gleichung von \( E \),
+\( f(x)=x^3 \), Wendepunkt, Produktionsmenge</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Zuordnen des Graphen von \( K \).</strong>
+\( K(x)=(x-2)^3+10 \) ist die <strong>kubische (S-förmige)
+Kurve</strong>, die bei \( K(0)=(-2)^3+10 = -8+10 = 2 \) auf der
+\( y \)-Achse startet und im Punkt \( (2\mid 10) \)
+ihren Schwung wechselt. Die <strong>Gerade durch den Ursprung</strong>
+kann nicht \( K \) sein (denn \( K(0)=2\neq 0 \)), sie
+gehört zu \( E \). Also: <strong>die geschwungene Kurve ist
+\( K \), die Gerade ist \( E \).</strong></p>
+<p><strong>Funktionsgleichung von \( E \).</strong>
+\( E \) ist eine Gerade <strong>durch den
+Ursprung</strong>, hat also die Form \( E(x)=m\cdot x \) (kein
+\( y \)-Achsenabschnitt, weil sie durch
+\( (0\mid 0) \) geht). Die Steigung \( m \) liest man
+an einem zweiten Punkt ab: Die Gerade geht durch \( (2\mid 10) \) —
+denselben Punkt, in dem auch \( K \) liegt. Also
+\( m=\tfrac{10}{2}=5 \) und</p>
+<p>\[ E(x) = 5x. \]</p>
+<p><strong>Graph von \( f(x)=x^3 \) skizzieren.</strong> Die
+einfachste kubische Funktion: Sie geht durch den Ursprung, ist
+<strong>punktsymmetrisch</strong> zum Ursprung (links unten, rechts
+oben), hat dort eine <strong>waagerechte Tangente</strong>
+(„Sattelpunkt") und steigt nach beiden Seiten immer steiler.
+Stützpunkte: \( f(1)=1 \), \( f(2)=8 \),
+\( f(-1)=-1 \), \( f(-2)=-8 \).</p>
+<figure>
+<div class="jxgbox" id="jxg-k11-fx3" style="width:100%;max-width:360px;aspect-ratio:1/1"></div>
+<figcaption>Grundfunktion \( f(x)=x^3 \): punktsymmetrisch zum Ursprung, Sattelpunkt bei \( (0\mid 0) \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k11-fx3',{boundingbox:[-2.6,9,2.6,-9],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return x*x*x;},-2.1,2.1],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[0,0],{name:'',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324'});})();});</script>
+
+<p><strong>Bedeutung eines Wendepunkts an \( K \)
+erläutern.</strong> Ein <strong>Wendepunkt</strong> ist die Stelle, an
+der die Kurve ihre <strong>Krümmungsrichtung wechselt</strong> — von
+einer Rechtskurve in eine Linkskurve (oder umgekehrt). Bei
+\( K \) ist das der Punkt, ab dem die Kurve aufhört, immer
+flacher zu steigen, und anfängt, wieder steiler zu steigen. Genau dort
+ist die <strong>Steigung am kleinsten</strong> (im Sachzusammenhang: die
+Kosten wachsen dort am langsamsten).</p>
+<p><strong>Wendepunkt von \( K \) bestimmen.</strong> Man
+leitet zweimal ab und setzt die zweite Ableitung null:</p>
+<p>\[ K'(x) = 3(x-2)^2, \qquad K''(x) = 6(x-2). \] \[ K''(x) = 0 \;\Longrightarrow\; 6(x-2)=0 \;\Longrightarrow\; x = 2. \]</p>
+<p>Wegen \( K'''(x)=6\neq 0 \) ist es wirklich ein Wendepunkt. Der
+\( y \)-Wert: \( K(2) = (2-2)^3+10 = 10 \). Also <strong>Wendepunkt
+\( W(2\mid 10) \)</strong>. (Man sieht das auch direkt:
+\( K \) entsteht aus \( x^3 \), dessen
+Wendepunkt im Ursprung liegt, durch Verschieben um \( 2 \)
+nach rechts und \( 10 \) nach oben — der Wendepunkt wandert
+mit nach \( (2\mid 10) \).)</p>
+<p><strong>Produktionsmenge bei \( 15\,000\,€ \) Kosten.</strong>
+Kosten in Tausend Euro: \( 15\,000\,€ \) entspricht
+\( K(x)=15 \). Lösen:</p>
+<p>\[ (x-2)^3 + 10 = 15 \;\Longrightarrow\; (x-2)^3 = 5 \;\Longrightarrow\; x-2 = \sqrt[3]{5}
+   \;\Longrightarrow\; x = 2 + \sqrt[3]{5} \approx 3{,}71. \]</p>
+<p>Bei Kosten von \( 15\,000\,€ \) werden also rund
+<strong>\( 3{,}71 \) Gramm</strong> produziert.</p>
+<details><summary>Haltung dahinter: „Gerade durch den Ursprung" und das Ablesen der Steigung</summary>
+
+<p>Eine <strong>Gerade</strong> hat die Form \( y = m x + b \). Dabei
+ist \( b \) der
+<strong>\( y \)-Achsenabschnitt</strong> (wo sie die
+senkrechte Achse schneidet) und \( m \) die
+<strong>Steigung</strong> (wie viel sie pro Schritt nach rechts nach
+oben geht). „Durch den <strong>Ursprung</strong>" heißt: Sie schneidet
+die \( y \)-Achse bei \( 0 \), also
+\( b=0 \), und es bleibt \( y=mx \).</p>
+<p>Die <strong>Steigung</strong> \( m \) bekommt man aus
+<strong>einem</strong> weiteren Punkt: „Höhenunterschied geteilt durch
+Schrittweite nach rechts". Von \( (0\mid 0) \) nach
+\( (2\mid 10) \) sind das \( 10 \) hoch auf
+\( 2 \) nach rechts: \( m = \tfrac{10}{2} = 5 \). Probe an einem
+dritten Punkt: \( E(4) = 5\cdot 4 = 20 \) — passt zum Schaubild (die Gerade
+trifft bei \( x=4 \) die Höhe \( 20 \)).</p>
+<details><summary>Warum ist \( (x-2)^3+10 \) ein „verschobenes \( x^3 \)"? (mit Zahlen)</summary>
+
+<p>Es gibt zwei einfache Eingriffe an einer Funktion:</p>
+<ul>
+<li><strong>\( x \) durch \( (x-2) \)
+ersetzen</strong> verschiebt den Graphen um \( 2 \)
+<strong>nach rechts</strong>. (Klingt verkehrt herum, ist aber so: Damit
+der Wert herauskommt, den \( x^3 \) bei \( 0 \)
+hatte, muss man jetzt \( x=2 \) einsetzen — der ganze Graph
+rückt nach rechts.)</li>
+<li><strong>\( +10 \) dahinter</strong> schiebt alles um
+\( 10 \) <strong>nach oben</strong>.</li>
+</ul>
+<p>Aus dem Sattelpunkt \( (0\mid 0) \) von \( x^3 \)
+wird so der Wendepunkt \( (2\mid 10) \) von \( K \).
+Daher kennt man die Form sofort, ohne viel zu rechnen.</p>
+</details>
+
+<details><summary>Die dritte Wurzel ganz langsam: \( (x-2)^3 = 5 \)</summary>
+
+<p>Die Gleichung \( (x-2)^3 = 5 \) fragt: „Welche Zahl, dreimal mit
+sich selbst multipliziert, ergibt \( 5 \)?" Das holt die
+<strong>dritte Wurzel</strong> \( \sqrt[3]{\;} \) zurück — sie macht
+das „hoch 3" rückgängig, so wie die normale Wurzel das „hoch 2"
+rückgängig macht. Also \( x-2 = \sqrt[3]{5} \). Weil \( 1{,}7^3 = 4{,}913 \)
+und \( 1{,}71^3 \approx 5{,}00 \), ist \( \sqrt[3]{5}\approx 1{,}71 \), und
+\( x \approx 2 + 1{,}71 = 3{,}71 \). In der hilfsmittelfreien Prüfung genügt die exakte
+Form \( x = 2+\sqrt[3]{5} \); die Kommazahl ist Nebensache.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--zusammenhang-mit-zzmathphzz298zzendzz-tangente-fläche-verlauf-gewinnfunktion"
+class="level3">
+<h3>AB II — Zusammenhang mit \( x^3 \), Tangente, Fläche,
+Verlauf, Gewinnfunktion</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Zusammenhang von \( K \) und
+\( f(x)=x^3 \).</strong> \( K \) entsteht aus
+\( f \) durch <strong>Verschieben</strong>:
+\( 2 \) Einheiten <strong>nach rechts</strong> (wegen
+\( (x-2) \) statt \( x \)) und
+\( 10 \) Einheiten <strong>nach oben</strong> (wegen
+\( +10 \)). Form und Krümmung sind identisch, nur die Lage
+ist verschoben:</p>
+<p>\[ K(x) = f(x-2) + 10. \]</p>
+<p><strong>Rechenweg für die Tangente an \( K \) parallel
+zu \( E \).</strong> „Parallel zu \( E \)"
+heißt <strong>gleiche Steigung wie \( E \)</strong>, und
+\( E \) hat die Steigung \( 5 \). Man setzt
+die Ableitung von \( K \) gleich \( 5 \):</p>
+<p>\[ K'(x) = 3(x-2)^2 = 5 \;\Longrightarrow\; (x-2)^2 = \tfrac{5}{3} \;\Longrightarrow\;
+   x = 2 \pm \sqrt{\tfrac{5}{3}} = 2 \pm \tfrac{\sqrt{15}}{3}. \]</p>
+<p>Das ergibt zwei Berührstellen \( x \approx 0{,}71 \) und
+\( x \approx 3{,}29 \). Den \( y \)-Wert bekommt man durch
+Einsetzen in \( K \), die Tangentengleichung dann aus Punkt
+und Steigung \( 5 \) per \( y = K(x_0) + 5\,(x-x_0) \). Für die
+später gefragte <strong>größte-Gewinn-Stelle</strong> ist die rechte
+Berührstelle \( x = 2+\tfrac{\sqrt{15}}{3} \approx 3{,}29 \) maßgeblich (im Schaubild die grüne
+Tangente).</p>
+<p><strong>Rechenweg für den Inhalt der gefärbten Fläche.</strong> Die
+Fläche liegt zwischen den Graphen von \( K \) und
+\( E \). Vorgehen:</p>
+<ol type="1">
+<li><strong>Schnittstellen bestimmen</strong> (Grenzen):
+\( K(x)=E(x) \). Mit \( u=x-2 \) wird das einfach:
+\( (x-2)^3+10 = 5x \Rightarrow u^3+10 = 5(u+2) = 5u+10 \Rightarrow u^3 = 5u \Rightarrow u(u^2-5)=0 \). Also \( u=0 \) oder
+\( u=\pm\sqrt5 \), d. h. \( x=2 \), \( x=2+\sqrt5\approx 4{,}24 \)
+(und \( x=2-\sqrt5 \lt 0 \), außerhalb).</li>
+<li><strong>Pro Abschnitt feststellen, wer oben liegt:</strong> auf
+\( [0;2] \) liegt \( K \) über
+\( E \), auf \( [2;\,2+\sqrt5] \) liegt
+\( E \) über \( K \).</li>
+<li><strong>Differenz (oben \( - \) unten) integrieren und
+die Beträge addieren.</strong></li>
+</ol>
+<p>\[ A = \underbrace{\int_0^{2}\big(K(x)-E(x)\big)\,dx}_{K \text{ oben}}
+     + \underbrace{\int_{2}^{2+\sqrt5}\big(E(x)-K(x)\big)\,dx}_{E \text{ oben}}. \]</p>
+<p>Mit \( K(x)-E(x) = u^3-5u \) (wieder \( u=x-2 \)) und der
+Stammfunktion \( \tfrac{u^4}{4}-\tfrac{5u^2}{2} \) ergibt sich der erste Teil zu
+\( 6 \) und der zweite zu \( \tfrac{25}{4}=6{,}25 \),
+zusammen</p>
+<p>\[ A = 6 + \tfrac{25}{4} = \tfrac{49}{4} = 12{,}25. \]</p>
+<p>(Der Aspekt verlangt nur das <strong>Erläutern des
+Rechenwegs</strong>; die Schnittstellen plus der Integralausdruck sind
+die volle Antwort. Die ausgerechneten Werte sind zur Kontrolle ergänzt.
+Liest man die Färbung nur als die vollständig von beiden Graphen
+eingeschlossene „Linse" zwischen \( x=2 \) und
+\( x=2+\sqrt5 \), ist der Inhalt \( \tfrac{25}{4}=6{,}25 \); der Teil von
+\( x=0 \) bis \( x=2 \) wird links von der
+\( y \)-Achse begrenzt und steuert \( 6 \)
+bei.)</p>
+<p><strong>Verlauf von \( K \) und \( E \) im
+Sachzusammenhang.</strong> Für kleine Mengen liegen die <strong>Kosten
+über den Einnahmen</strong> (\( K \gt E \)) → Verlust. Bei
+\( x=2\,\text{g} \) schneiden sich beide bei \( 10\,(=10\,000\,€) \) →
+<strong>Gewinnschwelle</strong> (Kosten = Einnahmen). Zwischen
+\( x=2 \) und \( x=2+\sqrt5\approx 4{,}24 \) liegen die
+<strong>Einnahmen über den Kosten</strong> (\( E \gt K \)) →
+Gewinn. Ab \( x\approx 4{,}24\,\text{g} \) überholen die kubisch wachsenden Kosten
+die Einnahmen wieder → erneut Verlust.</p>
+<p><strong>Bedeutung von \( K(0) \) und
+\( E(0) \).</strong> \( K(0)=2 \): Schon
+<strong>ohne</strong> Produktion (\( 0 \) Gramm) entstehen
+<strong>Fixkosten</strong> von \( 2\,(=2\,000\,€) \).
+\( E(0)=0 \): Ohne verkauften Impfstoff gibt es <strong>keine
+Einnahmen</strong>.</p>
+<p><strong>Grafisch die Gewinnzone.</strong> Gewinn entsteht, wo die
+<strong>Gerade \( E \) über der Kurve
+\( K \)</strong> liegt — im Schaubild der Bereich, in dem
+orange über blau verläuft: für \( 2  \lt  x  \lt  2+\sqrt5 \), also rund
+<strong>zwischen \( 2 \) und \( 4{,}24 \)
+Gramm</strong>.</p>
+<p><strong>Gleichung der Gewinnfunktion.</strong> Gewinn
+\( = \) Einnahmen \( - \) Kosten:</p>
+<p>\[ G(x) = E(x) - K(x) = 5x - \big((x-2)^3 + 10\big) = -(x-2)^3 + 5x - 10. \]</p>
+<p>Ausmultipliziert: \( G(x) = -x^3 + 6x^2 - 7x - 2 \). (Probe: \( G(2) = -8+24-14-2 = 0 \)
+— an der Gewinnschwelle ist der Gewinn null. ✓)</p>
+<figure>
+<div class="jxgbox" id="jxg-k11-gewinn" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Gewinnfunktion \( G(x)=5x-(x-2)^3-10 \). Nullstellen (Gewinnschwellen) bei \( x=2 \) und \( x\approx 4{,}24 \); dazwischen ist \( G \gt 0 \) (Gewinn). Größter Gewinn am orangen Hochpunkt bei \( x\approx 3{,}29 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k11-gewinn',{boundingbox:[-0.7,6,5.3,-13],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 5*x-Math.pow(x-2,3)-10;},-0.4,5],{strokeColor:'#3a8a5a',strokeWidth:2.5});b.create('point',[2,0],{name:'',size:2,fixed:true,fillColor:'#26324a',strokeColor:'#26324a'});var r=2+Math.sqrt(5);b.create('point',[r,0],{name:'',size:2,fixed:true,fillColor:'#26324a',strokeColor:'#26324a'});var xv=2+Math.sqrt(5/3);b.create('point',[xv,5*xv-Math.pow(xv-2,3)-10],{name:'',size:3,fixed:true,fillColor:'#d98324',strokeColor:'#d98324'});})();});</script>
+
+<details><summary>Haltung dahinter: Tangente, Fläche zwischen zwei Graphen, Gewinnfunktion</summary>
+
+<p><strong>Tangente und „parallel".</strong> Eine
+<strong>Tangente</strong> ist die Gerade, die sich an einer Stelle
+perfekt an die Kurve <strong>anschmiegt</strong> — sie hat dort genau
+die <strong>Steigung der Kurve</strong>. Die Steigung einer Kurve an
+einer Stelle liefert die <strong>Ableitung</strong>
+\( K'(x) \). Zwei Geraden sind <strong>parallel</strong>, wenn
+sie dieselbe Steigung haben. „Tangente an \( K \) parallel
+zu \( E \)" heißt deshalb: Finde die Stelle(n), an denen
+\( K \) <strong>dieselbe Steigung wie
+\( E \)</strong> hat — also \( K'(x) = 5 \). Das ist
+genau die Gleichung oben.</p>
+<p><strong>Warum führt das zum größten Gewinn?</strong> Der senkrechte
+Abstand zwischen Gerade und Kurve ist die Differenz \( E(x)-K(x) = G(x) \)
+— der Gewinn. Dieser Abstand ist dort am größten, wo die Kurve
+<strong>genauso steil verläuft wie die Gerade</strong> (dort hört der
+Abstand auf zu wachsen und beginnt zu schrumpfen). Mathematisch
+dasselbe: \( G'(x)=E'(x)-K'(x)=5-K'(x)=0 \Leftrightarrow K'(x)=5 \). Tangente parallel zu
+\( E \) und Maximum von \( G \) sind also
+<strong>dieselbe Bedingung</strong>.</p>
+<p><strong>Fläche zwischen zwei Graphen.</strong> Eine Fläche zwischen
+zwei Kurven berechnet man als Integral der <strong>Differenz</strong>
+„obere Funktion minus untere Funktion". Ein Integral misst Fläche
+<strong>mit Vorzeichen</strong>; damit jeder Teil
+<strong>positiv</strong> zählt, trennt man an jeder
+<strong>Schnittstelle</strong> (dort tauschen oben und unten die Rollen)
+und nimmt pro Stück die richtige Reihenfolge (oben \( - \)
+unten), sodass nichts negativ wird. Bild vom <strong>Bankkonto</strong>:
+Fläche über der jeweils anderen Kurve sind Einzahlungen, würde man stur
+durchintegrieren, fräßen sich die Stücke gegenseitig auf — deshalb
+abschnittsweise mit Beträgen.</p>
+<p><strong>Gewinnfunktion.</strong> Die <strong>Gewinnfunktion</strong>
+\( G \) ist schlicht „Einnahmen minus Kosten",
+\( G(x)=E(x)-K(x) \). Wo \( G \gt 0 \), übersteigen die Einnahmen
+die Kosten (Gewinn); wo \( G=0 \), ist die Gewinnschwelle; wo
+\( G \lt 0 \), Verlust. Deshalb sind die <strong>Nullstellen von
+\( G \)</strong> genau die <strong>Schnittpunkte von
+\( K \) und \( E \)</strong>.</p>
+<details><summary>… ganz langsam (mit Zahlen): \( G \) ausmultiplizieren und \( K=E \) lösen</summary>
+
+<p>\( (x-2)^3 \) ausmultipliziert: \( (x-2)^3 = x^3 - 3\cdot x^2\cdot 2 + 3\cdot x\cdot 4 - 8
+= x^3 - 6x^2 + 12x - 8 \).
+Damit</p>
+<p>\[ G(x) = 5x - (x^3-6x^2+12x-8) - 10 = 5x - x^3 + 6x^2 - 12x + 8 - 10 = -x^3 + 6x^2 - 7x - 2. \]</p>
+<p>Die Schnittstellen werden mit dem Trick \( u=x-2 \) bequem:
+\( K=E \) wird zu \( u^3 = 5u \), also
+\( u^3 - 5u = 0 \), ausklammern \( u(u^2-5)=0 \). Ein Produkt ist
+null, wenn ein Faktor null ist: \( u=0 \) (→
+\( x=2 \)) oder \( u^2=5 \), d. h.
+\( u=\pm\sqrt5 \) (→ \( x=2+\sqrt5\approx 4{,}24 \) und \( x=2-\sqrt5\approx -0{,}24 \),
+Letzteres ohne Sachbezug, da negative Menge).</p>
+</details>
+
+<details><summary>Typische Falle: bei der Fläche nicht an den Schnittstellen trennen</summary>
+
+<p>Wer \( \int_0^{2+\sqrt5}(K-E)\,dx \) in <strong>einem</strong> Stück bildet,
+bekommt nur den „Kontostand": Der Teil, in dem \( E \) oben
+liegt, zieht den anderen ab. Das ist <strong>nicht</strong> der
+Flächeninhalt. Man muss an der Schnittstelle \( x=2 \)
+trennen und mit der jeweils richtigen Differenz (Beträge) rechnen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="ab-iii--größter-gewinn-monotonie-aussagen-beurteilen"
+class="level3">
+<h3>AB III — Größter Gewinn, Monotonie, Aussagen beurteilen</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p><strong>Grafisch die Produktionsmenge mit dem größten
+Gewinn.</strong> Der Gewinn \( G(x)=E(x)-K(x) \) ist der
+<strong>senkrechte Abstand</strong> zwischen Gerade und Kurve. Er ist
+dort am größten, wo \( K \) <strong>dieselbe Steigung wie
+\( E \)</strong> hat (Tangente an \( K \)
+parallel zu \( E \)). Rechnerisch \( G'(x)=0 \):</p>
+<p>\[ G'(x) = 5 - 3(x-2)^2 = 0 \;\Longrightarrow\; (x-2)^2 = \tfrac{5}{3}
+   \;\Longrightarrow\; x = 2 + \sqrt{\tfrac{5}{3}} = 2 + \tfrac{\sqrt{15}}{3} \approx 3{,}29. \]</p>
+<p>(Die Lösung \( x=2-\sqrt{5/3}\approx 0{,}71 \) liegt im Verlustbereich und scheidet
+aus; \( G''(x)=-6(x-2) \lt 0 \) für \( x \gt 2 \) bestätigt das
+Maximum.) Der größte Gewinn beträgt \( G(3{,}29) = \tfrac{10\sqrt{15}}{9} \approx 4{,}30 \), also rund
+<strong>\( 4\,300\,€ \) bei etwa \( 3{,}29 \)
+Gramm</strong> Produktion. Grafisch: dort, wo der Abstand zwischen
+orange und blau am größten ist.</p>
+<p><strong>\( K \) auf Monotonie untersuchen.</strong> Die
+Ableitung \( K'(x) = 3(x-2)^2 \) ist ein Quadrat mal eine positive Zahl,
+also \( K'(x) \ge 0 \) für <strong>alle</strong>
+\( x \), mit \( K'(x)=0 \) nur an der einzelnen
+Stelle \( x=2 \). Damit ist \( K \) <strong>auf
+ganz \( \mathbb{R} \) monoton steigend</strong> (streng wachsend,
+mit einer waagerechten Tangente bei \( x=2 \), einem
+<strong>Sattelpunkt</strong>). Bedeutung: Die Kosten <strong>steigen
+immer</strong>, wenn man mehr produziert — sie fallen nie. Bei
+\( x=2 \) wachsen sie nur <strong>am langsamsten</strong>
+(die Steigung ist dort momentan null), danach wieder schneller.</p>
+<p><strong>Zwei Aussagen beurteilen.</strong> Beide Aussagen drehen sich
+um die <strong>Kostenzunahme</strong>, also um die Steigung
+\( K'(x) = 3(x-2)^2 \) — die Kosten je zusätzlich produziertem Gramm.</p>
+<ul>
+<li><em>„Je größer die Produktionsmenge ist, desto höher sind die
+Kosten, die die Produktion eines zusätzlichen Gramms verursacht."</em> —
+<strong>Diese Aussage ist falsch.</strong> Sie behauptet, die
+Kostenzunahme \( K'(x) \) wachse mit \( x \) immer
+an. Tatsächlich hat \( K'(x)=3(x-2)^2 \) bei \( x=2 \) ein
+<strong>Minimum</strong>: Für \( x \lt 2 \)
+<strong>sinkt</strong> die Kostenzunahme (bis \( x=2 \)),
+erst für \( x \gt 2 \) steigt sie. Für kleine Mengen wird also
+jedes zusätzliche Gramm <strong>billiger</strong>, nicht teurer.</li>
+<li><em>„Die Zunahme der Kosten wird bis zu einer bestimmten
+Impfstoffmenge ständig kleiner, ab dieser nimmt sie wieder immer mehr
+zu."</em> — <strong>Diese Aussage ist richtig.</strong> Die
+Kostenzunahme \( K'(x) \) fällt bis \( x=2 \) (wird
+ständig kleiner), erreicht dort ihr Minimum und wächst danach wieder.
+Die „bestimmte Menge" ist genau die <strong>Wendepunktstelle
+\( x=2 \)</strong> von \( K \).</li>
+</ul>
+<details><summary>Haltung dahinter: Monotonie, Steigung der Steigung, und die zwei Aussagen</summary>
+
+<p><strong>Monotonie</strong> beschreibt, ob ein Graph durchgehend
+<strong>steigt</strong> oder <strong>fällt</strong>. Geprüft wird über
+das <strong>Vorzeichen der Ableitung</strong> \( K'(x) \): Ist
+\( K'(x) \gt 0 \), steigt die Funktion; ist \( K'(x) \lt 0 \),
+fällt sie. Hier ist \( K'(x)=3(x-2)^2 \) das <strong>Dreifache eines
+Quadrats</strong> — ein Quadrat ist nie negativ. Also
+\( K'(x)\ge 0 \) überall: \( K \) steigt immer. Nur bei
+\( x=2 \) ist \( K'=0 \), die Kurve legt dort eine
+waagerechte „Verschnaufpause" ein (Sattelpunkt), steigt aber gleich
+weiter — kein Hoch- oder Tiefpunkt.</p>
+<p><strong>„Kostenzunahme" = Ableitung.</strong> „Wie viel kostet das
+<strong>nächste</strong> Gramm?" ist die <strong>Änderungsrate</strong>
+der Kosten, also \( K'(x) \). Wie sich diese Zunahme selbst
+verändert (wird sie größer oder kleiner?), verrät die
+<strong>zweite</strong> Ableitung \( K''(x)=6(x-2) \): Für
+\( x \lt 2 \) ist \( K'' \lt 0 \) → die Zunahme
+<strong>schrumpft</strong>; für \( x \gt 2 \) ist
+\( K'' \gt 0 \) → die Zunahme <strong>wächst</strong>. Der
+Umschaltpunkt ist genau der <strong>Wendepunkt</strong>
+\( x=2 \). Das ist der Kern beider Aussagen.</p>
+<ul>
+<li>Aussage 1 vergisst den fallenden Ast vor \( x=2 \) und
+behauptet pauschal „immer teurer" — das gilt erst ab
+\( x=2 \), also <strong>nicht allgemein</strong> →
+falsch.</li>
+<li>Aussage 2 beschreibt genau dieses Verhalten „erst kleiner werdend,
+dann wieder größer werdend" mit dem Wendepunkt als Wendemarke →
+richtig.</li>
+</ul>
+<p>So hängen Wendepunkt (AB I), Tangente parallel zu
+\( E \) (AB II) und diese Beurteilung (AB III) am selben
+Punkt \( x=2 \) bzw. an derselben Bedingung über
+\( K' \) zusammen.</p>
+<details><summary>… ganz langsam (mit Zahlen): warum jedes Gramm vor \( x=2 \) billiger wird</summary>
+
+<p>Vergleiche die Kostenzunahme an drei Stellen über
+\( K'(x)=3(x-2)^2 \):</p>
+<ul>
+<li>bei \( x=0 \): \( K'(0) = 3\cdot(-2)^2 = 3\cdot 4 = 12 \),</li>
+<li>bei \( x=1 \): \( K'(1) = 3\cdot(-1)^2 = 3\cdot 1 = 3 \),</li>
+<li>bei \( x=2 \): \( K'(2) = 3\cdot 0^2 = 0 \),</li>
+<li>bei \( x=3 \): \( K'(3) = 3\cdot 1^2 = 3 \),</li>
+<li>bei \( x=4 \): \( K'(4) = 3\cdot 2^2 = 12 \).</li>
+</ul>
+<p>Von \( 12 \) über \( 3 \) auf
+\( 0 \) <strong>fällt</strong> die Kostenzunahme bis
+\( x=2 \) — das nächste Gramm wird immer billiger. Danach von
+\( 0 \) über \( 3 \) auf \( 12 \)
+<strong>steigt</strong> sie wieder. Genau das sagt Aussage 2 (richtig)
+und widerlegt Aussage 1 (die „immer teurer" behauptet).</p>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 2 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li><strong>Zuordnung/E:</strong> \( K \) = geschwungene
+Kurve (\( K(0)=2 \)), \( E \) = Ursprungsgerade
+\( E(x)=5x \) (durch \( (2\mid 10) \)).</li>
+<li><strong>\( f(x)=x^3 \):</strong> Ursprung, punktsymmetrisch,
+Sattelpunkt bei \( 0 \).</li>
+<li><strong>Wendepunkt \( K \):</strong>
+\( K''=6(x-2)=0 \Rightarrow W(2\mid 10) \).</li>
+<li><strong>\( 15\,000\,€ \):</strong> \( K(x)=15 \Rightarrow x=2+\sqrt[3]{5}\approx 3{,}71 \)
+Gramm.</li>
+<li><strong>Zusammenhang:</strong> \( K(x)=f(x-2)+10 \) (2 rechts, 10
+hoch).</li>
+<li><strong>Tangente \( \parallel E \):</strong> \( K'(x)=5 \Rightarrow x=2\pm\tfrac{\sqrt{15}}{3} \)
+(\( \approx 0{,}71;\ 3{,}29 \)).</li>
+<li><strong>Fläche:</strong> Schnittstellen \( x=2,\ 2+\sqrt5 \);
+\( A=\int_0^2(K-E)+\int_2^{2+\sqrt5}(E-K)=6+\tfrac{25}{4}=\tfrac{49}{4} \) (Linse allein \( \tfrac{25}{4} \)).</li>
+<li><strong>Verlauf:</strong> \( K \gt E \) klein → Verlust;
+Schnitt \( x=2 \) = Gewinnschwelle; \( E \gt K \) bis
+\( \approx 4{,}24 \) = Gewinn; danach Verlust.</li>
+<li><strong>\( K(0)=2 \):</strong> Fixkosten
+\( 2\,000\,€ \); <strong>\( E(0)=0 \):</strong> keine
+Einnahmen.</li>
+<li><strong>Gewinnzone:</strong> \( 2 \lt x \lt 2+\sqrt5 \) (orange über
+blau).</li>
+<li><strong>Gewinnfunktion:</strong> \( G(x)=5x-(x-2)^3-10=-x^3+6x^2-7x-2 \).</li>
+<li><strong>Größter Gewinn:</strong> \( x=2+\tfrac{\sqrt{15}}{3}\approx 3{,}29 \),
+\( G_{\max}=\tfrac{10\sqrt{15}}{9}\approx 4{,}30 \) (\( \approx 4\,300\,€ \)).</li>
+<li><strong>Monotonie:</strong> \( K'(x)=3(x-2)^2\ge 0 \) → überall steigend
+(Sattelpunkt bei \( x=2 \)).</li>
+<li><strong>Aussagen:</strong> 1 falsch (Zunahme fällt erst bis
+\( x=2 \)), 2 richtig (Wendemarke \( x=2 \)).</li>
+</ul>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Stochastik) aufklappen</summary>
+
+<ul>
+<li><strong>a) Normalverteilung.</strong> Gut ist jede Antwort, die
+nennt: <strong>stetig</strong> (alle Werte in einem Intervall),
+Wahrscheinlichkeit = <strong>Fläche unter der Glockenkurve</strong>,
+<strong>Hochpunkt/Symmetrie bei \( \mu \)</strong>
+(Erwartungswert = Mittelwert), <strong>Wendepunkte bei
+\( \mu\pm\sigma \)</strong> (Standardabweichung = Streuung), größeres
+\( \sigma \) → flacher/breiter. <em>Rückfrage:</em> „Was
+bedeutet \( \mu \), was \( \sigma \) anschaulich?"
+<em>Rote Flagge:</em> Verwechslung mit einem Würfel/abzählbaren Werten
+(das wäre diskret).</li>
+<li><strong>b) Ablesen + Wahrscheinlichkeiten.</strong> Erwartet:
+\( P(A)=22\,\%+19\,\%=41\,\% \) (Zeile addieren) und \( P_B(\overline A)=\tfrac{15}{37}\approx 40{,}5\,\% \) —
+Betonung: <strong>durch \( 37\,\% \) teilen</strong>, weil „aus
+den Idealgroßen" gezogen wird. <em>Rückfrage:</em> „Warum teilst du
+durch \( 37\,\% \) und nicht durch \( 100\,\% \)?"
+<em>Rote Flagge:</em> Antwort \( 15\,\% \) (Schnitt statt
+bedingter Wahrscheinlichkeit).</li>
+<li><strong>c) Unabhängigkeit.</strong> Erwartet: Test
+\( P(A)\cdot P(B)=41\,\%\cdot 37\,\%=15{,}17\,\% \) mit \( P(A\cap B)=22\,\% \) vergleichen → ungleich →
+<strong>nicht unabhängig</strong>. <em>Rückfrage:</em> „Was würde
+\( 15{,}17\,\% \) bedeuten, wenn die Merkmale nichts miteinander zu
+tun hätten?" <em>Rote Flagge:</em> „unabhängig, weil
+\( P(A\cap B)\neq 0 \)" (verwechselt mit unvereinbar).</li>
+<li><strong>d) Keine Binomialverteilung + \( 30\,\% \).</strong>
+Erwartet: Begründung <strong>Ziehen ohne Zurücklegen / kleine Menge →
+\( p \) nicht konstant</strong>; Rechnung über den Baum
+\( 3\cdot\tfrac{6}{10}\cdot\tfrac{4}{9}\cdot\tfrac{3}{8}=30\,\% \). <em>Rückfrage:</em> „Wie ändert sich die
+Wahrscheinlichkeit für ‚ideal' vom ersten zum zweiten Zug?" <em>Rote
+Flagge:</em> Rechnen mit \( B(3;0{,}4) \) (ergäbe falsche
+\( 28{,}8\,\% \)).</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>AB I.</strong> Erwartet: \( K \) = geschwungene
+Kurve (Begründung \( K(0)=2 \)), \( E(x)=5x \) (Ursprung
++ Punkt \( (2\mid 10) \)); \( f(x)=x^3 \) punktsymmetrisch mit
+Sattelpunkt; Wendepunkt <strong>\( W(2\mid 10) \)</strong> über
+\( K''=0 \); bei \( 15\,000\,€ \): \( x=2+\sqrt[3]{5}\approx 3{,}71\,\text{g} \).
+<em>Rückfrage:</em> „Woran erkennst du, dass die Gerade nicht
+\( K \) sein kann?" (Antwort: \( K(0)=2\neq 0 \).)</li>
+<li><strong>AB II.</strong> Erwartet: \( K \) =
+\( x^3 \) <strong>um 2 rechts, 10 hoch verschoben</strong>;
+Tangente \( \parallel E \) über \( K'(x)=5 \); Fläche über
+<strong>Schnittstellen + Differenzintegral</strong> (an
+\( x=2 \) trennen); Verlauf =
+<strong>Verlust/Gewinnschwelle/Gewinn/Verlust</strong>;
+\( K(0)=2 \) Fixkosten, \( E(0)=0 \) keine Einnahmen;
+Gewinnzone = wo \( E \) über \( K \);
+\( G(x)=5x-(x-2)^3-10 \). <em>Rückfrage:</em> „Warum trennst du die Fläche
+an der Schnittstelle?" <em>Rote Flagge:</em> ein einziges Integral ohne
+Trennen.</li>
+<li><strong>AB III.</strong> Erwartet: größter Gewinn = <strong>Tangente
+\( \parallel E \) / \( G'=0 \)</strong> bei
+\( x\approx 3{,}29 \); \( K \) <strong>überall
+steigend</strong> (\( K'=3(x-2)^2\ge 0 \), Sattelpunkt bei
+\( 2 \)); <strong>Aussage 1 falsch, Aussage 2
+richtig</strong>, beide am Wendepunkt \( x=2 \) erklärt.
+<em>Rückfrage:</em> „Wo wächst die Kostenzunahme am langsamsten — und
+was hat das mit dem Wendepunkt zu tun?" <em>Hinweis für dich:</em> Hier
+zählt <strong>sauberes Erklären</strong> mehr als der exakte
+Zahlenwert.</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Was unterscheidet eine stetige (normalverteilte) Größe von einem
+Würfelwurf, und wo stecken \( \mu \) und \( \sigma \)
+in der Glockenkurve?</li>
+<li>Warum teilst du bei „aus den Idealgroßen wird einer gezogen" durch
+\( 37\,\% \) und nicht durch \( 100\,\% \)?</li>
+<li>Mit welcher Gleichung prüfst du Unabhängigkeit, und was sagt dir das
+Ergebnis hier?</li>
+<li>Warum ist beim Ziehen ohne Zurücklegen die Binomialverteilung
+ungeeignet, und wie kommst du auf die \( 30\,\% \)?</li>
+<li>Wie findest du die Stelle des größten Gewinns — und warum ist das
+dieselbe wie „Tangente an \( K \) parallel zu
+\( E \)"?</li>
+<li>Warum ist \( K \) überall steigend, und an welcher
+Stelle wachsen die Kosten am langsamsten?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

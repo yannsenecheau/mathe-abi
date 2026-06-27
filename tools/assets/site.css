@@ -150,6 +150,17 @@ footer.site { font-family: var(--sans); font-size: .82rem; color: var(--ink-soft
 .jxgbox { margin: 1.4rem 0; border: 1px solid var(--line); border-radius: var(--radius);
   background: #fff; box-shadow: var(--shadow); touch-action: pan-y; }
 
+/* ---------- Konvolut: Aufgabenkasten, Graph-Reihe, Figuren ---------- */
+.aufgabenkasten { background: var(--paper-2); border: 1px solid var(--line); border-left: 4px solid var(--indigo-2);
+  border-radius: var(--radius); padding: 1rem 1.2rem; margin: 1.4rem 0; }
+.aufgabenkasten > :first-child { margin-top: 0; }
+.aufgabenkasten > :last-child { margin-bottom: 0; }
+.graph-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; margin: 1.4rem 0; }
+.graph-row figure { flex: 1 1 240px; margin: 0; }
+.graph-row .jxgbox { margin: 0; }
+figure { margin: 1.4rem 0; }
+figure figcaption { font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); margin-top: .4rem; text-align: center; }
+
 /* ---------- Topbar: Vorlesen-Stub ---------- */
 .topbar .readaloud { color: var(--accent); border-color: var(--accent); }
 .topbar .readaloud:hover { background: var(--accent); color: #fff; }

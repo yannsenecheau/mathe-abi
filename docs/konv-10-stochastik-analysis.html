@@ -1,0 +1,1172 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 10 — Stochastik &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link active" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Stochastik</strong>, <strong>Teil 2 (Gespräch) aus der
+Analysis</strong>. Die rechnerischen und begrifflichen Schritte werden
+<strong>rechnerfrei</strong> entwickelt; nur die reinen
+Wahrscheinlichkeitswerte der Normalverteilung liefert der GTR bzw. eine
+Tabelle (das lässt sich nicht von Hand ausrechnen, und es wird an der
+jeweiligen Stelle transparent gesagt). Arbeitet die Aufgabe wie eine
+echte Simulation durch — eine Person trägt vor, die andere prüft mit dem
+Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Stochastik-Werkzeuge (Normalverteilung, Erwartungswert,
+Standardabweichung, Binomialverteilung, Bernoulli-Kette) stehen kompakt
+im <a href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a> (Anker u. a. <a
+href="konv-91-werkzeugkasten-stochastik.html#normalverteilung">#normalverteilung</a>,
+<a
+href="konv-91-werkzeugkasten-stochastik.html#erwartungswert">#erwartungswert</a>,
+<a
+href="konv-91-werkzeugkasten-stochastik.html#binomialverteilung">#binomialverteilung</a>,
+<a
+href="konv-91-werkzeugkasten-stochastik.html#bernoulli-kette">#bernoulli-kette</a>).
+Die Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>, <a href="kap-grundfunktionen.html">Grundfunktionen</a>
+und <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>.</p>
+</blockquote>
+<hr />
+<section id="teil-1--vortrag-stochastik-normalverteilte-gussteile"
+class="level2">
+<h2>Teil 1 — Vortrag (Stochastik): Normalverteilte Gussteile</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Eine Firma stellt Plastikgussteile her, deren Längen um den
+Normwert \( 100 \) mm schwanken. Messungen zeigen, dass die
+Länge \( L \) der Gussteile normalverteilt ist mit dem
+Erwartungswert \( \mu = 100 \) und der Standardabweichung
+\( \sigma = 3{,}4 \) (alle Angaben in mm).</strong></p>
+<p><strong>a)</strong> Bestimme die Wahrscheinlichkeit, dass die Länge
+eines Gussteils weniger als \( 95 \) mm beträgt. Gib ein
+anderes Ereignis an, welches dieselbe Wahrscheinlichkeit besitzt.</p>
+<p>In der Abbildung ist der Graph der zu dieser Situation gehörenden
+<strong>Glockenkurve</strong> dargestellt.</p>
+<p><strong>b)</strong> Erläutere, wie man mit Hilfe des Graphen den
+Erwartungswert und die Standardabweichung von \( L \)
+bestimmen könnte.</p>
+<p><strong>c)</strong> In der Abbildung ist eine Fläche grau markiert
+(zwischen \( 96 \) und \( 100 \)). Interpretiere
+diese im Sachzusammenhang.</p>
+<p>Die Gussteile werden als <strong>mangelhaft</strong> eingestuft, wenn
+ihre Länge um mehr als \( 5 \) mm vom Normwert abweicht.</p>
+<p><strong>d)</strong> Begründe, dass die Wahrscheinlichkeit für eine
+solche Abweichung \( 14\,\% \) beträgt.</p>
+<p><strong>e)</strong> Beschreibe ein Zufallsexperiment im
+Sachzusammenhang und gib dazu ein Ereignis an, dessen Wahrscheinlichkeit
+sich mit dem folgenden Term berechnen lässt: \[ 0{,}14^{200} + 200\cdot 0{,}14^{199}\cdot 0{,}86 + \binom{200}{2}\cdot 0{,}14^{198}\cdot 0{,}86^{2}. \]</p>
+</div>
+
+<p>Hier ist die Glockenkurve mit der grau markierten Fläche aus der
+Aufgabe. Sie gehört zu <strong>b)</strong> und <strong>c)</strong>.</p>
+<figure>
+<div class="jxgbox" id="jxg-k10-glocke-flaeche" style="width:100%;max-width:520px;aspect-ratio:3/2"></div>
+<figcaption>Glockenkurve von \( L \sim N(100;\,3{,}4) \). Der Hochpunkt liegt bei \( x=\mu=100 \), die
+beiden grünen Punkte sind die <b>Wendestellen</b> bei \( x=\mu\pm\sigma = 96{,}6 \) und \( 103{,}4 \).
+Grau: die Fläche zwischen \( 96 \) und \( 100 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){
+(function(){
+var mu=100, s=3.4;
+function phi(x){return Math.exp(-((x-mu)*(x-mu))/(2*s*s))/(s*Math.sqrt(2*Math.PI));}
+var b=JXG.JSXGraph.initBoard('jxg-k10-glocke-flaeche',{boundingbox:[83,0.142,117,-0.022],axis:true,showCopyright:false,showNavigation:false});
+var area=b.create('curve',[[],[]],{strokeWidth:0,fillColor:'#9aa7bd',fillOpacity:0.55});
+area.updateDataArray=function(){var dx=[],dy=[],n=80,a=96,c=100;dx.push(a);dy.push(0);for(var i=0;i<=n;i++){var x=a+(c-a)*i/n;dx.push(x);dy.push(phi(x));}dx.push(c);dy.push(0);this.dataX=dx;this.dataY=dy;};
+b.create('functiongraph',[phi,84,116],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('line',[[100,0],[100,phi(100)]],{straightFirst:false,straightLast:false,strokeColor:'#d98324',dash:2,strokeWidth:1.5});
+b.create('text',[100.6,0.128,'x = &mu; = 100'],{fontSize:11,color:'#d98324'});
+b.create('point',[96.6,phi(96.6)],{name:'',size:2,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',fixed:true});
+b.create('point',[103.4,phi(103.4)],{name:'',size:2,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',fixed:true});
+b.create('text',[83.6,0.092,'Wendestellen x = &mu; &plusmn; &sigma;'],{fontSize:11,color:'#3a8a5a'});
+b.create('text',[95.0,-0.018,'96'],{fontSize:11,color:'#444'});
+b.create('text',[99.3,-0.018,'100'],{fontSize:11,color:'#444'});
+b.update();
+})();
+});</script>
+
+<p>Und hier dieselbe Kurve mit den <strong>beiden Randflächen</strong>
+(Schwänzen) für \( L \lt 95 \) und \( L \gt 105 \). Sie gehört
+zu <strong>a)</strong> und <strong>d)</strong>.</p>
+<figure>
+<div class="jxgbox" id="jxg-k10-glocke-tails" style="width:100%;max-width:520px;aspect-ratio:3/2"></div>
+<figcaption>Die beiden Randflächen liegen <b>spiegelbildlich</b> zum Mittelwert \( 100 \): die linke bei
+\( L \lt 95 \), die rechte bei \( L \gt 105 \). Beide haben denselben Inhalt \( \approx 0{,}071 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){
+(function(){
+var mu=100, s=3.4;
+function phi(x){return Math.exp(-((x-mu)*(x-mu))/(2*s*s))/(s*Math.sqrt(2*Math.PI));}
+var b=JXG.JSXGraph.initBoard('jxg-k10-glocke-tails',{boundingbox:[83,0.142,117,-0.022],axis:true,showCopyright:false,showNavigation:false});
+function mkArea(a,c){var ar=b.create('curve',[[],[]],{strokeWidth:0,fillColor:'#c98a4a',fillOpacity:0.55});ar.updateDataArray=function(){var dx=[],dy=[],n=70;dx.push(a);dy.push(0);for(var i=0;i<=n;i++){var x=a+(c-a)*i/n;dx.push(x);dy.push(phi(x));}dx.push(c);dy.push(0);this.dataX=dx;this.dataY=dy;};return ar;}
+mkArea(84,95); mkArea(105,116);
+b.create('functiongraph',[phi,84,116],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('line',[[100,0],[100,phi(100)]],{straightFirst:false,straightLast:false,strokeColor:'#7a7163',dash:2,strokeWidth:1.2});
+b.create('text',[85.0,0.052,'P(L < 95)'],{fontSize:11,color:'#a85a1a'});
+b.create('text',[106.0,0.052,'P(L > 105)'],{fontSize:11,color:'#a85a1a'});
+b.create('text',[93.7,-0.018,'95'],{fontSize:11,color:'#444'});
+b.create('text',[104.0,-0.018,'105'],{fontSize:11,color:'#444'});
+b.update();
+})();
+});</script>
+
+<section
+id="teilaufgabe-a--wahrscheinlichkeit-und-ein-gleich-wahrscheinliches-ereignis"
+class="level3">
+<h3>Teilaufgabe a) — Wahrscheinlichkeit und ein gleich wahrscheinliches
+Ereignis</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span>
+<span class="tag tag-warn">AB II (zweiter Teil)</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Wahrscheinlichkeit \( P(L \lt 95) \).</strong> Der Wert
+\( 95 \) liegt \( 5 \) mm <strong>unter</strong>
+dem Mittelwert \( 100 \). In Standardabweichungen gemessen
+sind das \( \tfrac{95-100}{3{,}4} = \tfrac{-5}{3{,}4}
+\approx -1{,}47 \) Standardabweichungen. Den zugehörigen
+Flächeninhalt unter der Glockenkurve liefert der GTR (Befehl
+`normalcdf`) bzw. die Tabelle der Standardnormalverteilung:</p>
+<p>\[ P(L \lt 95) \approx 0{,}071. \]</p>
+<p><strong>Ein gleich wahrscheinliches Ereignis.</strong> Die
+Glockenkurve ist <strong>spiegelsymmetrisch</strong> zur senkrechten
+Linie durch den Mittelwert \( 100 \). Der Punkt, der zu
+\( 95 \) spiegelbildlich liegt, ist \( 105 \)
+(beide \( 5 \) mm vom Mittelwert entfernt). Die linke
+Randfläche \( L \lt 95 \) ist deshalb genauso groß wie die rechte
+Randfläche \( L \gt 105 \). Also:</p>
+<p>\[ \boxed{\,L \gt 105\,}\qquad\text{mit}\qquad P(L \gt 105) = P(L \lt 95) \approx 0{,}071. \]</p>
+<details><summary>Haltung dahinter: Was ist eine Normalverteilung, ein Erwartungswert, eine Standardabweichung? (ganz von vorn)</summary>
+
+<p>Zuerst die drei Grundbegriffe, ganz ohne Vorwissen.</p>
+<p><strong>Zufallsgröße.</strong> Man misst etwas, dessen Ergebnis vom
+Zufall abhängt — hier die <strong>Länge \( L \)</strong>
+eines zufällig herausgegriffenen Gussteils. Mal ist es etwas länger, mal
+etwas kürzer.</p>
+<p><strong>Normalverteilung / Glockenkurve.</strong> Wenn viele kleine,
+unabhängige Schwankungen zusammenkommen (kleine Ungenauigkeiten in der
+Maschine, im Material, in der Temperatur …), häufen sich die Messwerte
+in der Mitte und werden nach außen hin seltener. Trägt man auf, <em>wie
+häufig</em> welche Länge vorkommt, entsteht die berühmte
+<strong>Glockenkurve</strong>: in der Mitte hoch, nach beiden Seiten
+symmetrisch abfallend. „\( L \) ist normalverteilt" heißt
+genau: Die Häufigkeit der Längen folgt dieser Glockenform.</p>
+<p><strong>Erwartungswert \( \mu \) (sprich „mü").</strong>
+Das ist der <strong>Mittelwert</strong> — der Wert, um den alles
+schwankt, hier der Normwert \( 100 \) mm. Er sitzt genau unter
+dem <strong>höchsten Punkt</strong> der Glocke. Anschauung: Würde man
+die Glockenfläche aus Pappe ausschneiden, balancierte sie genau auf
+einer Spitze bei \( x=100 \).</p>
+<p><strong>Standardabweichung \( \sigma \) (sprich
+„sigma").</strong> Sie misst, <strong>wie breit</strong> die Glocke ist
+— also wie stark die Längen typischerweise vom Mittelwert abweichen.
+Klein = schmale, hohe Glocke (alle Teile fast gleich lang); groß =
+breite, flache Glocke (große Streuung). Hier \( \sigma = 3{,}4 \) mm.</p>
+<p><strong>Wahrscheinlichkeit = Fläche.</strong> Bei einer Glockenkurve
+ist die <strong>Wahrscheinlichkeit</strong> eines Längenbereichs gleich
+dem <strong>Flächeninhalt</strong> unter der Kurve über diesem Bereich.
+Die ganze Fläche unter der Glocke ist \( 1 \) (=
+\( 100\,\% \), irgendeine Länge kommt sicher heraus).
+\( P(L \lt 95) \) ist also die Fläche <strong>links von
+\( 95 \)</strong> — der linke Glockenschwanz im Bild
+oben.</p>
+<details><summary>Warum man den Zahlenwert nicht von Hand ausrechnen kann — und was man trotzdem von Hand macht</summary>
+
+<p>Die Glockenkurve hat eine Formel mit der e-Funktion, deren Fläche
+sich <strong>nicht</strong> mit einer einfachen Stammfunktion bestimmen
+lässt. Deshalb liefert den reinen Zahlenwert \( 0{,}071 \) der GTR
+oder eine Tabelle. <strong>Von Hand</strong> macht man zweierlei, und
+genau das zählt in der mündlichen Prüfung:</p>
+<ol type="1">
+<li><strong>Standardisieren</strong> — ausrechnen, <em>wie viele
+Standardabweichungen</em> der Wert \( 95 \) vom Mittelwert
+entfernt ist: \( \tfrac{95-100}{3{,}4}\approx -1{,}47 \). So wird jede Normalverteilung
+vergleichbar.</li>
+<li><strong>Symmetrie nutzen</strong> — für das gleich wahrscheinliche
+Ereignis braucht man <strong>gar keinen</strong> Rechner: der zu
+\( 95 \) spiegelbildliche Wert ist \( 105 \), also
+\( P(L \gt 105)=P(L \lt 95) \).</li>
+</ol>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Beim gesuchten gleich wahrscheinlichen Ereignis greifen viele zu
+\( L \lt 105 \) statt \( L \gt 105 \). \( L \lt 105 \) wäre
+fast die <strong>ganze</strong> linke Glockenhälfte plus Mitte — eine
+große Wahrscheinlichkeit, nicht \( 0{,}071 \). Entscheidend ist
+der <strong>gespiegelte Schwanz</strong>: gleich weit vom Mittelwert weg
+und auf der <strong>anderen</strong> Seite, also \( L \gt 105 \).
+Eselsbrücke: spiegeln heißt „gleicher Abstand, andere Richtung, gleiches
+Schwanzstück".</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--erwartungswert-und-standardabweichung-aus-dem-graphen-ablesen"
+class="level3">
+<h3>Teilaufgabe b) — Erwartungswert und Standardabweichung aus dem
+Graphen ablesen</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Erwartungswert \( \mu \).</strong> Er sitzt unter
+der <strong>Maximumstelle</strong> (dem höchsten Punkt) der
+Glockenkurve. Man liest also die \( x \)-Koordinate des
+Hochpunkts ab:</p>
+<p>\[ x_1 = \mu = 100. \]</p>
+<p><strong>Standardabweichung \( \sigma \).</strong> Die
+Glockenkurve hat zwei <strong>Wendestellen</strong> — Stellen, an denen
+die Kurve von einer Rechtskurve in eine Linkskurve übergeht. Sie liegen
+genau bei \( \mu-\sigma \) (links) und \( \mu+\sigma \) (rechts).
+Liest man die <strong>linke Wendestelle</strong> \( x_2 \) ab,
+folgt</p>
+<p>\[ x_2 = \mu-\sigma \;\;\Longrightarrow\;\; \sigma = \mu - x_2 = 100 - 96{,}6 = 3{,}4. \]</p>
+<details><summary>Haltung dahinter: Was ist eine „Wendestelle", und warum verrät sie \( \sigma \)?</summary>
+
+<p><strong>Maximumstelle.</strong> Der höchste Punkt der Glocke. Weil
+die Glocke symmetrisch um den Mittelwert gebaut ist, sitzt der höchste
+Punkt <strong>genau über dem Mittelwert</strong>. Deshalb:
+\( x \)-Wert des Gipfels ablesen \( = \mu \). Im
+Bild oben markiert die orange Linie diesen Gipfel bei
+\( 100 \).</p>
+<p><strong>Wendestelle — was ist das?</strong> Stell dir vor, du fährst
+mit dem Auto die Glockenkurve von links nach rechts ab. Anfangs (im
+linken Schwanz) machst du eine <strong>Linkskurve</strong> (die Kurve
+wird steiler, krümmt sich nach oben). Oben am Gipfel und kurz davor
+lenkst du <strong>rechts</strong> (die Kurve ist nach unten gewölbt).
+Die <strong>Wendestelle</strong> ist genau der Punkt, an dem du von
+Links- auf Rechtslenken umstellst — wo sich die Krümmung umdreht. Eine
+Glocke hat zwei solche Umschaltpunkte, je einer auf jeder Seite.</p>
+<p><strong>Warum bei \( \mu\pm\sigma \)?</strong> Das ist eine feste
+Eigenschaft <strong>jeder</strong> Normalverteilung: Die beiden
+Wendestellen liegen immer <strong>genau eine Standardabweichung</strong>
+vom Mittelwert entfernt. Das ist praktisch, weil man \( \sigma \)
+so direkt aus dem Bild „abgreifen" kann: vom Gipfel waagerecht nach
+links bis zur Wendestelle laufen — diese Strecke ist
+\( \sigma \). Im Bild oben sind die Wendestellen die grünen
+Punkte bei \( 96{,}6 \) und \( 103{,}4 \); der Abstand zum
+Gipfel \( 100 \) ist jeweils \( 3{,}4 = \sigma \).</p>
+<details><summary>Ganz langsam (mit Zahlen): \( \sigma \) aus der linken Wendestelle</summary>
+
+<p>Angenommen, du liest die linke Wendestelle bei \( x_2 = 96{,}6 \)
+ab. Es gilt \( x_2 = \mu-\sigma \). Setze \( \mu=100 \) ein:
+\( 96{,}6 = 100 - \sigma \). Stelle nach \( \sigma \) um — addiere
+\( \sigma \) auf beiden Seiten und ziehe \( 96{,}6 \) ab:
+\( \sigma = 100 - 96{,}6 = 3{,}4 \). Genau die angegebene Standardabweichung. (Mit der
+rechten Wendestelle \( 103{,}4 \) geht es genauso:
+\( \sigma = 103{,}4-100
+= 3{,}4 \).)</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-c--deutung-der-grauen-fläche" class="level3">
+<h3>Teilaufgabe c) — Deutung der grauen Fläche</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Die graue Fläche liegt unter der Glockenkurve <strong>zwischen
+\( 96 \) und \( 100 \)</strong>. Bei einer
+Normalverteilung ist eine solche Fläche immer eine
+<strong>Wahrscheinlichkeit</strong>. Also:</p>
+<blockquote>
+<p>Der Inhalt der grauen Fläche entspricht der
+<strong>Wahrscheinlichkeit, dass ein Plastikgussteil eine Länge zwischen
+\( 96 \) mm und \( 100 \) mm besitzt</strong>,
+also \( P(96 \le L \le 100) \).</p>
+</blockquote>
+<details><summary>Haltung dahinter: Warum ist „Fläche" hier dasselbe wie „Wahrscheinlichkeit"?</summary>
+
+<p>Bei einer stetigen Größe wie der Länge \( L \) (sie kann
+<em>jeden</em> Zwischenwert annehmen, nicht nur ganze Zahlen) lässt sich
+die Wahrscheinlichkeit nicht durch Abzählen bestimmen. Stattdessen gilt
+die Grundregel: <strong>Die Wahrscheinlichkeit, dass
+\( L \) in einen bestimmten Bereich fällt, ist gleich der
+Fläche unter der Glockenkurve über diesem Bereich.</strong> Die gesamte
+Fläche unter der Glocke ist \( 1 \) (=
+\( 100\,\% \)); ein Teilstück davon ist der entsprechende
+Wahrscheinlichkeits-Anteil.</p>
+<p>Die graue Fläche reicht von \( 96 \) (etwas links vom
+Mittelwert) bis \( 100 \) (genau der Mittelwert). Im
+Sachzusammenhang heißt das: <strong>Wie wahrscheinlich ist es, ein
+Gussteil zu ziehen, das zwischen \( 96 \) mm und
+\( 100 \) mm lang ist?</strong> Genau das ist die Deutung —
+eine Zahl muss man nicht angeben, nur den Sachbezug benennen.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Zwei Fehler sind hier verbreitet. Erstens die <strong>Grenzen
+verwechseln</strong> (etwa „zwischen \( 96 \) und
+\( 104 \)" sagen, weil man symmetrisch denkt) — es zählt, was
+wirklich grau ist, hier \( 96 \) bis \( 100 \).
+Zweitens die Fläche als <strong>Anzahl</strong> statt als
+<strong>Wahrscheinlichkeit</strong> deuten („so viele Teile sind
+zwischen \( 96 \) und \( 100 \)"). Die Fläche ist
+ein <strong>Anteil/eine Wahrscheinlichkeit</strong>; eine Stückzahl
+bekäme man erst, wenn man sie mit der produzierten Menge
+multipliziert.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--mangelhaft-mit-wahrscheinlichkeit-14--begründen"
+class="level3">
+<h3>Teilaufgabe d) — Mangelhaft mit Wahrscheinlichkeit 14 %
+begründen</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>„Mangelhaft" heißt: Die Länge weicht um <strong>mehr als
+\( 5 \) mm</strong> vom Normwert \( 100 \) ab,
+also \( L \lt 95 \) <strong>oder</strong> \( L \gt 105 \).
+Die Gegenwahrscheinlichkeit ist „nicht mangelhaft", nämlich
+\( 95 \le L \le 105 \). Deshalb:</p>
+<p>\[ p = P(\text{mangelhaft}) = 1 - P(95 \le L \le 105). \]</p>
+<p>Den mittleren Anteil liefert der GTR: \( P(95 \le L \le 105) \approx 0{,}859 \). Also</p>
+<p>\[ p = 1 - 0{,}859 \approx 0{,}141 \approx 14\,\%. \]</p>
+<p><strong>Gegenprobe über die zwei Schwänze</strong> (nutzt direkt das
+Ergebnis aus a): Mangelhaft sind die beiden Randflächen zusammen,</p>
+<p>\[ p = P(L \lt 95) + P(L \gt 105) \approx 0{,}071 + 0{,}071 = 0{,}142 \approx 14\,\%. \quad\checkmark \]</p>
+<details><summary>Haltung dahinter: „weicht um mehr als 5 mm ab" — wie wird daraus eine Wahrscheinlichkeit?</summary>
+
+<p><strong>Den Sachsatz in Mathe übersetzen.</strong> „Um mehr als
+\( 5 \) mm vom Normwert \( 100 \) abweichen"
+heißt: Der Abstand zwischen \( L \) und
+\( 100 \) ist größer als \( 5 \). Das passiert
+auf <strong>zwei</strong> Arten — entweder ist das Teil zu kurz
+(\( L \lt 95 \)) oder zu lang (\( L \gt 105 \)). Beides
+zusammen ist „mangelhaft".</p>
+<p><strong>Der Trick mit der Gegenwahrscheinlichkeit.</strong> Statt die
+beiden Schwänze einzeln zu addieren, ist es oft bequemer, das
+<strong>Mittelstück</strong> zu betrachten — „nicht mangelhaft" ist
+\( 95 \le L \le 105 \) — und von \( 1 \) abzuziehen. Denn
+jedes Teil ist <strong>entweder</strong> mangelhaft
+<strong>oder</strong> nicht; beide Anteile ergeben zusammen
+\( 1 \) (= \( 100\,\% \)). Also: mangelhaft
+\( = 1 - \) nicht mangelhaft.</p>
+<p><strong>Warum beide Wege dasselbe liefern.</strong> Das Mittelstück
+und die zwei Schwänze füllen zusammen die ganze Glocke.
+\( 1 - 0{,}859 = 0{,}141 \) ist also dieselbe Zahl wie \( 0{,}071+0{,}071 = 0{,}142 \)
+(die winzige Differenz kommt nur vom Runden).</p>
+<details><summary>Ganz langsam (mit Zahlen): die Subtraktion \( 1 - 0{,}859 \)</summary>
+
+<p>\( 1{,}000 - 0{,}859 \): Ziehe ziffernweise von rechts ab.
+\( 0-9 \) geht nicht, also borgen: \( 10-9=1 \)
+(letzte Stelle), in der Hunderterstelle nach dem Komma bleibt nach dem
+Borgen \( 9 \), und \( 9-5=4 \); in der
+Zehntelstelle bleibt \( 9 \), und \( 9-8=1 \); vor
+dem Komma \( 0-0=0 \). Ergebnis \( 0{,}141 \). Das sind
+\( 14{,}1\,\% \), gerundet \( 14\,\% \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Verbreitet ist, „\( 5 \) mm Abweichung" als
+\( 95 \le L \le 105 \) <strong>mit</strong> den Grenzen zur
+Mangelhaftigkeit zu zählen oder das „mehr als" zu übersehen. Genau
+\( 5 \) mm Abweichung (also \( L=95 \) oder
+\( L=105 \)) gilt <strong>noch nicht</strong> als mangelhaft —
+erst <em>mehr</em> als \( 5 \) mm. Bei der stetigen
+Normalverteilung spielt das für den Zahlenwert keine Rolle (einzelne
+Punkte haben Wahrscheinlichkeit \( 0 \)), aber im
+Aufschreiben gehört das „nicht mangelhaft" als \( 95 \le L \le 105 \)
+sauber benannt.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-e--zufallsexperiment-und-ereignis-zum-term"
+class="level3">
+<h3>Teilaufgabe e) — Zufallsexperiment und Ereignis zum Term</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Im Term steckt eine <strong>Binomialverteilung</strong>. Lies die
+Bausteine:</p>
+<ul>
+<li>\( 0{,}14 \) ist die Wahrscheinlichkeit, dass
+<strong>ein</strong> Gussteil mangelhaft ist (aus Teil d).</li>
+<li>\( 0{,}86 = 1-0{,}14 \) ist die Wahrscheinlichkeit, dass es
+<strong>nicht</strong> mangelhaft ist.</li>
+<li>Der Exponent zeigt: Es geht um \( n=200 \) Teile.</li>
+</ul>
+<p>Die drei Summanden sind genau die Wahrscheinlichkeiten für
+\( 200 \), \( 199 \) und \( 198 \)
+mangelhafte Teile:</p>
+<p>\[
+\underbrace{0{,}14^{200}}_{P(X=200)}
++\underbrace{200\cdot 0{,}14^{199}\cdot 0{,}86}_{P(X=199)}
++\underbrace{\binom{200}{2}\cdot 0{,}14^{198}\cdot 0{,}86^{2}}_{P(X=198)}
+= P(X\ge 198).
+\]</p>
+<p><strong>Zufallsexperiment.</strong> Der laufenden Produktion werden
+<strong>\( 200 \) Gussteile zufällig entnommen</strong>;
+\( X \) zählt, wie viele davon mangelhaft sind. Dann ist
+\( X \) binomialverteilt mit \( n=200 \) und
+\( p=0{,}14 \), kurz \( X\sim B(200;\,0{,}14) \).</p>
+<p><strong>Ereignis.</strong> „<strong>Mindestens \( 198 \)
+der \( 200 \) Gussteile sind mangelhaft</strong>" (also
+\( X\ge 198 \)).</p>
+<details><summary>Haltung dahinter: Was ist eine Binomialverteilung, und woher kommen die drei Bausteine?</summary>
+
+<p><strong>Bernoulli-Versuch.</strong> Ein Versuch mit nur zwei
+Ausgängen — hier „mangelhaft" (Treffer, Wahrscheinlichkeit
+\( p=0{,}14 \)) oder „nicht mangelhaft" (kein Treffer,
+\( q=1-p=0{,}86 \)). Ein einzelnes Gussteil prüfen ist so ein
+Versuch.</p>
+<p><strong>Bernoulli-Kette / Binomialverteilung.</strong> Wiederholt man
+denselben Versuch \( n \)-mal unabhängig und zählt die
+Treffer, ist die Trefferzahl \( X \)
+<strong>binomialverteilt</strong>. Die Wahrscheinlichkeit für genau
+\( k \) Treffer ist</p>
+<p>\[ P(X=k) = \binom{n}{k}\, p^{k}\, q^{\,n-k}. \]</p>
+<p>Diese Formel hat drei Teile, und genau die erkennt man im
+Aufgaben-Term:</p>
+<ul>
+<li>\( p^{k} \): \( k \) Teile
+<strong>sind</strong> mangelhaft (jedes mit Wahrscheinlichkeit
+\( 0{,}14 \)).</li>
+<li>\( q^{\,n-k} \): die übrigen \( n-k \) Teile sind
+<strong>nicht</strong> mangelhaft (jedes mit \( 0{,}86 \)).</li>
+<li>\( \binom{n}{k} \) („\( n \) über
+\( k \)"): die <strong>Anzahl der Möglichkeiten</strong>,
+<em>welche</em> \( k \) der \( 200 \) Teile die
+mangelhaften sind. Denn es ist egal, ob das erste und dritte Teil
+mangelhaft sind oder das zweite und fünfte — alle diese Anordnungen
+führen zur selben Trefferzahl und müssen mitgezählt werden.</li>
+</ul>
+<p><strong>Die drei Summanden im Term</strong> sind
+\( k=200 \), \( k=199 \), \( k=198 \):</p>
+<p>\[
+\begin{aligned}
+k=200:&\quad \binom{200}{200}0{,}14^{200}0{,}86^{0} = 0{,}14^{200}\quad(\tbinom{200}{200}=1,\ 0{,}86^{0}=1),\\
+k=199:&\quad \binom{200}{199}0{,}14^{199}0{,}86^{1} = 200\cdot 0{,}14^{199}\cdot 0{,}86\quad(\tbinom{200}{199}=200),\\
+k=198:&\quad \binom{200}{198}0{,}14^{198}0{,}86^{2} = \tbinom{200}{2}\cdot 0{,}14^{198}\cdot 0{,}86^{2}.
+\end{aligned}
+\]</p>
+<p>Addiert man die Wahrscheinlichkeiten für \( 198 \),
+\( 199 \) <strong>und</strong> \( 200 \) Treffer,
+erhält man die Wahrscheinlichkeit für <strong>„\( 198 \) oder
+mehr"</strong>, also \( P(X\ge 198) \) — „mindestens
+\( 198 \)".</p>
+<details><summary>Ganz langsam (mit Zahlen): warum \( \binom{200}{199}=200 \) und \( \binom{200}{198}=\binom{200}{2} \)?</summary>
+
+<p>\( \binom{200}{199} \) ist die Anzahl der Möglichkeiten,
+\( 199 \) Teile aus \( 200 \) als mangelhaft
+auszuwählen. \( 199 \) auswählen heißt: <strong>genau eines
+weglassen</strong> — und dafür gibt es \( 200 \)
+Möglichkeiten (jedes der \( 200 \) Teile kann das eine gute
+sein). Deshalb \( \binom{200}{199}=200 \).</p>
+<p>\( \binom{200}{198} \): \( 198 \) mangelhaft auswählen heißt
+<strong>genau zwei gute weglassen</strong>. Zwei aus
+\( 200 \) auszuwählen geht auf \( \binom{200}{2} = \tfrac{200\cdot 199}{2} = \tfrac{39800}{2} = 19900 \) Arten.
+Deshalb \( \binom{200}{198}=\binom{200}{2}=19900 \). (Allgemein \( \binom{n}{k}=\binom{n}{n-k} \):
+„\( k \) auswählen" ist gleichbedeutend mit
+„\( n-k \) weglassen".)</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Den Term als „\( P(X\le 2) \) <strong>gute</strong> Teile" zu
+lesen, ist im Kern dasselbe Ereignis, aber Vorsicht bei der Sprache:
+\( 0{,}14 \) gehört zu <strong>mangelhaft</strong>,
+\( 0{,}86 \) zu <strong>nicht mangelhaft</strong>. Wer die
+Rollen vertauscht („mindestens \( 198 \) sind in Ordnung"),
+beschreibt das <strong>falsche</strong> Ereignis. Der hoch stehende
+Exponent \( 200 \) bzw. \( 199 \) sitzt bei
+\( 0{,}14 \) — also zählen wir die <strong>mangelhaften</strong>
+Teile, und „mindestens \( 198 \) mangelhaft" ist die richtige
+Formulierung.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li><strong>a)</strong> \( P(L \lt 95)\approx 0{,}071 \); gleich wahrscheinlich:
+\( L \gt 105 \) (Symmetrie um \( 100 \)).</li>
+<li><strong>b)</strong> \( \mu \) = Maximumstelle
+\( = 100 \); \( \sigma \) aus der Wendestelle
+\( x_2=\mu-\sigma \), also \( \sigma = 100-96{,}6 = 3{,}4 \).</li>
+<li><strong>c)</strong> Graue Fläche \( = P(96\le L\le 100) \) (Länge
+zwischen \( 96 \) mm und \( 100 \) mm).</li>
+<li><strong>d)</strong> \( p = 1 - P(95\le L\le 105) \approx 0{,}141 \approx 14\,\% \); Gegenprobe
+\( 0{,}071+0{,}071 \approx 0{,}14 \).</li>
+<li><strong>e)</strong> \( X\sim B(200;\,0{,}14) \); Ereignis „mindestens
+\( 198 \) der \( 200 \) Teile mangelhaft",
+\( P(X\ge 198) \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-analysis-sinusfunktion-zuordnen-und-vernetzen"
+class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Sinusfunktion zuordnen und
+vernetzen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben sind die Funktion
+\( f \) mit \( f(x) = -3\sin(2x) - 1 \) sowie vier Graphen
+(Abbildung 1–4).</p>
+<p>Im Gespräch denkbare Aspekte:</p>
+<ul>
+<li><strong>(AB I)</strong> Charakteristische Eigenschaften des Graphen
+von \( f \) nennen, die man <strong>ohne Rechnung</strong>
+dem Funktionsterm entnehmen kann; einen der vier Graphen
+\( f \) zuordnen.</li>
+<li><strong>(AB II)</strong> Zu <strong>Abbildung 2</strong> gehört eine
+trigonometrische Funktion \( g \) mit \( \displaystyle\int_0^{\pi/2} g(x)\,dx = -3 \).
+Bestimme den Wert von \( \displaystyle\int_0^{3\pi/2} g(x)\,dx \) <strong>ohne weitere
+Rechnung</strong>. Bestimme außerdem eine Stammfunktion
+\( F \) von \( f \). Untersuche die
+Symmetrieeigenschaften des Graphen von \( f' \).</li>
+<li><strong>(AB III)</strong> Erläutere, dass die Anzahl der
+Schnittpunkte einer <strong>Ursprungsgerade</strong> mit dem Graphen von
+\( g \) <strong>nicht gerade</strong> (z. B.
+\( 266 \)) sein kann (Symmetrie). Leite \( \displaystyle\int_{-1}^{1} f(x)\,dx = -2 \)
+her, ausgehend von der Symmetrie der Sinuskurve.</li>
+</ul>
+</div>
+
+<p>Hier sind die vier Graphen. Ordne zu, <strong>bevor</strong> du die
+Lösung aufklappst: Welcher gehört zu \( f(x) = -3\sin(2x)-1 \)?</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k10-abb1" style="width:100%;max-width:260px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 1</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k10-abb2" style="width:100%;max-width:260px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 2</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k10-abb3" style="width:100%;max-width:260px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 3</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k10-abb4" style="width:100%;max-width:260px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 4</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-abb1',{boundingbox:[-2.6,3.4,5.6,-4.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -3*Math.sin(2*x)-1;},-2.6,5.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-abb2',{boundingbox:[-2.6,3.4,5.6,-4.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -3*Math.sin(2*x);},-2.6,5.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-abb3',{boundingbox:[-2.6,3.4,5.6,-4.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 3*Math.sin(2*x)-1;},-2.6,5.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-abb4',{boundingbox:[-2.6,3.4,5.6,-4.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -3*Math.sin(x)-1;},-2.6,5.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<section id="ab-i--eigenschaften-aus-dem-term-und-zuordnung"
+class="level3">
+<h3>AB I — Eigenschaften aus dem Term und Zuordnung</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Eigenschaften, die man direkt am Term \( f(x) = -3\sin(2x)-1 \)
+abliest</strong> (ohne zu rechnen):</p>
+<ul>
+<li><strong>Periodisch</strong> (es ist eine Sinusfunktion). Die
+<strong>Periode</strong> ist \( \tfrac{2\pi}{2} = \pi \), weil im Inneren der
+Faktor \( 2 \) steht (er staucht die Welle auf die halbe
+Länge gegenüber dem normalen \( \sin x \) mit Periode
+\( 2\pi \)).</li>
+<li><strong>Amplitude \( 3 \)</strong> (der Vorfaktor
+\( -3 \), Betrag \( 3 \)): Die Welle schwingt
+um \( 3 \) nach oben und unten um ihre Mittellinie.</li>
+<li><strong>Mittellinie \( y=-1 \)</strong> (das angehängte
+\( -1 \) verschiebt alles um \( 1 \) nach
+unten).</li>
+<li>Daraus der <strong>Wertebereich</strong> \( [-4;\,2] \):
+größter Wert \( -1+3 = 2 \), kleinster Wert
+\( -1-3 = -4 \).</li>
+<li><strong>\( y \)-Achsenabschnitt</strong>
+\( f(0) = -3\sin(0)-1 = -1 \).</li>
+<li><strong>Bei \( x=0 \) fallend</strong>: Wegen des
+<strong>Minus</strong> vor dem Sinus geht der Graph an der
+\( y \)-Achse nach <strong>unten</strong> und erreicht kurz
+danach (bei \( x=\tfrac{\pi}{4}\approx 0{,}79 \)) den <strong>Tiefpunkt</strong>
+\( -4 \).</li>
+<li><strong>Punktsymmetrisch zum Punkt \( (0\,|\,-1) \)</strong>
+(der Sinusanteil ist punktsymmetrisch zum Ursprung, die Verschiebung um
+\( -1 \) hebt das Symmetriezentrum auf
+\( (0\,|\,-1) \)).</li>
+</ul>
+<p><strong>Zuordnung: \( f \) gehört zu Abbildung
+1.</strong> Jede falsche Abbildung scheidet an genau einem Merkmal
+aus:</p>
+<ul>
+<li><strong>Abbildung 4</strong> scheidet aus: Ihre Welle ist
+<strong>doppelt so breit</strong> (Periode \( 2\pi \) statt
+\( \pi \)) — sie zeigt nur eine breite Mulde.
+\( f \) hat wegen des Faktors \( 2 \) die
+Periode \( \pi \).</li>
+<li><strong>Abbildung 2</strong> scheidet aus: Ihre Welle schwingt
+<strong>symmetrisch um die \( x \)-Achse</strong>
+(Mittellinie \( y=0 \), Werte von \( -3 \) bis
+\( 3 \)). \( f \) ist um \( 1 \)
+nach unten verschoben (Mittellinie \( y=-1 \), Werte von
+\( -4 \) bis \( 2 \)).</li>
+<li><strong>Abbildung 3</strong> scheidet aus: Sie läuft an der
+\( y \)-Achse <strong>aufwärts</strong> (Hochpunkt kurz
+rechts von \( 0 \)). \( f \) läuft wegen des
+Minus <strong>abwärts</strong> (Tiefpunkt kurz rechts von
+\( 0 \)).</li>
+<li><strong>Abbildung 1</strong> passt in allen Punkten: Periode
+\( \pi \), Mittellinie \( y=-1 \), Werte
+\( [-4;\,2] \), bei \( x=0 \) der Wert
+\( -1 \) und <strong>fallend</strong> mit Tiefpunkt direkt
+rechts daneben.</li>
+</ul>
+<details><summary>Haltung dahinter: Wie liest man Periode, Amplitude und Verschiebung aus einem Sinusterm? (ganz von vorn)</summary>
+
+<p>Eine allgemeine Sinusfunktion sieht so aus: \( a\cdot\sin(b\,x) + d \).
+Jeder der drei Bausteine \( a \), \( b \),
+\( d \) steuert eine sichtbare Eigenschaft des Graphen.
+Geht man sie der Reihe nach durch, kann man den Graphen „im Kopf"
+zeichnen.</p>
+<p><strong>\( d \) — die Mittellinie (Verschiebung nach
+oben/unten).</strong> Der reine Sinus pendelt um die
+\( x \)-Achse (um \( y=0 \)). Das
+\( +d \) hebt oder senkt die <strong>ganze</strong> Welle.
+Bei \( f \) ist \( d=-1 \): Die Welle pendelt um
+die waagerechte Linie \( y=-1 \). Bild: die Wasseroberfläche,
+um die die Wellen schwappen, liegt bei \( -1 \).</p>
+<p><strong>\( a \) — die Amplitude (Höhe der Welle) und die
+Richtung.</strong> Der Betrag \( |a| \) sagt, <strong>wie
+weit</strong> die Welle über und unter die Mittellinie ausschlägt. Bei
+\( f \) ist \( |a|=3 \): \( 3 \) nach
+oben (bis \( -1+3=2 \)) und \( 3 \) nach unten (bis
+\( -1-3=-4 \)). Das <strong>Vorzeichen</strong> von
+\( a \) sagt die <strong>Richtung</strong>: Ein positives
+\( a \) startet bei \( x=0 \) steigend, ein
+<strong>negatives</strong> \( a \) (hier
+\( -3 \)) startet <strong>fallend</strong> — die Welle ist
+an der Mittellinie gespiegelt.</p>
+<p><strong>\( b \) — die Periode (Breite der
+Welle).</strong> \( b \) staucht oder streckt die Welle in
+\( x \)-Richtung. Eine volle Welle des normalen
+\( \sin \) braucht die Strecke \( 2\pi \). Mit dem
+Faktor \( b \) braucht sie nur noch \( \tfrac{2\pi}{b} \).
+Bei \( f \) ist \( b=2 \), also Periode
+\( \tfrac{2\pi}{2}=\pi\approx 3{,}14 \) — die Welle ist <strong>halb so breit</strong> wie
+beim normalen Sinus.</p>
+<details><summary>Ganz langsam (mit Zahlen): Höchst- und Tiefwert, Wert bei \( x=0 \)</summary>
+
+<p>Der Sinus liefert immer Werte zwischen \( -1 \) und
+\( +1 \). Setze diese Extremfälle ein:</p>
+<ul>
+<li>Größter Funktionswert: wenn \( \sin(2x) = -1 \) (das Minus dreht es
+um!), dann \( f = -3\cdot(-1) - 1 = 3 - 1 = 2 \).</li>
+<li>Kleinster Funktionswert: wenn \( \sin(2x) = +1 \), dann
+\( f = -3\cdot 1 - 1 = -3 - 1 = -4 \).</li>
+<li>Bei \( x=0 \): \( \sin(2\cdot 0) = \sin 0 = 0 \), also
+\( f(0) = -3\cdot 0 - 1 = -1 \).</li>
+</ul>
+<p>So bekommt man ohne Skizze die Eckdaten: pendelt zwischen
+\( -4 \) und \( 2 \), startet bei
+\( -1 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Der häufigste Fehler ist die <strong>Periode</strong>: Viele lesen
+aus \( \sin(2x) \) eine Periode \( 2 \) oder
+\( 2\pi \) ab. Richtig ist \( \tfrac{2\pi}{2}=\pi \) — der innere
+Faktor steht im <strong>Nenner</strong>. Zweite Falle: das
+<strong>Vorzeichen</strong> von \( a \) übersehen und
+Abbildung 3 (steigend bei \( 0 \)) statt Abbildung 1
+(fallend bei \( 0 \)) wählen. Das Minus vor dem Sinus dreht
+die Startrichtung um.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--integral-von-zzmathphzz361zzendzz-symmetrie-stammfunktion-von-zzmathphzz362zzendzz-symmetrie-von-zzmathphzz363zzendzz"
+class="level3">
+<h3>AB II — Integral von \( g \) (Symmetrie), Stammfunktion
+von \( f \), Symmetrie von \( f' \)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<section id="1-wert-von-zzmathphzz364zzendzz-ohne-weitere-rechnung"
+class="level4">
+<h4>(1) Wert von \( \displaystyle\int_0^{3\pi/2} g(x)\,dx \) ohne weitere Rechnung</h4>
+<p>Aus Abbildung 2 liest man ab: \( g \) ist eine
+Sinuswelle mit <strong>Periode \( \pi \)</strong> und
+<strong>Mittellinie \( y=0 \)</strong> (sie schwingt
+symmetrisch um die \( x \)-Achse). Gegeben ist
+\( \displaystyle\int_0^{\pi/2} g(x)\,dx = -3 \). Zerlege das gesuchte Integral:</p>
+<p>\[ \int_0^{3\pi/2} g\,dx = \underbrace{\int_0^{\pi/2} g\,dx}_{=\,-3} \;+\; \int_{\pi/2}^{3\pi/2} g\,dx. \]</p>
+<p>Das Intervall \( \left[\tfrac{\pi}{2};\,\tfrac{3\pi}{2}\right] \) hat die Länge \( \pi \)
+— also <strong>genau eine volle Periode</strong>. Über eine volle
+Periode einer um die \( x \)-Achse schwingenden Sinuskurve
+sind die Fläche oberhalb und unterhalb der Achse <strong>gleich
+groß</strong>, sie heben sich auf:</p>
+<p>\[ \int_{\pi/2}^{3\pi/2} g\,dx = 0 \quad\Longrightarrow\quad
+   \boxed{\;\int_0^{3\pi/2} g\,dx = -3 + 0 = -3.\;} \]</p>
+<details><summary>Haltung dahinter: Was ist ein Integral, und warum ist es über eine volle Sinus-Periode null?</summary>
+
+<p><strong>Integral = orientierte Fläche.</strong> Ein Integral
+\( \int_a^b g\,dx \) misst die Fläche zwischen dem Graphen und der
+\( x \)-Achse — aber <strong>mit Vorzeichen</strong>:
+Fläche <strong>über</strong> der Achse zählt positiv, Fläche
+<strong>unter</strong> der Achse negativ. Bild eines Bankkontos: über
+der Achse Einzahlungen, unter der Achse Abhebungen; das Integral nennt
+nur den <strong>Kontostand</strong> (die Differenz).</p>
+<p><strong>Volle Periode.</strong> Eine Sinuswelle, die um die
+\( x \)-Achse schwingt, hat in jeder vollen Periode genau
+einen „Berg" über der Achse und ein gleich großes „Tal" unter der Achse.
+Einzahlung und Abhebung sind gleich groß — der Kontostand ändert sich
+über eine volle Periode um \( 0 \). Genau deshalb darf man
+das Stück von \( \tfrac{\pi}{2} \) bis \( \tfrac{3\pi}{2} \) (Länge
+\( \pi \) = eine Periode) einfach weglassen: Es trägt nichts
+bei. Übrig bleibt das schon bekannte erste Stück, also
+\( -3 \). Das ist gemeint mit „ohne weitere Rechnung": Man
+nutzt <strong>Periodizität und Symmetrie</strong> statt eine
+Stammfunktion.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Verlockend ist die Annahme „dreimal so langes Intervall, also dreimal
+der Wert" — das ergäbe \( -9 \) und ist
+<strong>falsch</strong>. Das stimmt nur, wenn jedes gleich lange Stück
+denselben Beitrag liefert; hier heben sich aber zwei der drei
+Halbperioden gegenseitig auf. Sicherer Blick: \( \left[\tfrac{\pi}{2};
+\tfrac{3\pi}{2}\right] \) ist
+eine <strong>ganze</strong> Periode \( \Rightarrow \) Beitrag
+\( 0 \).</p>
+</details>
+</details>
+
+</section>
+<section
+id="2-eine-stammfunktion-zzmathphzz385zzendzz-von-zzmathphzz386zzendzz"
+class="level4">
+<h4>(2) Eine Stammfunktion \( F \) von
+\( f \)</h4>
+<p>Gesucht ist ein \( F \) mit \( F' = f \), also
+\( F'(x) = -3\sin(2x) - 1 \). Summandenweise „rückwärts ableiten":</p>
+<ul>
+<li>Stammfunktion von \( -3\sin(2x) \): Eine Stammfunktion von
+\( \sin(2x) \) ist \( -\tfrac12\cos(2x) \) (der Faktor
+\( \tfrac12 \) gleicht die innere Ableitung \( 2 \)
+aus). Mit dem \( -3 \) davor: \( -3\cdot\left(-\tfrac12\cos(2x)\right) = \tfrac{3}{2}\cos(2x) \).</li>
+<li>Stammfunktion von \( -1 \): das ist
+\( -x \).</li>
+</ul>
+<p>\[ \boxed{\,F(x) = \tfrac{3}{2}\cos(2x) - x.\,} \]</p>
+<p><strong>Probe durch Ableiten:</strong> \( F'(x) = \tfrac32\cdot\big(-\sin(2x)\big)\cdot 2 - 1 = -3\sin(2x) - 1 = f(x). \)
+\( \checkmark \)</p>
+<details><summary>Haltung dahinter: Was ist eine Stammfunktion, und woher der Faktor \( \tfrac12 \)?</summary>
+
+<p><strong>Ableiten</strong> misst die Steigung einer Funktion. Eine
+<strong>Stammfunktion</strong> ist das <strong>Ableiten
+rückwärts</strong>: gesucht ist die Funktion \( F \), deren
+Ableitung wieder unser \( f \) ergibt. Man „un-leitet"
+ab.</p>
+<p><strong>Sinus und Kosinus rückwärts.</strong> Beim Ableiten gilt
+\( (\cos x)' = -\sin x \). Rückwärts heißt das: eine Stammfunktion von
+\( \sin x \) ist \( -\cos x \) (das Minus muss mit, damit
+beim Vorwärts-Ableiten das Vorzeichen wieder stimmt).</p>
+<p><strong>Der Faktor \( \tfrac12 \) — die Kettenregel
+rückwärts.</strong> Im Term steht nicht \( \sin x \), sondern
+\( \sin(2x) \): innen sitzt \( 2x \). Würde man
+\( -\cos(2x) \) ableiten, käme durch die
+<strong>Kettenregel</strong> ein zusätzlicher Faktor
+\( 2 \) heraus (Ableitung des Inneren \( 2x \)
+ist \( 2 \)) — also \( +2\sin(2x) \), das ist doppelt
+so viel wie gewollt. Damit am Ende genau \( \sin(2x) \) erscheint,
+schreibt man als Stammfunktion \( -\tfrac12\cos(2x) \): Der Faktor
+\( \tfrac12 \) frisst die \( 2 \) aus der Kettenregel
+auf. (Mehr dazu: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.)</p>
+<p><strong>Warum die Probe?</strong> Die Stammfunktion ist der sicherste
+Selbsttest: Leitet man das Ergebnis vorwärts ab und kommt der
+Ausgangsterm \( f \) heraus, war alles richtig. Genau das
+zeigt die Probe oben.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Den Faktor \( \tfrac12 \) zu vergessen ist der Klassiker
+(\( F(x)=\tfrac{3}{}\dots \) ohne Ausgleich der inneren \( 2 \)).
+Zweite Falle: das <strong>Vorzeichen</strong>. Aus \( \sin \)
+wird beim Aufleiten \( -\cos \); mit dem \( -3 \)
+davor dreht sich das Minus zu Plus, daher \( +\tfrac32\cos(2x) \). Ein
+falsches Vorzeichen fällt bei der Ableitungsprobe sofort auf.</p>
+</details>
+</details>
+
+</section>
+<section id="3-symmetrie-des-graphen-von-zzmathphzz428zzendzz"
+class="level4">
+<h4>(3) Symmetrie des Graphen von \( f' \)</h4>
+<p>Leite \( f \) ab: \( f'(x) = -3\cdot\cos(2x)\cdot 2 = -6\cos(2x). \)</p>
+<p>\( f' \) ist also ein reiner Kosinus (mal Zahl). Der
+Kosinus ist eine <strong>gerade</strong> Funktion, d. h.
+\( \cos(-2x) = \cos(2x) \). Damit gilt</p>
+<p>\[ f'(-x) = -6\cos(-2x) = -6\cos(2x) = f'(x). \]</p>
+<p>Aus \( f'(-x) = f'(x) \) folgt: <strong>Der Graph von
+\( f' \) ist achsensymmetrisch zur
+\( y \)-Achse.</strong></p>
+<figure>
+<div class="jxgbox" id="jxg-k10-fstrich" style="width:100%;max-width:420px;aspect-ratio:3/2"></div>
+<figcaption>Graph von \( f'(x) = -6\cos(2x) \): spiegelbildlich zur \( y \)-Achse (linke und rechte Seite
+sind identisch).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-fstrich',{boundingbox:[-3.6,7,3.6,-7],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -6*Math.cos(2*x);},-3.6,3.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[0,-7],[0,7]],{straightFirst:true,straightLast:true,strokeColor:'#d98324',dash:2,strokeWidth:1});})();});</script>
+
+<details><summary>Haltung dahinter: „gerade" und „ungerade" Funktionen — was heißt das am Graphen?</summary>
+
+<p>Es gibt zwei besonders übersichtliche Arten von Symmetrie:</p>
+<ul>
+<li><strong>Achsensymmetrie zur \( y \)-Achse</strong> (man
+sagt: die Funktion ist <strong>gerade</strong>). Bedeutung am Graphen:
+Die linke Hälfte ist das <strong>Spiegelbild</strong> der rechten an der
+senkrechten \( y \)-Achse — wie ein Bild und sein Spiegel.
+Rechnerisch: \( h(-x) = h(x) \) (an der Stelle \( -x \)
+derselbe \( y \)-Wert wie bei \( +x \)).
+Typisches Beispiel: der Kosinus.</li>
+<li><strong>Punktsymmetrie zum Ursprung</strong> (die Funktion ist
+<strong>ungerade</strong>). Der Graph sieht nach einer
+\( 180^\circ \)-Drehung um den Ursprung wieder gleich aus.
+Rechnerisch: \( h(-x) = -h(x) \). Typisches Beispiel: der Sinus.</li>
+</ul>
+<p><strong>Hier:</strong> \( f'(x) = -6\cos(2x) \) ist ein Kosinus, also
+<strong>gerade</strong> \( \Rightarrow \) achsensymmetrisch zur
+\( y \)-Achse. Schöner Zusammenhang: \( f \)
+selbst ist <strong>punktsymmetrisch</strong> zum Punkt
+\( (0\,|\,-1) \) (Sinusanteil), und die Ableitung einer solchen
+punktsymmetrischen Funktion wird <strong>achsensymmetrisch</strong>. Das
+\( -1 \) aus \( f \) fällt beim Ableiten weg
+(Ableitung einer Konstanten ist \( 0 \)), deshalb bleibt
+mit \( -6\cos(2x) \) eine sauber achsensymmetrische Funktion übrig.
+Im Bild oben sieht man es direkt: links und rechts der orangefarbenen
+\( y \)-Achse verläuft die Kurve identisch.</p>
+<details><summary>Ganz langsam (mit Zahlen): die Probe \( f'(-x)=f'(x) \)</summary>
+
+<p>Nimm eine Teststelle, etwa \( x=0{,}9 \):
+\( f'(0{,}9) = -6\cos(1{,}8) \). Und an der Spiegelstelle \( x=-0{,}9 \):
+\( f'(-0{,}9) = -6\cos(-1{,}8) \). Weil \( \cos(-1{,}8)=\cos(1{,}8) \) (Kosinus ist gerade),
+ist \( f'(-0{,}9) = -6\cos(1{,}8) = f'(0{,}9) \) — beide Stellen liefern denselben Wert
+(\( \approx 1{,}36 \)). Genau das ist Achsensymmetrie.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>\( f \) und \( f' \) haben
+<strong>unterschiedliche</strong> Symmetrie — das verwirrt oft.
+\( f \) ist <em>punkt</em>symmetrisch (zu
+\( (0\,|\,-1) \)), \( f' \) ist
+<em>achsen</em>symmetrisch (zur \( y \)-Achse). Wer von
+\( f \) auf \( f' \) schließt, muss daran
+denken: Beim Ableiten wird aus „punktsymmetrisch um einen Punkt auf der
+\( y \)-Achse" → „achsensymmetrisch zur
+\( y \)-Achse". Außerdem entscheidet allein der Sinus-/
+Kosinus-Charakter; die Konstante \( -1 \) verschwindet beim
+Ableiten.</p>
+</details>
+</details>
+</details>
+
+</section>
+</section>
+<section id="ab-iii--schnittpunkt-parität-und-zzmathphzz475zzendzz"
+class="level3">
+<h3>AB III — Schnittpunkt-Parität und \( \int_{-1}^{1} f\,dx = -2 \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Herleitung anzeigen</summary>
+
+<section
+id="1-warum-eine-ursprungsgerade-zzmathphzz476zzendzz-nie-in-gerade-vielen-punkten-schneidet"
+class="level4">
+<h4>(1) Warum eine Ursprungsgerade \( g \) nie in gerade
+vielen Punkten schneidet</h4>
+<p>Zu Abbildung 2 gehört \( g \) mit \( g(x) = -3\sin(2x) \)
+(Mittellinie \( y=0 \)). Diese Funktion ist
+<strong>punktsymmetrisch zum Ursprung</strong> (ungerade), denn</p>
+<p>\[ g(-x) = -3\sin(-2x) = -3\cdot\big(-\sin(2x)\big) = 3\sin(2x) = -g(x). \]</p>
+<p>Eine <strong>Ursprungsgerade</strong> \( y = m\,x \) ist
+ebenfalls punktsymmetrisch zum Ursprung. Daraus folgt für die
+Schnittpunkte:</p>
+<ul>
+<li><strong>Der Ursprung \( (0\,|\,0) \) ist immer ein
+Schnittpunkt:</strong> \( g(0) = 0 \), und jede Ursprungsgerade
+läuft durch \( (0\,|\,0) \).</li>
+<li><strong>Alle anderen Schnittpunkte treten paarweise auf:</strong>
+Ist \( x_0 \neq 0 \) eine Schnittstelle, so ist auch
+\( -x_0 \) eine — beide Graphen sind ja punktsymmetrisch zum
+Ursprung, also liegt zu jedem Schnittpunkt der gespiegelte ebenfalls auf
+beiden.</li>
+</ul>
+<p>Damit ist die Gesamtzahl der Schnittpunkte \( = 1 \)
+(Ursprung) \( + \) eine <strong>gerade</strong> Zahl (die
+Paare) \( = \) <strong>ungerade</strong>. Eine
+<strong>gerade</strong> Anzahl wie \( 266 \) ist deshalb
+unmöglich.</p>
+<figure>
+<div class="jxgbox" id="jxg-k10-parity" style="width:100%;max-width:440px;aspect-ratio:1/1"></div>
+<figcaption>\( g(x) = -3\sin(2x) \) (blau) und eine Ursprungsgerade (orange). Der Ursprung ist immer ein
+Schnittpunkt; jeder weitere Schnittpunkt rechts hat einen gespiegelten Partner links.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k10-parity',{boundingbox:[-4.6,4,4.6,-4],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -3*Math.sin(2*x);},-4.6,4.6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[0,0],[1,0.6]],{straightFirst:true,straightLast:true,strokeColor:'#d98324',strokeWidth:2});b.create('point',[0,0],{name:'',size:2,fillColor:'#b03a2e',strokeColor:'#b03a2e',fixed:true});})();});</script>
+
+<details><summary>Haltung dahinter: Was ist eine Ursprungsgerade, und wie führt Symmetrie zu „ungerade"?</summary>
+
+<p><strong>Ursprungsgerade.</strong> Eine Gerade, die durch den
+<strong>Ursprung</strong> \( (0\,|\,0) \) geht, also
+\( y = m\,x \) (kein \( +b \), kein Achsenabschnitt).
+Sie ist selbst punktsymmetrisch zum Ursprung: zu jedem ihrer Punkte
+\( (x\,|\,mx) \) liegt der gespiegelte \( (-x\,|\,-mx) \) auch auf
+ihr.</p>
+<p><strong>Die Paar-Idee.</strong> Beide Linien — die Sinuskurve
+\( g \) und die Gerade — sehen nach einer
+\( 180^\circ \)-Drehung um den Ursprung wieder gleich aus. Wenn
+sich zwei solche Linien an einer Stelle \( x_0 \) schneiden,
+dann schneiden sie sich (durch dieselbe Drehung) auch an der
+gespiegelten Stelle \( -x_0 \). Schnittpunkte abseits des
+Ursprungs kommen deshalb <strong>immer zu zweit</strong> — wie Schuhe,
+die es nur paarweise gibt.</p>
+<p><strong>Der eine Sonderpunkt.</strong> Die Stelle
+\( x_0 = 0 \) ist ihr <strong>eigener</strong> Spiegelpunkt
+(\( -0 = 0 \)). Sie bildet kein Paar, sondern steht allein. Und
+sie <strong>ist</strong> ein Schnittpunkt, weil \( g(0)=0 \) und
+die Gerade durch den Ursprung läuft. Zählt man zusammen: viele
+<strong>Paare</strong> (gerade Anzahl) plus der <strong>eine</strong>
+Ursprung — macht zusammen eine <strong>ungerade</strong> Zahl. Eine
+gerade Zahl wie \( 266 \) kann nie herauskommen.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Der ganze Beweis steht und fällt mit dem
+<strong>Ursprungspunkt</strong>. Würde \( g \)
+<strong>nicht</strong> durch den Ursprung gehen (etwa bei
+\( f \) mit der Verschiebung \( -1 \)), wäre
+dieser eine Extrapunkt weg, und die Anzahl könnte gerade sein. Genau
+deshalb ist die Aussage für \( g \) (Mittellinie
+\( y=0 \), durch den Ursprung) formuliert — nicht für
+\( f \). Wer das übersieht, „beweist" die Behauptung für
+die falsche Funktion.</p>
+</details>
+</details>
+
+</section>
+<section id="2-herleitung-von-zzmathphzz510zzendzz-aus-der-symmetrie"
+class="level4">
+<h4>(2) Herleitung von \( \displaystyle\int_{-1}^{1} f(x)\,dx = -2 \) aus der Symmetrie</h4>
+<p>Zerlege \( f(x) = -3\sin(2x) - 1 \) im Integral in zwei Teile:</p>
+<p>\[ \int_{-1}^{1} f\,dx = \underbrace{\int_{-1}^{1} -3\sin(2x)\,dx}_{(A)} \;+\; \underbrace{\int_{-1}^{1} (-1)\,dx}_{(B)}. \]</p>
+<p><strong>Teil \( (A) \).</strong> Der Sinusanteil
+\( -3\sin(2x) \) ist <strong>ungerade</strong> (punktsymmetrisch zum
+Ursprung). Das Integral einer ungeraden Funktion über ein <strong>zum
+Nullpunkt symmetrisches</strong> Intervall \( [-1;\,1] \) ist
+\( 0 \): Die Fläche links der \( y \)-Achse
+(über der Achse) ist genauso groß wie die Fläche rechts (unter der
+Achse), mit umgekehrtem Vorzeichen — sie heben sich auf. Also
+\( (A) = 0 \).</p>
+<p><strong>Teil \( (B) \).</strong> Die konstante
+\( -1 \) erzeugt ein Rechteck der Höhe \( -1 \)
+über der Breite von \( -1 \) bis \( 1 \)
+(Breite \( 2 \)):</p>
+<p>\[ \int_{-1}^{1} (-1)\,dx = (-1)\cdot\big(1-(-1)\big) = (-1)\cdot 2 = -2. \]</p>
+<p>Zusammen:</p>
+<p>\[ \int_{-1}^{1} f\,dx = 0 + (-2) = \boxed{-2.} \]</p>
+<details><summary>Haltung dahinter: Warum ist das Integral einer ungeraden Funktion über \( [-a;a] \) null?</summary>
+
+<p><strong>Ungerade Funktion = punktsymmetrisch zum Ursprung.</strong>
+Für \( -3\sin(2x) \) gilt: Wo der Graph links der
+\( y \)-Achse <strong>über</strong> der
+\( x \)-Achse liegt, liegt er rechts spiegelbildlich gleich
+weit <strong>unter</strong> der Achse (und umgekehrt).</p>
+<p><strong>Integral zählt mit Vorzeichen.</strong> Fläche über der Achse
+zählt positiv, Fläche unter der Achse negativ. Auf \( [-1;\,0] \)
+liefert \( -3\sin(2x) \) ein positives Flächenstück, auf
+\( [0;\,1] \) ein genauso großes negatives — beide haben
+denselben Betrag, aber entgegengesetztes Vorzeichen. Summe
+\( 0 \). Das ist die „Symmetrie der Sinuskurve", auf die
+die Aufgabe abzielt: Der schwingende Anteil trägt über das symmetrische
+Intervall <strong>nichts</strong> bei.</p>
+<p><strong>Übrig bleibt der Sockel.</strong> Nur die Verschiebung
+\( -1 \) zählt — und die ist ein simples Rechteck: Höhe
+\( -1 \), Breite \( 2 \), Fläche
+\( -2 \). Anschauung: \( f \) pendelt um die
+Linie \( y=-1 \); über das symmetrische Intervall mittelt sich
+das Pendeln weg, und es bleibt der mittlere Wert \( -1 \)
+mal die Breite \( 2 \).</p>
+<details><summary>Ganz langsam (mit Zahlen): das Rechteck-Integral und das Vorzeichen</summary>
+
+<p>\( \int_{-1}^{1}(-1)\,dx \): Die Breite des Intervalls ist „rechte Grenze
+minus linke Grenze", also \( 1 - (-1) \). Minus mal minus wird
+plus: \( 1 - (-1) = 1 + 1 = 2 \). Die Höhe ist \( -1 \). Fläche
+\( = \) Höhe \( \cdot \) Breite
+\( = (-1)\cdot 2 = -2 \). Das Vorzeichen ist negativ, weil die konstante
+Linie \( y=-1 \) <strong>unter</strong> der
+\( x \)-Achse liegt.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Manche wollen für \( (A) \) doch eine Stammfunktion bilden
+— das ist erlaubt, aber unnötig und fehleranfällig. Die Aufgabe sagt
+ausdrücklich „<strong>ausgehend von der Symmetrie</strong>": Der saubere
+Weg ist die Aussage „ungerade Funktion über symmetrisches Intervall
+\( \Rightarrow 0 \)". Zweite Falle: die Breite als \( 1 \)
+statt \( 2 \) ansetzen (das Intervall reicht von
+\( -1 \) bis \( 1 \), ist also
+\( 2 \) breit) — dann käme fälschlich \( -1 \)
+heraus.</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Stochastik) aufklappen</summary>
+
+<ul>
+<li><strong>a) Wahrscheinlichkeit + gleiches Ereignis.</strong>
+Erwartet: \( P(L \lt 95)\approx 0{,}071 \) (Wert vom GTR/aus der Tabelle, mit
+Hinweis aufs Standardisieren) <strong>und</strong> das gespiegelte
+Ereignis \( L \gt 105 \) mit Begründung über die
+<strong>Symmetrie</strong> der Glocke um \( 100 \).
+<em>Rückfrage:</em> „Warum hat \( L \gt 105 \) genau dieselbe
+Wahrscheinlichkeit?" <em>Rote Flagge:</em> \( L \lt 105 \) statt
+\( L \gt 105 \).</li>
+<li><strong>b) \( \mu \) und \( \sigma \)
+ablesen.</strong> Erwartet: \( \mu \) =
+<strong>Maximumstelle</strong> (\( =100 \));
+\( \sigma \) = Abstand von der <strong>Wendestelle</strong> zum
+Gipfel, \( x_2=\mu-\sigma \Rightarrow \sigma=3{,}4 \). <em>Rückfrage:</em> „Was ist eine
+Wendestelle, und wo liegt sie bei der Glocke?"</li>
+<li><strong>c) Graue Fläche deuten.</strong> Erwartet: Die Fläche ist
+eine <strong>Wahrscheinlichkeit</strong>, nämlich \( P(96\le L\le 100) \) —
+„Länge zwischen \( 96 \) und \( 100 \) mm".
+<em>Rote Flagge:</em> die Fläche als Stückzahl statt als
+Wahrscheinlichkeit deuten.</li>
+<li><strong>d) 14 % begründen.</strong> Erwartet: mangelhaft
+\( = L \lt 95 \) oder \( L \gt 105 \); \( p = 1-P(95\le L\le 105)
+  \approx 0{,}141 \)
+(oder \( 0{,}071+0{,}071 \)). <em>Rückfrage:</em> „Welcher Bereich ist
+‚nicht mangelhaft', und wie kommst du von ihm auf die
+\( 14\,\% \)?"</li>
+<li><strong>e) Term deuten.</strong> Erwartet: \( X\sim B(200;\,0{,}14) \) als
+Stichprobe von \( 200 \) Teilen; die drei Summanden
+\( = P(X=200,199,198) \); Ereignis „<strong>mindestens \( 198 \)
+mangelhaft</strong>". <em>Rückfrage:</em> „Wofür steht der Faktor
+\( \binom{200}{2} \)?" <em>Rote Flagge:</em> \( 0{,}14 \) den
+<strong>guten</strong> Teilen zuordnen.</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>AB I — Eigenschaften &amp; Zuordnung.</strong> Erwartet:
+<strong>Periode \( \pi \)</strong> (Faktor
+\( 2 \) innen), <strong>Amplitude
+\( 3 \)</strong>, <strong>Mittellinie
+\( y=-1 \)</strong>, Werte \( [-4;\,2] \),
+\( f(0)=-1 \) <strong>fallend</strong>; Zuordnung zu
+<strong>Abbildung 1</strong>. <em>Rückfrage:</em> „Woran scheiden
+Abbildung 2, 3 und 4 jeweils aus?" <em>Rote Flagge:</em> Periode als
+\( 2\pi \); Abbildung 3 (steigend) gewählt.</li>
+<li><strong>AB II — Integral, Stammfunktion, Symmetrie von
+\( f' \).</strong> Erwartet: \( \int_0^{3\pi/2} g\,dx = -3 \) mit
+Begründung „\( [\tfrac{\pi}{2};\tfrac{3\pi}{2}] \) ist <strong>eine ganze Periode</strong>
+\( \Rightarrow 0 \)"; Stammfunktion \( F(x)=\tfrac32\cos(2x)-x \) (mit
+Ableitungsprobe); \( f'(x)=-6\cos(2x) \) ist
+<strong>achsensymmetrisch</strong> zur \( y \)-Achse.
+<em>Rückfrage:</em> „Warum nicht \( -9 \) beim Integral?" /
+„Woher kommt der Faktor \( \tfrac12 \) in der Stammfunktion?"</li>
+<li><strong>AB III — Schnittpunkt-Parität &amp;
+\( \int_{-1}^{1} f = -2 \).</strong> Erwartet: \( g \) ist
+<strong>ungerade</strong> und geht durch den <strong>Ursprung</strong>;
+Schnittpunkte abseits des Ursprungs <strong>paarweise</strong>
+\( \Rightarrow \) Summe ungerade, also nie \( 266 \). Beim
+Integral: Sinusanteil <strong>ungerade</strong> \( \Rightarrow 0 \)
+über \( [-1;1] \); Rechteck \( (-1)\cdot 2 = -2 \).
+<em>Rückfrage:</em> „Welche Rolle spielt der Ursprung bei der
+Schnittpunkt-Zahl?" <em>Hinweis für dich:</em> Die Symmetrie-Argumente
+sind die volle Antwort — langes Rechnen ist hier nicht nötig.</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Wie findest du zu \( P(L \lt 95) \) ein gleich wahrscheinliches
+Ereignis — und warum funktioniert das?</li>
+<li>Woran erkennst du im Glockenkurven-Bild den Erwartungswert
+\( \mu \) und die Standardabweichung
+\( \sigma \)?</li>
+<li>Was bedeutet die graue Fläche zwischen \( 96 \) und
+\( 100 \) im Sachzusammenhang?</li>
+<li>Über welche zwei Wege kommst du auf die \( 14\,\% \) für
+„mangelhaft"?</li>
+<li>Wie liest du am Term \( f(x)=-3\sin(2x)-1 \) Periode, Amplitude,
+Mittellinie und das Verhalten bei \( x=0 \) ab — und welcher
+Graph gehört dazu?</li>
+<li>Warum ist \( \int_0^{3\pi/2} g\,dx = -3 \) und nicht \( -9 \)?</li>
+<li>Warum kann eine Ursprungsgerade die Sinuskurve \( g \)
+nie in gerade vielen Punkten schneiden, und warum ist
+\( \int_{-1}^{1} f\,dx = -2 \) ganz ohne Stammfunktion?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

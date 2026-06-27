@@ -1,0 +1,148 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Werkzeugkasten Stochastik — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link active" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Kompakte Nachschlage-Sammlung der
+<strong>Wahrscheinlichkeits-Werkzeuge</strong>, die in den
+Konvolut-Aufgaben wiederkehren. Jeder Eintrag sagt in zwei Sätzen,
+<em>was</em> das Werkzeug ist, <em>wann</em> man es nimmt, und zeigt die
+Formel an einem winzigen Beispiel. Gedacht zum Verlinken aus den
+Aufgaben — und zum schnellen Auffrischen, wenn ein Begriff im Lösungsweg
+auftaucht.</p>
+<p><span class="tag tag-ok">Nachschlagewerk — Bausteine, kein
+Prüfungsstoff „am Stück"</span></p>
+<section id="zufallsgröße" class="level2">
+<h2>Zufallsgröße</h2>
+<p>Eine <strong>Zufallsgröße</strong> \( X \) ordnet jedem
+Ergebnis eines Zufallsversuchs eine <strong>Zahl</strong> zu — z. B.
+„die gewürfelte Augenzahl" oder „Anzahl blauer Kugeln bei 15 Zügen".
+Eine <strong>Wahrscheinlichkeit</strong> \( P \) ist eine
+Zahl zwischen \( 0 \) (unmöglich) und \( 1 \)
+(sicher), oft als Prozent. \( P(X=2) \) heißt „die
+Wahrscheinlichkeit, dass \( X \) den Wert 2 annimmt".</p>
+</section>
+<section id="laplace-wahrscheinlichkeit" class="level2">
+<h2>Laplace-Wahrscheinlichkeit</h2>
+<p>Wenn alle Ergebnisse <strong>gleich wahrscheinlich</strong> sind,
+gilt</p>
+<p>\[ P(\text{Ereignis}) = \frac{\text{Anzahl der günstigen Ergebnisse}}{\text{Anzahl aller möglichen Ergebnisse}}. \]</p>
+<p><em>Beispiel.</em> Würfel: \( P(\text{gerade Zahl}) = \tfrac{3}{6} = \tfrac12 \) (günstig: 2, 4,
+6).</p>
+</section>
+<section id="erwartungswert" class="level2">
+<h2>Erwartungswert</h2>
+<p>Der <strong>Erwartungswert</strong> \( E(X) \) ist der
+<strong>langfristige Durchschnitt</strong>: Würde man den Versuch sehr
+oft wiederholen, läge der Mittelwert der Ergebnisse nahe bei
+\( E(X) \). Man rechnet <strong>jeden Wert mal seiner
+Wahrscheinlichkeit, alles addiert</strong>:</p>
+<p>\[ E(X) = \sum x_i\cdot P(X=x_i). \]</p>
+<p><em>Wichtig:</em> Der Erwartungswert ist <strong>nicht</strong> „der
+wahrscheinlichste Wert" und muss selbst gar nicht vorkommen können.
+<em>Beispiel.</em> Würfel: \( E(X)=1\cdot\tfrac16+2\cdot\tfrac16+\dots+6\cdot\tfrac16 = 3{,}5 \).</p>
+<details><summary>Faires Spiel — wozu der Erwartungswert hier?</summary>
+
+<p>Ein Glücksspiel heißt <strong>fair</strong>, wenn der erwartete
+<strong>Gewinn</strong> (Auszahlung minus Einsatz) gleich
+<strong>null</strong> ist — auf lange Sicht gewinnt und verliert
+niemand. Man bildet also \( E(\text{Gewinn}) \) und prüft, ob
+\( 0 \) herauskommt. Ist \( E(\text{Gewinn}) \lt 0 \), verliert der
+Spieler auf Dauer.</p>
+</details>
+
+</section>
+<section id="bernoulli-kette" class="level2">
+<h2>Bernoulli-Kette</h2>
+<p>Eine <strong>Bernoulli-Kette</strong> ist ein Versuch, der
+\( n \)-mal <strong>unabhängig</strong> wiederholt wird und
+bei dem es jedes Mal nur <strong>zwei</strong> Ausgänge gibt: „Treffer"
+(Wahrscheinlichkeit \( p \)) oder „kein Treffer". Typisch:
+<strong>Ziehen mit Zurücklegen</strong>. Die drei Bedingungen — fester
+Versuch, zwei Ausgänge, gleichbleibendes \( p \), unabhängig
+— muss man im Gespräch benennen können.</p>
+</section>
+<section id="binomialverteilung" class="level2">
+<h2>Binomialverteilung</h2>
+<p>Zählt \( X \) die <strong>Anzahl der Treffer</strong> in
+einer Bernoulli-Kette der Länge \( n \) mit
+Trefferwahrscheinlichkeit \( p \), so ist
+\( X \) <strong>binomialverteilt</strong>:</p>
+<p>\[ P(X=k) = \binom{n}{k}\,p^{k}\,(1-p)^{\,n-k}, \qquad E(X) = n\cdot p. \]</p>
+<p>Der Binomialkoeffizient \( \binom{n}{k} \) („n über k") zählt,
+<strong>auf wie viele Arten</strong> \( k \) Treffer auf
+\( n \) Versuche verteilt sein können. <em>Beispiel.</em>
+15-mal ziehen, \( p=0{,}6 \): \( E(X)=15\cdot0{,}6 = 9 \) — im Mittel 9
+Treffer.</p>
+<details><summary>Kumulierte Wahrscheinlichkeit P(a ≤ X ≤ b)</summary>
+
+<p>„Höchstens \( k \)" schreibt man \( P(X\le k) \). Ein
+<strong>Bereich</strong> ist die Differenz zweier solcher Werte:</p>
+<p>\[ P(a\le X\le b) = P(X\le b) - P(X\le a-1). \]</p>
+<p><em>Beispiel.</em> \( P(5\le X\le 10) = P(X\le 10) - P(X\le 4) \). Solche kumulierten Werte
+liest man im Abitur aus der Tabelle/dem Rechner ab.</p>
+</details>
+
+</section>
+<section id="ziehen-ohne-zurücklegen" class="level2">
+<h2>Ziehen ohne Zurücklegen</h2>
+<p>Wird <strong>ohne Zurücklegen</strong> gezogen (oder ist die
+Gesamtmenge klein), ändert sich \( p \) von Zug zu Zug —
+dann ist \( X \) <strong>nicht</strong> binomialverteilt.
+Man rechnet über einen <strong>Baum</strong> mit angepassten Brüchen.
+<em>Beispiel.</em> Aus 10 Personen (4 „passend") 3 ziehen, genau 2
+passend: \( 3\cdot\tfrac{4}{10}\cdot\tfrac{3}{9}\cdot\tfrac{6}{8} = 0{,}30 \) (der Faktor 3 zählt die Reihenfolgen).</p>
+</section>
+<section id="normalverteilung" class="level2">
+<h2>Normalverteilung</h2>
+<p>Eine <strong>normalverteilte</strong> Zufallsgröße ist
+<strong>stetig</strong> (sie kann jeden Wert in einem Bereich annehmen)
+und wird durch eine <strong>Glockenkurve</strong> beschrieben. Zwei
+Kennzahlen steuern sie:</p>
+<ul>
+<li><strong>Erwartungswert \( \mu \):</strong> Lage der
+<strong>Symmetrieachse</strong> und des <strong>Hochpunkts</strong> der
+Glocke.</li>
+<li><strong>Standardabweichung \( \sigma \):</strong> Maß für die
+<strong>Breite</strong>. Die <strong>Wendepunkte</strong> der Glocke
+liegen bei \( \mu-\sigma \) und \( \mu+\sigma \). Größeres
+\( \sigma \) → flacher und breiter.</li>
+</ul>
+<p>Wahrscheinlichkeiten sind <strong>Flächen</strong> unter der Kurve:
+\( P(a\le X\le b) \) ist die Fläche zwischen \( a \) und
+\( b \). <em>Beispiel.</em> \( P(X\le 21) \) bei
+\( \mu=20 \) ist etwas mehr als die Hälfte, weil
+\( 21 \) knapp rechts der Mitte liegt.</p>
+<details><summary>Binomial- gegen Normalverteilung — der Zusammenhang</summary>
+
+<p>Die <strong>Binomialverteilung</strong> ist <strong>diskret</strong>
+(nur ganze Trefferzahlen, Balkendiagramm); die
+<strong>Normalverteilung</strong> ist <strong>stetig</strong>
+(durchgehende Kurve). Für großes \( n \) sieht die
+Binomialverteilung aber fast wie eine Glockenkurve aus — die
+Normalverteilung ist dann eine gute Näherung. Gemeinsam: glockenförmig,
+symmetrisch um den Erwartungswert. Unterschied: einzelne Werte gegen
+Flächen.</p>
+</details>
+
+</section>
+<section id="vierfeldertafel" class="level2">
+<h2>Vierfeldertafel</h2>
+<p>Eine <strong>Vierfeldertafel</strong> ordnet zwei Ja/Nein-Merkmale
+(z. B. „Interesse"/„kein Interesse" und „passend"/„nicht passend") in
+einer 2×2-Tabelle; die Randfelder sind die Summen. Daraus liest man
+Wahrscheinlichkeiten direkt ab und berechnet <strong>bedingte</strong>
+Wahrscheinlichkeiten (Anteil <strong>innerhalb</strong> einer
+Zeile/Spalte).</p>
+<details><summary>Bedingte Wahrscheinlichkeit und Unabhängigkeit</summary>
+
+<ul>
+<li><strong>Bedingte Wahrscheinlichkeit</strong> \( P_B(A) \)
+(„A, wenn B schon feststeht") = Anteil von A <strong>innerhalb</strong>
+von B: \( \displaystyle P_B(A) = \frac{P(A\cap B)}{P(B)} \).</li>
+<li><strong>Stochastische Unabhängigkeit:</strong> A und B sind
+unabhängig, wenn das Eintreten des einen die Wahrscheinlichkeit des
+anderen <strong>nicht</strong> ändert. Test: \( P(A\cap B) = P(A)\cdot P(B) \). Kommt
+links und rechts dasselbe heraus → unabhängig; sonst nicht.</li>
+</ul>
+<p><em>Beispiel.</em> \( P(A)=41\%,\ P(B)=37\%,\ P(A\cap B)=22\% \): \( 0{,}41\cdot0{,}37 = 0{,}152 \neq 0{,}22 \) →
+<strong>nicht</strong> unabhängig.</p>
+</details>
+
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

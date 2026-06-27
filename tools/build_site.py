@@ -40,6 +40,7 @@ CONTENT_DIRS = [
     {"dir": "kapitel",       "label": "Kapitel",         "prefix": "kap-"},
     {"dir": "aufgaben",      "label": "Aufgaben",        "prefix": "auf-"},
     {"dir": "simulationen",  "label": "Prüfungssimulationen", "prefix": "sim-"},
+    {"dir": "konvolut",      "label": "Konvolut (Abitur-Aufgaben 2023)", "prefix": "konv-"},
     {"dir": "reflexion",     "label": "Reflexion",       "prefix": "refl-"},
 ]
 
@@ -69,24 +70,29 @@ def _protect_math(md):
     store = {}
     counter = [0]
 
-    def stash(s):
+    def stash(s, is_math=False):
         # Rein alphanumerischer Token (kein Sonderzeichen) -> pandoc lässt ihn als Wort unangetastet.
         key = "zZmathphZz%dzZendZz" % counter[0]
-        store[key] = s
+        store[key] = (is_math, s)
         counter[0] += 1
         return key
 
     # Reihenfolge: zuerst Code (damit Mathe-aussehender Text in Code unangetastet bleibt),
     # dann Display-Mathe (greedy-sicher non-greedy), dann Inline-Mathe.
-    md = _FENCE_RE.sub(lambda m: stash(m.group(0)), md)
-    md = _INLINE_CODE_RE.sub(lambda m: stash(m.group(0)), md)
-    md = _DISPLAY_RE.sub(lambda m: stash(m.group(0)), md)
-    md = _INLINE_RE.sub(lambda m: stash(m.group(0)), md)
+    md = _FENCE_RE.sub(lambda m: stash(m.group(0), False), md)
+    md = _INLINE_CODE_RE.sub(lambda m: stash(m.group(0), False), md)
+    md = _DISPLAY_RE.sub(lambda m: stash(m.group(0), True), md)
+    md = _INLINE_RE.sub(lambda m: stash(m.group(0), True), md)
     return md, store
 
 
 def _restore_math(html, store):
-    for key, original in store.items():
+    # In Math-Spans rohe '<'/'>' zu \lt/\gt wandeln: sonst parst der Browser z. B. '\( a<b \)'
+    # als Start-Tag '<b' und die Formel zerbricht (unrendiertes \( bleibt sichtbar). \lt/\gt
+    # rendern in KaTeX identisch zu < / >. Code-Spans bleiben unangetastet (is_math=False).
+    for key, (is_math, original) in store.items():
+        if is_math:
+            original = original.replace("<", r" \lt ").replace(">", r" \gt ")
         html = html.replace(key, original)
     return html
 

@@ -1,4 +1,4 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Funktionsuntersuchung — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link active" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Eine <strong>Funktionsuntersuchung</strong> (auch „Kurvendiskussion")
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Funktionsuntersuchung — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link active" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Eine <strong>Funktionsuntersuchung</strong> (auch „Kurvendiskussion")
 ist das Herzstück der Analysis-Prüfung. Du bekommst eine Funktion und
 sollst ihren Graphen vollständig verstehen, ohne ihn vorher zu sehen: Wo
 schneidet er die Achsen? Ist er symmetrisch? Wo steigt und fällt er? Wo
@@ -198,8 +198,8 @@ umgekehrt). Beides hängt am Vorzeichen der <strong>ersten
 Ableitung</strong> \( f' \), denn \( f'(x) \) ist die
 Steigung des Graphen an der Stelle \( x \):</p>
 <ul>
-<li>\( f'(x) > 0 \): Graph steigt (streng monoton steigend).</li>
-<li>\( f'(x) < 0 \): Graph fällt (streng monoton fallend).</li>
+<li>\( f'(x)  \gt  0 \): Graph steigt (streng monoton steigend).</li>
+<li>\( f'(x)  \lt  0 \): Graph fällt (streng monoton fallend).</li>
 <li>\( f'(x) = 0 \): waagerechte Tangente — ein Kandidat für eine
 Extremstelle.</li>
 </ul>
@@ -212,16 +212,16 @@ Extremstelle.</li>
 mit \( f'(x_0) = 0 \), liegt dort wirklich ein Extrempunkt. Dabei
 gilt: <span class="tag tag-ok">AB II</span></p>
 <ul>
-<li>\( f''(x_0) > 0 \) → <strong>Tiefpunkt</strong> (Graph ist dort
+<li>\( f''(x_0)  \gt  0 \) → <strong>Tiefpunkt</strong> (Graph ist dort
 nach oben gekrümmt, „Tal").</li>
-<li>\( f''(x_0) < 0 \) → <strong>Hochpunkt</strong> (Graph ist dort
+<li>\( f''(x_0)  \lt  0 \) → <strong>Hochpunkt</strong> (Graph ist dort
 nach unten gekrümmt, „Berg").</li>
 </ul>
 <p>Du setzt die Kandidaten in \( f''(x) = 6x \) ein:</p>
 <ul>
-<li>\( f''(-1) = 6 \cdot (-1) = -6 < 0 \) → <strong>Hochpunkt</strong> bei
+<li>\( f''(-1) = 6 \cdot (-1) = -6  \lt  0 \) → <strong>Hochpunkt</strong> bei
 \( x = -1 \).</li>
-<li>\( f''(+1) = 6 \cdot 1 = +6 > 0 \) → <strong>Tiefpunkt</strong> bei
+<li>\( f''(+1) = 6 \cdot 1 = +6  \gt  0 \) → <strong>Tiefpunkt</strong> bei
 \( x = +1 \).</li>
 </ul>
 <p><strong>Schritt 3 — y-Werte (die vollständigen Punkte):</strong> Du
@@ -241,10 +241,10 @@ Graph steigt davor und danach weiter). Darum heißt \( f'(x) = 0 \)
 <strong>notwendig</strong>: Jede Extremstelle erfüllt es, aber nicht
 jede Stelle, die es erfüllt, ist eine Extremstelle.</p>
 <p>Die <strong>hinreichende</strong> Bedingung \( f''(x_0) \neq 0 \)
-schließt die Lücke. \( f''(x_0) > 0 \) heißt: Der Graph ist dort nach
+schließt die Lücke. \( f''(x_0)  \gt  0 \) heißt: Der Graph ist dort nach
 oben gekrümmt — eine waagerechte Tangente in einem nach oben gekrümmten
 Bogen kann nur am tiefsten Punkt liegen, also Tiefpunkt. Umgekehrt bei
-\( f''(x_0) < 0 \): Hochpunkt.</p>
+\( f''(x_0)  \lt  0 \): Hochpunkt.</p>
 <details><summary>Die Eselsbrücke für Hoch-/Tiefpunkt</summary>
 
 <p>\( f'' \) <strong>positiv = Tiefpunkt</strong>,
@@ -285,21 +285,21 @@ Bereich einsetzen. <span class="tag tag-ok">AB II</span></p>
 </thead>
 <tbody>
 <tr>
-<td>\( x < -1 \)</td>
+<td>\( x  \lt  -1 \)</td>
 <td>\( x = -2 \)</td>
 <td>\( 3 \cdot 4 - 3 = 9 \)</td>
 <td>\( + \)</td>
 <td>steigt</td>
 </tr>
 <tr>
-<td>\( -1 < x < 1 \)</td>
+<td>\( -1  \lt  x  \lt  1 \)</td>
 <td>\( x = 0 \)</td>
 <td>\( 0 - 3 = -3 \)</td>
 <td>\( - \)</td>
 <td>fällt</td>
 </tr>
 <tr>
-<td>\( x > 1 \)</td>
+<td>\( x  \gt  1 \)</td>
 <td>\( x = 2 \)</td>
 <td>\( 3 \cdot 4 - 3 = 9 \)</td>
 <td>\( + \)</td>
@@ -329,9 +329,9 @@ der Punkt, an dem die Krümmung umschlägt — der Graph wechselt von einer
 Linkskurve in eine Rechtskurve oder umgekehrt. Das hängt am Vorzeichen
 der <strong>zweiten Ableitung</strong> \( f'' \):</p>
 <ul>
-<li>\( f''(x) > 0 \): <strong>konvex</strong> (linksgekrümmt, nach
+<li>\( f''(x)  \gt  0 \): <strong>konvex</strong> (linksgekrümmt, nach
 oben gewölbt \( \smile \)).</li>
-<li>\( f''(x) < 0 \): <strong>konkav</strong> (rechtsgekrümmt, nach
+<li>\( f''(x)  \lt  0 \): <strong>konkav</strong> (rechtsgekrümmt, nach
 unten gewölbt \( \frown \)).</li>
 <li>\( f''(x) = 0 \): möglicher Wechsel — Kandidat für eine
 Wendestelle.</li>
@@ -381,11 +381,11 @@ Bedingung gezeigt zu haben.</p>
 \( x = 0 \) das Vorzeichen wechselt, gibt es zwei
 Krümmungsbereiche: <span class="tag tag-ok">AB II</span></p>
 <ul>
-<li>Für \( x < 0 \): \( f''(x) = 6x < 0 \) →
+<li>Für \( x  \lt  0 \): \( f''(x) = 6x  \lt  0 \) →
 <strong>konkav</strong> (rechtsgekrümmt). Dazu passt der Hochpunkt bei
 \( x = -1 \), der in einem nach unten gewölbten Bogen
 liegt.</li>
-<li>Für \( x > 0 \): \( f''(x) = 6x > 0 \) →
+<li>Für \( x  \gt  0 \): \( f''(x) = 6x  \gt  0 \) →
 <strong>konvex</strong> (linksgekrümmt). Dazu passt der Tiefpunkt bei
 \( x = +1 \) im nach oben gewölbten Bogen.</li>
 </ul>
@@ -450,8 +450,8 @@ eingezeichnet):</p>
 </tr>
 <tr>
 <td>Monotonie</td>
-<td>steigt für \( x<-1 \), fällt für \( -1<x<1 \),
-steigt für \( x>1 \)</td>
+<td>steigt für \( x \lt -1 \), fällt für \( -1 \lt x \lt 1 \),
+steigt für \( x \gt 1 \)</td>
 </tr>
 <tr>
 <td>Wendestelle</td>
@@ -459,8 +459,8 @@ steigt für \( x>1 \)</td>
 </tr>
 <tr>
 <td>Krümmung</td>
-<td>konkav für \( x<0 \), konvex für
-\( x>0 \)</td>
+<td>konkav für \( x \lt 0 \), konvex für
+\( x \gt 0 \)</td>
 </tr>
 </tbody>
 </table></div>
@@ -507,4 +507,4 @@ Untersuchung nach demselben Schema — nur dass du zusätzlich auf den
 \( \sqrt{x} \) sind negative \( x \) verboten). Kläre
 den genauen Umfang sicherheitshalber mit deiner Lehrkraft.</p>
 </section>
-<footer class="site">Build 91f95c6 · 2026-06-18T12:02:46Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

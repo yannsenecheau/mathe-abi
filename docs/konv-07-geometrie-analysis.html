@@ -1,0 +1,1066 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 7 — Geometrie &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link active" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Geometrie</strong>, <strong>Teil 2 (Gespräch) aus der Analysis</strong>.
+Alles ist <strong>rechnerfrei</strong> zu lösen. Arbeitet die Aufgabe
+wie eine echte Simulation durch — eine Person trägt vor, die andere
+prüft mit dem Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Vektor- und Geometrie-Werkzeuge (Punkte, Vektoren, Länge, Skalarprodukt,
+Kreuzprodukt, Geraden- und Ebenengleichung) stehen kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a> (Anker u. a. <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">#skalarprodukt</a>,
+<a
+href="konv-90-werkzeugkasten-geometrie.html#kreuzprodukt">#kreuzprodukt</a>).
+Die Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<hr />
+<section id="teil-1--vortrag-geometrie-punkte-und-ebenen-einer-geraden"
+class="level2">
+<h2>Teil 1 — Vortrag (Geometrie): Punkte und Ebenen einer Geraden</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Die Punkte \( A(2\,|\,1\,|\,0) \) und \( B(4\,|\,0\,|\,2) \) liegen
+auf der Geraden \( g \).</strong></p>
+<p><strong>a)</strong> Prüfe, ob der Punkt \( C(0\,|\,2\,|\,-2) \) auf der
+Geraden \( g \) liegt.</p>
+<p><strong>b)</strong> Zeige, dass die Gerade \( g \) in der
+Ebene \( E:\ x_1 + 2x_2 = 4 \) liegt. Ermittle außerdem die Gleichung einer
+weiteren Ebene, die ebenfalls die Gerade \( g \)
+enthält.</p>
+<p><strong>c)</strong> Bestimme die Koordinaten eines Punktes
+\( D \), der auf der Geraden \( g \) liegt und
+vom Punkt \( A \) den Abstand \( 9 \) hat.</p>
+<p><strong>d)</strong> Beschreibe ein Verfahren, mit dem man die
+Koordinaten eines Punktes \( P \) bestimmen kann, der mit
+den beiden Punkten \( A \) und \( B \) ein
+gleichseitiges Dreieck bildet.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was ein Koordinatensystem im Raum
+ist:</strong> Jeder Punkt im Raum braucht <strong>drei</strong> Zahlen —
+\( (x_1 \mid x_2 \mid x_3) \) —, weil es „rechts/links", „vorne/hinten" und
+„oben/unten" gibt. \( B(4\,|\,0\,|\,2) \) heißt: 4 Schritte in
+\( x_1 \)-Richtung, 0 in \( x_2 \), 2 in
+\( x_3 \). Eine <strong>Gerade</strong> ist eine unendlich
+lange, schnurgerade Linie durch diesen Raum.</p>
+</blockquote>
+<p>So liegen die Punkte und die Gerade \( g \) im
+Koordinatensystem (schematisch):</p>
+<figure>
+<svg viewBox="0 0 460 320" role="img" aria-label="Schrägbild der Geraden g durch die Punkte A, B, C und D mit der Ebene E" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs>
+    <marker id="ah7" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker>
+  </defs>
+  <polygon points="306,210 138,102 138,186 306,294" fill="#3a5a9c" fill-opacity="0.07" stroke="#3a5a9c" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="150" y="128" font-size="13" fill="#3a5a9c" font-weight="bold">E</text>
+  <line x1="250" y1="210" x2="250" y2="70"  stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah7)"/>
+  <line x1="250" y1="210" x2="420" y2="210" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah7)"/>
+  <line x1="250" y1="210" x2="180" y2="260" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ah7)"/>
+  <text x="238" y="66"  font-size="13" fill="#7a7163">x₃</text>
+  <text x="424" y="214" font-size="13" fill="#7a7163">x₂</text>
+  <text x="168" y="276" font-size="13" fill="#7a7163">x₁</text>
+  <line x1="306" y1="266" x2="82" y2="122" stroke="#3a5a9c" stroke-width="2"/>
+  <text x="330" y="148" font-size="12" fill="#26324a">g</text>
+  <circle cx="306" cy="266" r="3.5" fill="#3a8a5a"/><text x="312" y="282" font-size="12" fill="#26324a">C(0|2|−2)</text>
+  <circle cx="250" cy="230" r="3.5" fill="#3a5a9c"/><text x="256" y="244" font-size="12" fill="#26324a" font-weight="bold">A(2|1|0)</text>
+  <circle cx="194" cy="194" r="3.5" fill="#3a5a9c"/><text x="120" y="186" font-size="12" fill="#26324a" font-weight="bold">B(4|0|2)</text>
+  <circle cx="82"  cy="122" r="3.5" fill="#d98324"/><text x="40"  y="112" font-size="12" fill="#26324a">D(8|−2|6)</text>
+</svg>
+<figcaption>Schematisches Schrägbild — \( A,\ B,\ C,\ D \) liegen alle auf \( g \). Die Ebene \( E \) (blau angedeutet) enthält die ganze Gerade. Es gilt \( |\overline{AB}| = 3 \) und \( |\overline{AD}| = 9 = 3\cdot|\overline{AB}| \).</figcaption>
+</figure>
+
+<section
+id="teilaufgabe-a--punktprobe-liegt-zzmathphzz54zzendzz-auf-zzmathphzz55zzendzz"
+class="level3">
+<h3>Teilaufgabe a) — Punktprobe: Liegt \( C \) auf
+\( g \)?</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — Richtungsvektor der Geraden.</strong> Die Gerade
+läuft durch \( A \) und \( B \). Ihr
+<strong>Richtungsvektor</strong> (der Pfeil, in den die Gerade zeigt)
+ist „Ziel minus Start":</p>
+<p>\[ \overrightarrow{AB} = B - A = \begin{pmatrix}4\\0\\2\end{pmatrix} - \begin{pmatrix}2\\1\\0\end{pmatrix}
+   = \begin{pmatrix}2\\-1\\2\end{pmatrix}. \]</p>
+<p><strong>Schritt 2 — Pfeil von \( C \) nach
+\( A \).</strong> Wir prüfen, ob man von \( C \)
+aus genau in dieser Richtung zu \( A \) (und damit auf die
+Gerade) kommt:</p>
+<p>\[ \overrightarrow{CA} = A - C = \begin{pmatrix}2\\1\\0\end{pmatrix} - \begin{pmatrix}0\\2\\-2\end{pmatrix}
+   = \begin{pmatrix}2\\-1\\2\end{pmatrix}. \]</p>
+<p><strong>Schritt 3 — Vergleich.</strong> Es ist \( \overrightarrow{CA} = \overrightarrow{AB} \):
+der Pfeil von \( C \) nach \( A \) ist
+<strong>genau</strong> der Richtungsvektor der Geraden. Damit liegt
+\( C \) auf derselben Geraden — eine Schrittlänge „vor"
+\( A \).</p>
+<p><strong>Ergebnis: \( C \) liegt auf \( g \),
+denn \( \overrightarrow{CA} = \overrightarrow{AB} = \begin{pmatrix}2\\-1\\2\end{pmatrix} \).</strong></p>
+<details><summary>Haltung dahinter: Was ist eine Gerade, ein Richtungsvektor — und was bedeutet „Punktprobe"? (ganz von vorn)</summary>
+
+<p>Erst die Bausteine, ganz langsam.</p>
+<p><strong>Punkt und Vektor.</strong> Ein <strong>Punkt</strong> ist ein
+Ort im Raum, festgelegt durch drei Zahlen \( (x_1\mid x_2\mid x_3) \). Ein
+<strong>Vektor</strong> ist ein <strong>Pfeil</strong> — eine Bewegung
+mit Richtung und Länge, geschrieben als Spalte mit drei Zahlen. Den
+Pfeil von einem Punkt \( P \) zu einem Punkt
+\( Q \) schreibt man \( \overrightarrow{PQ} \) und rechnet ihn als
+<strong>„Ziel minus Start"</strong>: \( Q - P \). Man zieht
+dafür die Koordinaten einzeln voneinander ab.</p>
+<p><strong>Gerade in Parameterform.</strong> Eine
+<strong>Gerade</strong> beschreibt man durch einen
+<strong>Startpunkt</strong> (Ortsvektor) und einen
+<strong>Richtungsvektor</strong> (in welche Richtung die Linie
+zeigt):</p>
+<p>\[ g:\quad \vec x = \underbrace{\begin{pmatrix}2\\1\\0\end{pmatrix}}_{A,\ \text{Stützpunkt}} \;+\;
+   t\cdot \underbrace{\begin{pmatrix}2\\-1\\2\end{pmatrix}}_{\overrightarrow{AB},\ \text{Richtung}}. \]</p>
+<p>Das \( t \) ist eine frei wählbare Zahl (der
+<strong>Parameter</strong>). Für jedes \( t \) bekommt man
+<strong>einen</strong> Punkt der Geraden: \( t=0 \) liefert
+\( A \), \( t=1 \) liefert \( B \).
+Bild: \( A \) ist der Bahnhof, der Richtungsvektor ist „eine
+Fahrt", und \( t \) sagt, wie viele Fahrten man von
+\( A \) aus macht (auch rückwärts mit negativem
+\( t \)).</p>
+<p><strong>Punktprobe.</strong> „Punktprobe" heißt: nachprüfen, ob ein
+gegebener Punkt <strong>wirklich</strong> auf der Geraden sitzt. Man
+fragt: Gibt es ein \( t \), für das die Geradenformel genau
+diesen Punkt ausspuckt? Hier ist es besonders bequem: Der Pfeil von
+\( C \) zu \( A \) ist
+<strong>identisch</strong> mit dem Richtungsvektor. Das heißt, von
+\( C \) aus erreicht man \( A \) mit genau einem
+„Richtungsschritt" — also ist \( C \) der Geradenpunkt mit
+\( t = -1 \) (man geht von \( A \) einen Schritt
+<strong>zurück</strong>). Probe: \( A + (-1)\cdot\overrightarrow{AB} = (2,1,0) - (2,-1,2) = (0,2,-2) = C \). ✓</p>
+<details><summary>Ganz langsam (mit Zahlen): warum ist „Ziel minus Start" richtig?</summary>
+
+<p>\( \overrightarrow{CA} = A - C \) rechnet man Zeile für Zeile:</p>
+<ul>
+<li><ol type="1">
+<li>Zeile: \( 2 - 0 = 2 \).</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Zeile: \( 1 - 2 = -1 \).</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Zeile: \( 0 - (-2) = 0 + 2 = 2 \) — <strong>Achtung:</strong> „minus minus
+zwei" wird „plus zwei".</li>
+</ol></li>
+</ul>
+<p>Ergebnis \( (2,\,-1,\,2) \). Vergleich mit \( \overrightarrow{AB} = (2,-1,2) \):
+Zeile für Zeile gleich. Wären auch nur <strong>eine</strong> Zahl
+verschieden, läge \( C \) nicht auf \( g \).
+Hier stimmt alles, also liegt \( C \) auf der Geraden.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Man darf nicht nur <strong>eine</strong> Koordinate vergleichen.
+\( C \) liegt nur dann auf \( g \), wenn der
+Pfeil \( \overrightarrow{CA} \) in <strong>allen drei</strong> Zeilen ein
+<strong>Vielfaches</strong> des Richtungsvektors ist (hier sogar das
+\( 1 \)-fache). Stimmt eine einzige Zeile nicht zum selben
+Faktor, liegt der Punkt daneben. In der Prüfung also immer alle drei
+Zeilen nennen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--gerade-in-einer-ebene-zeigen-und-eine-weitere-ebene-finden"
+class="level3">
+<h3>Teilaufgabe b) — Gerade in einer Ebene zeigen und eine weitere Ebene
+finden</h3>
+<p><span class="tag tag-ok">AB I</span> <span class="tag tag-warn">AB II
+— Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Teil 1 — \( g \) liegt in
+\( E:\ x_1 + 2x_2 = 4 \).</strong> Eine Gerade liegt vollständig in einer
+Ebene, wenn schon <strong>zwei</strong> ihrer Punkte in der Ebene
+liegen. Wir setzen \( A \) und \( B \) in die
+Ebenengleichung ein:</p>
+<p>\[ A(2\,|\,1\,|\,0):\quad 2 + 2\cdot 1 = 4 \;\checkmark \qquad
+   B(4\,|\,0\,|\,2):\quad 4 + 2\cdot 0 = 4 \;\checkmark \]</p>
+<p>Beide Punkte erfüllen die Gleichung. Da \( A \) und
+\( B \) in \( E \) liegen, liegt die gesamte
+Gerade \( g \) (sie geht durch \( A \) und
+\( B \)) in \( E \).</p>
+<p><strong>Ergebnis: Weil \( A \) und \( B \)
+die Gleichung \( x_1+2x_2=4 \) erfüllen, liegt \( g \)
+in \( E \).</strong></p>
+<p><strong>Teil 2 — eine weitere Ebene durch
+\( g \).</strong> Durch eine Gerade gibt es
+<strong>unendlich viele</strong> Ebenen (wie unendlich viele Buchseiten
+an einem Buchrücken). Eine bequeme Beschreibung ist die
+<strong>Parameterform</strong>: man nimmt die Gerade und spannt mit
+einem <strong>zweiten</strong> Richtungsvektor eine Ebene auf. Wir
+wählen \( \begin{pmatrix}1\\1\\1\end{pmatrix} \):</p>
+<p>\[ F:\quad \vec x = \begin{pmatrix}2\\1\\0\end{pmatrix} + t\cdot\begin{pmatrix}2\\-1\\2\end{pmatrix}
+   + u\cdot\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad t,u\in\mathbb{R}. \]</p>
+<p>Das ist eine <strong>gültige neue</strong> Ebene, weil
+\( \begin{pmatrix}1\\1\\1\end{pmatrix} \)</p>
+<ul>
+<li><strong>nicht parallel</strong> zu \( \overrightarrow{AB}=\begin{pmatrix}2\\-1\\2\end{pmatrix} \) ist (sonst
+würde keine Fläche aufgespannt, sondern wieder nur die Gerade), und</li>
+<li><strong>nicht orthogonal</strong> zum Normalenvektor
+\( \vec n_E = \begin{pmatrix}1\\2\\0\end{pmatrix} \) von \( E \) ist — der Test ist das
+Skalarprodukt: \( \begin{pmatrix}1\\1\\1\end{pmatrix}\cdot\begin{pmatrix}1\\2\\0\end{pmatrix} = 1+2+0 = 3 \neq 0 \). Weil das nicht \( 0 \)
+ist, „sticht" der neue Vektor aus \( E \) heraus, also ist
+\( F \neq E \).</li>
+</ul>
+<p><strong>Ergebnis: \( F:\ \vec x = \begin{pmatrix}2\\1\\0\end{pmatrix} + t\begin{pmatrix}2\\-1\\2\end{pmatrix} + u\begin{pmatrix}1\\1\\1\end{pmatrix} \) ist eine weitere Ebene durch
+\( g \).</strong></p>
+<details><summary>Haltung dahinter: Was ist eine Ebene, ein Normalenvektor — und warum reichen zwei Punkte? (ganz von vorn)</summary>
+
+<p><strong>Ebene.</strong> Eine <strong>Ebene</strong> ist eine
+vollkommen flache, unendlich ausgedehnte Fläche — wie eine unendlich
+große, ideal glatte Tischplatte. Eine
+<strong>Koordinatengleichung</strong> der Form \( n_1x_1 + n_2x_2 + n_3x_3 = d \)
+beschreibt <strong>genau die Punkte, die auf der Ebene liegen</strong>:
+setzt man einen Ebenenpunkt ein, kommt die Zahl \( d \)
+heraus; setzt man einen Punkt daneben ein, kommt etwas anderes heraus.
+Bei \( E \) fehlt \( x_3 \) — das heißt nur,
+dass \( x_3 \) frei ist (die Ebene steht „senkrecht" und
+enthält die ganze Höhenrichtung).</p>
+<p><strong>Warum reichen zwei Punkte für „Gerade liegt in
+Ebene"?</strong> Durch zwei Punkte geht <strong>genau eine</strong>
+Gerade. Liegen diese zwei Punkte in der flachen Ebene, dann kann die
+geradlinige Verbindung zwischen ihnen nicht aus der Ebene „herausbeulen"
+— sie bleibt komplett drin. Also genügt es, \( A \) und
+\( B \) einzusetzen; alle anderen Geradenpunkte liegen dann
+automatisch mit drin.</p>
+<p><strong>Normalenvektor.</strong> Der <strong>Normalenvektor</strong>
+\( \vec n \) ist ein Pfeil, der <strong>senkrecht</strong> auf
+der Ebene steht — wie ein Fahnenmast gerade aus dem Boden. Seine drei
+Zahlen sind genau die Vorfaktoren vor \( x_1, x_2, x_3 \) in der
+Ebenengleichung. Bei \( E:\ x_1 + 2x_2 = 4 \) liest man also direkt ab:
+\( \vec n_E = (1,\,2,\,0) \).</p>
+<details><summary>Skalarprodukt: der „Senkrecht-Test" — wozu, und wie?</summary>
+
+<p>Das <strong>Skalarprodukt</strong> zweier Pfeile ist eine Zahl: man
+multipliziert die Vektoren zeilenweise und addiert. Sein wichtigster
+Nutzen: Es ist <strong>genau dann \( 0 \), wenn die beiden
+Pfeile senkrecht (orthogonal) aufeinander stehen</strong>.</p>
+<p>Wir brauchen es hier umgekehrt: Damit unsere zweite Ebene
+\( F \) <strong>wirklich neu</strong> ist (also nicht
+zufällig wieder \( E \)), darf der Spannvektor
+\( (1,1,1) \) <strong>nicht in \( E \)
+liegen</strong>. „In \( E \) liegen" würde bedeuten:
+senkrecht zum Mast \( \vec n_E \). Wir rechnen das
+Skalarprodukt:</p>
+<p>\[ \begin{pmatrix}1\\1\\1\end{pmatrix}\cdot\begin{pmatrix}1\\2\\0\end{pmatrix}
+   = 1\cdot 1 + 1\cdot 2 + 1\cdot 0 = 3. \]</p>
+<p>Das ist <strong>nicht \( 0 \)</strong>, also steht
+\( (1,1,1) \) <strong>nicht</strong> senkrecht auf dem Mast,
+liegt also <strong>nicht</strong> in \( E \) — es ragt
+heraus. Damit ist \( F \) eine andere Ebene als
+\( E \), enthält die Gerade aber trotzdem (für
+\( u=0 \) bleibt genau \( g \) übrig). Mehr zum
+Skalarprodukt im <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">Werkzeugkasten
+Geometrie</a>.</p>
+</details>
+
+<details><summary>Alternative: dieselbe „weitere Ebene" als Koordinatengleichung</summary>
+
+<p>Wer lieber eine Gleichung \( n_1x_1+n_2x_2+n_3x_3=d \) nennt, sucht einen
+Normalenvektor, der <strong>senkrecht zum Richtungsvektor</strong>
+\( \overrightarrow{AB}=(2,-1,2) \) steht (damit die Ebene die Gerade enthält) und
+<strong>nicht parallel</strong> zu \( \vec n_E=(1,2,0) \) ist (damit es
+eine andere Ebene ist). Zum Beispiel \( \vec n = (2,2,-1) \): Test
+\( (2,2,-1)\cdot(2,-1,2) = 4-2-2 = 0 \) ✓. Einsetzen von \( A \):
+\( 2\cdot2 + 2\cdot1 - 0 = 6 \). Also</p>
+<p>\[ F:\quad 2x_1 + 2x_2 - x_3 = 6. \]</p>
+<p>Probe mit \( B(4|0|2): 8+0-2 = 6 \) ✓. Beide Formen — Parameterform oder
+diese Gleichung — sind korrekte Antworten.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-c--punkt-zzmathphzz168zzendzz-auf-zzmathphzz169zzendzz-mit-abstand-zzmathphzz170zzendzz-von-zzmathphzz171zzendzz"
+class="level3">
+<h3>Teilaufgabe c) — Punkt \( D \) auf \( g \)
+mit Abstand \( 9 \) von \( A \)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — Länge des Richtungsvektors.</strong> Wie weit
+kommt man mit <strong>einem</strong> Richtungsschritt? Das ist der
+Betrag (die Länge) von \( \overrightarrow{AB} \):</p>
+<p>\[ |\overrightarrow{AB}| = \sqrt{2^2 + (-1)^2 + 2^2} = \sqrt{4+1+4} = \sqrt{9} = 3. \]</p>
+<p>Ein Schritt entlang der Geraden ist also \( 3 \)
+lang.</p>
+<p><strong>Schritt 2 — wie viele Schritte für Abstand
+\( 9 \)?</strong> Wir wollen Abstand \( 9 \).
+Da jeder Schritt \( 3 \) misst, brauchen wir
+\( \dfrac{9}{3} = 3 \) Schritte. Also \( t = 3 \) (man kann auch
+\( t = -3 \) nehmen — das gäbe einen zweiten Punkt auf der
+anderen Seite von \( A \)).</p>
+<p><strong>Schritt 3 — Punkt ausrechnen.</strong></p>
+<p>\[ \overrightarrow{OD} = \begin{pmatrix}2\\1\\0\end{pmatrix} + 3\cdot\begin{pmatrix}2\\-1\\2\end{pmatrix}
+   = \begin{pmatrix}2+6\\1-3\\0+6\end{pmatrix} = \begin{pmatrix}8\\-2\\6\end{pmatrix}. \]</p>
+<p><strong>Ergebnis: \( D(8\,|\,-2\,|\,6) \).</strong> (Der zweite mögliche
+Punkt wäre \( D'(-4\,|\,4\,|\,-6) \) für \( t=-3 \).)</p>
+<details><summary>Haltung dahinter: Was ist der „Betrag" eines Vektors, und warum löst er die Aufgabe? (ganz von vorn)</summary>
+
+<p><strong>Abstand und Betrag.</strong> Der <strong>Abstand</strong>
+zweier Punkte ist die Länge der Strecke dazwischen. Die <strong>Länge
+eines Pfeils</strong> \( |\vec v| \) (auch „Betrag" genannt)
+bekommt man mit dem <strong>Satz des Pythagoras</strong>, nur in drei
+Dimensionen: jede der drei Zahlen quadrieren, addieren, Wurzel
+ziehen:</p>
+<p>\[ \left|\begin{pmatrix}a\\b\\c\end{pmatrix}\right| = \sqrt{a^2+b^2+c^2}. \]</p>
+<p>Hier wird \( \sqrt{4+1+4}=\sqrt 9 = 3 \) — eine seltene runde Zahl, das macht
+die Aufgabe angenehm.</p>
+<p><strong>Die Idee der Lösung.</strong> Auf der Geraden bewegt man sich
+in Vielfachen des Richtungsvektors. Ein Vielfaches \( t\cdot\overrightarrow{AB} \)
+ist \( |t| \) mal so lang wie ein Schritt, also
+\( |t|\cdot 3 \). Soll der Abstand \( 9 \) sein, muss
+\( |t|\cdot 3 = 9 \), also \( |t| = 3 \). Mit
+\( t=3 \) geht man drei volle Schritte von
+\( A \) weg und landet bei \( D \).</p>
+<details><summary>Ganz langsam (mit Zahlen): die Multiplikation \( 3\cdot\overrightarrow{AB} \)</summary>
+
+<p>„Einen Vektor mit einer Zahl multiplizieren" heißt: <strong>jede
+Zeile</strong> mit der Zahl multiplizieren.</p>
+<p>\[ 3\cdot\begin{pmatrix}2\\-1\\2\end{pmatrix}
+   = \begin{pmatrix}3\cdot 2\\ 3\cdot(-1)\\ 3\cdot 2\end{pmatrix}
+   = \begin{pmatrix}6\\-3\\6\end{pmatrix}. \]</p>
+<p>Dann zu \( A \) addieren — auch das geht zeilenweise:
+\( 2+6=8 \), \( 1+(-3)=1-3=-2 \), \( 0+6=6 \).
+Ergebnis \( (8,-2,6) \).</p>
+<p><strong>Probe:</strong> \( \overrightarrow{AD} = D - A = (6,-3,6) \), Länge
+\( \sqrt{36+9+36} = \sqrt{81} = 9 \). ✓ Genau der geforderte Abstand.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Man darf den Faktor nicht „nach Gefühl" wählen. Wer
+\( D = A + 9\cdot\overrightarrow{AB} \) bildet, bekommt Abstand \( 9\cdot 3 = 27 \), nicht
+\( 9 \). Erst die <strong>Länge eines Schritts</strong>
+bestimmen, dann die Anzahl der Schritte ausrechnen
+(\( 9 \div 3 = 3 \)). Hätte \( |\overrightarrow{AB}| \) keine runde Länge,
+müsste man durch genau diese Länge teilen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--verfahren-punkt-zzmathphzz208zzendzz-mit-gleichseitigem-dreieck-zzmathphzz209zzendzz"
+class="level3">
+<h3>Teilaufgabe d) — Verfahren: Punkt \( P \) mit
+gleichseitigem Dreieck \( ABP \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p>Gefragt ist hier ein <strong>Verfahren</strong> (eine beschriebene
+Vorgehensweise), kein einzelnes Zahlenergebnis. Ein
+<strong>gleichseitiges Dreieck</strong> hat drei gleich lange Seiten:
+\( |\overline{AB}| = |\overline{AP}| =
+|\overline{BP}| \). Wir kennen \( |\overline{AB}| = 3 \) (aus Teil c). Das
+Verfahren in drei Schritten:</p>
+<p><strong>Schritt 1 — Mittelpunkt von \( \overline{AB} \)
+bestimmen.</strong> Der Mittelpunkt \( M \) ist der
+Durchschnitt der Endpunkte:</p>
+<p>\[ M = \tfrac12\,(A + B) = \tfrac12\big((2,1,0)+(4,0,2)\big) = (3\,|\,0{,}5\,|\,1). \]</p>
+<p><strong>Schritt 2 — eine zu \( \overrightarrow{AB} \) senkrechte Richtung
+\( \vec v \) wählen.</strong> \( \vec v \) muss
+\( \overrightarrow{AB}\cdot\vec v = 0 \) erfüllen, z. B. \( \vec v = (1,0,-1) \), denn
+\( (2,-1,2)\cdot(1,0,-1) = 2+0-2 = 0 \). Damit steht man im rechten Winkel zur Strecke
+\( \overline{AB} \).</p>
+<p><strong>Schritt 3 — \( P \) auf der „Mittelsenkrechten"
+\( g' \) so wählen, dass \( |\overline{AP}| =
+|\overline{AB}| \).</strong> Man
+legt die Hilfsgerade</p>
+<p>\[ g':\quad \vec x = \overrightarrow{OM} + t\cdot\vec v \]</p>
+<p>durch \( M \) und bestimmt das \( t \), für
+das der Punkt von \( A \) den Abstand \( 3 \)
+hat. Weil jeder Punkt auf \( g' \) von \( A \)
+<strong>und</strong> \( B \) gleich weit entfernt ist, ist
+mit \( |\overline{AP}| = 3 \) automatisch auch \( |\overline{BP}| = 3 \) — also
+gleichseitig.</p>
+<p><strong>Verfahren als Antwort:</strong> Mittelpunkt
+\( M \) von \( \overline{AB} \) bestimmen → zu
+\( \overrightarrow{AB} \) senkrechten Vektor \( \vec v \) wählen →
+\( P \) auf \( g':\ \vec x =
+\overrightarrow{OM} + t\,\vec v \) so bestimmen, dass
+\( |\overline{AP}| = |\overline{AB}| \).</p>
+<p>So sieht das gesuchte Dreieck aus (Prinzip-Skizze):</p>
+<figure>
+<svg viewBox="0 0 420 300" role="img" aria-label="Gleichseitiges Dreieck ABP mit Mittelpunkt M und Mittelsenkrechter durch M" style="width:100%;max-width:420px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs>
+    <marker id="av7" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d98324"/></marker>
+  </defs>
+  <polygon points="90,230 330,230 210,22" fill="#3a5a9c" fill-opacity="0.06" stroke="#3a5a9c" stroke-width="1.8"/>
+  <line x1="210" y1="230" x2="210" y2="150" stroke="#d98324" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#av7)"/>
+  <line x1="210" y1="230" x2="210" y2="22" stroke="#d98324" stroke-width="1" stroke-dasharray="2 3" opacity="0.6"/>
+  <rect x="210" y="222" width="8" height="8" fill="none" stroke="#7a7163" stroke-width="1"/>
+  <line x1="148" y1="120" x2="160" y2="130" stroke="#26324a" stroke-width="1.4"/>
+  <line x1="272" y1="120" x2="260" y2="130" stroke="#26324a" stroke-width="1.4"/>
+  <line x1="206" y1="222" x2="214" y2="238" stroke="#26324a" stroke-width="1.4"/>
+  <circle cx="90" cy="230" r="3.5" fill="#3a5a9c"/><text x="70" y="250" font-size="13" fill="#26324a" font-weight="bold">A</text>
+  <circle cx="330" cy="230" r="3.5" fill="#3a5a9c"/><text x="336" y="250" font-size="13" fill="#26324a" font-weight="bold">B</text>
+  <circle cx="210" cy="22"  r="3.5" fill="#3a8a5a"/><text x="200" y="16" font-size="13" fill="#26324a" font-weight="bold">P</text>
+  <circle cx="210" cy="230" r="3"   fill="#7a7163"/><text x="190" y="250" font-size="12" fill="#26324a">M</text>
+  <text x="224" y="180" font-size="12" fill="#d98324">v ⟂ AB</text>
+  <text x="115" y="290" font-size="12" fill="#26324a">|AB| = |AP| = |BP| = 3</text>
+</svg>
+<figcaption>Prinzip: \( P \) sitzt auf der Mittelsenkrechten von \( \overline{AB} \) (gestrichelt). Dort ist \( P \) von \( A \) und \( B \) gleich weit entfernt; man rückt \( P \) so weit hinaus, bis dieser Abstand \( = |\overline{AB}| \) wird.</figcaption>
+</figure>
+
+<details><summary>Haltung dahinter: Warum die Mittelsenkrechte, und warum genügt \( |\overline{AP}| = |\overline{AB}| \)? (ganz von vorn)</summary>
+
+<p><strong>Gleichseitig vs. gleichschenklig.</strong> „Gleichschenklig"
+heißt <strong>zwei</strong> gleich lange Seiten, „gleichseitig" heißt
+<strong>alle drei</strong> gleich lang. Wir bauen das Dreieck in zwei
+Etappen: zuerst die beiden Schenkel \( \overline{AP} \) und
+\( \overline{BP} \) automatisch gleich machen, dann die Länge auf
+\( |\overline{AB}| \) eichen.</p>
+<p><strong>Mittelsenkrechte (Mittelpunkt + senkrechte
+Richtung).</strong> Die <strong>Mittelsenkrechte</strong> von
+\( \overline{AB} \) ist die Linie, die genau durch die Mitte
+\( M \) geht und im rechten Winkel zur Strecke steht. Ihr
+Geheimnis: <strong>Jeder</strong> Punkt auf ihr hat zu
+\( A \) <strong>denselben</strong> Abstand wie zu
+\( B \). Bild: Wenn du genau zwischen zwei Bäumen stehst
+und seitlich exakt im rechten Winkel weggehst, bleibst du immer von
+beiden Bäumen gleich weit entfernt. Setzt man \( P \) also
+auf diese Linie, ist \( |\overline{AP}| = |\overline{BP}| \) <strong>geschenkt</strong> —
+egal wie weit draußen.</p>
+<p><strong>Die letzte Eichung.</strong> Jetzt fehlt nur noch, dass diese
+gemeinsame Länge gerade \( |\overline{AB}| \) trifft. Deshalb schiebt man
+\( P \) auf der Mittelsenkrechten so lange nach außen, bis
+\( |\overline{AP}| = |\overline{AB}| = 3 \). Dann sind alle drei Seiten gleich →
+gleichseitig.</p>
+<details><summary>Ganz langsam (mit Zahlen): einen senkrechten Vektor finden und das Dreieck schließen</summary>
+
+<p><strong>Senkrechte Richtung über das Skalarprodukt.</strong> Gesucht
+ist \( \vec v \) mit \( \overrightarrow{AB}\cdot\vec v = 0 \). Mit
+\( \overrightarrow{AB} = (2,-1,2) \) probiert man eine einfache Wahl
+\( \vec v = (1,0,-1) \):</p>
+<p>\[ (2,-1,2)\cdot(1,0,-1) = 2\cdot 1 + (-1)\cdot 0 + 2\cdot(-1) = 2 + 0 - 2 = 0. \;\checkmark \]</p>
+<p>Das \( 0 \) bestätigt: \( \vec v \) steht
+senkrecht auf \( \overrightarrow{AB} \).</p>
+<p><strong>Wie weit hinaus?</strong> In einem gleichseitigen Dreieck mit
+Seitenlänge \( 3 \) ist die <strong>Höhe</strong>
+\( h = \tfrac{\sqrt 3}{2}\cdot 3 = \tfrac{3}{2}\sqrt 3 \approx 2{,}6 \). So weit muss \( P \) von
+\( M \) entfernt sein. Man wählt \( t \) also
+so, dass \( |t\cdot\vec v| = \tfrac{3}{2}\sqrt 3 \). Wegen \( |\vec v| = \sqrt{1^2+0^2+(-1)^2} = \sqrt 2 \) ergibt das
+\( t = \dfrac{3\sqrt 3}{2\sqrt 2} \approx
+1{,}84 \) (oder das negative \( t \) für den
+gespiegelten Punkt). Einsetzen liefert einen konkreten Punkt, z. B.
+\( P \approx (4{,}84\,|\,0{,}5\,|\,-0{,}84) \). <strong>Probe:</strong> \( |\overline{AP}| \approx 3 \) und
+\( |\overline{BP}| \approx 3 \). ✓</p>
+<p>Dass die Koordinaten <strong>keine</strong> glatten Zahlen sind, ist
+normal: Die Höhe eines gleichseitigen Dreiecks enthält immer
+\( \sqrt 3 \). In der mündlichen Prüfung reicht das
+<strong>beschriebene Verfahren</strong> — genau das verlangt der
+Aufgabentext.</p>
+</details>
+
+<details><summary>Feinheit: im Raum gibt es unendlich viele solche \( P \)</summary>
+
+<p>Auf einem Blatt Papier (2D) liegen \( P \) und sein
+Spiegelbild fest — zwei Lösungen. <strong>Im Raum</strong> (3D) gibt es
+<strong>unendlich viele</strong> senkrechte Richtungen
+\( \vec v \); die passenden \( P \) bilden einen
+<strong>ganzen Kreis</strong> um \( \overline{AB} \). Das Verfahren
+wählt mit einem festen \( \vec v \) eine Richtung daraus aus —
+das ist völlig in Ordnung, weil nur <strong>ein</strong> passender Punkt
+gefragt ist. Wer mag, nennt das im Gespräch als Zusatz: „Es gibt
+unendlich viele, ich wähle eine Richtung."</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( C \) liegt auf \( g \), denn
+\( \overrightarrow{CA} = \overrightarrow{AB} = (2,-1,2) \) (Parameter \( t=-1 \)).</li>
+<li>b) \( A,B \) erfüllen \( x_1+2x_2=4 \) →
+\( g \subset E \). Weitere Ebene \( F:\ \vec x = (2,1,0) + t(2,-1,2) + u(1,1,1) \) (oder
+\( 2x_1+2x_2-x_3=6 \)).</li>
+<li>c) \( |\overrightarrow{AB}|=3 \), \( t=3 \):
+\( D(8\,|\,-2\,|\,6) \).</li>
+<li>d) Mittelpunkt \( M \) → senkrechter Vektor
+\( \vec v \) → \( P \) auf \( g'=\overrightarrow{OM}+t\vec v \) mit
+\( |\overline{AP}|=|\overline{AB}| \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="teil-2--gespräch-analysis-zuflussrate-und-wasservolumen"
+class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Zuflussrate und Wasservolumen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben ist die Funktion \( f \)
+mit \( f(t) = -2t^2 + 12t \). In dem Intervall, in welchem
+\( f(t) \ge 0 \) ist, beschreibt \( f \) die
+<strong>momentane Zuflussrate</strong> von Wasser in ein Becken
+(\( t \) in Stunden; \( f(t) \) in Liter pro
+Stunde). Zu Beginn enthält das Becken \( 20 \) Liter
+Wasser.</p>
+<p><strong>Denkbare Aspekte:</strong> <strong>(AB I)</strong>
+Nullstellen und Extrempunkt des Graphen von \( f \)
+ermitteln; eine Skizze des Graphen erstellen. <strong>(AB II)</strong>
+Das in der ersten Stunde zugeflossene Wasservolumen ermitteln. —
+<em>Zusätzlich:</em> ein konstanter Abfluss von \( 10 \)
+Liter pro Stunde seit Beginn. Dann: graphisch die Zeitpunkte des
+minimalen und maximalen Wasservolumens bestimmen; rechnerisch das
+Wasservolumen nach \( 3 \) Stunden bestimmen; das
+Wasservolumen in Abhängigkeit von der Zeit beschreiben. <strong>(AB
+III)</strong> Ab \( t=4 \) soll die konstante Abflussrate so
+geändert werden, dass das Becken zum Zeitpunkt \( t=6 \) leer
+ist — die Vorgehensweise zur Bestimmung der nötigen Abflussrate
+erläutern.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was „Zuflussrate" bedeutet:</strong>
+\( f(t) \) ist <strong>nicht</strong> die Wassermenge, sondern
+das <strong>Tempo</strong> des Zuflusses zu einem Zeitpunkt — wie der
+Tacho im Auto (Geschwindigkeit), nicht der Kilometerzähler (Strecke).
+Wie viel Wasser tatsächlich <strong>zusammenkommt</strong>, ergibt erst
+das <strong>Aufsummieren</strong> der Rate über die Zeit (das
+Integral).</p>
+</blockquote>
+<p>So sieht die Zuflussrate \( f \) aus — mit der Linie
+\( y=10 \), die später (beim Abfluss) wichtig wird:</p>
+<figure>
+<div class="jxgbox" id="jxg-k7-f" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Zuflussrate \( f(t) = -2t^2+12t \) auf \( [0;6] \). Nullstellen bei \( t=0 \) und \( t=6 \), Hochpunkt \( (3\,|\,18) \). Die grüne Linie ist die spätere Abflussrate \( 10 \); sie schneidet \( f \) bei \( t=1 \) und \( t=5 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k7-f',{boundingbox:[-1,21,7,-3],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return -2*x*x+12*x;},0,6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('functiongraph',[function(x){return 10;},0,6],{strokeColor:'#3a8a5a',strokeWidth:1.5,dash:2});b.create('point',[3,18],{name:'HP(3|18)',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[8,6]}});b.create('point',[6,0],{name:'t=6',size:2,fixed:true,fillColor:'#3a5a9c',strokeColor:'#3a5a9c',label:{offset:[6,-14]}});b.create('point',[1,10],{name:'t=1',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[-24,8]}});b.create('point',[5,10],{name:'t=5',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[8,8]}});})();});</script>
+
+<section id="ab-i--nullstellen-extrempunkt-skizze" class="level3">
+<h3>AB I — Nullstellen, Extrempunkt, Skizze</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Nullstellen.</strong> Wo ist \( f(t) = 0 \)? Man
+klammert \( t \) aus:</p>
+<p>\[ f(t) = -2t^2 + 12t = -2t\,(t - 6). \]</p>
+<p>Ein Produkt ist null, wenn ein Faktor null ist: \( -2t = 0 \Rightarrow t=0 \)
+oder \( t-6=0 \Rightarrow
+t=6 \). <strong>Nullstellen: \( t=0 \) und
+\( t=6 \).</strong> Damit ist \( f(t)\ge 0 \) genau auf
+dem Intervall \( [0;6] \) — das ist der Zeitraum, in dem
+überhaupt Wasser zufließt.</p>
+<p><strong>Extrempunkt.</strong> Der höchste Punkt ist dort, wo die
+Steigung \( 0 \) ist. Die Steigung liefert die
+<strong>Ableitung</strong>:</p>
+<p>\[ f'(t) = -4t + 12. \]</p>
+<p>Nullsetzen: \( -4t + 12 = 0 \Rightarrow t = 3 \). Der Funktionswert dort:</p>
+<p>\[ f(3) = -2\cdot 9 + 12\cdot 3 = -18 + 36 = 18. \]</p>
+<p>Weil die Parabel wegen des Vorfaktors \( -2 \) nach unten
+geöffnet ist, ist das ein <strong>Hochpunkt</strong>.</p>
+<p><strong>Ergebnis: Nullstellen \( t=0 \) und
+\( t=6 \); Hochpunkt \( H(3\,|\,18) \)</strong> (maximale
+Zuflussrate \( 18 \) Liter pro Stunde nach
+\( 3 \) Stunden).</p>
+<p><strong>Skizze.</strong> Eine nach unten geöffnete Parabel durch
+\( (0\,|\,0) \) und \( (6\,|\,0) \) mit Scheitel
+\( (3\,|\,18) \) — siehe der blaue Graph oben.</p>
+<details><summary>Haltung dahinter: Nullstelle, Ableitung, Hochpunkt — was heißt das? (ganz von vorn)</summary>
+
+<p><strong>Funktion und Graph.</strong> Eine <strong>Funktion</strong>
+ist eine Rechenvorschrift: man steckt eine Zahl \( t \)
+hinein und bekommt eine Zahl \( f(t) \) heraus. Hier steht
+\( t \) für die Zeit und \( f(t) \) für das
+Zufluss-Tempo. Trägt man alle Paare \( (t\mid f(t)) \) ins
+Koordinatensystem ein, entsteht der <strong>Graph</strong> — hier eine
+<strong>Parabel</strong> (die typische „Bogen"-Kurve von
+\( t^2 \)-Termen).</p>
+<p><strong>Nullstelle.</strong> Eine <strong>Nullstelle</strong> ist
+eine Stelle, an der der Graph die waagerechte Achse trifft, wo also
+\( f(t)=0 \) ist. Inhaltlich: Zufluss-Tempo \( 0 \)
+— bei \( t=0 \) geht's los, bei \( t=6 \) ist der
+Zufluss versiegt.</p>
+<p><strong>Satz vom Nullprodukt.</strong> Wir nutzen: Ein
+<strong>Produkt ist genau dann null, wenn ein Faktor null ist</strong>.
+Deshalb klammert man \( t \) aus und liest die Nullstellen
+direkt aus den beiden Faktoren ab.</p>
+<p><strong>Ableitung und Hochpunkt.</strong> Die
+<strong>Ableitung</strong> \( f'(t) \) gibt an jeder Stelle die
+<strong>Steigung</strong> des Graphen an — wie stark er gerade steigt
+(positiv) oder fällt (negativ). Am höchsten Punkt der Parabel ist der
+Graph für einen Moment <strong>waagerecht</strong>, die Steigung also
+\( 0 \). Darum setzt man \( f'(t)=0 \) und löst nach
+\( t \) auf. Das Ableiten selbst folgt der Regel „Hochzahl
+nach vorne, Hochzahl um eins kleiner": aus \( -2t^2 \) wird
+\( -4t \), aus \( 12t \) wird \( 12 \)
+(Details: <a href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>,
+Anwendung in <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>).</p>
+<details><summary>Schneller Trick: der Scheitel liegt mittig zwischen den Nullstellen</summary>
+
+<p>Eine Parabel ist <strong>symmetrisch</strong>. Ihr Scheitel sitzt
+genau in der Mitte zwischen den beiden Nullstellen \( 0 \)
+und \( 6 \), also bei \( t = \tfrac{0+6}{2} = 3 \). So findet man
+die Stelle des Hochpunkts auch ohne Ableitung — und kann das Ergebnis
+\( t=3 \) gegenprüfen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--zufluss-erste-stunde-mit-abfluss-minmax-volumen-nach-3-h-verlauf"
+class="level3">
+<h3>AB II — Zufluss erste Stunde; mit Abfluss: Min/Max, Volumen nach 3
+h, Verlauf</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>(1) Zugeflossenes Volumen in der ersten Stunde.</strong> Eine
+<strong>Rate</strong> über die Zeit aufsummieren heißt
+<strong>integrieren</strong>. Das Volumen der ersten Stunde ist</p>
+<p>\[ V_{\text{zu}} = \int_0^1 f(t)\,dt = \int_0^1 \big(-2t^2 + 12t\big)\,dt. \]</p>
+<p>Eine <strong>Stammfunktion</strong> von \( f \) ist
+\( F(t) = -\tfrac23 t^3 + 6t^2 \) (Ableiten kehrt das wieder um). Mit dem
+Hauptsatz:</p>
+<p>\[ \int_0^1 f(t)\,dt = \Big[-\tfrac23 t^3 + 6t^2\Big]_0^1 = \Big(-\tfrac23 + 6\Big) - 0
+   = \tfrac{16}{3} \approx 5{,}33. \]</p>
+<p><strong>Ergebnis: In der ersten Stunde fließen \( \tfrac{16}{3} \approx 5{,}33 \)
+Liter zu.</strong></p>
+<details><summary>Haltung dahinter: Warum berechnet ein Integral aus einer Rate ein Volumen? (ganz von vorn)</summary>
+
+<p><strong>Integral als Aufsummieren.</strong> Ein
+<strong>Integral</strong> \( \int_a^b f(t)\,dt \) addiert die
+Funktionswerte zwischen \( a \) und \( b \)
+auf — anschaulich die <strong>Fläche unter dem Graphen</strong>. Wenn
+\( f(t) \) ein <strong>Tempo</strong> ist (Liter <strong>pro
+Stunde</strong>), dann ist „Tempo mal Zeit" eine <strong>Menge</strong>
+(Liter). Genau das tut das Integral: Es multipliziert in unendlich
+vielen hauchdünnen Zeitstreifen „Rate × Zeitdauer" und summiert alles.
+Bild: Beim Autofahren ist die Fläche unter der Geschwindigkeits-Kurve
+die gefahrene <strong>Strecke</strong> — hier ist die Fläche unter der
+Zufluss-Kurve das zugeflossene <strong>Wasser</strong>.</p>
+<p><strong>Stammfunktion.</strong> Eine <strong>Stammfunktion</strong>
+\( F \) ist „Ableiten rückwärts": eine Funktion, deren
+Ableitung wieder \( f \) ergibt (\( F' = f \)).
+Regel fürs Hochintegrieren: Hochzahl um eins <strong>erhöhen</strong>
+und durch die neue Hochzahl <strong>teilen</strong>. Aus
+\( -2t^2 \) wird \( -2\cdot\tfrac{t^3}{3} =
+-\tfrac23 t^3 \), aus \( 12t \)
+wird \( 12\cdot\tfrac{t^2}{2} = 6t^2 \). <strong>Probe durch Ableiten:</strong>
+\( \big(-\tfrac23 t^3 + 6t^2\big)' = -2t^2 + 12t = f(t) \) ✓ (mehr: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>).</p>
+<details><summary>Ganz langsam (mit Zahlen): die Grenzen einsetzen</summary>
+
+<p>Der <strong>Hauptsatz</strong> sagt: \( \int_a^b f = F(b) - F(a) \) — oben
+einsetzen minus unten einsetzen.</p>
+<ul>
+<li>Obere Grenze \( t=1 \): \( -\tfrac23\cdot 1^3 + 6\cdot 1^2 = -\tfrac23 + 6 = \tfrac{16}{3} \).</li>
+<li>Untere Grenze \( t=0 \): \( -\tfrac23\cdot 0 + 6\cdot 0 = 0 \).</li>
+<li>Differenz: \( \tfrac{16}{3} - 0 = \tfrac{16}{3} \approx 5{,}33 \).</li>
+</ul>
+<p>Zur Kontrolle: \( 6 = \tfrac{18}{3} \), also \( \tfrac{18}{3} - \tfrac{2}{3} = \tfrac{16}{3} \).</p>
+</details>
+</details>
+
+<hr />
+<p>Ab jetzt gilt <strong>zusätzlich</strong> ein <strong>konstanter
+Abfluss von \( 10 \) Liter pro Stunde seit Beginn</strong>.
+Die entscheidende Größe wird die <strong>Netto-Rate</strong> (Zufluss
+minus Abfluss):</p>
+<p>\[ r(t) = f(t) - 10 = -2t^2 + 12t - 10. \]</p>
+<p>Ist \( r(t)  \gt  0 \), <strong>steigt</strong> der Wasserstand;
+ist \( r(t)  \lt  0 \), <strong>fällt</strong> er.</p>
+<p><strong>(2) Graphisch: Zeitpunkte von minimalem und maximalem
+Wasservolumen.</strong> Das Volumen wechselt seine Richtung dort, wo
+Zufluss = Abfluss, also \( f(t) = 10 \). Im Graphen oben ist das
+der <strong>Schnitt der blauen Kurve mit der grünen Linie</strong>
+\( y=10 \) — abzulesen bei</p>
+<p>\[ t = 1 \quad\text{und}\quad t = 5. \]</p>
+<p>Vorzeichen der Netto-Rate ablesen:</p>
+<ul>
+<li>\( 0 \le t  \lt  1 \): Kurve <strong>unter</strong> der Linie →
+Abfluss überwiegt → Volumen <strong>fällt</strong>.</li>
+<li>\( 1  \lt  t  \lt  5 \): Kurve <strong>über</strong> der Linie →
+Zufluss überwiegt → Volumen <strong>steigt</strong>.</li>
+<li>\( 5  \lt  t \le 6 \): Kurve wieder <strong>unter</strong> der Linie
+→ Volumen <strong>fällt</strong>.</li>
+</ul>
+<p><strong>Ergebnis: minimales Wasservolumen bei \( t=1 \),
+maximales bei \( t=5 \).</strong></p>
+<details><summary>Haltung dahinter: Warum „Schnittpunkt = Wendepunkt des Wasserstands"?</summary>
+
+<p>Der <strong>Wasserstand</strong> ändert sich mit der
+<strong>Netto-Rate</strong> \( r(t) = f(t) - 10 \). Solange mehr zufließt
+als abfließt (\( f  \gt  10 \)), wird es voller; sobald mehr
+abfließt als zufließt (\( f  \lt  10 \)), wird es leerer. Der
+<strong>Umschlagpunkt</strong> ist genau dort, wo \( f = 10 \).
+Bild: ein Eimer mit Loch — solange der Hahn stärker läuft als das Loch
+leckt, steigt der Pegel; kippt das Verhältnis, sinkt er. Die Stellen
+\( t=1 \) und \( t=5 \) sind diese Kippmomente:
+bei \( t=1 \) der <strong>Tiefststand</strong>, bei
+\( t=5 \) der <strong>Höchststand</strong>.</p>
+<details><summary>Rechnerische Kontrolle der Ablesung</summary>
+
+<p>\( f(t) = 10 \Rightarrow -2t^2+12t-10 = 0 \). Durch \( -2 \) teilen:
+\( t^2 - 6t + 5 = 0 \). Faktorisiert \( (t-1)(t-5)=0 \), also
+\( t=1 \) und \( t=5 \) — genau die abgelesenen
+Werte. Damit ist \( r(t) = -2(t-1)(t-5) \): negativ außerhalb
+\( [1;5] \), positiv dazwischen.</p>
+</details>
+</details>
+
+<p><strong>(3) Rechnerisch: Wasservolumen nach \( 3 \)
+Stunden.</strong> Das Volumen ist der Startwert \( 20 \)
+plus die aufsummierte <strong>Netto-Rate</strong>:</p>
+<p>\[ V(t) = 20 + \int_0^t \big(f(s) - 10\big)\,ds
+       = 20 + \Big[-\tfrac23 s^3 + 6s^2 - 10s\Big]_0^t
+       = 20 - \tfrac23 t^3 + 6t^2 - 10t. \]</p>
+<p>Einsetzen von \( t=3 \):</p>
+<p>\[ V(3) = 20 - \tfrac23\cdot 27 + 6\cdot 9 - 10\cdot 3 = 20 - 18 + 54 - 30 = 26. \]</p>
+<p><strong>Ergebnis: Nach \( 3 \) Stunden enthält das
+Becken \( 26 \) Liter.</strong></p>
+<details><summary>Haltung dahinter: Was ist eine „Bestandsfunktion", und warum steht die 20 davor? (ganz von vorn)</summary>
+
+<p><strong>Rate vs. Bestand.</strong> \( f \) (bzw.
+\( r \)) ist eine <strong>Rate</strong> (Tempo). Das
+<strong>Volumen</strong> \( V(t) \) ist ein
+<strong>Bestand</strong> (die tatsächlich vorhandene Menge). Man kommt
+vom Tempo zum Bestand durch <strong>Aufsummieren über die Zeit</strong>
+— also Integrieren. Ein Bankkonto-Bild: \( r(t) \) sind die
+Ein-/Auszahlungen pro Stunde, \( V(t) \) ist der
+<strong>Kontostand</strong>.</p>
+<p><strong>Warum der Startwert \( 20 \)?</strong> Ein
+Integral von \( 0 \) bis \( t \) zählt nur die
+<strong>Veränderung</strong> seit Beginn. Das Becken war aber nicht
+leer, sondern hatte schon \( 20 \) Liter. Deshalb addiert
+man diesen <strong>Anfangsbestand</strong> dazu — wie das Startguthaben
+auf dem Konto, bevor die erste Buchung kommt.</p>
+<p><strong>Warum \( r = f - 10 \)?</strong> Zwei Dinge passieren
+gleichzeitig: Zufluss \( f(t) \) füllt auf, der feste Abfluss
+\( 10 \) zieht ab. Die <strong>echte</strong> Veränderung
+pro Stunde ist die Differenz. Diese Differenz wird integriert.</p>
+<details><summary>Ganz langsam (mit Zahlen): \( V(3) \) Ziffer für Ziffer</summary>
+
+<p>\[ V(3) = 20 \;\underbrace{-\tfrac23\cdot 27}_{=-18} \;\underbrace{+\,6\cdot 9}_{=+54}
+   \;\underbrace{-\,10\cdot 3}_{=-30}. \]</p>
+<ul>
+<li>\( \tfrac23\cdot 27 = \tfrac{54}{3} = 18 \), mit Minus also \( -18 \).</li>
+<li>\( 6\cdot 9 = 54 \).</li>
+<li>\( 10\cdot 3 = 30 \), mit Minus also \( -30 \).</li>
+<li>Zusammen: \( 20 - 18 = 2 \); \( 2 + 54 = 56 \);
+\( 56 - 30 = 26 \).</li>
+</ul>
+<p>Also \( V(3) = 26 \) Liter.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Den Startwert \( 20 \) zu vergessen ist der häufigste
+Fehler — dann erhielte man \( 6 \) statt
+\( 26 \). Ebenso falsch ist, nur den Zufluss
+\( f \) zu integrieren und den Abfluss zu vergessen. Es
+muss die <strong>Netto-Rate</strong> \( f-10 \) sein, plus der
+<strong>Anfangsbestand</strong> \( 20 \).</p>
+</details>
+</details>
+
+<p><strong>(4) Wasservolumen in Abhängigkeit von der Zeit
+(Beschreibung).</strong> Die Bestandsfunktion ist</p>
+<p>\[ V(t) = 20 - \tfrac23 t^3 + 6t^2 - 10t, \qquad t \in [0;6]. \]</p>
+<p>Ihr Verlauf (siehe Graph unten): Start bei \( V(0)=20 \),
+Abfall bis zum <strong>Tiefststand</strong> bei \( t=1 \) mit
+\( V(1) = \tfrac{46}{3} \approx 15{,}3 \), dann Anstieg bis zum <strong>Höchststand</strong>
+bei \( t=5 \) mit \( V(5) = \tfrac{110}{3} \approx 36{,}7 \), danach wieder Abfall
+auf \( V(6) = 32 \).</p>
+<figure>
+<div class="jxgbox" id="jxg-k7-v" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Wasservolumen \( V(t) = 20 - \tfrac23 t^3 + 6t^2 - 10t \) auf \( [0;6] \): Start \( 20 \), Minimum \( \approx 15{,}3 \) bei \( t=1 \), Maximum \( \approx 36{,}7 \) bei \( t=5 \), Endwert \( 32 \) bei \( t=6 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k7-v',{boundingbox:[-1,42,7,-4],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 20-(2/3)*x*x*x+6*x*x-10*x;},0,6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[0,20],{name:'Start 20',size:2,fixed:true,fillColor:'#3a5a9c',strokeColor:'#3a5a9c',label:{offset:[8,2]}});b.create('point',[1,46/3],{name:'Min t=1',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[6,-16]}});b.create('point',[5,110/3],{name:'Max t=5',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[-18,12]}});b.create('point',[6,32],{name:'t=6',size:2,fixed:true,fillColor:'#3a5a9c',strokeColor:'#3a5a9c',label:{offset:[6,8]}});})();});</script>
+
+<details><summary>Haltung dahinter: Wie liest man so einen Verlauf richtig vor?</summary>
+
+<p>Man beschreibt einen Verlauf in <strong>Worten der
+Anschauung</strong>: <em>wann</em> der Pegel fällt, <em>wann</em> er
+steigt, <em>wo</em> die Wendepunkte (Tief- und Höchststand) liegen und
+<em>welche Werte</em> dort herauskommen. Die „Drehpunkte" sind exakt die
+Stellen aus Teil (2): bei \( t=1 \) hört das Fallen auf
+(Minimum), bei \( t=5 \) hört das Steigen auf (Maximum).
+Inhaltlich: In der ersten Stunde leert das Becken sich leicht (der
+Zufluss ist noch schwach, der Abfluss von \( 10 \) gewinnt),
+danach füllt es sich kräftig, weil der Zufluss bis \( 18 \)
+hochsteigt, und gegen Ende lässt der Zufluss nach, sodass der Abfluss
+wieder die Oberhand bekommt.</p>
+<details><summary>Die Eckwerte mit Zahlen</summary>
+
+<ul>
+<li>\( V(1) = 20 - \tfrac23 + 6 - 10 = 16 - \tfrac23 = \tfrac{46}{3} \approx 15{,}3 \) (Minimum).</li>
+<li>\( V(5) = 20 - \tfrac23\cdot 125 + 6\cdot 25 - 50 = 120 - \tfrac{250}{3} = \tfrac{110}{3} \approx 36{,}7 \) (Maximum).</li>
+<li>\( V(6) = 20 - \tfrac23\cdot 216 + 6\cdot 36 - 60 = 20 - 144 + 216 - 60 = 32 \).</li>
+</ul>
+<p>Das Becken läuft also nie über und wird in diesem Zeitraum nie leer —
+der Tiefststand \( \approx 15{,}3 \) Liter liegt deutlich über
+\( 0 \).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-iii--abfluss-ab-zzmathphzz475zzendzz-so-ändern-dass-das-becken-bei-zzmathphzz476zzendzz-leer-ist"
+class="level3">
+<h3>AB III — Abfluss ab \( t=4 \) so ändern, dass das Becken
+bei \( t=6 \) leer ist</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p>Gefragt ist die <strong>Vorgehensweise</strong> (mit
+\( t=4 \) ändert sich die Abflussrate auf einen neuen festen
+Wert \( a \); bei \( t=6 \) soll das Becken leer
+sein, also \( V(6)=0 \)). Der Weg in drei Schritten — das
+Ergebnis wird mitgerechnet.</p>
+<p><strong>Schritt 1 — Wasserstand bei \( t=4 \) (noch mit
+altem Abfluss \( 10 \)).</strong> Aus der Bestandsfunktion
+von oben:</p>
+<p>\[ V(4) = 20 - \tfrac23\cdot 64 + 6\cdot 16 - 40 = 76 - \tfrac{128}{3} = \tfrac{100}{3} \approx 33{,}3 \ \text{Liter}. \]</p>
+<p><strong>Schritt 2 — Bilanz von \( t=4 \) bis
+\( t=6 \) aufstellen.</strong> In diesen \( 2 \)
+Stunden kommt der Zufluss \( \int_4^6 f(t)\,dt \) hinzu und der
+<strong>neue</strong> Abfluss \( a \) zieht
+\( a\cdot 2 \) ab. Der Zufluss-Anteil:</p>
+<p>\[ \int_4^6 f(t)\,dt = \Big[-\tfrac23 t^3 + 6t^2\Big]_4^6
+   = \big(-144 + 216\big) - \Big(-\tfrac{128}{3} + 96\Big)
+   = 72 - \tfrac{160}{3} = \tfrac{56}{3} \approx 18{,}7. \]</p>
+<p><strong>Schritt 3 — Bedingung \( V(6)=0 \)
+lösen.</strong></p>
+<p>\[ V(6) = \underbrace{\tfrac{100}{3}}_{V(4)} + \underbrace{\tfrac{56}{3}}_{\text{Zufluss}} - 2a = 0
+   \;\;\Longrightarrow\;\; \tfrac{156}{3} - 2a = 0 \;\;\Longrightarrow\;\; 52 = 2a \;\;\Longrightarrow\;\; a = 26. \]</p>
+<p><strong>Ergebnis: Ab \( t=4 \) muss der Abfluss auf
+\( 26 \) Liter pro Stunde erhöht werden, damit das Becken
+bei \( t=6 \) leer ist.</strong></p>
+<p>So sieht der Wasserstand mit dieser Umstellung aus (Knick bei
+\( t=4 \), null bei \( t=6 \)):</p>
+<figure>
+<div class="jxgbox" id="jxg-k7-ab3" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Wasservolumen mit Abflusswechsel: bis \( t=4 \) wie zuvor (\( V(4)=\tfrac{100}{3}\approx 33{,}3 \)), ab \( t=4 \) stärkerer Abfluss \( 26 \) — der Pegel fällt geradlinig-konvex bis \( V(6)=0 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k7-ab3',{boundingbox:[-1,42,7,-6],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){if(x<=4){return 20-(2/3)*x*x*x+6*x*x-10*x;}else{return -(2/3)*x*x*x+6*x*x-26*x+84;}},0,6],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[4,100/3],{name:'t=4 Umstellung',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[-30,14]}});b.create('point',[6,0],{name:'t=6 leer',size:2,fixed:true,fillColor:'#b03a2e',strokeColor:'#b03a2e',label:{offset:[6,-12]}});})();});</script>
+
+<details><summary>Haltung dahinter: Warum diese „Bilanz" das Problem löst (ganz von vorn)</summary>
+
+<p><strong>Bilanz-Idee.</strong> Wir fragen: Wie viel Wasser ist bei
+\( t=4 \) da, und wie viel muss in den restlichen
+\( 2 \) Stunden <strong>netto</strong> verschwinden, damit
+am Ende \( 0 \) übrig bleibt? Alles, was bei
+\( t=4 \) im Becken ist (\( \tfrac{100}{3} \))
+<strong>plus</strong> alles, was bis \( t=6 \) noch zufließt
+(\( \tfrac{56}{3} \)), muss durch den neuen Abfluss wieder hinaus.
+Zusammen sind das \( \tfrac{156}{3} = 52 \) Liter in \( 2 \)
+Stunden → \( 52 \div 2 = 26 \) Liter pro Stunde.</p>
+<p><strong>Warum nur der Abfluss konstant ist.</strong> Der Zufluss
+\( f \) bleibt die vorgegebene Kurve; geändert wird nur die
+feste Abflussrate. Deshalb taucht der Zufluss als
+<strong>Integral</strong> auf (er ändert sich mit der Zeit), der Abfluss
+aber als <strong>\( a \cdot \) Zeitdauer</strong> (konstantes
+Tempo mal \( 2 \) Stunden).</p>
+<details><summary>Ganz langsam (mit Zahlen): die zweite Integralgrenze</summary>
+
+<p>\( \int_4^6 f\,dt = F(6) - F(4) \) mit \( F(t) = -\tfrac23 t^3 + 6t^2 \):</p>
+<ul>
+<li>\( F(6) = -\tfrac23\cdot 216 + 6\cdot 36 = -144 + 216 = 72 \).</li>
+<li>\( F(4) = -\tfrac23\cdot 64 + 6\cdot 16 = -\tfrac{128}{3} + 96 = \tfrac{-128+288}{3} = \tfrac{160}{3} \).</li>
+<li>Differenz: \( 72 - \tfrac{160}{3} = \tfrac{216-160}{3} = \tfrac{56}{3} \approx 18{,}7 \).</li>
+</ul>
+<p>Bilanz: \( \tfrac{100}{3} + \tfrac{56}{3} = \tfrac{156}{3} = 52 \). Geteilt durch \( 2 \)
+Stunden: \( a = 26 \) Liter pro Stunde.</p>
+</details>
+
+<details><summary>Kontrolle: bleibt das Becken bis \( t=6 \) wirklich gefüllt (nie vorher leer)?</summary>
+
+<p>Ab \( t=4 \) ist die neue Netto-Rate \( f(t) - 26 \).
+Da der Zufluss nie über \( 18 \) steigt, ist
+\( f(t) - 26  \lt  0 \) für alle \( t \in [4;6] \) — der Pegel fällt
+<strong>durchgehend</strong>. Er erreicht \( 0 \) also
+frühestens am Ende, und unsere Rechnung legt diesen Punkt genau auf
+\( t=6 \). Das Becken läuft nicht vorzeitig leer; die Lösung
+ist physikalisch sinnvoll. (Würde \( 26 \) das Becken zu
+schnell leeren, käme \( V \) schon vor \( t=6 \)
+bei \( 0 \) an — hier passt es exakt.)</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 2 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>AB I: Nullstellen \( t=0;\,6 \); Hochpunkt
+\( (3\,|\,18) \); Parabel nach unten geöffnet.</li>
+<li>AB II (1): \( \int_0^1 f = \tfrac{16}{3} \approx 5{,}33 \) Liter in der ersten Stunde.</li>
+<li>AB II (2): Min bei \( t=1 \), Max bei
+\( t=5 \) (dort \( f=10 \), Netto-Rate wechselt das
+Vorzeichen).</li>
+<li>AB II (3): \( V(t) = 20 - \tfrac23 t^3 + 6t^2 - 10t \); \( V(3) = 26 \) Liter.</li>
+<li>AB II (4): Start \( 20 \) → Min \( \approx 15{,}3 \)
+(t=1) → Max \( \approx 36{,}7 \) (t=5) → \( 32 \)
+(t=6).</li>
+<li>AB III: \( V(4)=\tfrac{100}{3} \), \( \int_4^6 f = \tfrac{56}{3} \); aus
+\( \tfrac{156}{3} - 2a = 0 \) folgt \( a = 26 \) Liter pro Stunde.</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Geometrie) aufklappen</summary>
+
+<ul>
+<li><strong>a) Punktprobe.</strong> Erwartet:
+<strong>Richtungsvektor</strong> \( \overrightarrow{AB}=(2,-1,2) \) bilden und zeigen,
+dass der Pfeil von \( C \) zu \( A \)
+<strong>das gleiche</strong> (ein Vielfaches) ist → \( C \)
+liegt auf \( g \). <em>Rote Flagge:</em> nur
+<strong>eine</strong> Koordinate verglichen. <em>Rückfrage:</em> „Warum
+müssen alle drei Zeilen passen?"</li>
+<li><strong>b) Ebene.</strong> Erwartet: \( A \)
+<strong>und</strong> \( B \) in \( x_1+2x_2=4 \)
+einsetzen (\( 4=4 \), \( 4=4 \)) und daraus „zwei
+Punkte drin → ganze Gerade drin" folgern. Für die weitere Ebene: einen
+zweiten Spannvektor (z. B. \( (1,1,1) \)) angeben, der
+<strong>nicht parallel</strong> zur Geraden ist. <em>Rückfrage:</em>
+„Warum reicht es, zwei Punkte zu prüfen?"</li>
+<li><strong>c) Punkt D.</strong> Erwartet: \( |\overrightarrow{AB}| = \sqrt 9 = 3 \), also
+\( 9 = 3\cdot 3 \Rightarrow
+  t=3 \Rightarrow D(8\,|\,-2\,|\,6) \). <em>Rote Flagge:</em> \( 9\cdot\overrightarrow{AB} \) statt
+\( 3\cdot\overrightarrow{AB} \). <em>Rückfrage:</em> „Wie lang ist ein Schritt
+entlang der Geraden?"</li>
+<li><strong>d) Verfahren.</strong> Erwartet als <strong>beschriebener
+Weg</strong>: Mittelpunkt \( M \) von \( \overline{AB} \)
+→ zu \( \overrightarrow{AB} \) senkrechten Vektor wählen →
+\( P \) auf der Mittelsenkrechten so legen, dass
+\( |\overline{AP}| = |\overline{AB}| \). <em>Hinweis für dich:</em> Hier ist
+<strong>kein</strong> Zahlenergebnis nötig — ein klar beschriebenes
+Verfahren ist die volle Antwort. <em>Rückfrage:</em> „Warum ist
+\( P \) auf der Mittelsenkrechten automatisch von
+\( A \) und \( B \) gleich weit weg?"</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>AB I — Nullstellen/Extrempunkt/Skizze.</strong> Erwartet:
+\( t \) ausklammern → Nullstellen \( 0 \) und
+\( 6 \); Ableitung null setzen → \( t=3 \),
+\( f(3)=18 \), Hochpunkt; Parabel nach unten. <em>Rückfrage:</em>
+„Woran sieht man, dass es ein Hoch- und kein Tiefpunkt ist?" (Antwort:
+Vorfaktor \( -2 \).)</li>
+<li><strong>AB II — Zufluss erste Stunde.</strong> Erwartet:
+<strong>Integral</strong> \( \int_0^1 f \), Stammfunktion
+\( -\tfrac23 t^3 + 6t^2 \), Ergebnis \( \tfrac{16}{3}\approx 5{,}33 \) Liter.
+<em>Rückfrage:</em> „Warum Integral und nicht einfach
+\( f(1) \) einsetzen?" (Rate vs. Menge.)</li>
+<li><strong>AB II — Min/Max graphisch.</strong> Erwartet: Linie
+\( y=10 \) und Schnittpunkte mit \( f \) bei
+\( t=1 \) und \( t=5 \); davor/dazwischen/danach
+das Vorzeichen der Netto-Rate. Min bei \( t=1 \), Max bei
+\( t=5 \). <em>Rückfrage:</em> „Was bedeutet der Schnittpunkt
+von Zufluss und Abfluss für den Pegel?"</li>
+<li><strong>AB II — Volumen nach 3 h.</strong> Erwartet:
+\( V(t)=20 - \tfrac23 t^3 + 6t^2 - 10t \), \( V(3)=26 \). <em>Rote Flagge:</em>
+Startwert \( 20 \) vergessen (gäbe \( 6 \))
+oder Abfluss vergessen. <em>Rückfrage:</em> „Woher kommt die
+\( 20 \) am Anfang?"</li>
+<li><strong>AB II — Verlauf beschreiben.</strong> Erwartet: Start
+\( 20 \), Tief bei \( t=1 \)
+(\( \approx 15{,}3 \)), Hoch bei \( t=5 \)
+(\( \approx 36{,}7 \)), Ende \( 32 \). <em>Rückfrage:</em>
+„Wann leert sich das Becken, wann füllt es sich?"</li>
+<li><strong>AB III — Abfluss anpassen.</strong> Erwartet als
+<strong>erläutertes Verfahren</strong>: Stand bei \( t=4 \)
+bestimmen, Zufluss \( \int_4^6 f \) addieren, neuen Abfluss
+\( a \) über die Bilanz \( V(6)=0 \) lösen →
+\( a=26 \) Liter pro Stunde. <em>Hinweis für dich:</em>
+Verlangt ist die <strong>Vorgehensweise</strong>; nennt die Person
+zusätzlich \( 26 \), ist das ein starkes Plus.
+<em>Rückfrage:</em> „Was muss bis \( t=6 \) insgesamt
+abfließen?"</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Wie prüfst du, ob ein Punkt auf einer Geraden liegt — und warum
+reicht <strong>eine</strong> Koordinate nicht?</li>
+<li>Warum genügt es, <strong>zwei</strong> Punkte einzusetzen, um zu
+zeigen, dass eine ganze Gerade in einer Ebene liegt?</li>
+<li>Wie kommst du von „Abstand \( 9 \)" zum richtigen
+Parameter \( t \) auf der Geraden?</li>
+<li>Warum löst die Mittelsenkrechte die Aufgabe mit dem gleichseitigen
+Dreieck?</li>
+<li>Was ist der Unterschied zwischen der Zuflussrate
+\( f(t) \) und dem Wasservolumen \( V(t) \) — und
+wie kommt man vom einen zum anderen?</li>
+<li>Warum liegen das minimale und maximale Wasservolumen genau dort, wo
+Zufluss und Abfluss gleich groß sind?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

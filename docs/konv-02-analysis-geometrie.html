@@ -1,0 +1,1036 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 2 — Analysis &amp; Geometrie — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link active" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Analysis</strong>, <strong>Teil 2 (Gespräch) aus der Geometrie</strong>.
+Alles ist <strong>rechnerfrei</strong> zu lösen. Arbeitet die Aufgabe
+wie eine echte Simulation durch — eine Person trägt vor, die andere
+prüft mit dem Lösungsweg und dem <a
+href="#prüfer-leitfaden-für-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Analysis-Werkzeuge (Ableiten, Stammfunktion, Integral, Randverhalten)
+stehen in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>, <a href="kap-grundfunktionen.html">Grundfunktionen</a>
+und <a href="kap-grenzwerte-randverhalten.html">Grenzwerte &amp;
+Randverhalten</a>. Die Vektor- und Ebenen-Werkzeuge (Punkte, Vektoren,
+Länge, Skalarprodukt, Kreuzprodukt, Ebenengleichung, Hesse-Normalform)
+findest du kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>.</p>
+</blockquote>
+<hr />
+<section
+id="teil-1--vortrag-analysis-geschwindigkeit-von-auto-und-motorrad"
+class="level2">
+<h2>Teil 1 — Vortrag (Analysis): Geschwindigkeit von Auto und
+Motorrad</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Die Geschwindigkeit eines Autos auf einer Teststrecke wird
+beschrieben durch eine Funktion \( f \) mit
+\( f(x) = 24 + 24\cdot e^{-0{,}08x} \), \( 0 \le x \le 60 \) (\( x \) in
+Sekunden, \( f(x) \) in Meter pro Sekunde).</strong></p>
+<p><strong>a)</strong> Berechne \( f(0) \) und
+\( f'(0) \) und \( \displaystyle\int_0^{60} f(x)\,dx \). Deute diese Werte im
+Sachzusammenhang.</p>
+<p><em>Das Auto und ein Motorrad befinden sich zum Zeitpunkt
+\( x=0 \) nebeneinander und fahren in den nächsten 60 Sekunden
+in die gleiche Richtung. Abbildung 1 zeigt den Graphen der Funktion
+\( f \) und den Graphen der Funktion \( g \),
+die die Geschwindigkeit des Motorrads beschreibt.</em></p>
+<p><strong>b)</strong> Beschreibe die Bewegungen des Autos und des
+Motorrads.</p>
+<p><strong>c)</strong> Abbildung 2 stellt für einen Ausschnitt der Fahrt
+den <strong>Abstand</strong> der beiden Fahrzeuge dar. Beschreibe, wie
+man die \( x \)-Koordinate des Punktes \( H \)
+mithilfe von Abbildung 1 ermitteln kann. Entscheide, ob die
+\( y \)-Koordinate von \( H \) größer als 500
+ist, und begründe deine Entscheidung.</p>
+<p><strong>d)</strong> Das Motorrad überholt das Auto zum Zeitpunkt
+\( x_0 \). Bestimme eine Gleichung, mit der man bei gegebenem
+Funktionsterm von \( g \) den Zeitpunkt \( x_0 \)
+berechnen kann.</p>
+</div>
+
+<p>Hier sind die beiden Graphen aus Abbildung 1 (Geschwindigkeiten) und
+Abbildung 2 (Abstand). Spiele mit den Bildern, bevor du die Lösungen
+aufklappst.</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k2-abb1" style="width:100%;max-width:360px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 1 — Geschwindigkeit von Auto (\( f \), durchgezogen) und Motorrad (\( g \), gestrichelt) in m/s über der Zeit \( x \) in s.</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k2-abb2" style="width:100%;max-width:360px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 2 — Abstand der beiden Fahrzeuge in m über der Zeit; der höchste Punkt heißt \( H \).</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k2-abb1',{boundingbox:[-6,66,66,-6],axis:true,showCopyright:false,showNavigation:false});
+b.create('functiongraph',[function(x){return 24+24*Math.exp(-0.08*x);},0,60],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('functiongraph',[function(x){return 40*(1-Math.exp(-0.15*x));},0,60],{strokeColor:'#d98324',strokeWidth:2.5,dash:2});
+b.create('line',[[11.9,0],[11.9,33.3]],{straightFirst:false,straightLast:false,dash:2,strokeColor:'#3a8a5a',strokeWidth:1});
+b.create('point',[11.9,33.3],{name:'',size:2,fillColor:'#3a8a5a',strokeColor:'#3a8a5a'});
+b.create('text',[30,46,'Graph von g'],{fontSize:12,color:'#d98324'});
+b.create('text',[32,21,'Graph von f'],{fontSize:12,color:'#3a5a9c'});
+b.create('text',[13,6,'x_s ≈ 12'],{fontSize:11,color:'#3a8a5a'});
+})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k2-abb2',{boundingbox:[-3,260,37,-20],axis:true,showCopyright:false,showNavigation:false});
+b.create('functiongraph',[function(x){return -16*x-300*Math.exp(-0.08*x)-(800/3)*Math.exp(-0.15*x)+1700/3;},0,34],{strokeColor:'#3a5a9c',strokeWidth:2.5});
+b.create('point',[11.9,215.7],{name:'H',size:2,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[6,10]}});
+b.create('text',[15,235,'max. Abstand'],{fontSize:11,color:'#d98324'});
+})();});</script>
+
+<blockquote>
+<p><strong>Hinweis zu den Bildern.</strong> Der Term von
+\( g \) ist in der Aufgabe <strong>nicht</strong> gegeben.
+Die gestrichelte Kurve ist nur schematisch so gezeichnet, dass sie zu
+Abbildung 1 im Original passt (Start bei \( 0 \), nähert
+sich \( 40 \), kreuzt \( f \) bei
+\( x \approx 12 \)). Für die Lösung brauchst du den Term von
+\( g \) nirgends — du liest aus dem Bild nur
+<strong>ab</strong>.</p>
+</blockquote>
+<section
+id="teilaufgabe-a--zzmathphzz45zzendzz-zzmathphzz46zzendzz-und-das-integral-berechnen-und-deuten"
+class="level3">
+<h3>Teilaufgabe a) — \( f(0) \), \( f'(0) \) und das
+Integral berechnen und deuten</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>\( f(0) \) berechnen.</strong> Einsetzen von
+\( x=0 \). Wegen \( e^{0}=1 \):</p>
+<p>\[ f(0) = 24 + 24\cdot e^{-0{,}08\cdot 0} = 24 + 24\cdot 1 = 48. \]</p>
+<p><strong>Deutung:</strong> Zu Beobachtungsbeginn (\( x=0 \))
+fährt das Auto <strong>48 Meter pro Sekunde</strong>.</p>
+<p><strong>\( f'(0) \) berechnen.</strong> Zuerst die Ableitung.
+Der konstante Summand \( 24 \) hat Ableitung
+\( 0 \); der Summand \( 24\,e^{-0{,}08x} \) wird mit der
+Kettenregel abgeleitet (innere Ableitung \( -0{,}08 \)):</p>
+<p>\[ f'(x) = 24\cdot(-0{,}08)\cdot e^{-0{,}08x} = -1{,}92\,e^{-0{,}08x}, \qquad f'(0) = -1{,}92\cdot 1 = -1{,}92. \]</p>
+<p><strong>Deutung:</strong> Die Ableitung der Geschwindigkeit ist die
+<strong>Beschleunigung</strong>. Zu Beobachtungsbeginn hat das Auto die
+Beschleunigung \( -1{,}92\ \tfrac{\text{m}}{\text{s}^2} \). Das Minus heißt: Das Auto wird
+<strong>langsamer</strong> (es bremst ab).</p>
+<p><strong>Das Integral berechnen.</strong> Eine
+<strong>Stammfunktion</strong> von \( f \):</p>
+<p>\[ \int \big(24 + 24\,e^{-0{,}08x}\big)\,dx = 24x + \frac{24}{-0{,}08}\,e^{-0{,}08x} = 24x - 300\,e^{-0{,}08x}. \]</p>
+<p>Mit dem Hauptsatz von \( 0 \) bis
+\( 60 \):</p>
+<p>\[ \int_0^{60} f(x)\,dx = \Big[\,24x - 300\,e^{-0{,}08x}\,\Big]_0^{60}
+= \big(24\cdot 60 - 300\,e^{-4{,}8}\big) - \big(0 - 300\,e^{0}\big). \]</p>
+<p>\( e^{-4{,}8} \) ist winzig (\( \approx 0{,}008 \)), also
+\( 300\,e^{-4{,}8}\approx 2{,}5 \). Damit:</p>
+<p>\[ \int_0^{60} f(x)\,dx = 1440 - 2{,}5 + 300 = 1737{,}5 \approx 1737{,}53. \]</p>
+<p><strong>Deutung:</strong> Das Integral der Geschwindigkeit über die
+Zeit ist die <strong>zurückgelegte Strecke</strong>. Das Auto legt in
+den ersten 60 Sekunden ca. <strong>1737,53 m</strong>, also rund
+<strong>1,7 km</strong> zurück.</p>
+<details><summary>Haltung dahinter: Was bedeuten „einsetzen", „Beschleunigung" und „Integral = Strecke"? (ganz von vorn)</summary>
+
+<p>Drei Dinge der Reihe nach, ohne Vorwissen.</p>
+<p><strong>Was heißt „\( f(0) \) berechnen"?</strong> Die
+Funktion \( f \) ist eine Maschine: Man gibt eine Zeit
+\( x \) (in Sekunden) hinein und bekommt die Geschwindigkeit
+(in Meter pro Sekunde) heraus. „\( f(0) \)" heißt: Setze die
+Zeit \( 0 \) ein — also „ganz am Anfang". Wichtig ist nur
+die Regel \( e^{0}=1 \): <strong>Alles hoch null ergibt
+eins.</strong> Deshalb wird aus \( 24\,e^{-0{,}08\cdot 0} \) einfach
+\( 24\cdot 1 = 24 \), und zusammen mit dem festen \( 24 \)
+kommt \( 48 \) heraus.</p>
+<p><strong>Was ist Geschwindigkeit, was ist Beschleunigung?</strong> Die
+<strong>Geschwindigkeit</strong> sagt, <em>wie schnell</em> man gerade
+fährt (z. B. 48 Meter in jeder Sekunde). Die
+<strong>Beschleunigung</strong> sagt, <em>wie schnell sich die
+Geschwindigkeit ändert</em> — ob man schneller oder langsamer wird. Beim
+Auto auf dem Tacho: Geschwindigkeit ist die angezeigte Zahl,
+Beschleunigung ist, wie der Zeiger gerade wandert. Mathematisch ist
+Beschleunigung die <strong>Ableitung</strong> der Geschwindigkeit (die
+Ableitung misst immer die Änderungsrate). Ein <strong>negativer</strong>
+Wert (\( -1{,}92 \)) bedeutet: Der Tacho-Zeiger geht zurück, das
+Auto bremst.</p>
+<p><strong>Warum ist das Integral die Strecke?</strong> Stell dir vor,
+du fährst genau eine Sekunde lang konstant 48 m/s — dann legst du 48 m
+zurück (Geschwindigkeit \( \times \) Zeit \( = \)
+Strecke). Über die ganze Fahrt ändert sich die Geschwindigkeit ständig.
+Das <strong>Integral</strong> zerlegt die Fahrt in unendlich viele
+winzige Zeitstücke, multipliziert in jedem Stück „Geschwindigkeit
+\( \times \) Zeitdauer" und addiert alles auf. Heraus kommt die
+<strong>gesamte gefahrene Strecke</strong>. Bildlich ist das die
+<strong>Fläche unter dem Geschwindigkeits-Graphen</strong>.</p>
+<details><summary>Das Integral ganz langsam (mit Zahlen)</summary>
+
+<p>Die Stammfunktion ist \( 24x - 300\,e^{-0{,}08x} \). „Hauptsatz" heißt: oberen
+Wert einsetzen, unteren Wert einsetzen, subtrahieren.</p>
+<ul>
+<li><strong>Oben (\( x=60 \)):</strong> \( 24\cdot 60 = 1440 \).
+Und \( -0{,}08\cdot 60 = -4{,}8 \), also \( -300\,e^{-4{,}8} \). Die Zahl
+\( e^{-4{,}8} \) ist sehr klein, etwa \( 0{,}0082 \); mal
+\( 300 \) sind das etwa \( 2{,}5 \). Oberer Wert:
+\( 1440 - 2{,}5 = 1437{,}5 \).</li>
+<li><strong>Unten (\( x=0 \)):</strong> \( 24\cdot 0 = 0 \),
+und \( -300\,e^{0} = -300\cdot 1 = -300 \). Unterer Wert: \( 0 - 300 = -300 \).</li>
+<li><strong>Subtrahieren:</strong> \( 1437{,}5 - (-300) \). Minus mal minus
+wird plus, also \( 1437{,}5 + 300 = 1737{,}5 \).</li>
+</ul>
+<p>Das passt zum offiziellen Wert \( 1737{,}53 \) (mit dem genauen
+\( e^{-4{,}8} \)). Rund 1,7 km.</p>
+</details>
+
+<details><summary>Woher kommt die \( 300 \) in der Stammfunktion?</summary>
+
+<p>Beim „Aufleiten" (Stammfunktion bilden) von \( e^{-0{,}08x} \) muss
+man durch die innere Zahl \( -0{,}08 \) <strong>teilen</strong> —
+das ist die Umkehrung der Kettenregel. Es gilt \( \tfrac{24}{-0{,}08} = -300 \), denn
+\( \tfrac{1}{0{,}08} = 12{,}5 \) und \( 24\cdot 12{,}5 = 300 \). Probe durch Ableiten:
+\( \tfrac{d}{dx}\big(-300\,e^{-0{,}08x}\big) = -300\cdot(-0{,}08)\,e^{-0{,}08x}
+= 24\,e^{-0{,}08x} \) — zurück beim Start, also stimmt die
+Stammfunktion.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-b--bewegungen-beschreiben" class="level3">
+<h3>Teilaufgabe b) — Bewegungen beschreiben</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Das Auto (\( f \)).</strong> Die Geschwindigkeit
+<strong>nimmt stets ab</strong>, wobei die Abnahme <strong>immer
+geringer</strong> wird. Sie startet bei 48 m/s und nähert sich von oben
+dem Wert 24 m/s, ohne ihn zu unterschreiten.</p>
+<p><strong>Das Motorrad (\( g \)).</strong> Zu
+Beobachtungsbeginn hat das Motorrad die Geschwindigkeit <strong>0
+m/s</strong>. Seine Geschwindigkeit <strong>nimmt stets zu</strong>,
+wobei die Zunahme <strong>immer geringer</strong> wird; sie nähert sich
+von unten dem Wert 40 m/s.</p>
+<details><summary>Haltung dahinter: Wie liest man eine „Bewegung" aus einem Graphen ab?</summary>
+
+<p>Der Graph zeigt auf der senkrechten Achse die
+<strong>Geschwindigkeit</strong> und auf der waagerechten Achse die
+<strong>Zeit</strong>. Man beschreibt eine Bewegung in zwei
+Schritten:</p>
+<ol type="1">
+<li><strong>Geht der Graph rauf oder runter?</strong> Beim Auto fällt
+die Linie von links nach rechts → das Auto wird langsamer (passt zur
+negativen Beschleunigung aus a). Beim Motorrad steigt die Linie → es
+wird schneller.</li>
+<li><strong>Wird die Veränderung stärker oder schwächer?</strong> Beide
+Linien werden nach rechts immer <strong>flacher</strong>. Flach
+bedeutet: Es ändert sich kaum noch etwas. Also wird beim Auto die
+Abnahme immer kleiner und beim Motorrad die Zunahme immer kleiner —
+beide laufen auf einen festen Endwert zu (24 bzw. 40).</li>
+</ol>
+<p><strong>Alltagsbild:</strong> Das Auto rollt aus (es bremst, aber
+immer sanfter und pendelt sich bei einer Rest- geschwindigkeit ein). Das
+Motorrad fährt aus dem Stand an, beschleunigt zuerst kräftig und dann
+immer gemächlicher, bis es fast eine feste Reisegeschwindigkeit
+hält.</p>
+<details><summary>Typische Falle: Geschwindigkeit mit Strecke verwechseln</summary>
+
+<p>„Die Geschwindigkeit des Autos nimmt ab" heißt
+<strong>nicht</strong>, dass das Auto rückwärts fährt oder die Strecke
+kürzer wird. Solange die Geschwindigkeit <strong>positiv</strong> ist
+(hier immer mindestens 24 m/s), fährt das Auto weiter vorwärts — nur
+eben langsamer. Auf dem Graphen steht die <em>Geschwindigkeit</em>,
+nicht der <em>Ort</em>.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-c--zzmathphzz104zzendzz-koordinate-von-zzmathphzz105zzendzz-bestimmen-und-zzmathphzz106zzendzz-entscheiden"
+class="level3">
+<h3>Teilaufgabe c) — \( x \)-Koordinate von
+\( H \) bestimmen und \( y_H  \gt  500 \) entscheiden</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>\( x \)-Koordinate von
+\( H \).</strong> \( H \) ist der
+<strong>höchste Punkt</strong> der Abstandskurve (der größte Abstand
+zwischen den Fahrzeugen). Der Abstand wächst, solange das <strong>Auto
+schneller</strong> ist als das Motorrad (\( f  \gt  g \)); sobald
+das <strong>Motorrad schneller</strong> wird (\( g  \gt  f \)),
+schrumpft der Abstand wieder. Der größte Abstand liegt also genau dort,
+wo beide <strong>gleich schnell</strong> sind:</p>
+<blockquote>
+<p>Die \( x \)-Koordinate von \( H \) ist die
+<strong>Schnittstelle der beiden Graphen</strong> \( f \)
+und \( g \) in Abbildung 1. Man liest sie als
+\( x_s \approx 12\ \text{s} \) ab.</p>
+</blockquote>
+<p><strong>Ist die \( y \)-Koordinate von
+\( H \) größer als 500?</strong> Die
+\( y \)-Koordinate von \( H \) ist der
+<strong>größte Abstand</strong> (in Metern). Er entspricht der
+<strong>Fläche zwischen den beiden Geschwindigkeits- Graphen</strong>
+von \( x=0 \) bis zur Schnittstelle \( x_s \),
+also \( \int_0^{x_s}\big(f(x)-g(x)\big)\,dx \).</p>
+<p>Diese Fläche ist <strong>kleiner als 500</strong>, und das sieht man
+ohne genaue Rechnung:</p>
+<ul>
+<li>Der Geschwindigkeits-Unterschied \( f-g \) ist <strong>am
+Anfang am größten</strong>: \( f(0)-g(0)=48-0=48 \).</li>
+<li>Danach <strong>schrumpft</strong> der Unterschied stetig bis auf
+\( 0 \) an der Schnittstelle.</li>
+<li>Die Fläche liegt deshalb innerhalb eines Dreiecks mit Breite
+\( x_s\approx 12 \) und Höhe \( 48 \):
+\[ y_H = \int_0^{x_s}(f-g)\,dx \; \lt \; \tfrac12\cdot x_s\cdot 48 \approx \tfrac12\cdot 12\cdot 48 = 288  \lt  500. \]</li>
+</ul>
+<p>Also ist \( y_H  \lt  500 \). (Der tatsächliche Höchstabstand liegt
+bei etwa <strong>215 m</strong>.)</p>
+<details><summary>Haltung dahinter: Warum ist der Abstand die Fläche zwischen den Geschwindigkeits-Kurven?</summary>
+
+<p><strong>Strecke = Fläche unter der Geschwindigkeit</strong> (das
+kennst du aus Teilaufgabe a). Der Weg des Autos nach
+\( x \) Sekunden ist die Fläche unter \( f \),
+der Weg des Motorrads die Fläche unter \( g \). Beide
+starten am selben Ort. Der <strong>Abstand</strong> zwischen ihnen ist
+die <strong>Differenz der zurückgelegten Wege</strong> — und das ist die
+Fläche unter \( f \) minus die Fläche unter
+\( g \), also die <strong>Fläche zwischen den beiden
+Kurven</strong>.</p>
+<p>Solange \( f \) über \( g \) liegt (Auto
+schneller), wächst diese Fläche mit jeder Sekunde → der Abstand wird
+größer. Genau an der Schnittstelle hört das Wachsen auf (beide gleich
+schnell, kein zusätzlicher Vorsprung) — dort ist der Abstand maximal,
+das ist \( H \). Danach liegt \( g \) über
+\( f \) (Motorrad schneller); jetzt holt das Motorrad auf,
+die Fläche/der Abstand schrumpft.</p>
+<p><strong>Warum die „\(  \lt 500 \)"-Abschätzung wasserdicht ist
+(kurz):</strong> Der Unterschied \( f-g \) startet bei 48 und
+fällt <strong>nach unten gebogen</strong> (konvex) auf 0. Eine nach
+unten gebogene Kurve liegt <strong>unter</strong> der geraden
+Verbindungslinie von \( (0\mid 48) \) zu \( (x_s\mid 0) \). Die
+Fläche unter dieser Geraden ist ein Dreieck mit Inhalt
+\( \tfrac12\cdot 48\cdot x_s \). Selbst mit einem großzügigen \( x_s\approx 20 \)
+wären das nur \( \tfrac12\cdot 48\cdot 20 = 480  \lt  500 \). Der echte Wert ist noch deutlich
+kleiner.</p>
+<details><summary>Ganz langsam: die Dreiecks-Schranke in Zahlen</summary>
+
+<p>Stell dir den größtmöglichen Vorsprung vor: Das Auto wäre die ganze
+Zeit bis \( x_s \) um die volle Anfangsdifferenz
+\( 48\ \tfrac{\text{m}}{\text{s}} \) schneller. Dann wäre der Vorsprung
+\( 48\cdot x_s = 48\cdot 12 = 576\ \text{m} \) — das ist die <strong>Rechteck-Obergrenze</strong>
+(zu großzügig). In Wahrheit ist die Differenz nur am Start 48 und sinkt
+sofort. Im Mittel ist sie höchstens halb so groß, also
+\( \approx 24 \); mal \( 12 \) Sekunden ergibt
+\( \approx 288\ \text{m} \) — die <strong>Dreiecks- Schranke</strong>. Beide
+Schranken zeigen: weit unter dem nötigen Vergleichswert ist der Abstand
+spätestens mit der Dreiecks-Schranke (288) unter 500.</p>
+</details>
+
+<details><summary>Typische Falle: \( H \) mit dem Überholpunkt verwechseln</summary>
+
+<p>\( H \) ist der Punkt des <strong>größten
+Abstands</strong> (beide gleich schnell, \( f=g \)) — das ist
+<strong>nicht</strong> der Moment, in dem das Motorrad das Auto
+überholt. Beim Überholen ist der Abstand wieder <strong>0</strong>
+(siehe Teilaufgabe d). \( H \) liegt früher, ungefähr bei
+der halben Zeit bis zum Überholen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--gleichung-für-den-überholzeitpunkt-zzmathphzz157zzendzz"
+class="level3">
+<h3>Teilaufgabe d) — Gleichung für den Überholzeitpunkt
+\( x_0 \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Beim <strong>Überholen</strong> hat das Motorrad das Auto eingeholt:
+Zum Zeitpunkt \( x_0 \) haben <strong>beide Fahrzeuge genau
+dieselbe Strecke</strong> zurückgelegt (sie sind wieder nebeneinander,
+jetzt aber zieht das Motorrad vorbei). Strecke ist das Integral der
+Geschwindigkeit, also ist \( x_0 \) Lösung der Gleichung</p>
+<p>\[ \int_0^{x_0} f(x)\,dx \;=\; \int_0^{x_0} g(x)\,dx. \]</p>
+<details><summary>Haltung dahinter: Was heißt „überholen" mathematisch?</summary>
+
+<p>Beide starten zum Zeitpunkt \( 0 \)
+<strong>nebeneinander</strong> am selben Ort. Wer vorne liegt, hat die
+größere zurückgelegte Strecke. Anfangs ist das Auto schneller und zieht
+davon (positiver Abstand, vgl. \( H \)). Dann holt das
+Motorrad auf. <strong>Überholen</strong> ist der Augenblick, in dem das
+Motorrad den Vorsprung des Autos vollständig aufgezehrt hat — beide
+haben <strong>dieselbe Strecke</strong> zurückgelegt. Genau dann ist der
+Abstand wieder null.</p>
+<p>Die zurückgelegte Strecke ist jeweils die Fläche unter der
+Geschwindigkeit, also das Integral von \( 0 \) bis zur
+betrachteten Zeit. „Gleiche Strecke" wird damit zu „gleiche Integrale":
+\( \int_0^{x_0} f = \int_0^{x_0} g \). Das ist die gesuchte Gleichung. Mit dem Term von
+\( g \) (der hier gegeben wäre) könnte man beide Integrale
+ausrechnen und nach \( x_0 \) auflösen — aus dem Bild läge
+\( x_0 \) bei etwa 34 s.</p>
+<details><summary>Gleichwertige Schreibweise mit dem Abstand</summary>
+
+<p>Man kann dieselbe Bedingung auch über den Abstand aus Teilaufgabe c)
+formulieren: „Abstand wieder null" heißt \( \int_0^{x_0}\big(f(x)-g(x)\big)\,dx = 0 \). Das ist
+nur die nach einer Seite sortierte Form derselben Gleichung — die
+Strecken-Gleichheit \( \int_0^{x_0} f = \int_0^{x_0} g \) ist die übliche Antwort.</p>
+</details>
+
+<details><summary>Typische Falle: \( f(x_0)=g(x_0) \) statt der Integrale</summary>
+
+<p>\( f(x_0)=g(x_0) \) (gleiche <strong>Geschwindigkeit</strong>)
+beschreibt den Punkt \( H \) aus Teilaufgabe c), also den
+größten Abstand — <strong>nicht</strong> das Überholen. Überholen heißt
+gleiche <strong>Strecke</strong>, und Strecke ist das
+<strong>Integral</strong>. Die richtige Gleichung enthält deshalb
+Integrale, keine bloßen Funktionswerte.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( f(0)=48 \) (Anfangsgeschwindigkeit 48 m/s);
+\( f'(x)=-1{,}92\,e^{-0{,}08x} \), \( f'(0)=-1{,}92 \) (Anfangsbeschleunigung
+\( -1{,}92\ \tfrac{\text{m}}{\text{s}^2} \), Auto bremst); \( \int_0^{60} f\,dx = \big[24x-300e^{-0{,}08x}\big]_0^{60} \approx 1737{,}53 \) (≈ 1,7 km
+Strecke).</li>
+<li>b) Auto: Geschwindigkeit nimmt stets ab, Abnahme immer geringer (48
+→ 24). Motorrad: startet bei 0, nimmt stets zu, Zunahme immer geringer
+(0 → 40).</li>
+<li>c) \( x_H = \) Schnittstelle von \( f \) und
+\( g \) (\( \approx 12 \) s); \( y_H = \int_0^{x_s}(f-g)\,dx
+   \lt  \tfrac12\cdot 12\cdot 48 = 288  \lt  500 \),
+also <strong>nein</strong>, \( y_H \) ist nicht größer als
+500 (≈ 215 m).</li>
+<li>d) \( x_0 \) löst \( \displaystyle\int_0^{x_0} f(x)\,dx = \int_0^{x_0} g(x)\,dx \) (gleiche
+Strecke).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-geometrie-zwei-ebenen-zzmathphzz185zzendzz-und-zzmathphzz186zzendzz"
+class="level2">
+<h2>Teil 2 — Gespräch (Geometrie): zwei Ebenen \( E \) und
+\( F \)</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben sind zwei Ebenen:</p>
+<p>\[ E:\ 2x_1 - x_2 + 3x_3 = 6, \qquad F:\ 2x_1 - x_2 = 6. \]</p>
+<p>Im Gespräch denkbare Aspekte: <strong>(AB I)</strong> Lage von
+\( E \) mit Hilfe von <strong>Spurpunkten</strong>
+veranschaulichen; <strong>Punktprobe</strong> und Ablesen des
+<strong>Normalenvektors</strong>; <strong>besondere Lage von
+\( F \)</strong> angeben. <strong>(AB II)</strong>
+Beziehung zwischen der <strong>Anzahl der Spurpunkte</strong> und der
+besonderen Lage einer Ebene; <strong>vektorielle
+(Parameter-)Darstellung</strong> von \( E \) und
+geometrische Bedeutung ihrer Bestandteile; <strong>Abstand</strong>
+verschiedener Objekte zu \( E \); Gleichung einer zu
+\( E \) <strong>orthogonalen bzw. parallelen
+Ebene</strong>; <strong>Spiegeln einer Geraden</strong> an
+\( E \). <strong>(AB III)</strong> besondere
+<strong>Ausschnitte</strong> von \( E \) in Parameterform
+(z. B. Parameter aus \( [0;1] \)); <strong>gemeinsame
+Punkte</strong> der Ebenen \( E \) und
+\( F \).</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was eine „Ebene" ist:</strong> Eine
+<strong>Ebene</strong> ist eine vollkommen flache, unendlich ausgedehnte
+Fläche im Raum — wie eine unendlich große Tischplatte, die irgendwie
+schräg im Raum hängt. Eine <strong>Koordinatengleichung</strong> wie
+\( 2x_1 - x_2 + 3x_3 = 6 \) ist eine Regel, die <strong>genau die Punkte
+\( (x_1\mid x_2\mid x_3) \) beschreibt, die auf dieser Tischplatte
+liegen</strong>: Setzt man einen Punkt der Ebene ein, stimmt die
+Gleichung; setzt man einen Punkt daneben ein, stimmt sie nicht. Alle
+Werkzeuge dazu im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>.</p>
+</blockquote>
+<p>So liegt die Ebene \( E \) im Koordinatensystem —
+gezeichnet über ihre drei <strong>Spurpunkte</strong> (die Stellen, an
+denen sie die Achsen durchstößt):</p>
+<figure>
+<svg viewBox="0 0 480 360" role="img" aria-label="Ebene E als Spurdreieck durch die Spurpunkte auf den drei Koordinatenachsen, mit Normalenvektor" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs>
+    <marker id="ahE" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker>
+    <marker id="ahN" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d98324"/></marker>
+  </defs>
+  <!-- Achsen -->
+  <line x1="250" y1="230" x2="250" y2="150" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ahE)"/>
+  <line x1="60"  y1="230" x2="348" y2="230" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ahE)"/>
+  <line x1="250" y1="230" x2="146" y2="298" stroke="#7a7163" stroke-width="1.5" marker-end="url(#ahE)"/>
+  <text x="234" y="148" font-size="13" fill="#7a7163">x₃</text>
+  <text x="352" y="234" font-size="13" fill="#7a7163">x₂</text>
+  <text x="128" y="308" font-size="13" fill="#7a7163">x₁</text>
+  <text x="256" y="246" font-size="12" fill="#7a7163">O</text>
+  <!-- Spurdreieck -->
+  <polygon points="190,269 94,230 250,178" fill="#3a5a9c" fill-opacity="0.10" stroke="#3a5a9c" stroke-width="1.7"/>
+  <!-- Normalenvektor aus dem Schwerpunkt -->
+  <line x1="178" y1="226" x2="142" y2="197" stroke="#d98324" stroke-width="1.8" marker-end="url(#ahN)"/>
+  <text x="150" y="190" font-size="12" fill="#d98324" font-weight="bold">n⃗</text>
+  <!-- Spurpunkte -->
+  <circle cx="250" cy="178" r="3.5" fill="#3a5a9c"/><text x="258" y="174" font-size="12" fill="#26324a" font-weight="bold">S₃(0|0|2)</text>
+  <circle cx="94"  cy="230" r="3.5" fill="#3a5a9c"/><text x="46"  y="250" font-size="12" fill="#26324a" font-weight="bold">S₂(0|−6|0)</text>
+  <circle cx="190" cy="269" r="3.5" fill="#3a5a9c"/><text x="198" y="283" font-size="12" fill="#26324a" font-weight="bold">S₁(3|0|0)</text>
+</svg>
+<figcaption>Schematisches Schrägbild — das <b>Spurdreieck</b> der Ebene \( E \) durch die drei Spurpunkte \( S_1(3\,|\,0\,|\,0) \), \( S_2(0\,|\,-6\,|\,0) \), \( S_3(0\,|\,0\,|\,2) \). Der orange Pfeil ist der Normalenvektor \( \vec n=(2\,|\,-1\,|\,3) \).</figcaption>
+</figure>
+
+<section
+id="ab-i--spurpunkte--lage-von-zzmathphzz205zzendzz-normalenvektor-besondere-lage-von-zzmathphzz206zzendzz"
+class="level3">
+<h3>AB I — Spurpunkte &amp; Lage von \( E \),
+Normalenvektor, besondere Lage von \( F \)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Spurpunkte von \( E \) (Lage
+veranschaulichen).</strong> Ein <strong>Spurpunkt</strong> ist die
+Stelle, an der die Ebene eine <strong>Koordinatenachse</strong>
+durchstößt. Auf einer Achse sind die beiden anderen Koordinaten
+null:</p>
+<ul>
+<li><strong>\( x_1 \)-Achse</strong> (\( x_2=x_3=0 \)):
+\( 2x_1 = 6 \Rightarrow x_1 = 3 \), also \( S_1(3\,|\,0\,|\,0) \).</li>
+<li><strong>\( x_2 \)-Achse</strong> (\( x_1=x_3=0 \)):
+\( -x_2 = 6 \Rightarrow x_2 = -6 \), also \( S_2(0\,|\,-6\,|\,0) \).</li>
+<li><strong>\( x_3 \)-Achse</strong> (\( x_1=x_2=0 \)):
+\( 3x_3 = 6 \Rightarrow x_3 = 2 \), also \( S_3(0\,|\,0\,|\,2) \).</li>
+</ul>
+<p>Verbindet man die drei Spurpunkte, erhält man das
+<strong>Spurdreieck</strong> (siehe Bild oben). Es zeigt anschaulich,
+wie schräg \( E \) im Raum liegt. \( E \)
+trifft <strong>alle drei</strong> Achsen → \( E \) liegt in
+<strong>allgemeiner Lage</strong> (keine Achse, keine Koordinatenebene
+ist parallel).</p>
+<p><strong>Punktprobe.</strong> Eine <strong>Punktprobe</strong> prüft,
+ob ein Punkt auf \( E \) liegt: Koordinaten einsetzen und
+schauen, ob \( 6 \) herauskommt.</p>
+<ul>
+<li>\( P(1\,|\,2\,|\,2) \): \( 2\cdot 1 - 2 + 3\cdot 2 = 2 - 2 + 6 = 6 \) ✓ → \( P \)
+<strong>liegt auf</strong> \( E \).</li>
+<li>Ursprung \( O(0\,|\,0\,|\,0) \): \( 2\cdot 0 - 0 + 3\cdot 0 = 0 \neq 6 \) →
+\( O \) liegt <strong>nicht</strong> auf
+\( E \).</li>
+</ul>
+<p><strong>Normalenvektor ablesen.</strong> Bei einer
+Koordinatengleichung \( n_1 x_1 + n_2 x_2 + n_3 x_3 = d \) sind die <strong>Vorzahlen vor
+\( x_1, x_2, x_3 \)</strong> genau die Koordinaten des Normalenvektors.
+Man liest direkt ab:</p>
+<p>\[ \vec n_E = \begin{pmatrix}2\\-1\\3\end{pmatrix}. \]</p>
+<p><strong>Besondere Lage von \( F \).</strong>
+\( F:\ 2x_1 - x_2 = 6 \) schreibt man vollständig als \( 2x_1 - x_2 + 0\cdot x_3 = 6 \).
+Der Normalenvektor ist also</p>
+<p>\[ \vec n_F = \begin{pmatrix}2\\-1\\0\end{pmatrix}. \]</p>
+<p>Die <strong>dritte Komponente ist null</strong>: Der Normalenvektor
+hat keinen Anteil in \( x_3 \)-Richtung, steht also
+waagerecht. Eine Fläche, deren Mast waagerecht zeigt, steht
+<strong>senkrecht aufgerichtet</strong>. Konkret:</p>
+<blockquote>
+<p><strong>\( F \) ist parallel zur
+\( x_3 \)-Achse.</strong> In der Gleichung kommt
+\( x_3 \) nicht vor — man darf \( x_3 \) beliebig
+wählen, der Punkt bleibt auf \( F \). \( F \)
+trifft die \( x_3 \)-Achse deshalb <strong>nicht</strong>
+(nur \( S_1(3\,|\,0\,|\,0) \) und \( S_2(0\,|\,-6\,|\,0) \) sind Spurpunkte; auf
+der \( x_3 \)-Achse ergäbe sich \( 0=6 \), ein
+Widerspruch).</p>
+</blockquote>
+<details><summary>Haltung dahinter: Spurpunkt, Normalenvektor und „besondere Lage" — ganz von vorn</summary>
+
+<p><strong>Warum „die anderen Koordinaten null"?</strong> Die
+\( x_1 \)-Achse besteht aus allen Punkten der Form
+\( (x_1\mid 0\mid 0) \) — man bewegt sich nur entlang der ersten Richtung,
+die beiden anderen Werte bleiben null. Sucht man den Schnittpunkt der
+Ebene mit dieser Achse, setzt man \( x_2=0 \) und
+\( x_3=0 \) in die Ebenengleichung ein. Übrig bleibt eine
+einfache Gleichung in \( x_1 \). Das ist der Spurpunkt auf
+der \( x_1 \)-Achse. Genauso für die beiden anderen Achsen.
+Drei Achsen → bis zu drei Spurpunkte → das Spurdreieck, an dem man die
+Lage „sieht".</p>
+<p><strong>Normalenvektor = Fahnenmast.</strong> Der
+<strong>Normalenvektor</strong> ist ein Pfeil, der <strong>senkrecht auf
+der Ebene steht</strong> — wie ein Fahnenmast, der gerade aus einer
+schrägen Dachfläche ragt. Sein Witz: Seine drei Zahlen sind
+<strong>genau</strong> die Vorzahlen in der Ebenengleichung. Deshalb
+kann man ihn ohne Rechnung <strong>ablesen</strong>:
+\( 2x_1 - x_2 + 3x_3 = 6 \) → \( \vec n = (2\mid -1\mid 3) \). (Vorsicht beim Vorzeichen:
+\( -x_2 \) bedeutet \( -1 \) als zweite
+Komponente.)</p>
+<p><strong>„Besondere Lage".</strong> Eine Ebene hat eine besondere
+Lage, wenn sie zu einer Achse oder zu einer Koordinatenebene
+<strong>parallel</strong> ist. Das erkennt man an
+<strong>Nullen</strong> im Normalenvektor: Fehlt eine Richtung im
+Normalenvektor (hier \( x_3 \)), so steht der Mast in dieser
+Richtung „flach", und die Ebene läuft parallel zu dieser Achse. Bei
+\( F \) fehlt \( x_3 \) → \( F \)
+ist parallel zur \( x_3 \)-Achse.</p>
+<details><summary>Alltagsbild für \( F \) parallel zur \( x_3 \)-Achse</summary>
+
+<p>Stell dir die \( x_1x_2 \)-Ebene als
+<strong>Fußboden</strong> vor und die \( x_3 \)-Achse als
+<strong>Senkrechte nach oben</strong>. Die Gleichung
+\( 2x_1 - x_2 = 6 \) beschreibt im Fußboden eine <strong>Gerade</strong>
+(die Spurgerade). \( F \) ist die <strong>Wand</strong>,
+die genau über dieser Bodengerade <strong>senkrecht hochgezogen</strong>
+ist. Eine Wand läuft parallel zur senkrechten Richtung — deshalb
+\( F\parallel x_3 \)-Achse. Die Höhe \( x_3 \) ist der Wand
+egal, sie steht überall gleich.</p>
+</details>
+
+<details><summary>Punktprobe ganz langsam (mit Zahlen)</summary>
+
+<p>Für \( P(1\mid 2\mid 2) \): Ersetze in \( 2x_1 - x_2 + 3x_3 \) die
+Buchstaben durch die Zahlen von \( P \):
+\( x_1=1,\ x_2=2,\ x_3=2 \). \( 2\cdot 1 = 2 \); dann \( -x_2 = -2 \);
+dann \( 3\cdot 2 = 6 \). Addieren: \( 2 - 2 + 6 = 6 \). Auf der
+rechten Seite steht ebenfalls \( 6 \) → die Gleichung
+<strong>stimmt</strong> → \( P \) liegt auf
+\( E \). Käme etwas anderes als \( 6 \)
+heraus, läge \( P \) daneben.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--spurpunkt-zahl--lage-parameterform-abstände-paralleleorthogonale-ebene-spiegelung"
+class="level3">
+<h3>AB II — Spurpunkt-Zahl ↔︎ Lage, Parameterform, Abstände,
+parallele/orthogonale Ebene, Spiegelung</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>1) Beziehung zwischen Anzahl der Spurpunkte und besonderer
+Lage.</strong> Die Zahl der Spurpunkte verrät die Lage der Ebene:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Spurpunkte</th>
+<th>Lage der Ebene</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3</strong></td>
+<td>allgemeine (schräge) Lage, schneidet alle drei Achsen</td>
+<td>\( E:\ 2x_1-x_2+3x_3=6 \)</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>parallel zu einer Achse</strong> (eine Vorzahl ist 0)</td>
+<td>\( F:\ 2x_1-x_2=6 \) (∥ \( x_3 \)-Achse)</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>parallel zu einer Koordinatenebene</strong> (zwei Vorzahlen
+sind 0)</td>
+<td>\( x_3=2 \) (∥ \( x_1x_2 \)-Ebene)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Merksatz: <strong>Je mehr Nullen im Normalenvektor, desto
+„besonderer" die Lage und desto weniger Spurpunkte.</strong>
+\( E \) hat drei Spurpunkte (schräg), \( F \)
+zwei (parallel zu einer Achse).</p>
+<p><strong>2) Parameterform (vektorielle Darstellung) von
+\( E \).</strong> Man braucht <strong>einen Punkt</strong>
+der Ebene (Stützvektor) und <strong>zwei</strong> verschiedene
+Richtungen, die <strong>in</strong> der Ebene liegen (Spannvektoren).
+Als Stützpunkt nimmt man \( S_1(3\,|\,0\,|\,0) \). Zwei Richtungen, die
+senkrecht zu \( \vec n=(2\mid -1\mid 3) \) stehen (also in \( E \)
+liegen), sind z. B. \( (1\mid 2\mid 0) \) und \( (0\mid 3\mid 1) \) —
+Probe: \( (1\mid 2\mid 0)\cdot\vec n = 2-2+0 = 0 \) ✓, \( (0\mid 3\mid 1)\cdot\vec n = 0-3+3 = 0 \) ✓.</p>
+<p>\[ E:\quad \vec x = \begin{pmatrix}3\\0\\0\end{pmatrix} + s\begin{pmatrix}1\\2\\0\end{pmatrix}
++ t\begin{pmatrix}0\\3\\1\end{pmatrix}, \qquad s,t\in\mathbb{R}. \]</p>
+<p><strong>Geometrische Bedeutung der Bestandteile:</strong></p>
+<ul>
+<li><strong>Stützvektor \( (3\mid 0\mid 0) \):</strong> ein fester
+„Ankerpunkt" auf der Ebene (hier der Spurpunkt auf der
+\( x_1 \)-Achse). Er heftet die Ebene im Raum fest.</li>
+<li><strong>Spannvektoren \( (1\mid 2\mid 0) \) und
+\( (0\mid 3\mid 1) \):</strong> zwei nicht-parallele Richtungen, die
+<em>innerhalb</em> der Ebene liegen. Vom Anker aus erreicht man jeden
+Ebenenpunkt, indem man ein Stück in die erste und ein Stück in die
+zweite Richtung geht.</li>
+<li><strong>Parameter \( s, t \):</strong> sagen, <strong>wie
+weit</strong> man in jede Richtung geht. Laufen \( s, t \)
+durch alle reellen Zahlen, überstreicht man die <strong>ganze</strong>
+(unendliche) Ebene.</li>
+</ul>
+<p><strong>3) Abstand verschiedener Objekte zu
+\( E \).</strong> Werkzeug ist die
+<strong>Hesse-Normalform</strong>: Der Abstand eines Punktes
+\( P(p_1\mid p_2\mid p_3) \) von \( E \) ist</p>
+<p>\[ d(P,E) = \frac{\big|\,2p_1 - p_2 + 3p_3 - 6\,\big|}{|\vec n_E|},\qquad |\vec n_E| = \sqrt{2^2+(-1)^2+3^2} = \sqrt{14}. \]</p>
+<p>Beispiele:</p>
+<ul>
+<li><strong>Punkt</strong> \( O(0\mid 0\mid 0) \):
+\( d = \dfrac{|0-0+0-6|}{\sqrt{14}} = \dfrac{6}{\sqrt{14}} = \dfrac{3\sqrt{14}}{7} \approx 1{,}60 \).</li>
+<li><strong>Parallele Ebene</strong> \( E':\ 2x_1 - x_2 + 3x_3 = 20 \) (gleicher
+Normalenvektor): Abstand der beiden Ebenen \( = \dfrac{|20-6|}{\sqrt{14}} = \dfrac{14}{\sqrt{14}} = \sqrt{14}\approx 3{,}74 \).</li>
+<li><strong>Parallele Gerade</strong> zu \( E \) (Richtung
+steht senkrecht auf \( \vec n \)): hat überall denselben
+Abstand; man rechnet den Abstand <strong>eines</strong> Geradenpunkts
+mit derselben Formel.</li>
+</ul>
+<p>Wichtig: Nur <strong>parallele</strong> Objekte haben einen festen
+Abstand zu \( E \). Schneidet ein Objekt die Ebene, ist der
+Abstand \( 0 \).</p>
+<p><strong>4) Parallele bzw. orthogonale Ebene zu
+\( E \).</strong></p>
+<ul>
+<li><strong>Parallel:</strong> gleicher Normalenvektor
+\( (2\mid -1\mid 3) \), nur die rechte Zahl ändern. Beispiel durch
+\( P(1\mid 1\mid 1) \): \( 2+(-1)+3 = 4 \), also \( 2x_1 - x_2 + 3x_3 = 4 \).
+(Allgemein: \( 2x_1 - x_2 + 3x_3 = c \) mit \( c\neq 6 \).)</li>
+<li><strong>Orthogonal:</strong> zwei Ebenen stehen senkrecht
+zueinander, wenn ihre <strong>Normalenvektoren senkrecht</strong>
+zueinander stehen (Skalarprodukt \( 0 \)). Man wählt einen
+Normalenvektor \( \vec m \) mit \( \vec m\cdot\vec n_E = 0 \), z. B.
+\( \vec m=(1\mid 2\mid 0) \) (denn \( 1\cdot 2 + 2\cdot(-1) + 0\cdot 3 = 0 \)). Beispiel-Ebene:
+\( x_1 + 2x_2 = 0 \). (Es gibt <strong>unendlich viele</strong> solche
+orthogonalen Ebenen.)</li>
+</ul>
+<p><strong>5) Spiegeln einer Geraden an \( E \).</strong>
+Eine Gerade spiegelt man, indem man ihre Punkte spiegelt. Am
+elegantesten: <strong>Stützpunkt spiegeln</strong> und
+<strong>Richtungsvektor spiegeln</strong>. Wie man einen Punkt
+\( P \) an \( E \) spiegelt, zeigt das
+Schema:</p>
+<figure>
+<svg viewBox="0 0 460 270" role="img" aria-label="Spiegelung eines Punktes an einer Ebene: Lot vom Punkt auf die Ebene, Lotfußpunkt, gleich weit auf die andere Seite" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <!-- Ebene E von der Seite (Kante) -->
+  <line x1="70" y1="180" x2="390" y2="100" stroke="#3a5a9c" stroke-width="2.2"/>
+  <text x="300" y="96" font-size="13" fill="#3a5a9c" font-weight="bold">Ebene E (von der Seite)</text>
+  <!-- Lotgerade P - F - P' -->
+  <line x1="192" y1="57" x2="236" y2="231" stroke="#7a7163" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <!-- rechter Winkel am Fuss -->
+  <rect x="207" y="135" width="14" height="14" fill="none" stroke="#7a7163" stroke-width="1" transform="rotate(-14 214 144)"/>
+  <!-- Punkte -->
+  <circle cx="192" cy="57" r="4" fill="#d98324"/><text x="172" y="52" font-size="13" fill="#26324a" font-weight="bold">P</text>
+  <circle cx="214" cy="144" r="3.5" fill="#3a5a9c"/><text x="224" y="140" font-size="12" fill="#26324a">F (Lotfußpunkt)</text>
+  <circle cx="236" cy="231" r="4" fill="#d98324"/><text x="246" y="236" font-size="13" fill="#26324a" font-weight="bold">P′ (Spiegelpunkt)</text>
+  <text x="160" y="104" font-size="12" fill="#7a7163">d</text>
+  <text x="244" y="190" font-size="12" fill="#7a7163">d</text>
+</svg>
+<figcaption>Spiegelung an \( E \): vom Punkt \( P \) senkrecht (in Richtung \( \vec n \)) auf die Ebene loten, Lotfußpunkt \( F \), dann gleich weit (\( d \)) auf die andere Seite zu \( P' \).</figcaption>
+</figure>
+
+<p><strong>Beispiel — Spiegelung der \( x_1 \)-Achse</strong>
+\( g:\ \vec x = \begin{pmatrix}0\\0\\0\end{pmatrix}
++ r\begin{pmatrix}1\\0\\0\end{pmatrix} \).</p>
+<p><em>Stützpunkt \( O(0\mid 0\mid 0) \) spiegeln.</em> Lotgerade durch
+\( O \) in Richtung \( \vec n=(2\mid -1\mid 3) \):
+\( \vec x = (2r\mid -r\mid 3r) \). Einsetzen in \( E \):
+\( 2(2r) -(-r) + 3(3r) = 4r + r + 9r = 14r = 6
+\Rightarrow r = \tfrac{3}{7} \). Lotfußpunkt \( F = \big(\tfrac{6}{7}\,\big|\,-\tfrac{3}{7}\,\big|\,\tfrac{9}{7}\big) \). Der Spiegelpunkt
+liegt doppelt so weit: \( O' = 2F - O = \big(\tfrac{12}{7}\,\big|\,-\tfrac{6}{7}\,\big|\,\tfrac{18}{7}\big) \).</p>
+<p><em>Richtung \( \vec u=(1\mid 0\mid 0) \) spiegeln.</em> Beim Spiegeln dreht
+sich nur der Anteil <strong>senkrecht zur Ebene</strong> um; Formel
+\( \vec u' = \vec u - 2\,\dfrac{\vec u\cdot\vec n}{\vec n\cdot\vec n}\,\vec n \). Mit \( \vec u\cdot\vec n = 2 \) und \( \vec n\cdot\vec n = 14 \):
+\( \vec u' = (1\mid 0\mid 0) - 2\cdot\tfrac{2}{14}(2\mid -1\mid 3) = \big(\tfrac{3}{7}\,\big|\,\tfrac{2}{7}\,\big|\,-\tfrac{6}{7}\big)\ \parallel\ (3\mid 2\mid -6) \).</p>
+<p>Gespiegelte Gerade: \[ g':\quad \vec x = \begin{pmatrix}12/7\\-6/7\\18/7\end{pmatrix} + r\begin{pmatrix}3\\2\\-6\end{pmatrix}. \]</p>
+<p><em>Probe:</em> Die Original-Achse trifft \( E \) in
+\( S_1(3\mid 0\mid 0) \); dieser Punkt muss beim Spiegeln
+<strong>fest</strong> bleiben. Setzt man \( r=\tfrac{3}{7} \) in
+\( g' \) ein, kommt \( (3\mid 0\mid 0) \) heraus ✓.</p>
+<details><summary>Haltung dahinter: die fünf Werkzeuge in Alltagssprache</summary>
+
+<ul>
+<li><strong>Skalarprodukt \( \vec a\cdot\vec b \):</strong> zwei Vektoren
+komponentenweise multiplizieren und addieren (\( a_1b_1+a_2b_2+a_3b_3 \)).
+Sein Nutzen hier: <strong>\( =0 \) heißt „stehen senkrecht
+aufeinander".</strong> So prüft man, ob eine Richtung in einer Ebene
+liegt (senkrecht zum Mast) oder ob zwei Ebenen orthogonal sind. Schema
+im <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">Werkzeugkasten
+Geometrie</a>.</li>
+<li><strong>Parameterform.</strong> Eine Ebene als „Ankerpunkt plus zwei
+Richtungen". Bild: Du stehst am Anker und darfst in zwei festen
+Richtungen beliebig weit laufen — die Menge aller erreichbaren Orte ist
+die ganze Ebene.</li>
+<li><strong>Hesse-Normalform / Abstand.</strong> Setzt man einen Punkt
+in \( 2x_1-x_2+3x_3-6 \) ein, sagt das Ergebnis, <em>wie weit weg</em>
+und <em>auf welcher Seite</em> der Punkt liegt. Teilt man durch die
+Länge des Normalenvektors \( \sqrt{14} \), wird daraus der echte
+<strong>Abstand</strong> in Längeneinheiten. Auf \( E \)
+selbst kommt \( 0 \) heraus.</li>
+<li><strong>Parallel vs. orthogonal.</strong> <em>Parallel</em> =
+„gleich gekippt": gleicher Normalenvektor, nur verschoben (andere rechte
+Zahl). <em>Orthogonal</em> = „über Eck": die Normalenvektoren stehen
+senkrecht zueinander.</li>
+<li><strong>Spiegeln.</strong> Wie ein Spiegel an der Wand: vom Objekt
+<strong>senkrecht zur Wand</strong> loten, am Auftreffpunkt
+(Lotfußpunkt) genauso weit weiter — das ist das Spiegelbild. Eine Gerade
+spiegelt man, indem man Anker und Richtung spiegelt (oder zwei ihrer
+Punkte).</li>
+</ul>
+<details><summary>Spiegelung des Punktes \( O \) ganz langsam (mit Zahlen)</summary>
+
+<ol type="1">
+<li><strong>Lotgerade aufstellen:</strong> von \( O \) in
+Richtung Mast \( \vec n=(2\mid -1\mid 3) \), also Punkte
+\( (2r\mid -r\mid 3r) \).</li>
+<li><strong>Schnitt mit \( E \):</strong> in
+\( 2x_1 - x_2 + 3x_3 = 6 \) einsetzen: \( 2\cdot 2r = 4r \);
+\( -(-r) = +r \); \( 3\cdot 3r = 9r \). Summe \( 4r + r + 9r = 14r \).
+Gleichsetzen mit \( 6 \): \( 14r = 6 \Rightarrow r = \tfrac{6}{14} = \tfrac{3}{7} \).</li>
+<li><strong>Lotfußpunkt \( F \):</strong>
+\( r=\tfrac37 \) einsetzen: \( (2\cdot\tfrac37\mid -\tfrac37\mid 3\cdot\tfrac37)
+   = (\tfrac67\mid -\tfrac37\mid \tfrac97) \).</li>
+<li><strong>Verdoppeln zum Spiegelpunkt:</strong> \( F \)
+liegt auf halbem Weg von \( O \) nach \( O' \),
+also \( O' = 2F - O = (\tfrac{12}{7}\mid -\tfrac{6}{7}\mid \tfrac{18}{7}) \).</li>
+<li><strong>Kontrolle über den Abstand:</strong> \( O \)
+hatte den Wert \( 0-6=-6 \) in \( 2x_1-x_2+3x_3-6 \);
+\( O' \) liefert \( 2\cdot\tfrac{12}{7} + \tfrac67 + 3\cdot\tfrac{18}{7} - 6 = \tfrac{24+6+54-42}{7}
+   = \tfrac{42}{7} = +6 \). Gleicher Betrag,
+anderes Vorzeichen → gleich weit auf der anderen Seite. ✓</li>
+</ol>
+</details>
+
+<details><summary>Typische Falle: nur den Punkt spiegeln und die Richtung vergessen</summary>
+
+<p>Wer beim Spiegeln einer Geraden nur den Stützpunkt spiegelt und den
+<strong>alten</strong> Richtungsvektor behält, bekommt eine falsche
+Gerade (außer die Gerade läge zufällig parallel zur Ebene). Die Richtung
+muss <strong>mitgespiegelt</strong> werden. Sicherer Alternativweg:
+<strong>zwei</strong> Punkte der Geraden einzeln spiegeln und durch die
+zwei Bildpunkte die neue Gerade legen.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-iii--besondere-ausschnitte-von-zzmathphzz391zzendzz-gemeinsame-punkte-von-zzmathphzz392zzendzz-und-zzmathphzz393zzendzz"
+class="level3">
+<h3>AB III — besondere Ausschnitte von \( E \), gemeinsame
+Punkte von \( E \) und \( F \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p><strong>1) Besondere Ausschnitte von \( E \) in
+Parameterform (Parameter z. B. aus \( [0;1] \)).</strong> In
+der Parameterform \( \vec x = A + s\,\vec u + t\,\vec v \) wählt man bisher
+\( s,t\in\mathbb{R} \) und erhält die <strong>ganze</strong> Ebene.
+Schränkt man die Parameter auf ein Intervall ein, schneidet man ein
+<strong>Stück</strong> der Ebene heraus:</p>
+<ul>
+<li>\( s,t\in[0;1] \): das <strong>Parallelogramm</strong> mit der
+Ecke \( A \) und den Seiten \( \vec u, \vec v \).</li>
+<li>\( s\in[0;1],\ t=0 \): die <strong>Strecke</strong> von
+\( A \) nach \( A+\vec u \).</li>
+<li>\( s\ge 0,\ t\ge 0 \): eine <strong>Viertel-Ebene</strong>
+(rechtwinkliger Ausschnitt ab der Ecke \( A \)).</li>
+<li>\( s,t\ge 0,\ s+t\le 1 \): das <strong>Dreieck</strong>
+\( A,\ A+\vec u,\ A+\vec v \).</li>
+</ul>
+<p>Konkret für \( E:\ \vec x = (3\mid 0\mid 0) + s(1\mid 2\mid 0) + t(0\mid 3\mid 1) \) liefert \( s,t\in[0;1] \) das
+Parallelogramm mit den vier Ecken</p>
+<p>\[ A(3\,|\,0\,|\,0),\quad A+\vec u\,(4\,|\,2\,|\,0),\quad A+\vec v\,(3\,|\,3\,|\,1),\quad A+\vec u+\vec v\,(4\,|\,5\,|\,1). \]</p>
+<p>Alle vier erfüllen \( 2x_1 - x_2 + 3x_3 = 6 \) (Punktprobe), liegen also auf
+\( E \) — es ist ein ebenes Parallelogramm-Stück mitten in
+\( E \).</p>
+<p><strong>2) Gemeinsame Punkte der Ebenen \( E \) und
+\( F \).</strong> Zwei nicht-parallele Ebenen schneiden
+sich in einer <strong>Geraden</strong> (der Schnittgeraden). Da
+\( \vec n_E=(2\mid -1\mid 3) \) und \( \vec n_F=(2\mid -1\mid 0) \) <strong>nicht</strong>
+parallel sind, gibt es eine Schnittgerade. Am schnellsten subtrahiert
+man die Gleichungen:</p>
+<p>\[ E - F:\quad (2x_1 - x_2 + 3x_3) - (2x_1 - x_2) = 6 - 6 \;\;\Longrightarrow\;\; 3x_3 = 0 \;\;\Longrightarrow\;\; x_3 = 0. \]</p>
+<p>Die gemeinsamen Punkte liegen also in der Ebene \( x_3=0 \)
+(dem „Boden") und erfüllen \( 2x_1 - x_2 = 6 \). Setzt man
+\( x_1 = r \), folgt \( x_2 = 2r - 6 \),
+\( x_3 = 0 \):</p>
+<p>\[ g_{E\cap F}:\quad \vec x = \begin{pmatrix}0\\-6\\0\end{pmatrix} + r\begin{pmatrix}1\\2\\0\end{pmatrix}, \qquad r\in\mathbb{R}. \]</p>
+<p><em>Kontrolle:</em> Der Punkt \( (0\mid -6\mid 0) \) erfüllt beide
+Gleichungen (\( E:\ 0+6+0=6 \) ✓, \( F:\ 0+6=6 \) ✓); die
+Richtung \( (1\mid 2\mid 0) \) steht senkrecht auf
+<strong>beiden</strong> Normalenvektoren (\( (1\mid 2\mid 0)\cdot\vec n_E = 2-2+0=0 \) ✓,
+\( (1\mid 2\mid 0)\cdot\vec n_F = 2-2+0=0 \) ✓). Die Schnittgerade geht durch die beiden
+gemeinsamen Spurpunkte \( S_1(3\mid 0\mid 0) \) und \( S_2(0\mid -6\mid 0) \) —
+genau die Spurgerade im Boden.</p>
+<details><summary>Haltung dahinter: Ausschnitte und Schnittgerade — von Grund auf</summary>
+
+<p><strong>Warum schneidet ein Parameter-Intervall ein Stück
+aus?</strong> Mit \( s,t\in\mathbb{R} \) darf man vom Anker
+\( A \) <strong>unbegrenzt</strong> in beide Richtungen
+laufen → die ganze unendliche Ebene. Begrenzt man die Schrittweite, etwa
+\( 0\le s\le 1 \) und \( 0\le t\le 1 \), kommt man höchstens
+<strong>einen</strong> Schritt \( \vec u \) und
+<strong>einen</strong> Schritt \( \vec v \) weit. Alle
+erreichbaren Punkte füllen genau das <strong>Parallelogramm</strong>,
+das \( \vec u \) und \( \vec v \) vom Anker aus
+aufspannen. Wählt man stattdessen \( s+t\le 1 \), bleibt man im
+halben Parallelogramm — einem <strong>Dreieck</strong>. So lassen sich
+gezielt endliche Flächenstücke einer Ebene beschreiben (etwa eine Wand
+mit Rand statt einer unendlichen Fläche).</p>
+<p><strong>Warum ist der Schnitt eine Gerade, und warum funktioniert das
+Subtrahieren?</strong> Jede Ebene ist eine Bedingung an die Punkte; zwei
+Ebenen sind zwei Bedingungen gleichzeitig. Im Raum bleibt dann eine
+<strong>Gerade</strong> voller Punkte übrig, die beide erfüllen (wie die
+Kante, an der zwei Wände zusammenstoßen). Subtrahiert man die zwei
+Gleichungen, fallen die gemeinsamen Teile (\( 2x_1 \) und
+\( -x_2 \)) weg, und es bleibt eine einfache neue Bedingung
+\( 3x_3=0 \), also \( x_3=0 \). Zusammen mit einer der
+Originalgleichungen beschreibt das die Schnittgerade.</p>
+<details><summary>Eleganter Gegencheck: Richtung über das Kreuzprodukt</summary>
+
+<p>Die Richtung der Schnittgeraden steht senkrecht auf
+<strong>beiden</strong> Normalenvektoren — genau das liefert das
+<strong>Kreuzprodukt</strong> \( \vec n_E\times\vec n_F \): \[ \begin{pmatrix}2\\-1\\3\end{pmatrix}\times\begin{pmatrix}2\\-1\\0\end{pmatrix}
+= \begin{pmatrix}(-1)\cdot 0 - 3\cdot(-1)\\ 3\cdot 2 - 2\cdot 0\\ 2\cdot(-1) - (-1)\cdot 2\end{pmatrix}
+= \begin{pmatrix}3\\6\\0\end{pmatrix}\ \parallel\ \begin{pmatrix}1\\2\\0\end{pmatrix}. \]
+Dasselbe Ergebnis wie oben. (Kreuzprodukt-Schema: <a
+href="konv-90-werkzeugkasten-geometrie.html#kreuzprodukt">Werkzeugkasten
+Geometrie</a>.)</p>
+</details>
+
+<details><summary>Typische Falle: aus \( x_3=0 \) eine ganze Ebene machen</summary>
+
+<p>\( x_3=0 \) allein ist die Boden-Ebene,
+<strong>nicht</strong> die Schnittgerade. Man braucht
+<strong>beide</strong> Bedingungen zusammen: \( x_3=0 \)
+<strong>und</strong> \( 2x_1 - x_2 = 6 \). Erst beide zusammen ergeben
+die Gerade. Wer nur eine behält, beschreibt zu viele Punkte.</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Aspekt, <strong>was eine gute Antwort enthält</strong>
+und <strong>welche Rückfrage</strong> du stellen kannst. Du musst nichts
+selbst rechnen — achte auf die genannten Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>a) Werte berechnen und deuten.</strong> Erwartet:
+\( f(0)=48 \) („Anfangsgeschwindigkeit 48 m/s"),
+\( f'(0)=-1{,}92 \) („Anfangsbeschleunigung \( -1{,}92\ \tfrac{\text{m}}{\text{s}^2} \), Auto
+bremst"), Integral \( \approx 1737{,}53 \) („Strecke in 60 s, ≈ 1,7 km").
+<em>Rückfrage:</em> „Was bedeutet das Minus bei \( f'(0) \)?"
+(Antwort: Auto wird langsamer.) <em>Rote Flagge:</em> das Integral als
+„Geschwindigkeit" statt als „Strecke" deuten.</li>
+<li><strong>b) Bewegungen.</strong> Erwartet: Auto wird
+<strong>langsamer</strong>, Abnahme <strong>immer geringer</strong> (48
+→ 24); Motorrad startet bei <strong>0</strong>, wird
+<strong>schneller</strong>, Zunahme <strong>immer geringer</strong> (0 →
+40). <em>Rückfrage:</em> „Auf welchen Wert läuft jede Geschwindigkeit
+langfristig zu?"</li>
+<li><strong>c) Punkt \( H \).</strong> Erwartet:
+\( x_H = \) <strong>Schnittstelle der beiden Graphen</strong>
+(gleiche Geschwindigkeit); \( y_H = \) <strong>Fläche zwischen
+den Kurven</strong> und damit <strong>kleiner als 500</strong> (grob
+über Dreieck \( \tfrac12\cdot 12\cdot 48 \approx 288 \)). <em>Rote Flagge:</em>
+\( H \) als Überholpunkt deuten. <em>Rückfrage:</em> „Warum
+ist gerade an der Schnittstelle der Abstand am größten?"</li>
+<li><strong>d) Überholgleichung.</strong> Erwartet: gleiche
+<strong>Strecke</strong> → \( \int_0^{x_0} f = \int_0^{x_0} g \). <em>Rote Flagge:</em>
+\( f(x_0)=g(x_0) \) (das ist Punkt \( H \), nicht das
+Überholen). <em>Rückfrage:</em> „Was ist beim Überholen gleich — die
+Geschwindigkeit oder die Strecke?"</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Geometrie) aufklappen</summary>
+
+<ul>
+<li><strong>AB I — Spurpunkte / Punktprobe / Normalenvektor / Lage von
+\( F \).</strong> Erwartet: drei Spurpunkte
+\( (3\mid 0\mid 0),\ (0\mid -6\mid 0),\ (0\mid 0\mid 2) \); Normalenvektor \( (2\mid -1\mid 3) \)
+<strong>abgelesen</strong>; \( F \) <strong>parallel zur
+\( x_3 \)-Achse</strong> (weil \( x_3 \) fehlt).
+<em>Rückfrage:</em> „Woran sieht man im Normalenvektor die besondere
+Lage von \( F \)?" (Antwort: dritte Komponente
+\( 0 \).)</li>
+<li><strong>AB II — Spurpunkt-Zahl / Parameterform / Abstand /
+parallel-orthogonal / Spiegeln.</strong> Erwartet: 3 Spurpunkte =
+schräg, 2 = parallel zu einer Achse, 1 = parallel zu einer
+Koordinatenebene; Parameterform mit <strong>einem Stützpunkt + zwei
+Spannvektoren</strong>; Abstand über <strong>Hesse-Normalform</strong>
+(\( |\dots|/\sqrt{14} \)); parallel = <strong>gleicher</strong>
+Normalenvektor, orthogonal = Normalenvektoren <strong>senkrecht</strong>
+(Skalarprodukt \( 0 \)); Spiegeln = <strong>Lot fällen,
+Lotfußpunkt, gleich weit weiter</strong>. <em>Rückfrage:</em> „Wie
+prüfst du schnell, ob eine Richtung in \( E \) liegt?"
+(Antwort: Skalarprodukt mit \( \vec n \) ist
+\( 0 \).)</li>
+<li><strong>AB III — Ausschnitte / gemeinsame Punkte.</strong> Hier
+zählt <strong>sauberes Erklären</strong>: \( s,t\in[0;1] \) liefert
+ein <strong>Parallelogramm</strong>; \( s+t\le 1 \) ein Dreieck.
+Gemeinsame Punkte von \( E,F \) =
+<strong>Schnittgerade</strong>; durch <strong>Subtrahieren</strong>
+kommt \( x_3=0 \), zusammen mit \( 2x_1-x_2=6 \) ergibt
+sich \( \vec x=(0\mid -6\mid 0)+r(1\mid 2\mid 0) \). <em>Rückfrage:</em> „Warum ist der Schnitt
+eine Gerade und kein einzelner Punkt?"</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Warum ist \( \int_0^{60} f\,dx \) die zurückgelegte
+<strong>Strecke</strong> und nicht eine Geschwindigkeit?</li>
+<li>Wo liegt der Punkt \( H \) (größter Abstand) im
+Verhältnis zum Überholpunkt \( x_0 \), und warum?</li>
+<li>Wie liest du den <strong>Normalenvektor</strong> einer Ebene direkt
+aus ihrer Koordinatengleichung ab?</li>
+<li>Woran erkennst du an \( F:\ 2x_1 - x_2 = 6 \), dass die Ebene parallel
+zur \( x_3 \)-Achse liegt?</li>
+<li>Wie spiegelst du einen Punkt an einer Ebene — welche drei Schritte
+sind das?</li>
+<li>Wie bestimmst du die <strong>gemeinsamen Punkte</strong> zweier
+Ebenen, und warum ist das Ergebnis eine Gerade?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

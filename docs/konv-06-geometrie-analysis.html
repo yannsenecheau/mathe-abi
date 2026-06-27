@@ -1,0 +1,961 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 6 — Geometrie &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link active" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Geometrie</strong>, <strong>Teil 2 (Gespräch) aus der Analysis</strong>.
+Teil 1 wird <strong>rechnerfrei</strong> gelöst; in Teil 2 braucht man
+an einer einzigen Stelle den Taschenrechner (das wird dort ausdrücklich
+gesagt), der Rest geht auch im Kopf. Arbeitet die Aufgabe wie eine echte
+Simulation durch — eine Person trägt vor, die andere prüft mit dem
+Lösungsweg und dem <a
+href="#prüfer-leitfaden-für-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Vektor- und Geometrie-Werkzeuge (Punkte, Vektoren, Länge, Skalarprodukt,
+Kreuzprodukt, Geraden- und Ebenengleichung, Abstand) stehen kompakt im
+<a href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a> (u. a. Anker <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">#skalarprodukt</a>
+und <a
+href="konv-90-werkzeugkasten-geometrie.html#kreuzprodukt">#kreuzprodukt</a>).
+Die Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a> und <a href="kap-grenzwerte-randverhalten.html">Grenzwerte
+&amp; Randverhalten</a>.</p>
+</blockquote>
+<hr />
+<section id="teil-1--vortrag-geometrie-lage-von-gerade-und-ebene"
+class="level2">
+<h2>Teil 1 — Vortrag (Geometrie): Lage von Gerade und Ebene</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Gegeben sind die Gerade</strong> \( g:\ \vec x = \begin{pmatrix}2\\0\\2\end{pmatrix} + t\cdot\begin{pmatrix}2\\1\\1\end{pmatrix} \)
+<strong>(\( t\in\mathbb{R} \)) und die Ebene</strong>
+\( E:\ x_1 + 2x_2 - 4x_3 = 1 \).</p>
+<p><strong>a)</strong> Beschreibe, welche gegenseitige Lage eine Ebene
+und eine Gerade im Raum haben können und wie man diese Lage
+bestimmt.</p>
+<p><strong>b)</strong> Zeige, dass \( g \) und
+\( E \) parallel sind. Die Gerade \( h \)
+schneidet \( g \) orthogonal im Punkt \( P(2\,|\,0\,|\,2) \)
+und verläuft parallel zur Ebene \( E \). Bestimme eine
+Gleichung der Geraden \( h \).</p>
+<p><strong>c)</strong> Bestimme die Koordinaten eines Punktes, der von
+\( E \) den Abstand \( 3\sqrt{21} \) hat.</p>
+<p><strong>d)</strong> Von allen Geraden, die in der Ebene
+\( E \) liegen und parallel zu \( g \)
+verlaufen, ist die Gerade \( j \) diejenige mit dem
+geringsten Abstand zur Geraden \( g \). Beschreibe ein
+Verfahren, mit dem man eine Gleichung der Geraden \( j \)
+bestimmen kann.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in zwei Sätzen, die beiden Schreibweisen:</strong>
+Eine <strong>Gerade in Parameterform</strong> \( \vec x = \vec p + t\,\vec v \) ist
+„starte beim Stützpunkt \( \vec p \) und laufe in Richtung des
+Pfeils \( \vec v \) — für jedes \( t \) landest du
+auf einem anderen Punkt der Geraden". Hier ist der Stützpunkt
+\( P(2|0|2) \) und der <strong>Richtungsvektor</strong>
+\( \vec v=(2|1|1) \). Eine <strong>Ebene in Koordinatenform</strong>
+\( n_1x_1+n_2x_2+n_3x_3=d \) ist eine Bedingung, die <strong>genau die Punkte der
+Ebene erfüllen</strong>; die drei Zahlen \( (n_1|n_2|n_3) \) bilden den
+<strong>Normalenvektor</strong> — den Pfeil, der senkrecht auf der Ebene
+steht. Alle Vektor-Werkzeuge stehen im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>.</p>
+</blockquote>
+<section id="teilaufgabe-a--gegenseitige-lage-von-gerade-und-ebene"
+class="level3">
+<h3>Teilaufgabe a) — Gegenseitige Lage von Gerade und Ebene</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Eine Gerade und eine Ebene im Raum haben <strong>genau drei</strong>
+mögliche Lagen:</p>
+<ul>
+<li><strong>Die Gerade liegt in der Ebene</strong> (\( g\subset E \))
+— jeder Punkt der Geraden gehört zur Ebene.</li>
+<li><strong>Die Gerade ist echt parallel zur Ebene</strong> — sie hat
+<strong>keinen</strong> gemeinsamen Punkt mit der Ebene.</li>
+<li><strong>Die Gerade schneidet die Ebene</strong> in <strong>genau
+einem</strong> Punkt (dem Durchstoßpunkt).</li>
+</ul>
+<figure>
+<svg viewBox="0 0 720 235" role="img" aria-label="Drei mögliche Lagen von Gerade und Ebene: g liegt in E, g echt parallel zu E, g schneidet E" style="width:100%;max-width:720px;height:auto;background:#fbf7ef;border-radius:8px">
+ <defs>
+  <marker id="k6garrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3a5a9c"/></marker>
+ </defs>
+ <g transform="translate(0,0)">
+  <polygon points="45,60 195,40 215,140 65,160" fill="#3a5a9c" fill-opacity="0.08" stroke="#7a7163" stroke-width="1.4"/>
+  <text x="58" y="54" font-size="12" fill="#7a7163">E</text>
+  <line x1="70" y1="118" x2="205" y2="98" stroke="#3a5a9c" stroke-width="2.2" marker-end="url(#k6garrow)" marker-start="url(#k6garrow)"/>
+  <text x="150" y="92" font-size="13" fill="#26324a" font-weight="bold">g</text>
+  <text x="130" y="205" font-size="13" fill="#26324a" text-anchor="middle">g liegt in E</text>
+ </g>
+ <g transform="translate(240,0)">
+  <polygon points="45,75 195,55 215,155 65,175" fill="#3a5a9c" fill-opacity="0.08" stroke="#7a7163" stroke-width="1.4"/>
+  <text x="58" y="69" font-size="12" fill="#7a7163">E</text>
+  <line x1="60" y1="55" x2="205" y2="35" stroke="#3a5a9c" stroke-width="2.2" marker-end="url(#k6garrow)" marker-start="url(#k6garrow)"/>
+  <text x="150" y="29" font-size="13" fill="#26324a" font-weight="bold">g</text>
+  <text x="130" y="210" font-size="13" fill="#26324a" text-anchor="middle">g echt parallel zu E</text>
+ </g>
+ <g transform="translate(480,0)">
+  <polygon points="45,70 195,50 215,150 65,170" fill="#3a5a9c" fill-opacity="0.08" stroke="#7a7163" stroke-width="1.4"/>
+  <text x="58" y="64" font-size="12" fill="#7a7163">E</text>
+  <line x1="120" y1="20" x2="150" y2="100" stroke="#3a5a9c" stroke-width="2.2" marker-start="url(#k6garrow)"/>
+  <line x1="150" y1="100" x2="180" y2="185" stroke="#3a5a9c" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#k6garrow)"/>
+  <circle cx="150" cy="100" r="3.5" fill="#d98324"/>
+  <text x="156" y="96" font-size="11" fill="#d98324">g ∩ E</text>
+  <text x="126" y="34" font-size="13" fill="#26324a" font-weight="bold">g</text>
+  <text x="130" y="205" font-size="13" fill="#26324a" text-anchor="middle">g schneidet E</text>
+ </g>
+</svg>
+<figcaption>Die drei Lagen: Gerade in der Ebene · echt parallel (kein gemeinsamer Punkt) · Schnitt in einem Punkt.</figcaption>
+</figure>
+
+<p><strong>Wie man die Lage bestimmt.</strong> Man <strong>setzt die
+Geradengleichung in die Koordinatengleichung der Ebene ein</strong> und
+löst nach dem Parameter \( t \) auf. Drei Fälle:</p>
+<ul>
+<li><strong>Keine Lösung</strong> (eine falsche Aussage wie
+„\( -6=1 \)") → die Gerade ist <strong>echt
+parallel</strong>.</li>
+<li><strong>Genau eine Lösung</strong> für \( t \) → es gibt
+einen <strong>Schnittpunkt</strong>; \( t \) eingesetzt
+liefert ihn.</li>
+<li><strong>Unendlich viele Lösungen</strong> (eine immer wahre Aussage
+wie „\( 0=0 \)") → die Gerade <strong>liegt in der
+Ebene</strong>.</li>
+</ul>
+<details><summary>Haltung dahinter: Was ist eine Ebene, was eine Gerade, und warum entscheidet das Einsetzen über die Lage? (ganz von vorn)</summary>
+
+<p>Langsam und ohne Vorwissen.</p>
+<p><strong>Punkt im Raum.</strong> Ein Ort im Raum wird durch
+<strong>drei</strong> Zahlen \( (x_1\mid x_2\mid x_3) \) beschrieben:
+rechts/links, vorne/hinten, oben/unten. Drei Zahlen, weil der Raum drei
+Richtungen hat.</p>
+<p><strong>Gerade.</strong> Eine Gerade ist eine unendlich lange,
+schnurgerade Linie. Die Parameterform \( \vec x=\vec p+t\,\vec v \) ist eine
+<strong>Lauf-Vorschrift</strong>: Du stehst beim Stützpunkt
+\( \vec p \) und gehst Schritte in Richtung \( \vec v \).
+Wie viele Schritte, sagt die Zahl \( t \) — bei
+\( t=0 \) bist du bei \( \vec p \), bei
+\( t=1 \) einen Pfeil weiter, bei \( t=-2 \) zwei
+Pfeile rückwärts. Jeder Wert von \( t \) ergibt einen
+anderen Punkt der Geraden.</p>
+<p><strong>Ebene.</strong> Eine Ebene ist eine vollkommen flache,
+unendlich ausgedehnte Fläche (wie eine unendliche Tischplatte). Die
+Koordinatenform \( n_1x_1+n_2x_2+n_3x_3=d \) ist eine
+<strong>Eintrittskarte</strong>: Setzt man die drei Koordinaten eines
+Punktes ein und die Gleichung <strong>stimmt</strong>, liegt der Punkt
+auf der Ebene; stimmt sie <strong>nicht</strong>, liegt er daneben.</p>
+<p><strong>Warum klärt Einsetzen die Lage?</strong> Die Punkte der
+Geraden sind \( \vec p+t\,\vec v \) — alle auf einmal, durch den einen
+Buchstaben \( t \) beschrieben. Setzt man diese in die
+Eintrittskarte der Ebene ein, entsteht <strong>eine Gleichung in
+\( t \)</strong>: Sie fragt „für welche Schrittzahl
+\( t \) liegt der Geradenpunkt auf der Ebene?".</p>
+<ul>
+<li>Findet man <strong>kein</strong> passendes \( t \)
+(Widerspruch) → kein Punkt der Geraden trifft die Ebene → <strong>echt
+parallel</strong>.</li>
+<li>Findet man <strong>ein</strong> \( t \) → genau dieser
+eine Punkt trifft → <strong>Schnittpunkt</strong>.</li>
+<li>Stimmt die Gleichung für <strong>jedes</strong> \( t \)
+→ jeder Geradenpunkt liegt auf der Ebene → <strong>Gerade liegt in der
+Ebene</strong>.</li>
+</ul>
+<details><summary>Typische Falle: „parallel" mit „liegt drin" verwechseln</summary>
+
+<p>„Parallel" ist der Oberbegriff für <em>„die Gerade läuft mit der
+Ebene mit, ohne sie zu durchstoßen"</em> — das trifft auf
+<strong>zwei</strong> Fälle zu: echt parallel (kein Treffer)
+<strong>und</strong> Gerade liegt in der Ebene (immer Treffer). Beim
+Einsetzen unterscheidet man sie am Ergebnis:
+<strong>Widerspruch</strong> = echt parallel,
+<strong>immer-wahr</strong> = liegt drin. Wer nur „parallel" sagt, hat
+die halbe Antwort; in der mündlichen Prüfung wird hier nachgefragt.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--parallelität-zeigen-und-gerade-zzmathphzz70zzendzz-bestimmen"
+class="level3">
+<h3>Teilaufgabe b) — Parallelität zeigen und Gerade \( h \)
+bestimmen</h3>
+<p><span class="tag tag-ok">AB I</span> <span class="tag tag-warn">AB
+II</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — \( g \parallel E \) nachweisen.</strong> Der
+Richtungsvektor von \( g \) ist \( \vec v=(2|1|1) \), der
+Normalenvektor von \( E \) ist \( \vec n=(1|2|-4) \). Man
+bildet ihr <strong>Skalarprodukt</strong>:</p>
+<p>\[ \vec v\cdot\vec n=\begin{pmatrix}2\\1\\1\end{pmatrix}\cdot\begin{pmatrix}1\\2\\-4\end{pmatrix}
+   = 2\cdot 1+1\cdot 2+1\cdot(-4)=2+2-4=0 . \]</p>
+<p>Das Skalarprodukt ist \( 0 \): Der Richtungsvektor steht
+<strong>senkrecht</strong> auf dem Normalenvektor, also läuft
+\( g \) <strong>parallel zur Ebene</strong> (sie kann
+höchstens noch in \( E \) liegen). Eine Punktprobe mit dem
+Stützpunkt \( P(2|0|2) \) zeigt, dass \( g \)
+<strong>nicht</strong> in \( E \) liegt:</p>
+<p>\[ 2+2\cdot 0-4\cdot 2 = 2-8 = -6 \neq 1 . \]</p>
+<p>Also ist \( g \) <strong>echt parallel</strong> zu
+\( E \). \(\checkmark\)</p>
+<p><strong>Schritt 2 — Richtungsvektor von \( h \).</strong>
+Die Gerade \( h \) soll <strong>zwei</strong> Bedingungen
+erfüllen:</p>
+<ul>
+<li>\( h \) schneidet \( g \)
+<strong>orthogonal</strong> → die Richtung von \( h \) steht
+senkrecht auf \( \vec v=(2|1|1) \).</li>
+<li>\( h \) verläuft <strong>parallel zu
+\( E \)</strong> → die Richtung von \( h \)
+steht senkrecht auf \( \vec n=(1|2|-4) \).</li>
+</ul>
+<p>Ein Vektor, der auf <strong>beiden</strong> senkrecht steht, ist das
+<strong>Kreuzprodukt</strong> der beiden:</p>
+<p>\[ \vec u=\begin{pmatrix}2\\1\\1\end{pmatrix}\times\begin{pmatrix}1\\2\\-4\end{pmatrix}
+   = \begin{pmatrix}1\cdot(-4)-1\cdot 2\\[2pt] 1\cdot 1-2\cdot(-4)\\[2pt] 2\cdot 2-1\cdot 1\end{pmatrix}
+   = \begin{pmatrix}-6\\9\\3\end{pmatrix}=3\begin{pmatrix}-2\\3\\1\end{pmatrix}. \]</p>
+<p>Man darf den gemeinsamen Faktor \( 3 \) kürzen — das
+ändert nur die Länge des Pfeils, nicht seine Richtung. Also nimmt man
+\( \vec u=(-2|3|1) \).</p>
+<p><strong>Schritt 3 — Gleichung von \( h \).</strong> Die
+Gerade geht durch \( P(2|0|2) \) mit Richtung
+\( \vec u \):</p>
+<p>\[ h:\ \vec x=\begin{pmatrix}2\\0\\2\end{pmatrix}+t\begin{pmatrix}-2\\3\\1\end{pmatrix},\quad t\in\mathbb{R}. \]</p>
+<details><summary>Haltung dahinter: Was ist ein Skalarprodukt, und warum heißt „= 0" senkrecht? (ganz von vorn)</summary>
+
+<p><strong>Skalarprodukt.</strong> Aus zwei Pfeilen \( \vec a=(a_1|a_2|a_3) \)
+und \( \vec b=(b_1|b_2|b_3) \) macht man <strong>eine einzige Zahl</strong>,
+indem man <em>zeilenweise multipliziert und alles addiert</em>:
+\( \vec a\cdot\vec b=a_1b_1+a_2b_2+a_3b_3 \). Das Ergebnis ist eine Zahl, kein Pfeil.</p>
+<p><strong>Warum verrät diese Zahl den Winkel?</strong> Das
+Skalarprodukt misst, wie sehr zwei Pfeile „in dieselbe Richtung zeigen".
+Zeigen sie in dieselbe Richtung, ist es groß und positiv; zeigen sie
+entgegengesetzt, negativ; stehen sie <strong>im rechten Winkel</strong>
+zueinander, heben sich die Beiträge <strong>genau zu null</strong> auf.
+Merksatz: <strong>Skalarprodukt \( =0 \) bedeutet
+senkrecht.</strong></p>
+<p><strong>Was bedeutet das hier?</strong> Der Normalenvektor
+\( \vec n \) steht senkrecht auf der ganzen Ebene. Steht nun die
+Richtung der Geraden senkrecht auf \( \vec n \) (Skalarprodukt
+\( =0 \)), dann läuft die Gerade genau
+<strong>längs</strong> der Ebene mit — sie steigt nicht zur Ebene hin
+oder von ihr weg. Deshalb folgt aus \( \vec v\cdot\vec n=0 \):
+\( g \) ist parallel zur Ebene.</p>
+<details><summary>… ganz langsam (mit Zahlen)</summary>
+
+<p>\( \vec v\cdot\vec n \): erstes mal erstes ist \( 2\cdot 1=2 \);
+zweites mal zweites ist \( 1\cdot 2=2 \); drittes mal drittes ist
+\( 1\cdot(-4)=-4 \). Jetzt addieren: \( 2+2=4 \), und
+\( 4+(-4)=0 \). Die letzte Zahl ist negativ, weil
+\( (-4) \) negativ ist — „plus minus vier" ist dasselbe wie
+„minus vier". Ergebnis \( 0 \) → senkrecht → parallel.</p>
+<p>Die Punktprobe rechnet man genauso stur: \( x_1+2x_2-4x_3 \) mit
+\( (2|0|2) \): \( 2 + 2\cdot 0 - 4\cdot 2
+= 2 + 0 - 8 = -6 \). Die Ebene verlangt aber
+\( 1 \). Da \( -6 \) nicht \( 1 \)
+ist, liegt der Punkt — und damit die ganze parallele Gerade —
+<strong>neben</strong> der Ebene: echt parallel.</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Wieso liefert das Kreuzprodukt genau die Richtung von \( h \)?</summary>
+
+<p>\( h \) muss zu <strong>zwei</strong> Pfeilen
+gleichzeitig senkrecht sein: zu \( \vec v \) (weil
+\( h \) die Gerade \( g \) im rechten Winkel
+kreuzt) und zu \( \vec n \) (weil \( h \) parallel
+zur Ebene liegt, also wie \( g \) längs der Ebene mitläuft
+und damit senkrecht zum Normalenvektor steht).</p>
+<p>Das <strong>Kreuzprodukt</strong> \( \vec v\times\vec n \) ist eine feste
+Rechenvorschrift, deren Ergebnis ein <strong>neuer Pfeil</strong> ist,
+der auf <strong>beiden</strong> Ausgangspfeilen senkrecht steht — genau
+die gesuchte Eigenschaft. Das Rechenschema (welche Zahlen man kreuzweise
+multipliziert und subtrahiert) steht im <a
+href="konv-90-werkzeugkasten-geometrie.html#kreuzprodukt">Werkzeugkasten
+Geometrie</a>.</p>
+<details><summary>… ganz langsam (mit Zahlen) — und „orthogonal" kurz erklärt</summary>
+
+<p><strong>„Orthogonal" heißt „im rechten Winkel", also
+senkrecht</strong> — wie die Ecke eines Blattes Papier.</p>
+<p>Das Kreuzprodukt \( (2|1|1)\times(1|2|-4) \) Zeile für Zeile (Schema „über
+Kreuz, immer die anderen zwei Zeilen"):</p>
+<ul>
+<li><strong>1. Zeile:</strong> \( 1\cdot(-4)-1\cdot 2 = -4-2 = -6 \).</li>
+<li><strong>2. Zeile:</strong> \( 1\cdot 1-2\cdot(-4) = 1-(-8) = 1+8 = 9 \) (Achtung: „minus mal
+minus" wird plus).</li>
+<li><strong>3. Zeile:</strong> \( 2\cdot 2-1\cdot 1 = 4-1 = 3 \).</li>
+</ul>
+<p>Ergebnis \( (-6|9|3) \). Alle drei Zahlen sind durch
+\( 3 \) teilbar, also kürzt man zu \( (-2|3|1) \).
+<strong>Probe:</strong> \( (-2|3|1)\cdot(2|1|1)=-4+3+1=0 \;\checkmark \) (senkrecht zu
+\( g \)) und \( (-2|3|1)\cdot(1|2|-4)=-2+6-4=0\;\checkmark \) (senkrecht zu
+\( \vec n \), also parallel zu \( E \)). Beide
+Bedingungen erfüllt.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-c--punkt-mit-abstand-zzmathphzz144zzendzz-zur-ebene"
+class="level3">
+<h3>Teilaufgabe c) — Punkt mit Abstand \( 3\sqrt{21} \) zur
+Ebene</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Idee:</strong> Der <strong>kürzeste</strong> Weg von einem
+Punkt zur Ebene führt <strong>in Richtung des Normalenvektors</strong>.
+Startet man also auf der Ebene und geht ein Stück in Normalenrichtung,
+ist die zurückgelegte Strecke genau der Abstand. Der Normalenvektor
+\( \vec n=(1|2|-4) \) hat die Länge</p>
+<p>\[ |\vec n|=\sqrt{1^2+2^2+(-4)^2}=\sqrt{1+4+16}=\sqrt{21}. \]</p>
+<p>Geht man <strong>3 ganze Normalenvektoren</strong> weit, beträgt der
+Abstand \( 3\cdot|\vec n|=3\sqrt{21} \) — genau das Gesuchte.</p>
+<p><strong>Schritt 1 — Punkt auf \( E \) wählen.</strong>
+Bequem ist \( Q(1|0|0) \): Probe \( 1+2\cdot 0-4\cdot 0=1\;\checkmark \).</p>
+<p><strong>Schritt 2 — drei Normalenvektoren addieren.</strong></p>
+<p>\[ \overrightarrow{OR}=\overrightarrow{OQ}+3\,\vec n
+   =\begin{pmatrix}1\\0\\0\end{pmatrix}+3\begin{pmatrix}1\\2\\-4\end{pmatrix}
+   =\begin{pmatrix}1+3\\0+6\\0-12\end{pmatrix}=\begin{pmatrix}4\\6\\-12\end{pmatrix}. \]</p>
+<p>Also hat <strong>\( R(4\,|\,6\,|\,-12) \)</strong> den Abstand
+\( 3\sqrt{21} \) von \( E \). (Es gibt viele solche
+Punkte — jeder Punkt der Form „Ebenenpunkt \( {}\pm 3\,\vec n \)"
+passt.)</p>
+<details><summary>Haltung dahinter: Was ist „der Abstand von einer Ebene", und warum die Normalenrichtung? (ganz von vorn)</summary>
+
+<p><strong>Abstand Punkt–Ebene</strong> ist die
+<strong>kürzeste</strong> Verbindung zwischen dem Punkt und der Fläche.
+Bild: Du stehst im Zimmer und willst zur Decke — der kürzeste Weg ist
+<strong>gerade nach oben</strong>, also <strong>senkrecht</strong> zur
+Decke. Jeder schräge Weg ist länger. „Senkrecht zur Ebene" ist aber
+genau die Richtung des <strong>Normalenvektors</strong>. Deshalb misst
+man Abstände immer entlang \( \vec n \).</p>
+<p><strong>Warum \( 3\vec n \)?</strong> Ein einzelner
+Normalenvektor \( \vec n \) hat die Länge \( |\vec n|=\sqrt{21} \).
+Hängt man \( 3 \) davon hintereinander, ist die Strecke
+dreimal so lang: \( 3\sqrt{21} \). Startet man diesen Marsch
+<strong>auf</strong> der Ebene (Punkt \( Q \)), landet man
+bei einem Punkt, der genau \( 3\sqrt{21} \) entfernt ist.</p>
+<details><summary>… ganz langsam (mit Zahlen) — Kontrolle mit der Abstandsformel</summary>
+
+<p>Die Länge: \( 1^2=1 \), \( 2^2=4 \),
+\( (-4)^2=16 \) (minus mal minus wird plus). Summe
+\( 1+4+16=21 \), Wurzel \( \sqrt{21} \).</p>
+<p>Gegenprobe mit der <strong>Abstandsformel</strong> (Hesse): Abstand
+\( =\dfrac{|x_1+2x_2-4x_3-1|}{|\vec n|} \). Für \( R(4|6|-12) \) oben rein:
+\( 4+2\cdot 6-4\cdot(-12)=4+12+48=64 \). Dann \( |64-1|=63 \). Teilen durch
+\( \sqrt{21} \):</p>
+<p>\[ \frac{63}{\sqrt{21}}=\frac{3\cdot 21}{\sqrt{21}}=3\cdot\frac{21}{\sqrt{21}}=3\sqrt{21}\;\checkmark \]</p>
+<p>(weil \( \tfrac{21}{\sqrt{21}}=\sqrt{21} \)). Der Abstand stimmt.</p>
+</details>
+
+<details><summary>Typische Falle: nicht von einem Ebenenpunkt starten</summary>
+
+<p>Wer einfach „irgendeinen Punkt nimmt und \( 3\vec n \)
+addiert", bekommt <strong>nicht</strong> den Abstand
+\( 3\sqrt{21} \) — das funktioniert nur, wenn der Startpunkt
+<strong>wirklich auf \( E \)</strong> liegt. Deshalb zuerst
+ein \( Q \) suchen, das die Ebenengleichung erfüllt
+(Punktprobe!), und erst dann \( 3\vec n \) addieren.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--gerade-zzmathphzz178zzendzz-mit-dem-geringsten-abstand-zu-zzmathphzz179zzendzz"
+class="level3">
+<h3>Teilaufgabe d) — Gerade \( j \) mit dem geringsten
+Abstand zu \( g \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p>Verlangt ist nur das <strong>Verfahren</strong>. Hier ist es, mit
+kurzer Begründung und einer Rechnung zur Kontrolle.</p>
+<p><strong>Idee.</strong> Gesucht ist die Gerade in
+\( E \), die parallel zu \( g \) verläuft und
+\( g \) am nächsten ist. Das ist der <strong>„Schatten" von
+\( g \) auf \( E \)</strong> senkrecht von
+oben — die orthogonale Projektion. Man fällt von einem Punkt der Geraden
+\( g \) das <strong>Lot</strong> auf \( E \)
+(Marsch in Normalenrichtung) und legt durch den Fußpunkt eine Gerade
+parallel zu \( g \).</p>
+<p><strong>Verfahren in drei Schritten:</strong></p>
+<ol type="1">
+<li><strong>Lotgerade aufstellen.</strong> Durch den Stützpunkt
+\( P(2|0|2) \) von \( g \) eine Gerade
+\( k \) in Richtung des Normalenvektors
+\( \vec n=(1|2|-4) \) legen: \[ k:\ \vec x=\begin{pmatrix}2\\0\\2\end{pmatrix}+s\begin{pmatrix}1\\2\\-4\end{pmatrix}. \] (Diese Gerade steht
+<strong>senkrecht auf \( E \)</strong> und damit auch
+senkrecht auf \( g \).)</li>
+<li><strong>Fußpunkt \( F \) bestimmen</strong> als
+Schnittpunkt von \( k \) mit \( E \)
+(Einsetzen, nach \( s \) auflösen).</li>
+<li><strong>Gerade \( j \) aufstellen</strong> durch
+\( F \) mit dem Richtungsvektor von \( g \):
+\[ j:\ \vec x=\overrightarrow{OF}+t\begin{pmatrix}2\\1\\1\end{pmatrix}. \]</li>
+</ol>
+<p><strong>Kontrollrechnung (Schritt 2).</strong> Den Punkt von
+\( k \), nämlich \( (2+s\,|\,2s\,|\,2-4s) \), in
+\( E \) einsetzen:</p>
+<p>\[ (2+s)+2(2s)-4(2-4s)=1 \;\Longrightarrow\; 2+s+4s-8+16s=1 \;\Longrightarrow\; 21s-6=1 \;\Longrightarrow\; s=\tfrac13. \]</p>
+<p>Eingesetzt: \( F=\big(\tfrac{7}{3}\,\big|\,\tfrac{2}{3}\,\big|\,\tfrac{2}{3}\big) \) (Probe: \( \tfrac73+2\cdot\tfrac23-4\cdot\tfrac23=\tfrac{7+4-8}{3}=1\;\checkmark \)).
+Damit</p>
+<p>\[ j:\ \vec x=\begin{pmatrix}7/3\\2/3\\2/3\end{pmatrix}+t\begin{pmatrix}2\\1\\1\end{pmatrix}. \]</p>
+<p>Der geringste Abstand ist die Länge des Lots: \( |s|\cdot|\vec n|=\tfrac13\sqrt{21}=\tfrac{\sqrt{21}}{3}\approx 1{,}53 \) —
+derselbe Wert wie der Abstand der parallelen Geraden
+\( g \) zur Ebene \( E \).</p>
+<figure>
+<svg viewBox="0 0 480 360" role="img" aria-label="Gerade g parallel über Ebene E; das Lot von P auf E trifft E im Fußpunkt F; die Gerade j durch F parallel zu g ist die nächstgelegene Gerade in E" style="width:100%;max-width:460px;height:auto;background:#fbf7ef;border-radius:8px">
+ <defs>
+  <marker id="k6arrow2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3a5a9c"/></marker>
+ </defs>
+ <polygon points="70,250 330,210 400,300 140,340" fill="#3a5a9c" fill-opacity="0.07" stroke="#7a7163" stroke-width="1.4"/>
+ <text x="404" y="304" font-size="13" fill="#7a7163">E</text>
+ <line x1="95" y1="140" x2="352" y2="100" stroke="#3a5a9c" stroke-width="2.4" marker-end="url(#k6arrow2)"/>
+ <text x="358" y="100" font-size="14" fill="#26324a" font-weight="bold">g</text>
+ <circle cx="225" cy="120" r="3.2" fill="#3a5a9c"/><text x="205" y="115" font-size="12" fill="#26324a">P</text>
+ <line x1="225" y1="120" x2="228" y2="262" stroke="#d98324" stroke-width="1.8" stroke-dasharray="4 3"/>
+ <text x="236" y="196" font-size="12" fill="#d98324">Lot (Richtung n)</text>
+ <circle cx="228" cy="262" r="3.2" fill="#d98324"/><text x="232" y="280" font-size="12" fill="#26324a">F</text>
+ <path d="M228,262 l-13,2 l-2,-13" fill="none" stroke="#7a7163" stroke-width="1"/>
+ <line x1="98" y1="282" x2="356" y2="242" stroke="#3a8a5a" stroke-width="2.4"/>
+ <text x="360" y="242" font-size="14" fill="#3a8a5a" font-weight="bold">j</text>
+</svg>
+<figcaption>\( g \) läuft parallel über \( E \). Das Lot von \( P \) trifft \( E \) im Fußpunkt \( F \); die Gerade \( j \) durch \( F \) parallel zu \( g \) ist die nächstgelegene Gerade in \( E \).</figcaption>
+</figure>
+
+<details><summary>Haltung dahinter: Warum ist gerade die projizierte Gerade die nächste? (ganz von vorn)</summary>
+
+<p><strong>Projektion = senkrechter Schatten.</strong> Stell dir
+\( g \) als waagerechte Stange knapp über einem geneigten
+Tisch (\( E \)) vor, parallel zur Tischfläche. Beleuchtet
+man sie <strong>senkrecht von oben</strong> (in Normalenrichtung), wirft
+sie auf den Tisch einen geraden Schatten, der genau unter ihr liegt und
+<strong>parallel</strong> zu ihr ist. Dieser Schatten ist
+\( j \).</p>
+<p><strong>Warum der nächste?</strong> Weil \( g \)
+parallel zu \( E \) ist, hat <strong>jeder</strong> Punkt
+von \( g \) denselben Abstand zur Ebene (die Stange hängt
+überall gleich hoch). Der senkrechte Schatten verbindet jeden
+Stangenpunkt auf <strong>kürzestem</strong> Weg mit dem Tisch. Eine
+andere Gerade in \( E \), die schräg unter der Stange
+läuft, wäre an manchen Stellen weiter weg. Deshalb ist die senkrechte
+Projektion die Gerade mit dem <strong>geringsten</strong> Abstand.</p>
+<p><strong>Warum genügt ein einziger Punkt
+\( P \)?</strong> Weil der Abstand überall gleich ist,
+reicht es, <strong>einen</strong> Punkt von \( g \) (den
+Stützpunkt \( P \)) senkrecht herunterzuloten — sein
+Fußpunkt \( F \) liegt schon auf \( j \). Die
+Richtung von \( j \) ist dieselbe wie die von
+\( g \) (beide parallel). Stützpunkt \( F \) +
+Richtung \( (2|1|1) \) = fertige Geradengleichung.</p>
+<details><summary>… ganz langsam (mit Zahlen) — wie der Schnittpunkt \( F \) entsteht</summary>
+
+<p>Die Lotgerade hat die Punkte \( (2+s\,|\,2s\,|\,2-4s) \). „Auf der Ebene"
+heißt: in \( x_1+2x_2-4x_3 \) eingesetzt kommt \( 1 \)
+heraus. Einsetzen:</p>
+<p>\( (2+s) + 2\cdot(2s) - 4\cdot(2-4s) \). Klammern auflösen: \( 2+s + 4s - 8 + 16s \). Die
+\( s \)-Stücke sammeln: \( s+4s+16s = 21s \). Die Zahlen
+sammeln: \( 2-8 = -6 \). Also \( 21s - 6 \). Das soll
+\( 1 \) sein: \( 21s-6=1 \Rightarrow 21s=7 \Rightarrow s=\tfrac{7}{21}=\tfrac13 \).</p>
+<p>Jetzt \( s=\tfrac13 \) in den Lotpunkt: \( x_1=2+\tfrac13=\tfrac73 \);
+\( x_2=2\cdot\tfrac13=\tfrac23 \); \( x_3=2-4\cdot\tfrac13=2-\tfrac43=\tfrac{6-4}{3}=\tfrac23 \). Das ist
+\( F \). Der Abstand ist \( \tfrac13 \)
+Normalenvektoren lang: \( \tfrac13\sqrt{21}=\tfrac{\sqrt{21}}{3} \).</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li><strong>a)</strong> Drei Lagen: \( g \) liegt in
+\( E \) · \( g \) echt parallel zu
+\( E \) · \( g \) schneidet
+\( E \). Bestimmung: Geradengleichung in die
+Ebenengleichung einsetzen → Widerspruch = echt parallel, eine Lösung =
+Schnittpunkt, immer wahr = \( g\subset E \).</li>
+<li><strong>b)</strong> \( \vec v\cdot\vec n=(2|1|1)\cdot(1|2|-4)=0 \Rightarrow g\parallel E \); Punktprobe
+\( -6\neq 1 \) ⇒ echt parallel. \( h:\ \vec x=(2|0|2)+t\,(-2|3|1) \) (Richtung
+\( =\vec v\times\vec n \)).</li>
+<li><strong>c)</strong> \( R(4\,|\,6\,|\,-12) \) \( \big(=Q(1|0|0)+3\vec n,\ |\vec n|=\sqrt{21}\big) \).</li>
+<li><strong>d)</strong> Lot \( k:\ \vec x=(2|0|2)+s\,(1|2|-4) \) → Fußpunkt
+\( F=(\tfrac73|\tfrac23|\tfrac23) \) → \( j:\ \vec x=F+t\,(2|1|1) \); geringster Abstand
+\( \tfrac{\sqrt{21}}{3}\approx1{,}53 \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="teil-2--gespräch-analysis-schneefallrate-im-skigebiet"
+class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Schneefallrate im Skigebiet</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Die Funktion \( f \) mit
+\( f(x)=10x\cdot e^{-0{,}5x} \) beschreibt für \( x\ge 0 \) modellhaft die
+<strong>Schneefallrate</strong> in einem Skigebiet (\( x \)
+in Stunden nach 6 Uhr, \( f(x) \) in cm pro Stunde). Eine der
+beiden Abbildungen zeigt den Graphen von \( f \).</p>
+<p><strong>Im Gespräch denkbare Aspekte:</strong> <strong>(AB
+I)</strong> den richtigen Graphen zuordnen; die Schneefallrate nach
+einer Stunde ermitteln; den Zeitpunkt des stärksten Schneefalls
+graphisch bestimmen; den Zeitpunkt der stärksten Abnahme der Rate
+graphisch ermitteln. <strong>(AB II)</strong> den Zeitpunkt des
+stärksten Schneefalls berechnen; den Zuwachs an Schneehöhe in den ersten
+fünf Stunden graphisch ermitteln. <strong>(AB III)</strong> unter der
+Annahme, dass die Rate ab \( x=4 \) konstant abnimmt,
+rechnerisch den Zeitpunkt bestimmen, zu dem es aufhört zu schneien;
+unter der Annahme eines gleichzeitigen Tauens mit \( 2 \)
+cm pro Stunde die Zeitspanne ermitteln, in der die Schneehöhe
+zunimmt.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, was eine „Rate" ist:</strong> \( f(x) \)
+gibt <strong>nicht</strong> die Schneehöhe an, sondern wie
+<strong>schnell</strong> der Schnee gerade wächst — in cm <strong>pro
+Stunde</strong>. Bild: Der Tacho im Auto zeigt die Geschwindigkeit
+(km/h), nicht die gefahrene Strecke (km). Hier ist \( f \)
+der „Schnee-Tacho", die <strong>Höhe</strong> ist die aufsummierte
+Strecke (das Integral). Diesen Unterschied braucht man für die AB-II-
+und AB-III-Aspekte. Mehr in <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<p><strong>Welcher Graph gehört zu \( f \)?</strong> Spiele
+mit den Bildern und ordne zu, bevor du die Lösung aufklappst. Der
+Unterschied steckt in der <strong>Höhe des höchsten
+Punktes</strong>.</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k6-abb1" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 1</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k6-abb2" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Abbildung 2</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k6-abb1',{boundingbox:[-0.8,9.6,12.6,-1.4],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 10*x*Math.exp(-0.5*x);},0,12.5],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k6-abb2',{boundingbox:[-0.8,9.6,12.6,-1.4],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 11.5*x*Math.exp(-0.5*x);},0,12.5],{strokeColor:'#3a5a9c',strokeWidth:2.5});})();});</script>
+
+<section
+id="ab-i--graph-zuordnen-rate-nach-einer-stunde-stärkster-schneefall--stärkste-abnahme-graphisch"
+class="level3">
+<h3>AB I — Graph zuordnen, Rate nach einer Stunde, stärkster Schneefall
+&amp; stärkste Abnahme (graphisch)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Graph zuordnen.</strong> Beide Graphen starten in
+\( (0|0) \), steigen schnell zu einem Hoch und fallen dann
+flach aus — die Form ist gleich. Der Unterschied ist die <strong>Höhe
+des Maximums</strong>. Man rechnet einen markanten Wert nach, z. B. den
+Höchstwert bei \( x=2 \):</p>
+<p>\[ f(2)=10\cdot 2\cdot e^{-0{,}5\cdot 2}=20\,e^{-1}=\frac{20}{e}\approx 7{,}4 . \]</p>
+<p>Der höchste Punkt liegt also bei rund \( 7{,}4 \) cm/h.
+<strong>Abbildung 1</strong> hat ihr Maximum bei knapp über
+\( 7 \) — das passt. Abbildung 2 erreicht etwa
+\( 8{,}5 \) und scheidet aus. <strong>Antwort: Abbildung
+1.</strong></p>
+<p><strong>Schneefallrate nach einer Stunde.</strong> „Nach einer
+Stunde" ist \( x=1 \) (also um 7 Uhr):</p>
+<p>\[ f(1)=10\cdot 1\cdot e^{-0{,}5}=\frac{10}{\sqrt{e}}\approx 6{,}1 . \]</p>
+<p>Eine Stunde nach Beginn schneit es also mit etwa
+<strong>\( 6{,}1 \) cm pro Stunde</strong> (im Graphen bei
+\( x=1 \) ablesbar als \( y\approx 6 \)).</p>
+<p><strong>Zeitpunkt des stärksten Schneefalls (graphisch).</strong> Am
+stärksten schneit es, wo die Rate \( f \) am
+<strong>größten</strong> ist — am <strong>höchsten Punkt</strong> des
+Graphen. Den liest man bei \( x=2 \) ab. Das sind
+\( 2 \) Stunden nach 6 Uhr, also <strong>um 8
+Uhr</strong>.</p>
+<p><strong>Zeitpunkt der stärksten Abnahme der Rate
+(graphisch).</strong> Gesucht ist, wo die Rate am schnellsten
+<strong>fällt</strong> — die Stelle, an der der Graph nach dem Hoch
+<strong>am steilsten bergab</strong> läuft. Diese steilste
+Abstiegsstelle (der Wendepunkt des fallenden Astes) liegt bei etwa
+\( x=4 \), also <strong>um 10 Uhr</strong>.</p>
+<details><summary>Haltung dahinter: „stärkster Schneefall" vs. „stärkste Abnahme" — was liest man wo ab?</summary>
+
+<p>Hier werden zwei Dinge leicht verwechselt. Beide liest man am
+<strong>selben</strong> Graphen \( f \) ab, aber an
+<strong>verschiedenen</strong> Stellen.</p>
+<ul>
+<li><strong>Stärkster Schneefall</strong> fragt: <em>Wann ist die Rate
+am größten?</em> → höchster <strong>Punkt</strong> des Graphen
+(Hochpunkt). Anschaulich: Wann fällt am meisten Schnee pro Stunde?
+Antwort: am Gipfel der Kurve, \( x=2 \).</li>
+<li><strong>Stärkste Abnahme der Rate</strong> fragt: <em>Wann sinkt die
+Rate am schnellsten?</em> → steilste <strong>abfallende Stelle</strong>
+des Graphen. Anschaulich: Wann lässt der Schneefall am rasantesten nach?
+Das ist nicht der Gipfel (dort ist die Kurve flach), sondern weiter
+rechts, wo es am steilsten bergab geht — bei \( x\approx 4 \).</li>
+</ul>
+<p>Eselsbrücke: „am stärksten schneit es" = <strong>höchster
+Punkt</strong>; „am stärksten lässt es nach" = <strong>steilster
+Abhang</strong>.</p>
+<details><summary>Was ist ein „Wendepunkt", und warum ist er die steilste Abstiegsstelle?</summary>
+
+<p>Ein <strong>Wendepunkt</strong> ist die Stelle, an der eine Kurve
+ihre <strong>Krümmungsrichtung</strong> wechselt — von „Linkskurve" zu
+„Rechtskurve" (oder umgekehrt). Beim Bergfahren ist das der Moment, in
+dem die Straße aufhört, immer steiler zu werden, und anfängt, wieder
+flacher zu werden. Genau dort, am Übergang, ist die Steigung <strong>am
+extremsten</strong> — beim fallenden Ast also <strong>am stärksten
+negativ</strong>, sprich am steilsten bergab. Deshalb fällt die Rate
+genau am Wendepunkt am schnellsten. (Rechnerisch bestimmt man ihn über
+\( f''(x)=0 \); siehe AB III. Hier genügt das
+<strong>Ablesen</strong> der steilsten Stelle.)</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--stärksten-schneefall-berechnen-zuwachs-der-schneehöhe-graphisch"
+class="level3">
+<h3>AB II — Stärksten Schneefall berechnen, Zuwachs der Schneehöhe
+(graphisch)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Zeitpunkt des stärksten Schneefalls berechnen.</strong> Der
+Höchstwert der Rate ist dort, wo die <strong>Ableitung</strong>
+\( f' \) null wird (waagerechte Tangente). Mit der
+<strong>Produktregel</strong> und der <strong>Kettenregel</strong>:</p>
+<p>\[ f(x)=10x\,e^{-0{,}5x}\;\Longrightarrow\; f'(x)=10\,e^{-0{,}5x}+10x\cdot(-0{,}5)\,e^{-0{,}5x}
+   = e^{-0{,}5x}\,(10-5x). \]</p>
+<p>Der Faktor \( e^{-0{,}5x} \) ist <strong>nie</strong> null, also
+entscheidet die Klammer:</p>
+<p>\[ 10-5x=0 \;\Longrightarrow\; x=2 . \]</p>
+<p>Vorzeichenwechsel von \( + \) nach \( - \)
+⇒ Hochpunkt. Es schneit am stärksten bei <strong>\( x=2 \)
+(um 8 Uhr)</strong> mit \( f(2)=\tfrac{20}{e}\approx 7{,}4 \) cm/h. (Das bestätigt das
+Ablesen aus AB I.)</p>
+<p><strong>Zuwachs der Schneehöhe in den ersten fünf Stunden
+(graphisch).</strong> Die Schneehöhe ist die
+<strong>aufsummierte</strong> Rate, also die <strong>Fläche unter dem
+Graphen</strong> von \( x=0 \) bis \( x=5 \).
+„Graphisch" heißt: die Kästchen unter der Kurve zählen.</p>
+<figure>
+<div class="jxgbox" id="jxg-k6-flaeche" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Schneehöhe nach 5 Stunden = Fläche unter der Ratenkurve von \( x=0 \) bis \( x=5 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k6-flaeche',{boundingbox:[-0.8,9.6,12.6,-1.4],axis:true,showCopyright:false,showNavigation:false});var f=function(x){return 10*x*Math.exp(-0.5*x);};var xs=[0],ys=[0];for(var i=0;i<=60;i++){var x=5*i/60;xs.push(x);ys.push(f(x));}xs.push(5);ys.push(0);b.create('curve',[xs,ys],{strokeWidth:0,fillColor:'#d98324',fillOpacity:0.20});b.create('functiongraph',[f,0,12.5],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[5,0],[5,7]],{straightFirst:false,straightLast:false,strokeColor:'#7a7163',strokeWidth:1,dash:2});})();});</script>
+
+<p>Ein Kästchen ist \( 1 \) Stunde breit und
+\( 1 \) cm/h hoch, steht also für \( 1\,\text{cm/h}\times
+1\,\text{h}=1 \)
+<strong>cm Schnee</strong>. Zählt man die Kästchen unter der Kurve bis
+\( x=5 \), kommt man auf <strong>etwa \( 28\text{–}29 \)
+cm</strong>. In den ersten fünf Stunden wächst die Schneehöhe also um
+rund \( 28 \) cm.</p>
+<details><summary>Haltung dahinter: Warum ist die Fläche unter der Rate die Schneehöhe? (ganz von vorn)</summary>
+
+<p><strong>Ableitung = Steigung.</strong> Die Ableitung
+\( f' \) misst, wie steil ein Graph an einer Stelle ist. Am
+<strong>Hochpunkt</strong> ist der Graph für einen Moment waagerecht —
+die Steigung ist \( 0 \). Deshalb sucht man Hoch- und
+Tiefpunkte über \( f'(x)=0 \).</p>
+<p><strong>Fläche unter der Rate = Gesamtmenge.</strong> Eine Rate sagt
+„so viel pro Stunde". Multipliziert man Rate mal Zeit, bekommt man eine
+<strong>Menge</strong>: \( 6\ \tfrac{\text{cm}}{\text{h}}\times 2\ \text{h}=12\ \text{cm} \). Genau das macht die Fläche
+unter der Kurve — sie multipliziert in jedem schmalen Streifen „Höhe
+(Rate) mal Breite (Zeitstückchen)" und summiert alles auf. Ergebnis: die
+in dieser Zeit gefallene <strong>Schneehöhe</strong>. Bild: Auf dem
+Bankkonto ist die Rate „Euro pro Tag"; die Fläche darunter ist das
+insgesamt angesammelte Geld. (Mehr: <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>.)</p>
+<details><summary>… ganz langsam (mit Zahlen) — Kontrolle des Kästchen-Zählens</summary>
+
+<p>Kästchen zählen ist eine Schätzung; zur Kontrolle kann man die Fläche
+<strong>exakt</strong> als Integral rechnen. Eine Stammfunktion von
+\( f(x)=10x\,e^{-0{,}5x} \) ist (per partieller Integration)
+\( F(x)=-20\,(x+2)\,e^{-0{,}5x} \). Probe durch Ableiten ergibt wieder
+\( f \). Dann</p>
+<p>\[ \int_0^5 f(x)\,dx=F(5)-F(0)=-20\cdot 7\cdot e^{-2{,}5}-\big(-20\cdot 2\cdot e^{0}\big)
+   =40-140\,e^{-2{,}5}\approx 28{,}5 . \]</p>
+<p>Das passt zu den gezählten \( \approx 28\text{–}29 \) Kästchen. (In der
+Prüfung ist hier ausdrücklich nur das <strong>Zählen</strong> gefragt;
+die exakte Rechnung dient nur der Kontrolle.)</p>
+</details>
+
+<details><summary>Typische Falle: Höhe mit Rate verwechseln</summary>
+
+<p>\( f(5)\approx 4{,}1 \) ist die <strong>Rate</strong> um 11 Uhr (cm pro
+Stunde), <strong>nicht</strong> die Schneehöhe. Die Höhe nach 5 Stunden
+ist die <strong>Fläche</strong> \( \approx 28 \) cm. Wer den
+Funktionswert \( f(5) \) als Schneehöhe angibt, verwechselt
+Tacho mit Kilometerstand.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-iii--wann-hört-es-auf-zu-schneien--wann-wächst-die-schneehöhe-trotz-tauen"
+class="level3">
+<h3>AB III — Wann hört es auf zu schneien? · Wann wächst die Schneehöhe
+trotz Tauen?</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p><strong>Annahme 1: Ab \( x=4 \) nimmt die Rate konstant ab
+— wann hört es auf zu schneien?</strong> „Konstant abnehmen" heißt: Die
+Rate fällt ab \( x=4 \) geradlinig (linear) weiter — und zwar
+mit der Steigung, die sie <strong>im Punkt \( x=4 \)</strong>
+gerade hat. Das ist die <strong>Tangente</strong> an
+\( f \) in \( x=4 \). Es hört auf zu schneien,
+wenn die Rate \( 0 \) erreicht — also dort, wo diese
+Tangente die \( x \)-Achse trifft.</p>
+<p>Man braucht den Funktionswert und die Steigung bei
+\( x=4 \):</p>
+<p>\[ f(4)=40\,e^{-2},\qquad f'(4)=e^{-2}\,(10-5\cdot 4)=-10\,e^{-2}. \]</p>
+<p>Tangente: \( y=f(4)+f'(4)\,(x-4) \). Nullsetzen und nach
+\( x \) auflösen:</p>
+<p>\[ 0=f(4)+f'(4)\,(x-4)\;\Longrightarrow\; x=4-\frac{f(4)}{f'(4)}=4-\frac{40\,e^{-2}}{-10\,e^{-2}}=4+4=8 . \]</p>
+<p>Die \( e^{-2} \) kürzen sich weg — es bleibt das saubere
+Ergebnis \( x=8 \). Es hört also bei
+<strong>\( x=8 \), das heißt um 14 Uhr</strong>, auf zu
+schneien.</p>
+<figure>
+<div class="jxgbox" id="jxg-k6-tangente" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Ab \( x=4 \) ersetzt die Tangente (orange) die Kurve. Sie trifft die \( x \)-Achse bei \( x=8 \) — dann ist die Rate 0.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k6-tangente',{boundingbox:[-0.8,9.6,12.6,-1.4],axis:true,showCopyright:false,showNavigation:false});var f=function(x){return 10*x*Math.exp(-0.5*x);};b.create('functiongraph',[f,0,12.5],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[4,40*Math.exp(-2)],[8,0]],{strokeColor:'#d98324',strokeWidth:2,dash:0,straightFirst:true,straightLast:true});b.create('point',[4,40*Math.exp(-2)],{name:'x=4',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[8,12],fontSize:11}});b.create('point',[8,0],{name:'Stopp x=8',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[6,-12],fontSize:11}});})();});</script>
+
+<p><strong>Annahme 2: Es taut gleichzeitig mit \( 2 \) cm
+pro Stunde — wann wächst die Schneehöhe?</strong> Jetzt laufen zwei
+Raten gegeneinander: Es schneit mit \( f(x) \) und es taut mit
+\( 2 \). Die <strong>Netto-Rate</strong> der Schneehöhe ist
+\( f(x)-2 \). Die Höhe <strong>wächst</strong>, solange die
+Netto-Rate <strong>positiv</strong> ist, also solange</p>
+<p>\[ f(x) \gt 2 \qquad\Longleftrightarrow\qquad 10x\,e^{-0{,}5x} \gt 2 . \]</p>
+<p><strong>Verfahren:</strong> Man bestimmt die beiden Schnittstellen
+der Kurve \( f \) mit der waagerechten Linie
+\( y=2 \). Dazwischen liegt \( f \)
+<strong>über</strong> \( 2 \), dort wächst die Höhe; davor
+und danach taut es netto weg. Die Gleichung \( 10x\,e^{-0{,}5x}=2 \) ist
+<strong>nicht</strong> von Hand auflösbar (das \( x \)
+steckt gleichzeitig als Faktor und im Exponenten) — man löst sie mit dem
+<strong>Taschenrechner</strong> (GTR, numerisch). Das liefert</p>
+<p>\[ x_1\approx 0{,}22 \qquad\text{und}\qquad x_2\approx 7{,}15 . \]</p>
+<p>Die Schneehöhe nimmt also <strong>zwischen \( x_1\approx 0{,}22 \) und
+\( x_2\approx 7{,}15 \)</strong> zu — eine Zeitspanne von</p>
+<p>\[ x_2-x_1\approx 7{,}15-0{,}22 = 6{,}93\ \text{Stunden}\ (\text{rund }6\tfrac{9}{10}\ \text{h}). \]</p>
+<p>In Uhrzeit: von etwa \( 6{:}13 \) Uhr bis etwa
+\( 13{:}09 \) Uhr.</p>
+<figure>
+<div class="jxgbox" id="jxg-k6-tauen" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Schneehöhe wächst, solange die Rate \( f \) über der Taurate \( y=2 \) liegt (oranger Bereich, \( x_1\approx0{,}22 \) bis \( x_2\approx7{,}15 \)).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k6-tauen',{boundingbox:[-0.8,9.6,12.6,-1.4],axis:true,showCopyright:false,showNavigation:false});var f=function(x){return 10*x*Math.exp(-0.5*x);};var x1=0.2237,x2=7.1543;var xs=[],ys=[];for(var i=0;i<=80;i++){var x=x1+(x2-x1)*i/80;xs.push(x);ys.push(f(x));}xs.push(x2);ys.push(2);xs.push(x1);ys.push(2);b.create('curve',[xs,ys],{strokeWidth:0,fillColor:'#d98324',fillOpacity:0.18});b.create('functiongraph',[f,0,12.5],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('line',[[0,2],[1,2]],{strokeColor:'#3a8a5a',strokeWidth:1.8,dash:2});b.create('point',[x1,2],{name:'',size:1.5,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a'});b.create('point',[x2,2],{name:'',size:1.5,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a'});b.create('text',[8.3,2.6,'y = 2 (Tauen)'],{fontSize:11,color:'#3a8a5a'});})();});</script>
+
+<details><summary>Haltung dahinter: Was ist eine Tangente, und warum löst „Netto-Rate" die zweite Frage? (ganz von vorn)</summary>
+
+<p><strong>Tangente.</strong> Eine Tangente ist die Gerade, die sich an
+einer Stelle <strong>schmiegend</strong> an die Kurve legt — sie hat
+dort denselben Punkt und dieselbe <strong>Steigung</strong> wie die
+Kurve. „Die Rate nimmt ab \( x=4 \) konstant ab" bedeutet
+genau: Ab \( x=4 \) machen wir aus der gebogenen Kurve eine
+<strong>gerade</strong> Fortsetzung mit der Steigung, die sie bei
+\( x=4 \) gerade hat — also die Tangente. Eine fallende
+Gerade trifft irgendwann die \( x \)-Achse; dort ist die
+Rate \( 0 \) → es schneit nicht mehr. Den Treffer findet
+man, indem man die Tangentengleichung gleich \( 0 \)
+setzt.</p>
+<p><strong>Netto-Rate.</strong> Wenn zwei Vorgänge gleichzeitig wirken —
+Schnee fällt (\( +f \)), Schnee taut (\( -2 \))
+—, zählt für die <strong>Höhe</strong> nur ihre Differenz, die
+Netto-Rate \( f(x)-2 \). Bild: Wasser läuft in eine Wanne
+(Zufluss \( f \)) und gleichzeitig durch den Abfluss heraus
+(\( 2 \)). Der Wasserstand <strong>steigt</strong> nur,
+wenn <strong>mehr hinein- als hinausläuft</strong>, also wenn
+\( f(x) \gt 2 \). Die Grenzen dieses Zeitfensters sind die Stellen,
+an denen Zufluss und Abfluss gleich groß sind: \( f(x)=2 \).</p>
+<details><summary>… ganz langsam (mit Zahlen) — warum \( x=8 \) so glatt herauskommt</summary>
+
+<p>Tangentengleichung allgemein: \( y=f(4)+f'(4)\,(x-4) \). Wir wollen
+\( y=0 \), also \( f'(4)\,(x-4)=-f(4) \), das heißt
+\( x-4=-\dfrac{f(4)}{f'(4)} \).</p>
+<p>Jetzt die Werte: \( f(4)=40\,e^{-2} \) und \( f'(4)=-10\,e^{-2} \). Der
+Bruch: \( \dfrac{f(4)}{f'(4)}=\dfrac{40\,e^{-2}}{-10\,e^{-2}} \). Der Faktor \( e^{-2} \) steht oben
+<strong>und</strong> unten und kürzt sich weg, übrig bleibt
+\( \dfrac{40}{-10}=-4 \). Also \( x-4=-(-4)=4 \), und damit
+\( x=4+4=8 \). Genau \( 8 \) Stunden nach 6 Uhr =
+<strong>14 Uhr</strong>.</p>
+</details>
+
+<details><summary>Typische Falle: bei der Tau-Frage ein „sauberes" \( x \) erzwingen wollen</summary>
+
+<p>Die Gleichung \( 10x\,e^{-0{,}5x}=2 \) hat <strong>keine</strong> schöne
+Lösung von Hand — das \( x \) steckt als Faktor
+<em>und</em> im Exponenten. Hier ist der sachliche Weg: Verfahren
+beschreiben (Schnittstellen mit \( y=2 \), Bereich
+dazwischen), die Zahlen mit dem GTR holen (\( x_1\approx0{,}22 \),
+\( x_2\approx7{,}15 \)) und die Zeitspanne als Differenz angeben. Wer hier
+„algebraisch umstellt", verrennt sich.</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Geometrie) aufklappen</summary>
+
+<ul>
+<li><strong>a) Lage Gerade/Ebene.</strong> Gut: <strong>drei</strong>
+Fälle genannt (in der Ebene · echt parallel · Schnittpunkt)
+<strong>und</strong> das Verfahren „Geraden- in Ebenengleichung
+<strong>einsetzen</strong>, nach \( t \) auflösen".
+<em>Rückfrage:</em> „Woran erkennen Sie beim Einsetzen den Unterschied
+zwischen <em>echt parallel</em> und <em>liegt in der Ebene</em>?"
+(Antwort: Widerspruch vs. immer wahre Aussage.) <em>Rote Flagge:</em>
+nur zwei Fälle, „liegt in der Ebene" vergessen.</li>
+<li><strong>b) Parallelität + Gerade \( h \).</strong>
+Erwartet: <strong>Skalarprodukt</strong> Richtung·Normale
+\( =0 \) ⇒ parallel, plus <strong>Punktprobe</strong>
+\( -6\neq 1 \) ⇒ echt parallel; für \( h \) die
+Richtung über das <strong>Kreuzprodukt</strong> \( (2|1|1)\times(1|2|-4)=(-6|9|3)\parallel(-2|3|1) \),
+Stützpunkt \( P(2|0|2) \). <em>Rückfrage:</em> „Warum muss die
+Richtung von \( h \) auf <em>beiden</em> Vektoren senkrecht
+stehen?" (orthogonal zu \( g \) <strong>und</strong>
+parallel zu \( E \)).</li>
+<li><strong>c) Punkt mit Abstand \( 3\sqrt{21} \).</strong>
+Erwartet: \( |\vec n|=\sqrt{21} \); einen <strong>Punkt auf
+\( E \)</strong> wählen (\( Q(1|0|0) \)) und
+<strong>\( 3\vec n \)</strong> addieren → \( R(4|6|-12) \).
+<em>Rückfrage:</em> „Warum starten Sie ausgerechnet auf der Ebene?"
+<em>Rote Flagge:</em> \( 3\vec n \) zu einem beliebigen Punkt
+addiert.</li>
+<li><strong>d) Gerade \( j \).</strong> Hier zählt das
+<strong>beschriebene Verfahren</strong>: <strong>Lot</strong> von einem
+\( g \)-Punkt auf \( E \) (Gerade in
+<strong>Normalenrichtung</strong>), <strong>Fußpunkt
+\( F \)</strong> als Schnitt mit \( E \), dann
+\( j \) durch \( F \) mit der <strong>Richtung
+von \( g \)</strong>. <em>Hinweis für dich:</em> Es ist nur
+das Verfahren verlangt — eine saubere Beschreibung ist die volle
+Antwort; die konkreten Zahlen (\( F=(\tfrac73|\tfrac23|\tfrac23) \)) sind Bonus.
+<em>Rückfrage:</em> „Warum ist gerade der senkrechte Schatten von
+\( g \) die nächstgelegene Gerade?"</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>Graph zuordnen.</strong> Erwartet: einen Wert nachrechnen
+(z. B. \( f(2)=\tfrac{20}{e}\approx 7{,}4 \)) und die <strong>Höhe des Maximums</strong>
+vergleichen → <strong>Abbildung 1</strong>. <em>Rückfrage:</em> „Welche
+Stelle haben Sie verglichen, und warum?"</li>
+<li><strong>Rate nach 1 h / stärkster Schneefall (graphisch).</strong>
+Erwartet: \( f(1)\approx 6{,}1 \) cm/h; stärkster Schneefall am
+<strong>höchsten Punkt</strong>, \( x=2 \) (8 Uhr).
+<em>Rückfrage:</em> „Geben \( f \)-Werte eine Höhe oder
+eine Geschwindigkeit an?" (Rate, cm pro Stunde.)</li>
+<li><strong>Stärkste Abnahme (graphisch).</strong> Erwartet:
+<strong>steilste abfallende Stelle</strong> (Wendepunkt),
+\( x\approx 4 \) (10 Uhr) — <em>nicht</em> der Gipfel. <em>Rote
+Flagge:</em> den Hochpunkt \( x=2 \) nennen.</li>
+<li><strong>Stärksten Schneefall berechnen.</strong> Erwartet:
+\( f'(x)=e^{-0{,}5x}(10-5x)=0 \) ⇒ \( x=2 \), weil \( e^{-0{,}5x}\neq 0 \).
+<em>Rückfrage:</em> „Warum kann nur die Klammer null werden?"</li>
+<li><strong>Zuwachs Schneehöhe erste 5 h (graphisch).</strong> Erwartet:
+<strong>Fläche</strong> unter der Kurve von 0 bis 5, Kästchen zählen ≈
+<strong>28–29 cm</strong>. <em>Rote Flagge:</em> \( f(5)\approx 4 \)
+als „Höhe" angeben (das ist die Rate). <em>Rückfrage:</em> „Wofür steht
+ein einzelnes Kästchen in cm?"</li>
+<li><strong>AB III — Aufhören / Tauen.</strong> Erwartet: für das
+Aufhören die <strong>Tangente in \( x=4 \)</strong>,
+Nullstelle bei <strong>\( x=8 \) (14 Uhr)</strong>; fürs
+Tauen die <strong>Netto-Rate \( f(x)-2 \)</strong>, wachsend
+solange \( f(x) \gt 2 \), Schnittstellen mit \( y=2 \)
+per <strong>GTR</strong> (\( x_1\approx 0{,}22 \), \( x_2\approx 7{,}15 \)),
+Zeitspanne \( \approx 6{,}9 \) h. <em>Hinweis für dich:</em> Dass
+\( f(x)=2 \) nur numerisch (GTR) lösbar ist, ist korrekt und
+kein Fehler. <em>Rückfrage:</em> „Warum wächst die Schneehöhe genau
+dann, wenn \( f \) über der Linie \( y=2 \)
+liegt?"</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Welche drei Lagen kann eine Gerade zu einer Ebene haben, und wie
+unterscheidest du sie beim Einsetzen?</li>
+<li>Warum bedeutet „Richtungsvektor · Normalenvektor
+\( =0 \)", dass die Gerade parallel zur Ebene läuft?</li>
+<li>Wie findest du einen Punkt in vorgegebenem Abstand zu einer Ebene —
+und warum musst du dabei <em>auf</em> der Ebene starten?</li>
+<li>Woran erkennst du im Graphen den Zeitpunkt des <em>stärksten
+Schneefalls</em> und den der <em>stärksten Abnahme</em> der Rate — und
+warum sind das verschiedene Stellen?</li>
+<li>Warum ist die Schneehöhe die <em>Fläche</em> unter der Ratenkurve,
+und nicht ein einzelner Funktionswert?</li>
+<li>Wie bestimmst du den Zeitpunkt, zu dem es bei konstanter Abnahme ab
+\( x=4 \) aufhört zu schneien?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

@@ -1,0 +1,1032 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 5 — Analysis &amp; Stochastik — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link active" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Analysis</strong>, <strong>Teil 2 (Gespräch) aus der
+Stochastik</strong>. Alles ist <strong>rechnerfrei</strong> zu lösen.
+Arbeitet die Aufgabe wie eine echte Simulation durch — eine Person trägt
+vor, die andere prüft mit dem Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Stochastik-Werkzeuge (Wahrscheinlichkeit, Erwartungswert,
+Bernoulli-Kette, Binomialverteilung, Standardabweichung) stehen kompakt
+im <a href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a> (Anker u. a. `#erwartungswert`, `#bernoulli-kette`,
+`#binomialverteilung`). Die Analysis-Werkzeuge findest du in den Kapiteln
+<a href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a>, <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a> und <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>.</p>
+</blockquote>
+<hr />
+<section id="teil-1--vortrag-analysis-wachstumsrate-einer-pflanze"
+class="level2">
+<h2>Teil 1 — Vortrag (Analysis): Wachstumsrate einer Pflanze</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Die Funktion \( f \) beschreibt für
+\( t \ge 0 \) die Wachstumsrate einer Pflanze. Die Zeit
+\( t \) wird in Tagen, die Wachstumsrate \( f(t) \)
+in cm pro Tag angegeben. Die Abbildung zeigt einen Ausschnitt des
+Graphen von \( f \).</strong></p>
+<p><strong>a)</strong> Bestimme anhand der Abbildung \( f'(2) \)
+und \( \displaystyle\int_0^2 f(t)\,dt \).</p>
+<p><strong>b)</strong> Bestimme die ungefähre Höhe der Pflanze nach dem
+zweiten Tag, wenn die Pflanze zu Beobachtungsbeginn 20 cm hoch war.</p>
+<p><strong>c)</strong> Die Funktion \( f \) hat den
+Funktionsterm \( f(t)=8t\cdot e^{-t} \). Für die Ableitung gilt
+\( f'(t)=e^{-t}\cdot(8-8t) \). Berechne den Zeitpunkt, zu dem die Wachstumsrate
+der Pflanze am stärksten abnimmt.</p>
+<p><strong>d)</strong> \( F \) ist eine Stammfunktion von
+\( f \). Formuliere eine Fragestellung im Sachzusammenhang,
+die auf die Gleichung \( F(t+1)=F(t)+2{,}5 \) führt. Beschreibe, wie man
+mithilfe der Abbildung eine Lösung dieser Gleichung ermitteln kann.</p>
+</div>
+
+<p>Hier ist der Graph der Wachstumsrate \( f \). Die orange
+gestrichelte Linie ist die <strong>Tangente</strong> (die
+„Anlege-Gerade") bei \( t=2 \); die blau gefüllte Fläche ist
+das Stück zwischen Graph und \( t \)-Achse von
+\( t=0 \) bis \( t=2 \). Spiele mit dem Bild, bevor
+du die Lösung aufklappst.</p>
+<div class="jxgbox" id="jxg-k5-f" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k5-f',{boundingbox:[-0.8,5.5,7.8,-1.6],axis:true,grid:true,showCopyright:false,showNavigation:false});var f=b.create('functiongraph',[function(t){return 8*t*Math.exp(-t);},0,8],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[0,2],f],{fillColor:'#3a5a9c',fillOpacity:0.13,withLabel:false,curveLeft:{visible:false,withLabel:false},curveRight:{visible:false,withLabel:false},baseLeft:{visible:false},baseRight:{visible:false}});var g=b.create('glider',[2,0,f],{name:'',size:1,fixed:true,fillColor:'#d98324',strokeColor:'#d98324'});b.create('tangent',[g],{strokeColor:'#d98324',strokeWidth:1.8,dash:2});})();});</script>
+
+<figcaption style="font-size:0.9em;color:#5a5346">Reproduzierter Graph von \( f(t)=8t\,e^{-t} \). Im
+Originalbild ist das Gitter in <b>halben</b> Kästchen (\( 0{,}5 \times 0{,}5 \)) gezeichnet — ein
+kleines Kästchen hat also den Flächeninhalt \( 0{,}5\cdot 0{,}5 = 0{,}25 \). Das brauchst du in a).</figcaption>
+
+<section
+id="teilaufgabe-a--zzmathphzz39zzendzz-und-das-integral-aus-dem-bild-ablesen"
+class="level3">
+<h3>Teilaufgabe a) — \( f'(2) \) und das Integral aus dem Bild
+ablesen</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Teil 1 — die Steigung \( f'(2) \).</strong>
+\( f'(2) \) ist die <strong>Steigung des Graphen an der Stelle
+\( t=2 \)</strong>. Man legt im Punkt \( (2 \mid f(2)) \) eine
+Tangente an und liest ihr Steigungsdreieck ab: Geht man <strong>1 nach
+rechts</strong>, fällt die Tangente um etwa <strong>1 nach
+unten</strong>. Die Steigung ist also negativ und ungefähr</p>
+<p>\[ f'(2) \approx -1. \]</p>
+<p><strong>Teil 2 — das Integral \( \displaystyle\int_0^2 f(t)\,dt \).</strong> Das
+Integral ist der <strong>Flächeninhalt zwischen dem Graphen und der
+\( t \)-Achse</strong> von \( t=0 \) bis
+\( t=2 \) (blaue Fläche). Diese Fläche <strong>zählt man in
+Kästchen aus</strong>. Im Originalbild liegen unter dem Kurvenstück etwa
+\( 19 \) kleine Kästchen, und jedes Kästchen ist
+\( 0{,}25 \) groß:</p>
+<p>\[ \int_0^2 f(t)\,dt \;\approx\; 19\cdot 0{,}25 \;=\; \frac{19}{4} \;=\; 4{,}75. \]</p>
+<details><summary>Haltung dahinter: Was heißt „Ableitung an einer Stelle", und wie liest man eine Steigung ab? (ganz von vorn)</summary>
+
+<p>Ganz langsam, was hier gefragt ist.</p>
+<p><strong>Steigung.</strong> Die <strong>Steigung</strong> sagt, wie
+steil eine Linie ansteigt oder abfällt. Bei einer Geraden misst man sie
+mit einem <strong>Steigungsdreieck</strong>: „Gehe ein Stück nach
+rechts, schaue, wie viel es dabei nach oben (oder unten) geht." Steigung
+\( = \dfrac{\text{Höhenänderung}}{\text{Schritt nach rechts}} \). Geht es nach unten, ist die Steigung
+<strong>negativ</strong>.</p>
+<p><strong>Ableitung \( f'(2) \).</strong> Eine krumme Kurve hat
+an jeder Stelle eine andere Steilheit. Die <strong>Ableitung</strong>
+\( f'(2) \) ist genau die Steigung der Kurve <strong>an der
+einen Stelle \( t=2 \)</strong>. Man bekommt sie, indem man
+dort die <strong>Tangente</strong> anlegt — das ist die Gerade, die sich
+an dieser Stelle genau an die Kurve „anschmiegt" — und deren Steigung
+mit dem Steigungsdreieck abliest. Hier fällt die Kurve bei
+\( t=2 \), die Tangente geht abwärts, also ist
+\( f'(2) \) negativ. Ein Schritt nach rechts, ungefähr ein
+Schritt nach unten \( \Rightarrow f'(2)\approx -1 \).</p>
+<p><strong>Was bedeutet das im Sachzusammenhang?</strong>
+\( f \) ist die Wachstums<strong>rate</strong> (wie schnell
+die Pflanze gerade wächst, in cm pro Tag). \( f'(2)\approx -1 \) heißt: Am
+zweiten Tag <strong>nimmt diese Geschwindigkeit ab</strong> — die
+Pflanze wächst noch, aber von Tag zu Tag langsamer.</p>
+</details>
+
+<details><summary>Haltung dahinter: Was ist ein Integral, und warum ist es eine Fläche? (ganz von vorn)</summary>
+
+<p>Ein <strong>Integral</strong> \( \displaystyle\int_0^2 f(t)\,dt \) ist eine Maschine,
+die die <strong>Fläche zwischen dem Graphen und der
+\( t \)-Achse</strong> zwischen den senkrechten Grenzen
+\( t=0 \) (links) und \( t=2 \) (rechts)
+zusammenrechnet. Man kann es sich als „lauter hauchdünne senkrechte
+Streifen unter der Kurve, alle aufaddiert" vorstellen.</p>
+<p>Weil hier die ganze Kurve <strong>über</strong> der
+\( t \)-Achse liegt, ist die Fläche einfach
+<strong>positiv</strong> — man muss nicht mit Vorzeichen aufpassen. Man
+darf sie deshalb direkt <strong>abzählen</strong>.</p>
+<details><summary>Kästchenzählen ganz langsam (mit Zahlen)</summary>
+
+<p>Das <strong>Kästchenzählen</strong> geht so: Man schaut, wie viele
+kleine Gitterquadrate unter dem Kurvenstück liegen, und multipliziert
+mit dem Flächeninhalt <strong>eines</strong> Quadrats.</p>
+<ul>
+<li>Wie groß ist ein Kästchen? Im Bild ist das Gitter in Schritten von
+\( 0{,}5 \) gezeichnet. Ein Kästchen ist also
+\( 0{,}5 \) breit und \( 0{,}5 \) hoch. Sein
+Flächeninhalt: \( 0{,}5 \cdot 0{,}5 = 0{,}25 \). (Halb mal halb ist ein
+Viertel.)</li>
+<li>Wie viele Kästchen? Volle Kästchen voll zählen, angeschnittene zu
+ganzen zusammenstückeln. Hier kommt man auf etwa \( 19 \)
+Kästchen.</li>
+<li>Fläche: \( 19 \cdot 0{,}25 \). Rechne \( 19 \cdot 0{,}25 = 19 : 4 = 4{,}75 \). (Mal
+\( 0{,}25 \) ist dasselbe wie geteilt durch
+\( 4 \).)</li>
+</ul>
+<p>Ergebnis: \( \displaystyle\int_0^2 f(t)\,dt \approx 4{,}75 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Zwei Stolperstellen:</p>
+<ul>
+<li><strong>\( f'(2) \) mit \( f(2) \)
+verwechseln.</strong> \( f(2) \) ist der <strong>Wert</strong>
+der Kurve bei \( t=2 \) (ungefähr \( 2{,}2 \)).
+\( f'(2) \) ist die <strong>Steigung</strong> dort (ungefähr
+\( -1 \)). Gefragt ist die Steigung.</li>
+<li><strong>Kästchen mit Flächeninhalt \( 1 \)
+ansetzen.</strong> Weil das Gitter in Halben gezeichnet ist, hat ein
+kleines Kästchen nur \( 0{,}25 \). Wer mit \( 1 \)
+rechnet, bekommt das Vierfache heraus.</li>
+</ul>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-b--höhe-der-pflanze-nach-dem-zweiten-tag"
+class="level3">
+<h3>Teilaufgabe b) — Höhe der Pflanze nach dem zweiten Tag</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Die Pflanze war zu Beginn \( 20 \) cm hoch. Das Integral
+aus a) ist der <strong>Höhenzuwachs</strong> in den ersten zwei Tagen,
+nämlich \( 4{,}75 \) cm. Höhe nach dem zweiten Tag = Starthöhe +
+Zuwachs:</p>
+<p>\[ 20 + 4{,}75 = 24{,}75. \]</p>
+<p>Die Pflanze ist nach dem zweiten Tag <strong>ungefähr
+\( 24{,}75 \) cm</strong> hoch.</p>
+<details><summary>Haltung dahinter: Warum ist die Fläche unter der Rate genau der Zuwachs? (ganz von vorn)</summary>
+
+<p>Der Schlüssel ist der Unterschied zwischen
+<strong>Geschwindigkeit</strong> und <strong>zurückgelegtem
+Weg</strong>.</p>
+<p>\( f \) ist eine <strong>Rate</strong>: Sie sagt, <em>wie
+schnell</em> die Pflanze gerade wächst — in cm <strong>pro Tag</strong>.
+Die gesamte Höhenänderung über einen Zeitraum bekommt man, indem man die
+Rate über die Zeit aufsummiert, und genau das tut das Integral.</p>
+<p><strong>Alltagsanalogie Tacho.</strong> Stell dir ein Auto vor. Der
+Tacho zeigt die <strong>Geschwindigkeit</strong> (km pro Stunde). Die
+<strong>gefahrene Strecke</strong> ist nicht der Tachowert selbst,
+sondern „Geschwindigkeit mal Zeit" — bzw. die Fläche unter der
+Geschwindigkeitskurve. Genauso hier: \( f \) ist der „Tacho"
+des Wachstums (cm pro Tag), und die <strong>Fläche</strong> unter
+\( f \) ist die „gefahrene Strecke", also der Höhenzuwachs
+in cm.</p>
+<p><strong>Die Einheiten zeigen es.</strong> \( f(t) \) hat die
+Einheit \( \tfrac{\text{cm}}{\text{Tag}} \), die Zeitspanne hat die Einheit
+\( \text{Tag} \). Multipliziert man (und ein Integral ist im Kern
+eine Multiplikation „Höhe mal Breite"), kürzt sich „Tag" weg und es
+bleibt <strong>cm</strong> — eine Länge, also eine Höhe. Deshalb ist
+\( \int_0^2 f\,dt = 4{,}75 \) ein Zuwachs von \( 4{,}75 \)
+<strong>cm</strong>.</p>
+<details><summary>Ganz langsam (mit Zahlen)</summary>
+
+<ul>
+<li>Starthöhe: \( 20 \) cm.</li>
+<li>Zuwachs in 2 Tagen (= Fläche aus a)): \( 4{,}75 \) cm.</li>
+<li>Endhöhe: \( 20 + 4{,}75 = 24{,}75 \) cm.</li>
+</ul>
+<p>Das „ungefähr" steht da, weil der Zuwachs aus dem
+<strong>Abzählen</strong> der Kästchen kommt — ein abgelesener,
+gerundeter Wert.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>\( f(2) \approx 2{,}2 \) ist <strong>nicht</strong> die Höhe — das ist nur
+die Wachstums<em>geschwindigkeit</em> am zweiten Tag. Auch das
+„\( +20 \)" darf nicht vergessen werden: Das Integral liefert
+nur die <strong>Änderung</strong> der Höhe, nicht die Höhe selbst.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-c--zeitpunkt-der-stärksten-abnahme"
+class="level3">
+<h3>Teilaufgabe c) — Zeitpunkt der stärksten Abnahme</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Gesucht ist der Zeitpunkt, an dem die Wachstumsrate <strong>am
+stärksten abnimmt</strong> — also dort, wo der Graph von
+\( f \) <strong>am steilsten fällt</strong>. „Am steilsten
+fallen" heißt: die Steigung \( f' \) ist dort <strong>am
+negativsten</strong>, hat also ein <strong>Minimum</strong>. Ein Minimum
+von \( f' \) findet man, indem man die Ableitung von
+\( f' \) — das ist \( f'' \) — null setzt.</p>
+<p><strong>Schritt 1 — \( f'' \) bilden.</strong> Aus
+\( f'(t)=e^{-t}\,(8-8t) \) wird mit der Produktregel</p>
+<p>\[ f''(t) = \underbrace{-e^{-t}}_{(e^{-t})'}\,(8-8t) \;+\; e^{-t}\,\underbrace{(-8)}_{(8-8t)'}
+   = e^{-t}\big(-8+8t-8\big) = e^{-t}\,(8t-16) = 8\,(t-2)\,e^{-t}. \]</p>
+<p><strong>Schritt 2 — null setzen.</strong> Ein Produkt ist null, wenn
+ein Faktor null ist. Da \( e^{-t} \) <strong>nie</strong> null
+wird, bleibt nur der Faktor \( (t-2) \):</p>
+<p>\[ 8\,(t-2)\,e^{-t} = 0 \;\;\Longrightarrow\;\; t-2 = 0 \;\;\Longrightarrow\;\; t = 2. \]</p>
+<p><strong>Schritt 3 — prüfen, dass es wirklich die stärkste Abnahme
+ist.</strong> \( f''(t)=8(t-2)e^{-t} \) wechselt bei \( t=2 \) das
+Vorzeichen von <strong>minus</strong> (für \( t \lt 2 \)) zu
+<strong>plus</strong> (für \( t \gt 2 \)). Damit hat
+\( f' \) bei \( t=2 \) ein
+<strong>Minimum</strong> — die Steigung ist dort am negativsten. Also
+nimmt die Wachstumsrate <strong>nach \( 2 \) Tagen</strong>
+am stärksten ab.</p>
+<details><summary>Haltung dahinter: „am stärksten abnehmen" — welche Ableitung ist das überhaupt? (ganz von vorn)</summary>
+
+<p>Hier stapeln sich drei Ebenen aufeinander, deshalb der Reihe
+nach.</p>
+<ul>
+<li>\( f \) selbst ist die <strong>Wachstumsrate</strong>
+(wie schnell die Pflanze wächst).</li>
+<li>\( f' \) ist die <strong>Steigung von
+\( f \)</strong> — also wie schnell sich die
+<em>Wachstumsrate</em> ändert. Ist \( f' \lt 0 \), so
+<strong>sinkt</strong> die Rate (die Pflanze verliert an Schwung).</li>
+<li>„Am <strong>stärksten</strong> abnehmen" heißt: dieses Sinken ist am
+<strong>heftigsten</strong>, die Rate stürzt am schnellsten —
+\( f' \) ist so <strong>negativ</strong> wie nirgends sonst,
+hat also ein <strong>Minimum</strong>.</li>
+</ul>
+<p>Und ein Hoch- oder Tiefpunkt einer Funktion liegt dort, wo
+<strong>ihre</strong> Ableitung null ist. Die Ableitung von
+\( f' \) ist \( f'' \). Deshalb:
+\( f''(t)=0 \) setzen. Der Punkt, den man findet, heißt
+<strong>Wendepunkt</strong> von \( f \) — die Stelle, an
+der die Kurve von „Linkskurve" auf „Rechtskurve" umschaltet und genau
+dazwischen am steilsten ist.</p>
+<details><summary>Produkt- und Kettenregel — wozu hier?</summary>
+
+<p>\( f'(t)=e^{-t}\,(8-8t) \) ist ein <strong>Produkt</strong> aus zwei
+Bausteinen: \( e^{-t} \) und \( (8-8t) \). Die
+<strong>Produktregel</strong> sagt, wie man so etwas ableitet: „erster
+Baustein abgeleitet mal zweiter, plus erster mal zweiter
+abgeleitet."</p>
+<ul>
+<li>Ableitung von \( e^{-t} \): Das ist \( -e^{-t} \).
+(Die <strong>Kettenregel</strong>: außen bleibt \( e^{-t} \)
+stehen, mal innere Ableitung von \( -t \), die
+\( -1 \) ist — also \( e^{-t}\cdot(-1)=-e^{-t} \).)</li>
+<li>Ableitung von \( (8-8t) \): Das ist \( -8 \)
+(die \( 8 \) fällt weg, aus \( -8t \) wird
+\( -8 \)).</li>
+</ul>
+<p>Zusammengesetzt: \( f''(t) = (-e^{-t})(8-8t) + e^{-t}(-8) \). Ausmultiplizieren und
+zusammenfassen ergibt \( e^{-t}(8t-16) = 8(t-2)e^{-t} \). Ausführlich: <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>.</p>
+</details>
+
+<details><summary>Ganz langsam (mit Zahlen): warum ist \( t=2 \) wirklich der steilste Abfall?</summary>
+
+<p>Vergleiche die Steigung \( f' \) an ein paar Stellen — je
+negativer, desto steiler fällt \( f \):</p>
+<ul>
+<li>\( f'(1) = e^{-1}(8-8\cdot 1) = e^{-1}\cdot 0 = 0 \). Bei \( t=1 \) ist die Steigung null
+— das ist der <strong>Höhepunkt</strong> der Wachstumsrate (die Kurve
+ist dort oben am Bogen waagerecht).</li>
+<li>\( f'(2) = e^{-2}(8-16) = e^{-2}\cdot(-8) \approx -1{,}08 \).</li>
+<li>\( f'(3) = e^{-3}(8-24) = e^{-3}\cdot(-16) \approx -0{,}80 \).</li>
+</ul>
+<p>\( -1{,}08 \) ist negativer als \( -0{,}80 \). Bei
+\( t=2 \) fällt die Kurve also steiler als bei
+\( t=3 \) — und steiler als überall sonst. Das bestätigt
+\( t=2 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>„Wachstumsrate <strong>am stärksten ab</strong>nehmend" wird oft mit
+zwei anderen Stellen verwechselt:</p>
+<ul>
+<li>mit dem <strong>Maximum der Rate</strong> (das ist
+\( t=1 \), wo \( f \) am höchsten und
+\( f'=0 \) ist) — da wächst die Pflanze am schnellsten, aber
+die Rate nimmt dort <em>nicht</em> ab;</li>
+<li>mit einer <strong>Nullstelle von \( f \)</strong> — da
+wäre gar kein Wachstum mehr.</li>
+</ul>
+<p>Gesucht ist der <strong>Wendepunkt</strong> von \( f \):
+\( f''=0 \), Vorzeichenwechsel von \( f' \). Das
+ist \( t=2 \).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-d--fragestellung-formulieren-und-grafisch-lösen"
+class="level3">
+<h3>Teilaufgabe d) — Fragestellung formulieren und grafisch lösen</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Die Fragestellung.</strong> \( F \) ist eine
+Stammfunktion von \( f \); im Sachzusammenhang ist
+\( F(t) \) die <strong>bis zum Zeitpunkt \( t \)
+angesammelte Höhenzunahme</strong>. Dann ist</p>
+<p>\[ F(t+1) - F(t) = \int_t^{t+1} f(\tau)\,d\tau = \text{Zuwachs der Höhe während des Tages von } t
+   \text{ bis } t+1. \]</p>
+<p>Die Gleichung \( F(t+1)=F(t)+2{,}5 \) sagt also: dieser Zuwachs ist
+genau \( 2{,}5 \) cm. Eine passende Frage lautet:</p>
+<blockquote>
+<p><strong>„Innerhalb welchen \( 1 \)-Tages-Zeitraums nimmt
+die Höhe der Pflanze um \( 2{,}5 \) cm zu?"</strong></p>
+</blockquote>
+<p><strong>Lösung mithilfe der Abbildung.</strong> \( F(t+1)-F(t) \)
+ist der <strong>Flächeninhalt</strong> unter dem Graphen von
+\( f \) über dem Intervall \( [\,t,\;t+1\,] \). Man legt
+also einen <strong>senkrechten Streifen der Breite
+\( 1 \)</strong> unter die Kurve und
+<strong>verschiebt</strong> ihn nach rechts, bis die eingeschlossene
+Fläche genau \( 2{,}5 \) beträgt (in Kästchen:
+\( 2{,}5 : 0{,}25 = 10 \) Kästchen). Die <strong>Lage des linken
+Randes</strong> dieses Streifens ist eine Lösung der Gleichung.</p>
+<div class="jxgbox" id="jxg-k5-d" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k5-d',{boundingbox:[-0.8,5.5,7.8,-1.6],axis:true,grid:true,showCopyright:false,showNavigation:false});var f=b.create('functiongraph',[function(t){return 8*t*Math.exp(-t);},0,8],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[0.2,1.2],f],{fillColor:'#d98324',fillOpacity:0.2,withLabel:false,curveLeft:{visible:false,withLabel:false},curveRight:{visible:false,withLabel:false},baseLeft:{visible:false},baseRight:{visible:false}});})();});</script>
+
+<figcaption style="font-size:0.9em;color:#5a5346">Ein Streifen der <b>Breite 1</b> (orange). Man schiebt
+ihn waagerecht, bis seine Fläche \( =2{,}5 \) ist; der linke Rand des Streifens ist dann die gesuchte
+Lösung \( t \).</figcaption>
+
+<details><summary>Haltung dahinter: Was ist eine Stammfunktion im Sachzusammenhang, und warum ist die Differenz eine Fläche? (ganz von vorn)</summary>
+
+<p><strong>Stammfunktion.</strong> Eine <strong>Stammfunktion</strong>
+\( F \) von \( f \) ist „Ableiten rückwärts":
+Ihre Ableitung ist wieder \( f \), also
+\( F'=f \). Wenn \( f \) die
+Wachstums<strong>rate</strong> ist, dann ist \( F \) die
+davon <strong>aufsummierte Größe</strong> — die <strong>angesammelte
+Höhenzunahme</strong> seit dem Start. Bild: \( f \) sind
+die täglichen Einzahlungen aufs Konto, \( F \) ist der
+<strong>Kontostand</strong>.</p>
+<p><strong>Differenz von Kontoständen.</strong> \( F(t+1) \) ist
+der Kontostand am Tag \( t+1 \), \( F(t) \) der am
+Tag \( t \). Die Differenz \( F(t+1)-F(t) \) ist also
+genau das, was <strong>in diesem einen Tag dazugekommen</strong> ist —
+der Zuwachs zwischen \( t \) und \( t+1 \).</p>
+<p><strong>Warum eine Fläche?</strong> Der <strong>Hauptsatz der
+Differenzial- und Integralrechnung</strong> verknüpft beides:
+\( \displaystyle\int_t^{t+1} f\,d\tau = F(t+1)-F(t) \). Das Integral ist die Fläche unter
+\( f \). Also ist der Tageszuwachs gleich der Fläche unter
+der Ratenkurve über diesem Tag — und Flächen kann man im Bild
+<strong>abzählen</strong>. (Mehr dazu: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.)</p>
+<details><summary>Wie genau „verschiebt" man den Streifen — und gibt es mehrere Lösungen?</summary>
+
+<p>Praktisch: Man nimmt ein Rechteck-Fenster der Breite
+\( 1 \), legt es ganz links unter die Kurve
+(\( t=0 \): Fenster \( [0,1] \)) und schiebt es
+Schritt für Schritt nach rechts. Bei jeder Position zählt man die
+eingeschlossenen Kästchen. Gesucht ist die Position mit
+<strong>\( 10 \) Kästchen</strong> (Fläche
+\( 2{,}5 \)).</p>
+<p>Beim Wandern passiert Folgendes: Anfangs liegt der Streifen über dem
+hohen Bogen der Kurve, die Fläche ist groß; ganz rechts ist die Kurve
+fast platt, die Fläche winzig. Dazwischen <strong>durchläuft</strong>
+die Fläche den Wert \( 2{,}5 \). Weil der Tageszuwachs erst
+etwas <strong>steigt</strong> (bis der Streifen genau über dem höchsten
+Bogen sitzt) und danach <strong>fällt</strong>, wird der Wert
+\( 2{,}5 \) sogar an <strong>zwei</strong> Positionen getroffen
+— beim Hinaufgehen und beim Herunterkommen. Jeder der beiden linken
+Ränder ist eine gültige Lösung. Für die mündliche Prüfung genügt das
+<strong>beschriebene Verfahren</strong>; man muss keinen exakten
+Zahlenwert ausrechnen.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( f'(2) \approx -1 \); \( \displaystyle\int_0^2 f(t)\,dt \approx 19\cdot 0{,}25 = \tfrac{19}{4} = 4{,}75 \)</li>
+<li>b) Höhe \( = 20 + 4{,}75 = 24{,}75 \) cm</li>
+<li>c) \( f''(t) = 8\,(t-2)\,e^{-t} \); \( f''(t)=0 \Rightarrow t=2 \) (nach
+\( 2 \) Tagen)</li>
+<li>d) Frage: „In welchem \( 1 \)-Tages-Zeitraum wächst die
+Pflanze um \( 2{,}5 \) cm?" — Streifen der Breite
+\( 1 \) verschieben, bis die Fläche \( 2{,}5 \)
+(\(=10\) Kästchen) ist; linker Rand = Lösung.</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-stochastik-würfel-mit-dem-netz-1-2-2-3-4-6"
+class="level2">
+<h2>Teil 2 — Gespräch (Stochastik): Würfel mit dem Netz 1, 2, 2, 3, 4,
+6</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben ist das Netz eines Würfels. Die sechs
+Flächen tragen die Augenzahlen \( 1,\ 2,\ 2,\ 3,\ 4,\ 6 \) (die
+„\( 2 \)" kommt zweimal vor, eine „\( 5 \)"
+gibt es nicht).</p>
+<p>Im Gespräch denkbare Aspekte:</p>
+<ul>
+<li><strong>(AB I)</strong> Die Zufallsgröße \( X \)
+beschreibt die Augenzahl beim einmaligen Würfeln. Bestimme
+\( P(X \lt 4) \) und den Erwartungswert \( E(X) \).</li>
+<li><strong>(AB II)</strong> Erläutere die Bedeutung des
+Erwartungswerts. Beurteile, ob das Spiel „Einsatz \( 1\,€ \);
+Gewinn bei Augenzahl \( 2 \): \( 3\,€ \); sonst
+geht der Einsatz verloren" fair ist. Bestimme die Wahrscheinlichkeit
+beim zweimaligen Würfeln für die Augensumme \( 8 \).
+Beschreibe ein Zufallsexperiment mit diesem Würfel, das eine
+Bernoulli-Kette darstellt.</li>
+<li><strong>(AB III)</strong> Beurteile die Aussage „Der Erwartungswert
+einer Zufallsgröße ist der Wert, der am wahrscheinlichsten ist."
+Beurteile außerdem: Beim \( 100 \)-maligen Würfeln fallen
+sechs Sechser — „Ich zweifle, dass der Würfel fair ist."</li>
+</ul>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, eine Annahme für die ganze
+Aufgabe:</strong> Wir gehen von einem <strong>fairen Würfel</strong>
+(Laplace-Würfel) aus — der Körper ist ein gleichmäßiger Würfel, sodass
+<strong>jede der sechs Flächen mit Wahrscheinlichkeit
+\( \tfrac16 \)</strong> oben landet. Wichtig ist nur die
+<em>Fläche</em>, nicht die <em>Zahl</em> darauf. Weil zwei Flächen eine
+„\( 2 \)" zeigen, ist \( P(X=2)=\tfrac{2}{6} \). (Im letzten
+Aspekt wird genau diese Fairness-Annahme dann hinterfragt.) Alle
+Grundbegriffe stehen kompakt im <a
+href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a>.</p>
+</blockquote>
+<p>So sieht das Würfelnetz aus (saubere Nachzeichnung), daneben die
+daraus folgende Verteilung von \( X \):</p>
+<div class="graph-row">
+<figure>
+<svg viewBox="0 0 320 320" role="img" aria-label="Würfelnetz mit den Augenzahlen 1, 2, 2, 3, 4 und 6" style="width:100%;max-width:280px;height:auto;background:#fbf7ef;border-radius:8px">
+  <g fill="#3a5a9c" fill-opacity="0.06" stroke="#3a5a9c" stroke-width="1.8">
+    <rect x="120" y="40" width="60" height="60"/>
+    <rect x="60"  y="100" width="60" height="60"/>
+    <rect x="120" y="100" width="60" height="60"/>
+    <rect x="180" y="100" width="60" height="60"/>
+    <rect x="120" y="160" width="60" height="60"/>
+    <rect x="120" y="220" width="60" height="60"/>
+  </g>
+  <g font-size="30" fill="#26324a" text-anchor="middle" font-family="Georgia, serif">
+    <text x="150" y="80">1</text>
+    <text x="90"  y="140">2</text>
+    <text x="150" y="140">2</text>
+    <text x="210" y="140">3</text>
+    <text x="150" y="200">4</text>
+    <text x="150" y="260">6</text>
+  </g>
+</svg>
+<figcaption>Würfelnetz: Flächen \( 1, 2, 2, 3, 4, 6 \).</figcaption>
+</figure>
+<figure>
+<svg viewBox="0 0 480 300" role="img" aria-label="Wahrscheinlichkeitsverteilung der Augenzahl X mit Erwartungswert 3" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <line x1="55" y1="245" x2="455" y2="245" stroke="#7a7163" stroke-width="1.5"/>
+  <line x1="55" y1="245" x2="55" y2="40" stroke="#7a7163" stroke-width="1.5"/>
+  <text x="48" y="189" font-size="12" fill="#7a7163" text-anchor="end">1/6</text>
+  <text x="48" y="129" font-size="12" fill="#7a7163" text-anchor="end">2/6</text>
+  <line x1="51" y1="185" x2="55" y2="185" stroke="#7a7163"/>
+  <line x1="51" y1="125" x2="55" y2="125" stroke="#7a7163"/>
+  <g stroke="#3a5a9c" stroke-width="1.5">
+    <rect x="80"  y="185" width="44" height="60"  fill="#3a5a9c" fill-opacity="0.12"/>
+    <rect x="145" y="125" width="44" height="120" fill="#d98324" fill-opacity="0.24"/>
+    <rect x="210" y="185" width="44" height="60"  fill="#3a5a9c" fill-opacity="0.12"/>
+    <rect x="275" y="185" width="44" height="60"  fill="#3a5a9c" fill-opacity="0.12"/>
+    <rect x="340" y="244" width="44" height="1"   fill="#3a5a9c" fill-opacity="0.12"/>
+    <rect x="405" y="185" width="44" height="60"  fill="#3a5a9c" fill-opacity="0.12"/>
+  </g>
+  <g font-size="14" fill="#26324a" text-anchor="middle">
+    <text x="102" y="263">1</text>
+    <text x="167" y="263">2</text>
+    <text x="232" y="263">3</text>
+    <text x="297" y="263">4</text>
+    <text x="362" y="263">5</text>
+    <text x="427" y="263">6</text>
+  </g>
+  <text x="255" y="287" font-size="12" fill="#7a7163" text-anchor="middle">Augenzahl x</text>
+  <line x1="232" y1="40" x2="232" y2="245" stroke="#b03a2e" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="238" y="52" font-size="12" fill="#b03a2e">E(X) = 3 (Schwerpunkt)</text>
+  <text x="167" y="116" font-size="11" fill="#a05a10" text-anchor="middle">am häufigsten</text>
+</svg>
+<figcaption>Verteilung von \( X \): Die „\( 2 \)" ist mit \( \tfrac{2}{6} \) am wahrscheinlichsten
+(höchster Balken bei \( 2 \)), der Erwartungswert \( E(X)=3 \) ist der Schwerpunkt (rote Linie) — die
+beiden Stellen sind verschieden. Bei \( 5 \) gibt es keinen Balken.</figcaption>
+</figure>
+</div>
+
+<section id="ab-i--zzmathphzz234zzendzz-und-erwartungswert"
+class="level3">
+<h3>AB I — \( P(X \lt 4) \) und Erwartungswert</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Zuerst die <strong>Verteilung</strong> von \( X \) (jede
+Fläche \( \tfrac16 \), die „\( 2 \)" zweimal):</p>
+<p>\[ P(X{=}1)=\tfrac16,\quad P(X{=}2)=\tfrac26,\quad P(X{=}3)=\tfrac16,\quad P(X{=}4)=\tfrac16,\quad
+   P(X{=}6)=\tfrac16,\quad P(X{=}5)=0. \]</p>
+<p><strong>\( P(X \lt 4) \).</strong> „Kleiner als
+\( 4 \)" meint die Augenzahlen \( 1, 2, 3 \). Diese
+Wahrscheinlichkeiten addieren sich:</p>
+<p>\[ P(X \lt 4) = P(X{=}1)+P(X{=}2)+P(X{=}3) = \tfrac16+\tfrac26+\tfrac16 = \tfrac46 = \tfrac23 \approx 0{,}67. \]</p>
+<p><strong>Erwartungswert \( E(X) \).</strong> Jeden Wert mit
+seiner Wahrscheinlichkeit multiplizieren und alles aufaddieren — das ist
+hier dasselbe wie „alle sechs Flächenzahlen mitteln":</p>
+<p>\[ E(X) = \frac{1+2+2+3+4+6}{6} = \frac{18}{6} = 3. \]</p>
+<details><summary>Haltung dahinter: Was ist eine Zufallsgröße, eine Wahrscheinlichkeit, ein Erwartungswert? (ganz von vorn)</summary>
+
+<p><strong>Zufallsgröße \( X \).</strong> Eine
+<strong>Zufallsgröße</strong> ist eine Zahl, die vom Zufall abhängt.
+Hier ist \( X \) die Augenzahl, die nach
+<strong>einem</strong> Wurf oben liegt. Vor dem Wurf weiß man sie nicht
+— man kennt aber die <strong>Wahrscheinlichkeiten</strong> der möglichen
+Werte.</p>
+<p><strong>Wahrscheinlichkeit.</strong> Eine
+<strong>Wahrscheinlichkeit</strong> ist ein Maß zwischen
+\( 0 \) (unmöglich) und \( 1 \) (sicher)
+dafür, wie oft etwas „auf lange Sicht" eintritt. Bei einem fairen Würfel
+hat jede der \( 6 \) Flächen die Wahrscheinlichkeit
+\( \tfrac16 \). Weil zwei Flächen die „\( 2 \)"
+zeigen, ist die Augenzahl \( 2 \) <strong>doppelt so
+wahrscheinlich</strong>: \( P(X{=}2)=\tfrac{2}{6} \). Die
+„\( 5 \)" steht auf keiner Fläche, also
+\( P(X{=}5)=0 \).</p>
+<p><strong>\( P(X \lt 4) \).</strong> Das Zeichen
+„\(  \lt  \)" heißt <strong>echt kleiner</strong>.
+\( X \lt 4 \) trifft auf \( 1, 2, 3 \) zu — die
+\( 4 \) <strong>nicht</strong> (dafür bräuchte es
+„\( \le \)"). Mehrere getrennte Möglichkeiten, von denen eine
+eintreten soll, <strong>addiert</strong> man.</p>
+<p><strong>Erwartungswert.</strong> Der <strong>Erwartungswert</strong>
+\( E(X) \) ist der <strong>Durchschnittswert auf lange
+Sicht</strong> — was im Mittel pro Wurf herauskommt, wenn man sehr oft
+würfelt. Man berechnet ihn als „<strong>Wert mal
+Wahrscheinlichkeit</strong>, aufsummiert". Häufige Werte zählen stärker.
+(Werkzeug: <a
+href="konv-91-werkzeugkasten-stochastik.html#erwartungswert">Werkzeugkasten
+Stochastik</a>.)</p>
+<details><summary>Ganz langsam (mit Zahlen)</summary>
+
+<p>\[ E(X) = 1\cdot\tfrac16 + 2\cdot\tfrac26 + 3\cdot\tfrac16 + 4\cdot\tfrac16 + 6\cdot\tfrac16. \]</p>
+<p>Zähler einzeln: \( 1\cdot 1=1 \); \( 2\cdot 2=4 \) (weil die
+\( 2 \) doppelt zählt); \( 3\cdot 1=3 \);
+\( 4\cdot 1=4 \); \( 6\cdot 1=6 \). Summe der Zähler:
+\( 1+4+3+4+6 = 18 \). Geteilt durch \( 6 \):
+\( \tfrac{18}{6}=3 \). Also \( E(X)=3 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<ul>
+<li><strong>\( P(X \lt 4) \) zu groß</strong>, weil man die
+\( 4 \) mitnimmt. „\(  \lt 4 \)" schließt die
+\( 4 \) <strong>aus</strong>.</li>
+<li><strong>Die doppelte \( 2 \) übersehen.</strong> Wer
+mit nur „einer \( 2 \)" rechnet, bekommt bei
+\( P(X \lt 4) \) und bei \( E(X) \) zu kleine Werte.</li>
+<li><strong>Falsch gemittelt:</strong> Den Durchschnitt der
+<em>verschiedenen</em> Zahlen \( \tfrac{1+2+3+4+6}{5}=3{,}2 \) zu nehmen, ist falsch
+— die \( 2 \) ist wahrscheinlicher und muss doppelt
+eingehen. Richtig: über alle <strong>sechs Flächen</strong> mitteln
+\( \Rightarrow 3 \).</li>
+</ul>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--bedeutung-des-erwartungswerts-faires-spiel-augensumme-8-bernoulli-kette"
+class="level3">
+<h3>AB II — Bedeutung des Erwartungswerts, faires Spiel, Augensumme 8,
+Bernoulli-Kette</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>(1) Bedeutung des Erwartungswerts.</strong>
+\( E(X)=3 \) heißt: Würfelt man <strong>sehr oft</strong> mit
+diesem Würfel und bildet den Mittelwert aller geworfenen Augenzahlen, so
+pendelt sich dieser Mittelwert bei <strong>ungefähr
+\( 3 \)</strong> ein. Der Erwartungswert ist also der
+<strong>langfristige Durchschnitt pro Wurf</strong> und zugleich der
+<strong>Schwerpunkt</strong> (Balancepunkt) der Verteilung.</p>
+<p><strong>(2) Ist das Spiel fair?</strong> Regel: Einsatz
+\( 1\,€ \) (immer bezahlt); bei Augenzahl \( 2 \)
+bekommt man \( 3\,€ \) ausgezahlt, sonst ist der Einsatz weg.
+Wir betrachten den <strong>Reingewinn</strong> \( G \)
+(Auszahlung minus Einsatz):</p>
+<ul>
+<li>Augenzahl \( 2 \) (Wahrscheinlichkeit
+\( \tfrac26=\tfrac13 \)): Auszahlung \( 3\,€ \), also Reingewinn
+\( 3-1 = +2\,€ \).</li>
+<li>sonst (Wahrscheinlichkeit \( \tfrac46=\tfrac23 \)): Einsatz verloren,
+Reingewinn \( -1\,€ \).</li>
+</ul>
+<p>\[ E(G) = \tfrac13\cdot(+2) + \tfrac23\cdot(-1) = \tfrac{2}{3} - \tfrac{2}{3} = 0. \]</p>
+<p>Der erwartete Reingewinn ist \( 0\,€ \) — das Spiel ist
+<strong>fair</strong>.</p>
+<p><strong>(3) Augensumme \( 8 \) beim zweimaligen
+Würfeln.</strong> Beide Würfe sind <strong>unabhängig</strong>. Gesucht
+sind alle Wege, wie die beiden Augenzahlen zusammen \( 8 \)
+ergeben: \( 2{+}6 \), \( 6{+}2 \) und
+\( 4{+}4 \). Wahrscheinlichkeiten der einzelnen Würfe einsetzen
+(mit \( P(2)=\tfrac26 \), \( P(6)=\tfrac16 \),
+\( P(4)=\tfrac16 \)):</p>
+<p>\[ P(\text{Summe }8) = \underbrace{\tfrac26\cdot\tfrac16}_{2,\ \text{dann}\ 6}
+   + \underbrace{\tfrac16\cdot\tfrac26}_{6,\ \text{dann}\ 2}
+   + \underbrace{\tfrac16\cdot\tfrac16}_{4,\ \text{dann}\ 4}
+   = \tfrac{2}{36}+\tfrac{2}{36}+\tfrac{1}{36} = \tfrac{5}{36} \approx 0{,}14. \]</p>
+<p><strong>(4) Ein Zufallsexperiment, das eine Bernoulli-Kette
+ist.</strong> Zum Beispiel: <strong>Würfle den Würfel
+\( 10 \)-mal und notiere jedes Mal nur, ob eine
+„\( 2 \)" fällt (Treffer) oder nicht (Niete).</strong>
+Jeder Wurf hat genau zwei Ausgänge, die Treffer-Wahrscheinlichkeit ist
+immer \( p=\tfrac13 \), und die Würfe beeinflussen sich nicht. Das
+ist eine <strong>Bernoulli-Kette</strong> der Länge
+\( 10 \); die Trefferzahl ist
+\( B(10;\,\tfrac13) \)-verteilt.</p>
+<details><summary>Haltung dahinter: Was heißt „Bedeutung" des Erwartungswerts wirklich?</summary>
+
+<p>Der Erwartungswert ist <strong>kein</strong> Versprechen für den
+einzelnen Wurf. \( E(X)=3 \) bedeutet <strong>nicht</strong>,
+dass man „meistens eine \( 3 \) würfelt". Es ist ein
+<strong>Durchschnitt über sehr viele Würfe</strong>: Trägt man nach
+jedem Wurf den bisherigen Mittelwert auf, so nähert er sich mit
+wachsender Wurfzahl der \( 3 \). Bild: der
+<strong>Schwerpunkt</strong> der Balken — die Stelle, an der die
+Verteilung „im Gleichgewicht" wäre, wenn die Balken Gewichte auf einem
+Brett wären.</p>
+</details>
+
+<details><summary>Haltung dahinter: Was bedeutet „faires Spiel", und warum der Reingewinn? (ganz von vorn)</summary>
+
+<p><strong>Fair</strong> heißt: Auf lange Sicht gewinnt <strong>keine
+Seite</strong> im Mittel — der erwartete Reingewinn der spielenden
+Person ist \( 0 \). Ist er positiv, lohnt sich das Spiel
+für die spielende Person; ist er negativ, verliert sie im Schnitt.</p>
+<p>Wichtig ist, den <strong>Reingewinn</strong> zu betrachten, nicht die
+Auszahlung allein. Der Einsatz von \( 1\,€ \) wird <strong>in
+jedem</strong> Fall bezahlt. Gewinnt man, bekommt man
+\( 3\,€ \) zurück — der Reingewinn ist also
+\( 3-1=+2\,€ \), nicht \( +3\,€ \). Verliert man, ist der
+Einsatz weg: \( -1\,€ \).</p>
+<details><summary>Ganz langsam (mit Zahlen)</summary>
+
+<ul>
+<li>Wahrscheinlichkeit für „\( 2 \)": Es gibt
+<strong>zwei</strong> Flächen mit \( 2 \), also
+\( \tfrac26=\tfrac13 \).</li>
+<li>Reingewinn dabei: \( +2\,€ \).</li>
+<li>Wahrscheinlichkeit für „keine \( 2 \)":
+\( 1-\tfrac13 = \tfrac23 \). Reingewinn: \( -1\,€ \).</li>
+<li>\( E(G) = \tfrac13\cdot 2 + \tfrac23\cdot(-1) = \tfrac{2}{3} - \tfrac{2}{3} = 0 \).</li>
+</ul>
+<p>Genau null — das Spiel ist fair. (Hinweis zur Lesart: „Gewinn
+\( 3\,€ \)" ist hier als <strong>Auszahlung</strong> von
+\( 3\,€ \) verstanden. Dass exakt \( 0 \)
+herauskommt, bestätigt diese Lesart — die Zahlen sind ersichtlich so
+gewählt.)</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Augensumme — warum mal, warum die zwei Reihenfolgen? (ganz von vorn)</summary>
+
+<p><strong>Augensumme</strong> ist die Summe der beiden geworfenen
+Zahlen. Damit \( 8 \) herauskommt, müssen die beiden Würfe
+zusammenpassen.</p>
+<p><strong>Unabhängigkeit → multiplizieren.</strong> Die zwei Würfe
+beeinflussen sich nicht. Für „erst dies, <strong>dann</strong> das"
+multipliziert man die Einzelwahrscheinlichkeiten — wie ein zweistufiger
+Baum, bei dem man die Wahrscheinlichkeiten entlang des Astes
+malnimmt.</p>
+<p><strong>Verschiedene Möglichkeiten → addieren.</strong> Es gibt
+mehrere Wege zur \( 8 \), und sie schließen sich
+gegenseitig aus. Verschiedene Wege werden <strong>addiert</strong>.
+Welche Wege gibt es?</p>
+<ul>
+<li>\( 2 \) und \( 6 \): einmal „erst
+\( 2 \), dann \( 6 \)", einmal „erst
+\( 6 \), dann \( 2 \)" — das sind
+<strong>zwei</strong> verschiedene Reihenfolgen.</li>
+<li>\( 4 \) und \( 4 \): nur
+<strong>eine</strong> Möglichkeit (beide Würfe
+\( 4 \)).</li>
+</ul>
+<p>\( 5{+}3 \) oder \( 7{+}1 \) gehen nicht (eine
+\( 5 \) oder \( 7 \) gibt es nicht),
+\( 6{+}2 \) ist schon gezählt.</p>
+<details><summary>Ganz langsam (mit Zahlen)</summary>
+
+<p>\[ \tfrac26\cdot\tfrac16 = \tfrac{2}{36};\qquad \tfrac16\cdot\tfrac26 = \tfrac{2}{36};\qquad
+   \tfrac16\cdot\tfrac16 = \tfrac{1}{36}. \]</p>
+<p>Summe: \( \tfrac{2}{36}+\tfrac{2}{36}+\tfrac{1}{36} = \tfrac{5}{36} \approx 0{,}14 \).</p>
+<p>Gleicher Weg „von Hand": Beim zweimaligen Würfeln gibt es
+\( 6\cdot 6 = 36 \) gleich wahrscheinliche Flächen-Paare. Günstig sind
+\( (2{,}6),(2{,}6),(6{,}2),(6{,}2),(4{,}4) \) — die zwei \( 2 \)-Flächen erzeugen
+die Doppelungen, macht \( 5 \) günstige von
+\( 36 \): \( \tfrac{5}{36} \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<ul>
+<li><strong>Nur eine Reihenfolge</strong> zählen (\( 2{+}6 \)
+ohne \( 6{+}2 \)) — dann fehlt die Hälfte.</li>
+<li><strong>Die doppelte \( 2 \) vergessen</strong> —
+\( P(2) \) ist \( \tfrac26 \), nicht
+\( \tfrac16 \).</li>
+<li><strong>Mit einer „\( 5 \)" rechnen</strong>
+(\( 5{+}3 \)) — die gibt es auf diesem Würfel nicht.</li>
+</ul>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Was macht etwas zu einer „Bernoulli-Kette"? (ganz von vorn)</summary>
+
+<p>Ein <strong>Bernoulli-Versuch</strong> ist ein Zufallsversuch mit
+<strong>genau zwei</strong> Ausgängen, die man <strong>Treffer</strong>
+und <strong>Niete</strong> nennt, mit einer festen
+Treffer-Wahrscheinlichkeit \( p \). Eine
+<strong>Bernoulli-Kette</strong> ist derselbe Versuch <strong>mehrfach
+hintereinander</strong>, wobei</p>
+<ul>
+<li>die Wiederholungen <strong>unabhängig</strong> sind (eine
+beeinflusst die nächste nicht) und</li>
+<li>\( p \) <strong>bei jedem Mal gleich</strong>
+bleibt.</li>
+</ul>
+<p>Unser Würfel hat eigentlich sechs Ausgänge — für eine Bernoulli-Kette
+muss man ihn auf <strong>zwei</strong> Ausgänge „eindampfen", indem man
+die Würfe in zwei Gruppen einteilt. Beispiele:</p>
+<ul>
+<li>Treffer = „eine \( 2 \)", Niete = „keine
+\( 2 \)" \( \Rightarrow p=\tfrac13 \).</li>
+<li>Treffer = „gerade Zahl" (\( 2, 2, 4, 6 \)), Niete = „ungerade"
+(\( 1, 3 \)) \( \Rightarrow p=\tfrac46=\tfrac23 \).</li>
+<li>Treffer = „eine \( 6 \)", Niete = „keine
+\( 6 \)" \( \Rightarrow p=\tfrac16 \).</li>
+</ul>
+<p>Würfelt man dann \( n \)-mal und zählt die Treffer, ist
+man bei einer Bernoulli-Kette (Trefferzahl binomialverteilt). (Mehr: <a
+href="konv-91-werkzeugkasten-stochastik.html#bernoulli-kette">Werkzeugkasten
+Stochastik</a>.)</p>
+</details>
+</details>
+
+</section>
+<section id="ab-iii--zwei-aussagen-beurteilen" class="level3">
+<h3>AB III — zwei Aussagen beurteilen</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Beurteilung anzeigen</summary>
+
+<p><strong>Aussage 1: „Der Erwartungswert ist der Wert, der am
+wahrscheinlichsten ist."</strong> Diese Aussage ist
+<strong>falsch</strong>. Der Erwartungswert ist der <strong>langfristige
+Durchschnitt</strong>, nicht der häufigste Wert (das wäre der
+<strong>Modus</strong>). Gegenbeispiel mit unserem Würfel: Der
+wahrscheinlichste Wert ist die <strong>\( 2 \)</strong>
+(mit \( \tfrac26 \) der höchste Balken), der Erwartungswert ist
+aber \( E(X)=3 \), und ausgerechnet \( P(X{=}3)=\tfrac16 \) ist
+klein. Erwartungswert und „wahrscheinlichster Wert" sind hier also
+<strong>verschieden</strong> — die Aussage stimmt nicht.</p>
+<p><strong>Aussage 2: „Sechs Sechser bei \( 100 \) Würfen —
+ich zweifle an der Fairness."</strong> Diese Skepsis ist
+<strong>berechtigt</strong>. Bei einem fairen Würfel zeigt genau eine
+Fläche die \( 6 \), also \( p=\tfrac16 \). Die Anzahl
+\( Y \) der Sechser bei \( 100 \) Würfen ist
+\( B(100;\,\tfrac16) \)-verteilt mit</p>
+<p>\[ \mu = n\,p = 100\cdot\tfrac16 \approx 16{,}7, \qquad
+   \sigma = \sqrt{n\,p\,(1-p)} = \sqrt{100\cdot\tfrac16\cdot\tfrac56} = \sqrt{\tfrac{500}{36}} \approx 3{,}7. \]</p>
+<p>Erwartet wären also rund \( 17 \) Sechser. Beobachtet
+wurden nur <strong>\( 6 \)</strong> — das liegt weit
+darunter. Mit der <strong>\( 2\sigma \)-Regel</strong> (etwa
+\( 95\,\% \) der Werte liegen in \( [\mu-2\sigma;\ \mu+2\sigma] \)):</p>
+<p>\[ [\,\mu-2\sigma;\ \mu+2\sigma\,] \approx [\,16{,}7 - 7{,}5;\ 16{,}7 + 7{,}5\,] = [\,9{,}2;\ 24{,}1\,]. \]</p>
+<p>\( 6 \) liegt <strong>außerhalb</strong> dieses Bereichs
+(sogar fast \( 3\sigma \) unter dem Erwartungswert). Ein so
+kleiner Wert ist für einen fairen Würfel <strong>sehr
+unwahrscheinlich</strong>. Der Zweifel an der Fairness ist damit
+statistisch gut begründet — wobei ein seltenes Ergebnis kein
+<strong>Beweis</strong> ist, sondern ein <strong>starker
+Hinweis</strong>.</p>
+<div class="jxgbox" id="jxg-k5-binom" style="width:100%;max-width:520px;aspect-ratio:3/2"></div>
+<script>window.__jxg(function(){(function(){var m=100/6,s=Math.sqrt(500/36);var dn=function(x){return 1/(s*Math.sqrt(2*Math.PI))*Math.exp(-((x-m)*(x-m))/(2*s*s));};var b=JXG.JSXGraph.initBoard('jxg-k5-binom',{boundingbox:[-2,0.14,36,-0.028],axis:true,showCopyright:false,showNavigation:false});var c=b.create('functiongraph',[dn,0,36],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[m-2*s,m+2*s],c],{fillColor:'#3a8a5a',fillOpacity:0.12,withLabel:false,curveLeft:{visible:false,withLabel:false},curveRight:{visible:false,withLabel:false},baseLeft:{visible:false},baseRight:{visible:false}});b.create('segment',[[m,0],[m,dn(m)]],{strokeColor:'#3a5a9c',strokeWidth:1.4,dash:2});b.create('segment',[[m-2*s,0],[m-2*s,dn(m-2*s)]],{strokeColor:'#3a8a5a',strokeWidth:1.4,dash:3});b.create('segment',[[m+2*s,0],[m+2*s,dn(m+2*s)]],{strokeColor:'#3a8a5a',strokeWidth:1.4,dash:3});b.create('segment',[[6,0],[6,0.106]],{strokeColor:'#b03a2e',strokeWidth:2.4});b.create('text',[6.4,0.126,'beobachtet: 6'],{fontSize:12,strokeColor:'#b03a2e'});b.create('text',[17.4,0.118,'μ ≈ 16,7'],{fontSize:12,strokeColor:'#26324a'});b.create('text',[9.4,0.055,'μ−2σ ≈ 9,2'],{fontSize:11,strokeColor:'#3a8a5a'});b.create('text',[24.4,0.055,'μ+2σ ≈ 24,1'],{fontSize:11,strokeColor:'#3a8a5a'});})();});</script>
+
+<figcaption style="font-size:0.9em;color:#5a5346">Anzahl der Sechser bei \( 100 \) Würfen, angenähert
+durch eine Glockenkurve (Erwartungswert \( \mu\approx 16{,}7 \)). Der grüne Bereich ist
+\( [\mu-2\sigma;\ \mu+2\sigma] \) — dort liegen rund \( 95\,\% \) der Werte. Die Beobachtung \( 6 \)
+(rot) liegt klar links davon.</figcaption>
+
+<details><summary>Haltung dahinter: Erwartungswert vs. wahrscheinlichster Wert — der Unterschied</summary>
+
+<p>Zwei verschiedene „typische Werte" einer Verteilung:</p>
+<ul>
+<li><strong>Modus</strong> = der <strong>häufigste</strong> Wert (der
+höchste Balken). Hier: die \( 2 \).</li>
+<li><strong>Erwartungswert</strong> = der <strong>Durchschnitt</strong>
+auf lange Sicht (der Schwerpunkt). Hier: \( 3 \).</li>
+</ul>
+<p>Die beiden müssen nicht zusammenfallen. Noch deutlicher beim normalen
+Würfel \( 1\)–\(6 \): Dort sind alle Werte
+gleich häufig (es gibt keinen einzelnen „wahrscheinlichsten"), aber
+\( E(X)=\tfrac{1+2+3+4+5+6}{6}=3{,}5 \) — und eine „\( 3{,}5 \)" kann man
+<strong>gar nicht würfeln</strong>. Ein Erwartungswert muss also nicht
+einmal ein <strong>möglicher</strong> Wert sein. Das widerlegt die
+Aussage endgültig.</p>
+</details>
+
+<details><summary>Haltung dahinter: Erwartung, Streuung und die \( 2\sigma \)-Regel (ganz von vorn)</summary>
+
+<p><strong>Erwartete Trefferzahl.</strong> Bei \( 100 \)
+Würfen und \( p=\tfrac16 \) erwartet man im Mittel
+\( 100\cdot\tfrac16\approx 16{,}7 \) Sechser. Das ist die „normale" Größenordnung.</p>
+<p><strong>Streuung \( \sigma \).</strong> Natürlich kommt
+selten <strong>exakt</strong> \( 16{,}7 \) heraus — die
+Trefferzahl schwankt um diesen Wert. Wie stark sie typischerweise
+schwankt, misst die <strong>Standardabweichung</strong>
+\( \sigma=\sqrt{n\,p\,(1-p)} \). Hier \( \sigma=\sqrt{100\cdot\tfrac16\cdot\tfrac56}=\sqrt{\tfrac{500}{36}}\approx 3{,}7 \). Eine Abweichung von
+ein, zwei \( \sigma \) ist normal.</p>
+<p><strong>\( 2\sigma \)-Regel.</strong> Als Faustregel liegen
+rund \( 95\,\% \) aller Ergebnisse im Bereich
+\( \mu\pm 2\sigma \), hier \( [\,9{,}2;\ 24{,}1\,] \). Werte
+<strong>außerhalb</strong> sind selten (zusammen rund
+\( 5\,\% \)). \( 6 \) liegt außerhalb — und zwar
+deutlich. Für einen fairen Würfel wäre „nur \( 6 \)
+Sechser" also ein ungewöhnlich seltenes Ergebnis; deshalb ist der
+Zweifel an der Fairness berechtigt.</p>
+<details><summary>Ganz langsam (mit Zahlen)</summary>
+
+<ul>
+<li>\( \mu = 100\cdot\tfrac16 = \tfrac{100}{6} \approx 16{,}67 \).</li>
+<li>\( n\,p\,(1-p) = 100\cdot\tfrac16\cdot\tfrac56 = \tfrac{500}{36} \approx 13{,}9 \), also \( \sigma=\sqrt{13{,}9}\approx 3{,}7 \).</li>
+<li>\( 2\sigma \approx 7{,}5 \); Bereich \( [16{,}7-7{,}5;\ 16{,}7+7{,}5] = [9{,}2;\ 24{,}1] \).</li>
+<li>Abstand der Beobachtung: \( 16{,}7-6 = 10{,}7 \), das sind
+\( \tfrac{10{,}7}{3{,}7}\approx 2{,}9 \) Standardabweichungen unter dem Erwartungswert. So
+weit weg ist selten.</li>
+</ul>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<ul>
+<li><strong>„Jede Abweichung von \( 16{,}7 \) bedeutet
+unfair."</strong> Falsch — die Trefferzahl schwankt von Natur aus um
+\( \sigma\approx 3{,}7 \). Erst eine Abweichung <strong>deutlich über
+\( 2\sigma \)</strong> ist auffällig.</li>
+<li><strong>„Damit ist bewiesen, dass der Würfel unfair ist."</strong>
+Auch falsch — es ist ein <strong>starker Hinweis</strong>, keine
+Gewissheit. Seltene Ergebnisse kommen auch bei fairen Würfeln vor, nur
+eben selten.</li>
+</ul>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>a) Ablesen.</strong> Erwartet: \( f'(2) \) als
+<strong>Steigung</strong> über eine Tangente \( \approx -1 \); das
+Integral als <strong>Fläche</strong> über
+<strong>Kästchenzählen</strong> \( \approx 19\cdot 0{,}25 = 4{,}75 \).
+<em>Rückfrage:</em> „Was ist der Unterschied zwischen
+\( f(2) \) und \( f'(2) \)?" <em>Rote Flagge:</em>
+Kästchen mit Flächeninhalt \( 1 \) gezählt (statt
+\( 0{,}25 \)).</li>
+<li><strong>b) Höhe.</strong> Erwartet: Das Integral ist der
+<strong>Zuwachs</strong> in cm; Höhe \( = 20 + 4{,}75 = 24{,}75 \) cm.
+<em>Rückfrage:</em> „Warum darf man die Fläche unter der Rate einfach
+zur Starthöhe addieren?" (Antwort: Rate mal Zeit ergibt Länge —
+Tacho/Strecke.)</li>
+<li><strong>c) Stärkste Abnahme.</strong> Erwartet:
+\( f''(t)=8(t-2)e^{-t} \), Ansatz \( f''=0 \Rightarrow t=2 \), kurz begründet als
+<strong>Wendepunkt / Minimum von \( f' \)</strong>. <em>Rote
+Flagge:</em> \( f'=0 \) gesetzt (das liefert
+\( t=1 \), das Maximum der Rate). <em>Rückfrage:</em> „Welche
+Ableitung beschreibt, wie stark die Rate <em>fällt</em>?"</li>
+<li><strong>d) Fragestellung + Grafik.</strong> Erwartet: sinnvolle
+Frage wie „In welchem \( 1 \)-Tages-Zeitraum wächst die
+Pflanze um \( 2{,}5 \) cm?"; grafisch ein <strong>Streifen der
+Breite \( 1 \)</strong>, verschoben bis die Fläche
+\( 2{,}5 \) ist, <strong>linker Rand = Lösung</strong>.
+<em>Hinweis für dich:</em> Ein <strong>beschriebenes Verfahren</strong>
+ist hier die volle Antwort; einen exakten Zahlenwert braucht es
+nicht.</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Stochastik) aufklappen</summary>
+
+<ul>
+<li><strong>\( P(X \lt 4) \), \( E(X) \).</strong>
+Erwartet: \( P(X \lt 4)=\tfrac46=\tfrac23 \) (Werte \( 1, 2, 3 \), die
+\( 2 \) doppelt); \( E(X)=\tfrac{1+2+2+3+4+6}{6}=3 \). <em>Rückfrage:</em>
+„Warum zählt die \( 2 \) doppelt?" <em>Rote Flagge:</em>
+die \( 4 \) bei \( P(X \lt 4) \) mitgenommen.</li>
+<li><strong>Bedeutung \( E \) / faires Spiel.</strong>
+Erwartet: \( E(X) \) = <strong>langfristiger
+Durchschnitt</strong>; Spiel über <strong>erwarteten Reingewinn</strong>
+\( E(G)=\tfrac13\cdot 2 + \tfrac23\cdot(-1) = 0 \Rightarrow \) <strong>fair</strong>. <em>Rückfrage:</em> „Wie
+hoch ist der Reingewinn, wenn man gewinnt — \( 3\,€ \) oder
+\( 2\,€ \)?" (Antwort: \( 2\,€ \), der Einsatz ist
+schon bezahlt.)</li>
+<li><strong>Augensumme \( 8 \).</strong> Erwartet:
+\( 2{+}6,\ 6{+}2,\ 4{+}4 \); \( P=\tfrac{5}{36} \). <em>Rote Flagge:</em> nur
+eine Reihenfolge gezählt oder \( P(2)=\tfrac16 \) angesetzt.
+<em>Rückfrage:</em> „Wie viele Möglichkeiten gibt es, mit zwei Würfen
+auf \( 8 \) zu kommen?"</li>
+<li><strong>Bernoulli-Kette.</strong> Erwartet: Versuch auf <strong>zwei
+Ausgänge</strong> reduziert (z. B. „\( 2 \) / keine
+\( 2 \)"), \( n \)-mal
+<strong>unabhängig</strong> mit <strong>festem
+\( p \)</strong>. <em>Rückfrage:</em> „Was ist hier der
+Treffer, und wie groß ist \( p \)?"</li>
+<li><strong>AB III, Aussage 1.</strong> Erwartet:
+<strong>falsch</strong> — Erwartungswert (\( 3 \)) ist
+nicht der häufigste Wert (\( 2 \)); ein E-Wert muss nicht
+einmal vorkommen können. <em>Rückfrage:</em> „Welche Augenzahl ist am
+wahrscheinlichsten — und wie groß ist \( E(X) \)?"</li>
+<li><strong>AB III, Aussage 2.</strong> Erwartet: erwartete Sechser
+\( \approx 17 \), \( \sigma\approx 3{,}7 \), \( 6 \) liegt
+<strong>außerhalb</strong> \( [\,9{,}2;\ 24{,}1\,] \Rightarrow \) Zweifel
+<strong>berechtigt</strong> (Hinweis, kein Beweis). <em>Rückfrage:</em>
+„Wie viele Sechser würde man bei einem fairen Würfel erwarten?"</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Wie liest du \( f'(2) \) und das Integral
+\( \int_0^2 f\,dt \) aus dem Bild ab — und was misst jedes von beiden im
+Sachzusammenhang?</li>
+<li>Warum ist die Fläche unter der Wachstumsrate genau der Höhenzuwachs
+der Pflanze?</li>
+<li>Welche Ableitung setzt du null, um die <strong>stärkste
+Abnahme</strong> der Wachstumsrate zu finden, und warum?</li>
+<li>Warum zählt die Augenzahl \( 2 \) bei diesem Würfel
+doppelt, und wie wirkt sich das auf \( E(X) \) aus?</li>
+<li>Woran erkennst du, dass das Spiel fair ist — und warum ist der
+Gewinnfall \( +2\,€ \) und nicht \( +3\,€ \)?</li>
+<li>Warum sind sechs Sechser bei \( 100 \) Würfen ein guter
+Grund, an der Fairness zu zweifeln?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

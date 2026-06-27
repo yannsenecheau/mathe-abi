@@ -1,0 +1,950 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 8 — Geometrie &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link active" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Geometrie</strong>, <strong>Teil 2 (Gespräch) aus der Analysis</strong>.
+Alles ist <strong>rechnerfrei</strong> zu lösen — wo ein Zahlenwert
+eines Winkels auftaucht, genügt der exakte Ausdruck (z. B.
+\( \cos\alpha = \tfrac{1}{\sqrt5} \)), der Dezimalwert ist Nebensache. Arbeitet die
+Aufgabe wie eine echte Simulation durch — eine Person trägt vor, die
+andere prüft mit dem Lösungsweg und dem <a
+href="#prufer-leitfaden-fur-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Vektor- und Geometrie-Werkzeuge (Punkte, Vektoren, Länge, Skalarprodukt,
+Normalenvektor, Ebenengleichung, Schnittwinkel) stehen kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a> (u. a. <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">Skalarprodukt</a>).
+Die Analysis-Werkzeuge für Teil 2 findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<hr />
+<section
+id="teil-1--vortrag-geometrie-spiegelebene-ebene-zeichnen-schnittwinkel"
+class="level2">
+<h2>Teil 1 — Vortrag (Geometrie): Spiegelebene, Ebene zeichnen,
+Schnittwinkel</h2>
+<div class="aufgabenkasten">
+
+<p><strong>a)</strong> Gegeben sind die Punkte \( A(2\,|\,3\,|\,-2) \) und
+\( B(0\,|\,1\,|\,6) \). Bestimme die Koordinaten des <strong>Mittelpunkts
+der Strecke \( AB \)</strong>. \( A \) und
+\( B \) liegen <strong>spiegelbildlich bezüglich einer Ebene
+\( E \)</strong>. Bestimme eine <strong>Koordinatengleichung
+von \( E \)</strong>.</p>
+<p><strong>Gegeben ist die Ebene \( F:\ 2x_1 + x_2 = 4 \).</strong></p>
+<p><strong>b)</strong> <strong>Skizziere die Ebene
+\( F \)</strong> im Koordinatensystem. Ermittle eine
+<strong>Gleichung der Geraden</strong>, die sowohl in
+\( F \) als auch in der \( x_1x_2 \)-Ebene liegt.</p>
+<p><strong>c)</strong> Berechne die <strong>Größe des Winkels</strong>,
+unter dem \( F \) die \( x_1x_3 \)-Ebene schneidet.
+Durch Ersetzen des Koeffizienten \( 2 \) in der
+Ebenengleichung von \( F \) durch eine reelle Zahl
+\( a \) mit \( a\neq 0 \) verändert sich der
+Schnittwinkel der Ebene mit der \( x_1x_3 \)-Ebene. Bestimme
+einen <strong>Wert von \( a \)</strong>, für den dieser
+Schnittwinkel \( 45^\circ \) groß ist. Untersuche, <strong>welche
+Größe</strong> dieser Schnittwinkel für \( a\neq 0 \) annehmen
+kann.</p>
+</div>
+
+<blockquote>
+<p><strong>Vorab, in einem Satz, was ein Koordinatensystem im Raum
+ist:</strong> Statt nur „rechts/links" und „oben/unten" (zwei Zahlen)
+braucht man im Raum <strong>drei</strong> Zahlen pro Punkt —
+\( (x_1 \mid x_2 \mid x_3) \) —, weil es zusätzlich „vorne/hinten" gibt. Ein Punkt
+wie \( A(2\,|\,3\,|\,-2) \) heißt: 2 Schritte in
+\( x_1 \)-Richtung, 3 in \( x_2 \), 2
+<strong>zurück</strong> in \( x_3 \) (das Minus). Alle
+Vektor-Werkzeuge stehen kompakt im <a
+href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten
+Geometrie</a>.</p>
+</blockquote>
+<section id="teilaufgabe-a--mittelpunkt-und-spiegelebene"
+class="level3">
+<h3>Teilaufgabe a) — Mittelpunkt und Spiegelebene</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span>  
+<span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<p>So liegen die beiden Punkte zur gesuchten Spiegelebene (schematisch,
+„von der Seite" betrachtet):</p>
+<figure>
+<svg viewBox="0 0 480 300" role="img" aria-label="Schema: A und B liegen spiegelbildlich zur Ebene E, M ist der Mittelpunkt von AB" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs><marker id="k8ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker></defs>
+  <line x1="240" y1="40" x2="240" y2="252" stroke="#3a5a9c" stroke-width="2.4"/>
+  <text x="248" y="54" font-size="13" fill="#3a5a9c" font-weight="bold">Ebene E (Spiegel)</text>
+  <line x1="95" y1="150" x2="385" y2="150" stroke="#26324a" stroke-width="1.6"/>
+  <path d="M240,134 L256,134 L256,150" fill="none" stroke="#7a7163" stroke-width="1.2"/>
+  <circle cx="95" cy="150" r="4.5" fill="#d98324"/><text x="62" y="139" font-size="12" fill="#26324a">A(2|3|−2)</text>
+  <circle cx="385" cy="150" r="4.5" fill="#d98324"/><text x="352" y="139" font-size="12" fill="#26324a">B(0|1|6)</text>
+  <circle cx="240" cy="150" r="3.8" fill="#3a5a9c"/><text x="216" y="172" font-size="12" fill="#26324a">M(1|2|2)</text>
+  <text x="142" y="143" font-size="11.5" fill="#3a8a5a">gleich weit</text>
+  <text x="282" y="143" font-size="11.5" fill="#3a8a5a">gleich weit</text>
+  <path d="M118,178 C180,210 300,210 362,178" fill="none" stroke="#b03a2e" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#k8ah)"/>
+  <text x="172" y="230" font-size="12" fill="#b03a2e">Spiegelung an E bildet A auf B ab</text>
+</svg>
+<figcaption>Die Spiegelebene \( E \) steht senkrecht auf \( AB \) und geht genau durch den Mittelpunkt \( M \).</figcaption>
+</figure>
+
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — Mittelpunkt \( M \) der Strecke
+\( AB \).</strong> Den Mittelpunkt bekommt man, indem man die
+Ortsvektoren der Endpunkte addiert und halbiert:</p>
+<p>\[ \overrightarrow{OM} = \tfrac12\big(\overrightarrow{OA} + \overrightarrow{OB}\big)
+   = \tfrac12\left(\begin{pmatrix}2\\3\\-2\end{pmatrix} + \begin{pmatrix}0\\1\\6\end{pmatrix}\right)
+   = \tfrac12\begin{pmatrix}2\\4\\4\end{pmatrix}
+   = \begin{pmatrix}1\\2\\2\end{pmatrix},
+   \qquad \text{also } M(1\,|\,2\,|\,2). \]</p>
+<p><strong>Schritt 2 — Normalenvektor der Spiegelebene.</strong>
+Spiegelt man \( A \) an der Ebene \( E \) und
+landet genau auf \( B \), dann steht die Verbindung
+\( \overrightarrow{AB} \) <strong>senkrecht</strong> auf \( E \) —
+sie ist ein <strong>Normalenvektor</strong>:</p>
+<p>\[ \overrightarrow{AB} = B - A = \begin{pmatrix}0-2\\1-3\\6-(-2)\end{pmatrix} = \begin{pmatrix}-2\\-2\\8\end{pmatrix}. \]</p>
+<p>Man darf diesen Vektor durch \( -2 \) teilen — das ändert
+nur die Länge, nicht die Richtung:</p>
+<p>\[ \vec n = \begin{pmatrix}1\\1\\-4\end{pmatrix}. \]</p>
+<p><strong>Schritt 3 — Koordinatengleichung aufstellen.</strong> Mit dem
+Normalenvektor steht die linke Seite fest: \( x_1 + x_2 - 4x_3 = d \). Die
+rechte Zahl \( d \) findet man, indem man einen bekannten
+Ebenenpunkt einsetzt — \( E \) geht durch
+\( M(1|2|2) \):</p>
+<p>\[ 1 + 2 - 4\cdot 2 = 3 - 8 = -5. \]</p>
+<p>\[ \boxed{\,E:\ x_1 + x_2 - 4x_3 = -5\,} \]</p>
+<details><summary>Haltung dahinter: Was ist ein Vektor, und warum ist der Mittelpunkt der „Durchschnitt"? (ganz von vorn)</summary>
+
+<p>Ganz langsam, ohne Vorwissen.</p>
+<p><strong>Punkt und Ortsvektor.</strong> Ein <strong>Punkt</strong> ist
+ein Ort im Raum, festgelegt durch drei Zahlen \( (x_1\mid x_2\mid x_3) \). Den
+<strong>Ortsvektor</strong> \( \overrightarrow{OA} \) kann man sich als Pfeil
+vom Ursprung \( O(0|0|0) \) zum Punkt \( A \)
+vorstellen; seine drei Zahlen sind genau die Koordinaten von
+\( A \). Rechnen tut man mit den drei Zahlen einzeln (Zeile
+für Zeile).</p>
+<p><strong>Mittelpunkt = Durchschnitt zweier Orte.</strong> Der Punkt
+genau zwischen zwei Orten liegt bei ihrem <strong>Durchschnitt</strong>:
+addieren und durch zwei teilen. Bei einer einzelnen Zahl ist der Wert
+zwischen \( 2 \) und \( 0 \) genau
+\( \tfrac{2+0}{2}=1 \). Im Raum macht man das einfach für alle drei
+Koordinaten gleichzeitig.</p>
+<details><summary>… ganz langsam (mit Zahlen)</summary>
+
+<p>\( A=(2,3,-2) \), \( B=(0,1,6) \). Erst Zeile für Zeile
+addieren:</p>
+<ul>
+<li>\( x_1 \): \( 2+0 = 2 \)</li>
+<li>\( x_2 \): \( 3+1 = 4 \)</li>
+<li>\( x_3 \): \( -2 + 6 = 4 \) (eine Schuld von 2 plus ein
+Guthaben von 6 ergibt 4)</li>
+</ul>
+<p>Das ergibt \( (2,4,4) \). Jetzt halbieren (jede Zahl durch 2):
+\( (1,2,2) \). Also \( M(1\,|\,2\,|\,2) \).</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Warum ist \( \overrightarrow{AB} \) der Normalenvektor, und woher kommt das \( d=-5 \)?</summary>
+
+<p>Das ist der Kern dieser Aufgabe, deshalb wirklich Stück für
+Stück.</p>
+<p><strong>Was heißt „spiegelbildlich bezüglich
+\( E \)"?</strong> Stell dir \( E \) als
+senkrechten Spiegel vor. Spiegelt man Punkt \( A \) daran,
+landet er bei \( B \). Bei einem Spiegel gilt immer
+zweierlei: (1) Der Spiegel steht <strong>senkrecht</strong> auf der
+Verbindungslinie zwischen Original und Spiegelbild. (2) Der Spiegel
+schneidet diese Linie <strong>genau in der Mitte</strong> (Original und
+Bild sind gleich weit vom Spiegel entfernt). Genau diese beiden
+Tatsachen liefern uns alles, was wir brauchen.</p>
+<p><strong>Vektor \( \overrightarrow{AB} \) als „Ziel minus Start".</strong>
+Den Pfeil von \( A \) nach \( B \) rechnet man
+als \( B - A \), Zeile für Zeile. Aus Punkt 1 oben (Spiegel
+senkrecht zur Verbindung) folgt: dieser Pfeil steht senkrecht auf
+\( E \) — er ist ein <strong>Normalenvektor</strong> (ein
+Pfeil, der wie ein Fahnenmast senkrecht aus der Ebene ragt).</p>
+<p><strong>Was bringt der Normalenvektor?</strong> Eine
+<strong>Koordinatengleichung</strong> einer Ebene hat die Form
+\( n_1 x_1 + n_2 x_2 + n_3 x_3 = d \). Das Schöne: Die drei Zahlen des Normalenvektors
+sind <strong>genau</strong> die Koeffizienten \( n_1, n_2, n_3 \) vor
+den \( x \). Kennt man den Normalenvektor, ist die linke
+Seite fertig — es fehlt nur noch die einzelne Zahl \( d \)
+auf der rechten Seite.</p>
+<p><strong>Warum darf man durch \( -2 \) teilen?</strong>
+Ein Normalenvektor zeigt nur eine <strong>Richtung</strong> an; seine
+Länge ist egal. \( (-2,-2,8) \) und \( (1,1,-4) \) zeigen in
+dieselbe Richtung (alle Zahlen durch \( -2 \) geteilt). Die
+kürzeren Zahlen rechnen sich angenehmer.</p>
+<details><summary>… ganz langsam (mit Zahlen): wie kommt \( d=-5 \) heraus?</summary>
+
+<p>Aus Punkt 2 oben (Spiegel durch die Mitte) wissen wir:
+\( E \) geht durch \( M(1|2|2) \). Die Gleichung
+\( x_1 + x_2 - 4x_3 = d \) muss also stimmen, wenn man die Koordinaten von
+\( M \) einsetzt. Einsetzen:</p>
+<p>\[ \underbrace{1}_{x_1} + \underbrace{2}_{x_2} - 4\cdot \underbrace{2}_{x_3}. \]</p>
+<p>Zuerst \( 4\cdot 2 = 8 \). Dann \( 1 + 2 = 3 \). Dann
+\( 3 - 8 = -5 \) (man schuldet mehr, als man hat, deshalb negativ).
+Also \( d = -5 \) und \( E:\ x_1 + x_2 - 4x_3 = -5 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Zwei Stolperstellen. Erstens das <strong>Vorzeichen</strong> im
+Mittelpunkt: \( -2 + 6 = 4 \), nicht \( -8 \) oder
+\( 8 \) — Plus und Minus sauber verrechnen. Zweitens den
+<strong>Punkt für \( d \)</strong>: Man muss
+\( M \) einsetzen (den Mittelpunkt, der wirklich auf der
+Ebene liegt), <strong>nicht</strong> \( A \) oder
+\( B \) — die liegen ja gerade <em>nicht</em> auf dem
+Spiegel, sondern davor und dahinter.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--ebene-zzmathphzz121zzendzz-zeichnen-und-schnittgerade-mit-der-zzmathphzz122zzendzz-ebene"
+class="level3">
+<h3>Teilaufgabe b) — Ebene \( F \) zeichnen und
+Schnittgerade mit der \( x_1x_2 \)-Ebene</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span>  
+<span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<p>So sieht die Ebene \( F:\ 2x_1+x_2=4 \) im Koordinatensystem aus
+(schematisches Schrägbild):</p>
+<figure>
+<svg viewBox="0 0 470 340" role="img" aria-label="Schrägbild der Ebene F, die senkrecht über der Spurgeraden durch S1(2|0|0) und S2(0|4|0) steht" style="width:100%;max-width:480px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs><marker id="k8bh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker></defs>
+  <line x1="180" y1="240" x2="180" y2="48"  stroke="#7a7163" stroke-width="1.5" marker-end="url(#k8bh)"/>
+  <line x1="180" y1="240" x2="432" y2="240" stroke="#7a7163" stroke-width="1.5" marker-end="url(#k8bh)"/>
+  <line x1="180" y1="240" x2="68"  y2="322" stroke="#7a7163" stroke-width="1.5" marker-end="url(#k8bh)"/>
+  <text x="166" y="46"  font-size="13" fill="#7a7163">x₃</text>
+  <text x="436" y="244" font-size="13" fill="#7a7163">x₂</text>
+  <text x="56"  y="328" font-size="13" fill="#7a7163">x₁</text>
+  <polygon points="144,266 300,240 300,128 144,154" fill="#3a5a9c" fill-opacity="0.12" stroke="#3a5a9c" stroke-width="1.6"/>
+  <line x1="144" y1="266" x2="300" y2="240" stroke="#d98324" stroke-width="2.6"/>
+  <circle cx="144" cy="266" r="3.8" fill="#3a5a9c"/><text x="92" y="284" font-size="12" fill="#26324a">S₁(2|0|0)</text>
+  <circle cx="300" cy="240" r="3.8" fill="#3a5a9c"/><text x="306" y="236" font-size="12" fill="#26324a">S₂(0|4|0)</text>
+  <text x="214" y="120" font-size="14" fill="#3a5a9c" font-weight="bold">F</text>
+  <text x="120" y="306" font-size="12" fill="#d98324">Schnittgerade g</text>
+</svg>
+<figcaption>\( F \) enthält kein \( x_3 \), steht also senkrecht über ihrer Spurgeraden \( g \) und verläuft parallel zur \( x_3 \)-Achse.</figcaption>
+</figure>
+
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — \( F \) verstehen und
+zeichnen.</strong> In \( F:\ 2x_1 + x_2 = 4 \) kommt <strong>kein
+\( x_3 \)</strong> vor. Das bedeutet: \( x_3 \)
+darf jeden Wert haben — die Ebene läuft <strong>parallel zur
+\( x_3 \)-Achse</strong> (sie steht „senkrecht" über einer
+Linie am Boden). Zum Zeichnen reichen die beiden
+<strong>Spurpunkte</strong> in der Grundebene:</p>
+<ul>
+<li>Schnitt mit der \( x_1 \)-Achse \( (x_2 = 0,\ x_3 = 0) \):
+\( 2x_1 = 4 \Rightarrow x_1 = 2 \), also \( S_1(2\,|\,0\,|\,0) \).</li>
+<li>Schnitt mit der \( x_2 \)-Achse \( (x_1 = 0,\ x_3 = 0) \):
+\( x_2 = 4 \), also \( S_2(0\,|\,4\,|\,0) \).</li>
+</ul>
+<p>Durch \( S_1 \) und \( S_2 \) zieht man die
+<strong>Spurgerade</strong> und „klappt" die Ebene als senkrechte Wand
+nach oben (siehe Bild).</p>
+<p><strong>Schritt 2 — Gerade, die in \( F \)
+<strong>und</strong> in der \( x_1x_2 \)-Ebene liegt.</strong>
+Die \( x_1x_2 \)-Ebene ist der Boden \( (x_3 = 0) \). Die
+gesuchte Gerade liegt in beiden Flächen — das ist genau die Spurgerade
+durch \( S_1 \) und \( S_2 \). Man schreibt sie
+als <strong>Stützpunkt plus Richtungsvektor</strong>:</p>
+<p>\[ \overrightarrow{S_1S_2} = S_2 - S_1 = \begin{pmatrix}0-2\\4-0\\0-0\end{pmatrix} = \begin{pmatrix}-2\\4\\0\end{pmatrix}, \]</p>
+<p>\[ \boxed{\,g:\ \vec x = \begin{pmatrix}2\\0\\0\end{pmatrix} + t\begin{pmatrix}-2\\4\\0\end{pmatrix},\quad t\in\mathbb{R}\,} \]</p>
+<details><summary>Haltung dahinter: Wieso ist \( 2x_1+x_2=4 \) eine ganze Ebene und keine Gerade?</summary>
+
+<p>Das verwirrt oft, deshalb langsam.</p>
+<p><strong>Im Raum braucht man drei Koordinaten.</strong> Eine Gleichung
+mit \( x_1, x_2, x_3 \) schränkt die erlaubten Punkte ein. Eine
+<strong>einzige</strong> Gleichung lässt noch eine ganze
+<strong>Fläche</strong> zu (eine Ebene), erst <strong>zwei</strong>
+Gleichungen zusammen ergeben eine <strong>Linie</strong> (Gerade).</p>
+<p><strong>Warum die Ebene hier „steht".</strong> In
+\( 2x_1 + x_2 = 4 \) fehlt \( x_3 \). Über jedem Punkt der
+Bodenlinie \( 2x_1+x_2=4 \) ist also <strong>jede Höhe</strong>
+\( x_3 \) erlaubt. Stapelt man alle diese Höhen übereinander,
+entsteht eine senkrechte <strong>Wand</strong>. Bild: ein Bauzaun, der
+einer Linie auf dem Boden folgt und beliebig hoch sein darf.</p>
+<p><strong>Spurpunkt = wo die Ebene eine Achse durchstößt.</strong>
+Setzt man zwei der drei Koordinaten null, landet man auf einer Achse;
+die Gleichung verrät dann den dritten Wert. So findet man
+\( S_1 \) und \( S_2 \) mit ganz wenig
+Rechnung.</p>
+<details><summary>… ganz langsam (mit Zahlen): die beiden Spurpunkte</summary>
+
+<p>Für \( S_1 \) auf der \( x_1 \)-Achse setze
+\( x_2=0 \): aus \( 2x_1 + 0 = 4 \) wird
+\( 2x_1 = 4 \), also \( x_1 = \tfrac{4}{2} = 2 \) → \( S_1(2|0|0) \).
+Für \( S_2 \) auf der \( x_2 \)-Achse setze
+\( x_1=0 \): aus \( 2\cdot 0 + x_2 = 4 \) wird \( x_2 = 4 \)
+→ \( S_2(0|4|0) \). Probe für die Gerade: Setzt man
+\( t=0 \), erhält man \( S_1(2|0|0) \); setzt man
+\( t=1 \), erhält man \( (2,0,0)+(-2,4,0) = (0,4,0) = S_2 \). Beide gewünschten
+Punkte liegen also auf \( g \). ✓</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>\( F \) für eine Gerade zu halten, weil die Gleichung
+„so einfach" aussieht. Im Raum ist eine einzelne lineare Gleichung
+<strong>immer</strong> eine Ebene. Und der
+<strong>Richtungsvektor</strong> der Schnittgeraden ist
+\( S_2 - S_1 = (-2,4,0) \), nicht \( S_1 - S_2 = (2,-4,0) \) — beide zeigen zwar
+entlang derselben Geraden, aber achte beim Aufschreiben darauf, welchen
+Stützpunkt du nimmst (hier \( S_1 \)).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-c--schnittwinkel-mit-der-zzmathphzz179zzendzz-ebene"
+class="level3">
+<h3>Teilaufgabe c) — Schnittwinkel mit der
+\( x_1x_3 \)-Ebene</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span>  
+<span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<p>Schaut man von oben auf den Boden (Blick entlang der
+\( x_3 \)-Achse), erscheinen beide Ebenen als Linien — und
+der Winkel zwischen diesen Linien <strong>ist</strong> der gesuchte
+Schnittwinkel:</p>
+<figure>
+<svg viewBox="0 0 430 300" role="img" aria-label="Draufsicht: Spur von F und Spur der x1x3-Ebene schneiden sich unter etwa 63,4 Grad" style="width:100%;max-width:440px;height:auto;background:#fbf7ef;border-radius:8px">
+  <defs><marker id="k8ch" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7a7163"/></marker></defs>
+  <line x1="60" y1="250" x2="402" y2="250" stroke="#7a7163" stroke-width="1.5" marker-end="url(#k8ch)"/>
+  <line x1="60" y1="250" x2="60"  y2="42"  stroke="#7a7163" stroke-width="1.5" marker-end="url(#k8ch)"/>
+  <text x="406" y="254" font-size="13" fill="#7a7163">x₁</text>
+  <text x="46"  y="44"  font-size="13" fill="#7a7163">x₂</text>
+  <text x="232" y="268" font-size="11.5" fill="#7a7163">Spur der x₁x₃-Ebene (x₂=0)</text>
+  <line x1="156" y1="250" x2="60" y2="58" stroke="#3a5a9c" stroke-width="2.6"/>
+  <circle cx="156" cy="250" r="3.8" fill="#3a5a9c"/><text x="150" y="270" font-size="12" fill="#26324a">S₁(2|0)</text>
+  <circle cx="60" cy="58" r="3.8" fill="#3a5a9c"/><text x="68" y="56" font-size="12" fill="#26324a">S₂(0|4)</text>
+  <text x="96" y="150" font-size="12" fill="#3a5a9c" font-weight="bold">Spur von F</text>
+  <path d="M126,250 A30,30 0 0 1 143,223" fill="none" stroke="#b03a2e" stroke-width="1.8"/>
+  <text x="86" y="232" font-size="12" fill="#b03a2e" font-weight="bold">≈ 63,4°</text>
+</svg>
+<figcaption>Beide Ebenen stehen senkrecht (enthalten die \( x_3 \)-Richtung); deshalb zeigt die Draufsicht den Schnittwinkel direkt.</figcaption>
+</figure>
+
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Schritt 1 — Normalenvektoren beider Ebenen.</strong> Der
+Winkel zwischen zwei Ebenen ist der Winkel zwischen ihren
+Normalenvektoren.</p>
+<ul>
+<li>\( F:\ 2x_1 + x_2 = 4 \) hat den Normalenvektor
+\( \vec n_F = \begin{pmatrix}2\\1\\0\end{pmatrix} \).</li>
+<li>Die \( x_1x_3 \)-Ebene ist \( x_2 = 0 \); ihr
+Normalenvektor ist \( \vec n_2 = \begin{pmatrix}0\\1\\0\end{pmatrix} \) (sie steht senkrecht zur
+\( x_2 \)-Richtung).</li>
+</ul>
+<p><strong>Schritt 2 — Winkel über das Skalarprodukt.</strong></p>
+<p>\[ \cos\alpha = \frac{\big|\vec n_F \cdot \vec n_2\big|}{|\vec n_F|\,\cdot\,|\vec n_2|}
+   = \frac{\left|\,2\cdot 0 + 1\cdot 1 + 0\cdot 0\,\right|}{\sqrt{2^2+1^2+0^2}\,\cdot\,\sqrt{0^2+1^2+0^2}}
+   = \frac{1}{\sqrt5\,\cdot\,1} = \frac{1}{\sqrt5}. \]</p>
+<p>\[ \boxed{\,\alpha = \arccos\!\frac{1}{\sqrt5} \approx 63{,}4^\circ\,} \]</p>
+<p><strong>Schritt 3 — Wert von \( a \) für
+\( 45^\circ \).</strong> Ersetzt man die \( 2 \)
+durch \( a \), wird der Normalenvektor
+\( \begin{pmatrix}a\\1\\0\end{pmatrix} \), und</p>
+<p>\[ \cos\alpha = \frac{|a\cdot 0 + 1\cdot 1 + 0|}{\sqrt{a^2+1}\cdot 1} = \frac{1}{\sqrt{a^2+1}}. \]</p>
+<p>Für \( \alpha = 45^\circ \) ist \( \cos 45^\circ = \tfrac{1}{\sqrt2} \), also</p>
+<p>\[ \frac{1}{\sqrt{a^2+1}} = \frac{1}{\sqrt2} \;\Longrightarrow\; a^2+1 = 2 \;\Longrightarrow\; a^2 = 1
+   \;\Longrightarrow\; \boxed{\,a = \pm 1\,}. \]</p>
+<p><strong>Schritt 4 — Welche Winkel sind für \( a\neq 0 \)
+möglich?</strong> Für \( a\neq 0 \) ist \( a^2  \gt  0 \),
+also \( a^2+1  \gt  1 \) und damit</p>
+<p>\[ 0  \lt  \frac{1}{\sqrt{a^2+1}}  \lt  1. \]</p>
+<p>\( \cos\alpha \) liegt also echt zwischen \( 0 \)
+und \( 1 \). Dazu gehören <strong>alle Winkel mit</strong>
+\( \boxed{\,0^\circ  \lt  \alpha  \lt  90^\circ\,} \). Die Grenzen \( 0^\circ \) und
+\( 90^\circ \) werden nie erreicht: \( 90^\circ \) bräuchte
+\( a = 0 \) (ausgeschlossen), \( 0^\circ \) bräuchte
+\( a \to \infty \).</p>
+<details><summary>Haltung dahinter: Was ist das Skalarprodukt, und warum liefert es einen Winkel?</summary>
+
+<p>Ohne Vorwissen, Schritt für Schritt.</p>
+<p><strong>Skalarprodukt.</strong> Zwei Vektoren \( \vec u, \vec v \)
+kann man auf eine bestimmte Weise „multiplizieren": man multipliziert
+sie <strong>zeilenweise</strong> und addiert die drei Produkte zu
+<strong>einer einzigen Zahl</strong>: \( \vec u\cdot\vec v = u_1v_1 + u_2v_2 + u_3v_3 \). Diese Zahl
+misst, wie sehr die beiden Pfeile in dieselbe Richtung zeigen.</p>
+<p><strong>Länge eines Vektors.</strong> Die Länge \( |\vec u| \)
+ist \( \sqrt{u_1^2+u_2^2+u_3^2} \) — der Satz des Pythagoras in drei Dimensionen
+(alle Komponenten quadrieren, addieren, Wurzel ziehen).</p>
+<p><strong>Die Winkelformel.</strong> Es gilt \( \vec u\cdot\vec v = |\vec u|\,|\vec v|\cos\varphi \),
+wobei \( \varphi \) der Winkel zwischen den Pfeilen ist. Stellt
+man nach \( \cos\varphi \) um, erhält man die Formel oben. Den
+<strong>Betrag</strong> \( |\dots| \) im Zähler setzt man, damit
+immer der <strong>spitze</strong> Winkel herauskommt (ein Winkel
+zwischen Flächen wird üblicherweise als spitzer Winkel angegeben).</p>
+<p><strong>Warum gerade die Normalenvektoren?</strong> Der Winkel
+zwischen zwei Wänden ist derselbe wie der Winkel zwischen ihren beiden
+„Fahnenmasten" (Normalenvektoren). Das ist bequemer, als die Flächen
+selbst abzumessen. Den Rechenweg fürs Skalarprodukt findest du im <a
+href="konv-90-werkzeugkasten-geometrie.html#skalarprodukt">Werkzeugkasten
+Geometrie</a>.</p>
+<details><summary>… ganz langsam (mit Zahlen): \( \cos\alpha = \tfrac{1}{\sqrt5} \)</summary>
+
+<p>Zähler: \( \vec n_F\cdot\vec n_2 = 2\cdot 0 + 1\cdot 1 + 0\cdot 0 \). Das mittlere Produkt ist
+\( 1\cdot 1 = 1 \), die anderen beiden sind \( 0 \).
+Summe \( = 1 \). Betrag \( |1| = 1 \).</p>
+<p>Nenner: \( |\vec n_F| = \sqrt{2^2+1^2+0^2} = \sqrt{4+1+0} = \sqrt5 \). Und \( |\vec n_2| = \sqrt{0+1+0} = 1 \). Produkt
+\( \sqrt5\cdot 1 = \sqrt5 \).</p>
+<p>Also \( \cos\alpha = \tfrac{1}{\sqrt5} \approx \tfrac{1}{2{,}236} \approx 0{,}447 \). Den Winkel selbst holt die Umkehrtaste
+\( \arccos \) (auf dem Rechner „\( \cos^{-1} \)") zurück:
+\( \alpha\approx 63{,}4^\circ \).</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Warum zeigt die Draufsicht den Winkel direkt — und die Anschauung für \( a=\pm1 \)?</summary>
+
+<p><strong>Beide Ebenen sind „senkrecht".</strong> \( F \)
+enthält kein \( x_3 \), die \( x_1x_3 \)-Ebene auch
+nicht in dem Sinne, dass sie die \( x_3 \)-Richtung
+<strong>enthält</strong> — beide laufen parallel zur
+\( x_3 \)-Achse, stehen also lotrecht über dem Boden. Schaut
+man von oben (entlang \( x_3 \)) auf den Boden, schrumpft
+jede solche Wand zu einer <strong>Linie</strong> (ihrer Spur). Der
+Winkel zwischen den beiden Wänden ist dann genau der Winkel zwischen
+ihren beiden Bodenlinien — das ist das obere Bild.</p>
+<p><strong>Spur von \( F \):</strong> die Linie
+\( 2x_1 + x_2 = 4 \) durch \( S_1(2|0) \) und
+\( S_2(0|4) \). <strong>Spur der
+\( x_1x_3 \)-Ebene:</strong> die \( x_1 \)-Achse
+selbst (dort ist \( x_2 = 0 \)). Der Winkel zwischen diesen
+beiden Linien ist \( \arctan 2 \approx 63{,}4^\circ \) — derselbe Wert wie über das
+Skalarprodukt (\( \arccos\tfrac{1}{\sqrt5} \)). Zwei Wege, dasselbe Ergebnis.</p>
+<p><strong>Warum \( a=\pm1 \) genau \( 45^\circ \)
+gibt.</strong> Die Spur \( a x_1 + x_2 = 4 \) trifft die
+\( x_1 \)-Achse bei \( \tfrac{4}{a} \) und die
+\( x_2 \)-Achse bei \( 4 \). Ein
+\( 45^\circ \)-Winkel zur \( x_1 \)-Achse entsteht
+genau dann, wenn diese beiden Spurpunkte <strong>gleich weit</strong>
+vom Ursprung entfernt sind (gleichschenklig-rechtwinkliges Dreieck):
+\( \left|\tfrac{4}{a}\right| = 4 \), also \( |a| = 1 \), \( a = \pm 1 \).
+Das passt zur Rechnung in Schritt 3.</p>
+<details><summary>Typische Falle</summary>
+
+<p>Zwei klassische Fehler. Erstens: für den Ebenenwinkel die
+<strong>Richtungsvektoren</strong> statt der
+<strong>Normalenvektoren</strong> nehmen — beim Schnitt zweier Ebenen
+rechnet man mit den Normalenvektoren. Zweitens: bei Schritt 4 glauben,
+auch \( 0^\circ \) oder \( 90^\circ \) seien möglich. Sind
+sie nicht: \( a\neq 0 \) sperrt die \( 90^\circ \) aus, und
+\( 0^\circ \) (parallele Ebenen) gäbe es nur im Grenzfall
+\( a\to\infty \). Es kommen also <strong>alle</strong> Winkel
+<strong>echt zwischen</strong> \( 0^\circ \) und
+\( 90^\circ \) vor.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( M(1\,|\,2\,|\,2) \); Normalenvektor \( \overrightarrow{AB}=(-2,-2,8)\parallel(1,1,-4) \);
+\( E:\ x_1 + x_2 - 4x_3 = -5 \)</li>
+<li>b) Spurpunkte \( S_1(2|0|0),\ S_2(0|4|0) \); \( g:\ \vec x = (2,0,0) + t\,(-2,4,0) \)</li>
+<li>c) \( \cos\alpha = \tfrac{1}{\sqrt5},\ \alpha\approx 63{,}4^\circ \); \( 45^\circ \) für
+\( a=\pm 1 \); für \( a\neq 0 \) sind
+<strong>alle</strong> Winkel \( 0^\circ  \lt  \alpha  \lt  90^\circ \) möglich</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="teil-2--gespräch-analysis-bergstollen" class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Bergstollen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Der Querschnitt eines Bergstollens wird
+beschrieben durch die \( x \)-Achse (Boden) und den Teil
+des Graphen der Funktion \( f \) mit \( f(x) = 8 - \tfrac12 x^2 \),
+der <strong>oberhalb</strong> der \( x \)-Achse verläuft
+(die Stollenwände).</p>
+<p>Im Gespräch denkbare Aspekte: <strong>(AB I)</strong> Achsen
+skalieren und die Form des Graphen erklären; den <strong>Winkel</strong>
+berechnen, den die Wände mit dem Boden einschließen; die
+<strong>Stellen</strong> ermitteln, an denen die Wände am steilsten
+verlaufen. <strong>(AB II)</strong> aus den Ableitungen auf
+Eigenschaften des Graphen schließen; der Stollen ist
+\( 50\,\text{m} \) lang und läuft <strong>voll</strong> mit Wasser —
+das <strong>Wasservolumen</strong> bestimmen. <strong>(AB III)</strong>
+der Stollen ist \( 50\,\text{m} \) lang und es steht
+\( 3{,}5\,\text{m} \) hoch Wasser — das <strong>Wasservolumen</strong>
+bestimmen; ein <strong>würfelförmiger Behälter</strong> soll auf einer
+Seitenfläche im Stollen stehen — die <strong>maximal mögliche
+Breite</strong> ermitteln.</p>
+</div>
+
+<p>So sieht der Stollenquerschnitt aus. Spiele mit dem Bild, bevor du
+die Lösungen aufklappst.</p>
+<div class="jxgbox" id="jxg-k8-stollen" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k8-stollen',{boundingbox:[-5.5,9.2,5.5,-1.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 8-0.5*x*x;},-4,4],{strokeColor:'#3a5a9c',strokeWidth:2.6});b.create('point',[0,8],{name:'Scheitel (0|8)',size:2,fixed:true,fillColor:'#d98324',strokeColor:'#d98324',label:{offset:[8,2]}});b.create('point',[-4,0],{name:'(-4|0)',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[-8,-16]}});b.create('point',[4,0],{name:'(4|0)',size:2,fixed:true,fillColor:'#3a8a5a',strokeColor:'#3a8a5a',label:{offset:[0,-16]}});})();});</script>
+
+<section id="ab-i--form-wandwinkel-steilste-stellen" class="level3">
+<h3>AB I — Form, Wandwinkel, steilste Stellen</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Form und Achsen.</strong> \( f(x) = 8 - \tfrac12 x^2 \) ist eine
+<strong>nach unten geöffnete Parabel</strong>. Der höchste Punkt
+(Scheitel) liegt bei \( (0\,|\,8) \): \( f(0) = 8 \). Die
+Wände treffen den Boden in den <strong>Nullstellen</strong>:</p>
+<p>\[ 8 - \tfrac12 x^2 = 0 \;\Longrightarrow\; \tfrac12 x^2 = 8 \;\Longrightarrow\; x^2 = 16
+   \;\Longrightarrow\; x = \pm 4. \]</p>
+<p>Der Stollen ist also am Boden \( 8\,\text{m} \) breit (von
+\( x=-4 \) bis \( x=4 \)) und in der Mitte
+\( 8\,\text{m} \) hoch. Achsen in Metern skalieren, beide gleich. Die
+Form ist symmetrisch zur \( y \)-Achse, oben flach
+gerundet, zu den Seiten hin immer steiler.</p>
+<p><strong>Winkel der Wände mit dem Boden.</strong> Die
+<strong>Steigung</strong> der Wand ist die Ableitung
+\( f'(x) = -x \). Am Fußpunkt \( x = 4 \) ist
+\( f'(4) = -4 \); der Betrag \( 4 \) ist die Steilheit.
+Der Winkel \( \beta \) zwischen Wand und (waagerechtem) Boden
+erfüllt</p>
+<p>\[ \tan\beta = |f'(4)| = 4 \;\Longrightarrow\; \beta = \arctan 4 \approx 76{,}0^\circ. \]</p>
+<p>Bei \( x = -4 \) ist \( f'(-4) = 4 \) — aus
+Symmetriegründen derselbe Winkel \( \approx 76^\circ \).</p>
+<p><strong>Steilste Stellen.</strong> Die Steilheit ist
+\( |f'(x)| = |x| \). Auf dem Bereich der Wände \( (-4 \le x \le 4) \)
+wird \( |x| \) am <strong>größten an den Rändern</strong>
+\( x = \pm 4 \). Die Wände sind also <strong>dort am steilsten, wo
+sie auf den Boden treffen</strong>; ganz oben am Scheitel
+\( (x=0) \) ist die Wand waagerecht (Steigung
+\( 0 \)).</p>
+<p>Hier die beiden Tangenten an den Fußpunkten (gestrichelt) mit dem
+Wandwinkel:</p>
+<div class="jxgbox" id="jxg-k8-tangente" style="width:100%;max-width:480px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k8-tangente',{boundingbox:[-5.5,9.2,5.5,-2],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 8-0.5*x*x;},-4,4],{strokeColor:'#3a5a9c',strokeWidth:2.6});b.create('functiongraph',[function(x){return -4*x+16;},3.3,4.5],{strokeColor:'#d98324',strokeWidth:2,dash:2});b.create('functiongraph',[function(x){return 4*x+16;},-4.5,-3.3],{strokeColor:'#d98324',strokeWidth:2,dash:2});b.create('text',[3.4,1.2,'≈ 76°']);b.create('text',[-4.8,1.2,'≈ 76°']);})();});</script>
+
+<details><summary>Haltung dahinter: Was ist eine Parabel, und woran sieht man „nach unten geöffnet, flacher"?</summary>
+
+<p>Schritt für Schritt.</p>
+<p><strong>Parabel.</strong> Der Graph einer Funktion mit einem
+\( x^2 \) ist eine <strong>Parabel</strong> — eine
+symmetrische U-Form. Das Vorzeichen vor dem \( x^2 \)
+entscheidet über die Öffnung: <strong>plus</strong> öffnet nach oben
+(Tal), <strong>minus</strong> nach unten (Hügel). Hier steht
+\( -\tfrac12 x^2 \), also ein Minus → die Parabel öffnet nach unten,
+sie ist ein „Hügel" mit Spitze oben.</p>
+<p><strong>Der Faktor \( \tfrac12 \).</strong> Eine
+Standardparabel wäre \( x^2 \). Der Faktor
+\( \tfrac12  \lt  1 \) drückt alle Werte auf die Hälfte — die Parabel wird
+<strong>flacher / breiter</strong>. Die \( +8 \) am Anfang
+schiebt den ganzen Hügel um \( 8 \) nach oben, deshalb
+sitzt der Scheitel bei Höhe \( 8 \).</p>
+<p><strong>Nullstelle.</strong> Eine Stelle, an der der Graph die
+\( x \)-Achse trifft (Funktionswert \( 0 \)).
+Hier: Wo berührt die Stollenwand den Boden? Bei
+\( x = \pm 4 \).</p>
+<details><summary>… ganz langsam (mit Zahlen): die Nullstellen</summary>
+
+<p>Ansatz \( 8 - \tfrac12 x^2 = 0 \). Bringe \( \tfrac12 x^2 \) auf die
+andere Seite: \( 8 = \tfrac12 x^2 \). Mal \( 2 \) auf beiden
+Seiten: \( 16 = x^2 \). Welche Zahl quadriert ergibt
+\( 16 \)? Sowohl \( 4 \) (\( 4\cdot4=16 \))
+als auch \( -4 \) (\( (-4)\cdot(-4)=16 \), Minus mal Minus ist
+Plus). Also \( x = 4 \) <strong>und</strong>
+\( x = -4 \) — die beiden Wandfüße, \( 8\,\text{m} \)
+auseinander.</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Warum ist die Ableitung die Steigung, und woher der Winkel?</summary>
+
+<p><strong>Ableitung = Steigung.</strong> Die <strong>Ableitung</strong>
+\( f'(x) \) gibt an jeder Stelle an, wie <strong>steil</strong>
+der Graph dort ansteigt oder abfällt. Eine positive Zahl heißt
+„bergauf", eine negative „bergab", \( 0 \) heißt
+„waagerecht". Für \( f(x) = 8 - \tfrac12 x^2 \) ist die Ableitung
+\( f'(x) = -x \) (die Rechenregeln dazu stehen im <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>).</p>
+<p><strong>Steigung → Winkel mit dem Tangens.</strong> Eine Steigung von
+\( 4 \) bedeutet: \( 4 \) Schritte hoch je
+\( 1 \) Schritt zur Seite. Der <strong>Tangens</strong>
+verbindet diesen „Höhe pro Breite"-Wert mit einem Winkel:
+\( \tan(\text{Winkel}) = \tfrac{\text{Höhe}}{\text{Breite}} = \tfrac{4}{1} = 4 \). Den Winkel selbst holt die Umkehrung
+\( \arctan \) (Taste „\( \tan^{-1} \)") zurück:
+\( \arctan 4 \approx 76^\circ \). Steiler geht es bei dieser Parabel nicht —
+\( 76^\circ \) ist schon recht nah an einer senkrechten Wand
+(\( 90^\circ \)).</p>
+<details><summary>… ganz langsam (mit Zahlen): \( f'(4) \)</summary>
+
+<p>\( f'(x) = -x \). An der Stelle \( x = 4 \) einsetzen:
+\( f'(4) = -4 \). Das Minus heißt „bergab" (von links nach rechts
+gelesen läuft die rechte Wand nach unten). Für den
+<strong>Winkel</strong> zählt nur die Steilheit, also der Betrag
+\( |-4| = 4 \). Daher \( \tan\beta = 4 \) und
+\( \beta \approx 76^\circ \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Die Steigung \( 4 \) <strong>als</strong> Winkel
+auszugeben („der Winkel ist \( 4^\circ \)"). Eine Steigung ist
+<strong>kein</strong> Winkel — man muss \( \arctan \) anwenden.
+Und für den Winkel die Steigung als Betrag nehmen
+(\( |-4| = 4 \)), sonst käme ein negativer „Winkel" heraus.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--eigenschaften-aus-den-ableitungen-volumen-bei-vollem-stollen"
+class="level3">
+<h3>AB II — Eigenschaften aus den Ableitungen, Volumen bei vollem
+Stollen</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Aus den Ableitungen auf Eigenschaften schließen.</strong> Mit
+\( f'(x) = -x \) und \( f''(x) = -1 \):</p>
+<ul>
+<li>\( f'(x) = 0 \) nur bei \( x = 0 \) → einzige Stelle
+mit waagerechter Tangente (Kandidat für einen Hoch-/Tiefpunkt).</li>
+<li>\( f''(0) = -1  \lt  0 \) → an dieser Stelle ein
+<strong>Hochpunkt</strong>. Da \( f''(x) = -1 \)
+<strong>überall</strong> negativ ist, ist der Graph durchgehend
+<strong>rechtsgekrümmt</strong> (eine nach unten gewölbte Kuppel) und
+hat <strong>keine Wendestelle</strong>.</li>
+<li>\( f'(x)  \gt  0 \) für \( x  \lt  0 \) (Graph steigt),
+\( f'(x)  \lt  0 \) für \( x  \gt  0 \) (Graph fällt) → der
+Stollen steigt bis zur Mitte an und fällt dann wieder. Genau ein
+höchster Punkt: der Scheitel \( (0\,|\,8) \).</li>
+</ul>
+<p><strong>Volumen bei vollem Stollen.</strong> Das Volumen ist
+<strong>Querschnittsfläche \( \times \) Länge</strong>. Die
+Querschnittsfläche \( A \) ist die Fläche zwischen Parabel
+und Boden, also das Integral von \( f \) über
+\( -4 \) bis \( 4 \). Eine
+<strong>Stammfunktion</strong> von \( f(x) = 8 - \tfrac12 x^2 \) ist</p>
+<p>\[ F(x) = 8x - \tfrac{1}{6}x^3. \]</p>
+<p>\[ A = \int_{-4}^{4}\!\Big(8 - \tfrac12 x^2\Big)\,dx = \Big[\,8x - \tfrac16 x^3\,\Big]_{-4}^{4}
+   = \tfrac{64}{3} - \Big(\!-\tfrac{64}{3}\Big) = \frac{128}{3} \approx 42{,}67\ (\text{m}^2). \]</p>
+<p>Mit der Länge \( 50\,\text{m} \):</p>
+<p>\[ V = A \cdot 50 = \frac{128}{3}\cdot 50 = \frac{6400}{3} \approx 2133{,}3\ (\text{m}^3). \]</p>
+<p>Die Querschnittsfläche, die hier integriert wird (blau):</p>
+<div class="jxgbox" id="jxg-k8-voll" style="width:100%;max-width:480px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k8-voll',{boundingbox:[-5.5,9.2,5.5,-1.5],axis:true,showCopyright:false,showNavigation:false});var xs=[],ys=[],i,x,N=80;for(i=0;i<=N;i++){x=-4+8*i/N;xs.push(x);ys.push(8-0.5*x*x);}b.create('curve',[xs,ys],{fillColor:'#3a8ad9',fillOpacity:0.25,strokeColor:'#3a5a9c',strokeWidth:2.6});b.create('text',[-1.3,3.2,'Wasser (voll)']);})();});</script>
+
+<details><summary>Haltung dahinter: Was sagen \( f' \) und \( f'' \) über den Graphen?</summary>
+
+<p>Zwei Werkzeuge, die man am Graphen „ablesen" kann, ohne ihn zu
+sehen.</p>
+<p><strong>Erste Ableitung \( f' \) — die Steigung.</strong>
+Wo \( f'  \gt  0 \), geht es bergauf; wo \( f'  \lt  0 \),
+bergab; wo \( f' = 0 \), ist eine waagerechte Stelle (möglicher
+Gipfel oder Talboden). Hier: \( f'(x) = -x \) ist für negative
+\( x \) positiv (steigt) und für positive
+\( x \) negativ (fällt) — typischer Hügel.</p>
+<p><strong>Zweite Ableitung \( f'' \) — die
+Krümmung.</strong> \( f'' \) misst, ob sich der Graph nach
+oben oder unten wölbt. \( f''  \lt  0 \) heißt „nach unten gewölbt"
+(Kuppel, wie ein umgedrehter Eimer); \( f''  \gt  0 \) heißt „nach
+oben gewölbt" (Schüssel). An einer waagerechten Stelle entscheidet das
+Vorzeichen von \( f'' \): \( f''  \lt  0 \) →
+<strong>Hochpunkt</strong>. Hier ist \( f''(x) = -1 \)
+<strong>immer</strong> negativ → reine Kuppel, keine Wendestelle,
+einziger Hochpunkt am Scheitel. (Mehr zu diesem Ablesen: <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>.)</p>
+</details>
+
+<details><summary>Haltung dahinter: Was ist ein Integral, und warum Fläche \( \times \) Länge?</summary>
+
+<p>Langsam von vorn.</p>
+<p><strong>Integral = Fläche unter dem Graphen.</strong> Das Integral
+\( \int_a^b f(x)\,dx \) rechnet die Fläche zwischen dem Graphen und der
+\( x \)-Achse zwischen den senkrechten Grenzen
+\( a \) und \( b \) zusammen — man stellt sich
+unendlich viele hauchdünne senkrechte Streifen vor, alle aufaddiert.</p>
+<p><strong>Stammfunktion.</strong> Um ein Integral auszurechnen, braucht
+man eine <strong>Stammfunktion</strong> \( F \): eine
+Funktion, deren Ableitung wieder \( f \) ergibt
+(\( F' = f \)). Das ist „Ableiten rückwärts". Aus
+\( 8 \) wird beim Aufleiten \( 8x \); aus
+\( -\tfrac12 x^2 \) wird \( -\tfrac12\cdot\tfrac{x^3}{3} =
+-\tfrac16 x^3 \). Probe durch Ableiten
+führt zurück zu \( f \). (Regeln: <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.)</p>
+<p><strong>Hauptsatz.</strong> Den Flächenwert bekommt man als
+\( F(\text{obere Grenze}) - F(\text{untere Grenze}) \).</p>
+<p><strong>Warum Fläche \( \times \) Länge?</strong> Der Stollen
+ist ein „Prisma": überall derselbe Querschnitt, nur \( 50\,\text{m} \)
+lang in die Tiefe gezogen. Solch ein Körper hat das Volumen
+\( \text{Querschnittsfläche} \times \text{Länge} \) — wie ein Stapel von \( 50 \) gleichen
+\( 1\,\text{m} \)-Scheiben.</p>
+<details><summary>… ganz langsam (mit Zahlen): das Integral</summary>
+
+<p>Obere Grenze \( x=4 \): \( F(4) = 8\cdot 4 - \tfrac16\cdot 4^3 = 32 - \tfrac{64}{6} = 32 - \tfrac{32}{3}
+= \tfrac{96}{3} - \tfrac{32}{3} = \tfrac{64}{3} \).</p>
+<p>Untere Grenze \( x=-4 \): \( F(-4) = 8\cdot(-4) - \tfrac16\cdot(-4)^3 = -32 - \tfrac{-64}{6}
+= -32 + \tfrac{32}{3} = -\tfrac{64}{3} \) (Achtung:
+\( (-4)^3 = -64 \), das Minus davor dreht es um).</p>
+<p>Differenz: \( \tfrac{64}{3} - \big(\!-\tfrac{64}{3}\big) = \tfrac{128}{3} \approx 42{,}67\,\text{m}^2 \). Mal \( 50 \):
+\( \tfrac{128}{3}\cdot 50 = \tfrac{6400}{3} \approx 2133{,}3\,\text{m}^3 \).</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-iii--wasservolumen-bei-zzmathphzz415zzendzz-und-größter-würfel"
+class="level3">
+<h3>AB III — Wasservolumen bei \( 3{,}5\,\text{m} \) und größter
+Würfel</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Wasservolumen bei \( 3{,}5\,\text{m} \) Wasserstand.</strong>
+Steht das Wasser nur \( 3{,}5\,\text{m} \) hoch, ist die Wasseroberfläche
+eine waagerechte Linie auf Höhe \( y = 3{,}5 \). Wo trifft sie die
+Wand?</p>
+<p>\[ 8 - \tfrac12 x^2 = 3{,}5 \;\Longrightarrow\; \tfrac12 x^2 = 4{,}5 \;\Longrightarrow\; x^2 = 9
+   \;\Longrightarrow\; x = \pm 3. \]</p>
+<p>Die Wasserfläche ist die volle Querschnittsfläche
+<strong>minus</strong> dem leeren Bogen oben (zwischen Wasserspiegel und
+Decke, für \( -3 \le x \le 3 \)):</p>
+<p>\[ A_{\text{leer}} = \int_{-3}^{3}\!\big(f(x) - 3{,}5\big)\,dx
+   = \int_{-3}^{3}\!\Big(4{,}5 - \tfrac12 x^2\Big)\,dx
+   = \Big[\,4{,}5\,x - \tfrac16 x^3\,\Big]_{-3}^{3} = 9 - (-9) = 18. \]</p>
+<p>\[ A_{\text{Wasser}} = \frac{128}{3} - 18 = \frac{74}{3} \approx 24{,}67\ (\text{m}^2),\qquad
+   V = \frac{74}{3}\cdot 50 = \frac{3700}{3} \approx 1233{,}3\ (\text{m}^3). \]</p>
+<div class="jxgbox" id="jxg-k8-wasser35" style="width:100%;max-width:480px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k8-wasser35',{boundingbox:[-5.5,9.2,5.5,-1.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 8-0.5*x*x;},-4,4],{strokeColor:'#3a5a9c',strokeWidth:2});var xs=[],ys=[],i,x,N=40;for(i=0;i<=N;i++){x=-4+i/N;xs.push(x);ys.push(8-0.5*x*x);}xs.push(3);ys.push(3.5);for(i=0;i<=N;i++){x=3+i/N;xs.push(x);ys.push(8-0.5*x*x);}b.create('curve',[xs,ys],{fillColor:'#3a8ad9',fillOpacity:0.28,strokeColor:'#3a8ad9',strokeWidth:1});b.create('line',[[-3,3.5],[3,3.5]],{straightFirst:false,straightLast:false,strokeColor:'#2a6aa8',strokeWidth:1.6,dash:2});b.create('text',[-1.4,1.6,'Wasser 3,5 m']);})();});</script>
+
+<p><strong>Größter würfelförmiger Behälter.</strong> Ein Würfel mit
+Kantenlänge \( s \) steht auf dem Boden; sein Querschnitt
+in der Stollenebene ist ein <strong>Quadrat</strong> der Seite
+\( s \). Aus Symmetrie stellt man ihn mittig (von
+\( x=-\tfrac{s}{2} \) bis \( x=\tfrac{s}{2} \), von \( y=0 \)
+bis \( y=s \)). Die kritischen Punkte sind die <strong>oberen
+Ecken</strong> \( \big(\pm\tfrac{s}{2}\,\big|\,s\big) \): sie müssen unter der Decke liegen,
+also \( f\!\big(\tfrac{s}{2}\big) \ge s \). Der größte Würfel erfüllt es mit
+Gleichheit:</p>
+<p>\[ 8 - \tfrac12\Big(\tfrac{s}{2}\Big)^2 = s \;\Longrightarrow\; 8 - \frac{s^2}{8} = s
+   \;\Longrightarrow\; 64 - s^2 = 8s \;\Longrightarrow\; s^2 + 8s - 64 = 0. \]</p>
+<p>Mit der \( pq \)- bzw. Mitternachtsformel:</p>
+<p>\[ s = \frac{-8 + \sqrt{8^2 + 4\cdot 64}}{2} = \frac{-8 + \sqrt{320}}{2} = -4 + 4\sqrt5
+   = 4\big(\sqrt5 - 1\big) \approx 4{,}94\ (\text{m}). \]</p>
+<p>(Die zweite Lösung \( -4 - 4\sqrt5 \) ist negativ und scheidet als
+Länge aus.)</p>
+<p>\[ \boxed{\,s_{\max} = 4\big(\sqrt5 - 1\big) \approx 4{,}94\ \text{m}\,} \]</p>
+<div class="jxgbox" id="jxg-k8-wuerfel" style="width:100%;max-width:480px;aspect-ratio:1/1"></div>
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k8-wuerfel',{boundingbox:[-5.5,9.2,5.5,-1.5],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return 8-0.5*x*x;},-4,4],{strokeColor:'#3a5a9c',strokeWidth:2.6});b.create('polygon',[[-2.472,0],[2.472,0],[2.472,4.944],[-2.472,4.944]],{fillColor:'#d98324',fillOpacity:0.18,borders:{strokeColor:'#d98324',strokeWidth:2},vertices:{visible:false}});b.create('text',[-2.3,5.6,'Breite s ≈ 4,94 m']);})();});</script>
+
+<details><summary>Haltung dahinter: Warum nur bis \( x=\pm 3 \) integrieren — und nicht einfach skalieren?</summary>
+
+<p>Der gefährliche Reflex wäre: „voller Stollen ergab
+\( 2133\,\text{m}^3 \), bei \( 3{,}5 \) von \( 8 \)
+Metern sind es eben \( \tfrac{3{,}5}{8} \) davon." Das ist
+<strong>falsch</strong>, weil der Stollen unten breiter ist als oben —
+die unteren Schichten fassen mehr Wasser pro Höhenmeter.</p>
+<p><strong>So sieht die Wasserfläche wirklich aus.</strong> Unten füllt
+das Wasser den ganzen Boden. Für \( |x| \le 3 \) reicht es bis zur
+waagerechten Oberfläche \( y = 3{,}5 \) (die Decke ist dort höher).
+Für \( 3 \le |x| \le 4 \) ist die Wand bereits niedriger als
+\( 3{,}5 \), dort begrenzt die <strong>Wand</strong> das
+Wasser. Bequemer rechnet man deshalb: <strong>ganze Querschnittsfläche
+minus dem leeren Bogen</strong> oben. Der leere Bogen ist die Fläche
+zwischen Decke und Wasserspiegel, \( \int_{-3}^{3}(f(x)-3{,}5)\,dx = 18 \).</p>
+<details><summary>… ganz langsam (mit Zahlen): die leere Fläche</summary>
+
+<p>\( f(x) - 3{,}5 = 8 - \tfrac12 x^2 - 3{,}5 = 4{,}5 - \tfrac12 x^2 \). Stammfunktion \( 4{,}5\,x - \tfrac16 x^3 \). Bei
+\( x=3 \): \( 4{,}5\cdot 3 - \tfrac16\cdot 27 = 13{,}5 - 4{,}5 = 9 \). Bei \( x=-3 \):
+\( 4{,}5\cdot(-3) - \tfrac16\cdot(-27) = -13{,}5 + 4{,}5 = -9 \). Differenz \( 9 - (-9) = 18 \). Also
+\( A_{\text{Wasser}} = \tfrac{128}{3} - 18 = \tfrac{74}{3} \approx 24{,}67 \), und \( V = \tfrac{74}{3}\cdot 50 = \tfrac{3700}{3} \approx 1233{,}3\,\text{m}^3 \).</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Das volle Volumen einfach mit \( \tfrac{3{,}5}{8} \) zu multiplizieren.
+Weil der Querschnitt nach oben schmaler wird, stimmt das nicht — man
+<strong>muss</strong> integrieren (oder die leere Fläche abziehen).</p>
+</details>
+</details>
+
+<details><summary>Haltung dahinter: Wie kommt man auf \( f\!\big(\tfrac{s}{2}\big) = s \)?</summary>
+
+<p><strong>Das Quadrat soll in den Stollen passen.</strong> Ein Würfel,
+der auf einer Fläche steht, zeigt im Querschnitt ein Quadrat der Seite
+\( s \): Breite \( s \), Höhe
+\( s \). Mittig gestellt reicht es von \( x=-\tfrac{s}{2} \)
+bis \( x=\tfrac{s}{2} \) und von \( y=0 \) bis
+\( y=s \).</p>
+<p><strong>Die obere Ecke ist der Engpass.</strong> Weil die Decke eine
+nach unten gewölbte Kuppel ist und in der Mitte am höchsten, stoßen
+zuerst die <strong>oberen äußeren Ecken</strong> an. Diese Ecken liegen
+bei \( \big(\tfrac{s}{2}\,\big|\,s\big) \). Damit sie unter der Decke bleiben, muss die
+Decke dort mindestens so hoch sein wie die Ecke: \( f\!\big(\tfrac{s}{2}\big) \ge s \).
+Der <strong>größte</strong> Würfel berührt die Decke genau —
+Gleichheit.</p>
+<p><strong>Warum mittig?</strong> Schiebt man den Würfel zur Seite,
+kommt eine obere Ecke näher an die niedrigere Wand und stößt früher an.
+Mittig ist der meiste Platz da. Aus Gleichheit wird eine quadratische
+Gleichung.</p>
+<details><summary>… ganz langsam (mit Zahlen): die quadratische Gleichung lösen</summary>
+
+<p>\( f\!\big(\tfrac{s}{2}\big) = 8 - \tfrac12\big(\tfrac{s}{2}\big)^2 = 8 - \tfrac12\cdot\tfrac{s^2}{4}
+= 8 - \tfrac{s^2}{8} \). Gleichsetzen mit \( s \):
+\( 8 - \tfrac{s^2}{8} = s \). Mal \( 8 \): \( 64 - s^2 = 8s \).
+Alles auf eine Seite: \( s^2 + 8s - 64 = 0 \). Mitternachtsformel mit
+\( a=1, b=8, c=-64 \): Diskriminante \( b^2 - 4ac = 64 + 256 = 320 \), und
+\( \sqrt{320} = \sqrt{64\cdot5}
+= 8\sqrt5 \). Also \( s = \tfrac{-8 + 8\sqrt5}{2} = -4 + 4\sqrt5 \approx -4 + 8{,}94 = 4{,}94 \). Probe:
+\( \tfrac{s}{2} \approx 2{,}47 \), \( f(2{,}47) = 8 - \tfrac12\cdot 6{,}1 \approx 4{,}94 = s \). ✓</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 2 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li><strong>AB I:</strong> Parabel nach unten, Scheitel
+\( (0|8) \), Nullstellen \( x=\pm 4 \) (Boden
+\( 8\,\text{m} \) breit, Mitte \( 8\,\text{m} \) hoch).
+Wandwinkel: \( \tan\beta = |f'(4)| = 4 \), \( \beta\approx 76^\circ \). Am steilsten an
+den Wandfüßen \( x=\pm 4 \).</li>
+<li><strong>AB II:</strong> \( f'(x)=-x \) (Hochpunkt bei
+\( 0 \)), \( f''(x)=-1 \lt 0 \) (durchweg Kuppel, keine
+Wendestelle). Voller Stollen: \( A = \tfrac{128}{3} \),
+\( V = \tfrac{6400}{3} \approx 2133{,}3\,\text{m}^3 \).</li>
+<li><strong>AB III:</strong> Wasser \( 3{,}5\,\text{m} \):
+\( A_{\text{Wasser}} = \tfrac{74}{3} \), \( V = \tfrac{3700}{3} \approx 1233{,}3\,\text{m}^3 \). Größter Würfel:
+\( s = 4(\sqrt5-1) \approx 4{,}94\,\text{m} \).</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Teilaufgabe, <strong>was eine gute Antwort
+enthält</strong> und <strong>welche Rückfrage</strong> du stellen
+kannst. Du musst nichts selbst rechnen — achte auf die genannten
+Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Geometrie) aufklappen</summary>
+
+<ul>
+<li><strong>a) Mittelpunkt &amp; Spiegelebene.</strong> Erwartet:
+\( M(1|2|2) \) als <strong>Durchschnitt</strong> von
+\( A \) und \( B \); \( \overrightarrow{AB} \)
+(bzw. \( (1,1,-4) \)) als <strong>Normalenvektor</strong>;
+\( M \) eingesetzt ergibt \( E:\ x_1 + x_2 - 4x_3 = -5 \).
+<em>Rückfrage:</em> „Warum steht \( \overrightarrow{AB} \) senkrecht auf
+\( E \)?" (Antwort: Spiegelung — die Verbindung
+Original–Bild trifft den Spiegel senkrecht.) <em>Rote Flagge:</em>
+\( A \) oder \( B \) statt
+\( M \) zum Bestimmen von \( d \)
+einsetzen.</li>
+<li><strong>b) Ebene zeichnen &amp; Schnittgerade.</strong> Erwartet:
+\( F \) ist eine <strong>Ebene parallel zur
+\( x_3 \)-Achse</strong>; Spurpunkte \( S_1(2|0|0) \),
+\( S_2(0|4|0) \); Gerade \( \vec x = (2,0,0) + t\,(-2,4,0) \). <em>Rückfrage:</em>
+„Wieso ist \( 2x_1 + x_2 = 4 \) eine Ebene und keine Gerade?" (Antwort:
+eine einzelne Gleichung im Raum beschreibt eine Fläche;
+\( x_3 \) ist frei.)</li>
+<li><strong>c) Schnittwinkel.</strong> Erwartet: Normalenvektoren
+\( (2,1,0) \) und \( (0,1,0) \), Skalarprodukt,
+\( \cos\alpha = \tfrac{1}{\sqrt5} \approx 63{,}4^\circ \); für \( 45^\circ \) ist \( a=\pm 1 \);
+für \( a\neq 0 \) sind <strong>alle</strong> Winkel
+\( 0^\circ  \lt  \alpha  \lt  90^\circ \) möglich. <em>Rückfrage:</em> „Welche Vektoren
+benutzt du für den Winkel zwischen zwei Ebenen?" (Antwort: die
+<strong>Normalenvektoren</strong>.) <em>Rote Flagge:</em> behaupten,
+\( 0^\circ \) oder \( 90^\circ \) seien erreichbar.</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>AB I — Form, Winkel, steilste Stellen.</strong> Erwartet:
+nach unten geöffnete Parabel, Scheitel \( (0|8) \), Nullstellen
+\( \pm 4 \); Wandwinkel über \( \tan\beta = |f'(4)| = 4 \Rightarrow \approx
+  76^\circ \); am steilsten
+an den <strong>Wandfüßen</strong> \( x=\pm 4 \).
+<em>Rückfrage:</em> „Wie wird aus der Steigung ein Winkel?" (Antwort:
+\( \arctan \).) <em>Rote Flagge:</em> die Steigung
+\( 4 \) direkt als „\( 4^\circ \)".</li>
+<li><strong>AB II — Ableitungen &amp; volles Volumen.</strong> Erwartet:
+\( f'=-x \) (Hochpunkt bei \( 0 \)),
+\( f''=-1 \lt 0 \) (Kuppel, keine Wendestelle); Volumen =
+<strong>Querschnittsfläche \( \times \) Länge</strong>,
+\( A = \tfrac{128}{3} \), \( V \approx 2133\,\text{m}^3 \). <em>Rückfrage:</em> „Warum
+reicht es, die Querschnittsfläche mit \( 50 \) zu
+multiplizieren?" (Antwort: gleicher Querschnitt über die ganze
+Länge.)</li>
+<li><strong>AB III — Teilfüllung &amp; Würfel.</strong> Erwartet:
+Wasserspiegel trifft Wand bei \( x=\pm 3 \); Wasserfläche = volle
+Fläche <strong>minus</strong> leerem Bogen, \( V \approx 1233\,\text{m}^3 \);
+Würfelkante aus \( f\!\big(\tfrac{s}{2}\big)=s \Rightarrow s = 4(\sqrt5-1)\approx 4{,}94\,\text{m} \). <em>Rote Flagge:</em> das Volumen
+einfach mit \( \tfrac{3{,}5}{8} \) skalieren. <em>Rückfrage:</em> „Welche
+Ecke des Würfels stößt zuerst an die Decke?" (Antwort: die obere äußere
+Ecke.)</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Wie findest du die Spiegelebene zweier Punkte — welcher Vektor ist
+der Normalenvektor und welcher Punkt liegt sicher auf der Ebene?</li>
+<li>Warum ist \( 2x_1 + x_2 = 4 \) im Raum eine Ebene, und wie zeichnest
+du sie mit zwei Spurpunkten?</li>
+<li>Mit welchen Vektoren berechnest du den Winkel zwischen zwei Ebenen,
+und warum steht ein Betrag im Zähler?</li>
+<li>Wie wird bei der Stollenwand aus der Steigung \( f'(4) \)
+ein Winkel mit dem Boden?</li>
+<li>Warum darfst du das Wasservolumen bei \( 3{,}5\,\text{m} \)
+<strong>nicht</strong> durch einfaches Skalieren des vollen Volumens
+bestimmen?</li>
+</ul>
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>

@@ -1,0 +1,895 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>Aufgabe 9 — Stochastik &amp; Analysis — Mathe-Abi</title><script>window.__JXGQ=window.__JXGQ||[];window.__jxg=function(fn){if(window.JXG){try{fn();}catch(e){console.error(e);}}else{window.__JXGQ.push(fn);}};</script><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/vendor/katex.min.css"><link rel="stylesheet" href="assets/vendor/jsxgraph.css"><link rel="stylesheet" href="assets/site.css"></head><body><header class="topbar"><button class="menu-toggle" aria-label="Menü">&#9776;</button><a class="brand" href="index.html"><b>Mathe&#8209;Abi</b></a><span class="spacer"></span><a class="navlink" href="index.html">Start</a><a class="navlink" href="bau-charter.html">Bau-Charter</a><a class="navlink" href="design-spec.html">Design-Spec</a><button class="readaloud" type="button" title="Abschnitt vorlesen lassen">&#9658; Vorlesen</button><button id="collapse-all" title="Alles zuklappen">– alle</button><button id="expand-all" title="Alles aufklappen">+ alle</button></header><div class="shell"><aside class="sidebar"><a class="tree-home" href="index.html">&#8962; Startseite</a><h3>Kapitel</h3><ul class="tree"><li><a class="tree-link" href="kap-ableiten-handwerk.html">Handwerk: Ableiten</a></li><li><a class="tree-link" href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a></li><li><a class="tree-link" href="kap-grenzwerte-randverhalten.html">Grenzwerte (Limes) &amp; Randverhalten im Zusammenhang</a></li><li><a class="tree-link" href="kap-grundfunktionen.html">Grundfunktionen &amp; ihre Ableitungen</a></li><li><a class="tree-link" href="kap-integral-anwendung.html">Integral in Sachzusammenhängen</a></li><li><a class="tree-link" href="kap-integral-grundlagen.html">Integralrechnung — Grundlagen</a></li><li><a class="tree-link" href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp; Hauptsatz</a></li></ul><h3>Aufgaben</h3><ul class="tree"><li><a class="tree-link" href="auf-aufgabe-efunktion.html">Aufgabe: e-Funktion untersuchen</a></li><li><a class="tree-link" href="auf-aufgabe-flaeche.html">Aufgabe: Fläche &amp; Bestand</a></li><li><a class="tree-link" href="auf-aufgabe-graphenpaar.html">Aufgabe: Graphenpaar f und g</a></li></ul><h3>Prüfungssimulationen</h3><ul class="tree"><li><a class="tree-link" href="sim-simulation-1.html">Prüfungssimulation 1 (Analysis)</a></li><li><a class="tree-link" href="sim-simulation-2.html">Prüfungssimulation 2 (Analysis) — Integral &amp; Bestand</a></li></ul><h3>Konvolut (Abitur-Aufgaben 2023)</h3><ul class="tree"><li><a class="tree-link" href="konv-00-uebersicht.html">Konvolut — die Original-Abituraufgaben 2023</a></li><li><a class="tree-link" href="konv-01-analysis-geometrie.html">Aufgabe 1 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-02-analysis-geometrie.html">Aufgabe 2 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-03-analysis-geometrie.html">Aufgabe 3 — Analysis &amp; Geometrie</a></li><li><a class="tree-link" href="konv-04-analysis-stochastik.html">Aufgabe 4 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-05-analysis-stochastik.html">Aufgabe 5 — Analysis &amp; Stochastik</a></li><li><a class="tree-link" href="konv-06-geometrie-analysis.html">Aufgabe 6 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-07-geometrie-analysis.html">Aufgabe 7 — Geometrie &amp; Analysis</a></li><li><a class="tree-link" href="konv-08-geometrie-analysis.html">Aufgabe 8 — Geometrie &amp; Analysis</a></li><li><a class="tree-link active" href="konv-09-stochastik-analysis.html">Aufgabe 9 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-10-stochastik-analysis.html">Aufgabe 10 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-11-stochastik-analysis.html">Aufgabe 11 — Stochastik &amp; Analysis</a></li><li><a class="tree-link" href="konv-90-werkzeugkasten-geometrie.html">Werkzeugkasten Geometrie</a></li><li><a class="tree-link" href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten Stochastik</a></li></ul><h3>Reflexion</h3><ul class="tree"><li><a class="tree-link" href="refl-reflexion.html">Reflexionsfragen — wie denkst du darüber?</a></li></ul></aside><main><div class="content"><p>Dies ist eine vollständige mündliche Beispielprüfung aus dem
+Abitur-Konvolut 2023: <strong>Teil 1 (Vortrag) aus der
+Stochastik</strong>, <strong>Teil 2 (Gespräch) aus der
+Analysis</strong>. Alles lässt sich <strong>ohne großen
+Rechenaufwand</strong> lösen — Terme angeben, am Tafelwerk ablesen, aus
+einem Graphen herauslesen. Arbeitet die Aufgabe wie eine echte
+Simulation durch — eine Person trägt vor, die andere prüft mit dem
+Lösungsweg und dem <a
+href="#prüfer-leitfaden-für-die-abfragende-person">Prüfer-Leitfaden</a>
+am Ende mit.</p>
+<blockquote>
+<p><strong>Lesehilfe für die Detailkästen.</strong> Jeder Lösungsschritt
+hat darunter einen klappbaren Kasten <strong>„Haltung
+dahinter"</strong>. Der erklärt den Schritt <strong>von Grund
+auf</strong> — so, als hätte man den Stoff lange nicht mehr gesehen.
+Jeder Fachbegriff wird beim ersten Auftauchen in einfachen Worten
+erklärt. Wer nur das Ergebnis braucht, lässt die Kästen zu; wer
+<em>verstehen</em> will, klappt sie auf.</p>
+</blockquote>
+<details><summary><b>Kurzanleitung für die abfragende Person</b> (zuerst lesen)</summary>
+
+<p>Du musst den Stoff <strong>nicht</strong> selbst beherrschen, um
+diese Aufgabe abzunehmen. So gehst du vor:</p>
+<ul>
+<li>Lass die andere Person nur die <strong>grauen
+Aufgabenkästen</strong> sehen und <strong>laut erklären</strong>.</li>
+<li>Du hast den <strong>ausgeklappten Lösungsweg</strong> vor dir.
+Vergleiche nicht Wort für Wort — achte auf die <strong>fett markierten
+Kernschritte</strong> und die <strong>Ergebnisse</strong>.</li>
+<li>Die <strong>„Haltung dahinter"-Kästen</strong> erklären dir jeden
+Schritt in Alltagssprache. Lies sie ruhig selbst mit — danach kannst du
+die Erklärung der anderen Person einordnen, auch ohne Vorwissen.</li>
+<li>Am Ende findest du den <strong>Prüfer-Leitfaden</strong>: dort steht
+je Teilaufgabe in einem Satz, <em>was eine gute Antwort enthält</em> und
+<em>welche Rückfrage</em> du stellen kannst.</li>
+<li>Grüne Markierung = Grundwissen (sollte sicher sitzen), gelbe =
+anspruchsvoller (Nachfragen ok).</li>
+</ul>
+</details>
+
+<blockquote>
+<p><strong>Werkzeug zum Nachschlagen:</strong> Die wiederkehrenden
+Stochastik-Werkzeuge (Bernoulli-Kette, Binomialverteilung,
+Erwartungswert, kumulierte Wahrscheinlichkeiten) stehen kompakt im <a
+href="konv-91-werkzeugkasten-stochastik.html">Werkzeugkasten
+Stochastik</a>. Die Analysis-Werkzeuge findest du in den Kapiteln <a
+href="kap-ableiten-handwerk.html">Ableit-Handwerk</a>, <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>, <a
+href="kap-integral-grundlagen.html">Integral-Grundlagen</a> und <a
+href="kap-stammfunktion-hauptsatz.html">Stammfunktion &amp;
+Hauptsatz</a>.</p>
+</blockquote>
+<hr />
+<section id="teil-1--vortrag-stochastik-kugeln-aus-der-urne"
+class="level2">
+<h2>Teil 1 — Vortrag (Stochastik): Kugeln aus der Urne</h2>
+<div class="aufgabenkasten">
+
+<p><strong>In einer Urne befinden sich sechs blaue und vier weiße
+Kugeln.</strong> Betrachtet wird das Zufallsexperiment, bei dem aus der
+Urne mehrmals nacheinander eine Kugel <strong>mit Zurücklegen</strong>
+gezogen wird.</p>
+<p><strong>a)</strong> Das Zufallsexperiment wird
+<strong>dreimal</strong> nacheinander durchgeführt. Gib für die
+Wahrscheinlichkeiten der folgenden Ereignisse jeweils einen
+<strong>Term</strong> an: \( A \): „Alle Kugeln sind blau."
+— \( B \): „Genau zwei der gezogenen Kugeln sind blau."</p>
+<p>Das Zufallsexperiment wird nun <strong>15 Mal</strong> nacheinander
+durchgeführt. Die Zufallsgröße \( Y \) gibt die Anzahl der
+dabei gezogenen blauen Kugeln an.</p>
+<p><strong>b)</strong> Begründe, dass \( Y \)
+binomialverteilt ist. Bestimme den <strong>Erwartungswert</strong> von
+\( Y \) und erläutere dessen Bedeutung für das durchgeführte
+Zufallsexperiment. Berechne die Wahrscheinlichkeit dafür, dass
+<strong>mindestens 5 und höchstens 10</strong> blaue Kugeln gezogen
+werden.</p>
+<p><strong>c)</strong> Die drei Histogramme <strong>(1)</strong>,
+<strong>(2)</strong>, <strong>(3)</strong> stellen Binomialverteilungen
+von Zufallsgrößen bei 15-maliger Durchführung des entsprechenden
+Bernoulli-Experiments dar. Untersuche, welches Diagramm die Verteilung
+von \( Y \) darstellt. Untersuche für die beiden anderen
+Diagramme, welche Aussagen jeweils über die zugehörige
+<strong>Trefferwahrscheinlichkeit</strong> möglich sind.</p>
+</div>
+
+<p>So ist die Urne besetzt — die „Trefferwahrscheinlichkeit" für blau
+ist \( p = \tfrac{6}{10} = 0{,}6 \).</p>
+<figure>
+<svg viewBox="0 0 300 220" role="img" aria-label="Urne mit sechs blauen und vier weißen Kugeln" style="width:100%;max-width:300px;height:auto;background:#fbf7ef;border-radius:8px">
+  <path d="M72 38 L228 38 L208 178 Q150 200 92 178 Z" fill="#ffffff" fill-opacity="0.45" stroke="#7a7163" stroke-width="2"/>
+  <circle cx="108" cy="78"  r="13" fill="#3a5a9c"/>
+  <circle cx="146" cy="74"  r="13" fill="#3a5a9c"/>
+  <circle cx="184" cy="78"  r="13" fill="#3a5a9c"/>
+  <circle cx="112" cy="116" r="13" fill="#3a5a9c"/>
+  <circle cx="150" cy="120" r="13" fill="#3a5a9c"/>
+  <circle cx="132" cy="154" r="13" fill="#3a5a9c"/>
+  <circle cx="200" cy="116" r="13" fill="#ffffff" stroke="#3a5a9c" stroke-width="2"/>
+  <circle cx="188" cy="150" r="13" fill="#ffffff" stroke="#3a5a9c" stroke-width="2"/>
+  <circle cx="170" cy="114" r="13" fill="#ffffff" stroke="#3a5a9c" stroke-width="2"/>
+  <circle cx="152" cy="156" r="13" fill="#ffffff" stroke="#3a5a9c" stroke-width="2"/>
+  <text x="150" y="214" font-size="13" fill="#26324a" text-anchor="middle">6 blau · 4 weiß → P(blau) = 0,6</text>
+</svg>
+<figcaption>Schematische Urne. Beim Ziehen <b>mit Zurücklegen</b> bleibt \( p=0{,}6 \) bei jedem Zug gleich.</figcaption>
+</figure>
+
+<p>Und das sind die drei Histogramme aus der Aufgabe — jedes zeigt eine
+Binomialverteilung bei \( n=15 \) Versuchen, aber mit
+<strong>unterschiedlicher</strong> Trefferwahrscheinlichkeit
+\( p \). Schau sie dir an und überlege selbst, welches zu
+\( Y \) gehört, bevor du die Lösung aufklappst.</p>
+<div class="graph-row">
+<figure>
+<div class="jxgbox" id="jxg-k9-hist1" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Histogramm (1)</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k9-hist2" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Histogramm (2)</figcaption>
+</figure>
+<figure>
+<div class="jxgbox" id="jxg-k9-hist3" style="width:100%;max-width:320px;aspect-ratio:1/1"></div>
+<figcaption>Histogramm (3)</figcaption>
+</figure>
+</div>
+
+<script>window.__jxg(function(){(function(){var d=[0,0.0005,0.0032,0.0139,0.0417,0.0916,0.1527,0.1964,0.1964,0.1527,0.0916,0.0417,0.0139,0.0032,0.0005,0];var b=JXG.JSXGraph.initBoard('jxg-k9-hist1',{boundingbox:[-1.2,0.31,16,-0.035],axis:true,showCopyright:false,showNavigation:false});for(var k=0;k<16;k++){var h=d[k];b.create('polygon',[[k-0.42,0],[k+0.42,0],[k+0.42,h],[k-0.42,h]],{fillColor:'#3a5a9c',fillOpacity:0.55,borders:{strokeColor:'#3a5a9c',strokeWidth:1},vertices:{visible:false},fixed:true,highlight:false});}})();});</script>
+
+<script>window.__jxg(function(){(function(){var d=[0,0,0.0003,0.0016,0.0074,0.0245,0.0612,0.1181,0.1771,0.2066,0.1859,0.1268,0.0634,0.0219,0.0047,0.0005];var b=JXG.JSXGraph.initBoard('jxg-k9-hist2',{boundingbox:[-1.2,0.31,16,-0.035],axis:true,showCopyright:false,showNavigation:false});for(var k=0;k<16;k++){var h=d[k];b.create('polygon',[[k-0.42,0],[k+0.42,0],[k+0.42,h],[k-0.42,h]],{fillColor:(k===9?'#d98324':'#3a5a9c'),fillOpacity:0.6,borders:{strokeColor:'#3a5a9c',strokeWidth:1},vertices:{visible:false},fixed:true,highlight:false});}})();});</script>
+
+<script>window.__jxg(function(){(function(){var d=[0,0,0,0.0001,0.0006,0.003,0.0116,0.0348,0.0811,0.1472,0.2061,0.2186,0.17,0.0916,0.0305,0.0047];var b=JXG.JSXGraph.initBoard('jxg-k9-hist3',{boundingbox:[-1.2,0.31,16,-0.035],axis:true,showCopyright:false,showNavigation:false});for(var k=0;k<16;k++){var h=d[k];b.create('polygon',[[k-0.42,0],[k+0.42,0],[k+0.42,h],[k-0.42,h]],{fillColor:'#3a5a9c',fillOpacity:0.55,borders:{strokeColor:'#3a5a9c',strokeWidth:1},vertices:{visible:false},fixed:true,highlight:false});}})();});</script>
+
+<section
+id="teilaufgabe-a--terme-für-zzmathphzz30zzendzz-und-zzmathphzz31zzendzz"
+class="level3">
+<h3>Teilaufgabe a) — Terme für \( A \) und
+\( B \)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p>Trefferwahrscheinlichkeit für blau: \( p = \tfrac{6}{10} = 0{,}6 \); für weiß
+\( 1-p = 0{,}4 \). Weil <strong>mit Zurücklegen</strong> gezogen wird,
+ist jeder der drei Züge gleich und unabhängig.</p>
+<p><strong>Ereignis \( A \) — „Alle drei blau".</strong>
+Drei Mal blau hintereinander, jedes Mal mit Wahrscheinlichkeit
+\( 0{,}6 \). Die Einzelwahrscheinlichkeiten werden
+multipliziert:</p>
+<p>\[ P(A) = 0{,}6 \cdot 0{,}6 \cdot 0{,}6 = 0{,}6^3. \]</p>
+<p><strong>Ereignis \( B \) — „Genau zwei blau".</strong>
+Hier sind zwei Kugeln blau und eine weiß — aber in <strong>verschiedenen
+Reihenfolgen</strong> (blau-blau-weiß, blau-weiß-blau, weiß-blau-blau).
+Jede einzelne Reihenfolge hat die Wahrscheinlichkeit
+\( 0{,}6^2 \cdot 0{,}4 \); die Anzahl der Reihenfolgen ist der
+<strong>Binomialkoeffizient</strong> \( \binom{3}{2} = 3 \):</p>
+<p>\[ P(B) = \binom{3}{2}\cdot 0{,}6^2 \cdot 0{,}4. \]</p>
+<details><summary>Haltung dahinter: „mit Zurücklegen", „mal" statt „plus", und der Binomialkoeffizient (ganz von vorn)</summary>
+
+<p>Drei Bausteine, der Reihe nach.</p>
+<p><strong>Was heißt „mit Zurücklegen"?</strong> Nach jedem Zug legt man
+die Kugel zurück und mischt. Dadurch ist die Urne vor jedem Zug
+<strong>wieder genau gleich</strong> voll: immer 6 blau, 4 weiß. Die
+Wahrscheinlichkeit für blau bleibt deshalb bei <strong>jedem</strong>
+Zug \( 0{,}6 \) — sie ändert sich nicht. (Ohne Zurücklegen würde
+sich die Urne leeren und die Wahrscheinlichkeit von Zug zu Zug
+verändern; das ist hier ausdrücklich nicht der Fall.)</p>
+<p><strong>Warum multipliziert man?</strong> Eine feste Reihenfolge von
+Ergebnissen ist ein <strong>„und"</strong>: erst blau <em>und</em> dann
+blau <em>und</em> dann blau. Bei unabhängigen Zufallsschritten gilt die
+<strong>Pfadregel</strong>: Entlang eines Pfades (einer festen
+Reihenfolge) werden die Einzelwahrscheinlichkeiten
+<strong>multipliziert</strong>. Anschaulich: Jeder weitere Zug macht den
+gemeinsamen Treffer <em>seltener</em>, also kleiner — und Multiplizieren
+mit einer Zahl unter 1 macht kleiner.</p>
+<p><strong>Was ist der Binomialkoeffizient \( \binom{3}{2} \)?</strong>
+Er zählt, <strong>auf wie viele Arten</strong> man aus 3 Zügen die 2
+„blauen" auswählen kann — also wie viele verschiedene Reihenfolgen es
+für „genau zwei blau" gibt. Man liest ihn „3 über 2". Hier sind es 3
+Möglichkeiten. Genau diese 3 gleich wahrscheinlichen Pfade addieren
+sich, deshalb steht der Faktor 3 (= \( \binom{3}{2} \)) vor dem
+Term.</p>
+<details><summary>… ganz langsam (mit Zahlen)</summary>
+
+<ul>
+<li>\( P(A) = 0{,}6^3 = 0{,}6 \cdot 0{,}6 \cdot 0{,}6 \). Erst \( 0{,}6 \cdot 0{,}6 = 0{,}36 \), dann
+\( 0{,}36 \cdot 0{,}6 = 0{,}216 \). Also \( P(A) = 0{,}216 \).</li>
+<li>Für \( B \): ein einzelner Pfad ist \( 0{,}6^2 \cdot 0{,}4 = 0{,}36 \cdot 0{,}4 = 0{,}144 \).
+Es gibt \( \binom{3}{2} = 3 \) solche Pfade. Zusammen: \( 3 \cdot 0{,}144 = 0{,}432 \).
+Also \( P(B) = 0{,}432 \).</li>
+</ul>
+<p>In der mündlichen Prüfung ist nur der <strong>Term</strong> verlangt
+— die ausgerechnete Zahl ist eine schöne Zugabe, kein Muss.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Bei \( B \) den Faktor \( \binom{3}{2}=3 \)
+<strong>vergessen</strong> und nur \( 0{,}6^2\cdot 0{,}4 = 0{,}144 \) hinschreiben. Das
+ist die Wahrscheinlichkeit für <strong>eine bestimmte</strong>
+Reihenfolge (z. B. blau-blau-weiß), aber „genau zwei blau" lässt drei
+Reihenfolgen zu. Ohne den Zählfaktor ist die Lösung zu klein und
+unvollständig.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="teilaufgabe-b--binomialverteilung-erwartungswert-zzmathphzz54zzendzz"
+class="level3">
+<h3>Teilaufgabe b) — Binomialverteilung, Erwartungswert,
+\( P(5 \le Y \le 10) \)</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Begründung, dass \( Y \) binomialverteilt
+ist.</strong> Das Experiment ist eine <strong>Bernoulli-Kette der Länge
+\( n=15 \)</strong>:</p>
+<ul>
+<li>Jeder Zug hat <strong>nur zwei</strong> interessierende Ausgänge —
+„blau" (Treffer) oder „nicht blau" (Niete).</li>
+<li>Wegen des <strong>Zurücklegens</strong> sind die 15 Züge
+<strong>unabhängig</strong> voneinander, und die
+Trefferwahrscheinlichkeit bleibt <strong>konstant</strong> bei
+\( p=0{,}6 \).</li>
+</ul>
+<p>\( Y \) zählt die Treffer (blaue Kugeln) in diesen 15
+Versuchen. Die Trefferzahl einer Bernoulli-Kette ist
+<strong>binomialverteilt</strong>: \( Y \sim B(15;\,0{,}6) \), mit</p>
+<p>\[ P(Y=k) = \binom{15}{k}\, 0{,}6^{\,k}\, 0{,}4^{\,15-k}. \]</p>
+<p><strong>Erwartungswert.</strong> Für die Binomialverteilung gilt
+\( E(Y) = n\cdot p \):</p>
+<p>\[ E(Y) = 15 \cdot 0{,}6 = 9. \]</p>
+<p><strong>Bedeutung.</strong> Führt man die ganze 15er-Kette
+<strong>sehr oft</strong> durch, sind im Mittel (auf lange Sicht)
+<strong>9 von 15</strong> gezogenen Kugeln blau.</p>
+<p><strong>Wahrscheinlichkeit \( P(5 \le Y \le 10) \)</strong> („mindestens
+5 und höchstens 10"). Man rechnet sie über <strong>kumulierte</strong>
+(aufsummierte) Wahrscheinlichkeiten aus dem Tafelwerk / GTR:</p>
+<p>\[ P(5 \le Y \le 10) = P(Y \le 10) - P(Y \le 4) \approx 0{,}783 - 0{,}009 \approx 0{,}773. \]</p>
+<details><summary>Haltung dahinter: Bernoulli-Kette, Binomialverteilung, Erwartungswert und der „minus"-Trick (ganz von vorn)</summary>
+
+<p>Vier Begriffe, einer nach dem anderen.</p>
+<p><strong>Bernoulli-Experiment.</strong> Ein Zufallsversuch mit
+<strong>genau zwei</strong> Ausgängen, die man „Treffer" und „Niete"
+nennt. Hier: Eine Kugel ziehen — „blau" = Treffer, „weiß" = Niete.
+(Münzwurf, „Lampe defekt ja/nein", „Tor ja/nein" sind weitere
+Beispiele.)</p>
+<p><strong>Bernoulli-Kette.</strong> Denselben Bernoulli-Versuch
+<strong>\( n \)-mal</strong> wiederholen,
+<strong>unabhängig</strong> und mit <strong>gleichbleibender</strong>
+Trefferwahrscheinlichkeit \( p \). Das „mit Zurücklegen" ist
+genau das, was die Unabhängigkeit und das konstante \( p \)
+sichert — ohne Zurücklegen wäre es <strong>keine</strong>
+Bernoulli-Kette.</p>
+<p><strong>Binomialverteilung.</strong> Die Zufallsgröße „Anzahl der
+Treffer in einer Bernoulli-Kette" heißt
+<strong>binomialverteilt</strong>. Ihre Formel \( P(Y=k)=\binom{n}{k}p^k(1-p)^{n-k} \) ist
+genau das, was wir in Teil a) für \( n=3 \) per Hand gebaut
+haben — \( \binom{n}{k} \) zählt die Reihenfolgen, \( p^k \)
+sind die Treffer, \( (1-p)^{n-k} \) die Nieten.</p>
+<p><strong>Erwartungswert \( E(Y) \).</strong> Der „Mittelwert
+auf lange Sicht". Anschaulich: Wenn jeder einzelne Zug mit
+Wahrscheinlichkeit \( 0{,}6 \) blau ist, erwartet man bei 15
+Zügen ungefähr \( 15 \cdot 0{,}6 = 9 \) blaue — wie „60 % von 15". Daher die
+einfache Formel \( E(Y)=n\cdot p \).</p>
+<details><summary>Der „minus"-Trick bei \( P(5 \le Y \le 10) \) — warum \( P(Y\le4) \) und nicht \( P(Y\le5) \)?</summary>
+
+<p>Im Tafelwerk stehen nur <strong>kumulierte</strong> Werte
+\( P(Y \le k) \), also „k oder weniger Treffer". Ein Bereich „von 5
+bis 10" baut man daraus als Differenz: „alles bis 10"
+<strong>minus</strong> „alles, was unterhalb von 5 liegt".</p>
+<p>Der heikle Punkt ist die untere Grenze. „Mindestens 5" heißt: die
+<strong>5 gehört dazu</strong>. Abziehen darf man deshalb nur, was
+<strong>echt kleiner</strong> als 5 ist, also \( Y \le 4 \):</p>
+<p>\[ P(5 \le Y \le 10) = \underbrace{P(Y \le 10)}_{\text{alles bis 10}} - \underbrace{P(Y \le 4)}_{\text{alles unter 5}}. \]</p>
+<p>Würde man \( P(Y \le 5) \) abziehen, hätte man die 5 mit
+weggeschnitten — der Wert wäre falsch (zu klein). Merksatz:
+<strong>untere Grenze einschließen heißt „eins darunter"
+abziehen.</strong></p>
+</details>
+
+<details><summary>… ganz langsam (mit Zahlen)</summary>
+
+<p>\( E(Y) = 15 \cdot 0{,}6 \): das ist \( 15 \cdot 0{,}6 = 9{,}0 = 9 \). Aus dem Tafelwerk
+für \( B(15;0{,}6) \): \( P(Y \le 10) \approx 0{,}783 \) und \( P(Y \le 4) \approx 0{,}009 \).
+Differenz: \( 0{,}783 - 0{,}009 = 0{,}774 \approx 0{,}773 \). Es ist also mit knapp <strong>77
+%</strong> Wahrscheinlichkeit so, dass zwischen 5 und 10 blaue Kugeln
+gezogen werden — die wahrscheinlichsten Fälle liegen rund um den
+Erwartungswert 9.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section id="teilaufgabe-c--histogramme-zuordnen" class="level3">
+<h3>Teilaufgabe c) — Histogramme zuordnen</h3>
+<p><span class="tag tag-warn">AB II / AB III</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Welches Diagramm gehört zu \( Y \)?</strong> Für
+\( Y \sim B(15;0{,}6) \) ist \( E(Y) = 9 \) — eine <strong>ganze
+Zahl</strong>. Bei einer Binomialverteilung liegt der <strong>höchste
+Balken</strong> (der wahrscheinlichste Wert) bei einer ganzzahligen
+Erwartung <strong>genau am Erwartungswert</strong>, hier also bei
+\( k=9 \).</p>
+<p>\[ \Rightarrow \text{Diagramm } \mathbf{(2)} \text{ zeigt die Verteilung von } Y. \]</p>
+<p><strong>Was lässt sich über die beiden anderen sagen?</strong></p>
+<ul>
+<li><strong>Diagramm (1)</strong> ist <strong>achsensymmetrisch</strong>
+(spiegelgleich um die Mitte \( k = 7{,}5 \)). Eine
+Binomialverteilung ist nur dann symmetrisch, wenn Treffer und Niete
+gleich wahrscheinlich sind: \[ \Rightarrow p = 0{,}5. \]</li>
+<li><strong>Diagramm (3)</strong> hat seinen Schwerpunkt <strong>weiter
+rechts</strong>; der höchste Balken liegt etwa bei \( 10 \)
+bis \( 11 \), der Erwartungswert \( \mu = 15p \) also
+zwischen 10 und 12: \[ 10  \lt  15p  \lt  12 \quad\Longleftrightarrow\quad \tfrac{2}{3}  \lt  p  \lt  \tfrac{4}{5}. \]</li>
+</ul>
+<details><summary>Haltung dahinter: Was verrät die Form eines Histogramms über \( p \)? (ganz von vorn)</summary>
+
+<p>Ein <strong>Histogramm</strong> zeichnet für jede mögliche
+Trefferzahl \( k \) einen Balken, dessen Höhe die
+Wahrscheinlichkeit \( P(Y=k) \) ist. Die Form trägt zwei
+Informationen, die man direkt ablesen kann:</p>
+<p><strong>1. Die Lage des höchsten Balkens verrät den
+Erwartungswert.</strong> Der höchste Balken (der
+<em>wahrscheinlichste</em> Wert, „Modalwert") liegt immer dicht beim
+Erwartungswert \( \mu = n\cdot p \). Steht er bei \( k=9 \),
+ist \( \mu \approx 9 \), also \( p \approx \tfrac{9}{15} = 0{,}6 \). Steht er weiter
+rechts, ist \( p \) größer; weiter links, kleiner. So
+ordnet man (2) dem \( Y \) zu — der Gipfel sitzt auf der
+9.</p>
+<p><strong>2. Symmetrie tritt nur bei \( p=0{,}5 \) auf.</strong>
+Bei \( p=0{,}5 \) sind Treffer und Niete gleich wahrscheinlich,
+deshalb ist die Verteilung <strong>spiegelgleich</strong> um die Mitte
+\( n/2 = 7{,}5 \). Sobald \( p \neq 0{,}5 \), kippt die Verteilung
+zur einen Seite (Schiefe). Ein perfekt symmetrisches Bild ⇒
+\( p=0{,}5 \).</p>
+<details><summary>… ganz langsam: woher \( \tfrac{2}{3} \) und \( \tfrac{4}{5} \) bei Diagramm (3)?</summary>
+
+<p>Man liest aus (3) ab, dass der Erwartungswert zwischen 10 und 12
+liegen muss (höchster Balken um 10–11). Der Erwartungswert ist
+\( \mu = 15p \). Aus \( 10  \lt  15p  \lt  12 \) löst man nach
+\( p \) auf, indem man <strong>alle drei Teile durch 15
+teilt</strong>:</p>
+<p>\[ \frac{10}{15}  \lt  p  \lt  \frac{12}{15} \quad\Longrightarrow\quad \frac{2}{3}  \lt  p  \lt  \frac{4}{5}, \]</p>
+<p>denn \( \tfrac{10}{15} = \tfrac{2}{3} \approx 0{,}667 \) und \( \tfrac{12}{15} = \tfrac{4}{5} = 0{,}8 \). Man kann also nur
+einen <strong>Bereich</strong> für \( p \) angeben, keinen
+einzelnen Wert — das Histogramm legt \( p \) nicht
+eindeutig fest, sondern grenzt es ein.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Diagramm (1) mit der Verteilung von \( Y \) verwechseln,
+weil beide einen Gipfel „in der Mitte" haben. Der Unterschied steckt in
+der genauen Lage: der Gipfel von \( Y \) sitzt auf
+<strong>9</strong>, der Gipfel bei \( p=0{,}5 \) auf
+<strong>7/8</strong> (Mitte). Und: Aus einem schiefen Histogramm lässt
+sich \( p \) nur als <strong>Bereich</strong> angeben — wer
+dort einen exakten Wert behauptet, überinterpretiert das Bild.</p>
+</details>
+</details>
+</details>
+
+<details><summary>Kurz-Spickzettel Teil 1 (erst nach dem eigenen Versuch aufklappen)</summary>
+
+<ul>
+<li>a) \( P(A)=0{,}6^3\ (=0{,}216) \); \( P(B)=\binom{3}{2}\cdot 0{,}6^2\cdot 0{,}4\ (=0{,}432) \)</li>
+<li>b) \( Y\sim B(15;0{,}6) \) (Bernoulli-Kette, unabhängig wegen
+Zurücklegen); \( E(Y)=15\cdot0{,}6=9 \) („im Mittel 9 von 15 blau");
+\( P(5\le Y\le 10)=P(Y\le10)-P(Y\le4)\approx 0{,}773 \)</li>
+<li>c) \( Y \to \) Diagramm <strong>(2)</strong> (Gipfel bei
+\( k=9 \), weil \( E(Y)=9 \) ganzzahlig); (1)
+\( p=0{,}5 \) (symmetrisch); (3) \( \tfrac{2}{3} \lt p \lt \tfrac{4}{5} \)</li>
+</ul>
+</details>
+
+<hr />
+</section>
+</section>
+<section
+id="teil-2--gespräch-analysis-vom-graphen-der-ableitung-auf-zzmathphzz131zzendzz-schließen"
+class="level2">
+<h2>Teil 2 — Gespräch (Analysis): Vom Graphen der Ableitung auf
+\( f \) schließen</h2>
+<div class="aufgabenkasten">
+
+<p><strong>Input.</strong> Gegeben ist <strong>ausschnittsweise der
+Graph der Ableitungsfunktion \( f' \)</strong> einer
+ganzrationalen Funktion \( f \) (siehe Abbildung unten). Im
+Gespräch denkbare Aspekte:</p>
+<p><strong>(AB I)</strong> Bestimmen von \( f'(1) \); Bedeutung
+von \( f'(1)=2 \) für den Graphen von \( f \);
+Nullstellen von \( f' \). <strong>(AB II)</strong> Bedeutung
+der Nullstellen von \( f' \) für \( f \);
+Monotonieverhalten von \( f \); Näherungswert für
+\( f''(1) \) und dessen Bedeutung; Krümmungsverhalten von
+\( f \); Skizze von \( f \) mit
+\( f(0)=0{,}6 \) und \( f(2)=3 \) samt Inhalt der Fläche,
+die \( f' \) im Intervall \( [0;2] \) mit der
+\( x \)-Achse einschließt; Begründung, ob
+\( f(-1) \lt f(0) \), \( f(-1)=f(0) \) oder \( f(-1) \gt f(0) \).
+<strong>(AB III)</strong> Minimaler Grad einer Stammfunktion
+\( F \) von \( f \); ein möglicher
+Funktionsterm von \( f' \).</p>
+</div>
+
+<blockquote>
+<p><strong>Der eine Gedanke, der alles trägt:</strong> Im Bild ist
+<strong>\( f' \)</strong> gezeichnet, <strong>nicht</strong>
+\( f \). Jeder Höhenwert der gezeichneten Kurve ist also
+eine <strong>Steigung</strong> von \( f \).
+„\( f' \) liegt bei \( x=1 \) auf Höhe 2"
+bedeutet: „\( f \) steigt bei \( x=1 \) mit
+Steigung 2." Halte diesen Übersetzungs-Schritt während der ganzen
+Aufgabe fest. Werkzeuge dazu im Kapitel <a
+href="kap-funktionsuntersuchung.html">Funktionsuntersuchung</a>.</p>
+</blockquote>
+<p>Hier ist der Graph von \( f' \) reproduziert. Der orange
+Punkt markiert \( f'(1)=2 \), die roten Punkte die
+Nullstellen.</p>
+<figure>
+<div class="jxgbox" id="jxg-k9-fstrich" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Graph der <b>Ableitung</b> \( f' \) (nicht von \( f \)). Form: von links oben herab, Tief unter der Achse, mittlere Beule mit Scheitel knapp links von \( x=1 \) (der orange Punkt markiert nur den Wert \( f'(1)=2 \), nicht den Scheitel), Berührung der Achse bei \( x=2 \), dann steil hoch.</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k9-fstrich',{boundingbox:[-2.3,5.8,3.3,-2.7],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return x*(x+1)*(x-2)*(x-2);},-1.78,2.83],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('point',[-1,0],{name:'−1',size:2,fixed:true,strokeColor:'#b03a2e',fillColor:'#b03a2e',label:{offset:[-6,-14]}});b.create('point',[0,0],{name:'0',size:2,fixed:true,strokeColor:'#b03a2e',fillColor:'#b03a2e',label:{offset:[6,-14]}});b.create('point',[2,0],{name:'2',size:2,fixed:true,strokeColor:'#b03a2e',fillColor:'#b03a2e',label:{offset:[8,-14]}});b.create('point',[1,2],{name:"f '(1)=2",size:2.5,fixed:true,strokeColor:'#d98324',fillColor:'#d98324',label:{offset:[8,6]}});})();});</script>
+
+<section
+id="ab-i--zzmathphzz169zzendzz-bedeutung-nullstellen-von-zzmathphzz170zzendzz"
+class="level3">
+<h3>AB I — \( f'(1) \), Bedeutung, Nullstellen von
+\( f' \)</h3>
+<p><span class="tag tag-ok">AB I — Grundkompetenz</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>\( f'(1) \) ablesen.</strong> Man geht bei
+\( x=1 \) senkrecht hoch bis zur gezeichneten Kurve und liest
+die Höhe ab:</p>
+<p>\[ f'(1) = 2. \]</p>
+<p><strong>Bedeutung von \( f'(1)=2 \) für den Graphen von
+\( f \).</strong> \( f' \) ist die
+<strong>Steigung</strong> von \( f \). Also: An der Stelle
+\( x=1 \) hat der Graph von \( f \) die
+<strong>Steigung 2</strong> — die Tangente dort steigt um 2
+Höheneinheiten pro 1 Einheit nach rechts; \( f \) ist an
+dieser Stelle wachsend und ziemlich steil.</p>
+<p><strong>Nullstellen von \( f' \).</strong> Das sind die
+Stellen, an denen die gezeichnete \( f' \)-Kurve die
+\( x \)-Achse <strong>schneidet oder berührt</strong>:</p>
+<p>\[ x = -1, \qquad x = 0, \qquad x = 2. \]</p>
+<p>(Bei \( x=2 \) <strong>berührt</strong> die Kurve die
+Achse nur — dazu mehr im nächsten Abschnitt.)</p>
+<details><summary>Haltung dahinter: „Das Bild ist die Ableitung" — was heißt das überhaupt? (ganz von vorn)</summary>
+
+<p>Der wichtigste und am leichtesten zu verwechselnde Punkt der ganzen
+Aufgabe.</p>
+<p><strong>Ableitung = Steigung.</strong> Die <strong>Ableitung</strong>
+\( f' \) einer Funktion \( f \) gibt an
+<strong>jeder</strong> Stelle an, <strong>wie steil</strong>
+\( f \) dort ist — wie eine Steigungsanzeige am Berg. Ein
+<strong>positiver</strong> \( f' \)-Wert heißt
+„\( f \) geht bergauf", ein <strong>negativer</strong>
+„\( f \) geht bergab", <strong>null</strong> heißt
+„waagrecht".</p>
+<p><strong>Was zeigt das Bild?</strong> Hier ist die
+<strong>Steigungsanzeige selbst</strong> als Kurve gezeichnet, also
+\( f' \) — \( f \) sieht man
+<strong>nicht</strong>. Wenn die \( f' \)-Kurve bei
+\( x=1 \) auf Höhe 2 liegt, dann ist das die <strong>Aussage
+über die Steigung</strong> von \( f \):
+„\( f \) steigt dort mit Tempo 2". Höhe der
+\( f' \)-Kurve = Steigung von \( f \).</p>
+<p><strong>Warum sind die Nullstellen von \( f' \)
+wichtig?</strong> Eine Nullstelle von \( f' \) ist eine
+Stelle, an der die <strong>Steigung von \( f \)
+null</strong> ist — wo \( f \) also eine <strong>waagrechte
+Tangente</strong> hat. Solche Stellen sind die Kandidaten für
+Hochpunkte, Tiefpunkte oder Sattelpunkte von \( f \).
+Deshalb sucht man sie zuerst.</p>
+<details><summary>… ganz langsam (so liest man Höhe und Nullstellen ab)</summary>
+
+<ul>
+<li><strong>Höhe ablesen \( f'(1) \):</strong> Finger bei
+\( x=1 \) auf die Achse, senkrecht hoch bis zur Kurve, dann
+waagrecht nach links zur \( y \)-Achse — dort steht 2. Also
+\( f'(1)=2 \).</li>
+<li><strong>Nullstellen:</strong> Augen auf die
+\( x \)-Achse, schauen, wo die Kurve sie trifft. Links
+schneidet sie bei \( -1 \) (von oben nach unten), dann bei
+\( 0 \) (von unten nach oben), und bei \( 2 \)
+<strong>berührt</strong> sie die Achse nur (kommt von oben herunter,
+tippt die Achse an, geht wieder hoch).</li>
+</ul>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>\( f \) und \( f' \) verwechseln.
+\( f'(1)=2 \) ist <strong>kein</strong> Punkt des Graphen von
+\( f \) (nicht „\( f \) ist 2 bei
+\( x=1 \)"), sondern die <strong>Steigung</strong> von
+\( f \) dort. Und die im Bild sichtbaren Hoch-/Tiefpunkte
+gehören zu \( f' \), nicht zu \( f \). Wer das
+vertauscht, beantwortet die halbe Aufgabe falsch.</p>
+</details>
+</details>
+</details>
+
+</section>
+<section
+id="ab-ii--nullstellen-bedeutung-monotonie-zzmathphzz220zzendzz-krümmung-skizze--fläche-vergleich"
+class="level3">
+<h3>AB II — Nullstellen-Bedeutung, Monotonie, \( f''(1) \),
+Krümmung, Skizze + Fläche, Vergleich</h3>
+<p><span class="tag tag-warn">AB II — Standardanforderung</span></p>
+<details><summary>Lösung Schritt für Schritt anzeigen</summary>
+
+<p><strong>Bedeutung der Nullstellen von \( f' \) für
+\( f \) (Extrempunkte).</strong> An einer Nullstelle von
+\( f' \) hat \( f \) eine waagrechte Tangente.
+Ob dort ein Hoch-, Tief- oder Sattelpunkt liegt, entscheidet der
+<strong>Vorzeichenwechsel</strong> von \( f' \):</p>
+<ul>
+<li><strong>\( x=-1 \):</strong> \( f' \) wechselt
+von <strong>\( + \) nach \( - \)</strong>
+(links der \( -1 \) ist die Kurve oben, rechts davon unter
+der Achse) → \( f \) steigt erst, dann fällt →
+<strong>Hochpunkt</strong> von \( f \).</li>
+<li><strong>\( x=0 \):</strong> \( f' \) wechselt
+von <strong>\( - \) nach \( + \)</strong> →
+\( f \) fällt erst, dann steigt →
+<strong>Tiefpunkt</strong> von \( f \).</li>
+<li><strong>\( x=2 \):</strong> \( f' \)
+<strong>berührt</strong> die Achse nur und bleibt
+<strong>positiv</strong> (kein Vorzeichenwechsel) →
+<strong>kein</strong> Extrempunkt, sondern ein
+<strong>Sattelpunkt</strong> (Terrassenpunkt): waagrechte Tangente, aber
+\( f \) steigt davor und danach weiter.</li>
+</ul>
+<p><strong>Monotonieverhalten von \( f \).</strong>
+\( f \) steigt, wo \( f' \gt 0 \);
+\( f \) fällt, wo \( f' \lt 0 \). Aus dem Bild:</p>
+<ul>
+<li>\( f' \gt 0 \) für \( x \lt -1 \) → \( f \)
+<strong>streng wachsend</strong> auf \( (-\infty;-1] \).</li>
+<li>\( f' \lt 0 \) für \( -1 \lt x \lt 0 \) → \( f \)
+<strong>streng fallend</strong> auf \( [-1;0] \).</li>
+<li>\( f' \gt 0 \) für \( 0 \lt x \lt 2 \) und
+\( x \gt 2 \) → \( f \) <strong>streng
+wachsend</strong> auf \( [0;\infty) \) (bei \( x=2 \)
+kurz waagrecht, dann weiter steigend).</li>
+</ul>
+<p><strong>Näherungswert für \( f''(1) \) und
+Bedeutung.</strong> \( f'' \) ist die Ableitung von
+\( f' \), also die <strong>Steigung der
+\( f' \)-Kurve</strong>. In der Aufgabenskizze liegt der
+<strong>Scheitel</strong> (höchste Stelle) der mittleren Beule
+<strong>nahe \( x=1 \)</strong>; dort verläuft die Tangente
+an \( f' \) <strong>fast waagrecht</strong>. Aus dem Graphen
+liest man deshalb ab:</p>
+<p>\[ f''(1) \approx 0. \]</p>
+<p>(Der orange Punkt \( (1\,|\,2) \) markiert nur den
+<strong>Wert</strong> \( f'(1)=2 \) — wie hoch die Kurve bei
+\( x=1 \) liegt —, nicht den Scheitel. Im hier reproduzierten
+exakten Term \( f'(x)=x(x+1)(x-2)^2 \) sitzt der Scheitel ein kleines Stück
+weiter links, bei \( x\approx0{,}84 \); für die Prüfung zählt der
+<strong>abgelesene Näherungswert</strong> \( f''(1)\approx0 \).)</p>
+<p>Bedeutung: Ein Scheitel von \( f' \) <strong>nahe
+\( x=1 \)</strong> bedeutet, dass die <strong>Steigung von
+\( f \) dort am größten</strong> ist. \( f \)
+hat bei \( x\approx 1 \) einen <strong>Wendepunkt</strong> und
+steigt dort <strong>am steilsten</strong>.</p>
+<p><strong>Krümmungsverhalten von \( f \).</strong> Die
+Krümmung von \( f \) hängt am Vorzeichen von
+\( f'' \), also daran, ob die \( f' \)-Kurve
+<strong>steigt</strong> oder <strong>fällt</strong>:</p>
+<ul>
+<li>\( f' \) <strong>fällt</strong> von links oben bis zum
+Tief der Kurve (etwa \( x\approx -0{,}5 \)) → \( f'' \lt 0 \) →
+\( f \) <strong>rechtsgekrümmt</strong>.</li>
+<li>\( f' \) <strong>steigt</strong> vom Tief bis zum Gipfel
+(etwa \( x\approx 1 \)) → \( f'' \gt 0 \) →
+\( f \) <strong>linksgekrümmt</strong>.</li>
+<li>\( f' \) <strong>fällt</strong> vom Gipfel bis zur
+Berührung bei \( x=2 \) → \( f'' \lt 0 \) →
+\( f \) <strong>rechtsgekrümmt</strong>.</li>
+<li>\( f' \) <strong>steigt</strong> ab \( x=2 \)
+→ \( f'' \gt 0 \) → \( f \)
+<strong>linksgekrümmt</strong>.</li>
+</ul>
+<p>An den Übergängen (\( x\approx-0{,}5 \), \( x\approx1 \),
+\( x=2 \)) liegen die <strong>Wendepunkte</strong> von
+\( f \) — genau dort, wo \( f' \) seine
+Hoch-/Tiefpunkte hat.</p>
+<p><strong>Inhalt der Fläche zwischen \( f' \) und der
+\( x \)-Achse auf \( [0;2] \).</strong> Auf
+\( [0;2] \) liegt die \( f' \)-Kurve <strong>ganz
+über (bzw. auf) der \( x \)-Achse</strong>
+(\( f'\ge 0 \)). Die Fläche ist deshalb das Integral von
+\( f' \) über \( [0;2] \), und nach dem
+<strong>Hauptsatz</strong> ist das Integral der Ableitung gleich der
+<strong>Änderung von \( f \)</strong>:</p>
+<p>\[ A = \int_0^2 f'(x)\,dx = f(2) - f(0) = 3 - 0{,}6 = 2{,}4. \]</p>
+<p>Die eingeschlossene Fläche misst also <strong>\( 2{,}4 \)
+Flächeneinheiten</strong> — ohne dass man eine Stammfunktion von
+\( f' \) ausrechnen muss.</p>
+<figure>
+<div class="jxgbox" id="jxg-k9-flaeche" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Die markierte Fläche zwischen \( f' \) und der \( x \)-Achse auf \( [0;2] \) hat den Inhalt \( f(2)-f(0)=2{,}4 \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k9-flaeche',{boundingbox:[-2.3,5.8,3.3,-2.7],axis:true,showCopyright:false,showNavigation:false});var g=b.create('functiongraph',[function(x){return x*(x+1)*(x-2)*(x-2);},-1.78,2.83],{strokeColor:'#3a5a9c',strokeWidth:2.5});b.create('integral',[[0,2],g],{fillColor:'#d98324',fillOpacity:0.3,curveLeft:{visible:false},curveRight:{visible:false},baseLeft:{visible:false},baseRight:{visible:false},label:{visible:false}});})();});</script>
+
+<p><strong>Skizze des Graphen von \( f \) mit
+\( f(0)=0{,}6 \) und \( f(2)=3 \).</strong> Aus allem oben
+ergibt sich die Form von \( f \):</p>
+<ul>
+<li><strong>Hochpunkt</strong> bei \( x=-1 \), dann
+<strong>fallend</strong> bis zum <strong>Tiefpunkt</strong>
+\( (0\,|\,0{,}6) \),</li>
+<li>danach <strong>steigend</strong> durch den steilsten Punkt
+(Wendepunkt um \( x\approx1 \)) bis zum
+<strong>Sattelpunkt</strong> \( (2\,|\,3) \) mit waagrechter
+Tangente,</li>
+<li>ab \( x=2 \) weiter <strong>steigend</strong>.</li>
+</ul>
+<figure>
+<div class="jxgbox" id="jxg-k9-fskizze" style="width:100%;max-width:520px;aspect-ratio:1/1"></div>
+<figcaption>Skizze von \( f \) selbst (grün): Hochpunkt bei \( x=-1 \), Tiefpunkt \( (0\,|\,0{,}6) \), Sattelpunkt \( (2\,|\,3) \). Diese Kurve ist <b>nicht</b> die Abbildung aus dem Input — die zeigt \( f' \).</figcaption>
+</figure>
+
+<script>window.__jxg(function(){(function(){var b=JXG.JSXGraph.initBoard('jxg-k9-fskizze',{boundingbox:[-1.8,3.9,2.9,-0.7],axis:true,showCopyright:false,showNavigation:false});b.create('functiongraph',[function(x){return Math.pow(x,5)/5-3*Math.pow(x,4)/4+2*x*x+0.6;},-1.55,2.55],{strokeColor:'#3a8a5a',strokeWidth:2.5});b.create('point',[-1,1.65],{name:'Hochp.',size:2,fixed:true,strokeColor:'#b03a2e',fillColor:'#b03a2e',label:{offset:[-50,2]}});b.create('point',[0,0.6],{name:'(0|0,6) Tiefp.',size:2.5,fixed:true,strokeColor:'#3a5a9c',fillColor:'#3a5a9c',label:{offset:[8,-12]}});b.create('point',[2,3],{name:'(2|3) Sattel',size:2.5,fixed:true,strokeColor:'#d98324',fillColor:'#d98324',label:{offset:[-30,16]}});})();});</script>
+
+<p><strong>Vergleich \( f(-1) \) und
+\( f(0) \).</strong> Zwischen \( x=-1 \) und
+\( x=0 \) ist \( f' \lt 0 \), also ist
+\( f \) auf \( [-1;0] \) <strong>streng
+fallend</strong>. Damit liegt der linke Wert höher:</p>
+<p>\[ f(-1)  \gt  f(0). \]</p>
+<details><summary>Haltung dahinter: Vorzeichen → Monotonie → Extrempunkte (ganz von vorn)</summary>
+
+<p>Eine zusammenhängende Kette, die fast alle Teilfragen oben
+erklärt.</p>
+<p><strong>Vorzeichen von \( f' \) ⇒ Auf/Ab von
+\( f \).</strong> Steigung positiv = bergauf, negativ =
+bergab. Man liest also nur, <strong>wo die \( f' \)-Kurve
+über und wo sie unter der Achse</strong> liegt, und übersetzt: über der
+Achse → \( f \) steigt; unter der Achse →
+\( f \) fällt. Das ist das
+<strong>Monotonieverhalten</strong>.</p>
+<p><strong>Vorzeichen</strong>wechsel** von \( f' \) ⇒ Art
+des Extrempunkts.** An einer waagrechten Tangente (\( f'=0 \))
+schaut man, <strong>wie</strong> das Vorzeichen wechselt:</p>
+<ul>
+<li>von \( + \) zu \( - \): erst hoch, dann
+runter → <strong>Hochpunkt</strong> („Bergkuppe").</li>
+<li>von \( - \) zu \( + \): erst runter, dann
+hoch → <strong>Tiefpunkt</strong> („Tal").</li>
+<li><strong>kein</strong> Wechsel (z. B. \( + \) bleibt
+\( + \), die Kurve berührt nur): die Steigung wird kurz
+null und bleibt sonst gleich gerichtet → <strong>Sattelpunkt</strong>
+(waagrechtes „Treppchen" in einem steigenden Hang).</li>
+</ul>
+<p>Genau die Berührung bei \( x=2 \) ist so ein Fall:
+\( f' \) tippt die Achse an und bleibt positiv — deshalb
+Sattelpunkt, kein Extrempunkt.</p>
+<p><strong>Steigt/fällt \( f' \) ⇒ Krümmung von
+\( f \).</strong> Eine Stufe höher: \( f'' \)
+ist die Steigung von \( f' \). Wo die
+\( f' \)-Kurve <strong>steigt</strong>, ist
+\( f'' \gt 0 \) und \( f \) macht eine
+<strong>Linkskurve</strong> (linksgekrümmt, „lächelnde" Schale); wo sie
+<strong>fällt</strong>, ist \( f'' \lt 0 \) und
+\( f \) macht eine <strong>Rechtskurve</strong>
+(rechtsgekrümmt, „traurige" Haube). Die Wendepunkte von
+\( f \) sitzen dort, wo \( f' \) am
+höchsten/tiefsten ist.</p>
+<details><summary>… ganz langsam: warum ist die Fläche \( = f(2)-f(0) \)?</summary>
+
+<p>Das ist der <strong>Hauptsatz der Differential- und
+Integralrechnung</strong>, in einem Satz: „Das Integral der Ableitung
+über ein Intervall ist gleich, wie viel sich die Funktion auf dem
+Intervall <strong>insgesamt geändert</strong> hat." Bild
+<strong>Tachometer/Wegstrecke</strong>: \( f' \) ist die
+Geschwindigkeit, \( f \) der zurückgelegte Weg. Die Fläche
+unter der Geschwindigkeitskurve von \( 0 \) bis
+\( 2 \) ist der in dieser Zeit zurückgelegte Weg — also
+\( f(2)-f(0) \).</p>
+<p>Hier: \( f(2)=3 \), \( f(0)=0{,}6 \), Änderung
+\( = 3-0{,}6 = 2{,}4 \). Weil \( f' \) auf \( [0;2] \)
+nirgends unter die Achse geht (\( f'\ge0 \)), ist diese Änderung
+zugleich der echte <strong>Flächeninhalt</strong>: \( A = 2{,}4 \).
+Hätte \( f' \) im Intervall einen Teil unter der Achse,
+müsste man wie bei einer Flächenaufgabe an den Nullstellen trennen —
+hier ist das nicht nötig.</p>
+</details>
+
+<details><summary>Typische Falle</summary>
+
+<p>Beim Sattelpunkt bei \( x=2 \) trotzdem einen Extrempunkt
+von \( f \) behaupten. Die Tangente ist zwar waagrecht
+(\( f'(2)=0 \)), aber ohne <strong>Vorzeichenwechsel</strong> von
+\( f' \) ist es <strong>kein</strong> Hoch- oder Tiefpunkt.
+Zweite Falle: \( f''(1) \) und \( f'(1) \) verwechseln
+— \( f'(1)=2 \) (Höhe der Kurve), \( f''(1)\approx0 \) (Steigung
+der Kurve am Gipfel).</p>
+</details>
+</details>
+
+<blockquote>
+<p><strong>Transparenz zu den \( \approx \)-Werten:</strong>
+\( f''(1)\approx 0 \) und die genaue Lage der Wendepunkte
+(\( x\approx-0{,}5 \), \( x\approx1 \)) sind <strong>aus dem
+Graphen abgelesen</strong> und damit Näherungen — die Aufgabe verlangt
+für \( f''(1) \) ausdrücklich nur einen
+<strong>Näherungswert</strong>. Die exakten Werte hingen vom genauen
+Funktionsterm ab; die <strong>gegebenen</strong> Größen
+\( f(0)=0{,}6 \) und \( f(2)=3 \) und damit die Fläche
+\( 2{,}4 \) sind dagegen exakt.</p>
+</blockquote>
+</details>
+
+</section>
+<section
+id="ab-iii--minimaler-grad-von-zzmathphzz396zzendzz-möglicher-term-von-zzmathphzz397zzendzz"
+class="level3">
+<h3>AB III — Minimaler Grad von \( F \), möglicher Term von
+\( f' \)</h3>
+<p><span class="tag tag-warn">AB III — vertiefte Vernetzung</span></p>
+<details><summary>Lösung / Verfahren anzeigen</summary>
+
+<p><strong>Minimaler Grad einer Stammfunktion \( F \) von
+\( f \).</strong> Man zählt von unten nach oben — jede
+Integration („Aufleiten") erhöht den Grad um 1:</p>
+<ul>
+<li>Die gezeichnete \( f' \)-Kurve hat <strong>drei</strong>
+Hoch-/Tiefpunkte (bzw. <strong>vier</strong> Nullstellen mit
+Vielfachheit). Eine ganzrationale Funktion mit drei Extremstellen hat
+<strong>mindestens Grad 4</strong> → \( f' \) hat mindestens
+<strong>Grad 4</strong>.</li>
+<li>\( f \) ist eine Stammfunktion von \( f' \)
+→ mindestens <strong>Grad 5</strong>.</li>
+<li>\( F \) ist eine Stammfunktion von \( f \)
+→ mindestens <strong>Grad 6</strong>.</li>
+</ul>
+<p>\[ \Rightarrow \text{Minimaler Grad von } F \text{ ist } \mathbf{6}. \]</p>
+<p><strong>Ein möglicher Funktionsterm von
+\( f' \).</strong> Aus den Nullstellen baut man
+<strong>Linearfaktoren</strong>; die <strong>Berührung</strong> bei
+\( x=2 \) liefert einen <strong>doppelten</strong>
+Faktor:</p>
+<p>\[ f'(x) = a\cdot x\,(x+1)\,(x-2)^2. \]</p>
+<p>Den Vorfaktor \( a \) bestimmt man mit
+\( f'(1)=2 \):</p>
+<p>\[ f'(1) = a\cdot 1 \cdot 2 \cdot (1-2)^2 = a\cdot 2 = 2 \;\;\Longrightarrow\;\; a=1. \]</p>
+<p>Also ein möglicher Term:</p>
+<p>\[ f'(x) = x\,(x+1)\,(x-2)^2 = x^4 - 3x^3 + 4x. \]</p>
+<p><strong>Probe:</strong> \( f'(1)=1\cdot2\cdot1=2 \) ✓; Nullstellen
+\( -1,\ 0,\ 2 \) (doppelt) ✓; beide Ränder laufen nach oben (Grad 4,
+positiver Leitkoeffizient) ✓.</p>
+<details><summary>Haltung dahinter: Aufleiten erhöht den Grad — und warum die Berührung einen doppelten Faktor gibt</summary>
+
+<p><strong>Warum erhöht Integrieren den Grad?</strong> Aufleiten ist
+Ableiten rückwärts. Ableiten <strong>senkt</strong> den Grad um 1 (aus
+\( x^4 \) wird \( 4x^3 \)). Also
+<strong>hebt</strong> das Rückwärts-Verfahren den Grad um 1 (aus etwas
+vom Grad 4 wird beim Aufleiten Grad 5). Zweimal aufleiten von
+\( f' \) (Grad 4) → \( f \) (Grad 5) →
+\( F \) (Grad 6). Daher die 6.</p>
+<p><strong>Warum „mindestens" Grad 4 für \( f' \)?</strong>
+Eine ganzrationale Funktion vom Grad \( n \) kann höchstens
+\( n-1 \) Extrempunkte und höchstens \( n \)
+Nullstellen haben. Drei Extrempunkte erzwingen also
+\( n-1\ge 3 \), d. h. \( n\ge 4 \). Mehr als das Bild
+zeigt, darf man nicht annehmen — deshalb <strong>minimal</strong> 4.</p>
+<p><strong>Warum doppelter Faktor bei der Berührung?</strong> Eine
+Nullstelle, an der die Kurve die Achse nur <strong>berührt</strong>
+(nicht durchschneidet), ist eine Nullstelle <strong>gerader</strong>
+Vielfachheit — der einfachste Fall ist die <strong>doppelte</strong>
+Nullstelle, also \( (x-2)^2 \). Ein einfacher Faktor
+\( (x-2) \) würde die Achse <strong>durchschneiden</strong>
+(Vorzeichenwechsel); das passt nicht zum Bild. Eine einfache Nullstelle
+(Schnitt) wie bei \( -1 \) und \( 0 \) liefert
+dagegen den einfachen Faktor.</p>
+<details><summary>Schöne Bestätigung: der Term passt zu allen gegebenen Daten</summary>
+
+<p>Leitet man \( f'(x)=x^4-3x^3+4x \) auf, erhält man mit
+\( f(0)=0{,}6 \) den Term \( f(x)=\tfrac{1}{5}x^5-\tfrac{3}{4}x^4+2x^2+0{,}6 \). Daraus:
+\( f(2)=\tfrac{32}{5}-12+8+0{,}6=3 \) ✓ (der gegebene Wert), \( f(-1)=1{,}65 \gt 0{,}6=f(0) \) ✓
+(passt zur Monotonie), und \( \int_0^2 f'(x)\,dx = f(2)-f(0)=2{,}4 \) ✓. Der gewählte mögliche
+Term ist also mit <strong>allen</strong> Angaben der Aufgabe
+verträglich. Das Bild ist eine <strong>Skizze</strong>; verlangt war nur
+<strong>ein</strong> passender Term, der die ablesbaren Merkmale
+(Nullstellen, \( f'(1)=2 \), Form) trifft.</p>
+</details>
+</details>
+</details>
+
+<hr />
+</section>
+</section>
+<section id="prüfer-leitfaden-für-die-abfragende-person" class="level2">
+<h2>Prüfer-Leitfaden (für die abfragende Person)</h2>
+<p>Hier steht je Aspekt, <strong>was eine gute Antwort enthält</strong>
+und <strong>welche Rückfrage</strong> du stellen kannst. Du musst nichts
+selbst rechnen — achte auf die genannten Stichworte.</p>
+<details><summary>Leitfaden Teil 1 (Stochastik) aufklappen</summary>
+
+<ul>
+<li><strong>a) Terme.</strong> Erwartet: \( P(A)=0{,}6^3 \) und
+\( P(B)=\binom{3}{2}\cdot0{,}6^2\cdot0{,}4 \). <em>Rückfrage:</em> „Warum steht bei
+\( B \) der Faktor 3 (bzw. \( \binom{3}{2} \)) davor?"
+(Antwort: drei mögliche Reihenfolgen.) <em>Rote Flagge:</em> nur
+\( 0{,}6^2\cdot0{,}4 \) ohne den Zählfaktor.</li>
+<li><strong>b) Binomial / Erwartungswert / Bereich.</strong> Erwartet:
+<strong>Bernoulli-Kette</strong> (zwei Ausgänge, unabhängig
+<strong>wegen Zurücklegen</strong>, konstantes \( p=0{,}6 \));
+\( E(Y)=15\cdot0{,}6=9 \) mit Deutung „im Mittel 9 von 15 blau";
+\( P(5\le Y\le10)=P(Y\le10)-P(Y\le4)\approx0{,}773 \). <em>Rückfrage:</em> „Warum ziehen Sie
+\( P(Y\le4) \) ab und nicht \( P(Y\le5) \)?" (Antwort: die 5
+gehört dazu.) <em>Rote Flagge:</em> \( -P(Y\le5) \).</li>
+<li><strong>c) Histogramme.</strong> Erwartet: <strong>(2)</strong> ist
+\( Y \), weil \( E(Y)=9 \) ganzzahlig → höchster
+Balken bei \( k=9 \); <strong>(1)</strong>
+\( p=0{,}5 \) (achsensymmetrisch); <strong>(3)</strong>
+\( \tfrac{2}{3} \lt p \lt \tfrac{4}{5} \). <em>Rückfrage:</em> „Woran sieht man am
+Histogramm, wie groß \( p \) ist?" (Antwort: an der Lage
+des höchsten Balkens / am Erwartungswert.) <em>Rote Flagge:</em> für (3)
+einen einzelnen \( p \)-Wert behaupten.</li>
+</ul>
+</details>
+
+<details><summary>Leitfaden Teil 2 (Analysis) aufklappen</summary>
+
+<ul>
+<li><strong>AB I.</strong> Erwartet: \( f'(1)=2 \) abgelesen;
+Bedeutung = <strong>Steigung</strong> des Graphen von
+\( f \) bei \( x=1 \); Nullstellen
+\( -1,\ 0,\ 2 \). <em>Rückfrage:</em> „Zeigt das Bild
+\( f \) oder \( f' \)?" <em>Rote Flagge:</em>
+\( f \) und \( f' \) verwechseln (z. B.
+„\( f \) hat bei \( x=1 \) den Wert 2").</li>
+<li><strong>AB II.</strong> Erwartet: Nullstellen von
+\( f' \) → <strong>Hochpunkt</strong> bei
+\( -1 \), <strong>Tiefpunkt</strong> bei
+\( 0 \), <strong>Sattelpunkt</strong> bei
+\( 2 \) (über den <strong>Vorzeichenwechsel</strong>
+begründet); Monotonie über das Vorzeichen von \( f' \);
+\( f''(1)\approx0 \) (Gipfel von \( f' \)) →
+Wendepunkt/steilster Anstieg von \( f \); Krümmung über
+Steigen/Fallen von \( f' \); <strong>Fläche</strong>
+\( =\int_0^2 f' = f(2)-f(0)=2{,}4 \); Vergleich \( f(-1) \gt f(0) \) (weil
+\( f \) auf \( [-1;0] \) fällt).
+<em>Rückfragen:</em> „Warum ist \( x=2 \)
+<strong>kein</strong> Extrempunkt?" · „Wie kommen Sie ohne Stammfunktion
+auf die Fläche 2,4?" <em>Rote Flagge:</em> Fläche über eine mühsame
+Stammfunktion von \( f' \) statt über
+\( f(2)-f(0) \).</li>
+<li><strong>AB III.</strong> Erwartet: minimaler Grad von
+\( F \) ist <strong>6</strong> (\( f' \) Grad 4
+→ \( f \) Grad 5 → \( F \) Grad 6); möglicher
+Term \( f'(x)=x(x+1)(x-2)^2 \). <em>Rückfrage:</em> „Warum ist der Faktor
+\( (x-2) \) <strong>quadriert</strong>?" (Antwort: Berührung =
+doppelte Nullstelle.) <em>Hinweis für dich:</em> Andere Terme sind
+erlaubt, solange Nullstellen und \( f'(1)=2 \) stimmen — es ist
+<strong>ein</strong> möglicher Term gefragt.</li>
+</ul>
+</details>
+
+</section>
+<section id="selbstcheck-kannst-du-es-mündlich-erklären" class="level2">
+<h2>Selbstcheck: Kannst du es mündlich erklären?</h2>
+<p>Sprich diese Punkte einmal <strong>frei und laut</strong> durch, ohne
+in die Lösung zu schauen:</p>
+<ul>
+<li>Warum steht bei „genau zwei blau" ein Binomialkoeffizient vor dem
+Term, bei „alle blau" aber nicht?</li>
+<li>Welche drei Eigenschaften machen aus dem Ziehen mit Zurücklegen eine
+Bernoulli-Kette, und warum ist das Zurücklegen entscheidend?</li>
+<li>Wie liest du aus einem Binomial-Histogramm die
+Trefferwahrscheinlichkeit \( p \) ab?</li>
+<li>Das Bild zeigt \( f' \): Wie kommst du von den
+Nullstellen von \( f' \) auf die Hoch-, Tief- und
+Sattelpunkte von \( f \)?</li>
+<li>Warum ist die Fläche zwischen \( f' \) und der
+\( x \)-Achse auf \( [0;2] \) genau
+\( f(2)-f(0) \)?</li>
+<li>Warum hat eine Stammfunktion \( F \) von
+\( f \) mindestens den Grad 6?</li>
+</ul>
+</content>
+</invoke>
+
+</section>
+<footer class="site">Build 5169faf · 2026-06-27T18:41:29Z · Provenance: DLG-2026-06-17-B61, DLG-2026-06-18-B62/B63, DLG-2026-06-18-Z01 · Strang <code>mathe-abi</code></footer></div></main><div class="backdrop"></div></div><script src="assets/vendor/katex.min.js" defer></script><script src="assets/vendor/auto-render.min.js" defer></script><script src="assets/vendor/jsxgraphcore.js" defer></script><script src="assets/site.js" defer></script><script defer>document.addEventListener("DOMContentLoaded",function(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});}if(window.JXG&&window.__JXGQ){var q=window.__JXGQ;window.__JXGQ=[];q.forEach(function(fn){try{fn();}catch(e){console.error(e);}});}});</script></body></html>
